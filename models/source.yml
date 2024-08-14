@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: source_commcare
+    schema: staging
+    tables:    
+      - name: raw_case 
+        identifier: zzz_case 
+        description: "All cases"   
+
+      - name: case_occurence 
+        identifier: Case_Occurrence_Form
+        description: "Case occurence"
+      - name: case_referral
+        identifier: Case_Referral_Form
+        description: "Case referral"

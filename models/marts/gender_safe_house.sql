@@ -48,7 +48,7 @@ people_in_safe_houses_per_month AS (
 
 
 SELECT
-    month,
+    month:date,
     COUNT(DISTINCT case_id) AS people_in_safe_house
 FROM
     people_in_safe_houses_per_month

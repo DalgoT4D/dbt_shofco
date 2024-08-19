@@ -17,7 +17,6 @@ with case_occurrences_data as (
 		ELSE CAST(TO_CHAR(case_intake_date::date,'YYYYMMDD') AS INTEGER)
 	END as case_intake_datekey,
 	{{ validate_date('date_of_case_closure') }} as date_of_case_closure,
-	--CAST(TO_CHAR(date_of_case_closure::date,'YYYYMMDD') AS INTEGER)  as case_closure_datekey,
 	{{ validate_date('case_assignment_date') }} as date_of_case_assignment,
 	gender_site_code_of_reporting,
 	where_was_the_client_referred_to as case_referred_to_location,

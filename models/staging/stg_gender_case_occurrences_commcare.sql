@@ -40,6 +40,7 @@ set case_type_properties_dict = {
     "date_of_medical_followup_update": "date_of_medical_followup_update",
     "date_of_medical_report_followup": "date_of_medical_report_followup",
     "date_of_onboarding": "date_of_onboarding",
+    "date_of_discharge": "date_of_discharge",
     "date_of_other_followup_amended_at": "date_of_other_followup_amended_at",
     "date_of_other_followup_update": "date_of_other_followup_update",
     "date_of_police_followup_last_amended_at": "date_of_police_followup_last_amended_at",

@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: source_commcare
-    schema: staging
+    schema: t4d_staging
     tables:    
       - name: raw_case 
         identifier: zzz_case 
@@ -14,3 +14,7 @@ sources:
       - name: case_referral
         identifier: Case_Referral_Form
         description: "Case referral"
+      - name: dim_location_administrative_units
+        description: Administrative units lookup table
+      - name: dim_gender_sites
+        description: Sites used by the gender program

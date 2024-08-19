@@ -2,20 +2,29 @@ with survivors_data as
 (
     SELECT
     case_id,
-    CASE 
-        WHEN date_of_birth IS NULL THEN
-            CASE 
-                WHEN what_is_the_age_provided IS NOT NULL 
-                    THEN what_is_the_age_provided::int
-                ELSE
-                    CASE 
-                        WHEN (what_is_the_year_of_birth_of_survivor IS NOT NULL AND LENGTH(what_is_the_year_of_birth_of_survivor)>=4)
-                            THEN EXTRACT(year FROM age(TO_DATE(what_is_the_year_of_birth_of_survivor, 'YYYY')))::int
-                        ELSE NULL
-                    END
-            END
-        ELSE EXTRACT(year FROM age(current_date,date_of_birth::date)) :: int 
-    END AS age,
+   CASE 
+    WHEN date_of_birth IS NULL THEN
+        CASE 
+            WHEN what_is_the_age_provided IS NOT NULL 
+                THEN what_is_the_age_provided::int
+            ELSE
+                CASE 
+                    WHEN what_is_the_year_of_birth_of_survivor IS NOT NULL 
+                         AND LENGTH(what_is_the_year_of_birth_of_survivor) = 4
+                         AND what_is_the_year_of_birth_of_survivor::int BETWEEN 1900 AND EXTRACT(year FROM current_date)
+                        THEN EXTRACT(year FROM age(TO_DATE(what_is_the_year_of_birth_of_survivor, 'YYYY')))::int
+                    ELSE NULL
+                END
+        END
+    ELSE 
+        CASE
+            -- Check if the text can be safely converted to a date and is within a valid range
+            WHEN TO_DATE(date_of_birth, 'YYYY-MM-DD') >= '1900-01-01'::date 
+                 AND TO_DATE(date_of_birth, 'YYYY-MM-DD') <= current_date
+            THEN EXTRACT(year FROM age(current_date, TO_DATE(date_of_birth, 'YYYY-MM-DD')))::int
+            ELSE NULL
+        END
+END AS age,
 
     {{ validate_date('date_of_registration') }} as date_of_registration,
     gender, 
@@ -38,9 +47,9 @@ COALESCE(b.constituency_name,a.constituency_code) as constituency_name,
 COALESCE(b.ward_name,a.ward_code) as ward_name,
 c.site_name as gender_site_name_of_registration
 FROM survivors_data a
-LEFT JOIN {{ source('transformed_schema_db','dim_location_administrative_units') }} b
+LEFT JOIN {{ source('source_commcare','dim_location_administrative_units') }} b
 ON a.county_code = b.county_code
 AND a.constituency_code = b.constituency_id
 AND a.ward_code = b.ward_id
-LEFT JOIN {{ source('transformed_schema_db','dim_gender_sites') }} c
+LEFT JOIN {{ source('source_commcare','dim_gender_sites') }} c
 ON a.gender_site_code_of_registration = c.site_code

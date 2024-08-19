@@ -22,7 +22,7 @@ The macro is designed to work with incremental models in dbt, including an addit
 {% enddocs %}
 
 
-{% macro extract_case_table(commcare_case_type, case_type_properties_dict, has_parent=false) %}
+{% macro extract_case_table_from_commcare_json(commcare_case_type, case_type_properties_dict, has_parent=false) %}
     
     WITH commcare_data as (
     SELECT 

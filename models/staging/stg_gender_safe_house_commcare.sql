@@ -1,17 +1,15 @@
 {{
     config(
-        materialized='incremental',
-        unique_key='case_id',
-        alias='stg_gender_safe_house_commcare',
-        tags="commcare_extraction"
+        materialized="incremental",
+        unique_key="case_id",
+        alias="stg_gender_safe_house_commcare",
+        tags="commcare_extraction",
     )
 }}
 
 
-{% set commcare_case_type =  'safe_house_case_data' %}
-{%
-
-set case_type_properties_dict = {
+{% set commcare_case_type = "safe_house_case_data" %}
+{% set case_type_properties_dict = {
     "any_known_existing_medical_conditions": "any_known_existing_medical_conditions",
     "any_medical_condition_requiring_special_dietray_provision": "any_medical_condition_requiring_special_dietray_provision",
     "client_addictive_substances": "client_addictive_substances",
@@ -42,11 +40,12 @@ set case_type_properties_dict = {
     "onboarding_approval_by_gender_director": "onboarding_approval_by_gender_director",
     "onboarding_case_worker_date_of_approval": "onboarding_case_worker_date_of_approval",
     "reason_for_denial_of_discharge_by_gender_director": "reason_for_denial_of_discharge_by_gender_director",
-    "reason_for_denial_of_onboarding_by_gender_director": "reason_for_denial_of_onboarding_by_gender_director"
-}
-
--%}
+    "reason_for_denial_of_onboarding_by_gender_director": "reason_for_denial_of_onboarding_by_gender_director",
+} -%}
 
 
-
-{{ extract_case_table_from_commcare_json (commcare_case_type, case_type_properties_dict, true) }}
+{{
+    extract_case_table_from_commcare_json(
+        commcare_case_type, case_type_properties_dict, true
+    )
+}}

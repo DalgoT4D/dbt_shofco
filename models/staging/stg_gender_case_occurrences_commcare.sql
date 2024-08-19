@@ -1,16 +1,14 @@
 {{
     config(
-        materialized='incremental',
-        unique_key='case_id',
-        alias='stg_gender_case_occurrences_commcare',
-        tags="commcare_extraction"
+        materialized="incremental",
+        unique_key="case_id",
+        alias="stg_gender_case_occurrences_commcare",
+        tags="commcare_extraction",
     )
 }}
 
-{% set commcare_case_type =  'case_occurrences_case_data' %}
-{%
-
-set case_type_properties_dict = {
+{% set commcare_case_type = "case_occurrences_case_data" %}
+{% set case_type_properties_dict = {
     "acknowledgement_of_informed_consent": "acknowledgement_of_informed_consent",
     "assault_type": "assault_type",
     "at_what_stage_is_the_court_case_currently_at": "at_what_stage_is_the_court_case_currently_at",
@@ -78,10 +76,12 @@ set case_type_properties_dict = {
     "what_is_the_age_provided": "what_is_the_age_provided",
     "what_is_the_year_of_birth_of_survivor": "what_is_the_year_of_birth_of_survivor",
     "what_other_procedures_has_the_client_undergone": "what_other_procedures_has_the_client_undergone",
-    "where_was_the_client_referred_to": "where_was_the_client_referred_to"
-}
--%}
+    "where_was_the_client_referred_to": "where_was_the_client_referred_to",
+} -%}
 
 
-
-{{ extract_case_table_from_commcare_json (commcare_case_type, case_type_properties_dict, true) }}
+{{
+    extract_case_table_from_commcare_json(
+        commcare_case_type, case_type_properties_dict, true
+    )
+}}

@@ -45,7 +45,7 @@ with
             )
     )
 
-select month:date, count(distinct case_id) as people_in_safe_house
+select month, count(distinct case_id) as people_in_safe_house
 from people_in_safe_houses_per_month
 group by month
 order by month

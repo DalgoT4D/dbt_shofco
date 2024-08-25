@@ -1,10 +1,20 @@
 with
+    safe_house_data as (
+        select
+            case_id,
+            parent_case_id,
+            {{ validate_date("date_of_safehouse_onboarding") }}
+            as date_of_safe_house_onboarding,
+            {{ validate_date("date_of_discharge") }} as date_of_safe_house_discharge
+        from {{ ref("stg_gender_safe_house_commcare") }}
+        where {{ validate_date("date_of_safehouse_onboarding") }} IS NOT NULL
+    ),
     case_occurrences_data as (
         select
             case_id,
+            assigned_to,
+            case_summary_notes,
             {{ validate_date("date_of_reporting") }} as date_of_case_reporting,
-            {{ validate_date("date_of_onboarding") }} as date_of_safe_house_onboarding,
-            {{ validate_date("date_of_discharge") }} as date_of_safe_house_discharge,
             cast(
                 to_char(date_of_reporting::date, 'YYYYMMDD') as integer
             ) as case_reporting_datekey,
@@ -81,6 +91,8 @@ with
 
 select distinct
     cases.*,
+    safe_house_data.date_of_safe_house_onboarding,
+    safe_house_data.date_of_safe_house_discharge,
     survivors.gender as survivor_gender,
     survivors.age as survivor_age,
     case
@@ -103,8 +115,13 @@ select distinct
         locations.constituency_name, cases.incident_report_constituency_code
     ) as case_constituency_name,
     coalesce(locations.ward_name, cases.incident_report_ward_code) as case_ward_name,
-    gender_sites.site_name as gender_site_name_of_reporting
+    gender_sites.site_name as gender_site_name_of_reporting,
+    case when case_referred_to_location IS NULL THEN 'Yes' else 'No' end as is_case_referred
 from case_occurrences_data cases
+-- fix discharge date
+left join
+    safe_house_data
+    on cases.case_id = safe_house_data.parent_case_id
 left join
     {{ ref("gender_survivors_data") }} survivors
     on cases.parent_case_id = survivors.case_id
@@ -116,3 +133,4 @@ left join
 left join
     {{ source("source_commcare", "dim_gender_sites") }} gender_sites
     on cases.gender_site_code_of_reporting = gender_sites.site_code
+

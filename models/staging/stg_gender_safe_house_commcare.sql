@@ -1,6 +1,6 @@
 {{
     config(
-        materialized="incremental",
+        materialized="table",
         unique_key="case_id",
         alias="stg_gender_safe_house_commcare",
         tags="commcare_extraction",
@@ -12,6 +12,7 @@
 {% set case_type_properties_dict = {
     "any_known_existing_medical_conditions": "any_known_existing_medical_conditions",
     "any_medical_condition_requiring_special_dietray_provision": "any_medical_condition_requiring_special_dietray_provision",
+    "assigned_to": "assigned_to",
     "client_addictive_substances": "client_addictive_substances",
     "client_dietary_provisions": "client_dietary_provisions",
     "client_medical_conditions": "client_medical_conditions",

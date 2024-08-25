@@ -93,6 +93,7 @@ select distinct
     cases.*,
     safe_house_data.date_of_safe_house_onboarding,
     safe_house_data.date_of_safe_house_discharge,
+    current_date - cases.date_of_case_intake as days_since_intake,
     survivors.gender as survivor_gender,
     survivors.age as survivor_age,
     case

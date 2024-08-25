@@ -2,11 +2,12 @@ with
     case_occurrences_data as (
         select
             case_id,
+            assigned_to,
             {{ validate_date("date_of_safehouse_onboarding") }}
             as date_of_safe_house_onboarding,
             {{ validate_date("date_of_discharge") }} as date_of_safe_house_discharge
-
         from {{ ref("stg_gender_safe_house_commcare") }}
+        where {{ validate_date("date_of_safehouse_onboarding") }} IS NOT NULL
     ),
 
     case_dates as (
@@ -35,7 +36,7 @@ with
     ),
 
     people_in_safe_houses_per_month as (
-        select dr.month, c.case_id
+        select dr.month, c.case_id, c.assigned_to
         from date_range dr
         left join
             case_occurrences_data c
@@ -45,7 +46,7 @@ with
             )
     )
 
-select month, count(distinct case_id) as people_in_safe_house
+select assigned_to,month, count(distinct case_id) as people_in_safe_house
 from people_in_safe_houses_per_month
-group by month
-order by month
+group by assigned_to,month
+order by assigned_to, month

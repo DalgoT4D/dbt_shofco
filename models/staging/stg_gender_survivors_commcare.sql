@@ -1,6 +1,6 @@
 {{
     config(
-        materialized="incremental",
+        materialized="table",
         unique_key="case_id",
         alias="stg_gender_survivors_commcare",
         tags="commcare_extraction",
@@ -10,6 +10,7 @@
 
 {% set commcare_case_type = "survivors_case_data" %}
 {% set case_type_properties_dict = {
+    "assigned_to": "assigned_to",
     "county": "county",
     "constituency": "constituency",
     "date_of_birth": "date_of_birth",

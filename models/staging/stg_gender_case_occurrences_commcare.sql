@@ -1,6 +1,6 @@
 {{
     config(
-        materialized="incremental",
+        materialized="table",
         unique_key="case_id",
         alias="stg_gender_case_occurrences_commcare",
         tags="commcare_extraction",
@@ -11,12 +11,14 @@
 {% set case_type_properties_dict = {
     "acknowledgement_of_informed_consent": "acknowledgement_of_informed_consent",
     "assault_type": "assault_type",
+    "assigned_to": "assigned_to",
     "at_what_stage_is_the_court_case_currently_at": "at_what_stage_is_the_court_case_currently_at",
     "case_assignment_date": "case_assignment_date",
     "case_closure_other_reason": "case_closure_other_reason",
     "case_closure_reason": "case_closure_reason",
     "case_intake_date": "case_intake_date",
     "case_number": "case_number",
+    "case_summary_notes": "case_summary_notes",
     "case_reassignment_date": "case_reassignment_date",
     "case_reported_to_police": "case_reported_to_police",
     "case_worker_date_of_onboarding": "case_worker_date_of_onboarding",

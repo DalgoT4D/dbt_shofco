@@ -1,6 +1,7 @@
 with
     gender_counselling_data as (
         select distinct
+            assigned_to,
             county,
             constituency,
             client_age,
@@ -11,6 +12,11 @@ with
             client_education_level,
             client_referenced_from,
             client_presenting_issues,
+            case when client_presenting_issues LIKE '%trauma_symptoms%' then 1 else 0 end as client_presenting_trauma_issues,
+            case when client_presenting_issues LIKE '%social_emotional_issues%' then 1 else 0 end as client_presenting_social_emotional_issues,
+            case when client_presenting_issues LIKE '%psychiatric_symptoms%' then 1 else 0 end as client_presenting_psychiatric_issues,
+            case when client_presenting_issues LIKE '%drug_abuse%' then 1 else 0 end as client_presenting_drug_abuse_issues,
+            case when client_presenting_issues LIKE '%behavioral_issues%' then 1 else 0 end as client_presenting_behavioral_issues,
             client_requires_followup_sessions,
             client_mental_health_score_behavioral_issues,
             client_mental_health_score_trauma_symptoms,

@@ -1,6 +1,7 @@
 with
     survivors_data as (
         select
+            assigned_to,
             case_id,
             case
                 when date_of_birth is null

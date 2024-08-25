@@ -4,6 +4,7 @@ with
             parent_case_id,
             case_name,
             case_id,
+            assigned_to,
             {{ validate_date("date_of_reporting") }} as date_of_reporting,
             {{ validate_date("date_of_case_closure") }} as date_of_case_closure
 
@@ -27,7 +28,7 @@ with
     ),
 
     cases_expanded as (
-        select c.parent_case_id, c.case_name, c.date_of_reporting, c.date_of_case_closure, dr.month
+        select c.parent_case_id, c.case_name, c.assigned_to,c.date_of_reporting, c.date_of_case_closure, dr.month
         from case_occurrences_data c
         cross join date_range dr
         where
@@ -40,6 +41,7 @@ select
     month,
     parent_case_id,
     case_name,
+    assigned_to,
     case
         when
             c.date_of_reporting <= (month + interval '1 month' - interval '1 day')

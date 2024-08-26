@@ -29,8 +29,15 @@
 } -%}
 
 
-{{
+with counselling_cte as ({{
     extract_case_table_from_commcare_json(
         commcare_case_type, case_type_properties_dict
     )
+}})
+
+{{ dbt_utils.deduplicate(
+    relation='counselling_cte',
+    partition_by='case_id',
+    order_by='indexed_on desc',
+   )
 }}

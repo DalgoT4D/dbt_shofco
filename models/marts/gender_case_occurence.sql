@@ -35,6 +35,7 @@ with
             gender_site_code_of_reporting,
             where_was_the_client_referred_to as case_referred_to_location,
             case_number,
+            case_name,
             assault_type,
             case
                 when where_was_the_client_referred_to like '%safe_house%'

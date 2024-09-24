@@ -56,3 +56,6 @@ models:
         +tags:
           - "gender"
           - "gender_transform"
+
+    elementary:
+      +schema: "elementary"

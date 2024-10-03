@@ -57,5 +57,5 @@ models:
           - "gender"
           - "gender_transform"
 
-    elementary:
-      +schema: "elementary"
+  elementary:
+    +schema: "elementary"

@@ -48,6 +48,11 @@ with
                 else 'no'
             end as referred_to_other_shofco_programs,
             case
+                when where_was_the_client_referred_to like '%district_children_officers%'
+                then 'yes'
+                else 'no'
+            end as referred_to_dco,
+            case
                 when
                     where_was_the_client_referred_to
                     like '%psychosocial_support_and_counseling%'

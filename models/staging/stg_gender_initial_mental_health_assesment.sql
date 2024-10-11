@@ -15,11 +15,12 @@ WITH initial_mental_health_assessment_staging AS (
 
         -- Extract metadata like session ID and form filling date
         data::jsonb->'form'->'meta'->>'instanceID' AS session_id,
-        data::jsonb->>'received_on' AS form_filling_date
-    FROM t4d_staging."Initial_Mental_Health_Asssessment"
+        data::jsonb->>'received_on' AS initial_form_filling_date
+    FROM {{ source('source_commcare', 'Initial_Mental_Health_Asssessment') }}
 )
 SELECT
     id,
+    initial_form_filling_date,
     case_id,  -- Include case ID
     user_id,  -- Include user ID
     -- Include all relevant mental health scores as separate columns
@@ -28,7 +29,5 @@ SELECT
     psychiatric_symptoms,
     social_emotional_issues,
     trauma_symptoms,
-
-    session_id,  -- Session ID
-    form_filling_date  -- Date the form was filled
+    session_id
 FROM initial_mental_health_assessment_staging

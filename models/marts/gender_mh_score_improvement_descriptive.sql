@@ -2,6 +2,7 @@ WITH initial_assessments AS (
     -- Select and calculate the average score from the initial assessment
     SELECT
         case_id,
+        initial_form_filling_date,
         (
             -- Calculate the average of all initial mental health scores
             (
@@ -27,6 +28,7 @@ final_assessments AS (
     -- Select and calculate the average score from the final assessment
     SELECT
         case_id,
+        final_form_filling_date,
         (
             -- Calculate the average of all final mental health scores
             (
@@ -54,8 +56,11 @@ improved_scores AS (
         i.case_id,
         i.initial_avg_score,
         f.final_avg_score,
+        i.initial_form_filling_date,
+        f.final_form_filling_date,
+
         CASE 
-            WHEN f.final_avg_score > i.initial_avg_score THEN 'Y'
+            WHEN f.final_avg_score < i.initial_avg_score THEN 'Y'
             ELSE 'N'
         END AS improved
     FROM initial_assessments i
@@ -68,6 +73,8 @@ SELECT
     case_id,
     initial_avg_score,
     final_avg_score,
-    improved
+    improved,
+    initial_form_filling_date,
+    final_form_filling_date
 FROM improved_scores
 ORDER BY case_id

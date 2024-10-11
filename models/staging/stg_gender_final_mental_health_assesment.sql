@@ -39,8 +39,8 @@ WITH mental_health_assessment_data AS (
         ) AS trauma_symptoms_after_therapy,
 
         data::jsonb->'meta'->>'instanceID' AS session_id,  -- Extract the session ID
-        data::jsonb->>'received_on' AS form_filling_date  -- Use 'received_on' for the form-filling date
-    FROM t4d_staging."Final_Mental_Health_Assessment_Form"
+        data::jsonb->>'received_on' AS final_form_filling_date  -- Use 'received_on' for the form-filling date
+    FROM {{ source('source_commcare', 'Final_Mental_Health_Assessment_Form') }}
 )
 SELECT
     id,
@@ -61,5 +61,5 @@ SELECT
     client_satisfaction_score_comments,
     client_satisfaction_level,
     session_id,
-    form_filling_date
+    final_form_filling_date
 FROM mental_health_assessment_data

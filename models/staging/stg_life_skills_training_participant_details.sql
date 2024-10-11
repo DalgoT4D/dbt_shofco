@@ -5,7 +5,7 @@ WITH roc_club_participants AS (
         data::jsonb->>'received_on' AS form_filling_date,  -- Use 'received_on' for the form-filling date
         data::jsonb->'form'->'meta'->>'instanceID' AS session_id,  -- Extract the session ID
         jsonb_array_elements(data->'form'->'membership_details') AS participant_data
-    FROM t4d_staging."IIVC_Life_Skills_Training"
+    FROM {{ source('source_commcare', 'IIVC_Life_Skills_Training') }}
     WHERE data::jsonb->'form'->>'target_group' = 'roc_club'
     AND jsonb_typeof(data->'form'->'membership_details') = 'array'  -- Ensure it's an array
 ),
@@ -16,7 +16,7 @@ community_safe_space_participants AS (
         data::jsonb->>'received_on' AS form_filling_date,  -- Use 'received_on' for the form-filling date
         data::jsonb->'form'->'meta'->>'instanceID' AS session_id,  -- Extract the session ID
         jsonb_array_elements(data->'form'->'community_safe_space_participants_details') AS participant_data
-    FROM t4d_staging."IIVC_Life_Skills_Training"
+    FROM {{ source('source_commcare', 'IIVC_Life_Skills_Training') }}
     WHERE data::jsonb->'form'->>'target_group' = 'community_safe_space'
     AND jsonb_typeof(data->'form'->'community_safe_space_participants_details') = 'array'  -- Ensure it's an array
 )

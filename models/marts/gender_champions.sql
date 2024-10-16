@@ -1,17 +1,17 @@
 WITH champions_data AS (
     SELECT
         "Site",
-        "County",
-        INITCAP(LOWER("Gender")) AS "Gender",  -- Normalizes gender
+        INITCAP(TRIM("County")) AS "County",
+        INITCAP(TRIM("Gender")) AS "Gender",  -- Normalizes gender
         "Mobile",
         "Engaged",
         "Trained",
         "Identified",
-        "Sub_County",
-        "Sub_County_1",
+        INITCAP(TRIM("Sub_County")) AS "Sub_County",
+        INITCAP(TRIM("Sub_County_1")) AS "Sub_County_1",
         "National_ID",
-        "Champions_Name",
-        "Community_Role"
+        INITCAP(TRIM("Champions_Name")) AS "Champions_Name",
+        INITCAP(TRIM("Community_Role")) AS "Community_Role"
     FROM {{ ref('stg_champions') }}  -- Refers to the previous model
 )
 

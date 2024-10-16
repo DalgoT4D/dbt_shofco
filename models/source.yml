@@ -27,31 +27,9 @@ sources:
         description: "IIVC Life Skills Training"
       - name: Champions_
         description: "Champions data table"
-        columns:
-          - name: Site
-            description: "Site name"
-          - name: County
-            description: "County name"
-          - name: Gender
-            description: "Gender of the champion"
-          - name: Mobile
-            description: "Mobile number of the champion"
-          - name: Engaged
-            description: "Engagement status"
-          - name: Trained
-            description: "Training status"
-          - name: Identified
-            description: "Identification status"
-          - name: Sub_County
-            description: "Sub County"
-          - name: Sub_County_1
-            description: "Alternative Sub County"
-          - name: National_ID
-            description: "National ID of the champion"
-          - name: Champions_Name
-            description: "Champion's name"
-          - name: Community_Role
-            description: "Role of the champion in the community"
+      - name: GBV_Community_Leaders
+        description: "GBV Leaders data table"
+        
 
   - name: t4d_staging_youth
     schema: t4d_staging_youth

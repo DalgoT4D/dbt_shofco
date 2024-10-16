@@ -3,25 +3,65 @@ version: 2
 sources:
   - name: source_commcare
     schema: t4d_staging
-    tables:    
+    tables:
       - name: raw_case 
         identifier: zzz_case 
-        description: "All cases"   
+        description: "All cases"
       - name: case_occurence 
         identifier: Case_Occurrence_Form
-        description: "Case occurence"
+        description: "Case occurrence"
       - name: case_referral
         identifier: Case_Referral_Form
         description: "Case referral"
       - name: dim_location_administrative_units
-        description: Administrative units lookup table
+        description: "Administrative units lookup table"
       - name: dim_gender_sites
-        description: Sites used by the gender program
-      - name: Gender_Client_Satisfaction_Survey
-        description: "Gender Client Satisfaction Survey"
+        description: "Sites used by the gender program"
+      - name: Gender_Clients_Feedback_Survey
+        description: "Gender Clients Feedback Survey"
       - name: Final_Mental_Health_Assessment_Form
         description: "Final Mental Health Assessment Form"
       - name: Initial_Mental_Health_Asssessment
         description: "Initial Mental Health Assessment"
       - name: IIVC_Life_Skills_Training
         description: "IIVC Life Skills Training"
+      - name: Champions_
+        description: "Champions data table"
+        columns:
+          - name: Site
+            description: "Site name"
+          - name: County
+            description: "County name"
+          - name: Gender
+            description: "Gender of the champion"
+          - name: Mobile
+            description: "Mobile number of the champion"
+          - name: Engaged
+            description: "Engagement status"
+          - name: Trained
+            description: "Training status"
+          - name: Identified
+            description: "Identification status"
+          - name: Sub_County
+            description: "Sub County"
+          - name: Sub_County_1
+            description: "Alternative Sub County"
+          - name: National_ID
+            description: "National ID of the champion"
+          - name: Champions_Name
+            description: "Champion's name"
+          - name: Community_Role
+            description: "Role of the champion in the community"
+
+  - name: t4d_staging_youth
+    schema: t4d_staging_youth
+    tables:
+      - name: zzz_case
+        description: "Youth mental health beneficiaries case data"
+        columns:
+          - name: case_id
+            description: "Unique identifier for each case"
+          - name: data
+            description: "JSON data containing case properties"
+          - name: indexed_on
+            description: "Timestamp of when the case was indexed"

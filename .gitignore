@@ -9,3 +9,4 @@ dbt_modules/
 venv/
 profiles.yml
 .user.yml
+package-lock.yml

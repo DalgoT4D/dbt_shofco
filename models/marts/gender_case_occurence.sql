@@ -3,8 +3,7 @@ with
         select
             case_id,
             parent_case_id,
-            {{ validate_date("date_of_safehouse_onboarding") }}
-            as date_of_safe_house_onboarding,
+            {{ validate_date("date_of_safehouse_onboarding") }} as date_of_safe_house_onboarding,
             {{ validate_date("date_of_discharge") }} as date_of_safe_house_discharge
         from {{ ref("stg_gender_safe_house_commcare") }}
         where {{ validate_date("date_of_safehouse_onboarding") }} IS NOT NULL
@@ -37,6 +36,10 @@ with
             case_number,
             case_name,
             assault_type,
+
+            -- Split assault types into multiple rows
+            -- unnest(string_to_array(assault_type, ' ')) as assault_type,
+
             case
                 when where_was_the_client_referred_to like '%safe_house%'
                 then 'yes'
@@ -47,6 +50,11 @@ with
                 then 'yes'
                 else 'no'
             end as referred_to_other_shofco_programs,
+            case
+                when where_was_the_client_referred_to like '%district_children_officers%'
+                then 'yes'
+                else 'no'
+            end as referred_to_dco,
             case
                 when
                     where_was_the_client_referred_to
@@ -120,7 +128,6 @@ select distinct
     gender_sites.site_name as gender_site_name_of_reporting,
     case when case_referred_to_location IS NULL THEN 'Yes' else 'No' end as is_case_referred
 from case_occurrences_data cases
--- fix discharge date
 left join
     safe_house_data
     on cases.case_id = safe_house_data.parent_case_id
@@ -135,4 +142,3 @@ left join
 left join
     {{ source("source_commcare", "dim_gender_sites") }} gender_sites
     on cases.gender_site_code_of_reporting = gender_sites.site_code
-

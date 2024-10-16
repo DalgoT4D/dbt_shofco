@@ -2,7 +2,7 @@ WITH champions_data AS (
     SELECT
         "Site",
         "County",
-        "Gender",
+        INITCAP(LOWER("Gender")) AS "Gender",  -- Normalizes gender
         "Mobile",
         "Engaged",
         "Trained",

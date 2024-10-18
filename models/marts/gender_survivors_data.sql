@@ -7,15 +7,14 @@ with
                 when date_of_birth is null
                 then
                     case
-                        when what_is_the_age_provided is not null
-                        then what_is_the_age_provided::int
+                        when what_is_the_age_provided is not null and what_is_the_age_provided != ''
+                        then nullif(what_is_the_age_provided, '')::int
                         else
                             case
                                 when
                                     what_is_the_year_of_birth_of_survivor is not null
-                                    and length(what_is_the_year_of_birth_of_survivor)
-                                    = 4
-                                    and what_is_the_year_of_birth_of_survivor::int
+                                    and length(what_is_the_year_of_birth_of_survivor) = 4
+                                    and nullif(what_is_the_year_of_birth_of_survivor, '')::int
                                     between 1900 and extract(year from current_date)
                                 then
                                     extract(

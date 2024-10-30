@@ -62,7 +62,7 @@ with
             indexed_on,
             closed,
             {{ validate_date("created_at") }} as created_at
-        from {{ ref("stg_gender_survivors_commcare") }}
+        from {{ ref("staging_gender_survivors_commcare") }}
     )
 
 select

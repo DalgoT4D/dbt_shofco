@@ -3,7 +3,7 @@ WITH avg_satisfaction_per_person AS (
     SELECT
         date_of_visit,
         overall_satisfaction -- Now using the overall satisfaction score from the new JSON
-    FROM {{ ref('stg_gender_satisfaction_scores') }}
+    FROM {{ ref('staging_gender_satisfaction_scores') }}
     WHERE overall_satisfaction IS NOT NULL
 ),
 

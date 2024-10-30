@@ -3,7 +3,7 @@ WITH source_data AS (
         id,
         indexed_on,
         data::jsonb AS json_data
-    FROM {{ source('source_commcare', 'IIVC_Life_Skills_Training') }}
+    FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
 )
 SELECT
     id,

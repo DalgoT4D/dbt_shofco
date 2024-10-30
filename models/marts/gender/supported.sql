@@ -9,7 +9,7 @@ with
             date_of_case_closure,
             case_county_name,
             gender_site_name_of_reporting
-        from {{ ref("gender_case_occurence") }}
+        from {{ ref("case_occurence") }}
     ),
 
     date_range as (

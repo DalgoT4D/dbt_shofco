@@ -2,7 +2,7 @@
     config(
         materialized="table",
         unique_key="case_id",
-        alias="stg_gender_case_occurrences_commcare",
+        alias="staging_gender_case_occurrences_commcare",
         tags="commcare_extraction",
     )
 }}
@@ -83,7 +83,7 @@
 
 
 with case_cte as ({{
-    extract_case_table_from_commcare_json(
+    extract_case_table_from_gender_commcare_json(
         commcare_case_type, case_type_properties_dict, true
     )
 }})

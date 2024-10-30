@@ -14,4 +14,4 @@ SELECT
     (data::json->'properties'->>'date_opened') AS date_opened,
     -- Reference indexed_on directly
     indexed_on
-FROM {{ source('t4d_staging_youth', 'zzz_case') }}
+FROM {{ source('staging_youth', 'zzz_case') }}

@@ -16,7 +16,7 @@ WITH initial_mental_health_assessment_staging AS (
         -- Extract metadata like session ID and form filling date
         data::jsonb->'form'->'meta'->>'instanceID' AS session_id,
         data::jsonb->>'received_on' AS initial_form_filling_date
-    FROM {{ source('source_commcare', 'Initial_Mental_Health_Asssessment') }}
+    FROM {{ source('staging_gender', 'Initial_Mental_Health_Asssessment') }}
 )
 SELECT
     id,

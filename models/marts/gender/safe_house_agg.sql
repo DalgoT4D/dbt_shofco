@@ -4,7 +4,7 @@ with
         select
             case_id,
             {{ validate_date("date_of_safehouse_onboarding") }} as date_of_safe_house_onboarding
-        from {{ ref("stg_gender_safe_house_commcare") }}
+        from {{ ref("staging_gender_safe_house_commcare") }}
         where {{ validate_date("date_of_safehouse_onboarding") }} IS NOT NULL
     )
 

@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 WITH initial_assessments AS (
     -- Select and calculate the average score from the initial assessment
     SELECT
@@ -21,7 +25,7 @@ WITH initial_assessments AS (
                 0
             )
         ) AS initial_avg_score
-    FROM {{ ref('stg_gender_initial_mental_health_assesment') }}
+    FROM {{ ref('staging_gender_initial_mental_health_assesment') }}
 ),
 
 final_assessments AS (
@@ -47,7 +51,7 @@ final_assessments AS (
                 0
             )
         ) AS final_avg_score
-    FROM {{ ref('stg_gender_final_mental_health_assesment') }}
+    FROM {{ ref('staging_gender_final_mental_health_assesment') }}
 ),
 
 -- Join initial and final assessments on case_id

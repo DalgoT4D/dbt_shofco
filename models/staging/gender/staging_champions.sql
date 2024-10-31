@@ -1,9 +1,12 @@
+{{ config(
+  materialized='table'
+) }}
+
 SELECT
     "Site",
     "County",
     "Gender",
     "Mobile",
-    "Engaged",
     "Trained",
     "Identified",
     "Sub_County",
@@ -11,4 +14,4 @@ SELECT
     "National_ID",
     "Champions_Name",
     "Community_Role"
-FROM {{ source('source_commcare', 'Champions_') }}
+FROM {{ source('staging_gender', 'Champions_') }}

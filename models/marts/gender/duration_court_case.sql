@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 SELECT
         case_id,
         -- Explicitly casting to DATE
@@ -12,6 +16,6 @@ SELECT
             ELSE 
                 (current_date - CAST({{ validate_date("case_intake_date") }} AS DATE))
         END AS case_duration_in_days
-    FROM {{ ref('stg_gender_case_occurrences_commcare') }}
+    FROM {{ ref('staging_gender_case_occurrences_commcare') }}
     WHERE 
         {{ validate_date("case_intake_date") }} IS NOT NULL

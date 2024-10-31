@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 WITH mental_health_assessment_data AS (
     SELECT
         id,
@@ -40,7 +44,7 @@ WITH mental_health_assessment_data AS (
 
         data::jsonb->'meta'->>'instanceID' AS session_id,  -- Extract the session ID
         data::jsonb->>'received_on' AS final_form_filling_date  -- Use 'received_on' for the form-filling date
-    FROM {{ source('source_commcare', 'Final_Mental_Health_Assessment_Form') }}
+    FROM {{ source('staging_gender', 'Final_Mental_Health_Assessment_Form') }}
 )
 SELECT
     id,

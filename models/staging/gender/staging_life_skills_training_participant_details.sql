@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 WITH roc_club_participants AS (
     SELECT
         id,
@@ -25,7 +29,7 @@ WITH roc_club_participants AS (
             WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term3' THEN TO_TIMESTAMP('2024-08-31', 'YYYY-MM-DD')
             ELSE NULL::timestamp
         END AS term_end_date
-    FROM {{ source('source_commcare', 'IIVC_Life_Skills_Training') }}
+    FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
     WHERE data::jsonb->'form'->>'target_group' = 'roc_club'
     AND jsonb_typeof(data->'form'->'membership_details') = 'array'  -- Ensure it's an array
 ),

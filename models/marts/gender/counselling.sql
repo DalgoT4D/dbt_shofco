@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 with
     gender_counselling_data as (
         select distinct
@@ -26,7 +30,7 @@ with
             reason_for_client_requiring_followup_sessions,
             is_client_being_referred_for_further_assistance,
             case_id
-        from {{ ref("stg_gender_counselling_commcare") }}
+        from {{ ref("staging_gender_counselling_commcare") }}
     )
 select *
 from gender_counselling_data

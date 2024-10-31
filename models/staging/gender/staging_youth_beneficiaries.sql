@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 SELECT
     -- Extract fields from the JSON 'properties' key in the 'data' column
     (data::json->>'case_id') AS case_id,
@@ -14,4 +18,4 @@ SELECT
     (data::json->'properties'->>'date_opened') AS date_opened,
     -- Reference indexed_on directly
     indexed_on
-FROM {{ source('t4d_staging_youth', 'zzz_case') }}
+FROM {{ source('staging_youth', 'zzz_case') }}

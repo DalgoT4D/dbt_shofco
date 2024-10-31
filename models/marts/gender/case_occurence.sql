@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 with
     safe_house_data as (
         select
@@ -5,7 +9,7 @@ with
             parent_case_id,
             {{ validate_date("date_of_safehouse_onboarding") }} as date_of_safe_house_onboarding,
             {{ validate_date("date_of_discharge") }} as date_of_safe_house_discharge
-        from {{ ref("stg_gender_safe_house_commcare") }}
+        from {{ ref("staging_gender_safe_house_commcare") }}
         where {{ validate_date("date_of_safehouse_onboarding") }} IS NOT NULL
     ),
     case_occurrences_data as (
@@ -95,7 +99,7 @@ with
             parent_case_id,
             parent_case_type,
             closed
-        from {{ ref("stg_gender_case_occurrences_commcare") }}
+        from {{ ref("staging_gender_case_occurrences_commcare") }}
     )
 
 select distinct
@@ -132,7 +136,7 @@ left join
     safe_house_data
     on cases.case_id = safe_house_data.parent_case_id
 left join
-    {{ ref("gender_survivors_data") }} survivors
+    {{ ref("survivors_data") }} survivors
     on cases.parent_case_id = survivors.case_id
 left join
     {{ source("source_commcare", "dim_location_administrative_units") }} locations

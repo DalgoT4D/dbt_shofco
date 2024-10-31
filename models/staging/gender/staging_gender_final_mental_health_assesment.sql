@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 WITH mental_health_assessment_data AS (
     SELECT
         id,

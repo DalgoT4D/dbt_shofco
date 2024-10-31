@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 SELECT
         case_id,
         -- Explicitly casting to DATE

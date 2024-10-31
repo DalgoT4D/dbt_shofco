@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 SELECT
         (data::json->'form'->>'date_of_visit') AS date_of_visit,
         -- Extract the overall satisfaction score from the new JSON structure

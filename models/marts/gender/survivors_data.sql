@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 with
     survivors_data as (
         select

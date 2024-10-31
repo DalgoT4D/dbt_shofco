@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 with
     gender_counselling_data as (
         select distinct

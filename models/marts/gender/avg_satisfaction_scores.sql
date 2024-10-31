@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 -- Calculate average satisfaction per person, considering only non-null scores
 WITH avg_satisfaction_per_person AS (
     SELECT

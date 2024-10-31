@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 WITH roc_club_participants AS (
     SELECT
         id,

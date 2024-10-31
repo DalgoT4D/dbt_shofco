@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 WITH initial_mental_health_assessment_staging AS (
     SELECT
         id,  -- Extract the unique form ID

@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 with
     safe_house_data as (
         select

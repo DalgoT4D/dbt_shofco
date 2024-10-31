@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 SELECT
     INITCAP(TRIM("GBV_Leader_Name")) AS "Name",
     INITCAP(TRIM("County")) AS "County",

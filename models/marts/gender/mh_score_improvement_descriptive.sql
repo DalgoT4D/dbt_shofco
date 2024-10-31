@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 WITH initial_assessments AS (
     -- Select and calculate the average score from the initial assessment
     SELECT

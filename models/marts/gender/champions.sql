@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 WITH champions_data AS (
     SELECT
         "Site",

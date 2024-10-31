@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 with
     -- Fetch the case data with onboarding date
     case_occurrences_data as (

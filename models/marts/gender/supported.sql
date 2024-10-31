@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 with
     case_occurrences_data as (
         select

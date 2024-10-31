@@ -1,3 +1,7 @@
+{{ config(
+  materialized='table'
+) }}
+
 SELECT
     -- Extract fields from the JSON 'properties' key in the 'data' column
     (data::json->>'case_id') AS case_id,

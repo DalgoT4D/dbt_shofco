@@ -2,22 +2,6 @@
   materialized='table'
 ) }}
 
-WITH champions_data AS (
-    SELECT
-        "Site",
-        INITCAP(TRIM("County")) AS "County",
-        INITCAP(TRIM("Gender")) AS "Gender",  -- Normalizes gender
-        "Mobile",
-        "Trained",
-        "Identified",
-        INITCAP(TRIM("Sub_County")) AS "Sub_County",
-        INITCAP(TRIM("Sub_County_1")) AS "Sub_County_1",
-        "National_ID",
-        INITCAP(TRIM("Champions_Name")) AS "Champions_Name",
-        INITCAP(TRIM("Community_Role")) AS "Community_Role"
-    FROM {{ ref('staging_champions') }}  -- Refers to the previous model
-)
-
 SELECT
     *,
     CASE
@@ -30,5 +14,16 @@ SELECT
         
         -- Default: none are Yes
         ELSE 'None'
-    END AS status
-FROM champions_data
+    END AS status,
+    
+    CASE
+        WHEN "Date_trained" IS NOT NULL THEN 'Quarter ' || EXTRACT(QUARTER FROM "Date_trained")
+        ELSE 'Unknown'
+    END AS "quarter_trained",
+    
+    CASE
+        WHEN "Date_identified" IS NOT NULL THEN 'Quarter ' || EXTRACT(QUARTER FROM "Date_identified")
+        ELSE 'Unknown'
+    END AS "quarter_identified"
+
+FROM {{ ref('staging_champions') }}

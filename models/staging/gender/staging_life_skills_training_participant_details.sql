@@ -46,7 +46,7 @@ community_safe_space_participants AS (
         -- Use NULL for timestamp fields to maintain consistency with ROC Club
         NULL::timestamp AS term_start_date,
         NULL::timestamp AS term_end_date
-    FROM {{ source('source_commcare', 'IIVC_Life_Skills_Training') }}
+    FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
     WHERE data::jsonb->'form'->>'target_group' = 'community_safe_space'
     AND jsonb_typeof(data->'form'->'community_safe_space_participants_details') = 'array'  -- Ensure it's an array
 )

@@ -1,0 +1,1451 @@
+location_id,source_primary_key,county_id,county_code,county_name,constituency_id,constituency_name,ward_id,ward_name,deleted,location_name_key
+152,c61d64d433b640afa6142970dc3fb471,garissa,GRS,Garissa,fafi,Fafi,bura,Bura,N,GRS_fafi_bura
+407,38f8de1be42c4de18279cdcc2c13fb72,machakos,MCK,Machakos,mwala,Mwala,masii,Masii,N,MCK_mwala_masii
+1,6159ba4d91da416a8ffded566e5ca5a0,mombasa,MSA,Mombasa,changamwe,Changamwe,port_reitz,Port Reitz,N,MSA_changamwe_port_reitz
+2,de04f738574843fc803a33715199b3ae,mombasa,MSA,Mombasa,changamwe,Changamwe,kipevu,Kipevu,N,MSA_changamwe_kipevu
+3,77ea9faf12b644f587cc7f3851e5a7f6,mombasa,MSA,Mombasa,changamwe,Changamwe,airport,Airport,N,MSA_changamwe_airport
+4,5411aa465b7b4298bbd671d72a38e5c1,mombasa,MSA,Mombasa,changamwe,Changamwe,changamwe,Changamwe,N,MSA_changamwe_changamwe
+5,bfd8168e21aa4d638920dfcedc319f80,mombasa,MSA,Mombasa,changamwe,Changamwe,chaani,Chaani,N,MSA_changamwe_chaani
+6,cd6b833ec6564168b0f320f2381592ed,mombasa,MSA,Mombasa,jomvu,Jomvu,jomvu_kuu,Jomvu Kuu,N,MSA_jomvu_jomvu_kuu
+7,3839f53821994570ab4421b486361fbe,mombasa,MSA,Mombasa,jomvu,Jomvu,miritini,Miritini,N,MSA_jomvu_miritini
+8,e17ef009310a468985d83da383e762e3,mombasa,MSA,Mombasa,jomvu,Jomvu,mikindani,Mikindani,N,MSA_jomvu_mikindani
+9,1dfbc26d199e4291a275d53eb442e05e,mombasa,MSA,Mombasa,kisauni,Kisauni,mjambere,Mjambere,N,MSA_kisauni_mjambere
+10,d289fa0a30444442a09f34e3634703a3,mombasa,MSA,Mombasa,kisauni,Kisauni,junda,Junda,N,MSA_kisauni_junda
+11,922afa11bd9e450aaef5c640c932dbe3,mombasa,MSA,Mombasa,kisauni,Kisauni,bamburi,Bamburi,N,MSA_kisauni_bamburi
+12,09ea565ba3b84af3ac3471197502982f,mombasa,MSA,Mombasa,kisauni,Kisauni,mwakirunge,Mwakirunge,N,MSA_kisauni_mwakirunge
+13,822fd0a9cfc14e4a933d01f23118309c,mombasa,MSA,Mombasa,kisauni,Kisauni,mtopanga,Mtopanga,N,MSA_kisauni_mtopanga
+14,e1d7024a2d77431096c8adee2173b6e8,mombasa,MSA,Mombasa,kisauni,Kisauni,magogoni,Magogoni,N,MSA_kisauni_magogoni
+15,53614e1bd1e3449a8c21efab8411c4e8,mombasa,MSA,Mombasa,kisauni,Kisauni,shanzu,Shanzu,N,MSA_kisauni_shanzu
+16,e82b6f3c5080478a99e8a6ae584b9cea,mombasa,MSA,Mombasa,nyali,Nyali,frere_town,Frere Town,N,MSA_nyali_frere_town
+17,bc20bba356f14db8a5442d9df710e196,mombasa,MSA,Mombasa,nyali,Nyali,ziwa_la_ngombe,Ziwa La NgOmbe,N,MSA_nyali_ziwa_la_ngombe
+18,627e89f7bfa54601b4be22d18e1a4e14,mombasa,MSA,Mombasa,nyali,Nyali,mkomani,Mkomani,N,MSA_nyali_mkomani
+19,6f3db6cbfa5e4d87821852cb4f68367a,mombasa,MSA,Mombasa,nyali,Nyali,kongowea,Kongowea,N,MSA_nyali_kongowea
+20,b25838096cd24f6aa949ba68970c5110,mombasa,MSA,Mombasa,nyali,Nyali,kadzandani,Kadzandani,N,MSA_nyali_kadzandani
+21,9dbb60c147c249948f27b5d6c4250a78,mombasa,MSA,Mombasa,likoni,Likoni,mtongwe,Mtongwe,N,MSA_likoni_mtongwe
+22,02b7f683743b452e9f1f6d4ababbdbdc,mombasa,MSA,Mombasa,likoni,Likoni,shika_adabu,Shika Adabu,N,MSA_likoni_shika_adabu
+23,6e436a54b3c74acb97e790757169b248,mombasa,MSA,Mombasa,likoni,Likoni,bofu,Bofu,N,MSA_likoni_bofu
+24,65e14f3ab3fe4c8ea98eb2aa017e35d6,mombasa,MSA,Mombasa,likoni,Likoni,likoni,Likoni,N,MSA_likoni_likoni
+25,e206d7a8f358485690b7188c7ec859bf,mombasa,MSA,Mombasa,likoni,Likoni,timbwani,Timbwani,N,MSA_likoni_timbwani
+26,804d898d02b74a418a99b5f73596fe43,mombasa,MSA,Mombasa,mvita,Mvita,mji_wa_kale_makadara,Mji Wa Kale/Makadara,N,MSA_mvita_mji_wa_kale_makadara
+27,a679610603f14a4ba1755463d575600e,mombasa,MSA,Mombasa,mvita,Mvita,tudor,Tudor,N,MSA_mvita_tudor
+28,d4952dddedc947b88d76b9121d4f8ced,mombasa,MSA,Mombasa,mvita,Mvita,tononoka,Tononoka,N,MSA_mvita_tononoka
+29,76caf54bd5f643559bce5c3fec86b9b1,mombasa,MSA,Mombasa,mvita,Mvita,shimanzi_ganjoni,Shimanzi/Ganjoni,N,MSA_mvita_shimanzi_ganjoni
+30,699c5116ed5348968892ded4dbf1e14b,mombasa,MSA,Mombasa,mvita,Mvita,majengo,Majengo,N,MSA_mvita_majengo
+31,8f1daa1245684b68abb3e1fae5823942,kwale,KWL,Kwale,msambweni,Msambweni,gombatobongwe,Gombatobongwe,N,KWL_msambweni_gombatobongwe
+32,262aebf9de7d4b4f89a4b5655c39234c,kwale,KWL,Kwale,msambweni,Msambweni,ukunda,Ukunda,N,KWL_msambweni_ukunda
+33,9c5678b67bba4eab92edc7644dd803e6,kwale,KWL,Kwale,msambweni,Msambweni,kinondo,Kinondo,N,KWL_msambweni_kinondo
+34,9f90409da9274c81b86f6ec0429d360c,kwale,KWL,Kwale,msambweni,Msambweni,ramisi,Ramisi,N,KWL_msambweni_ramisi
+35,2beab455d79b40018feeaf31efa4d792,kwale,KWL,Kwale,lungalunga,Lungalunga,pongwekikoneni,Pongwekikoneni,N,KWL_lungalunga_pongwekikoneni
+36,250bea02e6a649da9b6137bed0fad781,kwale,KWL,Kwale,lungalunga,Lungalunga,dzombo,Dzombo,N,KWL_lungalunga_dzombo
+37,ba6525a7e36949f3a01a256b771ba4eb,kwale,KWL,Kwale,lungalunga,Lungalunga,mwereni,Mwereni,N,KWL_lungalunga_mwereni
+38,d17fb975ab634a9eab82f163903a57d4,kwale,KWL,Kwale,lungalunga,Lungalunga,vanga,Vanga,N,KWL_lungalunga_vanga
+39,88b6e8c76e324f8a86b258018d02317b,kwale,KWL,Kwale,matuga,Matuga,tsimba_golini,Tsimba Golini,N,KWL_matuga_tsimba_golini
+40,8c3e61a486b14fa6803db049e403239e,kwale,KWL,Kwale,matuga,Matuga,waa,Waa,N,KWL_matuga_waa
+41,d791ed9952634e5bb4f15f20d30b3c59,kwale,KWL,Kwale,matuga,Matuga,tiwi,Tiwi,N,KWL_matuga_tiwi
+42,540e6d50e97340b2becc719ba17cd925,kwale,KWL,Kwale,matuga,Matuga,kubo_south,Kubo South,N,KWL_matuga_kubo_south
+43,1354862bcc434fee87e4761f3f8073e6,kwale,KWL,Kwale,matuga,Matuga,mkongani,Mkongani,N,KWL_matuga_mkongani
+44,a1e8e6f6212442af8274df8b0cf754ce,kwale,KWL,Kwale,kinango,Kinango,nadavaya,Nadavaya,N,KWL_kinango_nadavaya
+45,c3da97ec8bfd42e0976fa8d5e7313fdd,kwale,KWL,Kwale,kinango,Kinango,puma,Puma,N,KWL_kinango_puma
+46,21132d1337524deaacffd6902905ccfe,kwale,KWL,Kwale,kinango,Kinango,kinango,Kinango,N,KWL_kinango_kinango
+47,ca7d9cb29db5422f8d52460703665347,kwale,KWL,Kwale,kinango,Kinango,mackinnon-road,Mackinnon-Road,N,KWL_kinango_mackinnon-road
+48,e77a4fa4455c4f6e9573912c12dc1c59,kwale,KWL,Kwale,kinango,Kinango,chengoni_samburu,Chengoni/Samburu,N,KWL_kinango_chengoni_samburu
+49,4b85b57af2f5449cb2d1ea7263241535,kwale,KWL,Kwale,kinango,Kinango,mwavumbo,Mwavumbo,N,KWL_kinango_mwavumbo
+50,48d64a7fbe02431dabae0c5d67cb7677,kwale,KWL,Kwale,kinango,Kinango,kasemeni,Kasemeni,N,KWL_kinango_kasemeni
+51,fa0769c67a774f5da540333d5f155949,kilifi,KLF,Kilifi,kilifi_north,Kilifi North,tezo,Tezo,N,KLF_kilifi_north_tezo
+52,c3bf4ea2e7ee4948a409e323b40659d0,kilifi,KLF,Kilifi,kilifi_north,Kilifi North,sokoni,Sokoni,N,KLF_kilifi_north_sokoni
+53,3bb105740fe74d17a647539bd392cd83,kilifi,KLF,Kilifi,kilifi_north,Kilifi North,kibarani,Kibarani,N,KLF_kilifi_north_kibarani
+54,c8c5059ad2f24e36b79cde6ddd0fcd31,kilifi,KLF,Kilifi,kilifi_north,Kilifi North,dabaso,Dabaso,N,KLF_kilifi_north_dabaso
+55,76c9d5bec9a34dd6a879ef0bc1ca9de6,kilifi,KLF,Kilifi,kilifi_north,Kilifi North,matsangoni,Matsangoni,N,KLF_kilifi_north_matsangoni
+56,fe0dd8dff80746e7a441ae4e65d16f2f,kilifi,KLF,Kilifi,kilifi_north,Kilifi North,watamu,Watamu,N,KLF_kilifi_north_watamu
+57,f171b02b0724439899eee37c861abe90,kilifi,KLF,Kilifi,kilifi_north,Kilifi North,mnarani,Mnarani,N,KLF_kilifi_north_mnarani
+58,e50e15822775441da5b60bfa7ff3d0c8,kilifi,KLF,Kilifi,kilifi_south,Kilifi South,junju,Junju,N,KLF_kilifi_south_junju
+59,68f76fa81d334f478aafe798d6e2fd81,kilifi,KLF,Kilifi,kilifi_south,Kilifi South,mwarakaya,Mwarakaya,N,KLF_kilifi_south_mwarakaya
+60,69c73f9592cf492ca86949e28ba0aae5,kilifi,KLF,Kilifi,kilifi_south,Kilifi South,shimo_la_tewa,Shimo La Tewa,N,KLF_kilifi_south_shimo_la_tewa
+61,e5b8901fd64f40f88d0bb87ee390b065,kilifi,KLF,Kilifi,kilifi_south,Kilifi South,chasimba,Chasimba,N,KLF_kilifi_south_chasimba
+62,e9376a0e39d341de8392410f13c869e2,kilifi,KLF,Kilifi,kilifi_south,Kilifi South,mtepeni,Mtepeni,N,KLF_kilifi_south_mtepeni
+63,d7406a2729fd416ca54088cb166f759a,kilifi,KLF,Kilifi,kaloleni,Kaloleni,mariakani,Mariakani,N,KLF_kaloleni_mariakani
+64,25242a5b2edc465a8c3b4bc446e54486,kilifi,KLF,Kilifi,kaloleni,Kaloleni,kayafungo,Kayafungo,N,KLF_kaloleni_kayafungo
+65,5aa196185a33481fbe1ea8635a26c844,kilifi,KLF,Kilifi,kaloleni,Kaloleni,kaloleni,Kaloleni,N,KLF_kaloleni_kaloleni
+66,b25ac6887632413ca876f5d789054992,kilifi,KLF,Kilifi,kaloleni,Kaloleni,mwanamwinga,Mwanamwinga,N,KLF_kaloleni_mwanamwinga
+67,e73f1b19e72040059cfc5730067f3662,kilifi,KLF,Kilifi,rabai,Rabai,mwawesa,Mwawesa,N,KLF_rabai_mwawesa
+68,49dc1d72b39443de91a5818e76846504,kilifi,KLF,Kilifi,rabai,Rabai,ruruma,Ruruma,N,KLF_rabai_ruruma
+69,d7944e67576a4d2a9a2beab045777607,kilifi,KLF,Kilifi,rabai,Rabai,kambe_ribe,Kambe/Ribe,N,KLF_rabai_kambe_ribe
+70,52fcb723cc37439e8af9e99ff372f26f,kilifi,KLF,Kilifi,rabai,Rabai,rabai_kisurutini,Rabai/Kisurutini,N,KLF_rabai_rabai_kisurutini
+71,38c0986d61ef40ff9ee0138f3aeb4598,kilifi,KLF,Kilifi,ganze,Ganze,ganze,Ganze,N,KLF_ganze_ganze
+72,3af77f3d384d40bcaa380a4a8de5eb51,kilifi,KLF,Kilifi,ganze,Ganze,bamba,Bamba,N,KLF_ganze_bamba
+73,cd8af1f6354c4af7832dc49b9ed643c2,kilifi,KLF,Kilifi,ganze,Ganze,jaribuni,Jaribuni,N,KLF_ganze_jaribuni
+74,fdce2cdf51f842a79c18af249de9226f,kilifi,KLF,Kilifi,ganze,Ganze,sokoke,Sokoke,N,KLF_ganze_sokoke
+75,7d9ec7d5db5c4152b41f3a0f30c7e01e,kilifi,KLF,Kilifi,malindi,Malindi,jilore,Jilore,N,KLF_malindi_jilore
+76,264f65709d804fbb834e032574a85b45,kilifi,KLF,Kilifi,malindi,Malindi,kakuyuni,Kakuyuni,N,KLF_malindi_kakuyuni
+77,9b9b591714054526ab1259c33568623a,kilifi,KLF,Kilifi,malindi,Malindi,ganda,Ganda,N,KLF_malindi_ganda
+78,8cda84a10993420a93564dc1094afba9,kilifi,KLF,Kilifi,malindi,Malindi,malindi_town,Malindi Town,N,KLF_malindi_malindi_town
+79,a0d21c3d88df4f0bbe288e8e2fc66269,kilifi,KLF,Kilifi,malindi,Malindi,shella,Shella,N,KLF_malindi_shella
+80,c8fc93e8875b457a833d4d359c408350,kilifi,KLF,Kilifi,magarini,Magarini,marafa,Marafa,N,KLF_magarini_marafa
+81,7d8694ee79ce4d0f8f0ce66d3e087ce1,kilifi,KLF,Kilifi,magarini,Magarini,magarini,Magarini,N,KLF_magarini_magarini
+82,ae7a9e15c3d64a22b49e843bae11c1b4,kilifi,KLF,Kilifi,magarini,Magarini,gongoni,Gongoni,N,KLF_magarini_gongoni
+83,4a677fd2a19e4c71863e2241ce9781a6,kilifi,KLF,Kilifi,magarini,Magarini,adu,Adu,N,KLF_magarini_adu
+84,d69c4cfc1dd54e39aa9761da19196cb0,kilifi,KLF,Kilifi,magarini,Magarini,garashi,Garashi,N,KLF_magarini_garashi
+85,8440ec40a1204146b2b31a8baa458b09,kilifi,KLF,Kilifi,magarini,Magarini,sabaki,Sabaki,N,KLF_magarini_sabaki
+86,b1ecedcda5ff44829570a3c6b5881fd6,tana_river,TRV,Tana River,garsen,Garsen,kipini_east,Kipini East,N,TRV_garsen_kipini_east
+87,015d0b7a0b644f1aa73566740013f404,tana_river,TRV,Tana River,garsen,Garsen,garsen_south,Garsen South,N,TRV_garsen_garsen_south
+88,2c9685f090c64106a0ba04813558c090,tana_river,TRV,Tana River,garsen,Garsen,kipini_west,Kipini West,N,TRV_garsen_kipini_west
+89,16ad13ff5a7d44b7ae11e89a19f8d63f,tana_river,TRV,Tana River,garsen,Garsen,garsen_central,Garsen Central,N,TRV_garsen_garsen_central
+90,2b00e84dfdf8493290e1bf1360a44015,tana_river,TRV,Tana River,garsen,Garsen,garsen_west,Garsen West,N,TRV_garsen_garsen_west
+91,ec81a410267b4411b816efc73e76eda7,tana_river,TRV,Tana River,garsen,Garsen,garsen_north,Garsen North,N,TRV_garsen_garsen_north
+92,e751552d804e40d589c8111978d3d2c6,tana_river,TRV,Tana River,galole,Galole,kinakomba,Kinakomba,N,TRV_galole_kinakomba
+93,58e0bb57e27241379cb0aa98f91e85c6,tana_river,TRV,Tana River,galole,Galole,mikinduni,Mikinduni,N,TRV_galole_mikinduni
+94,632f216aed85436caa3ec2480b58b2cb,tana_river,TRV,Tana River,galole,Galole,chewani,Chewani,N,TRV_galole_chewani
+95,217c11a6ddec4a2388d157e029d8d146,tana_river,TRV,Tana River,galole,Galole,wayu,Wayu,N,TRV_galole_wayu
+96,1207bfe0c40b475f8d8abde3d264b937,tana_river,TRV,Tana River,bura,Bura,chewele,Chewele,N,TRV_bura_chewele
+97,25a43901b01e451187d9c231567df52b,tana_river,TRV,Tana River,bura,Bura,bura,Bura,N,TRV_bura_bura
+98,982bf58bef2f427fbcefbc31ae3a1f3f,tana_river,TRV,Tana River,bura,Bura,bangale,Bangale,N,TRV_bura_bangale
+99,785dc5cb95f8458ea239d3dab02a64ff,tana_river,TRV,Tana River,bura,Bura,sala,Sala,N,TRV_bura_sala
+100,1b4888d43c0d46baa4429dc6f61c32a9,tana_river,TRV,Tana River,bura,Bura,madogo,Madogo,N,TRV_bura_madogo
+101,3890de8da69a4698b08be3421dc4e647,lamu,LMU,Lamu,lamu_east,Lamu East,faza,Faza,N,LMU_lamu_east_faza
+102,18fe45e1bd66436e8225142df7436d2e,lamu,LMU,Lamu,lamu_east,Lamu East,kiunga,Kiunga,N,LMU_lamu_east_kiunga
+103,64df4af8d0364ea0a0aa842f6d935eb2,lamu,LMU,Lamu,lamu_east,Lamu East,basuba,Basuba,N,LMU_lamu_east_basuba
+104,67e70dbb8d19464792506eb3fa7cb483,lamu,LMU,Lamu,lamu_west,Lamu West,shella,Shella,N,LMU_lamu_west_shella
+105,f19026c76f124544b006084fe40bd9c5,lamu,LMU,Lamu,lamu_west,Lamu West,mkomani,Mkomani,N,LMU_lamu_west_mkomani
+106,538acc40154a4167b512ecd0f3ffe48d,lamu,LMU,Lamu,lamu_west,Lamu West,hindi,Hindi,N,LMU_lamu_west_hindi
+107,393399910db14020a6462df04fa2a5b5,lamu,LMU,Lamu,lamu_west,Lamu West,mkunumbi,Mkunumbi,N,LMU_lamu_west_mkunumbi
+108,8800877fed98477dbb8c3e8dba1fe666,lamu,LMU,Lamu,lamu_west,Lamu West,hongwe,Hongwe,N,LMU_lamu_west_hongwe
+109,7e761d8ae3c64671bb6805f4bb0592f1,lamu,LMU,Lamu,lamu_west,Lamu West,witu,Witu,N,LMU_lamu_west_witu
+110,d4032ef3e1e142b78cabee95a480da0e,lamu,LMU,Lamu,lamu_west,Lamu West,bahari,Bahari,N,LMU_lamu_west_bahari
+111,a472af44dde541459352117896fb0043,taita_taveta,TVT,Taita Taveta,taveta,Taveta,chala,Chala,N,TVT_taveta_chala
+112,a11a572a70e847faa479686232576942,taita_taveta,TVT,Taita Taveta,taveta,Taveta,mahoo,Mahoo,N,TVT_taveta_mahoo
+113,4a944a6ae3d043429f494ff710d673ae,taita_taveta,TVT,Taita Taveta,taveta,Taveta,bomeni,Bomeni,N,TVT_taveta_bomeni
+114,1882ea4013be4a368ff5ac957faef179,taita_taveta,TVT,Taita Taveta,taveta,Taveta,mboghoni,Mboghoni,N,TVT_taveta_mboghoni
+115,321380c8907c4d0aaee651e8c1931550,taita_taveta,TVT,Taita Taveta,taveta,Taveta,mata,Mata,N,TVT_taveta_mata
+116,f61a98e6210c42b69e3a3f5b6046b0e2,taita_taveta,TVT,Taita Taveta,wundanyi,Wundanyi,wundanyi_mbale,Wundanyi/Mbale,N,TVT_wundanyi_wundanyi_mbale
+117,d2e08e23ccc9494e9d4b1a477a63e09f,taita_taveta,TVT,Taita Taveta,wundanyi,Wundanyi,werugha,Werugha,N,TVT_wundanyi_werugha
+118,319f663ad4d34cf883bc7f256fb6a114,taita_taveta,TVT,Taita Taveta,wundanyi,Wundanyi,wumingu_kishushe,Wumingu/Kishushe,N,TVT_wundanyi_wumingu_kishushe
+119,cec8d00f00fe45cfb18b02ada41c4433,taita_taveta,TVT,Taita Taveta,wundanyi,Wundanyi,mwanda_mgange,Mwanda/Mgange,N,TVT_wundanyi_mwanda_mgange
+120,26cd86a4ecfc4322a2c900843fb6a3d4,taita_taveta,TVT,Taita Taveta,mwatate,Mwatate,ronge,RongE,N,TVT_mwatate_ronge
+121,560ce642de1747859eff4cd9cb2f9cb8,taita_taveta,TVT,Taita Taveta,mwatate,Mwatate,mwatate,Mwatate,N,TVT_mwatate_mwatate
+122,0e10bc6b29d64495bcca024bef1bae40,taita_taveta,TVT,Taita Taveta,mwatate,Mwatate,bura,Bura,N,TVT_mwatate_bura
+123,10f9130bc30549d88b8bfefa6dc47a4b,taita_taveta,TVT,Taita Taveta,mwatate,Mwatate,chawia,Chawia,N,TVT_mwatate_chawia
+124,15e76678b18f4df0946cffea699f3ab0,taita_taveta,TVT,Taita Taveta,mwatate,Mwatate,wusi_kishamba,Wusi/Kishamba,N,TVT_mwatate_wusi_kishamba
+125,98b01beff00541efa06bf4b7837b9335,taita_taveta,TVT,Taita Taveta,voi,Voi,mbololo,Mbololo,N,TVT_voi_mbololo
+126,554fdd04b55d4caabef1621f61c191ec,taita_taveta,TVT,Taita Taveta,voi,Voi,sagalla,Sagalla,N,TVT_voi_sagalla
+127,69e670d08cc4446789fc28e24a1a5b5a,taita_taveta,TVT,Taita Taveta,voi,Voi,kaloleni,Kaloleni,N,TVT_voi_kaloleni
+128,ef359a8326204c279c0e682da794bfa1,taita_taveta,TVT,Taita Taveta,voi,Voi,marungu,Marungu,N,TVT_voi_marungu
+129,d94d668e6a2942c88853e481cbd9628d,taita_taveta,TVT,Taita Taveta,voi,Voi,kasigau,Kasigau,N,TVT_voi_kasigau
+130,23fc4ced174b4265814162504aa755de,taita_taveta,TVT,Taita Taveta,voi,Voi,ngolia,Ngolia,N,TVT_voi_ngolia
+131,4e0d997930d943d382e51f82414e327e,garissa,GRS,Garissa,garissa_township,Garissa Township,waberi,Waberi,N,GRS_garissa_township_waberi
+132,5e6b11378ad245c2920339bdbd84ed55,garissa,GRS,Garissa,garissa_township,Garissa Township,galbet,Galbet,N,GRS_garissa_township_galbet
+133,d335e8e5c15a4a19a25202b3ebde3107,garissa,GRS,Garissa,garissa_township,Garissa Township,township,Township,N,GRS_garissa_township_township
+134,a587521638b14e3ba9919e679ade71d0,garissa,GRS,Garissa,garissa_township,Garissa Township,iftin,Iftin,N,GRS_garissa_township_iftin
+135,0df2edbdb5224f068964bb2982ce5046,garissa,GRS,Garissa,balambala,Balambala,balambala,Balambala,N,GRS_balambala_balambala
+136,b1db80d2f8ca4a0cbe96939f7f89a126,garissa,GRS,Garissa,balambala,Balambala,danyere,Danyere,N,GRS_balambala_danyere
+137,e210a7f0fdde436e9dd6c460379d681b,garissa,GRS,Garissa,balambala,Balambala,jara_jara,Jara Jara,N,GRS_balambala_jara_jara
+138,6bff1486be37416c89b2f4672961f1e0,garissa,GRS,Garissa,balambala,Balambala,saka,Saka,N,GRS_balambala_saka
+139,2dca4908466b40caab6eb7dfb5d64bdf,garissa,GRS,Garissa,balambala,Balambala,sankuri,Sankuri,N,GRS_balambala_sankuri
+140,c43dcfd78572455b9852aad682c4a66a,garissa,GRS,Garissa,lagdera,Lagdera,modogashe,Modogashe,N,GRS_lagdera_modogashe
+141,e7930a164a944b018aa6a7329d0de3a8,garissa,GRS,Garissa,lagdera,Lagdera,benane,Benane,N,GRS_lagdera_benane
+142,5efc401c4492466ab4deb29b33f987ac,garissa,GRS,Garissa,lagdera,Lagdera,goreale,Goreale,N,GRS_lagdera_goreale
+143,b8e7ac4c749b47ea917d487c66d2f5e2,garissa,GRS,Garissa,lagdera,Lagdera,maalimin,Maalimin,N,GRS_lagdera_maalimin
+144,6ca480e4b09b4ebfbf237dcead0a06c5,garissa,GRS,Garissa,lagdera,Lagdera,sabena,Sabena,N,GRS_lagdera_sabena
+145,6931eef538514a829f5cae6ca658c18d,garissa,GRS,Garissa,lagdera,Lagdera,baraki,Baraki,N,GRS_lagdera_baraki
+146,2b4557089a12477494613990d3750a3e,garissa,GRS,Garissa,dadaab,Dadaab,dertu,Dertu,N,GRS_dadaab_dertu
+147,5feb00cbc2704103a804b5eae03c93c9,garissa,GRS,Garissa,dadaab,Dadaab,dadaab,Dadaab,N,GRS_dadaab_dadaab
+148,15c63fc92af84ba3a9d7a9a5f88a255a,garissa,GRS,Garissa,dadaab,Dadaab,labasigale,Labasigale,N,GRS_dadaab_labasigale
+149,a68d5d6010ce4e06a8c4135e817fa49c,garissa,GRS,Garissa,dadaab,Dadaab,damajale,Damajale,N,GRS_dadaab_damajale
+150,ac6c709287ef4514b93bfbbedf77dd81,garissa,GRS,Garissa,dadaab,Dadaab,liboi,Liboi,N,GRS_dadaab_liboi
+151,ad359785367d4c9cae40ed2f9c123f90,garissa,GRS,Garissa,dadaab,Dadaab,abakaile,Abakaile,N,GRS_dadaab_abakaile
+153,a60ea06167b948d5ad56bffc3a59df31,garissa,GRS,Garissa,fafi,Fafi,dekaharia,Dekaharia,N,GRS_fafi_dekaharia
+154,4db1a0b669c449be80bd7a87ea601043,garissa,GRS,Garissa,fafi,Fafi,jarajila,Jarajila,N,GRS_fafi_jarajila
+155,95189908e7d94f9b816117fd281bed77,garissa,GRS,Garissa,fafi,Fafi,fafi,Fafi,N,GRS_fafi_fafi
+156,6091e3cf9d6249bc85d178d770685db2,garissa,GRS,Garissa,fafi,Fafi,nanighi,Nanighi,N,GRS_fafi_nanighi
+157,313f3d6a52f84f6e90bc00ff1bca0ed5,garissa,GRS,Garissa,ijara,Ijara,hulugho,Hulugho,N,GRS_ijara_hulugho
+158,0aaf679ed4b946c4b5300cf741349705,garissa,GRS,Garissa,ijara,Ijara,sangailu,Sangailu,N,GRS_ijara_sangailu
+159,dcc1d8ba492c4440bf0e4adbe6265dae,garissa,GRS,Garissa,ijara,Ijara,ijara,Ijara,N,GRS_ijara_ijara
+160,af267fd8f23c47678f73594d6fe2b37d,garissa,GRS,Garissa,ijara,Ijara,masalani,Masalani,N,GRS_ijara_masalani
+161,27b53e0954ce446ab2f3ae902ccbe8ab,wajir,WJR,Wajir,wajir_north,Wajir North,gurar,Gurar,N,WJR_wajir_north_gurar
+162,82a241094c2f4bc8a7dd12f3919ee54f,wajir,WJR,Wajir,wajir_north,Wajir North,bute,Bute,N,WJR_wajir_north_bute
+163,5a54a5cd34e343dabb87604962ab9cc3,wajir,WJR,Wajir,wajir_north,Wajir North,korondile,Korondile,N,WJR_wajir_north_korondile
+164,33447c09ae64475f80118db8f23b90ef,wajir,WJR,Wajir,wajir_north,Wajir North,malkagufu,Malkagufu,N,WJR_wajir_north_malkagufu
+165,81a25326a14c4fb180b472fc0c495593,wajir,WJR,Wajir,wajir_north,Wajir North,batalu,Batalu,N,WJR_wajir_north_batalu
+166,413a40cc0aad4b8b8c162344c974b6c0,wajir,WJR,Wajir,wajir_north,Wajir North,danaba,Danaba,N,WJR_wajir_north_danaba
+167,e3a9a885e0394f60824dbbecd8cb0dad,wajir,WJR,Wajir,wajir_north,Wajir North,godoma,Godoma,N,WJR_wajir_north_godoma
+168,53b767b9d6a34cd594efd3a4f9923f90,wajir,WJR,Wajir,wajir_east,Wajir East,wagberi,Wagberi,N,WJR_wajir_east_wagberi
+169,eed6e2931836466ca9198b5c16c4f1df,wajir,WJR,Wajir,wajir_east,Wajir East,township,Township,N,WJR_wajir_east_township
+170,4e904d2acae74d7cb5319a715f2bbbbd,wajir,WJR,Wajir,wajir_east,Wajir East,barwago,Barwago,N,WJR_wajir_east_barwago
+171,bf040eee98404b3ebd5b21a08f75e458,wajir,WJR,Wajir,wajir_east,Wajir East,khorof_harar,Khorof/Harar,N,WJR_wajir_east_khorof_harar
+172,f7bf140a1e6c4c59a130de6987c948dc,wajir,WJR,Wajir,tarbaj,Tarbaj,elben,Elben,N,WJR_tarbaj_elben
+173,57fc932994d84318bccb47e5ea3de450,wajir,WJR,Wajir,tarbaj,Tarbaj,sarman,Sarman,N,WJR_tarbaj_sarman
+174,165af7cd18e5453ebc31db717ea43905,wajir,WJR,Wajir,tarbaj,Tarbaj,tarbaj,Tarbaj,N,WJR_tarbaj_tarbaj
+175,a2d6d45b5d4b4b2e962fc53a25316f0b,wajir,WJR,Wajir,tarbaj,Tarbaj,wargadud,Wargadud,N,WJR_tarbaj_wargadud
+176,3da10048f0a2435aac0d3080dbc55dae,wajir,WJR,Wajir,wajir_west,Wajir West,arbajahan,Arbajahan,N,WJR_wajir_west_arbajahan
+177,b3a23cd9286a48c09b9b119decedf276,wajir,WJR,Wajir,wajir_west,Wajir West,hadado_athibohol,Hadado/Athibohol,N,WJR_wajir_west_hadado_athibohol
+178,77f0fbe4fdfd4b1e9d913641497a2ccb,wajir,WJR,Wajir,wajir_west,Wajir West,ademasajide,Ademasajide,N,WJR_wajir_west_ademasajide
+179,d4d3d3d19b95468791b67abd888073c6,wajir,WJR,Wajir,wajir_west,Wajir West,wagalla_ganyure,Wagalla/Ganyure,N,WJR_wajir_west_wagalla_ganyure
+180,66a31ff1b25e4df8aa1ddbb978c6fa12,wajir,WJR,Wajir,eldas,Eldas,eldas,Eldas,N,WJR_eldas_eldas
+181,c4a2568c5f24421cbef2805a039f0730,wajir,WJR,Wajir,eldas,Eldas,della,Della,N,WJR_eldas_della
+182,3ccd3987ce5d45c69ac44a3dc4b39f61,wajir,WJR,Wajir,eldas,Eldas,lakoley_south_basir,Lakoley South/Basir,N,WJR_eldas_lakoley_south_basir
+183,dc1272cde93345b6a42e007214d7ec39,wajir,WJR,Wajir,eldas,Eldas,elnur_tula_tula,Elnur/Tula Tula,N,WJR_eldas_elnur_tula_tula
+184,3390f50ba3ed4c87a65a0ca63f552b91,wajir,WJR,Wajir,wajir_south,Wajir South,benane,Benane,N,WJR_wajir_south_benane
+185,d8974a7f08534cf09b4d44f87965cf89,wajir,WJR,Wajir,wajir_south,Wajir South,burder,Burder,N,WJR_wajir_south_burder
+186,f959d3a3926046abbb715dc16ee83a49,wajir,WJR,Wajir,wajir_south,Wajir South,dadaja_bulla,Dadaja Bulla,N,WJR_wajir_south_dadaja_bulla
+187,ecec845b79724931b62d082c6ec268cd,wajir,WJR,Wajir,wajir_south,Wajir South,habasswein,Habasswein,N,WJR_wajir_south_habasswein
+188,af36fd33698544d88c20052401efb7ea,wajir,WJR,Wajir,wajir_south,Wajir South,lagboghol_south,Lagboghol South,N,WJR_wajir_south_lagboghol_south
+189,d0cb0c820dd94efd87974bfa26d32d86,wajir,WJR,Wajir,wajir_south,Wajir South,ibrahim_ure,Ibrahim Ure,N,WJR_wajir_south_ibrahim_ure
+190,88103f14e1a2452ba3aca5081a08b578,wajir,WJR,Wajir,wajir_south,Wajir South,diif,Diif,N,WJR_wajir_south_diif
+191,c16627673dae4e3c955e37954b9afd6c,mandera,MDR,Mandera,mandera_west,Mandera West,takaba_south,Takaba South,N,MDR_mandera_west_takaba_south
+192,e9171bb9f7264e18ba99da05bd4bf7c4,mandera,MDR,Mandera,mandera_west,Mandera West,takaba,Takaba,N,MDR_mandera_west_takaba
+193,6c0016de01e2461b874bcfa6e525dac2,mandera,MDR,Mandera,mandera_west,Mandera West,lag_sure,Lag Sure,N,MDR_mandera_west_lag_sure
+194,6f0137c4847d42faba39885a40a6ee2d,mandera,MDR,Mandera,mandera_west,Mandera West,dandu,Dandu,N,MDR_mandera_west_dandu
+195,fc3b9f29f9bb43b589d391ed0d03d167,mandera,MDR,Mandera,mandera_west,Mandera West,gither,Gither,N,MDR_mandera_west_gither
+196,6e1643a15b42463eba540e7fc7727d4a,mandera,MDR,Mandera,banissa,Banissa,banissa,Banissa,N,MDR_banissa_banissa
+197,52bb199da06b4358bd1b047f9fa1a379,mandera,MDR,Mandera,banissa,Banissa,derkhale,Derkhale,N,MDR_banissa_derkhale
+198,5fa2c28445c647d3a7630235c6eac547,mandera,MDR,Mandera,banissa,Banissa,guba,Guba,N,MDR_banissa_guba
+199,d29cf8a43e4c41a893bbc9eb5c366ec2,mandera,MDR,Mandera,banissa,Banissa,malkamari,Malkamari,N,MDR_banissa_malkamari
+200,f5af8a73f8594bcfbdd20b37cea226ec,mandera,MDR,Mandera,banissa,Banissa,kiliwehiri,Kiliwehiri,N,MDR_banissa_kiliwehiri
+201,0ab590d909744352b7e601abc07e553d,mandera,MDR,Mandera,mandera_north,Mandera North,ashabito,Ashabito,N,MDR_mandera_north_ashabito
+202,5c41b53648f44e0897c7b65847c66965,mandera,MDR,Mandera,mandera_north,Mandera North,guticha,Guticha,N,MDR_mandera_north_guticha
+203,06ca1b33b3c94b1088aee080f4e1ffe3,mandera,MDR,Mandera,mandera_north,Mandera North,morothile,Morothile,N,MDR_mandera_north_morothile
+204,3287ceeb9723445597a89cdc78569b5c,mandera,MDR,Mandera,mandera_north,Mandera North,rhamu,Rhamu,N,MDR_mandera_north_rhamu
+205,bd6ac3542fe94a7e8cb80031fb5a82de,mandera,MDR,Mandera,mandera_north,Mandera North,rhamu-dimtu,Rhamu-Dimtu,N,MDR_mandera_north_rhamu-dimtu
+206,db760959ce4d4d5aae5b82d642e20dc8,mandera,MDR,Mandera,mandera_south,Mandera South,wargudud,Wargudud,N,MDR_mandera_south_wargudud
+207,7a1a8fe3910f452faf9a1af416173974,mandera,MDR,Mandera,mandera_south,Mandera South,kutulo,Kutulo,N,MDR_mandera_south_kutulo
+208,52aaa8ff685747589b659d76358a4c36,mandera,MDR,Mandera,mandera_south,Mandera South,elwak_south,Elwak South,N,MDR_mandera_south_elwak_south
+209,894c95201a6948e4bd03e4a454ac25f9,mandera,MDR,Mandera,mandera_south,Mandera South,elwak_north,Elwak North,N,MDR_mandera_south_elwak_north
+210,5d75b8a7e7f540c289b0fb1f523c53c0,mandera,MDR,Mandera,mandera_south,Mandera South,shimbir_fatuma,Shimbir Fatuma,N,MDR_mandera_south_shimbir_fatuma
+211,90112f547bcf4d7ca74acd30aaaef62d,mandera,MDR,Mandera,mandera_east,Mandera East,arabia,Arabia,N,MDR_mandera_east_arabia
+212,b8f01f85459445a2866b802da7ead698,mandera,MDR,Mandera,mandera_east,Mandera East,bulla_mpya,Bulla Mpya,N,MDR_mandera_east_bulla_mpya
+213,a6b5dd7e6a544dce8617ee8136952374,mandera,MDR,Mandera,mandera_east,Mandera East,khalalio,Khalalio,N,MDR_mandera_east_khalalio
+214,f7748cc26ddd4dd4b65a2fb6db8afa56,mandera,MDR,Mandera,mandera_east,Mandera East,neboi,Neboi,N,MDR_mandera_east_neboi
+215,15318ecf27434a74a054857548be24eb,mandera,MDR,Mandera,mandera_east,Mandera East,township,Township,N,MDR_mandera_east_township
+216,1c3bcfe1e4584e8c851e829d35f64697,mandera,MDR,Mandera,lafey,Lafey,libehia,Libehia,N,MDR_lafey_libehia
+217,4af07966e21841eb9d3484f5883a57da,mandera,MDR,Mandera,lafey,Lafey,fino,Fino,N,MDR_lafey_fino
+218,e790c650655c40208cb48db58be12a1f,mandera,MDR,Mandera,lafey,Lafey,lafey,Lafey,N,MDR_lafey_lafey
+219,bcc27eccbd6f4627a47015d160f57456,mandera,MDR,Mandera,lafey,Lafey,warankara,Warankara,N,MDR_lafey_warankara
+220,8beeb7b19a84414fad1d3d056bc4cd4c,mandera,MDR,Mandera,lafey,Lafey,alungo_gof,Alungo Gof,N,MDR_lafey_alungo_gof
+221,0c5565c085114b46af981217fddd89e7,marsabit,MRS,Marsabit,moyale,Moyale,butiye,Butiye,N,MRS_moyale_butiye
+222,9fc112eaf647415091bb02e5450e1320,marsabit,MRS,Marsabit,moyale,Moyale,sololo,Sololo,N,MRS_moyale_sololo
+223,6094167641fd4dbfba310307d56ec46e,marsabit,MRS,Marsabit,moyale,Moyale,heilu-manyatta,Heilu-Manyatta,N,MRS_moyale_heilu-manyatta
+224,068ed49f00c1449db414b3bd02962c4e,marsabit,MRS,Marsabit,moyale,Moyale,golbo,Golbo,N,MRS_moyale_golbo
+225,1e49a43fa59346be9a315727f5ec5593,marsabit,MRS,Marsabit,moyale,Moyale,moyale_township,Moyale Township,N,MRS_moyale_moyale_township
+226,d25db321e2834e828e4f773c9a20cfc5,marsabit,MRS,Marsabit,moyale,Moyale,uran,Uran,N,MRS_moyale_uran
+227,f90fb32d20d443e08ad693f365149755,marsabit,MRS,Marsabit,moyale,Moyale,obbu,Obbu,N,MRS_moyale_obbu
+228,33aecba21061443c96adf5fe2de0a4b7,marsabit,MRS,Marsabit,north_horr,North Horr,illeret,Illeret,N,MRS_north_horr_illeret
+229,dcba5aa4c8994a79b8325696811c505a,marsabit,MRS,Marsabit,north_horr,North Horr,north_horr,North Horr,N,MRS_north_horr_north_horr
+230,601b82e29a6143188198ccf9e94528a6,marsabit,MRS,Marsabit,north_horr,North Horr,dukana,Dukana,N,MRS_north_horr_dukana
+231,964dc31ca9a34f6dbd1cfe8fded03d89,marsabit,MRS,Marsabit,north_horr,North Horr,maikona,Maikona,N,MRS_north_horr_maikona
+232,f618158fd6b14118b1fc6884481bc0cc,marsabit,MRS,Marsabit,north_horr,North Horr,turbi,Turbi,N,MRS_north_horr_turbi
+233,102341a4d90440a1a02ce45a0164408f,marsabit,MRS,Marsabit,saku,Saku,sagante_jaldesa,Sagante/Jaldesa,N,MRS_saku_sagante_jaldesa
+234,1e00a8b26b704fd8b5fc6df9c7124b1f,marsabit,MRS,Marsabit,saku,Saku,karare,Karare,N,MRS_saku_karare
+235,289916abd5c3446387958be8d55cf91a,marsabit,MRS,Marsabit,saku,Saku,marsabit_central,Marsabit Central,N,MRS_saku_marsabit_central
+236,c0e4aebea4254d4f9a8d79c0c8ccfa33,marsabit,MRS,Marsabit,laisamis,Laisamis,loiyangalani,Loiyangalani,N,MRS_laisamis_loiyangalani
+237,f2ed01aaeb294d8cb435db268b04347c,marsabit,MRS,Marsabit,laisamis,Laisamis,kargi_south_horr,Kargi/South Horr,N,MRS_laisamis_kargi_south_horr
+238,fc63fee0eec54391837cbd223ae11eaf,marsabit,MRS,Marsabit,laisamis,Laisamis,korr_ngurunit,Korr/Ngurunit,N,MRS_laisamis_korr_ngurunit
+239,891c199f2d8143ff8febe145945ff724,marsabit,MRS,Marsabit,laisamis,Laisamis,log_logo,Log Logo,N,MRS_laisamis_log_logo
+240,d2a77b0b988144489cdc2aec011178da,marsabit,MRS,Marsabit,laisamis,Laisamis,laisamis,Laisamis,N,MRS_laisamis_laisamis
+241,3131738bc6a243c9a11ec79022fefe11,isiolo,ISL,Isiolo,isiolo_north,Isiolo North,wabera,Wabera,N,ISL_isiolo_north_wabera
+242,6a89f993568144668ea4529497cb8cbb,isiolo,ISL,Isiolo,isiolo_north,Isiolo North,bulla_pesa,Bulla Pesa,N,ISL_isiolo_north_bulla_pesa
+243,1fd2b882641f4aa2ba1750c5a2632fd1,isiolo,ISL,Isiolo,isiolo_north,Isiolo North,chari,Chari,N,ISL_isiolo_north_chari
+244,c6fbdbe4df4c4a1e8d5c007bd027f4d4,isiolo,ISL,Isiolo,isiolo_north,Isiolo North,cherab,Cherab,N,ISL_isiolo_north_cherab
+245,4f7d0ade61e0496691272994f31c57fe,isiolo,ISL,Isiolo,isiolo_north,Isiolo North,ngare_mara,Ngare Mara,N,ISL_isiolo_north_ngare_mara
+246,735adad9659546f29ceb8d80d9ef8520,isiolo,ISL,Isiolo,isiolo_north,Isiolo North,burat,Burat,N,ISL_isiolo_north_burat
+247,e0ed12ec68d74fdbafc9ed961ef40943,isiolo,ISL,Isiolo,isiolo_north,Isiolo North,oldonyiro,Oldonyiro,N,ISL_isiolo_north_oldonyiro
+248,bf83ea1392fc46069248161bf8ec5258,isiolo,ISL,Isiolo,isiolo_south,Isiolo South,garbatulla,Garbatulla,N,ISL_isiolo_south_garbatulla
+249,9ddbddd72f6148029c48ceb9896fcf5a,isiolo,ISL,Isiolo,isiolo_south,Isiolo South,kinna,Kinna,N,ISL_isiolo_south_kinna
+250,00e09411ae76480aafd601450a43f44a,isiolo,ISL,Isiolo,isiolo_south,Isiolo South,sericho,Sericho,N,ISL_isiolo_south_sericho
+251,180c8642801641ed82c1611b45dd88be,meru,MRU,Meru,igembe_south,Igembe South,maua,Maua,N,MRU_igembe_south_maua
+252,51438967aeed432cb20f7c58b2a53c89,meru,MRU,Meru,igembe_south,Igembe South,kiegoi_antubochiu,Kiegoi/Antubochiu,N,MRU_igembe_south_kiegoi_antubochiu
+253,62add1985e3943888b4c5bd5be4ed667,meru,MRU,Meru,igembe_south,Igembe South,athiru_gaiti,Athiru Gaiti,N,MRU_igembe_south_athiru_gaiti
+254,90a7581ec49748dcb7d38f1fb821db88,meru,MRU,Meru,igembe_south,Igembe South,akachiu,Akachiu,N,MRU_igembe_south_akachiu
+255,398b09264e5b4c1abfe955b8badba9a0,meru,MRU,Meru,igembe_south,Igembe South,kanuni,Kanuni,N,MRU_igembe_south_kanuni
+256,be9501b63c734dcebfc7624426286825,meru,MRU,Meru,igembe_central,Igembe Central,akirangondu,AkirangOndu,N,MRU_igembe_central_akirangondu
+257,e0ccb05bb96c4e0eb31151160e303827,meru,MRU,Meru,igembe_central,Igembe Central,athiru_ruujine,Athiru Ruujine,N,MRU_igembe_central_athiru_ruujine
+258,f9a02d03ca5f4b709e406ff29fd31b8c,meru,MRU,Meru,igembe_central,Igembe Central,igembe_east,Igembe East,N,MRU_igembe_central_igembe_east
+259,d842d0c759354da1ac0ff6cec4a6c39f,meru,MRU,Meru,igembe_central,Igembe Central,njia,Njia,N,MRU_igembe_central_njia
+260,63d411899dab455caf4f49c67c6db5a3,meru,MRU,Meru,igembe_central,Igembe Central,kangeta,Kangeta,N,MRU_igembe_central_kangeta
+261,b5ffb8c5586b49a2a90c936deae1a66a,meru,MRU,Meru,igembe_north,Igembe North,antuambui,Antuambui,N,MRU_igembe_north_antuambui
+262,16f910cce189449c873abe1c1f935432,meru,MRU,Meru,igembe_north,Igembe North,ntunene,Ntunene,N,MRU_igembe_north_ntunene
+263,f7b7e8947b5845319c8944db447c674d,meru,MRU,Meru,igembe_north,Igembe North,antubetwe_kiongo,Antubetwe Kiongo,N,MRU_igembe_north_antubetwe_kiongo
+264,990adb9d12f8412db6c09b757507d87b,meru,MRU,Meru,igembe_north,Igembe North,naathu,Naathu,N,MRU_igembe_north_naathu
+265,a4a53cd1df774459a866204f356d9efc,meru,MRU,Meru,igembe_north,Igembe North,amwathi,Amwathi,N,MRU_igembe_north_amwathi
+266,bade44cc40b9428f89496ebbab3d46a4,meru,MRU,Meru,tigania_west,Tigania West,athwana,Athwana,N,MRU_tigania_west_athwana
+267,6ce19c85cbcc4679bdef8427ee279d72,meru,MRU,Meru,tigania_west,Tigania West,akithii,Akithii,N,MRU_tigania_west_akithii
+268,807a63626f254e1db662ccaf1ffbf08d,meru,MRU,Meru,tigania_west,Tigania West,kianjai,Kianjai,N,MRU_tigania_west_kianjai
+269,6a63d2bbdb3b4e72b005ede986b92adc,meru,MRU,Meru,tigania_west,Tigania West,nkomo,Nkomo,N,MRU_tigania_west_nkomo
+270,a16155c8629442c584287dc6738d9c6c,meru,MRU,Meru,tigania_west,Tigania West,mbeu,Mbeu,N,MRU_tigania_west_mbeu
+271,65a3f36a4c984f1aaef2959aa3630053,meru,MRU,Meru,tigania_east,Tigania East,thangatha,Thangatha,N,MRU_tigania_east_thangatha
+272,8682e0a2fe854be7a0fd29e8141fbccf,meru,MRU,Meru,tigania_east,Tigania East,mikinduri,Mikinduri,N,MRU_tigania_east_mikinduri
+273,e35ccc3bd15f4a928b63936183b509d0,meru,MRU,Meru,tigania_east,Tigania East,kiguchwa,Kiguchwa,N,MRU_tigania_east_kiguchwa
+274,ab1f03fd64de435ca60be219eab141a2,meru,MRU,Meru,tigania_east,Tigania East,muthara,Muthara,N,MRU_tigania_east_muthara
+275,69d5ca073eb240c4a43c5dbd42d63092,meru,MRU,Meru,tigania_east,Tigania East,karama,Karama,N,MRU_tigania_east_karama
+276,735aa3dfd02b43fda22fc7b5d726f403,meru,MRU,Meru,north_imenti,North Imenti,municipality,Municipality,N,MRU_north_imenti_municipality
+277,b8e5a96d395d4452ae9b4191f52cc262,meru,MRU,Meru,north_imenti,North Imenti,ntima_east,Ntima East,N,MRU_north_imenti_ntima_east
+278,7532c6671c624c84a14298222242b7f6,meru,MRU,Meru,north_imenti,North Imenti,ntima_west,Ntima West,N,MRU_north_imenti_ntima_west
+279,512bad5671b243f7a0caae92197e5bcc,meru,MRU,Meru,north_imenti,North Imenti,nyaki_west,Nyaki West,N,MRU_north_imenti_nyaki_west
+280,639c4de8183842a9916df0d0854fcacd,meru,MRU,Meru,north_imenti,North Imenti,nyaki_east,Nyaki East,N,MRU_north_imenti_nyaki_east
+281,a103b61a897b457caa99c98268f68cb2,meru,MRU,Meru,buuri,Buuri,timau,Timau,N,MRU_buuri_timau
+282,678747cde5ca4119b8231ebe6dc233fe,meru,MRU,Meru,buuri,Buuri,kisima,Kisima,N,MRU_buuri_kisima
+283,1a3302a7b43148738e082479202e1485,meru,MRU,Meru,buuri,Buuri,kiirua_naari,Kiirua/Naari,N,MRU_buuri_kiirua_naari
+284,90f5cb5bdf7a4f598292340fea8eb667,meru,MRU,Meru,buuri,Buuri,ruiri_rwarera,Ruiri/Rwarera,N,MRU_buuri_ruiri_rwarera
+285,2f57d2c8c77b40c0a1eb5fb221cdb2f0,meru,MRU,Meru,buuri,Buuri,kibirichia,Kibirichia,N,MRU_buuri_kibirichia
+286,ff6a36a674624c939707cff59d609ea3,meru,MRU,Meru,central_imenti,Central Imenti,mwanganthia,Mwanganthia,N,MRU_central_imenti_mwanganthia
+287,2b218c4e9d7a436380628ba5a89c8dbb,meru,MRU,Meru,central_imenti,Central Imenti,abothuguchi_central,Abothuguchi Central,N,MRU_central_imenti_abothuguchi_central
+288,6948849f4b76489dbfa99731ca03cd28,meru,MRU,Meru,central_imenti,Central Imenti,abothuguchi_west,Abothuguchi West,N,MRU_central_imenti_abothuguchi_west
+289,64967077d0584a9da198f0266abbdd0f,meru,MRU,Meru,central_imenti,Central Imenti,kiagu,Kiagu,N,MRU_central_imenti_kiagu
+290,6a51cdf0e634470d868b9de75b841195,meru,MRU,Meru,south_imenti,South Imenti,mitunguu,Mitunguu,N,MRU_south_imenti_mitunguu
+291,43c40198214e4120a3356d579867773c,meru,MRU,Meru,south_imenti,South Imenti,igoji_east,Igoji East,N,MRU_south_imenti_igoji_east
+292,034e1e9fcb2c4d94a8c11e7d69f96ae4,meru,MRU,Meru,south_imenti,South Imenti,igoji_west,Igoji West,N,MRU_south_imenti_igoji_west
+293,b650bdd10b384df19f1fa48e2ecadfe7,meru,MRU,Meru,south_imenti,South Imenti,abogeta_east,Abogeta East,N,MRU_south_imenti_abogeta_east
+294,e2d930e944e24c7eb1da5109112342f9,meru,MRU,Meru,south_imenti,South Imenti,abogeta_west,Abogeta West,N,MRU_south_imenti_abogeta_west
+295,ce798ff4be674b12b67e54a6c5f557d1,meru,MRU,Meru,south_imenti,South Imenti,nkuene,Nkuene,N,MRU_south_imenti_nkuene
+296,cbadb25e5fc7421a898eb968321078bd,tharaka_nithi,TNT,Tharaka-Nithi,maara,Maara,mitheru,Mitheru,N,TNT_maara_mitheru
+297,18aaa79b62114d8a8c2cabf4bf011e19,tharaka_nithi,TNT,Tharaka-Nithi,maara,Maara,muthambi,Muthambi,N,TNT_maara_muthambi
+298,3e7c80b72a7d495da546f1d6722a4bc6,tharaka_nithi,TNT,Tharaka-Nithi,maara,Maara,mwimbi,Mwimbi,N,TNT_maara_mwimbi
+299,dfe3b770af0a4201822ef8519ea65ba4,tharaka_nithi,TNT,Tharaka-Nithi,maara,Maara,ganga,Ganga,N,TNT_maara_ganga
+300,7e7e8eb446584054bbdccbcb768878f2,tharaka_nithi,TNT,Tharaka-Nithi,maara,Maara,chogoria,Chogoria,N,TNT_maara_chogoria
+301,bc16885951fe4c53a8900fe6c22b7468,tharaka_nithi,TNT,Tharaka-Nithi,chuka/igambangom,Chuka/IgambangOm,mariani,Mariani,N,TNT_chuka/igambangom_mariani
+302,79c5484ddd9f4d0598dd8d12b383cca3,tharaka_nithi,TNT,Tharaka-Nithi,chuka/igambangom,Chuka/IgambangOm,karingani,Karingani,N,TNT_chuka/igambangom_karingani
+303,513f4dfe075b4f3d8241e1e25d17a228,tharaka_nithi,TNT,Tharaka-Nithi,chuka/igambangom,Chuka/IgambangOm,magumoni,Magumoni,N,TNT_chuka/igambangom_magumoni
+832,2e132e322bb1471d83f1b0b6a3ac8398,nakuru,NKR,Nakuru,njoro,Njoro,kihingo,Kihingo,N,NKR_njoro_kihingo
+304,0c76d200bb0340db8712118c5c6f927d,tharaka_nithi,TNT,Tharaka-Nithi,chuka/igambangom,Chuka/IgambangOm,mugwe,Mugwe,N,TNT_chuka/igambangom_mugwe
+305,09b371218fee427cb4316ad191d14ab1,tharaka_nithi,TNT,Tharaka-Nithi,chuka/igambangom,Chuka/IgambangOm,igambangombe,IgambangOmbe,N,TNT_chuka/igambangom_igambangombe
+306,c5b4531216bb48d9a89b65d7716c19aa,tharaka_nithi,TNT,Tharaka-Nithi,tharaka,Tharaka,gatunga,Gatunga,N,TNT_tharaka_gatunga
+307,8dd1211730864caa8b097ba0e01c62a5,tharaka_nithi,TNT,Tharaka-Nithi,tharaka,Tharaka,mukothima,Mukothima,N,TNT_tharaka_mukothima
+308,54d29fb5348441f9913fd575f5e0a7f7,tharaka_nithi,TNT,Tharaka-Nithi,tharaka,Tharaka,nkondi,Nkondi,N,TNT_tharaka_nkondi
+309,e700596659eb4569820b35e42b765329,tharaka_nithi,TNT,Tharaka-Nithi,tharaka,Tharaka,chiakariga,Chiakariga,N,TNT_tharaka_chiakariga
+310,2146945ea91545959af8119597de9855,tharaka_nithi,TNT,Tharaka-Nithi,tharaka,Tharaka,marimanti,Marimanti,N,TNT_tharaka_marimanti
+311,e152b7c2c6584d03a1ddb5e5395b37d3,embu,EMB,Embu,manyatta,Manyatta,ruguru_ngandori,Ruguru/Ngandori,N,EMB_manyatta_ruguru_ngandori
+312,200302180b2c4041a50173d89bc99475,embu,EMB,Embu,manyatta,Manyatta,kithimu,Kithimu,N,EMB_manyatta_kithimu
+313,97cccc67d17b49e2af8a8f5988912f1a,embu,EMB,Embu,manyatta,Manyatta,nginda,Nginda,N,EMB_manyatta_nginda
+314,fb40cc210de542c29334eb9d5659e56c,embu,EMB,Embu,manyatta,Manyatta,mbeti_north,Mbeti North,N,EMB_manyatta_mbeti_north
+315,60f61954d0ba43de871981dfc6e463d0,embu,EMB,Embu,manyatta,Manyatta,kirimari,Kirimari,N,EMB_manyatta_kirimari
+316,a1540ed1da5945148170b0d5e622d507,embu,EMB,Embu,manyatta,Manyatta,gaturi_south,Gaturi South,N,EMB_manyatta_gaturi_south
+317,3b6c72ba29914912ae758c0f05f852d6,embu,EMB,Embu,runyenjes,Runyenjes,gaturi_north,Gaturi North,N,EMB_runyenjes_gaturi_north
+318,70483e1f55af4b9d99da7ccca9cba719,embu,EMB,Embu,runyenjes,Runyenjes,kagaari_south,Kagaari South,N,EMB_runyenjes_kagaari_south
+319,a25cd914c41c43bb8fba1bc369d359a5,embu,EMB,Embu,runyenjes,Runyenjes,central__ward,Central  Ward,N,EMB_runyenjes_central__ward
+320,a521cd67564c45bf9db618c6912bb7fd,embu,EMB,Embu,runyenjes,Runyenjes,kagaari_north,Kagaari North,N,EMB_runyenjes_kagaari_north
+321,5cfe18237fbc4943b52c09c109860f75,embu,EMB,Embu,runyenjes,Runyenjes,kyeni_north,Kyeni North,N,EMB_runyenjes_kyeni_north
+322,9a3efeab65184082902ea3db41cd4a40,embu,EMB,Embu,runyenjes,Runyenjes,kyeni_south,Kyeni South,N,EMB_runyenjes_kyeni_south
+323,f8c648ecd7eb491bb0614191581240ec,embu,EMB,Embu,mbeere_south,Mbeere South,mwea,Mwea,N,EMB_mbeere_south_mwea
+324,e47ce1d9ea174f429bc9d29d629f7e1b,embu,EMB,Embu,mbeere_south,Mbeere South,makima,Makima,N,EMB_mbeere_south_makima
+325,975ee6e5d43c4cabbdd15640f5de87b5,embu,EMB,Embu,mbeere_south,Mbeere South,mbeti_south,Mbeti South,N,EMB_mbeere_south_mbeti_south
+326,b410dbdf8d5347628f5f77cfb36434d7,embu,EMB,Embu,mbeere_south,Mbeere South,mavuria,Mavuria,N,EMB_mbeere_south_mavuria
+327,c6b8fb283fe442a7a4bbac6b396ac994,embu,EMB,Embu,mbeere_south,Mbeere South,kiambere,Kiambere,N,EMB_mbeere_south_kiambere
+328,9ee741c2be4448c49a78c2e6cfa33291,embu,EMB,Embu,mbeere_north,Mbeere North,nthawa,Nthawa,N,EMB_mbeere_north_nthawa
+329,0c491bbbec604f16953237e0695c9386,embu,EMB,Embu,mbeere_north,Mbeere North,muminji,Muminji,N,EMB_mbeere_north_muminji
+330,c33c860afbb74bbd96c4eae7453141af,embu,EMB,Embu,mbeere_north,Mbeere North,evurore,Evurore,N,EMB_mbeere_north_evurore
+331,1a2beea7e0574dd9a23f2d41bb799aa8,kitui,KTU,Kitui,mwingi_north,Mwingi North,ngomeni,Ngomeni,N,KTU_mwingi_north_ngomeni
+332,8acc00006e9e4b0f9a925d30c2860ac4,kitui,KTU,Kitui,mwingi_north,Mwingi North,kyuso,Kyuso,N,KTU_mwingi_north_kyuso
+333,5431809bace94d6f8f502ee40d39f8cb,kitui,KTU,Kitui,mwingi_north,Mwingi North,mumoni,Mumoni,N,KTU_mwingi_north_mumoni
+334,1eb488c5b8b342fbb1c0c9771a577d7e,kitui,KTU,Kitui,mwingi_north,Mwingi North,tseikuru,Tseikuru,N,KTU_mwingi_north_tseikuru
+335,b1ff7b2b25f046669fd059d5ba75a9bc,kitui,KTU,Kitui,mwingi_north,Mwingi North,tharaka,Tharaka,N,KTU_mwingi_north_tharaka
+336,6730075401614f52aa53f47b9936d542,kitui,KTU,Kitui,mwingi_west,Mwingi West,kyome_thaana,Kyome/Thaana,N,KTU_mwingi_west_kyome_thaana
+337,caad787974f64287a4ced88aec7bbeb7,kitui,KTU,Kitui,mwingi_west,Mwingi West,nguutani,Nguutani,N,KTU_mwingi_west_nguutani
+338,0391b5738984476db17558fa13f8b182,kitui,KTU,Kitui,mwingi_west,Mwingi West,migwani,Migwani,N,KTU_mwingi_west_migwani
+339,6f04b51b2d4649f4a8791d630baabf8a,kitui,KTU,Kitui,mwingi_west,Mwingi West,kiomo_kyethani,Kiomo/Kyethani,N,KTU_mwingi_west_kiomo_kyethani
+340,749bdd79d2ec4fad8cfe7545abc35596,kitui,KTU,Kitui,mwingi_central,Mwingi Central,central,Central,N,KTU_mwingi_central_central
+341,c33c3a8e1647413eadae4ca59c8c4e7d,kitui,KTU,Kitui,mwingi_central,Mwingi Central,kivou,Kivou,N,KTU_mwingi_central_kivou
+342,6640f6cf19244a58a78321eae2a51213,kitui,KTU,Kitui,mwingi_central,Mwingi Central,nguni,Nguni,N,KTU_mwingi_central_nguni
+343,e6773ddd8fbf45d99f2105654ce1a06d,kitui,KTU,Kitui,mwingi_central,Mwingi Central,nuu,Nuu,N,KTU_mwingi_central_nuu
+344,1080b6f88a0240b29c7e00b080c3d9e5,kitui,KTU,Kitui,mwingi_central,Mwingi Central,mui,Mui,N,KTU_mwingi_central_mui
+345,82fb3df8dbe04980a237f298fbdddd09,kitui,KTU,Kitui,mwingi_central,Mwingi Central,waita,Waita,N,KTU_mwingi_central_waita
+346,78eb05470e88433cab684f0e607d7fdc,kitui,KTU,Kitui,kitui_west,Kitui West,mutonguni,Mutonguni,N,KTU_kitui_west_mutonguni
+347,7374d1d62aad4dbe93f1d116fc78feea,kitui,KTU,Kitui,kitui_west,Kitui West,kauwi,Kauwi,N,KTU_kitui_west_kauwi
+348,d5f81b6c85aa4288aa977597b571ffa9,kitui,KTU,Kitui,kitui_west,Kitui West,matinyani,Matinyani,N,KTU_kitui_west_matinyani
+349,a2ae86ece75441f78552aa48d8600ab3,kitui,KTU,Kitui,kitui_west,Kitui West,kwa_mutonga_kithumula,Kwa Mutonga/Kithumula,N,KTU_kitui_west_kwa_mutonga_kithumula
+350,bbf8dd62813d48d2a652a25fdf74621b,kitui,KTU,Kitui,kitui_rural,Kitui Rural,kisasi,Kisasi,N,KTU_kitui_rural_kisasi
+351,007681f5b4934c07ba8edc29e8c01a6a,kitui,KTU,Kitui,kitui_rural,Kitui Rural,mbitini,Mbitini,N,KTU_kitui_rural_mbitini
+352,ecc3c8c254544bcf9e05d6611b66e777,kitui,KTU,Kitui,kitui_rural,Kitui Rural,kwavonza_yatta,Kwavonza/Yatta,N,KTU_kitui_rural_kwavonza_yatta
+353,fb35c4616d914ba4a643fd92550f178a,kitui,KTU,Kitui,kitui_rural,Kitui Rural,kanyangi,Kanyangi,N,KTU_kitui_rural_kanyangi
+354,9f3a6465fc7d4aa4bce69e04aaad64e4,kitui,KTU,Kitui,kitui_central,Kitui Central,miambani,Miambani,N,KTU_kitui_central_miambani
+355,c71bdd3fe7ba45d7aad1e723d1bdd4f5,kitui,KTU,Kitui,kitui_central,Kitui Central,township,Township,N,KTU_kitui_central_township
+356,a4893f31a88c4d4caa87f88c38176c37,kitui,KTU,Kitui,kitui_central,Kitui Central,kyangwithya_west,Kyangwithya West,N,KTU_kitui_central_kyangwithya_west
+357,6575693c6a324730ae3a0d4e7ac84733,kitui,KTU,Kitui,kitui_central,Kitui Central,mulango,Mulango,N,KTU_kitui_central_mulango
+358,f7021eaf6a7649a0b0da5e18950e0f42,kitui,KTU,Kitui,kitui_central,Kitui Central,kyangwithya_east,Kyangwithya East,N,KTU_kitui_central_kyangwithya_east
+359,01e7880289534e98b2f57bef9b45eeb5,kitui,KTU,Kitui,kitui_east,Kitui East,zombe_mwitika,Zombe/Mwitika,N,KTU_kitui_east_zombe_mwitika
+360,dceb11615eff44d092d98f4ddfc089c1,kitui,KTU,Kitui,kitui_east,Kitui East,chuluni,Chuluni,N,KTU_kitui_east_chuluni
+361,4f243ed9e2f84e3d9284870f228c66db,kitui,KTU,Kitui,kitui_east,Kitui East,nzambani,Nzambani,N,KTU_kitui_east_nzambani
+362,3d6817d0aec04a7ca4736a9312431382,kitui,KTU,Kitui,kitui_east,Kitui East,voo_kyamatu,Voo/Kyamatu,N,KTU_kitui_east_voo_kyamatu
+363,8d525455c9fe456b83c28313280ed27a,kitui,KTU,Kitui,kitui_east,Kitui East,endau_malalani,Endau/Malalani,N,KTU_kitui_east_endau_malalani
+364,de66c2dc3d1b4ba3bcba141531698f10,kitui,KTU,Kitui,kitui_east,Kitui East,mutito_kaliku,Mutito/Kaliku,N,KTU_kitui_east_mutito_kaliku
+365,8b0176f24a07405abf1e779b9de6ca68,kitui,KTU,Kitui,kitui_south,Kitui South,ikanga_kyatune,Ikanga/Kyatune,N,KTU_kitui_south_ikanga_kyatune
+366,0423b5d5bee74e0ba3225816c1f0bed4,kitui,KTU,Kitui,kitui_south,Kitui South,mutomo,Mutomo,N,KTU_kitui_south_mutomo
+367,84e44e8810534401ab5aea725629efc7,kitui,KTU,Kitui,kitui_south,Kitui South,mutha,Mutha,N,KTU_kitui_south_mutha
+368,ce178536b4444104b103c7cc6c6c35ae,kitui,KTU,Kitui,kitui_south,Kitui South,ikutha,Ikutha,N,KTU_kitui_south_ikutha
+369,8b6d34d91a814a1dbb1c045ab41b14d3,kitui,KTU,Kitui,kitui_south,Kitui South,kanziko,Kanziko,N,KTU_kitui_south_kanziko
+370,59f790f62c514e5ba64247138d17176a,kitui,KTU,Kitui,kitui_south,Kitui South,athi,Athi,N,KTU_kitui_south_athi
+371,0adbb125a5d9427bb31ba7b20ee937b6,machakos,MCK,Machakos,masinga,Masinga,kivaa,Kivaa,N,MCK_masinga_kivaa
+372,a83d0c30e7ed45e396d53f4eefd8f40d,machakos,MCK,Machakos,masinga,Masinga,masinga_central,Masinga Central,N,MCK_masinga_masinga_central
+373,f0bdd11f1b3040958cf0eb87b4614d1a,machakos,MCK,Machakos,masinga,Masinga,ekalakala,Ekalakala,N,MCK_masinga_ekalakala
+374,ccfb0ef587ed44e2a9581910faae1792,machakos,MCK,Machakos,masinga,Masinga,muthesya,Muthesya,N,MCK_masinga_muthesya
+375,153f1fb31b524cde82d3072f00fdd2db,machakos,MCK,Machakos,masinga,Masinga,ndithini,Ndithini,N,MCK_masinga_ndithini
+376,fd1aeeafba734850924c087175b5cfab,machakos,MCK,Machakos,yatta,Yatta,ndalani,Ndalani,N,MCK_yatta_ndalani
+377,46d6d4350dd94fc4b0487ad92d9d5df5,machakos,MCK,Machakos,yatta,Yatta,matuu,Matuu,N,MCK_yatta_matuu
+378,fb0b766159614818aa4c80bcdff7fb3b,machakos,MCK,Machakos,yatta,Yatta,kithimani,Kithimani,N,MCK_yatta_kithimani
+379,38e872cf4d424249b4016b52af41c2e8,machakos,MCK,Machakos,yatta,Yatta,ikombe,Ikombe,N,MCK_yatta_ikombe
+380,abe50414eb3d4808b3fa687939a6c71d,machakos,MCK,Machakos,yatta,Yatta,katangi,Katangi,N,MCK_yatta_katangi
+381,e76844984f9b4908bbb643151877bebd,machakos,MCK,Machakos,kangundo,Kangundo,kangundo_north,Kangundo North,N,MCK_kangundo_kangundo_north
+382,d634432d2cdc44629e2d30105ceb9cff,machakos,MCK,Machakos,kangundo,Kangundo,kangundo_central,Kangundo Central,N,MCK_kangundo_kangundo_central
+383,5a068cd23fa949cca5aee4a256936d3a,machakos,MCK,Machakos,kangundo,Kangundo,kangundo_east,Kangundo East,N,MCK_kangundo_kangundo_east
+384,94e1873ebc1b4e2fb7b6a5a600329e74,machakos,MCK,Machakos,kangundo,Kangundo,kangundo_west,Kangundo West,N,MCK_kangundo_kangundo_west
+385,26cf33c7013841568961b2b7690d5b69,machakos,MCK,Machakos,matungulu,Matungulu,tala,Tala,N,MCK_matungulu_tala
+386,56cc3d54ed484925858a445b09b18534,machakos,MCK,Machakos,matungulu,Matungulu,matungulu_north,Matungulu North,N,MCK_matungulu_matungulu_north
+387,ec4776d9b2f74c6ebfb329e910793260,machakos,MCK,Machakos,matungulu,Matungulu,matungulu_east,Matungulu East,N,MCK_matungulu_matungulu_east
+388,e3249ef595944054bd67703eee45deb6,machakos,MCK,Machakos,matungulu,Matungulu,matungulu_west,Matungulu West,N,MCK_matungulu_matungulu_west
+389,4b7b4228a88840c4846635bbdbcfc11d,machakos,MCK,Machakos,matungulu,Matungulu,kyeleni,Kyeleni,N,MCK_matungulu_kyeleni
+390,a7189d40798a454c854a4c8258ebf1f6,machakos,MCK,Machakos,kathiani,Kathiani,mitaboni,Mitaboni,N,MCK_kathiani_mitaboni
+391,961731e5b1cb435eb135567874317e05,machakos,MCK,Machakos,kathiani,Kathiani,kathiani_central,Kathiani Central,N,MCK_kathiani_kathiani_central
+392,3015973984364e18b55b202ed061341e,machakos,MCK,Machakos,kathiani,Kathiani,upper_kaewa_iveti,Upper Kaewa/Iveti,N,MCK_kathiani_upper_kaewa_iveti
+393,74971c08715f4693b29c0d0312f778ac,machakos,MCK,Machakos,kathiani,Kathiani,lower_kaewa_kaani,Lower Kaewa/Kaani,N,MCK_kathiani_lower_kaewa_kaani
+394,06772d619ad04505b1fd1fd81972392f,machakos,MCK,Machakos,mavoko,Mavoko,athi_river,Athi River,N,MCK_mavoko_athi_river
+395,33ec868f25d94174b317d181a4d153b6,machakos,MCK,Machakos,mavoko,Mavoko,kinanie,Kinanie,N,MCK_mavoko_kinanie
+396,8a66d8f570c446fc9dda8754e58ea1e5,machakos,MCK,Machakos,mavoko,Mavoko,muthwani,Muthwani,N,MCK_mavoko_muthwani
+397,75fd3240e01e472dbb646a5b7750fb55,machakos,MCK,Machakos,mavoko,Mavoko,syokimau_mulolongo,Syokimau/Mulolongo,N,MCK_mavoko_syokimau_mulolongo
+398,a373b3efe3d24ab28bd60ea0876ac559,machakos,MCK,Machakos,machakos_town,Machakos Town,kalama,Kalama,N,MCK_machakos_town_kalama
+399,cbe60959cbbd494ba16106a02dcb1179,machakos,MCK,Machakos,machakos_town,Machakos Town,mua,Mua,N,MCK_machakos_town_mua
+400,4f539e035b1f490d97378351150eb97a,machakos,MCK,Machakos,machakos_town,Machakos Town,mutituni,Mutituni,N,MCK_machakos_town_mutituni
+401,8878160a71e54b87bc054c885d2c1614,machakos,MCK,Machakos,machakos_town,Machakos Town,machakos_central,Machakos Central,N,MCK_machakos_town_machakos_central
+402,bcf4a0287b9a46dda7524c0947a3bd66,machakos,MCK,Machakos,machakos_town,Machakos Town,mumbuni_north,Mumbuni North,N,MCK_machakos_town_mumbuni_north
+403,31690d6a914e4f19b7ccabdb76c5e13b,machakos,MCK,Machakos,machakos_town,Machakos Town,muvuti_kiima-kimwe,Muvuti/Kiima-Kimwe,N,MCK_machakos_town_muvuti_kiima-kimwe
+404,9ce9b86638ae4847ba476bd9696cdabf,machakos,MCK,Machakos,machakos_town,Machakos Town,kola,Kola,N,MCK_machakos_town_kola
+405,b7eb9cb24237443a91221645f9875386,machakos,MCK,Machakos,mwala,Mwala,mbiuni,Mbiuni,N,MCK_mwala_mbiuni
+406,342ad883f8964f449eae00dd5e40c8bb,machakos,MCK,Machakos,mwala,Mwala,makutano__mwala,Makutano/ Mwala,N,MCK_mwala_makutano__mwala
+408,be1cafbd511b495c94be97d82d08bfb5,machakos,MCK,Machakos,mwala,Mwala,muthetheni,Muthetheni,N,MCK_mwala_muthetheni
+409,0af44542d67642628e05ecdcbfbbc841,machakos,MCK,Machakos,mwala,Mwala,wamunyu,Wamunyu,N,MCK_mwala_wamunyu
+410,57bf76465ed94420b158367c052f0fdc,machakos,MCK,Machakos,mwala,Mwala,kibauni,Kibauni,N,MCK_mwala_kibauni
+411,ccea1d1e306046f98dae10ea81c18787,makueni,MKN,Makueni,mbooni,Mbooni,tulimani,Tulimani,N,MKN_mbooni_tulimani
+412,a57f93dbf62b4e2ab2722a137629abec,makueni,MKN,Makueni,mbooni,Mbooni,mbooni,Mbooni,N,MKN_mbooni_mbooni
+413,cca26fd2cf974d5a916c66a5d98f2e24,makueni,MKN,Makueni,mbooni,Mbooni,kithungo_kitundu,Kithungo/Kitundu,N,MKN_mbooni_kithungo_kitundu
+414,42dbdf7d67014508bcb16b0bc3267d5e,makueni,MKN,Makueni,mbooni,Mbooni,kisau_kiteta,Kisau/Kiteta,N,MKN_mbooni_kisau_kiteta
+415,0ca85f34a3e7446c8d3a20d0cab2dff7,makueni,MKN,Makueni,mbooni,Mbooni,waia_kako,Waia/Kako,N,MKN_mbooni_waia_kako
+416,0da8713ad08640a493c663dea06c08d0,makueni,MKN,Makueni,mbooni,Mbooni,kalawa,Kalawa,N,MKN_mbooni_kalawa
+417,add52a40f2bd47c89908280de3c4f2eb,makueni,MKN,Makueni,kilome,Kilome,kasikeu,Kasikeu,N,MKN_kilome_kasikeu
+418,347f4f7ace1c46dca439aed5e4a92c0c,makueni,MKN,Makueni,kilome,Kilome,mukaa,Mukaa,N,MKN_kilome_mukaa
+419,7454989259e1472a8d1967f206aa2da3,makueni,MKN,Makueni,kilome,Kilome,kiima_kiu_kalanzoni,Kiima Kiu/Kalanzoni,N,MKN_kilome_kiima_kiu_kalanzoni
+420,1e8b3fe060e5469a8abdfdf0ad116b3a,makueni,MKN,Makueni,kaiti,Kaiti,ukia,Ukia,N,MKN_kaiti_ukia
+421,fbd63ef305534d758a4ec0f336ff80c7,makueni,MKN,Makueni,kaiti,Kaiti,kee,Kee,N,MKN_kaiti_kee
+422,a76bc486f57d48829e1a7c834091960c,makueni,MKN,Makueni,kaiti,Kaiti,kilungu,Kilungu,N,MKN_kaiti_kilungu
+423,6a6dea3ad60f478d9ea273e4739c3003,makueni,MKN,Makueni,kaiti,Kaiti,ilima,Ilima,N,MKN_kaiti_ilima
+424,9341472b0e62460ca77d02c109b87cf4,makueni,MKN,Makueni,makueni,Makueni,wote,Wote,N,MKN_makueni_wote
+425,bf81bccc8cfd435eb3f87f035925abfa,makueni,MKN,Makueni,makueni,Makueni,muvau_kikuumini,Muvau/Kikuumini,N,MKN_makueni_muvau_kikuumini
+426,464f138a27ec4f2dada23d4b59ebd813,makueni,MKN,Makueni,makueni,Makueni,mavindini,Mavindini,N,MKN_makueni_mavindini
+427,591774ad03474717955827c530be2b62,makueni,MKN,Makueni,makueni,Makueni,kitise_kithuki,Kitise/Kithuki,N,MKN_makueni_kitise_kithuki
+428,ea38076f8c4f42abaa83a0d19c71d868,makueni,MKN,Makueni,makueni,Makueni,kathonzweni,Kathonzweni,N,MKN_makueni_kathonzweni
+429,072b183a7ddf445ab6cbf5a898e6acde,makueni,MKN,Makueni,makueni,Makueni,nzaui_kilili_kalamba,Nzaui/Kilili/Kalamba,N,MKN_makueni_nzaui_kilili_kalamba
+430,d27f07929b3741c4aa7517eda497473e,makueni,MKN,Makueni,makueni,Makueni,mbitini,Mbitini,N,MKN_makueni_mbitini
+431,563f4562455d450280df28aeb1f288e1,makueni,MKN,Makueni,kibwezi_west,Kibwezi West,makindu,Makindu,N,MKN_kibwezi_west_makindu
+432,09d0c74e082146d0bee1ba9e7e741bf0,makueni,MKN,Makueni,kibwezi_west,Kibwezi West,nguumo,Nguumo,N,MKN_kibwezi_west_nguumo
+433,88ccd8d94d2f4b808d57e3f7bc33ce0a,makueni,MKN,Makueni,kibwezi_west,Kibwezi West,kikumbulyu_north,Kikumbulyu North,N,MKN_kibwezi_west_kikumbulyu_north
+434,a799dd3d68284ac2aa6369dc4e9008a2,makueni,MKN,Makueni,kibwezi_west,Kibwezi West,kikumbulyu_south,Kikumbulyu South,N,MKN_kibwezi_west_kikumbulyu_south
+435,fad7e1d64faa4e5b8a3e79cebb5e10fd,makueni,MKN,Makueni,kibwezi_west,Kibwezi West,nguu_masumba,Nguu/Masumba,N,MKN_kibwezi_west_nguu_masumba
+436,ec5aa99f03bb4e5bb4f7f2c0fb7831f9,makueni,MKN,Makueni,kibwezi_west,Kibwezi West,emali_mulala,Emali/Mulala,N,MKN_kibwezi_west_emali_mulala
+437,960909535650468e809bf66b3ede2d9c,makueni,MKN,Makueni,kibwezi_east,Kibwezi East,masongaleni,Masongaleni,N,MKN_kibwezi_east_masongaleni
+438,c86937a01dd9463c99dca2265e8f1ad5,makueni,MKN,Makueni,kibwezi_east,Kibwezi East,mtito_andei,Mtito Andei,N,MKN_kibwezi_east_mtito_andei
+439,6f633df89ee74d8abff49ab794b83beb,makueni,MKN,Makueni,kibwezi_east,Kibwezi East,thange,Thange,N,MKN_kibwezi_east_thange
+440,2fcfce2aa23149f5a8a5ebde04ffad02,makueni,MKN,Makueni,kibwezi_east,Kibwezi East,ivingoni_nzambani,Ivingoni/Nzambani,N,MKN_kibwezi_east_ivingoni_nzambani
+441,d025992626f644e9905481b43f475466,nyandarua,NDR,Nyandarua,kinangop,Kinangop,engineer,Engineer,N,NDR_kinangop_engineer
+442,4bafee4725e644c99eb6aadbac74c0c4,nyandarua,NDR,Nyandarua,kinangop,Kinangop,gathara,Gathara,N,NDR_kinangop_gathara
+443,e4051ab8ee7246aab6073386b927fde1,nyandarua,NDR,Nyandarua,kinangop,Kinangop,north_kinangop,North Kinangop,N,NDR_kinangop_north_kinangop
+444,5e973c6ace454356b7bb5863456219e8,nyandarua,NDR,Nyandarua,kinangop,Kinangop,murungaru,Murungaru,N,NDR_kinangop_murungaru
+445,25dfa40034f041e69d7aa3cfa3040bba,nyandarua,NDR,Nyandarua,kinangop,Kinangop,njabini\kiburu,Njabini\Kiburu,N,NDR_kinangop_njabini\kiburu
+446,6a6ab2a703a74972bc9a6ec4a0e64752,nyandarua,NDR,Nyandarua,kinangop,Kinangop,nyakio,Nyakio,N,NDR_kinangop_nyakio
+447,2b2c7a3ecdbe410e85e95439f14babc5,nyandarua,NDR,Nyandarua,kinangop,Kinangop,githabai,Githabai,N,NDR_kinangop_githabai
+448,a96ea5332f53474fb8e8f635661e1b29,nyandarua,NDR,Nyandarua,kinangop,Kinangop,magumu,Magumu,N,NDR_kinangop_magumu
+449,672d85a0f9dd4159a0fdeb052d616d46,nyandarua,NDR,Nyandarua,kipipiri,Kipipiri,wanjohi,Wanjohi,N,NDR_kipipiri_wanjohi
+450,fdd1690b2b0c44eb9ad8b8d90cd528d6,nyandarua,NDR,Nyandarua,kipipiri,Kipipiri,kipipiri,Kipipiri,N,NDR_kipipiri_kipipiri
+451,1096a6908bfb4a1e91b91e45e94d18e1,nyandarua,NDR,Nyandarua,kipipiri,Kipipiri,geta,Geta,N,NDR_kipipiri_geta
+452,aa1784d292c14806a7d259bca167aafa,nyandarua,NDR,Nyandarua,kipipiri,Kipipiri,githioro,Githioro,N,NDR_kipipiri_githioro
+453,442a2a9db1704af0a2d8cd08162976de,nyandarua,NDR,Nyandarua,ol_kalou,Ol Kalou,karau,Karau,N,NDR_ol_kalou_karau
+454,81bc4a613cb74e74aba9c81826f608fd,nyandarua,NDR,Nyandarua,ol_kalou,Ol Kalou,kanjuiri_ridge,Kanjuiri Ridge,N,NDR_ol_kalou_kanjuiri_ridge
+455,c470bc18f93d488ca5e6f336ef9291b6,nyandarua,NDR,Nyandarua,ol_kalou,Ol Kalou,mirangine,Mirangine,N,NDR_ol_kalou_mirangine
+456,1cf3434637d04f3498b10b912f9885c3,nyandarua,NDR,Nyandarua,ol_kalou,Ol Kalou,kaimbaga,Kaimbaga,N,NDR_ol_kalou_kaimbaga
+457,493c1c09c7d64985be58d55b363e8e1d,nyandarua,NDR,Nyandarua,ol_kalou,Ol Kalou,rurii,Rurii,N,NDR_ol_kalou_rurii
+458,37627c039b8a484bb99127daf6f9ea00,nyandarua,NDR,Nyandarua,ol_jorok,Ol Jorok,gathanji,Gathanji,N,NDR_ol_jorok_gathanji
+459,bf314d918a22405584b52ba76e112f07,nyandarua,NDR,Nyandarua,ol_jorok,Ol Jorok,gatimu,Gatimu,N,NDR_ol_jorok_gatimu
+460,591e42335daf4effa09ce2f931b4686c,nyandarua,NDR,Nyandarua,ol_jorok,Ol Jorok,weru,Weru,N,NDR_ol_jorok_weru
+461,4b54f542b3a4460782a018d17856d551,nyandarua,NDR,Nyandarua,ol_jorok,Ol Jorok,charagita,Charagita,N,NDR_ol_jorok_charagita
+462,b00d7d6491854b68816e3dfb79cf0e09,nyandarua,NDR,Nyandarua,ndaragwa,Ndaragwa,leshau_pondo,Leshau Pondo,N,NDR_ndaragwa_leshau_pondo
+463,c55f1934a0c041cb995ae82aafebcb05,nyandarua,NDR,Nyandarua,ndaragwa,Ndaragwa,kiriita,Kiriita,N,NDR_ndaragwa_kiriita
+464,add8509faf7442eb90de3a4d3f88d3a2,nyandarua,NDR,Nyandarua,ndaragwa,Ndaragwa,central,Central,N,NDR_ndaragwa_central
+465,6c46ac4cfe9447d3bd8e606e56450d43,nyandarua,NDR,Nyandarua,ndaragwa,Ndaragwa,shamata,Shamata,N,NDR_ndaragwa_shamata
+466,7e7a837a49d14c52b28a073eb3a9eec4,nyeri,NYR,Nyeri,tetu,Tetu,dedan_kimanthi,Dedan Kimanthi,N,NYR_tetu_dedan_kimanthi
+467,f6e4916f16214aa5b8a06ce2492690c4,nyeri,NYR,Nyeri,tetu,Tetu,wamagana,Wamagana,N,NYR_tetu_wamagana
+468,40123c577bb348a9876135b8b2087286,nyeri,NYR,Nyeri,tetu,Tetu,aguthi_gaaki,Aguthi/Gaaki,N,NYR_tetu_aguthi_gaaki
+469,b194d832222143888fed0de356a29211,nyeri,NYR,Nyeri,kieni,Kieni,mweiga,Mweiga,N,NYR_kieni_mweiga
+470,ec6c9cb5707e47e1b12c7e25dbe39ab0,nyeri,NYR,Nyeri,kieni,Kieni,naromoru_kiamathaga,Naromoru Kiamathaga,N,NYR_kieni_naromoru_kiamathaga
+471,0ba9e5473f9a452393908f2f20a4f52c,nyeri,NYR,Nyeri,kieni,Kieni,mwiyogo_endarasha,Mwiyogo/Endarasha,N,NYR_kieni_mwiyogo_endarasha
+472,72e5b7eb855a438ea4317a2c52d61625,nyeri,NYR,Nyeri,kieni,Kieni,mugunda,Mugunda,N,NYR_kieni_mugunda
+473,bca344707b74410cbd22dd88779d49ec,nyeri,NYR,Nyeri,kieni,Kieni,gatarakwa,Gatarakwa,N,NYR_kieni_gatarakwa
+474,ed44925b289140bf946582327ebc2a6a,nyeri,NYR,Nyeri,kieni,Kieni,thegu_river,Thegu River,N,NYR_kieni_thegu_river
+475,1bed30c679fb40549a08ddbf4bd3c540,nyeri,NYR,Nyeri,kieni,Kieni,kabaru,Kabaru,N,NYR_kieni_kabaru
+476,0e6b556924bd442aa89d7d034cdfcaa7,nyeri,NYR,Nyeri,kieni,Kieni,gakawa,Gakawa,N,NYR_kieni_gakawa
+477,b193fb5104784ddea8988286f04c48e3,nyeri,NYR,Nyeri,mathira,Mathira,ruguru,Ruguru,N,NYR_mathira_ruguru
+478,b69696a33dd74678ac94bc2ee3ad4d1f,nyeri,NYR,Nyeri,mathira,Mathira,magutu,Magutu,N,NYR_mathira_magutu
+479,30c0e216ab624047967b65edbc98e80f,nyeri,NYR,Nyeri,mathira,Mathira,iriaini,Iriaini,N,NYR_mathira_iriaini
+480,6afe010c68364b5ba6672d66ae0318e2,nyeri,NYR,Nyeri,mathira,Mathira,konyu,Konyu,N,NYR_mathira_konyu
+481,31df76198c684cd7bf2b7858534ad5a4,nyeri,NYR,Nyeri,mathira,Mathira,kirimukuyu,Kirimukuyu,N,NYR_mathira_kirimukuyu
+482,b972e5955a3a4dcabcc99cd54a79e276,nyeri,NYR,Nyeri,mathira,Mathira,karatina_town,Karatina Town,N,NYR_mathira_karatina_town
+483,3bce846dad664515be1a84e7d4edde6b,nyeri,NYR,Nyeri,othaya,Othaya,mahiga,Mahiga,N,NYR_othaya_mahiga
+484,bd0578c546974331b697e1fc4519dbb6,nyeri,NYR,Nyeri,othaya,Othaya,iria-ini,Iria-Ini,N,NYR_othaya_iria-ini
+485,171c4e1d87ce40e48b9a4ca38cc5f520,nyeri,NYR,Nyeri,othaya,Othaya,chinga,Chinga,N,NYR_othaya_chinga
+486,ee623ce6c33344abb1af76ff1ae2b209,nyeri,NYR,Nyeri,othaya,Othaya,karima,Karima,N,NYR_othaya_karima
+487,e34d871d79ad4ce58c9ff164acd8de49,nyeri,NYR,Nyeri,mukurweini,Mukurweini,gikondi,Gikondi,N,NYR_mukurweini_gikondi
+488,87f53bac47b446a2be777a9f877fa8b0,nyeri,NYR,Nyeri,mukurweini,Mukurweini,rugi,Rugi,N,NYR_mukurweini_rugi
+489,a18717fa00a844e2adacc08be16c9083,nyeri,NYR,Nyeri,mukurweini,Mukurweini,mukurwe-ini_west,Mukurwe-Ini West,N,NYR_mukurweini_mukurwe-ini_west
+490,b6bab07b26a24a3cb1375db05830fd29,nyeri,NYR,Nyeri,mukurweini,Mukurweini,mukurwe-ini_central,Mukurwe-Ini Central,N,NYR_mukurweini_mukurwe-ini_central
+491,bf51d6a84cdd4b4e83c9c7bf9d46e4b0,nyeri,NYR,Nyeri,nyeri_town,Nyeri Town,kiganjo_mathari,Kiganjo/Mathari,N,NYR_nyeri_town_kiganjo_mathari
+492,31e5c6bcdcd04a2aa30eab514eca3647,nyeri,NYR,Nyeri,nyeri_town,Nyeri Town,rware,Rware,N,NYR_nyeri_town_rware
+493,bbfd8f0c67714bb2ae018d9c9cb1d770,nyeri,NYR,Nyeri,nyeri_town,Nyeri Town,gatitu_muruguru,Gatitu/Muruguru,N,NYR_nyeri_town_gatitu_muruguru
+494,621a896350c844eeadd1d307a1723d6f,nyeri,NYR,Nyeri,nyeri_town,Nyeri Town,ruringu,RuringU,N,NYR_nyeri_town_ruringu
+495,9a9eab4e5fe24f549e6b5fb2ca4200c0,nyeri,NYR,Nyeri,nyeri_town,Nyeri Town,kamakwa_mukaro,Kamakwa/Mukaro,N,NYR_nyeri_town_kamakwa_mukaro
+496,b1f8768e1853459bbe9d2bff857471ed,kirinyaga,KRG,Kirinyaga,mwea,Mwea,mutithi,Mutithi,N,KRG_mwea_mutithi
+497,30a6ed19e31340f9a3fdc59105f3625d,kirinyaga,KRG,Kirinyaga,mwea,Mwea,kangai,Kangai,N,KRG_mwea_kangai
+498,57823d13346c4fa9ba34cec5bc44d3e1,kirinyaga,KRG,Kirinyaga,mwea,Mwea,thiba,Thiba,N,KRG_mwea_thiba
+499,c34830acf66046beae8520663a19251d,kirinyaga,KRG,Kirinyaga,mwea,Mwea,wamumu,Wamumu,N,KRG_mwea_wamumu
+500,1aaa2c1081594d4580fd60366226c529,kirinyaga,KRG,Kirinyaga,mwea,Mwea,nyangati,Nyangati,N,KRG_mwea_nyangati
+501,d57cff1f08884dd78fdf1745beb24228,kirinyaga,KRG,Kirinyaga,mwea,Mwea,murinduko,Murinduko,N,KRG_mwea_murinduko
+502,b8d115e9345f485aab60642efa1dd365,kirinyaga,KRG,Kirinyaga,mwea,Mwea,gathigiriri,Gathigiriri,N,KRG_mwea_gathigiriri
+503,62b78e3b2f3947d9b2cc57bd073cf3c9,kirinyaga,KRG,Kirinyaga,mwea,Mwea,tebere,Tebere,N,KRG_mwea_tebere
+504,5aa709879f704b2ea6938d6a76a19c45,kirinyaga,KRG,Kirinyaga,gichugu,Gichugu,kabare,Kabare,N,KRG_gichugu_kabare
+505,83a0e93990df42b98628964bf2fc1831,kirinyaga,KRG,Kirinyaga,gichugu,Gichugu,baragwi,Baragwi,N,KRG_gichugu_baragwi
+506,831f3369a0de4abc930ff1a6825a4d93,kirinyaga,KRG,Kirinyaga,gichugu,Gichugu,njukiini,Njukiini,N,KRG_gichugu_njukiini
+507,438cfe491b1b4bfc9e614cc26280fb6c,kirinyaga,KRG,Kirinyaga,gichugu,Gichugu,ngariama,Ngariama,N,KRG_gichugu_ngariama
+508,d04ec6d5fee64e149caaedf2e025076e,kirinyaga,KRG,Kirinyaga,gichugu,Gichugu,karumandi,Karumandi,N,KRG_gichugu_karumandi
+509,4f3662e83e6c4982aad81131defccb09,kirinyaga,KRG,Kirinyaga,ndia,Ndia,mukure,Mukure,N,KRG_ndia_mukure
+510,7d887a909dc1470a88dd3616737c5b78,kirinyaga,KRG,Kirinyaga,ndia,Ndia,kiine,Kiine,N,KRG_ndia_kiine
+511,03ef743b6ff84b119d85ac21edc450a9,kirinyaga,KRG,Kirinyaga,ndia,Ndia,kariti,Kariti,N,KRG_ndia_kariti
+512,9afa4565e4f7478abdd31090f74be83f,kirinyaga,KRG,Kirinyaga,kirinyaga_central,Kirinyaga Central,mutira,Mutira,N,KRG_kirinyaga_central_mutira
+513,01d2946337524a2197fafcdd4b44313b,kirinyaga,KRG,Kirinyaga,kirinyaga_central,Kirinyaga Central,kanyeki-ini,Kanyeki-Ini,N,KRG_kirinyaga_central_kanyeki-ini
+514,0fa72718893a49d6ae088dc762756618,kirinyaga,KRG,Kirinyaga,kirinyaga_central,Kirinyaga Central,kerugoya,Kerugoya,N,KRG_kirinyaga_central_kerugoya
+515,fed9b6b9aae74ba5a8ea93fdeb065ca8,kirinyaga,KRG,Kirinyaga,kirinyaga_central,Kirinyaga Central,inoi,Inoi,N,KRG_kirinyaga_central_inoi
+516,3f95288224aa4fc8ac8ccde29ca74491,muranga,MRG,MurangA,kangema,Kangema,kanyenyaini,Kanyenyaini,N,MRG_kangema_kanyenyaini
+517,74a5c51b9b444feb9e364ecb9bff54db,muranga,MRG,MurangA,kangema,Kangema,muguru,Muguru,N,MRG_kangema_muguru
+518,1af58a6595674e5993489bb2cf5e2318,muranga,MRG,MurangA,kangema,Kangema,rwathia,Rwathia,N,MRG_kangema_rwathia
+519,58d87499d18d4f6395421d36d8c547f5,muranga,MRG,MurangA,mathioya,Mathioya,gitugi,Gitugi,N,MRG_mathioya_gitugi
+520,c99a23c8abbb44e282334a9ae75ef656,muranga,MRG,MurangA,mathioya,Mathioya,kiru,Kiru,N,MRG_mathioya_kiru
+521,a4a43cf742ed46ac813651147d0ada96,muranga,MRG,MurangA,mathioya,Mathioya,kamacharia,Kamacharia,N,MRG_mathioya_kamacharia
+522,cb130d8d0b66462db414b1104f5ee9bc,muranga,MRG,MurangA,kiharu,Kiharu,wangu,Wangu,N,MRG_kiharu_wangu
+523,89c18c0933d94e9dbbc9ad81049b4a9b,muranga,MRG,MurangA,kiharu,Kiharu,mugoiri,Mugoiri,N,MRG_kiharu_mugoiri
+524,940973b3ecb64678bd90094e69ffb332,muranga,MRG,MurangA,kiharu,Kiharu,mbiri,Mbiri,N,MRG_kiharu_mbiri
+525,686b88c125ba4c82b58c700e1b8fbed9,muranga,MRG,MurangA,kiharu,Kiharu,township,Township,N,MRG_kiharu_township
+526,6ef22ed8f1344865982931568566b767,muranga,MRG,MurangA,kiharu,Kiharu,murarandia,Murarandia,N,MRG_kiharu_murarandia
+527,2e8b21e11ccc4a9d89c04cb75a438840,muranga,MRG,MurangA,kiharu,Kiharu,gaturi,Gaturi,N,MRG_kiharu_gaturi
+528,c128b5a70e6c49d785682692cc4289a0,muranga,MRG,MurangA,kigumo,Kigumo,kahumbu,Kahumbu,N,MRG_kigumo_kahumbu
+529,d414f77994014efbb7c17e5a5264c21f,muranga,MRG,MurangA,kigumo,Kigumo,muthithi,Muthithi,N,MRG_kigumo_muthithi
+530,73f0288d2efe43aabf9efda1743ecb8e,muranga,MRG,MurangA,kigumo,Kigumo,kigumo,Kigumo,N,MRG_kigumo_kigumo
+531,1daeb80e80d64610a24f5dc1191cca14,muranga,MRG,MurangA,kigumo,Kigumo,kangari,Kangari,N,MRG_kigumo_kangari
+532,1b29a283261c43c4bd2e78e418769197,muranga,MRG,MurangA,kigumo,Kigumo,kinyona,Kinyona,N,MRG_kigumo_kinyona
+533,fccad925e3454886b48911c17eb2e668,muranga,MRG,MurangA,maragwa,Maragwa,kimorori_wempa,Kimorori/Wempa,N,MRG_maragwa_kimorori_wempa
+534,54487e5e136c426a99e74775bb1181a6,muranga,MRG,MurangA,maragwa,Maragwa,makuyu,Makuyu,N,MRG_maragwa_makuyu
+535,bedc513cf27049898b17d4606a9e0ef8,muranga,MRG,MurangA,maragwa,Maragwa,kambiti,Kambiti,N,MRG_maragwa_kambiti
+536,355e023c563a4a8a9503998afe860ea7,muranga,MRG,MurangA,maragwa,Maragwa,kamahuha,Kamahuha,N,MRG_maragwa_kamahuha
+537,4e75f9a351c442c2a0ab156f8d7eddbd,muranga,MRG,MurangA,maragwa,Maragwa,ichagaki,Ichagaki,N,MRG_maragwa_ichagaki
+538,f08da1286a1f4ad2bd9eb753534cd518,muranga,MRG,MurangA,maragwa,Maragwa,nginda,Nginda,N,MRG_maragwa_nginda
+539,1cd0270a7b4c40ee975045c7c262adc1,muranga,MRG,MurangA,kandara,Kandara,ngararia,NgAraria,N,MRG_kandara_ngararia
+540,a97d301107fb4778a04d96c445c5f42d,muranga,MRG,MurangA,kandara,Kandara,muruka,Muruka,N,MRG_kandara_muruka
+541,02310e6b18954ffeb7e5282e57cd69c4,muranga,MRG,MurangA,kandara,Kandara,kagundu-ini,Kagundu-Ini,N,MRG_kandara_kagundu-ini
+542,b36dea8ac9e74d5694c009cf55defe27,muranga,MRG,MurangA,kandara,Kandara,gaichanjiru,Gaichanjiru,N,MRG_kandara_gaichanjiru
+543,87663372da544731a3e02cd93541b6bf,muranga,MRG,MurangA,kandara,Kandara,ithiru,Ithiru,N,MRG_kandara_ithiru
+544,14b04b3f31204636af6000e2582ae9b4,muranga,MRG,MurangA,kandara,Kandara,ruchu,Ruchu,N,MRG_kandara_ruchu
+545,c59b9e001174421a91f70ef9d5af7756,muranga,MRG,MurangA,gatanga,Gatanga,ithanga,Ithanga,N,MRG_gatanga_ithanga
+546,8210b0d3b684434ea4150f3a2c535e22,muranga,MRG,MurangA,gatanga,Gatanga,kakuzi_mitubiri,Kakuzi/Mitubiri,N,MRG_gatanga_kakuzi_mitubiri
+547,330562bab65240a3bfc86e60e076ed1e,muranga,MRG,MurangA,gatanga,Gatanga,mugumo-ini,Mugumo-Ini,N,MRG_gatanga_mugumo-ini
+548,7da1d48ac2d2424eb40e5eb1caa98034,muranga,MRG,MurangA,gatanga,Gatanga,kihumbu-ini,Kihumbu-Ini,N,MRG_gatanga_kihumbu-ini
+549,64a7aa0514a64195abcfa8b51dc275c4,muranga,MRG,MurangA,gatanga,Gatanga,gatanga,Gatanga,N,MRG_gatanga_gatanga
+550,36d00e9e8de8484885879f9ad7fda350,muranga,MRG,MurangA,gatanga,Gatanga,kariara,Kariara,N,MRG_gatanga_kariara
+551,3a28c40728a84eebb5bde2e06bf830e7,kiambu,KMB,Kiambu,gatundu_south,Gatundu South,kiamwangi,Kiamwangi,N,KMB_gatundu_south_kiamwangi
+552,c6fe08520d704efabdeb3232d0b2e4a4,kiambu,KMB,Kiambu,gatundu_south,Gatundu South,kiganjo,Kiganjo,N,KMB_gatundu_south_kiganjo
+553,728ea30b45b54ca6a49eaef0363ea41e,kiambu,KMB,Kiambu,gatundu_south,Gatundu South,ndarugu,Ndarugu,N,KMB_gatundu_south_ndarugu
+554,b0a76ff6c23d40edab66500e6fa61f61,kiambu,KMB,Kiambu,gatundu_south,Gatundu South,ngenda,Ngenda,N,KMB_gatundu_south_ngenda
+555,7af90bcd15a443fcb99a5bc77f0b2a66,kiambu,KMB,Kiambu,gatundu_north,Gatundu North,gituamba,Gituamba,N,KMB_gatundu_north_gituamba
+556,8919c30e1b21498a967b892b96a0c984,kiambu,KMB,Kiambu,gatundu_north,Gatundu North,githobokoni,Githobokoni,N,KMB_gatundu_north_githobokoni
+557,d9f5fbc8cc614c828783bc9b47679bfa,kiambu,KMB,Kiambu,gatundu_north,Gatundu North,chania,Chania,N,KMB_gatundu_north_chania
+558,4cdeec1a29b6420296aa1d46b5e84d09,kiambu,KMB,Kiambu,gatundu_north,Gatundu North,mangu,MangU,N,KMB_gatundu_north_mangu
+559,950d38b7cb844af59d03fdb309eb6a9f,kiambu,KMB,Kiambu,juja,Juja,murera,Murera,N,KMB_juja_murera
+560,1fcae431f83f49b7bab4b47e8569e8f3,kiambu,KMB,Kiambu,juja,Juja,theta,Theta,N,KMB_juja_theta
+561,1e9bfd44768c4a3187c78a16d9f9f75c,kiambu,KMB,Kiambu,juja,Juja,juja,Juja,N,KMB_juja_juja
+562,4dba0cb99ebc44c580601f1a7bc5e7c1,kiambu,KMB,Kiambu,juja,Juja,witeithie,Witeithie,N,KMB_juja_witeithie
+563,dcee93575f0c4d76be3792a13c55d186,kiambu,KMB,Kiambu,juja,Juja,kalimoni,Kalimoni,N,KMB_juja_kalimoni
+564,eab83194da7c47c8b8db09ef0c37d712,kiambu,KMB,Kiambu,thika_town,Thika Town,township,Township,N,KMB_thika_town_township
+565,f0dc4bbba26849838dc4a87d070ce770,kiambu,KMB,Kiambu,thika_town,Thika Town,kamenu,Kamenu,N,KMB_thika_town_kamenu
+566,ce924f2c367f4c94900b1ccdddaa3d45,kiambu,KMB,Kiambu,thika_town,Thika Town,hospital,Hospital,N,KMB_thika_town_hospital
+567,504a07a5196b43b6ae4898ddf4e7e0f2,kiambu,KMB,Kiambu,thika_town,Thika Town,gatuanyaga,Gatuanyaga,N,KMB_thika_town_gatuanyaga
+568,807a090cbc6045c6a0887f1533865564,kiambu,KMB,Kiambu,thika_town,Thika Town,ngoliba,Ngoliba,N,KMB_thika_town_ngoliba
+569,933cf377b5eb4ece86153c0ad63b2028,kiambu,KMB,Kiambu,ruiru,Ruiru,gitothua,Gitothua,N,KMB_ruiru_gitothua
+570,974d9b512a9b413cb87da2515706f90c,kiambu,KMB,Kiambu,ruiru,Ruiru,biashara,Biashara,N,KMB_ruiru_biashara
+571,4f5a597183a04c49b2518b20aac4fa3f,kiambu,KMB,Kiambu,ruiru,Ruiru,gatongora,Gatongora,N,KMB_ruiru_gatongora
+572,4cd393353c7c4f20a2dfc11f1b0b6688,kiambu,KMB,Kiambu,ruiru,Ruiru,kahawa_sukari,Kahawa Sukari,N,KMB_ruiru_kahawa_sukari
+573,0ae0f69505614a6f864819ecd871c537,kiambu,KMB,Kiambu,ruiru,Ruiru,kahawa_wendani,Kahawa Wendani,N,KMB_ruiru_kahawa_wendani
+574,9f2b2c483df24ee3891f508adddca73c,kiambu,KMB,Kiambu,ruiru,Ruiru,kiuu,Kiuu,N,KMB_ruiru_kiuu
+575,633f165c8a1e48b1921940859d5fbc35,kiambu,KMB,Kiambu,ruiru,Ruiru,mwiki,Mwiki,N,KMB_ruiru_mwiki
+576,643e11f2fd0d4e52a0af1608e24ca219,kiambu,KMB,Kiambu,ruiru,Ruiru,mwihoko,Mwihoko,N,KMB_ruiru_mwihoko
+577,506b9ef9cd8f424eac8235ec70b27cf8,kiambu,KMB,Kiambu,githunguri,Githunguri,githunguri,Githunguri,N,KMB_githunguri_githunguri
+578,7ab87e27e3644a2396b56bcb52ff0718,kiambu,KMB,Kiambu,githunguri,Githunguri,githiga,Githiga,N,KMB_githunguri_githiga
+579,a00270b98a3a4732bce4f5fffa9a6beb,kiambu,KMB,Kiambu,githunguri,Githunguri,ikinu,Ikinu,N,KMB_githunguri_ikinu
+580,c095cc7fed48418c9d8376876d1d316d,kiambu,KMB,Kiambu,githunguri,Githunguri,ngewa,Ngewa,N,KMB_githunguri_ngewa
+581,9b869f870c2141108d198d4ae4837963,kiambu,KMB,Kiambu,githunguri,Githunguri,komothai,Komothai,N,KMB_githunguri_komothai
+582,bc2e9de783414e4b800b8d0a606ca5f0,kiambu,KMB,Kiambu,kiambu,Kiambu,tinganga,TingAngA,N,KMB_kiambu_tinganga
+583,b72e48a59e37435d8a9aaf4ed88ae9ee,kiambu,KMB,Kiambu,kiambu,Kiambu,ndumberi,Ndumberi,N,KMB_kiambu_ndumberi
+584,23c2f36c023a4214ac383efc89dfa925,kiambu,KMB,Kiambu,kiambu,Kiambu,riabai,Riabai,N,KMB_kiambu_riabai
+585,67eb8e8a92194ab6bd4652e6cdcddb0e,kiambu,KMB,Kiambu,kiambu,Kiambu,township,Township,N,KMB_kiambu_township
+586,ce575f54d6a64b808fe7e332d0d3a38c,kiambu,KMB,Kiambu,kiambaa,Kiambaa,cianda,Cianda,N,KMB_kiambaa_cianda
+587,2f1fee9471f548c3bbcb10b9d981e955,kiambu,KMB,Kiambu,kiambaa,Kiambaa,karuri,Karuri,N,KMB_kiambaa_karuri
+588,f703317b7e39443b91abd2e1a8f38942,kiambu,KMB,Kiambu,kiambaa,Kiambaa,ndenderu,Ndenderu,N,KMB_kiambaa_ndenderu
+589,3783d8f968cc41a8b2d7d357411018f8,kiambu,KMB,Kiambu,kiambaa,Kiambaa,muchatha,Muchatha,N,KMB_kiambaa_muchatha
+590,2b5d0417977e4aeaa39de4ff69bece10,kiambu,KMB,Kiambu,kiambaa,Kiambaa,kihara,Kihara,N,KMB_kiambaa_kihara
+591,e98b43b22a294eae918daef42362ad7f,kiambu,KMB,Kiambu,kabete,Kabete,gitaru,Gitaru,N,KMB_kabete_gitaru
+592,901bb36f4f0b47fa96a698e6d246fab3,kiambu,KMB,Kiambu,kabete,Kabete,muguga,Muguga,N,KMB_kabete_muguga
+593,ebbbfcc783d34aea8380fd2c17bf6892,kiambu,KMB,Kiambu,kabete,Kabete,nyadhuna,Nyadhuna,N,KMB_kabete_nyadhuna
+594,392bedfac4254f1cbc92d48e119b8368,kiambu,KMB,Kiambu,kabete,Kabete,kabete,Kabete,N,KMB_kabete_kabete
+595,2c434c26625d4d299858509ae150a52c,kiambu,KMB,Kiambu,kabete,Kabete,uthiru,Uthiru,N,KMB_kabete_uthiru
+596,0f912aac6b88466f8b88eb0a7f4d4636,kiambu,KMB,Kiambu,kikuyu,Kikuyu,karai,Karai,N,KMB_kikuyu_karai
+597,e5946eb55b0e4212ac9bc68c3a4e2e91,kiambu,KMB,Kiambu,kikuyu,Kikuyu,nachu,Nachu,N,KMB_kikuyu_nachu
+598,4425544d82cc46ad8bbad14325c13fa1,kiambu,KMB,Kiambu,kikuyu,Kikuyu,sigona,Sigona,N,KMB_kikuyu_sigona
+599,3c1af0d34cb847d283400bae8d6dd2d5,kiambu,KMB,Kiambu,kikuyu,Kikuyu,kikuyu,Kikuyu,N,KMB_kikuyu_kikuyu
+600,f64f14b610c8404fb3cb0ec8bbef8383,kiambu,KMB,Kiambu,kikuyu,Kikuyu,kinoo,Kinoo,N,KMB_kikuyu_kinoo
+601,d8531c56a6074f0ca0abaaf5814322bb,kiambu,KMB,Kiambu,limuru,Limuru,bibirioni,Bibirioni,N,KMB_limuru_bibirioni
+602,9303618cde72463cb5460184011edf5c,kiambu,KMB,Kiambu,limuru,Limuru,limuru_central,Limuru Central,N,KMB_limuru_limuru_central
+603,fdccc5bffd1f4990883157cf6e83e09f,kiambu,KMB,Kiambu,limuru,Limuru,ndeiya,Ndeiya,N,KMB_limuru_ndeiya
+604,d00c5b1d54944a0d9720bbdb76883727,kiambu,KMB,Kiambu,limuru,Limuru,limuru_east,Limuru East,N,KMB_limuru_limuru_east
+605,0e8f15786d4d4c1e91dc3f7ad3e770de,kiambu,KMB,Kiambu,limuru,Limuru,ngecha_tigoni,Ngecha Tigoni,N,KMB_limuru_ngecha_tigoni
+606,dea99148199a4395ae3848f645ec0fbf,kiambu,KMB,Kiambu,lari,Lari,kinale,Kinale,N,KMB_lari_kinale
+607,821499f636814c75993523c24acc82db,kiambu,KMB,Kiambu,lari,Lari,kijabe,Kijabe,N,KMB_lari_kijabe
+608,df79d66dea094fd987316058be59fdd0,kiambu,KMB,Kiambu,lari,Lari,nyanduma,Nyanduma,N,KMB_lari_nyanduma
+609,60b0a0cd05d44f5688f062f508c24e72,kiambu,KMB,Kiambu,lari,Lari,kamburu,Kamburu,N,KMB_lari_kamburu
+610,106ef0cc152f4221a4c6040648d275cc,kiambu,KMB,Kiambu,lari,Lari,lari_kirenga,Lari/Kirenga,N,KMB_lari_lari_kirenga
+611,ecc90a7a3fb54189b414771e37b1edfb,turkana,TRK,Turkana,turkana_north,Turkana North,kaeris,Kaeris,N,TRK_turkana_north_kaeris
+612,d273394043fc4498804daf5c3e720c6b,turkana,TRK,Turkana,turkana_north,Turkana North,lake_zone,Lake Zone,N,TRK_turkana_north_lake_zone
+613,4c060f85bf9b4693b2b2024a6e582523,turkana,TRK,Turkana,turkana_north,Turkana North,lapur,Lapur,N,TRK_turkana_north_lapur
+614,36856f72635a4033be7baba70a4fefce,turkana,TRK,Turkana,turkana_north,Turkana North,kaaleng_kaikor,Kaaleng/Kaikor,N,TRK_turkana_north_kaaleng_kaikor
+615,37463b7351b54ac6b54066c25eded89b,turkana,TRK,Turkana,turkana_north,Turkana North,kibish,Kibish,N,TRK_turkana_north_kibish
+616,51b743cb88f04e4195f0433f4bb24caa,turkana,TRK,Turkana,turkana_north,Turkana North,nakalale,Nakalale,N,TRK_turkana_north_nakalale
+617,b974b44f24104fb7945c32565ab8ef48,turkana,TRK,Turkana,turkana_west,Turkana West,kakuma,Kakuma,N,TRK_turkana_west_kakuma
+618,ec5f9682a38f4fbbb8d6210944e8357a,turkana,TRK,Turkana,turkana_west,Turkana West,lopur,Lopur,N,TRK_turkana_west_lopur
+619,5774a9e4a5624d058802e6f1a2b7aaa8,turkana,TRK,Turkana,turkana_west,Turkana West,letea,Letea,N,TRK_turkana_west_letea
+620,1fd3d1aef6d34d91985099116338d3b6,turkana,TRK,Turkana,turkana_west,Turkana West,songot,Songot,N,TRK_turkana_west_songot
+621,f2b2bdd79728456fa799bf57d4a06b7a,turkana,TRK,Turkana,turkana_west,Turkana West,kalobeyei,Kalobeyei,N,TRK_turkana_west_kalobeyei
+622,a4ffec2b7dd1490fad955ede57b7071a,turkana,TRK,Turkana,turkana_west,Turkana West,lokichoggio,Lokichoggio,N,TRK_turkana_west_lokichoggio
+623,87e620534f1d4a1b8fe360296dbf446c,turkana,TRK,Turkana,turkana_west,Turkana West,nanaam,Nanaam,N,TRK_turkana_west_nanaam
+624,95a5eba7e6224fd1bd3005b35c99a8f0,turkana,TRK,Turkana,turkana_central,Turkana Central,kerio_delta,Kerio Delta,N,TRK_turkana_central_kerio_delta
+625,7d0a1d74567c4581bc3d13874e643753,turkana,TRK,Turkana,turkana_central,Turkana Central,kangatotha,KangAtotha,N,TRK_turkana_central_kangatotha
+626,d2f0e131cb84482c8feaf4584f7d91f9,turkana,TRK,Turkana,turkana_central,Turkana Central,kalokol,Kalokol,N,TRK_turkana_central_kalokol
+833,fd8db2bf92944835a154b31c807db58c,nakuru,NKR,Nakuru,njoro,Njoro,nessuit,Nessuit,N,NKR_njoro_nessuit
+627,5428c19657584c98851ec67632d93862,turkana,TRK,Turkana,turkana_central,Turkana Central,lodwar_township,Lodwar Township,N,TRK_turkana_central_lodwar_township
+628,e013e632ab4f4eb79aee6626b3acb002,turkana,TRK,Turkana,turkana_central,Turkana Central,kanamkemer,Kanamkemer,N,TRK_turkana_central_kanamkemer
+629,1182c16043154485a08ef6dca29d74cb,turkana,TRK,Turkana,loima,Loima,kotaruk_lobei,Kotaruk/Lobei,N,TRK_loima_kotaruk_lobei
+630,9357d2db40bf4226b5c55a8f79aac0b9,turkana,TRK,Turkana,loima,Loima,turkwel,Turkwel,N,TRK_loima_turkwel
+631,25e3d84e66224036b74ee979f1f3a87f,turkana,TRK,Turkana,loima,Loima,loima,Loima,N,TRK_loima_loima
+632,f31e5e951d014740989fb35b669cabd7,turkana,TRK,Turkana,loima,Loima,lokiriama_lorengippi,Lokiriama/Lorengippi,N,TRK_loima_lokiriama_lorengippi
+633,1b785bd73e134c17b2df561a1f09905d,turkana,TRK,Turkana,turkana_south,Turkana South,kaputir,Kaputir,N,TRK_turkana_south_kaputir
+634,25bd981dfa8541f8863e0ee197317e16,turkana,TRK,Turkana,turkana_south,Turkana South,katilu,Katilu,N,TRK_turkana_south_katilu
+635,98d774e58cb34580ba3cf71ea99eac0b,turkana,TRK,Turkana,turkana_south,Turkana South,lobokat,Lobokat,N,TRK_turkana_south_lobokat
+636,49513247a678476c82ec4887d8a23108,turkana,TRK,Turkana,turkana_south,Turkana South,kalapata,Kalapata,N,TRK_turkana_south_kalapata
+637,b584cfdd885f4387819b669d96a9fb55,turkana,TRK,Turkana,turkana_south,Turkana South,lokichar,Lokichar,N,TRK_turkana_south_lokichar
+638,58c88087d00a475fa2c3ec5ee3bc736b,turkana,TRK,Turkana,turkana_east,Turkana East,kapedo_napeitom,Kapedo/Napeitom,N,TRK_turkana_east_kapedo_napeitom
+639,676a974925264589831776b0e7bd6b85,turkana,TRK,Turkana,turkana_east,Turkana East,katilia,Katilia,N,TRK_turkana_east_katilia
+640,a2e2d02f90314fd18679b0a910289272,turkana,TRK,Turkana,turkana_east,Turkana East,lokori_kochodin,Lokori/Kochodin,N,TRK_turkana_east_lokori_kochodin
+641,d45a4c7275674801ab647876b90a3c94,west_pokot,WPK,West Pokot,kapenguria,Kapenguria,riwo,Riwo,N,WPK_kapenguria_riwo
+642,99ce9d4b5f05470a8e2e4f287f930265,west_pokot,WPK,West Pokot,kapenguria,Kapenguria,kapenguria,Kapenguria,N,WPK_kapenguria_kapenguria
+643,6237d682ecd341148744265cc6fa99e5,west_pokot,WPK,West Pokot,kapenguria,Kapenguria,mnagei,Mnagei,N,WPK_kapenguria_mnagei
+644,511809d4083e490a85e15408535ba5fe,west_pokot,WPK,West Pokot,kapenguria,Kapenguria,siyoi,Siyoi,N,WPK_kapenguria_siyoi
+645,a11a4f433277440c8d440f3c3e7a7f39,west_pokot,WPK,West Pokot,kapenguria,Kapenguria,endugh,Endugh,N,WPK_kapenguria_endugh
+646,2581ce107d5b4bfe99c244eec3f1f94e,west_pokot,WPK,West Pokot,kapenguria,Kapenguria,sook,Sook,N,WPK_kapenguria_sook
+647,b233e8e9e8074fea9f6fb4bf8022fbb8,west_pokot,WPK,West Pokot,sigor,Sigor,sekerr,Sekerr,N,WPK_sigor_sekerr
+648,fafb8738780d4bc0b289ca5512bbc90b,west_pokot,WPK,West Pokot,sigor,Sigor,masool,Masool,N,WPK_sigor_masool
+649,9ab530b188144a35954e4f3e5749d8d9,west_pokot,WPK,West Pokot,sigor,Sigor,lomut,Lomut,N,WPK_sigor_lomut
+650,b5955dc0ec6245808f7e05c177b8b792,west_pokot,WPK,West Pokot,sigor,Sigor,weiwei,Weiwei,N,WPK_sigor_weiwei
+651,278553f53120447bbf6652c0e5c305eb,west_pokot,WPK,West Pokot,kacheliba,Kacheliba,suam,Suam,N,WPK_kacheliba_suam
+652,fbc350c2286d4abeadfa583f5b4f14b1,west_pokot,WPK,West Pokot,kacheliba,Kacheliba,kodich,Kodich,N,WPK_kacheliba_kodich
+653,936068cd2e264abea698448096d4b349,west_pokot,WPK,West Pokot,kacheliba,Kacheliba,kapckok,Kapckok,N,WPK_kacheliba_kapckok
+654,9693ab365ebc4f5ca6c8b8c28b5c66e0,west_pokot,WPK,West Pokot,kacheliba,Kacheliba,kasei,Kasei,N,WPK_kacheliba_kasei
+655,fa89aa7426204a4da74bf9073a887a27,west_pokot,WPK,West Pokot,kacheliba,Kacheliba,kiwawa,Kiwawa,N,WPK_kacheliba_kiwawa
+656,3cfac3fc9bcf4adaac7dbccb836ed7eb,west_pokot,WPK,West Pokot,kacheliba,Kacheliba,alale,Alale,N,WPK_kacheliba_alale
+657,aa1dd02074514e8faee38506de3fafb4,west_pokot,WPK,West Pokot,pokot_south,Pokot South,chepareria,Chepareria,N,WPK_pokot_south_chepareria
+658,62681bdbce37467e98ef94ab2b2310b7,west_pokot,WPK,West Pokot,pokot_south,Pokot South,batei,Batei,N,WPK_pokot_south_batei
+659,205d89a455e448db967d05a3994f5f18,west_pokot,WPK,West Pokot,pokot_south,Pokot South,lelan,Lelan,N,WPK_pokot_south_lelan
+660,1b2aa111d6dc4b70923cd1df77743b04,west_pokot,WPK,West Pokot,pokot_south,Pokot South,tapach,Tapach,N,WPK_pokot_south_tapach
+661,6dc12c11d2d1476392adecac5608a920,samburu,SBR,Samburu,samburu_west,Samburu West,lodokejek,Lodokejek,N,SBR_samburu_west_lodokejek
+662,4237ccfe1175438db18b7752a7c37cdc,samburu,SBR,Samburu,samburu_west,Samburu West,suguta_marmar,Suguta Marmar,N,SBR_samburu_west_suguta_marmar
+663,753b091c5a7943b0b2fb4d9b4b220ab0,samburu,SBR,Samburu,samburu_west,Samburu West,maralal,Maralal,N,SBR_samburu_west_maralal
+664,dc86c7633e994e1e8d5e836fa56facd9,samburu,SBR,Samburu,samburu_west,Samburu West,loosuk,Loosuk,N,SBR_samburu_west_loosuk
+665,b131c2d507c54649b9d6d7fbd57decd0,samburu,SBR,Samburu,samburu_west,Samburu West,poro,Poro,N,SBR_samburu_west_poro
+666,01b486ad2f8f4861b7fafad17f941c2f,samburu,SBR,Samburu,samburu_north,Samburu North,el-barta,El-Barta,N,SBR_samburu_north_el-barta
+667,42b42fedf2ac49e788768ea8d4baff8c,samburu,SBR,Samburu,samburu_north,Samburu North,nachola,Nachola,N,SBR_samburu_north_nachola
+668,4aed9be290dc4aff88df091a72284409,samburu,SBR,Samburu,samburu_north,Samburu North,ndoto,Ndoto,N,SBR_samburu_north_ndoto
+669,99870b5128454b80adabb98f7aa440cd,samburu,SBR,Samburu,samburu_north,Samburu North,nyiro,Nyiro,N,SBR_samburu_north_nyiro
+670,8180d3725bc0465f982da67ce93b836e,samburu,SBR,Samburu,samburu_north,Samburu North,angata_nanyokie,Angata Nanyokie,N,SBR_samburu_north_angata_nanyokie
+671,3c2be0f619674481a23e1f153fb4663f,samburu,SBR,Samburu,samburu_north,Samburu North,baawa,Baawa,N,SBR_samburu_north_baawa
+672,38eef4e8110b40eabf3ffde8d5072d72,samburu,SBR,Samburu,samburu_east,Samburu East,waso,Waso,N,SBR_samburu_east_waso
+673,5543c1bdf2464c0981789521a533ea7d,samburu,SBR,Samburu,samburu_east,Samburu East,wamba_west,Wamba West,N,SBR_samburu_east_wamba_west
+674,c55baf9417ae4f8f87e6e53d9861b219,samburu,SBR,Samburu,samburu_east,Samburu East,wamba_east,Wamba East,N,SBR_samburu_east_wamba_east
+675,89e7ef1b1bf34ff3a4902c4ddfbc300e,samburu,SBR,Samburu,samburu_east,Samburu East,wamba_north,Wamba North,N,SBR_samburu_east_wamba_north
+676,6228824ef0b74cd0aec21ce2938e6b8c,trans_nzoia,TNZ,Trans Nzoia,kwanza,Kwanza,kapomboi,Kapomboi,N,TNZ_kwanza_kapomboi
+677,ab1d897d312c41c8915f7c8e781d4521,trans_nzoia,TNZ,Trans Nzoia,kwanza,Kwanza,kwanza,Kwanza,N,TNZ_kwanza_kwanza
+678,6d12aee88b2f4e5595721d6cf36b2245,trans_nzoia,TNZ,Trans Nzoia,kwanza,Kwanza,keiyo,Keiyo,N,TNZ_kwanza_keiyo
+679,2ec7b2fdce174dda8c6dc02a350691d0,trans_nzoia,TNZ,Trans Nzoia,kwanza,Kwanza,bidii,Bidii,N,TNZ_kwanza_bidii
+680,0580aa7c0d01466f80e9114b1ddbf07c,trans_nzoia,TNZ,Trans Nzoia,endebess,Endebess,chepchoina,Chepchoina,N,TNZ_endebess_chepchoina
+681,334e15babee34ce0bfb91769d11eebbd,trans_nzoia,TNZ,Trans Nzoia,endebess,Endebess,endebess,Endebess,N,TNZ_endebess_endebess
+682,a267b9659f0948c09ce64e5bf329a578,trans_nzoia,TNZ,Trans Nzoia,endebess,Endebess,matumbei,Matumbei,N,TNZ_endebess_matumbei
+683,9e730e6f867e4b2f87d4a39c4716534a,trans_nzoia,TNZ,Trans Nzoia,saboti,Saboti,kinyoro,Kinyoro,N,TNZ_saboti_kinyoro
+684,3a1723ea239d47fdb3a1ef8a9cafca29,trans_nzoia,TNZ,Trans Nzoia,saboti,Saboti,matisi,Matisi,N,TNZ_saboti_matisi
+685,e39a8585e2de42c6b588f45382c5e279,trans_nzoia,TNZ,Trans Nzoia,saboti,Saboti,tuwani,Tuwani,N,TNZ_saboti_tuwani
+686,b3d14784e1ad4ed5aca7d5250debe67c,trans_nzoia,TNZ,Trans Nzoia,saboti,Saboti,saboti,Saboti,N,TNZ_saboti_saboti
+687,2c42270df26a45b5a239742e3e3f7428,trans_nzoia,TNZ,Trans Nzoia,saboti,Saboti,machewa,Machewa,N,TNZ_saboti_machewa
+688,50032fba467b4fcfaac9bc34f5b6845a,trans_nzoia,TNZ,Trans Nzoia,kiminini,Kiminini,kiminini,Kiminini,N,TNZ_kiminini_kiminini
+689,c3148a34c4c347308a68f3b68d03133b,trans_nzoia,TNZ,Trans Nzoia,kiminini,Kiminini,waitaluk,Waitaluk,N,TNZ_kiminini_waitaluk
+690,fb511951b2e64e1297401ef96e3a5c3e,trans_nzoia,TNZ,Trans Nzoia,kiminini,Kiminini,sirende,Sirende,N,TNZ_kiminini_sirende
+691,87feaeba770a423f8de831e68a895f92,trans_nzoia,TNZ,Trans Nzoia,kiminini,Kiminini,hospital,Hospital,N,TNZ_kiminini_hospital
+692,64b9774459724e7d86e4d3ee35ab3dbf,trans_nzoia,TNZ,Trans Nzoia,kiminini,Kiminini,sikhendu,Sikhendu,N,TNZ_kiminini_sikhendu
+693,36cc007e57b44feeb4fb86c4070d455c,trans_nzoia,TNZ,Trans Nzoia,kiminini,Kiminini,nabiswa,Nabiswa,N,TNZ_kiminini_nabiswa
+694,e9bc66534e9e42d29235bb35247fc7b7,trans_nzoia,TNZ,Trans Nzoia,cherangany,Cherangany,sinyerere,Sinyerere,N,TNZ_cherangany_sinyerere
+695,62af49a0e81548a28cf101678dc04bef,trans_nzoia,TNZ,Trans Nzoia,cherangany,Cherangany,makutano,Makutano,N,TNZ_cherangany_makutano
+696,7f497f160c4b45a6b69b67332c884911,trans_nzoia,TNZ,Trans Nzoia,cherangany,Cherangany,kaplamai,Kaplamai,N,TNZ_cherangany_kaplamai
+697,637846791ca7417a86c0b87c5bb07ce9,trans_nzoia,TNZ,Trans Nzoia,cherangany,Cherangany,motosiet,Motosiet,N,TNZ_cherangany_motosiet
+698,8fbde9dd4ecb4968a5ad23e9e3ce03ae,trans_nzoia,TNZ,Trans Nzoia,cherangany,Cherangany,cherangany_suwerwa,Cherangany/Suwerwa,N,TNZ_cherangany_cherangany_suwerwa
+699,d91b422d213e47858f05a625015296a9,trans_nzoia,TNZ,Trans Nzoia,cherangany,Cherangany,chepsiro_kiptoror,Chepsiro/Kiptoror,N,TNZ_cherangany_chepsiro_kiptoror
+700,8dad9cfbb26a4168aa4c6f0ed2b2c0c1,trans_nzoia,TNZ,Trans Nzoia,cherangany,Cherangany,sitatunga,Sitatunga,N,TNZ_cherangany_sitatunga
+701,b48bc84bcb464f3f9dce7babdd9e3451,uasin_gishu,UGS,Uasin Gishu,soy,Soy,mois_bridge,MoiS Bridge,N,UGS_soy_mois_bridge
+702,fec2038d3f414cf6b9ad7c7d9948f122,uasin_gishu,UGS,Uasin Gishu,soy,Soy,kapkures,Kapkures,N,UGS_soy_kapkures
+703,eb167a22abbb4fb6bb86686908b46358,uasin_gishu,UGS,Uasin Gishu,soy,Soy,ziwa,Ziwa,N,UGS_soy_ziwa
+704,f71303afbced4a75a57e39d25eeae025,uasin_gishu,UGS,Uasin Gishu,soy,Soy,segero_barsombe,Segero/Barsombe,N,UGS_soy_segero_barsombe
+705,af828ef155d24ba1a1317fbd2ea5f2a1,uasin_gishu,UGS,Uasin Gishu,soy,Soy,kipsomba,Kipsomba,N,UGS_soy_kipsomba
+706,6bead6a76c634bdb8726d8f0106b37ea,uasin_gishu,UGS,Uasin Gishu,soy,Soy,soy,Soy,N,UGS_soy_soy
+707,fcd592b4dc3645788762ab12dedfe446,uasin_gishu,UGS,Uasin Gishu,soy,Soy,kuinet_kapsuswa,Kuinet/Kapsuswa,N,UGS_soy_kuinet_kapsuswa
+708,8851e0b109124d3cb0fac30e3c22e234,uasin_gishu,UGS,Uasin Gishu,turbo,Turbo,ngenyilel,Ngenyilel,N,UGS_turbo_ngenyilel
+709,004ef2f114a64973a1d484d51dc2604b,uasin_gishu,UGS,Uasin Gishu,turbo,Turbo,tapsagoi,Tapsagoi,N,UGS_turbo_tapsagoi
+710,e159683bfdf242119c9af01f2ffdac5a,uasin_gishu,UGS,Uasin Gishu,turbo,Turbo,kamagut,Kamagut,N,UGS_turbo_kamagut
+711,43af5426bc2f4865ba4ce625f679da6e,uasin_gishu,UGS,Uasin Gishu,turbo,Turbo,kiplombe,Kiplombe,N,UGS_turbo_kiplombe
+712,08e025a9382440a1ae27c2ae399b5373,uasin_gishu,UGS,Uasin Gishu,turbo,Turbo,kapsaos,Kapsaos,N,UGS_turbo_kapsaos
+713,1e377b7c5347444f9ed0c3dc93a9c231,uasin_gishu,UGS,Uasin Gishu,turbo,Turbo,huruma,Huruma,N,UGS_turbo_huruma
+714,515f024106ba4360bb827436c3d0c7b7,uasin_gishu,UGS,Uasin Gishu,moiben,Moiben,tembelio,Tembelio,N,UGS_moiben_tembelio
+715,bdd7168e63a741378d9392c688731422,uasin_gishu,UGS,Uasin Gishu,moiben,Moiben,sergoit,Sergoit,N,UGS_moiben_sergoit
+716,fd3918cd39124d41a126d204bf38baff,uasin_gishu,UGS,Uasin Gishu,moiben,Moiben,karuna_meibeki,Karuna/Meibeki,N,UGS_moiben_karuna_meibeki
+717,2e1556bfa24140a88d7cd92f494072d5,uasin_gishu,UGS,Uasin Gishu,moiben,Moiben,moiben,Moiben,N,UGS_moiben_moiben
+718,c1cf0a737f174555a66a8a239c573f03,uasin_gishu,UGS,Uasin Gishu,moiben,Moiben,kimumu,Kimumu,N,UGS_moiben_kimumu
+719,3b96aa5dd8c94662af65d2e6099060b1,uasin_gishu,UGS,Uasin Gishu,ainabkoi,Ainabkoi,kapsoya,Kapsoya,N,UGS_ainabkoi_kapsoya
+720,bfcf65e4817447c8b72fc634d8916edd,uasin_gishu,UGS,Uasin Gishu,ainabkoi,Ainabkoi,kaptagat,Kaptagat,N,UGS_ainabkoi_kaptagat
+721,bd2523bc60834d428a6b207677e2d83b,uasin_gishu,UGS,Uasin Gishu,ainabkoi,Ainabkoi,ainabkoi_olare,Ainabkoi/Olare,N,UGS_ainabkoi_ainabkoi_olare
+722,d8acbd549ac6452fb6fa3537d483a84d,uasin_gishu,UGS,Uasin Gishu,kapseret,Kapseret,simat_kapseret,Simat/Kapseret,N,UGS_kapseret_simat_kapseret
+723,3abb30dfe815421fbe3c376bd12c054d,uasin_gishu,UGS,Uasin Gishu,kapseret,Kapseret,kipkenyo,Kipkenyo,N,UGS_kapseret_kipkenyo
+724,4f362a47a55d456dbc931e38a8607694,uasin_gishu,UGS,Uasin Gishu,kapseret,Kapseret,ngeria,Ngeria,N,UGS_kapseret_ngeria
+725,464ffd3bd4d7451dbe29bd0ba71381f0,uasin_gishu,UGS,Uasin Gishu,kapseret,Kapseret,megun,Megun,N,UGS_kapseret_megun
+726,8b5d70ed4a2346b6a3fc602b7f9e7013,uasin_gishu,UGS,Uasin Gishu,kapseret,Kapseret,langas,Langas,N,UGS_kapseret_langas
+727,acbbb057672e408fbf2b14bc5cc00f9a,uasin_gishu,UGS,Uasin Gishu,kesses,Kesses,racecourse,Racecourse,N,UGS_kesses_racecourse
+728,cc5744c16c054b4eb22906f8a6d32496,uasin_gishu,UGS,Uasin Gishu,kesses,Kesses,cheptiret_kipchamo,Cheptiret/Kipchamo,N,UGS_kesses_cheptiret_kipchamo
+729,a429e73fe4a440f6821c30aace134e19,uasin_gishu,UGS,Uasin Gishu,kesses,Kesses,tulwet_chuiyat,Tulwet/Chuiyat,N,UGS_kesses_tulwet_chuiyat
+730,a1b6ffb01d5f4d83b41c5d0bae55b5c3,uasin_gishu,UGS,Uasin Gishu,kesses,Kesses,tarakwa,Tarakwa,N,UGS_kesses_tarakwa
+731,da2a8694d4474de3aea656d318ff6f37,elgeyo_marakwet,EMK,Elgeyo/Marakwet,marakwet_east,Marakwet East,kapyego,Kapyego,N,EMK_marakwet_east_kapyego
+732,be5fc88e545f4932a912fc54a86446c7,elgeyo_marakwet,EMK,Elgeyo/Marakwet,marakwet_east,Marakwet East,sambirir,Sambirir,N,EMK_marakwet_east_sambirir
+733,fe1a554800314f9b9a6c39e9c21d36b3,elgeyo_marakwet,EMK,Elgeyo/Marakwet,marakwet_east,Marakwet East,endo,Endo,N,EMK_marakwet_east_endo
+734,fed4c5eea58a40f9b06c6c76af04b844,elgeyo_marakwet,EMK,Elgeyo/Marakwet,marakwet_east,Marakwet East,embobut___embulot,Embobut / Embulot,N,EMK_marakwet_east_embobut___embulot
+735,454b9c8d1fca41e78202957b3008c8de,elgeyo_marakwet,EMK,Elgeyo/Marakwet,marakwet_west,Marakwet West,lelan,Lelan,N,EMK_marakwet_west_lelan
+736,c9bc9cca7a54480d9eabcaf9363ad319,elgeyo_marakwet,EMK,Elgeyo/Marakwet,marakwet_west,Marakwet West,sengwer,Sengwer,N,EMK_marakwet_west_sengwer
+737,347cec02df2c4771ad2e115eafc6ce5d,elgeyo_marakwet,EMK,Elgeyo/Marakwet,marakwet_west,Marakwet West,cherangany_chebororwa,CherangAny/Chebororwa,N,EMK_marakwet_west_cherangany_chebororwa
+738,3d3ce3a98cf3411d9bb659b5a955329a,elgeyo_marakwet,EMK,Elgeyo/Marakwet,marakwet_west,Marakwet West,moiben_kuserwo,Moiben/Kuserwo,N,EMK_marakwet_west_moiben_kuserwo
+739,b15aeed88fda472d8651fc2f6d86c83c,elgeyo_marakwet,EMK,Elgeyo/Marakwet,marakwet_west,Marakwet West,kapsowar,Kapsowar,N,EMK_marakwet_west_kapsowar
+740,f4d37304fe0b4311814f2355c218cea2,elgeyo_marakwet,EMK,Elgeyo/Marakwet,marakwet_west,Marakwet West,arror,Arror,N,EMK_marakwet_west_arror
+741,591b805ce7ba4ae98361e20ecd5978a8,elgeyo_marakwet,EMK,Elgeyo/Marakwet,keiyo_north,Keiyo North,emsoo,Emsoo,N,EMK_keiyo_north_emsoo
+742,587639c3daf94696b6fa9811aab5b921,elgeyo_marakwet,EMK,Elgeyo/Marakwet,keiyo_north,Keiyo North,kamariny,Kamariny,N,EMK_keiyo_north_kamariny
+743,48a518eefac944f79845daf156712506,elgeyo_marakwet,EMK,Elgeyo/Marakwet,keiyo_north,Keiyo North,kapchemutwa,Kapchemutwa,N,EMK_keiyo_north_kapchemutwa
+744,bed516de82be45668bad4520e6e28a44,elgeyo_marakwet,EMK,Elgeyo/Marakwet,keiyo_north,Keiyo North,tambach,Tambach,N,EMK_keiyo_north_tambach
+745,165764b33c0b455b9a41c96d4d6301c9,elgeyo_marakwet,EMK,Elgeyo/Marakwet,keiyo_south,Keiyo South,kaptarakwa,Kaptarakwa,N,EMK_keiyo_south_kaptarakwa
+746,29bda90500e94a529c2627d17b31eb71,elgeyo_marakwet,EMK,Elgeyo/Marakwet,keiyo_south,Keiyo South,chepkorio,Chepkorio,N,EMK_keiyo_south_chepkorio
+747,035237b73c474e5281058d0f9d47eb79,elgeyo_marakwet,EMK,Elgeyo/Marakwet,keiyo_south,Keiyo South,soy_north,Soy North,N,EMK_keiyo_south_soy_north
+748,aadf2fb59a7b40948d5a899a3b1bcf52,elgeyo_marakwet,EMK,Elgeyo/Marakwet,keiyo_south,Keiyo South,soy_south,Soy South,N,EMK_keiyo_south_soy_south
+749,51812b06399e4d339f5733d1ba885377,elgeyo_marakwet,EMK,Elgeyo/Marakwet,keiyo_south,Keiyo South,kabiemit,Kabiemit,N,EMK_keiyo_south_kabiemit
+750,0cab3e7a8e4a4730aee1ea2b7104a0e8,elgeyo_marakwet,EMK,Elgeyo/Marakwet,keiyo_south,Keiyo South,metkei,Metkei,N,EMK_keiyo_south_metkei
+751,10a83fc83bc54ee9b777bf806df2b783,nandi,NDI,Nandi,tinderet,Tinderet,songhor_soba,Songhor/Soba,N,NDI_tinderet_songhor_soba
+752,3bec651e36c94d07aee0c824c29be915,nandi,NDI,Nandi,tinderet,Tinderet,tindiret,Tindiret,N,NDI_tinderet_tindiret
+753,115e8442a64c4c8d8907d2a9ca55e305,nandi,NDI,Nandi,tinderet,Tinderet,chemelil_chemase,Chemelil/Chemase,N,NDI_tinderet_chemelil_chemase
+754,8dd0384aa7cf4cd3b4574310d8754ae6,nandi,NDI,Nandi,tinderet,Tinderet,kapsimotwo,Kapsimotwo,N,NDI_tinderet_kapsimotwo
+755,da23c969e1f24b60b5ddb3ee1af1a35c,nandi,NDI,Nandi,aldai,Aldai,kabwareng,Kabwareng,N,NDI_aldai_kabwareng
+756,f2e5b7140b6c418488fa62454d657207,nandi,NDI,Nandi,aldai,Aldai,terik,Terik,N,NDI_aldai_terik
+757,431f39cad51b4e3997ddb5227bdfdeef,nandi,NDI,Nandi,aldai,Aldai,kemeloi-maraba,Kemeloi-Maraba,N,NDI_aldai_kemeloi-maraba
+758,13d5224bdf1f4703bbc6e32601291399,nandi,NDI,Nandi,aldai,Aldai,kobujoi,Kobujoi,N,NDI_aldai_kobujoi
+759,e813996d701e42728c2f06560f841a2b,nandi,NDI,Nandi,aldai,Aldai,kaptumo-kaboi,Kaptumo-Kaboi,N,NDI_aldai_kaptumo-kaboi
+760,c3bbc72fb77f42ab83017a2068f8dc81,nandi,NDI,Nandi,aldai,Aldai,koyo-ndurio,Koyo-Ndurio,N,NDI_aldai_koyo-ndurio
+761,dc935441da294bd7bdd84e207feaeacc,nandi,NDI,Nandi,nandi_hills,Nandi Hills,nandi_hills,Nandi Hills,N,NDI_nandi_hills_nandi_hills
+762,ac80f6bf95504ecd97915dba923118b2,nandi,NDI,Nandi,nandi_hills,Nandi Hills,chepkunyuk,Chepkunyuk,N,NDI_nandi_hills_chepkunyuk
+763,ac303145837d4d5694a66eb48f4ef204,nandi,NDI,Nandi,nandi_hills,Nandi Hills,ollessos,OlLessos,N,NDI_nandi_hills_ollessos
+764,3629ed4708d64f88860ec0c1bc8966fe,nandi,NDI,Nandi,nandi_hills,Nandi Hills,kapchorua,Kapchorua,N,NDI_nandi_hills_kapchorua
+765,9abd1580744c441887b18d11c200e41f,nandi,NDI,Nandi,chesumei,Chesumei,chemundu_kapngetuny,Chemundu/KapngEtuny,N,NDI_chesumei_chemundu_kapngetuny
+766,6dccbe4cb80b48eca873e839f6f4c636,nandi,NDI,Nandi,chesumei,Chesumei,kosirai,Kosirai,N,NDI_chesumei_kosirai
+767,81caea832aae49e098681d44da2f0c72,nandi,NDI,Nandi,chesumei,Chesumei,lelmokwo_ngechek,Lelmokwo/Ngechek,N,NDI_chesumei_lelmokwo_ngechek
+768,96fa14d4072540e08dd0622175d9f3a3,nandi,NDI,Nandi,chesumei,Chesumei,kaptel_kamoiywo,Kaptel/Kamoiywo,N,NDI_chesumei_kaptel_kamoiywo
+769,b6f75cce42644ee4a5e2e5054e502b4e,nandi,NDI,Nandi,chesumei,Chesumei,kiptuya,Kiptuya,N,NDI_chesumei_kiptuya
+770,5cddf03428804252a77e9d47d200d4f7,nandi,NDI,Nandi,emgwen,Emgwen,chepkumia,Chepkumia,N,NDI_emgwen_chepkumia
+771,5a40b855727b4928a8055444dac1df20,nandi,NDI,Nandi,emgwen,Emgwen,kapkangani,Kapkangani,N,NDI_emgwen_kapkangani
+772,bbaf842063004b139f757a721486d0d8,nandi,NDI,Nandi,emgwen,Emgwen,kapsabet,Kapsabet,N,NDI_emgwen_kapsabet
+773,b0e51a224224443d9e41cbeb96322e0e,nandi,NDI,Nandi,emgwen,Emgwen,kilibwoni,Kilibwoni,N,NDI_emgwen_kilibwoni
+774,ea28f362eba542deae9b9b509fb70e2e,nandi,NDI,Nandi,mosop,Mosop,chepterwai,Chepterwai,N,NDI_mosop_chepterwai
+775,f5bfd35828614869bffe296e41dbf3c0,nandi,NDI,Nandi,mosop,Mosop,kipkaren,Kipkaren,N,NDI_mosop_kipkaren
+776,f26cd2c47ca042039a941ca7ba8e5f73,nandi,NDI,Nandi,mosop,Mosop,kurgung_surungai,Kurgung/Surungai,N,NDI_mosop_kurgung_surungai
+777,671fcf79ea5f4f5b95402cf1f86a27cd,nandi,NDI,Nandi,mosop,Mosop,kabiyet,Kabiyet,N,NDI_mosop_kabiyet
+778,d3fd60ffb7574b258099c472908aa8ea,nandi,NDI,Nandi,mosop,Mosop,ndalat,Ndalat,N,NDI_mosop_ndalat
+779,201bfa43f6df46a09092f723244faa00,nandi,NDI,Nandi,mosop,Mosop,kabisaga,Kabisaga,N,NDI_mosop_kabisaga
+780,fd155ff5ec21471e970ce5fc9e566162,nandi,NDI,Nandi,mosop,Mosop,sangalo_kebulonik,Sangalo/Kebulonik,N,NDI_mosop_sangalo_kebulonik
+781,fc1287d038c64b02800bc818f46cfdd8,baringo,BRG,Baringo,tiaty,Tiaty,tirioko,Tirioko,N,BRG_tiaty_tirioko
+782,7455dec6453d42b5a761375fecc6c7a5,baringo,BRG,Baringo,tiaty,Tiaty,kolowa,Kolowa,N,BRG_tiaty_kolowa
+783,a5d7048c9789449e9ce97aa504261b83,baringo,BRG,Baringo,tiaty,Tiaty,ribkwo,Ribkwo,N,BRG_tiaty_ribkwo
+784,3db1675271ed4b038cb04d74aae8cc5e,baringo,BRG,Baringo,tiaty,Tiaty,silale,Silale,N,BRG_tiaty_silale
+785,4ea4ce507e3c4e4ea1862ab437545d4e,baringo,BRG,Baringo,tiaty,Tiaty,loiyamorock,Loiyamorock,N,BRG_tiaty_loiyamorock
+786,dcb24c3874894ac08e119f5dbb873e42,baringo,BRG,Baringo,tiaty,Tiaty,tangulbei_korossi,Tangulbei/Korossi,N,BRG_tiaty_tangulbei_korossi
+787,3d374ec87d354e0fa2f819a0ac2f6f91,baringo,BRG,Baringo,tiaty,Tiaty,churo_amaya,Churo/Amaya,N,BRG_tiaty_churo_amaya
+788,975a69e28b38471b97b67a09dddec217,baringo,BRG,Baringo,baringo__north,Baringo  North,barwessa,Barwessa,N,BRG_baringo__north_barwessa
+789,5f642bb7a8694c9ea0bb55514fb006e4,baringo,BRG,Baringo,baringo__north,Baringo  North,kabartonjo,Kabartonjo,N,BRG_baringo__north_kabartonjo
+790,af2ea718c28a46ad83151a672faceff7,baringo,BRG,Baringo,baringo__north,Baringo  North,saimo_kipsaraman,Saimo/Kipsaraman,N,BRG_baringo__north_saimo_kipsaraman
+791,1f2ead430e8c4298b5cbfff20b5b529f,baringo,BRG,Baringo,baringo__north,Baringo  North,saimo_soi,Saimo/Soi,N,BRG_baringo__north_saimo_soi
+792,24cbe2883044470c92a161302951ad5d,baringo,BRG,Baringo,baringo__north,Baringo  North,bartabwa,Bartabwa,N,BRG_baringo__north_bartabwa
+793,dcaf16599e5c437293495dbc4c35fcd2,baringo,BRG,Baringo,baringo_central,Baringo Central,kabarnet,Kabarnet,N,BRG_baringo_central_kabarnet
+794,19eb9e4092d24a8cb4f4486a83617339,baringo,BRG,Baringo,baringo_central,Baringo Central,sacho,Sacho,N,BRG_baringo_central_sacho
+795,03671b2368744d3fbf3e8eaff16adab4,baringo,BRG,Baringo,baringo_central,Baringo Central,tenges,Tenges,N,BRG_baringo_central_tenges
+796,4b2915f3090a42ec814aa58f0408241e,baringo,BRG,Baringo,baringo_central,Baringo Central,ewalel_chapchap,Ewalel Chapchap,N,BRG_baringo_central_ewalel_chapchap
+797,04cd53c618214846b049fbc02cbb49aa,baringo,BRG,Baringo,baringo_central,Baringo Central,kapropita,Kapropita,N,BRG_baringo_central_kapropita
+798,af61119590ab486bae5d1c0a15c4c849,baringo,BRG,Baringo,baringo_south,Baringo South,marigat,Marigat,N,BRG_baringo_south_marigat
+799,16be8d1ccabf4f8eac9bf0cf1f87ec46,baringo,BRG,Baringo,baringo_south,Baringo South,ilchamus,Ilchamus,N,BRG_baringo_south_ilchamus
+800,50c6eabae2f64e6f84a84c961f89015e,baringo,BRG,Baringo,baringo_south,Baringo South,mochongoi,Mochongoi,N,BRG_baringo_south_mochongoi
+801,a8a41f24bfe64456b44e476f716b6f20,baringo,BRG,Baringo,baringo_south,Baringo South,mukutani,Mukutani,N,BRG_baringo_south_mukutani
+802,6d57c02517b242048ea84929ddcdc828,baringo,BRG,Baringo,mogotio,Mogotio,mogotio,Mogotio,N,BRG_mogotio_mogotio
+803,e4697e1398b6414bbc9a676942e206de,baringo,BRG,Baringo,mogotio,Mogotio,emining,Emining,N,BRG_mogotio_emining
+804,58ca09e35fee411dbe79b90e2f87073e,baringo,BRG,Baringo,mogotio,Mogotio,kisanana,Kisanana,N,BRG_mogotio_kisanana
+805,615105a2e0d9430695fad1949c84105f,baringo,BRG,Baringo,eldama_ravine,Eldama Ravine,lembus,Lembus,N,BRG_eldama_ravine_lembus
+806,8af01ef56e054686b0d9573c16c411ea,baringo,BRG,Baringo,eldama_ravine,Eldama Ravine,lembus_kwen,Lembus Kwen,N,BRG_eldama_ravine_lembus_kwen
+807,8a8cbe993a6d4e6e95c27ce5eb6e9e55,baringo,BRG,Baringo,eldama_ravine,Eldama Ravine,ravine,Ravine,N,BRG_eldama_ravine_ravine
+808,a2adf2ce0a1f4e8d8cba24601ef6fe6e,baringo,BRG,Baringo,eldama_ravine,Eldama Ravine,mumberes_maji_mazuri,Mumberes/Maji Mazuri,N,BRG_eldama_ravine_mumberes_maji_mazuri
+809,61f69dc19ee447b28b153a0eb094390c,baringo,BRG,Baringo,eldama_ravine,Eldama Ravine,lembus_perkerra,Lembus/Perkerra,N,BRG_eldama_ravine_lembus_perkerra
+810,895f7062afd74249a34fb995d2fb0be5,baringo,BRG,Baringo,eldama_ravine,Eldama Ravine,koibatek,Koibatek,N,BRG_eldama_ravine_koibatek
+811,f02b023d0f22460cae3f45f8f4730749,laikipia,LKP,Laikipia,laikipia_west,Laikipia West,olmoran,Olmoran,N,LKP_laikipia_west_olmoran
+812,56144eb392c340c59c94937d7f640e29,laikipia,LKP,Laikipia,laikipia_west,Laikipia West,rumuruti_township,Rumuruti Township,N,LKP_laikipia_west_rumuruti_township
+813,2a0f437e8d494b3595000953487a1416,laikipia,LKP,Laikipia,laikipia_west,Laikipia West,kinamba,Kinamba,N,LKP_laikipia_west_kinamba
+814,67091c297e344cc28f01f5d98d88450c,laikipia,LKP,Laikipia,laikipia_west,Laikipia West,marmanet,Marmanet,N,LKP_laikipia_west_marmanet
+815,9522145166ef4ab4b5008a60500f76f5,laikipia,LKP,Laikipia,laikipia_west,Laikipia West,igwamiti,Igwamiti,N,LKP_laikipia_west_igwamiti
+816,fd0ae5d41a494af1a820fdcf5df3f1b7,laikipia,LKP,Laikipia,laikipia_west,Laikipia West,salama,Salama,N,LKP_laikipia_west_salama
+817,eb20471a6fa04773baec12772e66ff28,laikipia,LKP,Laikipia,laikipia_east,Laikipia East,ngobit,Ngobit,N,LKP_laikipia_east_ngobit
+818,ec158bf5df094858bb45f75536e19473,laikipia,LKP,Laikipia,laikipia_east,Laikipia East,tigithi,Tigithi,N,LKP_laikipia_east_tigithi
+819,252bb2115bdb44dea8f087987972357a,laikipia,LKP,Laikipia,laikipia_east,Laikipia East,thingithu,Thingithu,N,LKP_laikipia_east_thingithu
+820,729bedc5eeea42c0b84ee1e79bb7a32b,laikipia,LKP,Laikipia,laikipia_east,Laikipia East,nanyuki,Nanyuki,N,LKP_laikipia_east_nanyuki
+821,df7d60cb43394b40986c77b59aa2faf8,laikipia,LKP,Laikipia,laikipia_east,Laikipia East,umande,Umande,N,LKP_laikipia_east_umande
+822,3d0965ea45be4d4e89dd26e11591fe78,laikipia,LKP,Laikipia,laikipia_north,Laikipia North,sosian,Sosian,N,LKP_laikipia_north_sosian
+823,8bed470e0fdd4558b0f3f3661b2c8613,laikipia,LKP,Laikipia,laikipia_north,Laikipia North,segera,Segera,N,LKP_laikipia_north_segera
+824,eee7a8c5b7af4d53ba1b636309538d91,laikipia,LKP,Laikipia,laikipia_north,Laikipia North,mukogondo_west,Mukogondo West,N,LKP_laikipia_north_mukogondo_west
+825,70e20fde12d0482f82999afe3b876434,laikipia,LKP,Laikipia,laikipia_north,Laikipia North,mukogondo_east,Mukogondo East,N,LKP_laikipia_north_mukogondo_east
+826,c7cbdb5a8ebc4e32be815b53840c32ae,nakuru,NKR,Nakuru,molo,Molo,mariashoni,Mariashoni,N,NKR_molo_mariashoni
+827,3f5a97d8c18b433fbd28996dd6d8576d,nakuru,NKR,Nakuru,molo,Molo,elburgon,Elburgon,N,NKR_molo_elburgon
+828,0b78289da7ee438f85e00c10a18cfaf0,nakuru,NKR,Nakuru,molo,Molo,turi,Turi,N,NKR_molo_turi
+829,99181df7e2c44511a64d733eb59fc5e5,nakuru,NKR,Nakuru,molo,Molo,molo,Molo,N,NKR_molo_molo
+830,970e44a3f34c494a8d19d1a3f7e98255,nakuru,NKR,Nakuru,njoro,Njoro,maunarok,Maunarok,N,NKR_njoro_maunarok
+831,b813128c532745fba5538105dd41b90f,nakuru,NKR,Nakuru,njoro,Njoro,mauche,Mauche,N,NKR_njoro_mauche
+834,f1acca7d7eba4c9c92e980f55cb58931,nakuru,NKR,Nakuru,njoro,Njoro,lare,Lare,N,NKR_njoro_lare
+835,85fe65c2178b410cbe0bb5ab6c726330,nakuru,NKR,Nakuru,njoro,Njoro,njoro,Njoro,N,NKR_njoro_njoro
+836,736543d210be41afbbb51683ba257902,nakuru,NKR,Nakuru,naivasha,Naivasha,biashara,Biashara,N,NKR_naivasha_biashara
+837,20c49e53e80644a8b01edc77b54b4321,nakuru,NKR,Nakuru,naivasha,Naivasha,hells_gate,Hells Gate,N,NKR_naivasha_hells_gate
+838,37cd2349432844e197679aaeee473c35,nakuru,NKR,Nakuru,naivasha,Naivasha,lakeview,Lakeview,N,NKR_naivasha_lakeview
+839,e3d5111c66104dfea683ad6198a22f7d,nakuru,NKR,Nakuru,naivasha,Naivasha,maai-mahiu,Maai-Mahiu,N,NKR_naivasha_maai-mahiu
+840,b4ee24a4e72f40e5ae69f32ff6da57c6,nakuru,NKR,Nakuru,naivasha,Naivasha,maiella,Maiella,N,NKR_naivasha_maiella
+841,e739e58542f3414bb8646d5bcf8619ec,nakuru,NKR,Nakuru,naivasha,Naivasha,olkaria,Olkaria,N,NKR_naivasha_olkaria
+842,8d8f9d86b04949c19b5b05282368b5f8,nakuru,NKR,Nakuru,naivasha,Naivasha,naivasha_east,Naivasha East,N,NKR_naivasha_naivasha_east
+843,f664aef1b0964f4e80b8ae9368be827f,nakuru,NKR,Nakuru,naivasha,Naivasha,viwandani,Viwandani,N,NKR_naivasha_viwandani
+844,c4a21530d2aa4a268a0377a7bdc296ed,nakuru,NKR,Nakuru,gilgil,Gilgil,gilgil,Gilgil,N,NKR_gilgil_gilgil
+845,20421b7d721b4772a417fc3d62543c9a,nakuru,NKR,Nakuru,gilgil,Gilgil,elementaita,Elementaita,N,NKR_gilgil_elementaita
+846,a89e918afad948799f1f558f89f2b40f,nakuru,NKR,Nakuru,gilgil,Gilgil,mbaruk_eburu,Mbaruk/Eburu,N,NKR_gilgil_mbaruk_eburu
+847,6b20bfad0b00409b9afe57b867941917,nakuru,NKR,Nakuru,gilgil,Gilgil,malewa_west,Malewa West,N,NKR_gilgil_malewa_west
+848,f867807d922244069a1c85b4e8647912,nakuru,NKR,Nakuru,gilgil,Gilgil,murindati,Murindati,N,NKR_gilgil_murindati
+849,6be847c02d5549f5b0dd90824bd8ea45,nakuru,NKR,Nakuru,kuresoi_south,Kuresoi South,amalo,Amalo,N,NKR_kuresoi_south_amalo
+850,7a54aabe7ee746dfa7a1693270a197f0,nakuru,NKR,Nakuru,kuresoi_south,Kuresoi South,keringet,Keringet,N,NKR_kuresoi_south_keringet
+851,afe3cc5069ce4130a15b512efeb8534d,nakuru,NKR,Nakuru,kuresoi_south,Kuresoi South,kiptagich,Kiptagich,N,NKR_kuresoi_south_kiptagich
+852,b553bea6dcf0409592e9a4c9091fd92f,nakuru,NKR,Nakuru,kuresoi_south,Kuresoi South,tinet,Tinet,N,NKR_kuresoi_south_tinet
+853,139f5d0f595948988e47922dd99ae606,nakuru,NKR,Nakuru,kuresoi_north,Kuresoi North,kiptororo,Kiptororo,N,NKR_kuresoi_north_kiptororo
+854,10b62cf1610047c5851a51853d2249ca,nakuru,NKR,Nakuru,kuresoi_north,Kuresoi North,nyota,Nyota,N,NKR_kuresoi_north_nyota
+855,1c07d86763154cbeb00381b77fc4f64e,nakuru,NKR,Nakuru,kuresoi_north,Kuresoi North,sirikwa,Sirikwa,N,NKR_kuresoi_north_sirikwa
+856,1e61982bfcc541f18b89e43c6c0d44c3,nakuru,NKR,Nakuru,kuresoi_north,Kuresoi North,kamara,Kamara,N,NKR_kuresoi_north_kamara
+857,fffa62ff61104669bfe3de3c52ec74f0,nakuru,NKR,Nakuru,subukia,Subukia,subukia,Subukia,N,NKR_subukia_subukia
+858,0e8b5d955223420cb5ccc53f8bb231e9,nakuru,NKR,Nakuru,subukia,Subukia,waseges,Waseges,N,NKR_subukia_waseges
+859,d48c40b0215b4e3f9ccd7cc0148f64b3,nakuru,NKR,Nakuru,subukia,Subukia,kabazi,Kabazi,N,NKR_subukia_kabazi
+860,ba53ddf1ad0f4cacbb51d48da7f3e8ca,nakuru,NKR,Nakuru,rongai,Rongai,menengai_west,Menengai West,N,NKR_rongai_menengai_west
+861,eb977c3e8934478995c4106e4cf77d53,nakuru,NKR,Nakuru,rongai,Rongai,soin,Soin,N,NKR_rongai_soin
+862,5ec5f0abaa5b45d8910a7803bc13d1e2,nakuru,NKR,Nakuru,rongai,Rongai,visoi,Visoi,N,NKR_rongai_visoi
+863,b28fa11ab0324f4c9fc9f569bc334c63,nakuru,NKR,Nakuru,rongai,Rongai,mosop,Mosop,N,NKR_rongai_mosop
+864,f0b26d290ff34efe93fa422cf84c5a1e,nakuru,NKR,Nakuru,rongai,Rongai,solai,Solai,N,NKR_rongai_solai
+865,334621aa1aa5444f9b2cacec761765a9,nakuru,NKR,Nakuru,bahati,Bahati,dundori,Dundori,N,NKR_bahati_dundori
+866,6b31228708254db2a5adf5fc35a9ad51,nakuru,NKR,Nakuru,bahati,Bahati,kabatini,Kabatini,N,NKR_bahati_kabatini
+867,b4ab08d51a4445bbb18fe2b151126696,nakuru,NKR,Nakuru,bahati,Bahati,kiamaina,Kiamaina,N,NKR_bahati_kiamaina
+868,9b6106c664c04434889be4a166beee2e,nakuru,NKR,Nakuru,bahati,Bahati,lanet_umoja,Lanet/Umoja,N,NKR_bahati_lanet_umoja
+869,942d44b195a04974bea9827b56a97ae8,nakuru,NKR,Nakuru,bahati,Bahati,bahati,Bahati,N,NKR_bahati_bahati
+870,5b851a33625044218e56e631a2da9034,nakuru,NKR,Nakuru,nakuru_town_west,Nakuru Town West,barut,Barut,N,NKR_nakuru_town_west_barut
+871,24331880346440b2ba72f0042f97391c,nakuru,NKR,Nakuru,nakuru_town_west,Nakuru Town West,london,London,N,NKR_nakuru_town_west_london
+872,fa2c238a87984637bae73feee737ffdf,nakuru,NKR,Nakuru,nakuru_town_west,Nakuru Town West,kaptembwo,Kaptembwo,N,NKR_nakuru_town_west_kaptembwo
+873,6f37aaac03b54e1d8d6d999c3ceaa4d5,nakuru,NKR,Nakuru,nakuru_town_west,Nakuru Town West,kapkures,Kapkures,N,NKR_nakuru_town_west_kapkures
+874,7931e47054ef479d9046d1e58df4a018,nakuru,NKR,Nakuru,nakuru_town_west,Nakuru Town West,rhoda,Rhoda,N,NKR_nakuru_town_west_rhoda
+875,e8bed5bfa0eb471889ab549ba7b8fb2e,nakuru,NKR,Nakuru,nakuru_town_west,Nakuru Town West,shaabab,Shaabab,N,NKR_nakuru_town_west_shaabab
+876,bfa6d010eb124ff6a8a46ea1cc736a00,nakuru,NKR,Nakuru,nakuru_town_east,Nakuru Town East,biashara,Biashara,N,NKR_nakuru_town_east_biashara
+877,da94a008c7b448acacbdaa6cb83c0bd4,nakuru,NKR,Nakuru,nakuru_town_east,Nakuru Town East,kivumbini,Kivumbini,N,NKR_nakuru_town_east_kivumbini
+878,6e2fbe3a71574664b30bb79b289b1cbd,nakuru,NKR,Nakuru,nakuru_town_east,Nakuru Town East,flamingo,Flamingo,N,NKR_nakuru_town_east_flamingo
+879,8497a49d8cbf48eb92b5e9d90c3b5cd6,nakuru,NKR,Nakuru,nakuru_town_east,Nakuru Town East,menengai,Menengai,N,NKR_nakuru_town_east_menengai
+880,08d0ac1116234550ae1acc866d3a75ad,nakuru,NKR,Nakuru,nakuru_town_east,Nakuru Town East,nakuru_east,Nakuru East,N,NKR_nakuru_town_east_nakuru_east
+881,a3cf01e98f414fa29fdc7b51c4b84fbb,narok,NRK,Narok,kilgoris,Kilgoris,kilgoris_central,Kilgoris Central,N,NRK_kilgoris_kilgoris_central
+882,1630f3c3ac764ebbad25bb250f079d95,narok,NRK,Narok,kilgoris,Kilgoris,keyian,Keyian,N,NRK_kilgoris_keyian
+883,dfdee725d533412c9809f18e8cbe8cdf,narok,NRK,Narok,kilgoris,Kilgoris,angata_barikoi,Angata Barikoi,N,NRK_kilgoris_angata_barikoi
+884,713c2140092d407c9bbb03849b53dfa9,narok,NRK,Narok,kilgoris,Kilgoris,shankoe,Shankoe,N,NRK_kilgoris_shankoe
+885,36ed1620c0814bf09bc71f6f3733ac84,narok,NRK,Narok,kilgoris,Kilgoris,kimintet,Kimintet,N,NRK_kilgoris_kimintet
+886,a73f2e8e2e8944e798aad7d8c7b9b822,narok,NRK,Narok,kilgoris,Kilgoris,lolgorian,Lolgorian,N,NRK_kilgoris_lolgorian
+887,6399b690ec124033aea1f1425130fff3,narok,NRK,Narok,emurua_dikirr,Emurua Dikirr,ilkerin,Ilkerin,N,NRK_emurua_dikirr_ilkerin
+888,3f93dd69196341f6b9aef4beb67d1c50,narok,NRK,Narok,emurua_dikirr,Emurua Dikirr,ololmasani,Ololmasani,N,NRK_emurua_dikirr_ololmasani
+889,09208fd246354e4494c0d92fc311269c,narok,NRK,Narok,emurua_dikirr,Emurua Dikirr,mogondo,Mogondo,N,NRK_emurua_dikirr_mogondo
+890,9e9c9ea3c0b5466483d6a743d28f83c5,narok,NRK,Narok,emurua_dikirr,Emurua Dikirr,kapsasian,Kapsasian,N,NRK_emurua_dikirr_kapsasian
+891,3a0cf742d6624e06a2f93350addb468e,narok,NRK,Narok,narok_north,Narok North,olpusimoru,Olpusimoru,N,NRK_narok_north_olpusimoru
+892,5dfc5d5a517f4ee5a9638660920b956a,narok,NRK,Narok,narok_north,Narok North,olokurto,Olokurto,N,NRK_narok_north_olokurto
+893,89e5789a77954fd9a98d0d66e3a419be,narok,NRK,Narok,narok_north,Narok North,narok_town,Narok Town,N,NRK_narok_north_narok_town
+894,4f2ab10411074dbf9eae10c6857656c2,narok,NRK,Narok,narok_north,Narok North,nkareta,Nkareta,N,NRK_narok_north_nkareta
+895,6b03f216474a421ab1b4961a3b7812ca,narok,NRK,Narok,narok_north,Narok North,olorropil,Olorropil,N,NRK_narok_north_olorropil
+896,23f7def084114c3cba12b167105b7574,narok,NRK,Narok,narok_north,Narok North,melili,Melili,N,NRK_narok_north_melili
+897,4934696e8a7c4c47ab6b7cfed9e2b9d6,narok,NRK,Narok,narok_east,Narok East,mosiro,Mosiro,N,NRK_narok_east_mosiro
+898,5c34aea774974c769c044736016b4dc8,narok,NRK,Narok,narok_east,Narok East,ildamat,Ildamat,N,NRK_narok_east_ildamat
+899,112c19fe8da84975b92cd387eed5ea43,narok,NRK,Narok,narok_east,Narok East,keekonyokie,Keekonyokie,N,NRK_narok_east_keekonyokie
+900,055666d7b9054c1aab6aa5710e733881,narok,NRK,Narok,narok_east,Narok East,suswa,Suswa,N,NRK_narok_east_suswa
+901,353b8773e0bb47a19d488103994fe1e3,narok,NRK,Narok,narok_south,Narok South,majimoto_naroosura,Majimoto/Naroosura,N,NRK_narok_south_majimoto_naroosura
+902,bf813d14068d40a4966f2c6924c2922d,narok,NRK,Narok,narok_south,Narok South,ololulunga,OlolulungA,N,NRK_narok_south_ololulunga
+903,ef906a27fce64b25965525359e6c3dca,narok,NRK,Narok,narok_south,Narok South,melelo,Melelo,N,NRK_narok_south_melelo
+904,e4e700a2d9be46a38ab5c81a3a3f85a1,narok,NRK,Narok,narok_south,Narok South,loita,Loita,N,NRK_narok_south_loita
+905,80c8412a1ca74bffb52cb86aea3ea8fe,narok,NRK,Narok,narok_south,Narok South,sogoo,Sogoo,N,NRK_narok_south_sogoo
+906,4af73f8ef6704868855491576a7df737,narok,NRK,Narok,narok_south,Narok South,sagamian,Sagamian,N,NRK_narok_south_sagamian
+907,d984098c9fad4e78828dd66ae27e00dd,narok,NRK,Narok,narok_west,Narok West,ilmotiok,Ilmotiok,N,NRK_narok_west_ilmotiok
+908,c1a5d54c7bb2453aaf62475addb796f5,narok,NRK,Narok,narok_west,Narok West,mara,Mara,N,NRK_narok_west_mara
+909,c66786d6338d4f718da20dbb79d38b6f,narok,NRK,Narok,narok_west,Narok West,siana,Siana,N,NRK_narok_west_siana
+910,8d87f8c9788b4fbbb16779aae7bd2b59,narok,NRK,Narok,narok_west,Narok West,naikarra,Naikarra,N,NRK_narok_west_naikarra
+911,ea4f7b0093474f0eaab3664a6fa4a076,kajiado,KJD,Kajiado,kajiado_north,Kajiado North,olkeri,Olkeri,N,KJD_kajiado_north_olkeri
+912,9e3273c4b947403880c28e082b1511ad,kajiado,KJD,Kajiado,kajiado_north,Kajiado North,ongata_rongai,Ongata Rongai,N,KJD_kajiado_north_ongata_rongai
+913,9ebd160a90484ba59573b44495e1303d,kajiado,KJD,Kajiado,kajiado_north,Kajiado North,nkaimurunya,Nkaimurunya,N,KJD_kajiado_north_nkaimurunya
+914,e816083f97bb45c48942501fa346f098,kajiado,KJD,Kajiado,kajiado_north,Kajiado North,oloolua,Oloolua,N,KJD_kajiado_north_oloolua
+915,785eab5bd61b47aeba13f0ee9b5c7e95,kajiado,KJD,Kajiado,kajiado_north,Kajiado North,ngong,Ngong,N,KJD_kajiado_north_ngong
+916,119cd47638fb4f66abb2fe1e130e4aa6,kajiado,KJD,Kajiado,kajiado_central,Kajiado Central,purko,Purko,N,KJD_kajiado_central_purko
+917,0600e69981f540e2890fd73a7a88bee3,kajiado,KJD,Kajiado,kajiado_central,Kajiado Central,ildamat,Ildamat,N,KJD_kajiado_central_ildamat
+918,4e96fe944c3d42d0a21c6736bde1e09c,kajiado,KJD,Kajiado,kajiado_central,Kajiado Central,dalalekutuk,Dalalekutuk,N,KJD_kajiado_central_dalalekutuk
+919,70b1d378398f4fd6aad95a633cdac533,kajiado,KJD,Kajiado,kajiado_central,Kajiado Central,matapato_north,Matapato North,N,KJD_kajiado_central_matapato_north
+920,5bad911a57af4e5dad0106c751541f6e,kajiado,KJD,Kajiado,kajiado_central,Kajiado Central,matapato_south,Matapato South,N,KJD_kajiado_central_matapato_south
+921,e157d363a85643bbb94fb3cd32b12bfe,kajiado,KJD,Kajiado,kajiado_east,Kajiado East,kaputiei_north,Kaputiei North,N,KJD_kajiado_east_kaputiei_north
+922,0e449d54a55b43569caa2bda499d24a2,kajiado,KJD,Kajiado,kajiado_east,Kajiado East,kitengela,Kitengela,N,KJD_kajiado_east_kitengela
+923,5988c863443a4a238525681dfe272923,kajiado,KJD,Kajiado,kajiado_east,Kajiado East,oloosirkon_sholinke,Oloosirkon/Sholinke,N,KJD_kajiado_east_oloosirkon_sholinke
+924,24f361de129f4ac691e773f3c6e19abe,kajiado,KJD,Kajiado,kajiado_east,Kajiado East,kenyawa-poka,Kenyawa-Poka,N,KJD_kajiado_east_kenyawa-poka
+925,86f707d21fe848d6a1baeda25aa1df38,kajiado,KJD,Kajiado,kajiado_east,Kajiado East,imaroro,Imaroro,N,KJD_kajiado_east_imaroro
+926,2ab7969644eb485d98f07affe6045034,kajiado,KJD,Kajiado,kajiado_west,Kajiado West,keekonyokie,Keekonyokie,N,KJD_kajiado_west_keekonyokie
+927,bff01c1a397745f48e25fb69711d5ac2,kajiado,KJD,Kajiado,kajiado_west,Kajiado West,iloodokilani,Iloodokilani,N,KJD_kajiado_west_iloodokilani
+928,f47da282af4c4d2585142c675faa44ce,kajiado,KJD,Kajiado,kajiado_west,Kajiado West,magadi,Magadi,N,KJD_kajiado_west_magadi
+929,152a8154b3fd48cf9fc32df12234cc50,kajiado,KJD,Kajiado,kajiado_west,Kajiado West,ewuaso_oonkidongi,Ewuaso OonkidongI,N,KJD_kajiado_west_ewuaso_oonkidongi
+930,853063b45a0f44688cd0213295b8a25e,kajiado,KJD,Kajiado,kajiado_west,Kajiado West,mosiro,Mosiro,N,KJD_kajiado_west_mosiro
+931,76c63c4dbfdc4e02b1f3b9b357b25283,kajiado,KJD,Kajiado,kajiado_south,Kajiado South,entonet_lenkisim,Entonet/Lenkisim,N,KJD_kajiado_south_entonet_lenkisim
+932,9539eafca5bb4cda8a38deffbc30657c,kajiado,KJD,Kajiado,kajiado_south,Kajiado South,mbirikani_eselenkei,Mbirikani/Eselenkei,N,KJD_kajiado_south_mbirikani_eselenkei
+933,b3c23fa4fe9f40d0addceb78ea9cbcbb,kajiado,KJD,Kajiado,kajiado_south,Kajiado South,kuku,Kuku,N,KJD_kajiado_south_kuku
+934,c90bbac47c044fac9c2e42d2ce99f68d,kajiado,KJD,Kajiado,kajiado_south,Kajiado South,rombo,Rombo,N,KJD_kajiado_south_rombo
+935,e3fb46b9e4a24f0aa141599049fb23bb,kajiado,KJD,Kajiado,kajiado_south,Kajiado South,kimana,Kimana,N,KJD_kajiado_south_kimana
+936,ef111900d3b54579819d19b518d12a3f,kericho,KRC,Kericho,kipkelion_east,Kipkelion East,londiani,Londiani,N,KRC_kipkelion_east_londiani
+937,ab40b935e6a745adb5355379cf37de0c,kericho,KRC,Kericho,kipkelion_east,Kipkelion East,kedowa_kimugul,Kedowa/Kimugul,N,KRC_kipkelion_east_kedowa_kimugul
+938,a12b47850a2745d9b9df4f19d844fbb5,kericho,KRC,Kericho,kipkelion_east,Kipkelion East,chepseon,Chepseon,N,KRC_kipkelion_east_chepseon
+939,7c2c17abcef3477c8aa6073824641380,kericho,KRC,Kericho,kipkelion_east,Kipkelion East,tendeno_sorget,Tendeno/Sorget,N,KRC_kipkelion_east_tendeno_sorget
+940,cc60f09055c2441d895ec15c0a03e334,kericho,KRC,Kericho,kipkelion_west,Kipkelion West,kunyak,Kunyak,N,KRC_kipkelion_west_kunyak
+941,ef9049cb185e469cb4a8c8f4fc61678d,kericho,KRC,Kericho,kipkelion_west,Kipkelion West,kamasian,Kamasian,N,KRC_kipkelion_west_kamasian
+942,1d5695c956c647dc91c8e5cf4de060c6,kericho,KRC,Kericho,kipkelion_west,Kipkelion West,kipkelion,Kipkelion,N,KRC_kipkelion_west_kipkelion
+943,2dc97683f1d2495888005e0a27201bce,kericho,KRC,Kericho,kipkelion_west,Kipkelion West,chilchila,Chilchila,N,KRC_kipkelion_west_chilchila
+944,659965d647dd44ef92bd4857cc088826,kericho,KRC,Kericho,ainamoi,Ainamoi,kapsoit,Kapsoit,N,KRC_ainamoi_kapsoit
+945,74570f6c71e746caa2f2ccfaf45a1760,kericho,KRC,Kericho,ainamoi,Ainamoi,ainamoi,Ainamoi,N,KRC_ainamoi_ainamoi
+946,30bb1e97d3eb4948bd383d97b640799e,kericho,KRC,Kericho,ainamoi,Ainamoi,kapkugerwet,Kapkugerwet,N,KRC_ainamoi_kapkugerwet
+947,86a3491fe5af403594b9fffe577a0029,kericho,KRC,Kericho,ainamoi,Ainamoi,kipchebor,Kipchebor,N,KRC_ainamoi_kipchebor
+948,f553301bfdc04aaca7d0d972f28ecc63,kericho,KRC,Kericho,ainamoi,Ainamoi,kipchimchim,Kipchimchim,N,KRC_ainamoi_kipchimchim
+949,090beab66d9444fb9b0bc035958a9c87,kericho,KRC,Kericho,ainamoi,Ainamoi,kapsaos,Kapsaos,N,KRC_ainamoi_kapsaos
+950,bc6f83ad41bb4e06bd87f7ea11fb3f23,kericho,KRC,Kericho,bureti,Bureti,kisiara,Kisiara,N,KRC_bureti_kisiara
+951,f4b5072b316541f9bc41d83ef2513096,kericho,KRC,Kericho,bureti,Bureti,tebesonik,Tebesonik,N,KRC_bureti_tebesonik
+952,ecd7ad94b6154f00b826be3316acead4,kericho,KRC,Kericho,bureti,Bureti,cheboin,Cheboin,N,KRC_bureti_cheboin
+953,3e439211630a4f3d98e9dbbc4ae14538,kericho,KRC,Kericho,bureti,Bureti,chemosot,Chemosot,N,KRC_bureti_chemosot
+954,ad3671c0e3934c1d90d3b1458c99e855,kericho,KRC,Kericho,bureti,Bureti,litein,Litein,N,KRC_bureti_litein
+955,6e9928e09ae44203b9d59229b59713a7,kericho,KRC,Kericho,bureti,Bureti,cheplanget,Cheplanget,N,KRC_bureti_cheplanget
+956,055930c1e1b94ade8ab1260c707e31b0,kericho,KRC,Kericho,bureti,Bureti,kapkatet,Kapkatet,N,KRC_bureti_kapkatet
+957,88de693e6a9d4aca994a60bb249f2f96,kericho,KRC,Kericho,belgut,Belgut,waldai,Waldai,N,KRC_belgut_waldai
+958,f85c838d72294f299b0d5647fcf01378,kericho,KRC,Kericho,belgut,Belgut,kabianga,Kabianga,N,KRC_belgut_kabianga
+959,f0c68c871958497eb830daff1671cb14,kericho,KRC,Kericho,belgut,Belgut,cheptororiet_seretut,Cheptororiet/Seretut,N,KRC_belgut_cheptororiet_seretut
+960,48231cd2d1414bbe97e404b4552eea0d,kericho,KRC,Kericho,belgut,Belgut,chaik,Chaik,N,KRC_belgut_chaik
+961,0fef700e65814d178dea84a5409f9fb5,kericho,KRC,Kericho,belgut,Belgut,kapsuser,Kapsuser,N,KRC_belgut_kapsuser
+962,4fd59ccb45714450bdd89d61eb8106b3,kericho,KRC,Kericho,sigowet/soin,Sigowet/Soin,sigowet,Sigowet,N,KRC_sigowet/soin_sigowet
+963,41e7ed825b114cf9a2df926ad7cb7f77,kericho,KRC,Kericho,sigowet/soin,Sigowet/Soin,kaplelartet,Kaplelartet,N,KRC_sigowet/soin_kaplelartet
+964,8aaece06818f4ffb85b4232a3cd70cfd,kericho,KRC,Kericho,sigowet/soin,Sigowet/Soin,soliat,Soliat,N,KRC_sigowet/soin_soliat
+965,8013474e4b774fefbc4a7aa149ff0435,kericho,KRC,Kericho,sigowet/soin,Sigowet/Soin,soin,Soin,N,KRC_sigowet/soin_soin
+966,a59c9da96c1e4ce59a6184f80ef3ae2a,bomet,BMT,Bomet,sotik,Sotik,ndanai_abosi,Ndanai/Abosi,N,BMT_sotik_ndanai_abosi
+967,bc556512331e43a89c6c725b76f3bf8a,bomet,BMT,Bomet,sotik,Sotik,chemagel,Chemagel,N,BMT_sotik_chemagel
+968,fcddab950a914a1da0e8cb80a895655d,bomet,BMT,Bomet,sotik,Sotik,kipsonoi,Kipsonoi,N,BMT_sotik_kipsonoi
+969,59aad09440594007a757b0422a1aff86,bomet,BMT,Bomet,sotik,Sotik,kapletundo,Kapletundo,N,BMT_sotik_kapletundo
+970,2dc2c1c0fb4d4076976ac5510e1adec3,bomet,BMT,Bomet,sotik,Sotik,rongena_manaret,Rongena/Manaret,N,BMT_sotik_rongena_manaret
+971,38c8b08dbbd14b288549c479e7ed740f,bomet,BMT,Bomet,chepalungu,Chepalungu,kongasis,KongAsis,N,BMT_chepalungu_kongasis
+972,e55bc65aec154835997c6a9cf4b23b47,bomet,BMT,Bomet,chepalungu,Chepalungu,nyangores,Nyangores,N,BMT_chepalungu_nyangores
+973,92a4fe746bf847a594cce079da037f6a,bomet,BMT,Bomet,chepalungu,Chepalungu,sigor,Sigor,N,BMT_chepalungu_sigor
+974,75c5a9cb0d404200bf22de4fad832fd9,bomet,BMT,Bomet,chepalungu,Chepalungu,chebunyo,Chebunyo,N,BMT_chepalungu_chebunyo
+975,21eb4f7475234e61a1d765e3b1d3d621,bomet,BMT,Bomet,chepalungu,Chepalungu,siongiroi,Siongiroi,N,BMT_chepalungu_siongiroi
+976,e79b6a8ed74d4b84adf9665f300de7ac,bomet,BMT,Bomet,bomet_east,Bomet East,merigi,Merigi,N,BMT_bomet_east_merigi
+977,43a0f3bd246e40d49c599d2ebe0dfef1,bomet,BMT,Bomet,bomet_east,Bomet East,kembu,Kembu,N,BMT_bomet_east_kembu
+978,2f3bbaf82a3240bf81c41ffbf381c28f,bomet,BMT,Bomet,bomet_east,Bomet East,longisa,Longisa,N,BMT_bomet_east_longisa
+979,e5b2b360906743d98c289c503d209b40,bomet,BMT,Bomet,bomet_east,Bomet East,kipreres,Kipreres,N,BMT_bomet_east_kipreres
+980,39d4c3c5da7a4af4ae3de50b25eed46d,bomet,BMT,Bomet,bomet_east,Bomet East,chemaner,Chemaner,N,BMT_bomet_east_chemaner
+981,14178e9053eb4f1da084c443550f801b,bomet,BMT,Bomet,bomet_central,Bomet Central,silibwet_township,Silibwet Township,N,BMT_bomet_central_silibwet_township
+982,a10a219bb2984cb0a9f55b7986b9318a,bomet,BMT,Bomet,bomet_central,Bomet Central,ndaraweta,Ndaraweta,N,BMT_bomet_central_ndaraweta
+983,6f85eca4d3994b8fad1bc4af52b50744,bomet,BMT,Bomet,bomet_central,Bomet Central,singorwet,Singorwet,N,BMT_bomet_central_singorwet
+984,96e1335d92b6487bbb3dd2bd8406a823,bomet,BMT,Bomet,bomet_central,Bomet Central,chesoen,Chesoen,N,BMT_bomet_central_chesoen
+985,bc56f0e7d90b4b9b93ee63094f2e69a8,bomet,BMT,Bomet,bomet_central,Bomet Central,mutarakwa,Mutarakwa,N,BMT_bomet_central_mutarakwa
+986,7446034edb564f4e8ff99c8008738436,bomet,BMT,Bomet,konoin,Konoin,chepchabas,Chepchabas,N,BMT_konoin_chepchabas
+987,41163f541f3c4357b0d389522817bc25,bomet,BMT,Bomet,konoin,Konoin,kimulot,Kimulot,N,BMT_konoin_kimulot
+988,57c0a89eac7f41abab60a8c11d53649b,bomet,BMT,Bomet,konoin,Konoin,mogogosiek,Mogogosiek,N,BMT_konoin_mogogosiek
+989,a76074e888b847f79b4b66f812966dcf,bomet,BMT,Bomet,konoin,Konoin,boito,Boito,N,BMT_konoin_boito
+990,194778bf2dd34a1e9a2de2ea2582b156,bomet,BMT,Bomet,konoin,Konoin,embomos,Embomos,N,BMT_konoin_embomos
+991,542791978b7f44589d728fea5d2f6c02,kakamega,KKG,Kakamega,lugari,Lugari,mautuma,Mautuma,N,KKG_lugari_mautuma
+992,4c67a0ec1c9f44db8166e8c80623b18b,kakamega,KKG,Kakamega,lugari,Lugari,lugari,Lugari,N,KKG_lugari_lugari
+993,528ed21bef10471b982d8eaa787dc2ab,kakamega,KKG,Kakamega,lugari,Lugari,lumakanda,Lumakanda,N,KKG_lugari_lumakanda
+994,b87f98fb8b1c4c92bf67c892a96136f0,kakamega,KKG,Kakamega,lugari,Lugari,chekalini,Chekalini,N,KKG_lugari_chekalini
+995,f47d46efd38949348589eb901d326fcc,kakamega,KKG,Kakamega,lugari,Lugari,chevaywa,Chevaywa,N,KKG_lugari_chevaywa
+996,732b6a806ea240b9904b38fd0578f03e,kakamega,KKG,Kakamega,lugari,Lugari,lwandeti,Lwandeti,N,KKG_lugari_lwandeti
+997,89ead1e6ca0a4ac1bd68bed02b8cec59,kakamega,KKG,Kakamega,likuyani,Likuyani,likuyani,Likuyani,N,KKG_likuyani_likuyani
+998,196435a31a004f66bd6220e61c6512f6,kakamega,KKG,Kakamega,likuyani,Likuyani,sango,Sango,N,KKG_likuyani_sango
+999,3abad0225a504c078f0ead3cc8de5ac1,kakamega,KKG,Kakamega,likuyani,Likuyani,kongoni,Kongoni,N,KKG_likuyani_kongoni
+1000,0a84a3eab2b74307aab59b3b7a320ef5,kakamega,KKG,Kakamega,likuyani,Likuyani,nzoia,Nzoia,N,KKG_likuyani_nzoia
+1001,7c4c2c5dbac844fd893ad518103c27b9,kakamega,KKG,Kakamega,likuyani,Likuyani,sinoko,Sinoko,N,KKG_likuyani_sinoko
+1002,0f6558239e1040adb72155cd3dc51cdb,kakamega,KKG,Kakamega,malava,Malava,west_kabras,West Kabras,N,KKG_malava_west_kabras
+1003,163777a539cd4efa86838fce0d6b9d55,kakamega,KKG,Kakamega,malava,Malava,chemuche,Chemuche,N,KKG_malava_chemuche
+1004,baa564d1b8264884a5b464626cbfb07c,kakamega,KKG,Kakamega,malava,Malava,east_kabras,East Kabras,N,KKG_malava_east_kabras
+1005,daf44f1370074870a942036498b45c6d,kakamega,KKG,Kakamega,malava,Malava,butali_chegulo,Butali/Chegulo,N,KKG_malava_butali_chegulo
+1006,dfe88d8b03c24719bc3ce346b4cc90f8,kakamega,KKG,Kakamega,malava,Malava,manda-shivanga,Manda-Shivanga,N,KKG_malava_manda-shivanga
+1007,c97b408abc4542578d10771f4a887a69,kakamega,KKG,Kakamega,malava,Malava,shirugu-mugai,Shirugu-Mugai,N,KKG_malava_shirugu-mugai
+1008,178f6747e62f4feda57d1df3ccb13dc8,kakamega,KKG,Kakamega,malava,Malava,south_kabras,South Kabras,N,KKG_malava_south_kabras
+1009,079eb2070c5c4276abe3b32ffef15e43,kakamega,KKG,Kakamega,lurambi,Lurambi,butsotso_east,Butsotso East,N,KKG_lurambi_butsotso_east
+1010,9884cf60089f407088e042eab7ac3ea5,kakamega,KKG,Kakamega,lurambi,Lurambi,butsotso_south,Butsotso South,N,KKG_lurambi_butsotso_south
+1011,17b5f9b00da44b5a84b84ee9ea7e736b,kakamega,KKG,Kakamega,lurambi,Lurambi,butsotso_central,Butsotso Central,N,KKG_lurambi_butsotso_central
+1012,497e14d2cb04427db8cd3d3a45cbdcb4,kakamega,KKG,Kakamega,lurambi,Lurambi,sheywe,Sheywe,N,KKG_lurambi_sheywe
+1013,06624cd82d0d4f41aece6533877d9374,kakamega,KKG,Kakamega,lurambi,Lurambi,mahiakalo,Mahiakalo,N,KKG_lurambi_mahiakalo
+1014,0a80c46bc3854406884f3ff35b7863d0,kakamega,KKG,Kakamega,lurambi,Lurambi,shirere,Shirere,N,KKG_lurambi_shirere
+1015,5ded6d5efbd648e59a178a522d1423e9,kakamega,KKG,Kakamega,navakholo,Navakholo,ingostse-mathia,Ingostse-Mathia,N,KKG_navakholo_ingostse-mathia
+1016,b10c3d7f66c542909d0aa17f5f7f3b79,kakamega,KKG,Kakamega,navakholo,Navakholo,shinoyi-shikomari-,Shinoyi-Shikomari-,N,KKG_navakholo_shinoyi-shikomari-
+1017,74341a7c5dc74993b33bc375272646fb,kakamega,KKG,Kakamega,navakholo,Navakholo,bunyala_west,Bunyala West,N,KKG_navakholo_bunyala_west
+1018,bbd93c2f94e747738966fef86df5644a,kakamega,KKG,Kakamega,navakholo,Navakholo,bunyala_east,Bunyala East,N,KKG_navakholo_bunyala_east
+1019,08192e180cfb43489eb287df3a2c446d,kakamega,KKG,Kakamega,navakholo,Navakholo,bunyala_central,Bunyala Central,N,KKG_navakholo_bunyala_central
+1020,4c733db5f7754a40a67c0864273d1c32,kakamega,KKG,Kakamega,mumias_west,Mumias West,mumias_central,Mumias Central,N,KKG_mumias_west_mumias_central
+1021,a8d98c4fc466469fa99b35974dd703c8,kakamega,KKG,Kakamega,mumias_west,Mumias West,mumias_north,Mumias North,N,KKG_mumias_west_mumias_north
+1022,472fa3c1cba14d2ea779073f39f419cc,kakamega,KKG,Kakamega,mumias_west,Mumias West,etenje,Etenje,N,KKG_mumias_west_etenje
+1023,a050c8e92066424b8645509aae6c6428,kakamega,KKG,Kakamega,mumias_west,Mumias West,musanda,Musanda,N,KKG_mumias_west_musanda
+1024,6ca2b83005f64b48a500f38e68db87b8,kakamega,KKG,Kakamega,mumias_east,Mumias East,lubinu_lusheya,Lubinu/Lusheya,N,KKG_mumias_east_lubinu_lusheya
+1025,cfe6b3eadde04feea101ee2cd3a437a4,kakamega,KKG,Kakamega,mumias_east,Mumias East,isongo_makunga_malaha,Isongo/Makunga/Malaha,N,KKG_mumias_east_isongo_makunga_malaha
+1026,b452dfb29d7848f7ad7c2e5c58dbdacc,kakamega,KKG,Kakamega,mumias_east,Mumias East,east_wanga,East Wanga,N,KKG_mumias_east_east_wanga
+1027,9cc06f7deb1742b1adf2aed644b25076,kakamega,KKG,Kakamega,matungu,Matungu,koyonzo,Koyonzo,N,KKG_matungu_koyonzo
+1028,65b0660159a8489c8dd0d500d1f6d31c,kakamega,KKG,Kakamega,matungu,Matungu,kholera,Kholera,N,KKG_matungu_kholera
+1029,50cc47f67c12476e81fcd29c1351d821,kakamega,KKG,Kakamega,matungu,Matungu,khalaba,Khalaba,N,KKG_matungu_khalaba
+1030,a7b7b63b1acd436a879968f3602bb01f,kakamega,KKG,Kakamega,matungu,Matungu,mayoni,Mayoni,N,KKG_matungu_mayoni
+1031,499b396589db4e6885845df36886c09d,kakamega,KKG,Kakamega,matungu,Matungu,namamali,Namamali,N,KKG_matungu_namamali
+1032,ec04b732d8224d4c80d6c2412dfcf423,kakamega,KKG,Kakamega,butere,Butere,marama_west,Marama West,N,KKG_butere_marama_west
+1033,678203be4ec6463cb65890d7d9ed9bbb,kakamega,KKG,Kakamega,butere,Butere,marama_central,Marama Central,N,KKG_butere_marama_central
+1034,e58eacd5232547d68b459ea7c2b7fbb0,kakamega,KKG,Kakamega,butere,Butere,marenyo_-_shianda,Marenyo - Shianda,N,KKG_butere_marenyo_-_shianda
+1035,9fc0fd28d1674935a9f94bf6b9bca9bf,kakamega,KKG,Kakamega,butere,Butere,marama_north,Marama North,N,KKG_butere_marama_north
+1036,75ab742f0c6a43c3959fe50c6c2f0a5d,kakamega,KKG,Kakamega,butere,Butere,marama_south,Marama South,N,KKG_butere_marama_south
+1037,a78b9e0e66724843834852c9eea0b9dc,kakamega,KKG,Kakamega,khwisero,Khwisero,kisa_north,Kisa North,N,KKG_khwisero_kisa_north
+1038,deed2fb05cfc413aa880da456f1b1aa2,kakamega,KKG,Kakamega,khwisero,Khwisero,kisa_east,Kisa East,N,KKG_khwisero_kisa_east
+1039,3b99c76f3a57435db3788dbd91b69099,kakamega,KKG,Kakamega,khwisero,Khwisero,kisa_west,Kisa West,N,KKG_khwisero_kisa_west
+1040,cd184487106f4135989e9a8bc6e7d1b1,kakamega,KKG,Kakamega,khwisero,Khwisero,kisa_central,Kisa Central,N,KKG_khwisero_kisa_central
+1041,58e5f3cfe67a41b7965b7a130b000380,kakamega,KKG,Kakamega,shinyalu,Shinyalu,isukha_north,Isukha North,N,KKG_shinyalu_isukha_north
+1042,ab03a6f6f8ed4dacabf72bb8f8b658b6,kakamega,KKG,Kakamega,shinyalu,Shinyalu,murhanda,Murhanda,N,KKG_shinyalu_murhanda
+1043,1ae9963980b24f6a97868f48dafda5b5,kakamega,KKG,Kakamega,shinyalu,Shinyalu,isukha_central,Isukha Central,N,KKG_shinyalu_isukha_central
+1044,6b39f91b128743aba72a3248a0e9de3a,kakamega,KKG,Kakamega,shinyalu,Shinyalu,isukha_south,Isukha South,N,KKG_shinyalu_isukha_south
+1045,582805c969714eb88cac0a57a57b2f08,kakamega,KKG,Kakamega,shinyalu,Shinyalu,isukha_east,Isukha East,N,KKG_shinyalu_isukha_east
+1046,f44400bc89b14548a65965ab72b3effa,kakamega,KKG,Kakamega,shinyalu,Shinyalu,isukha_west,Isukha West,N,KKG_shinyalu_isukha_west
+1047,1bb929792db840459138d19777986740,kakamega,KKG,Kakamega,ikolomani,Ikolomani,idakho_south,Idakho South,N,KKG_ikolomani_idakho_south
+1048,36f4138f82e94cb7ae92647224a42f61,kakamega,KKG,Kakamega,ikolomani,Ikolomani,idakho_east,Idakho East,N,KKG_ikolomani_idakho_east
+1049,84be5f3a209e4cf39d01ef32735ce4b1,kakamega,KKG,Kakamega,ikolomani,Ikolomani,idakho_north,Idakho North,N,KKG_ikolomani_idakho_north
+1050,5d3c2de1d7f9465ab2a509aa909dd43d,kakamega,KKG,Kakamega,ikolomani,Ikolomani,idakho_central,Idakho Central,N,KKG_ikolomani_idakho_central
+1051,6033492588b24fe6a217bb7bb1f6e1b7,vihiga,VHG,Vihiga,vihiga,Vihiga,lugaga-wamuluma,Lugaga-Wamuluma,N,VHG_vihiga_lugaga-wamuluma
+1052,b723af1b64ff41fdb4bbe034c606d12f,vihiga,VHG,Vihiga,vihiga,Vihiga,south_maragoli,South Maragoli,N,VHG_vihiga_south_maragoli
+1053,9f4fad9d83bd4dfba1981d4a2a5ef553,vihiga,VHG,Vihiga,vihiga,Vihiga,central_maragoli,Central Maragoli,N,VHG_vihiga_central_maragoli
+1054,a2318d6ae62c41d09fc4cfeaddc003c6,vihiga,VHG,Vihiga,vihiga,Vihiga,mungoma,Mungoma,N,VHG_vihiga_mungoma
+1055,7f3e7b2c71a54d7aab8e7bb315d8df36,vihiga,VHG,Vihiga,sabatia,Sabatia,lyaduywa_izava,Lyaduywa/Izava,N,VHG_sabatia_lyaduywa_izava
+1056,cee8ae3897df4366b83f48a48b8f3528,vihiga,VHG,Vihiga,sabatia,Sabatia,west_sabatia,West Sabatia,N,VHG_sabatia_west_sabatia
+1057,39829b0879b14e39a5d0e5e64d48c86b,vihiga,VHG,Vihiga,sabatia,Sabatia,chavakali,Chavakali,N,VHG_sabatia_chavakali
+1058,ac1d06c1f0cb42c7a4241b125fe4a8f5,vihiga,VHG,Vihiga,sabatia,Sabatia,north_maragoli,North Maragoli,N,VHG_sabatia_north_maragoli
+1059,082f6976256543b4957e754c039fbf47,vihiga,VHG,Vihiga,sabatia,Sabatia,wodanga,Wodanga,N,VHG_sabatia_wodanga
+1060,b482734368bb4e29a0aa54ea90ccd4ae,vihiga,VHG,Vihiga,sabatia,Sabatia,busali,Busali,N,VHG_sabatia_busali
+1061,a6cb0a658a3c427ba555a5b3455bc717,vihiga,VHG,Vihiga,hamisi,Hamisi,shiru,Shiru,N,VHG_hamisi_shiru
+1062,5e57b1d2688a428cab949aeefda0ce24,vihiga,VHG,Vihiga,hamisi,Hamisi,muhudu,Muhudu,N,VHG_hamisi_muhudu
+1063,ad2b4549644f4393a3943373c9ba3289,vihiga,VHG,Vihiga,hamisi,Hamisi,shamakhokho,Shamakhokho,N,VHG_hamisi_shamakhokho
+1064,e38bd2cc623d4b188bb2124a0bc73f85,vihiga,VHG,Vihiga,hamisi,Hamisi,gisambai,Gisambai,N,VHG_hamisi_gisambai
+1065,a53189ff2f7d4704b657110f9fe01c1e,vihiga,VHG,Vihiga,hamisi,Hamisi,banja,Banja,N,VHG_hamisi_banja
+1066,32a746ee8c1f43d792f7780d47b1e942,vihiga,VHG,Vihiga,hamisi,Hamisi,tambua,Tambua,N,VHG_hamisi_tambua
+1067,ffbb9f57abc74106b8c68cc2f472e209,vihiga,VHG,Vihiga,hamisi,Hamisi,jepkoyai,Jepkoyai,N,VHG_hamisi_jepkoyai
+1068,c2097a588def4992bea88af0d2289b85,vihiga,VHG,Vihiga,luanda,Luanda,luanda_township,Luanda Township,N,VHG_luanda_luanda_township
+1069,c1fbf66bce75479d9a26b89701a5257c,vihiga,VHG,Vihiga,luanda,Luanda,wemilabi,Wemilabi,N,VHG_luanda_wemilabi
+1070,0bb2d987e37c4246b021d010751f1045,vihiga,VHG,Vihiga,luanda,Luanda,mwibona,Mwibona,N,VHG_luanda_mwibona
+1071,e47f0544a05c4af9bf91d0c0b33676ce,vihiga,VHG,Vihiga,luanda,Luanda,luanda_south,Luanda South,N,VHG_luanda_luanda_south
+1072,9dc82c39f71a4d299bfc085177137dfe,vihiga,VHG,Vihiga,luanda,Luanda,emabungo,Emabungo,N,VHG_luanda_emabungo
+1073,023faab6d73641e3b34bee3d13ee5701,vihiga,VHG,Vihiga,emuhaya,Emuhaya,north_east_bunyore,North East Bunyore,N,VHG_emuhaya_north_east_bunyore
+1074,ac7f1083b7c345928c3fa052ba14b019,vihiga,VHG,Vihiga,emuhaya,Emuhaya,central_bunyore,Central Bunyore,N,VHG_emuhaya_central_bunyore
+1075,8412bc764b4e4cd5833cbf02160b3f7f,vihiga,VHG,Vihiga,emuhaya,Emuhaya,west_bunyore,West Bunyore,N,VHG_emuhaya_west_bunyore
+1076,728a272c1f8b4fa38b6c40916c14f19e,bungoma,BGM,Bungoma,mt.elgon,Mt.Elgon,cheptais,Cheptais,N,BGM_mt.elgon_cheptais
+1077,263cbe8080e64af68185612d90d30524,bungoma,BGM,Bungoma,mt.elgon,Mt.Elgon,chesikaki,Chesikaki,N,BGM_mt.elgon_chesikaki
+1078,b0d0166eeb2a4d11836267f8cbc66dc7,bungoma,BGM,Bungoma,mt.elgon,Mt.Elgon,chepyuk,Chepyuk,N,BGM_mt.elgon_chepyuk
+1079,c1ea8a0bf14f4ce2a4c0c9479373b925,bungoma,BGM,Bungoma,mt.elgon,Mt.Elgon,kapkateny,Kapkateny,N,BGM_mt.elgon_kapkateny
+1080,ebf78045dd1e47cdaaad25affa01bfda,bungoma,BGM,Bungoma,mt.elgon,Mt.Elgon,kaptama,Kaptama,N,BGM_mt.elgon_kaptama
+1081,b937ddf7e2894ce2ae95e506dc51d81d,bungoma,BGM,Bungoma,mt.elgon,Mt.Elgon,elgon,Elgon,N,BGM_mt.elgon_elgon
+1082,91b67646b5994d37b7a904f81a6f186e,bungoma,BGM,Bungoma,sirisia,Sirisia,namwela,Namwela,N,BGM_sirisia_namwela
+1083,5118195c5f1141918f7cb1c67d589229,bungoma,BGM,Bungoma,sirisia,Sirisia,malakisi_south_kulisiru,Malakisi/South Kulisiru,N,BGM_sirisia_malakisi_south_kulisiru
+1084,08a1ecb4c68d4c8eb0d31b56cd3b68f1,bungoma,BGM,Bungoma,sirisia,Sirisia,lwandanyi,Lwandanyi,N,BGM_sirisia_lwandanyi
+1085,faa28526d1b045b2a0b98b9d55005d50,bungoma,BGM,Bungoma,kabuchai,Kabuchai,kabuchai_chwele,Kabuchai/Chwele,N,BGM_kabuchai_kabuchai_chwele
+1086,765b3262a9c34f56b86278f90cc2c5c8,bungoma,BGM,Bungoma,kabuchai,Kabuchai,west_nalondo,West Nalondo,N,BGM_kabuchai_west_nalondo
+1087,279c0cbef19f4887954e81e12bcdc8d1,bungoma,BGM,Bungoma,kabuchai,Kabuchai,bwake_luuya,Bwake/Luuya,N,BGM_kabuchai_bwake_luuya
+1088,d0e6266f54dc4f06970b7d934c827394,bungoma,BGM,Bungoma,kabuchai,Kabuchai,mukuyuni,Mukuyuni,N,BGM_kabuchai_mukuyuni
+1089,d08a7f2706e247fca0c872d755947e35,bungoma,BGM,Bungoma,bumula,Bumula,south_bukusu,South Bukusu,N,BGM_bumula_south_bukusu
+1090,6c04043504ca4281ba542c62b7bb3ac5,bungoma,BGM,Bungoma,bumula,Bumula,bumula,Bumula,N,BGM_bumula_bumula
+1091,ddf8188bcd4046aeb99f2c013608785c,bungoma,BGM,Bungoma,bumula,Bumula,khasoko,Khasoko,N,BGM_bumula_khasoko
+1092,6188f13f0bd9406f8797a1e2e731ae90,bungoma,BGM,Bungoma,bumula,Bumula,kabula,Kabula,N,BGM_bumula_kabula
+1093,788908c46eac4c51b012d9e406431434,bungoma,BGM,Bungoma,bumula,Bumula,kimaeti,Kimaeti,N,BGM_bumula_kimaeti
+1094,fc61bcf324454b988d10bdd74ab523c6,bungoma,BGM,Bungoma,bumula,Bumula,west_bukusu,West Bukusu,N,BGM_bumula_west_bukusu
+1095,5d5577c2b76b450a828140e92638798a,bungoma,BGM,Bungoma,bumula,Bumula,siboti,Siboti,N,BGM_bumula_siboti
+1096,0c5e2577acd040c3aeee2591036198e4,bungoma,BGM,Bungoma,kanduyi,Kanduyi,bukembe_west,Bukembe West,N,BGM_kanduyi_bukembe_west
+1097,05c1b82b30844c959e40b8abb9107c1b,bungoma,BGM,Bungoma,kanduyi,Kanduyi,bukembe_east,Bukembe East,N,BGM_kanduyi_bukembe_east
+1098,d7c97a0859a5479eaa0154fd0f8bb2bc,bungoma,BGM,Bungoma,kanduyi,Kanduyi,township,Township,N,BGM_kanduyi_township
+1099,f1c0c1058f124e47b1bd45c21c54d997,bungoma,BGM,Bungoma,kanduyi,Kanduyi,khalaba,Khalaba,N,BGM_kanduyi_khalaba
+1100,a77dd2fac05d4057ba7c7ec607b9a9ec,bungoma,BGM,Bungoma,kanduyi,Kanduyi,musikoma,Musikoma,N,BGM_kanduyi_musikoma
+1101,7dad8a3ba1fe4868a0d978bc6f00c188,bungoma,BGM,Bungoma,kanduyi,Kanduyi,east_sangalo,East SangAlo,N,BGM_kanduyi_east_sangalo
+1102,70772c40a0c642efae713a041a232235,bungoma,BGM,Bungoma,kanduyi,Kanduyi,marakaru_tuuti,Marakaru/Tuuti,N,BGM_kanduyi_marakaru_tuuti
+1103,11a2b8c0931b4b46b2b8573df4589ffd,bungoma,BGM,Bungoma,kanduyi,Kanduyi,sangalo_west,SangAlo West,N,BGM_kanduyi_sangalo_west
+1104,38af746fa14248d698421fad2313728a,bungoma,BGM,Bungoma,webuye_east,Webuye East,mihuu,Mihuu,N,BGM_webuye_east_mihuu
+1105,9f1818ef0fce414fa29bf48d9c864c64,bungoma,BGM,Bungoma,webuye_east,Webuye East,ndivisi,Ndivisi,N,BGM_webuye_east_ndivisi
+1106,01a230a9ca2b412eb429d2b8ef24226c,bungoma,BGM,Bungoma,webuye_east,Webuye East,maraka,Maraka,N,BGM_webuye_east_maraka
+1107,6795ecd3e8da4e95abd45ec9df832030,bungoma,BGM,Bungoma,webuye_west,Webuye West,misikhu,Misikhu,N,BGM_webuye_west_misikhu
+1108,1c451069f77645afb1498b19437048db,bungoma,BGM,Bungoma,webuye_west,Webuye West,sitikho,Sitikho,N,BGM_webuye_west_sitikho
+1109,1a46e76691dd4fada2f2e5480c263c2b,bungoma,BGM,Bungoma,webuye_west,Webuye West,matulo,Matulo,N,BGM_webuye_west_matulo
+1110,d78a845c9d214adf8c3884a30013465f,bungoma,BGM,Bungoma,webuye_west,Webuye West,bokoli,Bokoli,N,BGM_webuye_west_bokoli
+1111,2e371aa1e4ea45a18e063def987606d0,bungoma,BGM,Bungoma,kimilili,Kimilili,kimilili,Kimilili,N,BGM_kimilili_kimilili
+1112,1aed9b1a7c1c47b3a19be7a5da33217a,bungoma,BGM,Bungoma,kimilili,Kimilili,kibingei,Kibingei,N,BGM_kimilili_kibingei
+1113,125246ffe00b4ade965d50ab0b457cce,bungoma,BGM,Bungoma,kimilili,Kimilili,maeni,Maeni,N,BGM_kimilili_maeni
+1114,4de61f462cb44a25bdd6f92040b41945,bungoma,BGM,Bungoma,kimilili,Kimilili,kamukuywa,Kamukuywa,N,BGM_kimilili_kamukuywa
+1115,d4b0d8aa9a3e4a09881b006473dd81ad,bungoma,BGM,Bungoma,tongaren,Tongaren,mbakalo,Mbakalo,N,BGM_tongaren_mbakalo
+1116,a600ecfc0167486cbfc7ccaf18d1ed26,bungoma,BGM,Bungoma,tongaren,Tongaren,naitiri_kabuyefwe,Naitiri/Kabuyefwe,N,BGM_tongaren_naitiri_kabuyefwe
+1117,ada99b56cddf480596c878828920833d,bungoma,BGM,Bungoma,tongaren,Tongaren,milima,Milima,N,BGM_tongaren_milima
+1118,edb9e272e47347308b0809f5cf4dd9a7,bungoma,BGM,Bungoma,tongaren,Tongaren,ndalu__tabani,Ndalu/ Tabani,N,BGM_tongaren_ndalu__tabani
+1119,18738a933ed1423184c2d1d53596c83d,bungoma,BGM,Bungoma,tongaren,Tongaren,tongaren,Tongaren,N,BGM_tongaren_tongaren
+1120,4826f65896654959914b1367ade92aa5,bungoma,BGM,Bungoma,tongaren,Tongaren,soysambu__mitua,Soysambu/ Mitua,N,BGM_tongaren_soysambu__mitua
+1121,7334349e3a3046028c5d9157cfac2ac8,busia,BSA,Busia,teso_north,Teso North,malaba_central,Malaba Central,N,BSA_teso_north_malaba_central
+1122,a16a33da2b7b4aebbc7a1e1209c34ac0,busia,BSA,Busia,teso_north,Teso North,malaba_north,Malaba North,N,BSA_teso_north_malaba_north
+1123,fabc352d4e4b47b596f27d5051b48b35,busia,BSA,Busia,teso_north,Teso North,angurai_south,AngUrai South,N,BSA_teso_north_angurai_south
+1124,e303e1a3d8d44904bfa8680e35135858,busia,BSA,Busia,teso_north,Teso North,angurai_north,AngUrai North,N,BSA_teso_north_angurai_north
+1125,640d48e8b3a44333ab4c3319feb25e6e,busia,BSA,Busia,teso_north,Teso North,angurai_east,AngUrai East,N,BSA_teso_north_angurai_east
+1126,7c5acf05031c48699fb90cb3cc3d4a3c,busia,BSA,Busia,teso_north,Teso North,malaba_south,Malaba South,N,BSA_teso_north_malaba_south
+1127,4070101d3f384d6b8870ff0e461aa13e,busia,BSA,Busia,teso_south,Teso South,angorom,AngOrom,N,BSA_teso_south_angorom
+1128,b6dc500ae4d34f9e8ea34a219cc8b0c9,busia,BSA,Busia,teso_south,Teso South,chakol_south,Chakol South,N,BSA_teso_south_chakol_south
+1129,823c35452d3243e0babc3c903da60937,busia,BSA,Busia,teso_south,Teso South,chakol_north,Chakol North,N,BSA_teso_south_chakol_north
+1130,bb887413ed684b9191215ff95f0119b4,busia,BSA,Busia,teso_south,Teso South,amukura_west,Amukura West,N,BSA_teso_south_amukura_west
+1131,942c05c4c3a744a187b320b515bca1c9,busia,BSA,Busia,teso_south,Teso South,amukura_east,Amukura East,N,BSA_teso_south_amukura_east
+1132,7be9b5fea9fd4db89d1c26f786451237,busia,BSA,Busia,teso_south,Teso South,amukura_central,Amukura Central,N,BSA_teso_south_amukura_central
+1133,ea102a122fa3492d8350c25790a48481,busia,BSA,Busia,nambale,Nambale,nambale_township,Nambale Township,N,BSA_nambale_nambale_township
+1134,e0428778d4d3461fbee3ae46df0567cb,busia,BSA,Busia,nambale,Nambale,bukhayo_north_waltsi,Bukhayo North/Waltsi,N,BSA_nambale_bukhayo_north_waltsi
+1135,7911805dc5644ccaae86da1048c8fd01,busia,BSA,Busia,nambale,Nambale,bukhayo_east,Bukhayo East,N,BSA_nambale_bukhayo_east
+1136,cd38b0f7d34e44929bd90b1b00b41374,busia,BSA,Busia,nambale,Nambale,bukhayo_central,Bukhayo Central,N,BSA_nambale_bukhayo_central
+1137,498b935ecc6649d9bcaec6e3bf60526e,busia,BSA,Busia,matayos,Matayos,bukhayo_west,Bukhayo West,N,BSA_matayos_bukhayo_west
+1138,8098b055dcda4480a60fa1f57097d48c,busia,BSA,Busia,matayos,Matayos,mayenje,Mayenje,N,BSA_matayos_mayenje
+1139,12e2617b29754b6bb1e335ebda743b20,busia,BSA,Busia,matayos,Matayos,matayos_south,Matayos South,N,BSA_matayos_matayos_south
+1140,8b1c14b41c6745ea8b57b3ee9642428f,busia,BSA,Busia,matayos,Matayos,busibwabo,Busibwabo,N,BSA_matayos_busibwabo
+1141,83ff55ac70f44f5bb586a48e9cfa4959,busia,BSA,Busia,matayos,Matayos,burumba,Burumba,N,BSA_matayos_burumba
+1142,3883931399da469eac52d9dff20be126,busia,BSA,Busia,butula,Butula,marachi_west,Marachi West,N,BSA_butula_marachi_west
+1143,f53f095e887e49bd8234ba1b24a4167f,busia,BSA,Busia,butula,Butula,kingandole,Kingandole,N,BSA_butula_kingandole
+1144,dc402050ca064a0ba42eae12f2b900c9,busia,BSA,Busia,butula,Butula,marachi_central,Marachi Central,N,BSA_butula_marachi_central
+1145,57b2ed2393914dbe918832c29c070fe8,busia,BSA,Busia,butula,Butula,marachi_east,Marachi East,N,BSA_butula_marachi_east
+1146,6e0730d342274e9f941db68077fab1a6,busia,BSA,Busia,butula,Butula,marachi_north,Marachi North,N,BSA_butula_marachi_north
+1147,6c79bd5854c143ee9e00d78af473d97a,busia,BSA,Busia,butula,Butula,elugulu,Elugulu,N,BSA_butula_elugulu
+1148,6186cce34f444ec8aba973f567247271,busia,BSA,Busia,funyula,Funyula,namboboto_nambuku,Namboboto Nambuku,N,BSA_funyula_namboboto_nambuku
+1149,95b3ee8711d144299ff0dd65ef76c6aa,busia,BSA,Busia,funyula,Funyula,nangina,Nangina,N,BSA_funyula_nangina
+1150,d7979cd86b4544fc9fbac3385f2aa7a9,busia,BSA,Busia,funyula,Funyula,agenga_nanguba,AgengA Nanguba,N,BSA_funyula_agenga_nanguba
+1151,8485805af18a457ba40638a10ce17149,busia,BSA,Busia,funyula,Funyula,bwiri,Bwiri,N,BSA_funyula_bwiri
+1152,49993645ad694b089bf7502bcb0a8eaf,busia,BSA,Busia,budalangi,Budalangi,bunyala_central,Bunyala Central,N,BSA_budalangi_bunyala_central
+1153,42a7702bb9f34e20848c782ad4201fd4,busia,BSA,Busia,budalangi,Budalangi,bunyala_north,Bunyala North,N,BSA_budalangi_bunyala_north
+1154,8becf1dbb27245c7bb0ad62c98393997,busia,BSA,Busia,budalangi,Budalangi,bunyala_west,Bunyala West,N,BSA_budalangi_bunyala_west
+1155,1493ddaebf8d45819c529ec4171e0c8d,busia,BSA,Busia,budalangi,Budalangi,bunyala_south,Bunyala South,N,BSA_budalangi_bunyala_south
+1156,edf239a1709744288a2a11b74d80ab1b,siaya,SYA,Siaya,ugenya,Ugenya,west_ugenya,West Ugenya,N,SYA_ugenya_west_ugenya
+1157,efae58b6611d43929de75528cb1fc84a,siaya,SYA,Siaya,ugenya,Ugenya,ukwala,Ukwala,N,SYA_ugenya_ukwala
+1158,f9c0c8f6ae9e4926a27038cdec0a4d3a,siaya,SYA,Siaya,ugenya,Ugenya,north_ugenya,North Ugenya,N,SYA_ugenya_north_ugenya
+1159,aa3fee2215fa43a884f4fde45b138b95,siaya,SYA,Siaya,ugenya,Ugenya,east_ugenya,East Ugenya,N,SYA_ugenya_east_ugenya
+1160,938636baf59f4f37a5e42915922e8182,siaya,SYA,Siaya,ugunja,Ugunja,sidindi,Sidindi,N,SYA_ugunja_sidindi
+1161,5bc859d5a89b4b05990537afa5fb69d1,siaya,SYA,Siaya,ugunja,Ugunja,sigomere,Sigomere,N,SYA_ugunja_sigomere
+1162,4976cf7ce417497ea4b8840b2f0e4567,siaya,SYA,Siaya,ugunja,Ugunja,ugunja,Ugunja,N,SYA_ugunja_ugunja
+1163,223121b8ebcb43f980fc734c4861e0ac,siaya,SYA,Siaya,alego_usonga,Alego Usonga,usonga,Usonga,N,SYA_alego_usonga_usonga
+1164,568f44ff6cba4aa3ac2de8011e3a89e7,siaya,SYA,Siaya,alego_usonga,Alego Usonga,west_alego,West Alego,N,SYA_alego_usonga_west_alego
+1165,ca96a0a5935d4f8ba75bb5d82b9ad274,siaya,SYA,Siaya,alego_usonga,Alego Usonga,central_alego,Central Alego,N,SYA_alego_usonga_central_alego
+1166,276119d8f19a48fc9dd4cc1586995b19,siaya,SYA,Siaya,alego_usonga,Alego Usonga,siaya_township,Siaya Township,N,SYA_alego_usonga_siaya_township
+1167,4852dc4ee2874a759f6df481c3664edb,siaya,SYA,Siaya,alego_usonga,Alego Usonga,north_alego,North Alego,N,SYA_alego_usonga_north_alego
+1168,bb163a3cb7094e59a56c1070261c4ea7,siaya,SYA,Siaya,alego_usonga,Alego Usonga,south_east_alego,South East Alego,N,SYA_alego_usonga_south_east_alego
+1169,fb901b1ef02b45f6b0f5e6a2266643dc,siaya,SYA,Siaya,gem,Gem,north_gem,North Gem,N,SYA_gem_north_gem
+1170,e3ba9b3607034487b8ed32789af7bda7,siaya,SYA,Siaya,gem,Gem,west_gem,West Gem,N,SYA_gem_west_gem
+1171,695009f4628243c9afe8c599286d58a7,siaya,SYA,Siaya,gem,Gem,central_gem,Central Gem,N,SYA_gem_central_gem
+1172,d73dde3df5ac4690bc5a2c3177d31cfb,siaya,SYA,Siaya,gem,Gem,yala_township,Yala Township,N,SYA_gem_yala_township
+1173,794234ba33604750b91121db3e605311,siaya,SYA,Siaya,gem,Gem,east_gem,East Gem,N,SYA_gem_east_gem
+1174,f33631dcec1143f183492ad4779f391f,siaya,SYA,Siaya,gem,Gem,south_gem,South Gem,N,SYA_gem_south_gem
+1175,61d4fbe1fa804b1db10d0f9293a00aac,siaya,SYA,Siaya,bondo,Bondo,west_yimbo,West Yimbo,N,SYA_bondo_west_yimbo
+1176,ab3b5151b20b4ff7b3671abf418ecd6f,siaya,SYA,Siaya,bondo,Bondo,central_sakwa,Central Sakwa,N,SYA_bondo_central_sakwa
+1177,21eab7460ece400b9b7ce9ab9776baee,siaya,SYA,Siaya,bondo,Bondo,south_sakwa,South Sakwa,N,SYA_bondo_south_sakwa
+1178,1243cc6b3e164a4d9820470e5821d70c,siaya,SYA,Siaya,bondo,Bondo,yimbo_east,Yimbo East,N,SYA_bondo_yimbo_east
+1179,3254ec1beae04cc99f2f1037abe55651,siaya,SYA,Siaya,bondo,Bondo,west_sakwa,West Sakwa,N,SYA_bondo_west_sakwa
+1180,2404d98dd64a445fbe48cb39d6dad072,siaya,SYA,Siaya,bondo,Bondo,north_sakwa,North Sakwa,N,SYA_bondo_north_sakwa
+1181,63b9e8a4b6fa4b789efdd23b44f71686,siaya,SYA,Siaya,rarieda,Rarieda,east_asembo,East Asembo,N,SYA_rarieda_east_asembo
+1182,8dc3fe8060644048aa9c7932d32cd7ed,siaya,SYA,Siaya,rarieda,Rarieda,west_asembo,West Asembo,N,SYA_rarieda_west_asembo
+1183,45e8ddf468a84371b535aedb7390d406,siaya,SYA,Siaya,rarieda,Rarieda,north_uyoma,North Uyoma,N,SYA_rarieda_north_uyoma
+1184,f827815958c04c4caa0606d974698e0a,siaya,SYA,Siaya,rarieda,Rarieda,south_uyoma,South Uyoma,N,SYA_rarieda_south_uyoma
+1185,73829d25ef744f77a276dcc8ad5a96b5,siaya,SYA,Siaya,rarieda,Rarieda,west_uyoma,West Uyoma,N,SYA_rarieda_west_uyoma
+1186,b33b160732dd4addab46a528351359e7,kisumu,KSM,Kisumu,kisumu_east,Kisumu East,kajulu,Kajulu,N,KSM_kisumu_east_kajulu
+1187,1366ce36cce841bfa66aae504ba684d1,kisumu,KSM,Kisumu,kisumu_east,Kisumu East,kolwa_east,Kolwa East,N,KSM_kisumu_east_kolwa_east
+1188,03c739d65acc477cbc2d5b2be928a12b,kisumu,KSM,Kisumu,kisumu_east,Kisumu East,manyatta_b,Manyatta B,N,KSM_kisumu_east_manyatta_b
+1189,c61013eea92e4381bc76f4976af97a83,kisumu,KSM,Kisumu,kisumu_east,Kisumu East,nyalenda_a,Nyalenda A,N,KSM_kisumu_east_nyalenda_a
+1190,491c3763c4d14f63a1b98a3f11dc587b,kisumu,KSM,Kisumu,kisumu_east,Kisumu East,kolwa_central,Kolwa Central,N,KSM_kisumu_east_kolwa_central
+1191,54da9c64155a448c8e66ff5146de8ce7,kisumu,KSM,Kisumu,kisumu_west,Kisumu West,south_west_kisumu,South West Kisumu,N,KSM_kisumu_west_south_west_kisumu
+1192,3e59c05fc5df488997273e5f7580c14a,kisumu,KSM,Kisumu,kisumu_west,Kisumu West,central_kisumu,Central Kisumu,N,KSM_kisumu_west_central_kisumu
+1193,522db9fc284a4997b5875ecaaffc3ccb,kisumu,KSM,Kisumu,kisumu_west,Kisumu West,kisumu_north,Kisumu North,N,KSM_kisumu_west_kisumu_north
+1194,d119935a8b414c0ebe2efae2b62a14a3,kisumu,KSM,Kisumu,kisumu_west,Kisumu West,west_kisumu,West Kisumu,N,KSM_kisumu_west_west_kisumu
+1195,125c5951d88d4030b3a9459420c20471,kisumu,KSM,Kisumu,kisumu_west,Kisumu West,north_west_kisumu,North West Kisumu,N,KSM_kisumu_west_north_west_kisumu
+1196,9e84c6ba7638482cae328bcd2d316893,kisumu,KSM,Kisumu,kisumu_central,Kisumu Central,railways,Railways,N,KSM_kisumu_central_railways
+1197,080921b3213e4e40a06b0cb1a7a47cdb,kisumu,KSM,Kisumu,kisumu_central,Kisumu Central,migosi,Migosi,N,KSM_kisumu_central_migosi
+1198,a9b1c4d3efd9474e8b386100e307be2c,kisumu,KSM,Kisumu,kisumu_central,Kisumu Central,shaurimoyo_kaloleni,Shaurimoyo Kaloleni,N,KSM_kisumu_central_shaurimoyo_kaloleni
+1199,91c65978486b44ae92fc10293c345c71,kisumu,KSM,Kisumu,kisumu_central,Kisumu Central,market_milimani,Market Milimani,N,KSM_kisumu_central_market_milimani
+1200,9a4ad4903a744493a5b2121af8f63943,kisumu,KSM,Kisumu,kisumu_central,Kisumu Central,kondele,Kondele,N,KSM_kisumu_central_kondele
+1201,91f88a1be65149c1854680bc72fa5e65,kisumu,KSM,Kisumu,kisumu_central,Kisumu Central,nyalenda_b,Nyalenda B,N,KSM_kisumu_central_nyalenda_b
+1202,6efbc9a1c04b4a2a80770d26672181e4,kisumu,KSM,Kisumu,seme,Seme,west_seme,West Seme,N,KSM_seme_west_seme
+1203,2f042db7d1574a12bb4f671211567f1a,kisumu,KSM,Kisumu,seme,Seme,central_seme,Central Seme,N,KSM_seme_central_seme
+1204,92645825f8e941e3b46455b5d3d720db,kisumu,KSM,Kisumu,seme,Seme,east_seme,East Seme,N,KSM_seme_east_seme
+1205,526a87e5e91c43d491e78832bf71ccf2,kisumu,KSM,Kisumu,seme,Seme,north_seme,North Seme,N,KSM_seme_north_seme
+1206,e303a4b7deb14f6491fd6a9ac7c56491,kisumu,KSM,Kisumu,nyando,Nyando,east_kano_wawidhi,East Kano/Wawidhi,N,KSM_nyando_east_kano_wawidhi
+1207,885da0c2ce0840bea1a3939a3f59711e,kisumu,KSM,Kisumu,nyando,Nyando,awasi_onjiko,Awasi/Onjiko,N,KSM_nyando_awasi_onjiko
+1208,aa03170b4f554f0cbebd318c31f9055f,kisumu,KSM,Kisumu,nyando,Nyando,ahero,Ahero,N,KSM_nyando_ahero
+1209,7152a7bbf93b42a09bc0b4b12b5afb2c,kisumu,KSM,Kisumu,nyando,Nyando,kabonyo_kanyagwal,Kabonyo/Kanyagwal,N,KSM_nyando_kabonyo_kanyagwal
+1210,ecd890e3d7784ac3a9cbace07efc3e25,kisumu,KSM,Kisumu,nyando,Nyando,kobura,Kobura,N,KSM_nyando_kobura
+1211,944b142c244c4af796ca817a094a8001,kisumu,KSM,Kisumu,muhoroni,Muhoroni,miwani,Miwani,N,KSM_muhoroni_miwani
+1212,41b1d3a6d3f747379898a63982752322,kisumu,KSM,Kisumu,muhoroni,Muhoroni,ombeyi,Ombeyi,N,KSM_muhoroni_ombeyi
+1213,38e5d9172283403789874211c76ae2f0,kisumu,KSM,Kisumu,muhoroni,Muhoroni,masogo_nyangoma,Masogo/NyangOma,N,KSM_muhoroni_masogo_nyangoma
+1214,4be63cf02f564b4baf8701b3d1dd7340,kisumu,KSM,Kisumu,muhoroni,Muhoroni,chemelil,Chemelil,N,KSM_muhoroni_chemelil
+1215,7ef9a70fc62a40518485bcc37367f609,kisumu,KSM,Kisumu,muhoroni,Muhoroni,muhoroni_koru,Muhoroni/Koru,N,KSM_muhoroni_muhoroni_koru
+1216,0d3d8206b25e400b8a45393e3e68829c,kisumu,KSM,Kisumu,nyakach,Nyakach,south_west_nyakach,South West Nyakach,N,KSM_nyakach_south_west_nyakach
+1217,f858a703725f4a1a89d4c9f84961d111,kisumu,KSM,Kisumu,nyakach,Nyakach,north_nyakach,North Nyakach,N,KSM_nyakach_north_nyakach
+1218,971113d972514ddf846d6dc535c5cecb,kisumu,KSM,Kisumu,nyakach,Nyakach,central_nyakach,Central Nyakach,N,KSM_nyakach_central_nyakach
+1219,02c7e8f73e8a4dcda11713c10c62ab1f,kisumu,KSM,Kisumu,nyakach,Nyakach,west_nyakach,West Nyakach,N,KSM_nyakach_west_nyakach
+1220,466430cfdcef45caac71751d333d7e17,kisumu,KSM,Kisumu,nyakach,Nyakach,south_east_nyakach,South East Nyakach,N,KSM_nyakach_south_east_nyakach
+1221,836183a4bb514e1cb52b7c844b0423cb,homa_bay,HBY,Homa Bay,kasipul,Kasipul,west_kasipul,West Kasipul,N,HBY_kasipul_west_kasipul
+1222,b0bb69ce84f04068a14d95ddbb7be078,homa_bay,HBY,Homa Bay,kasipul,Kasipul,south_kasipul,South Kasipul,N,HBY_kasipul_south_kasipul
+1223,432e5f349c72428ab39029fd512af3e0,homa_bay,HBY,Homa Bay,kasipul,Kasipul,central_kasipul,Central Kasipul,N,HBY_kasipul_central_kasipul
+1224,f7cf9c677c3945e38c09700c972c0c38,homa_bay,HBY,Homa Bay,kasipul,Kasipul,east_kamagak,East Kamagak,N,HBY_kasipul_east_kamagak
+1225,938e13b33cbb4529beef0a622910c077,homa_bay,HBY,Homa Bay,kasipul,Kasipul,west_kamagak,West Kamagak,N,HBY_kasipul_west_kamagak
+1226,d864548cfa4943c691d42767fad69011,homa_bay,HBY,Homa Bay,kabondo_kasipul,Kabondo Kasipul,kabondo_east,Kabondo East,N,HBY_kabondo_kasipul_kabondo_east
+1227,c7f1b873f30d4aa49735c520c71f364d,homa_bay,HBY,Homa Bay,kabondo_kasipul,Kabondo Kasipul,kabondo_west,Kabondo West,N,HBY_kabondo_kasipul_kabondo_west
+1228,a8ec2a954f734d0d8286c37c6aaa1cf5,homa_bay,HBY,Homa Bay,kabondo_kasipul,Kabondo Kasipul,kokwanyo_kakelo,Kokwanyo/Kakelo,N,HBY_kabondo_kasipul_kokwanyo_kakelo
+1229,284efe8a5865492b81326d79b26ae858,homa_bay,HBY,Homa Bay,kabondo_kasipul,Kabondo Kasipul,kojwach,Kojwach,N,HBY_kabondo_kasipul_kojwach
+1230,cb8c123c77534634ab491a456e666552,homa_bay,HBY,Homa Bay,karachuonyo,Karachuonyo,west_karachuonyo,West Karachuonyo,N,HBY_karachuonyo_west_karachuonyo
+1231,908bb29afe304bad95b71cc1ea8533ca,homa_bay,HBY,Homa Bay,karachuonyo,Karachuonyo,north_karachuonyo,North Karachuonyo,N,HBY_karachuonyo_north_karachuonyo
+1232,bb7f4cb03136421d9c007ab057cb059a,homa_bay,HBY,Homa Bay,karachuonyo,Karachuonyo,central,Central,N,HBY_karachuonyo_central
+1233,4b0f3974eaff43c1bf2075c54059582a,homa_bay,HBY,Homa Bay,karachuonyo,Karachuonyo,kanyaluo,Kanyaluo,N,HBY_karachuonyo_kanyaluo
+1234,810d29bd5f9b4a4099464384360c703f,homa_bay,HBY,Homa Bay,karachuonyo,Karachuonyo,kibiri,Kibiri,N,HBY_karachuonyo_kibiri
+1235,3dd3ad8c32374648b90924c35512134e,homa_bay,HBY,Homa Bay,karachuonyo,Karachuonyo,wangchieng,Wangchieng,N,HBY_karachuonyo_wangchieng
+1236,42e8e70a39eb490bb40152b3e55e34b8,homa_bay,HBY,Homa Bay,karachuonyo,Karachuonyo,kendu_bay_town,Kendu Bay Town,N,HBY_karachuonyo_kendu_bay_town
+1237,4e5964369ee747c394a770fc31066e56,homa_bay,HBY,Homa Bay,rangwe,Rangwe,west_gem,West Gem,N,HBY_rangwe_west_gem
+1238,f3cbddbfa2064264827f4ede5a242ae1,homa_bay,HBY,Homa Bay,rangwe,Rangwe,east_gem,East Gem,N,HBY_rangwe_east_gem
+1239,8b5e96c324ba4eb096306e3f500c58b6,homa_bay,HBY,Homa Bay,rangwe,Rangwe,kagan,Kagan,N,HBY_rangwe_kagan
+1240,e0ca59e032ef45fab66786d1138cb498,homa_bay,HBY,Homa Bay,rangwe,Rangwe,kochia,Kochia,N,HBY_rangwe_kochia
+1241,5cb95bbdad3e47be87fca9222ad199fa,homa_bay,HBY,Homa Bay,homa_bay_town,Homa Bay Town,homa_bay_central,Homa Bay Central,N,HBY_homa_bay_town_homa_bay_central
+1242,a4627b792f074986985a18f2ba6cae53,homa_bay,HBY,Homa Bay,homa_bay_town,Homa Bay Town,homa_bay_arujo,Homa Bay Arujo,N,HBY_homa_bay_town_homa_bay_arujo
+1243,fc6b45f887ab492da46bdc0b3511564a,homa_bay,HBY,Homa Bay,homa_bay_town,Homa Bay Town,homa_bay_west,Homa Bay West,N,HBY_homa_bay_town_homa_bay_west
+1244,8ab0438885414826a7708496cc800290,homa_bay,HBY,Homa Bay,homa_bay_town,Homa Bay Town,homa_bay_east,Homa Bay East,N,HBY_homa_bay_town_homa_bay_east
+1245,459cf6fbe1704da1866c683d9c5b5494,homa_bay,HBY,Homa Bay,ndhiwa,Ndhiwa,kwabwai,Kwabwai,N,HBY_ndhiwa_kwabwai
+1246,3d3ab2b179504c88b0c05007ed85aa65,homa_bay,HBY,Homa Bay,ndhiwa,Ndhiwa,kanyadoto,Kanyadoto,N,HBY_ndhiwa_kanyadoto
+1247,a76309712a7d4b8391b291e007463f57,homa_bay,HBY,Homa Bay,ndhiwa,Ndhiwa,kanyikela,Kanyikela,N,HBY_ndhiwa_kanyikela
+1248,f72f93d33d1b487b92eaa0732052ffa0,homa_bay,HBY,Homa Bay,ndhiwa,Ndhiwa,north_kabuoch,North Kabuoch,N,HBY_ndhiwa_north_kabuoch
+1249,0281caadd7b54be79d8aaced7759e661,homa_bay,HBY,Homa Bay,ndhiwa,Ndhiwa,kabuoch_south_pala,Kabuoch South/Pala,N,HBY_ndhiwa_kabuoch_south_pala
+1250,67d73d185ec942e3a8a45e24182ab213,homa_bay,HBY,Homa Bay,ndhiwa,Ndhiwa,kanyamwa_kologi,Kanyamwa Kologi,N,HBY_ndhiwa_kanyamwa_kologi
+1251,44f7bf5e25924ed7a18d51e265444481,homa_bay,HBY,Homa Bay,ndhiwa,Ndhiwa,kanyamwa_kosewe,Kanyamwa Kosewe,N,HBY_ndhiwa_kanyamwa_kosewe
+1252,16a631ea16a3449382a742ca5268d59c,homa_bay,HBY,Homa Bay,mbita,Mbita,mfangano_island,Mfangano Island,N,HBY_mbita_mfangano_island
+1253,2828d781c2be45d3b153470d448c0d8a,homa_bay,HBY,Homa Bay,mbita,Mbita,rusinga_island,Rusinga Island,N,HBY_mbita_rusinga_island
+1254,3396da6fb9f44e228e6cbb6b92db6472,homa_bay,HBY,Homa Bay,mbita,Mbita,kasgunga,Kasgunga,N,HBY_mbita_kasgunga
+1255,8b009365ee4249e1934c2445510b0dc3,homa_bay,HBY,Homa Bay,mbita,Mbita,gembe,Gembe,N,HBY_mbita_gembe
+1256,5d6e703c537d430fb213bf359a0ad293,homa_bay,HBY,Homa Bay,mbita,Mbita,lambwe,Lambwe,N,HBY_mbita_lambwe
+1257,ae19601c223e4ce4ac272772cb658d06,homa_bay,HBY,Homa Bay,suba,Suba,gwassi_south,Gwassi South,N,HBY_suba_gwassi_south
+1258,0181c5ce23b14ff3ad850a11fe3c51dd,homa_bay,HBY,Homa Bay,suba,Suba,gwassi_north,Gwassi North,N,HBY_suba_gwassi_north
+1259,d23ead84a77f48bfa543fe95d737bfd4,homa_bay,HBY,Homa Bay,suba,Suba,kaksingri_west,Kaksingri West,N,HBY_suba_kaksingri_west
+1260,6d43ad04786f4b3d955baece80c027b9,homa_bay,HBY,Homa Bay,suba,Suba,ruma_kaksingri_east,Ruma Kaksingri East,N,HBY_suba_ruma_kaksingri_east
+1261,bce83e9fa24740908fa8f8f073e19164,migori,MGR,Migori,rongo,Rongo,north_kamagambo,North Kamagambo,N,MGR_rongo_north_kamagambo
+1262,a3f96c54bebf4dd3bbb1d3d8c14769c6,migori,MGR,Migori,rongo,Rongo,central_kamagambo,Central Kamagambo,N,MGR_rongo_central_kamagambo
+1263,9bced95282d44a96b10f80622380d425,migori,MGR,Migori,rongo,Rongo,east_kamagambo,East Kamagambo,N,MGR_rongo_east_kamagambo
+1264,6d6631060b864185a79863bfc606bdab,migori,MGR,Migori,rongo,Rongo,south_kamagambo,South Kamagambo,N,MGR_rongo_south_kamagambo
+1265,dc777b78d6944698bcc0816b25ea0d0b,migori,MGR,Migori,awendo,Awendo,north_sakwa,North Sakwa,N,MGR_awendo_north_sakwa
+1266,c2958fe25f7744d39580db6880a702b0,migori,MGR,Migori,awendo,Awendo,south_sakwa,South Sakwa,N,MGR_awendo_south_sakwa
+1267,dbaa0ddf72284405942828662d29ee6c,migori,MGR,Migori,awendo,Awendo,west_sakwa,West Sakwa,N,MGR_awendo_west_sakwa
+1268,b146b049c8464cbeb720c029f8fbaeb2,migori,MGR,Migori,awendo,Awendo,central_sakwa,Central Sakwa,N,MGR_awendo_central_sakwa
+1269,4757943eb05b4dc8800ada59c4fe38b3,migori,MGR,Migori,suna_east,Suna East,god_jope,God Jope,N,MGR_suna_east_god_jope
+1270,a6a46794b9824143b8c0818de0722caa,migori,MGR,Migori,suna_east,Suna East,suna_central,Suna Central,N,MGR_suna_east_suna_central
+1271,914c31bcbabe4714b84ebe05bad762bf,migori,MGR,Migori,suna_east,Suna East,kakrao,Kakrao,N,MGR_suna_east_kakrao
+1272,85d7c1c39fad4fc589f68f6afc49d572,migori,MGR,Migori,suna_east,Suna East,kwa,Kwa,N,MGR_suna_east_kwa
+1273,1ca8660a59944fc9989fdd7e37b092aa,migori,MGR,Migori,suna_west,Suna West,wiga,Wiga,N,MGR_suna_west_wiga
+1274,a53ba2afb49c4467b72d1c89896e2f3d,migori,MGR,Migori,suna_west,Suna West,wasweta_ii,Wasweta Ii,N,MGR_suna_west_wasweta_ii
+1275,1a6e09028a3b408ab76c2c1a7cdbde73,migori,MGR,Migori,suna_west,Suna West,ragana-oruba,Ragana-Oruba,N,MGR_suna_west_ragana-oruba
+1276,876aafdebeb9451db48a5b39ef9d0926,migori,MGR,Migori,suna_west,Suna West,wasimbete,Wasimbete,N,MGR_suna_west_wasimbete
+1277,2e5894a70d5e4bdb967d242f6d6eaf16,migori,MGR,Migori,uriri,Uriri,west_kanyamkago,West Kanyamkago,N,MGR_uriri_west_kanyamkago
+1278,67d5e808cbde4daa9e3daefd73d132b7,migori,MGR,Migori,uriri,Uriri,north_kanyamkago,North Kanyamkago,N,MGR_uriri_north_kanyamkago
+1279,48f479872d6348fc933548748d00abaf,migori,MGR,Migori,uriri,Uriri,central_kanyamkago,Central Kanyamkago,N,MGR_uriri_central_kanyamkago
+1280,e5043e4c81a74bcfaca7af836a9d53e0,migori,MGR,Migori,uriri,Uriri,south_kanyamkago,South Kanyamkago,N,MGR_uriri_south_kanyamkago
+1281,2279a834016e46fb835e2b3cb32002bb,migori,MGR,Migori,uriri,Uriri,east_kanyamkago,East Kanyamkago,N,MGR_uriri_east_kanyamkago
+1282,4ccfdce6c2094595b5ffd350cd93a811,migori,MGR,Migori,nyatike,Nyatike,kachieng,KachienG,N,MGR_nyatike_kachieng
+1283,f1e401e9681c40b798873dd3622019a0,migori,MGR,Migori,nyatike,Nyatike,kanyasa,Kanyasa,N,MGR_nyatike_kanyasa
+1284,7fca67f035444af7b0552eafd2962a08,migori,MGR,Migori,nyatike,Nyatike,north_kadem,North Kadem,N,MGR_nyatike_north_kadem
+1285,18d5ef3b703b4d1c9151f6be084904ad,migori,MGR,Migori,nyatike,Nyatike,macalder_kanyarwanda,Macalder/Kanyarwanda,N,MGR_nyatike_macalder_kanyarwanda
+1286,e03636d5ca7d4b4780f439abcadc47f6,migori,MGR,Migori,nyatike,Nyatike,kaler,Kaler,N,MGR_nyatike_kaler
+1287,924a2647c91546e28392fce749bf04fa,migori,MGR,Migori,nyatike,Nyatike,got_kachola,Got Kachola,N,MGR_nyatike_got_kachola
+1288,93a17b24856849cb9b099fdca21203ae,migori,MGR,Migori,nyatike,Nyatike,muhuru,Muhuru,N,MGR_nyatike_muhuru
+1289,bd649a2f77af40d0af62ec375b3da14b,migori,MGR,Migori,kuria_west,Kuria West,bukira_east,Bukira East,N,MGR_kuria_west_bukira_east
+1290,6e6e00a7fc224be1983981d5e2f48a1c,migori,MGR,Migori,kuria_west,Kuria West,bukira_centrl_ikerege,Bukira Centrl/Ikerege,N,MGR_kuria_west_bukira_centrl_ikerege
+1291,c904d0b8ca2e44eb884387cec9eaa38f,migori,MGR,Migori,kuria_west,Kuria West,isibania,Isibania,N,MGR_kuria_west_isibania
+1292,b66faab5a8be4ef58c765cfd970cef35,migori,MGR,Migori,kuria_west,Kuria West,makerero,Makerero,N,MGR_kuria_west_makerero
+1293,c2fcc2adc33542829e0773c3f3966e03,migori,MGR,Migori,kuria_west,Kuria West,masaba,Masaba,N,MGR_kuria_west_masaba
+1294,216f36fd78234f688738fc9a3214b4f9,migori,MGR,Migori,kuria_west,Kuria West,tagare,Tagare,N,MGR_kuria_west_tagare
+1295,b870fc0231f04bcdb4371569e3431b46,migori,MGR,Migori,kuria_west,Kuria West,nyamosense_komosoko,Nyamosense/Komosoko,N,MGR_kuria_west_nyamosense_komosoko
+1296,df65293335c34314a93ac2323a9d9556,migori,MGR,Migori,kuria_east,Kuria East,gokeharaka_getambwega,Gokeharaka/Getambwega,N,MGR_kuria_east_gokeharaka_getambwega
+1297,d274f089a0b94dada8ac241237633a3d,migori,MGR,Migori,kuria_east,Kuria East,ntimaru_west,Ntimaru West,N,MGR_kuria_east_ntimaru_west
+1298,afd2962f7b0f46bf9cbda5f3790e4b42,migori,MGR,Migori,kuria_east,Kuria East,ntimaru_east,Ntimaru East,N,MGR_kuria_east_ntimaru_east
+1299,2b0886c9fbb64faf8789cc5a51031339,migori,MGR,Migori,kuria_east,Kuria East,nyabasi_east,Nyabasi East,N,MGR_kuria_east_nyabasi_east
+1300,9cf79e7333674b5bbf42b85c31cb59ab,migori,MGR,Migori,kuria_east,Kuria East,nyabasi_west,Nyabasi West,N,MGR_kuria_east_nyabasi_west
+1301,7214f290b75f4c7f9203aa80b0a7f8a5,kisii,KSI,Kisii,bonchari,Bonchari,bomariba,Bomariba,N,KSI_bonchari_bomariba
+1302,f91c95a9ba49440f9fa7ba100cd49913,kisii,KSI,Kisii,bonchari,Bonchari,bogiakumu,Bogiakumu,N,KSI_bonchari_bogiakumu
+1303,4d3cfde3f50e49e0b219b56c8a4947c3,kisii,KSI,Kisii,bonchari,Bonchari,bomorenda,Bomorenda,N,KSI_bonchari_bomorenda
+1304,26db81462ffd42baae52b0c1513de6b8,kisii,KSI,Kisii,bonchari,Bonchari,riana,Riana,N,KSI_bonchari_riana
+1305,3aeca97791854f75b39dab8eb4489796,kisii,KSI,Kisii,south_mugirango,South Mugirango,tabaka,Tabaka,N,KSI_south_mugirango_tabaka
+1306,11a94b17565a408b8f8fab1a7a9950a9,kisii,KSI,Kisii,south_mugirango,South Mugirango,boikanga,BoikangA,N,KSI_south_mugirango_boikanga
+1307,71483bd8df1c4fcb9354d2a8b59aeabb,kisii,KSI,Kisii,south_mugirango,South Mugirango,bogetenga,Bogetenga,N,KSI_south_mugirango_bogetenga
+1308,3c1239e9cfbe436299cc04308b6f1fc4,kisii,KSI,Kisii,south_mugirango,South Mugirango,borabu___chitago,Borabu / Chitago,N,KSI_south_mugirango_borabu___chitago
+1309,fd2150233d3044beaf699d0aff75a445,kisii,KSI,Kisii,south_mugirango,South Mugirango,moticho,Moticho,N,KSI_south_mugirango_moticho
+1310,79ad580a923e43d4a9af98112e8d3ac9,kisii,KSI,Kisii,south_mugirango,South Mugirango,getenga,Getenga,N,KSI_south_mugirango_getenga
+1311,5071aca8be18416cbc8dbdfcfa0235db,kisii,KSI,Kisii,bomachoge_borabu,Bomachoge Borabu,bombaba_borabu,Bombaba Borabu,N,KSI_bomachoge_borabu_bombaba_borabu
+1312,c7e2d99783b94b9a87ee6c624601dfa9,kisii,KSI,Kisii,bomachoge_borabu,Bomachoge Borabu,boochi_borabu,Boochi Borabu,N,KSI_bomachoge_borabu_boochi_borabu
+1313,35f43b38210b4917a5b34a52f301a3d8,kisii,KSI,Kisii,bomachoge_borabu,Bomachoge Borabu,bokimonge,Bokimonge,N,KSI_bomachoge_borabu_bokimonge
+1314,5815bca459d8410594eb7e7e42dc9378,kisii,KSI,Kisii,bomachoge_borabu,Bomachoge Borabu,magenche,Magenche,N,KSI_bomachoge_borabu_magenche
+1315,fd0256088b31428abe15162a8929e3d4,kisii,KSI,Kisii,bobasi,Bobasi,masige_west,Masige West,N,KSI_bobasi_masige_west
+1316,1d21789f50a1446d9059ad224a95a045,kisii,KSI,Kisii,bobasi,Bobasi,masige_east,Masige East,N,KSI_bobasi_masige_east
+1317,65b59fbec7dc4275995d8fa7687925d0,kisii,KSI,Kisii,bobasi,Bobasi,bobasi_central,Bobasi Central,N,KSI_bobasi_bobasi_central
+1318,4475bb471e8b4fd397e6654b562d482e,kisii,KSI,Kisii,bobasi,Bobasi,nyacheki,Nyacheki,N,KSI_bobasi_nyacheki
+1319,90a1a03b91eb4107a24894abd3a132df,kisii,KSI,Kisii,bobasi,Bobasi,bobasi_bogetaorio,Bobasi Bogetaorio,N,KSI_bobasi_bobasi_bogetaorio
+1320,4a70a830e20c4bcb97944dff89e60fbb,kisii,KSI,Kisii,bobasi,Bobasi,bobasi_chache,Bobasi Chache,N,KSI_bobasi_bobasi_chache
+1321,cc52e468a44943df8fadfb7f96d6f229,kisii,KSI,Kisii,bobasi,Bobasi,sameta_mokwerero,Sameta/Mokwerero,N,KSI_bobasi_sameta_mokwerero
+1322,7cc3fa9791ff4452964722f969d7a370,kisii,KSI,Kisii,bobasi,Bobasi,bobasi_boitangare,Bobasi Boitangare,N,KSI_bobasi_bobasi_boitangare
+1323,5a6bc397c76849f98af755b8021f5b66,kisii,KSI,Kisii,bomachoge_chache,Bomachoge Chache,majoge,Majoge,N,KSI_bomachoge_chache_majoge
+1324,0d37f69eb17b4111aa99583017213aa7,kisii,KSI,Kisii,bomachoge_chache,Bomachoge Chache,boochi_tendere,Boochi/Tendere,N,KSI_bomachoge_chache_boochi_tendere
+1325,0fd8efb4ebb44d31a65592e84cc6a63b,kisii,KSI,Kisii,bomachoge_chache,Bomachoge Chache,bosoti_sengera,Bosoti/Sengera,N,KSI_bomachoge_chache_bosoti_sengera
+1326,0ccac112671a46a096c3bd229e73c281,kisii,KSI,Kisii,nyaribari_masaba,Nyaribari Masaba,ichuni,Ichuni,N,KSI_nyaribari_masaba_ichuni
+1327,a7cc308ab271408585dd99ad29a6d2b8,kisii,KSI,Kisii,nyaribari_masaba,Nyaribari Masaba,nyamasibi,Nyamasibi,N,KSI_nyaribari_masaba_nyamasibi
+1328,8229d470edd645fb815f6ef1fc4dc18d,kisii,KSI,Kisii,nyaribari_masaba,Nyaribari Masaba,masimba,Masimba,N,KSI_nyaribari_masaba_masimba
+1329,b5e615b564d842ada601402681545ae3,kisii,KSI,Kisii,nyaribari_masaba,Nyaribari Masaba,gesusu,Gesusu,N,KSI_nyaribari_masaba_gesusu
+1330,03ff37ebf9f64fcd98b9e2f22b5e41b4,kisii,KSI,Kisii,nyaribari_masaba,Nyaribari Masaba,kiamokama,Kiamokama,N,KSI_nyaribari_masaba_kiamokama
+1331,b699344867034f199823c2c8be03894b,kisii,KSI,Kisii,nyaribari_chache,Nyaribari Chache,bobaracho,Bobaracho,N,KSI_nyaribari_chache_bobaracho
+1332,84aeab80d01f40e998e18c698ad3b4f8,kisii,KSI,Kisii,nyaribari_chache,Nyaribari Chache,kisii_central,Kisii Central,N,KSI_nyaribari_chache_kisii_central
+1333,a3cfcacb1ff04fe5b1b0f104de3bfb04,kisii,KSI,Kisii,nyaribari_chache,Nyaribari Chache,keumbu,Keumbu,N,KSI_nyaribari_chache_keumbu
+1334,fb77495c810e48479132b1055e7336cc,kisii,KSI,Kisii,nyaribari_chache,Nyaribari Chache,kiogoro,Kiogoro,N,KSI_nyaribari_chache_kiogoro
+1335,4f818528707b454aaf8fdf6377dd6950,kisii,KSI,Kisii,nyaribari_chache,Nyaribari Chache,birongo,Birongo,N,KSI_nyaribari_chache_birongo
+1336,6e2a8c289a3f48afa5a7c0bb266dee82,kisii,KSI,Kisii,nyaribari_chache,Nyaribari Chache,ibeno,Ibeno,N,KSI_nyaribari_chache_ibeno
+1337,97c6cb375ed04c8fa1b7ebfba6fe03f3,kisii,KSI,Kisii,kitutu_chache_north,Kitutu Chache North,monyerero,Monyerero,N,KSI_kitutu_chache_north_monyerero
+1338,260f6bc605754d87a0cae89e5424245b,kisii,KSI,Kisii,kitutu_chache_north,Kitutu Chache North,sensi,Sensi,N,KSI_kitutu_chache_north_sensi
+1339,0135bddb20ae4090ac14c62e922b0d57,kisii,KSI,Kisii,kitutu_chache_north,Kitutu Chache North,marani,Marani,N,KSI_kitutu_chache_north_marani
+1340,09103ada23d64eb1a9f32da5d42158a1,kisii,KSI,Kisii,kitutu_chache_north,Kitutu Chache North,kegogi,Kegogi,N,KSI_kitutu_chache_north_kegogi
+1341,d27659d3ca124d3d9767147449982131,kisii,KSI,Kisii,kitutu_chache_south,Kitutu Chache South,bogusero,Bogusero,N,KSI_kitutu_chache_south_bogusero
+1342,a00d4f3b6f8a4e0cbb25e4a26e4f5a70,kisii,KSI,Kisii,kitutu_chache_south,Kitutu Chache South,bogeka,Bogeka,N,KSI_kitutu_chache_south_bogeka
+1343,0bec292f8fdf4e98b87753c74fbf6636,kisii,KSI,Kisii,kitutu_chache_south,Kitutu Chache South,nyakoe,Nyakoe,N,KSI_kitutu_chache_south_nyakoe
+1344,f4d8268747874e5d98e4058ffae70c48,kisii,KSI,Kisii,kitutu_chache_south,Kitutu Chache South,kitutu___central,Kitutu   Central,N,KSI_kitutu_chache_south_kitutu___central
+1345,419a84ed82fa49d2b8383850893214f8,kisii,KSI,Kisii,kitutu_chache_south,Kitutu Chache South,nyatieko,Nyatieko,N,KSI_kitutu_chache_south_nyatieko
+1346,dd2be469328741ddbfebc30b759ce6f4,nyamira,NMR,Nyamira,kitutu_masaba,Kitutu Masaba,rigoma,Rigoma,N,NMR_kitutu_masaba_rigoma
+1347,17e3f3d72f8245b692a6df9eb9cc5234,nyamira,NMR,Nyamira,kitutu_masaba,Kitutu Masaba,gachuba,Gachuba,N,NMR_kitutu_masaba_gachuba
+1348,2d85eccbed044d278238041769b04468,nyamira,NMR,Nyamira,kitutu_masaba,Kitutu Masaba,kemera,Kemera,N,NMR_kitutu_masaba_kemera
+1349,774fae27516949e49fcfa22a980036f1,nyamira,NMR,Nyamira,kitutu_masaba,Kitutu Masaba,magombo,Magombo,N,NMR_kitutu_masaba_magombo
+1350,66200f00e5ac496c9ba157efe1d97498,nyamira,NMR,Nyamira,kitutu_masaba,Kitutu Masaba,manga,Manga,N,NMR_kitutu_masaba_manga
+1351,4479093c515e4831aa5360725b9079e6,nyamira,NMR,Nyamira,kitutu_masaba,Kitutu Masaba,gesima,Gesima,N,NMR_kitutu_masaba_gesima
+1352,f432bb5e4ce9423383be8df9484dfa0c,nyamira,NMR,Nyamira,west_mugirango,West Mugirango,nyamaiya,Nyamaiya,N,NMR_west_mugirango_nyamaiya
+1353,22b9e6f3e5704b32aead344add4ed4c4,nyamira,NMR,Nyamira,west_mugirango,West Mugirango,bogichora,Bogichora,N,NMR_west_mugirango_bogichora
+1354,64658e5e123745bfb246d3a7f14b68c8,nyamira,NMR,Nyamira,west_mugirango,West Mugirango,bosamaro,Bosamaro,N,NMR_west_mugirango_bosamaro
+1355,ded3b2d2e09c42c694a42c23badd21ab,nyamira,NMR,Nyamira,west_mugirango,West Mugirango,bonyamatuta,Bonyamatuta,N,NMR_west_mugirango_bonyamatuta
+1356,047f9f117033437b91ee0d2d5da2fe77,nyamira,NMR,Nyamira,west_mugirango,West Mugirango,township,Township,N,NMR_west_mugirango_township
+1357,fbd9a3236e0c4b608863fd24cb857f0e,nyamira,NMR,Nyamira,north_mugirango,North Mugirango,itibo,Itibo,N,NMR_north_mugirango_itibo
+1358,76d091f3fd1749f1a763d2c14f829839,nyamira,NMR,Nyamira,north_mugirango,North Mugirango,bomwagamo,Bomwagamo,N,NMR_north_mugirango_bomwagamo
+1359,c91dc97ff891427fac941f802282faf0,nyamira,NMR,Nyamira,north_mugirango,North Mugirango,bokeira,Bokeira,N,NMR_north_mugirango_bokeira
+1360,5591dceae6914078b9f4982ab73bd8c4,nyamira,NMR,Nyamira,north_mugirango,North Mugirango,magwagwa,Magwagwa,N,NMR_north_mugirango_magwagwa
+1361,db809e04aa174511845c6e55f78b51d2,nyamira,NMR,Nyamira,north_mugirango,North Mugirango,ekerenyo,Ekerenyo,N,NMR_north_mugirango_ekerenyo
+1362,8a83ea910bd54205ba153d90cd10219e,nyamira,NMR,Nyamira,borabu,Borabu,mekenene,Mekenene,N,NMR_borabu_mekenene
+1363,8d28542aa4ef493294b6f6934fa70bc6,nyamira,NMR,Nyamira,borabu,Borabu,kiabonyoru,Kiabonyoru,N,NMR_borabu_kiabonyoru
+1364,0516c8444eae49eb8f46bc9a3f62f665,nyamira,NMR,Nyamira,borabu,Borabu,nyansiongo,Nyansiongo,N,NMR_borabu_nyansiongo
+1365,90098fbba19f4ec7b6d18571300fd59f,nyamira,NMR,Nyamira,borabu,Borabu,esise,Esise,N,NMR_borabu_esise
+1366,c6d048e6d7c84cc59872915f8f743fd8,nairobi,NBI,Nairobi,westlands,Westlands,kitisuru,Kitisuru,N,NBI_westlands_kitisuru
+1367,4cad27ac3baf45e6a783c662260b7125,nairobi,NBI,Nairobi,westlands,Westlands,parklands_highridge,Parklands/Highridge,N,NBI_westlands_parklands_highridge
+1368,6a0b86d58e0947d988705c241dff7042,nairobi,NBI,Nairobi,westlands,Westlands,karura,Karura,N,NBI_westlands_karura
+1369,3e1fa16447ce4fd3a8f7797103194033,nairobi,NBI,Nairobi,westlands,Westlands,kangemi,Kangemi,N,NBI_westlands_kangemi
+1370,a176222f8ac94875ab939f3cce299bd4,nairobi,NBI,Nairobi,westlands,Westlands,mountain_view,Mountain View,N,NBI_westlands_mountain_view
+1371,6468c5c5a8c44cc292d71131e32425c1,nairobi,NBI,Nairobi,dagoretti_north,Dagoretti North,kilimani,Kilimani,N,NBI_dagoretti_north_kilimani
+1372,320c327030404f34a927447b71396098,nairobi,NBI,Nairobi,dagoretti_north,Dagoretti North,kawangware,Kawangware,N,NBI_dagoretti_north_kawangware
+1373,122db6365ab54573b122dbb254adc226,nairobi,NBI,Nairobi,dagoretti_north,Dagoretti North,gatina,Gatina,N,NBI_dagoretti_north_gatina
+1374,ca8c61b485434464ab2ec47e3045439f,nairobi,NBI,Nairobi,dagoretti_north,Dagoretti North,kileleshwa,Kileleshwa,N,NBI_dagoretti_north_kileleshwa
+1375,bd4ad5b0a7694e089e19c8b8f0804245,nairobi,NBI,Nairobi,dagoretti_north,Dagoretti North,kabiro,Kabiro,N,NBI_dagoretti_north_kabiro
+1376,5ea52974029345e0ba06370d887b6dc4,nairobi,NBI,Nairobi,dagoretti_south,Dagoretti South,mutuini,Mutuini,N,NBI_dagoretti_south_mutuini
+1377,bf5bd6f60f4742fe8d1affb782514604,nairobi,NBI,Nairobi,dagoretti_south,Dagoretti South,ngando,Ngando,N,NBI_dagoretti_south_ngando
+1378,b034deb7f6f549aa9bbc09dee07ab1a8,nairobi,NBI,Nairobi,dagoretti_south,Dagoretti South,riruta,Riruta,N,NBI_dagoretti_south_riruta
+1379,177dc5d03eeb47f1ab56ad82fdf80ba4,nairobi,NBI,Nairobi,dagoretti_south,Dagoretti South,uthiru_ruthimitu,Uthiru/Ruthimitu,N,NBI_dagoretti_south_uthiru_ruthimitu
+1380,ce561b4c61fc427ba6be1c7ae303f6c7,nairobi,NBI,Nairobi,dagoretti_south,Dagoretti South,waithaka,Waithaka,N,NBI_dagoretti_south_waithaka
+1381,34b621b9c7da4026b1c87cf6436efc66,nairobi,NBI,Nairobi,langata,Langata,karen,Karen,N,NBI_langata_karen
+1382,ead6fd6978a345a59d4777d2261b19a5,nairobi,NBI,Nairobi,langata,Langata,nairobi_west,Nairobi West,N,NBI_langata_nairobi_west
+1383,e983ed3a33094c2e890b0def93c642ac,nairobi,NBI,Nairobi,langata,Langata,mugumo-ini,Mugumo-Ini,N,NBI_langata_mugumo-ini
+1384,11a53c6d5f2b4cf6aafe29a73d3d984b,nairobi,NBI,Nairobi,langata,Langata,south-c,South-C,N,NBI_langata_south-c
+1385,f4ad77bc81604dd9a93cfd0261ef1c23,nairobi,NBI,Nairobi,langata,Langata,nyayo_highrise,Nyayo Highrise,N,NBI_langata_nyayo_highrise
+1386,4608eec1ee6c4ad59d19469e29ca6f85,nairobi,NBI,Nairobi,kibra,Kibra,laini_saba,Laini Saba,N,NBI_kibra_laini_saba
+1387,feda74632ff2453aa87a1d80c5db3736,nairobi,NBI,Nairobi,kibra,Kibra,lindi,Lindi,N,NBI_kibra_lindi
+1388,56eac4c330bb4a5eb12aa848c4600fb2,nairobi,NBI,Nairobi,kibra,Kibra,makina,Makina,N,NBI_kibra_makina
+1389,b13298a6ce7c4c7ba64bea14d60a2c87,nairobi,NBI,Nairobi,kibra,Kibra,woodley_kenyatta_golf,Woodley/Kenyatta Golf,N,NBI_kibra_woodley_kenyatta_golf
+1390,489f8951e19f41b1a7388caa8ffb7121,nairobi,NBI,Nairobi,kibra,Kibra,sarangombe,Sarangombe,N,NBI_kibra_sarangombe
+1391,77e1f173d4ce4286aebae94584434cbe,nairobi,NBI,Nairobi,roysambu,Roysambu,githurai,Githurai,N,NBI_roysambu_githurai
+1392,2d0cfb5248c14c0ebd3f66351a32a79b,nairobi,NBI,Nairobi,roysambu,Roysambu,kahawa_west,Kahawa West,N,NBI_roysambu_kahawa_west
+1393,c008889d332e41b0b01577ddac6cc42d,nairobi,NBI,Nairobi,roysambu,Roysambu,zimmerman,Zimmerman,N,NBI_roysambu_zimmerman
+1394,8473f04b9cab46388f727eda3983e666,nairobi,NBI,Nairobi,roysambu,Roysambu,roysambu,Roysambu,N,NBI_roysambu_roysambu
+1395,a0853ea67190415faed93edd9b10399d,nairobi,NBI,Nairobi,roysambu,Roysambu,kahawa,Kahawa,N,NBI_roysambu_kahawa
+1396,4e701ca7a2ac4affa96b33af1dee39db,nairobi,NBI,Nairobi,kasarani,Kasarani,claycity,Claycity,N,NBI_kasarani_claycity
+1397,c4a4bf7935194ccf8d9954546a7beb22,nairobi,NBI,Nairobi,kasarani,Kasarani,mwiki,Mwiki,N,NBI_kasarani_mwiki
+1398,5e4f5aa5798d440ab48e6a477f8e2f69,nairobi,NBI,Nairobi,kasarani,Kasarani,kasarani,Kasarani,N,NBI_kasarani_kasarani
+1399,a456329c73be4d77bf3fc823fa6dd0cc,nairobi,NBI,Nairobi,kasarani,Kasarani,njiru,Njiru,N,NBI_kasarani_njiru
+1400,df6b6faec62b4ba985fbbf88948d908b,nairobi,NBI,Nairobi,kasarani,Kasarani,ruai,Ruai,N,NBI_kasarani_ruai
+1401,7ae6b7eb38204fd4a32433b31eebc085,nairobi,NBI,Nairobi,ruaraka,Ruaraka,baba_dogo,Baba Dogo,N,NBI_ruaraka_baba_dogo
+1402,5ec91c95b3cb4e3db39db13c8a80d231,nairobi,NBI,Nairobi,ruaraka,Ruaraka,utalii,Utalii,N,NBI_ruaraka_utalii
+1403,b3155eabcccc46479e9639001ab6851c,nairobi,NBI,Nairobi,ruaraka,Ruaraka,mathare_north,Mathare North,N,NBI_ruaraka_mathare_north
+1404,a38e8efa1d5c40a49bca27a5a69a94b0,nairobi,NBI,Nairobi,ruaraka,Ruaraka,lucky_summer,Lucky Summer,N,NBI_ruaraka_lucky_summer
+1405,ce18accac3824137aea3923fff35b549,nairobi,NBI,Nairobi,ruaraka,Ruaraka,korogocho,Korogocho,N,NBI_ruaraka_korogocho
+1406,27f7c1b2717f454ab0c52e31914c8878,nairobi,NBI,Nairobi,embakasi_south,Embakasi South,imara_daima,Imara Daima,N,NBI_embakasi_south_imara_daima
+1407,bd2a1ad46ab24e7f97c07fcd0f2f5d9c,nairobi,NBI,Nairobi,embakasi_south,Embakasi South,kwa_njenga,Kwa Njenga,N,NBI_embakasi_south_kwa_njenga
+1408,305eb507c47b4e07846220ac6df5af94,nairobi,NBI,Nairobi,embakasi_south,Embakasi South,kwa_reuben,Kwa Reuben,N,NBI_embakasi_south_kwa_reuben
+1409,0fb798ffd7bd4138b7afbbab2c250a50,nairobi,NBI,Nairobi,embakasi_south,Embakasi South,pipeline,Pipeline,N,NBI_embakasi_south_pipeline
+1410,2869e5f54e584fd58427d75143a9d88e,nairobi,NBI,Nairobi,embakasi_south,Embakasi South,kware,Kware,N,NBI_embakasi_south_kware
+1411,beee6a408c90402ea446fa769ef19030,nairobi,NBI,Nairobi,embakasi_north,Embakasi North,kariobangi_north,Kariobangi North,N,NBI_embakasi_north_kariobangi_north
+1412,aed429a6377b4fe7a61e44cae37867d5,nairobi,NBI,Nairobi,embakasi_north,Embakasi North,dandora_area_i,Dandora Area I,N,NBI_embakasi_north_dandora_area_i
+1413,b88147d1752e4093afc93df71996f8fc,nairobi,NBI,Nairobi,embakasi_north,Embakasi North,dandora_area_ii,Dandora Area Ii,N,NBI_embakasi_north_dandora_area_ii
+1414,482b486a27a5401abcff8293a2f5b169,nairobi,NBI,Nairobi,embakasi_north,Embakasi North,dandora_area_iii,Dandora Area Iii,N,NBI_embakasi_north_dandora_area_iii
+1415,3a1374a25dc44dfe98c2ac0dc55ee2ca,nairobi,NBI,Nairobi,embakasi_north,Embakasi North,dandora_area_iv,Dandora Area Iv,N,NBI_embakasi_north_dandora_area_iv
+1416,a134c4dd55b345609b1569898dda6877,nairobi,NBI,Nairobi,embakasi_central,Embakasi Central,kayole_north,Kayole North,N,NBI_embakasi_central_kayole_north
+1417,9a9e31452229464591df0a5106d99b10,nairobi,NBI,Nairobi,embakasi_central,Embakasi Central,kayole_central,Kayole Central,N,NBI_embakasi_central_kayole_central
+1418,f25302b38e434723aa0bdaf286d6ef97,nairobi,NBI,Nairobi,embakasi_central,Embakasi Central,kayole_south,Kayole South,N,NBI_embakasi_central_kayole_south
+1419,f850e66ecf41497ea2f6432426df8089,nairobi,NBI,Nairobi,embakasi_central,Embakasi Central,komarock,Komarock,N,NBI_embakasi_central_komarock
+1420,3f42f07d39ee453f803d6adea63a65f6,nairobi,NBI,Nairobi,embakasi_central,Embakasi Central,matopeni,Matopeni,N,NBI_embakasi_central_matopeni
+1421,91cc60b80c9e4ad68597f73d91886a85,nairobi,NBI,Nairobi,embakasi_east,Embakasi East,upper_savannah,Upper Savannah,N,NBI_embakasi_east_upper_savannah
+1422,fc416beb4aff4f2191d3b1c201904480,nairobi,NBI,Nairobi,embakasi_east,Embakasi East,lower_savannah,Lower Savannah,N,NBI_embakasi_east_lower_savannah
+1423,d5cd1ec88ed3462199d93cdd61bfc171,nairobi,NBI,Nairobi,embakasi_east,Embakasi East,embakasi,Embakasi,N,NBI_embakasi_east_embakasi
+1424,5f1d7e305a53479cbc0fd5015733746f,nairobi,NBI,Nairobi,embakasi_east,Embakasi East,utawala,Utawala,N,NBI_embakasi_east_utawala
+1425,62c48cb59c024227b208593a577160fa,nairobi,NBI,Nairobi,embakasi_east,Embakasi East,mihango,Mihango,N,NBI_embakasi_east_mihango
+1426,094601b176c34ad5827723a2ab695108,nairobi,NBI,Nairobi,embakasi_west,Embakasi West,umoja_i,Umoja I,N,NBI_embakasi_west_umoja_i
+1427,ddc097b21fc94713b6637314575f39fd,nairobi,NBI,Nairobi,embakasi_west,Embakasi West,umoja_ii,Umoja Ii,N,NBI_embakasi_west_umoja_ii
+1428,66bbf384e7504bcfa78488dc2c495a52,nairobi,NBI,Nairobi,embakasi_west,Embakasi West,mowlem,Mowlem,N,NBI_embakasi_west_mowlem
+1429,7d6592a1607044048a8949b790922a73,nairobi,NBI,Nairobi,embakasi_west,Embakasi West,kariobangi_south,Kariobangi South,N,NBI_embakasi_west_kariobangi_south
+1430,e1978fddb3ac4c9b99336f8f2491bb09,nairobi,NBI,Nairobi,makadara,Makadara,makongeni,Makongeni,N,NBI_makadara_makongeni
+1431,6709a69353ba4effbeb18e7ff165e5d2,nairobi,NBI,Nairobi,makadara,Makadara,maringo_hamza,Maringo/Hamza,N,NBI_makadara_maringo_hamza
+1432,f01912b2f0994285b4ac03c29dfc1b92,nairobi,NBI,Nairobi,makadara,Makadara,harambee,Harambee,N,NBI_makadara_harambee
+1433,66b1072e3d8c411c97f2ed8390852436,nairobi,NBI,Nairobi,makadara,Makadara,viwandani,Viwandani,N,NBI_makadara_viwandani
+1434,e533afc3a9ce4e9ca8cc8d512b907c75,nairobi,NBI,Nairobi,kamukunji,Kamukunji,pumwani,Pumwani,N,NBI_kamukunji_pumwani
+1435,56b04f79c87f43a3bafca8b33ce5125d,nairobi,NBI,Nairobi,kamukunji,Kamukunji,eastleigh_north,Eastleigh North,N,NBI_kamukunji_eastleigh_north
+1436,065ce719cf46412e83d14b09c78ade83,nairobi,NBI,Nairobi,kamukunji,Kamukunji,eastleigh_south,Eastleigh South,N,NBI_kamukunji_eastleigh_south
+1437,bdd1a5b1cfc34b84af05f7e390d6ca6f,nairobi,NBI,Nairobi,kamukunji,Kamukunji,airbase,Airbase,N,NBI_kamukunji_airbase
+1438,db272ca060df46ee8847279f34a3d931,nairobi,NBI,Nairobi,kamukunji,Kamukunji,california,California,N,NBI_kamukunji_california
+1439,9130936d562f415c836a3b6f1b03e881,nairobi,NBI,Nairobi,starehe,Starehe,nairobi_central,Nairobi Central,N,NBI_starehe_nairobi_central
+1440,984c8bf3215b45a186ea321d1dc22b2d,nairobi,NBI,Nairobi,starehe,Starehe,ngara,Ngara,N,NBI_starehe_ngara
+1441,cd6b5b205b464c71a56eb481e7356c35,nairobi,NBI,Nairobi,starehe,Starehe,ziwani_kariokor,Ziwani/Kariokor,N,NBI_starehe_ziwani_kariokor
+1442,9801b274eafa4bbebab0048761f895f1,nairobi,NBI,Nairobi,starehe,Starehe,pangani,Pangani,N,NBI_starehe_pangani
+1443,f08f7cd2a32b41ab99ada460c71d20ff,nairobi,NBI,Nairobi,starehe,Starehe,landimawe,Landimawe,N,NBI_starehe_landimawe
+1444,7e38de753fa14db7b13726c72694dc1a,nairobi,NBI,Nairobi,starehe,Starehe,nairobi_south,Nairobi South,N,NBI_starehe_nairobi_south
+1445,fe359a4b479f4c4ca0d2bf696a433a2c,nairobi,NBI,Nairobi,mathare,Mathare,hospital,Hospital,N,NBI_mathare_hospital
+1446,145e2d8b5b47427eaa33c9daf3db615f,nairobi,NBI,Nairobi,mathare,Mathare,mabatini,Mabatini,N,NBI_mathare_mabatini
+1447,2103a5fd112d49c18331bbc0e26805bc,nairobi,NBI,Nairobi,mathare,Mathare,huruma,Huruma,N,NBI_mathare_huruma
+1448,458acae48c5043fe95d1063ef2ed131f,nairobi,NBI,Nairobi,mathare,Mathare,ngei,Ngei,N,NBI_mathare_ngei
+1449,aff4a7adac554280a9054bc877df55cd,nairobi,NBI,Nairobi,mathare,Mathare,mlango_kubwa,Mlango Kubwa,N,NBI_mathare_mlango_kubwa
+1450,66bdd12b7ef34e2c980ae306bdeb6900,nairobi,NBI,Nairobi,mathare,Mathare,kiamaiko,Kiamaiko,N,NBI_mathare_kiamaiko

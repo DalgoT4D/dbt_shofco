@@ -3,15 +3,27 @@
 ) }}
 
 SELECT
-    INITCAP(TRIM("GBV_Leader_Name")) AS "Name",
-    INITCAP(TRIM("County")) AS "County",
+    *,
     CASE
-        WHEN TRIM(LOWER("Gender")) = 'm' THEN 'Male'
-        ELSE INITCAP(TRIM("Gender"))
-    END AS "Gender",
-    "Mobile",
-    INITCAP(TRIM("Sub_county")) AS "Sub_county",
-    "National_ID",
-    INITCAP(TRIM("Community_Role")) AS "Community_Role"
+        -- Both are Yes
+        WHEN "Trained" = 'Yes' AND "Identified" = 'Yes' THEN 'Trained and Identified'
+        
+        -- Only one is Yes
+        WHEN "Trained" = 'Yes' THEN 'Trained'
+        WHEN "Identified" = 'Yes' THEN 'Identified'
+        
+        -- Default: none are Yes
+        ELSE 'None'
+    END AS status,
+    
+    CASE
+        WHEN "Date_trained" IS NOT NULL THEN 'Quarter ' || EXTRACT(QUARTER FROM "Date_trained")
+        ELSE 'Unknown'
+    END AS "quarter_trained",
+    
+    CASE
+        WHEN "Date_identified" IS NOT NULL THEN 'Quarter ' || EXTRACT(QUARTER FROM "Date_identified")
+        ELSE 'Unknown'
+    END AS "quarter_identified"
 
-FROM {{ ref('staging_gbv_leaders') }}  -- Refers to the previous model
+FROM {{ ref('staging_gbv_leaders') }}

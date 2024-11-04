@@ -77,10 +77,10 @@ select
     c.site_name as gender_site_name_of_registration
 from survivors_data a
 left join
-    {{ source("source_commcare", "dim_location_administrative_units") }} b
+    {{ source("staging_gender", "dim_location_administrative_units") }} b
     on a.county_code = b.county_code
     and a.constituency_code = b.constituency_id
     and a.ward_code = b.ward_id
 left join
-    {{ source("source_commcare", "dim_gender_sites") }} c
+    {{ source("staging_gender", "dim_gender_sites") }} c
     on a.gender_site_code_of_registration = c.site_code

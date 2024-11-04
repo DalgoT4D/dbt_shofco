@@ -139,10 +139,10 @@ left join
     {{ ref("survivors_data") }} survivors
     on cases.parent_case_id = survivors.case_id
 left join
-    {{ source("source_commcare", "dim_location_administrative_units") }} locations
+    {{ source("staging_gender", "dim_location_administrative_units") }} locations
     on cases.incident_report_county_code = locations.county_code
     and cases.incident_report_constituency_code = locations.constituency_id
     and cases.incident_report_ward_code = locations.ward_id
 left join
-    {{ source("source_commcare", "dim_gender_sites") }} gender_sites
+    {{ source("staging_gender", "dim_gender_sites") }} gender_sites
     on cases.gender_site_code_of_reporting = gender_sites.site_code

@@ -19,39 +19,23 @@ models:
       - name: county
         tests:
           - not_null
-      # - name: village
-      #   tests:
-      #     - not_null
       - name: latitude
         tests:
           - not_null
-          # - dbt_expectations.expect_column_values_to_be_of_type:
-          #     column_type: numeric
       - name: longitude
         tests:
           - not_null
-          # - dbt_expectations.expect_column_values_to_be_of_type:
-          #     column_type: numeric
       - name: subcounty
         tests:
           - not_null
-      # - name: facility_id
-      #   tests:
-      #     - not_null
       - name: facility_name
         tests:
           - not_null
       - name: facility_type
         tests:
           - not_null
-      # - name: date_of_submission
-      #   tests:
-      #     # - not_null
-      #     - dbt_expectations.expect_column_values_to_be_of_type:
-      #         column_type: date
       - name: status_of_facility
         tests:
-          # - not_null
           - accepted_values:
               values: ['active', 'inactive']
 
@@ -67,8 +51,6 @@ models:
       - name: amount_produced
         tests:
           - not_null
-          # - dbt_expectations.expect_column_values_to_be_of_type:
-          #     column_type: numeric
       - name: date_of_data_entry
         tests:
           - not_null
@@ -84,11 +66,5 @@ models:
           - not_null
       - name: subcase_date_of_data_entry
         tests:
-          # - not_null
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: date
-      # - name: subcase_amount_produced
-      #   tests:
-      #     - not_null
-          # - dbt_expectations.expect_column_values_to_be_of_type:
-          #     column_type: numeric

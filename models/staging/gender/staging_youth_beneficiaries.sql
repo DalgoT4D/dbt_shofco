@@ -16,6 +16,7 @@ SELECT
     (data::json->'properties'->>'beneficiary_categories') AS beneficiary_categories,
     (data::json->'properties'->>'case_name') AS case_name,
     (data::json->'properties'->>'date_opened') AS date_opened,
+    (data::json->'properties'->>'mental_health_training_session_type') AS training_type,
     -- Reference indexed_on directly
     indexed_on
 FROM {{ source('staging_youth', 'zzz_case') }}

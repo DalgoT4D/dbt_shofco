@@ -21,6 +21,23 @@ SELECT
         WHEN "gender_program" = 'yes' THEN 'Gender'
         WHEN "shofco_education_program" = 'yes' THEN 'Education'
         ELSE NULL
-    END AS "Active Programs"
+    END AS "Active Programs",
+    
+    -- Concatenate intervention into a single column
+    CASE
+        WHEN "gender_intervention" IS NOT NULL AND "wash_intervention" IS NOT NULL AND "education_intervention" IS NOT NULL THEN 
+            "gender_intervention" || ', ' || "wash_intervention" || ', ' || "education_intervention"
+        WHEN "gender_intervention" IS NOT NULL AND "wash_intervention" IS NOT NULL THEN 
+            "gender_intervention" || ', ' || "wash_intervention"
+        WHEN "gender_intervention" IS NOT NULL AND "education_intervention" IS NOT NULL THEN 
+            "gender_intervention" || ', ' || "education_intervention"
+        WHEN "wash_intervention" IS NOT NULL AND "education_intervention" IS NOT NULL THEN 
+            "wash_intervention" || ', ' || "education_intervention"
+        WHEN "gender_intervention" IS NOT NULL THEN "gender_intervention"
+        WHEN "wash_intervention" IS NOT NULL THEN "wash_intervention"
+        WHEN "education_intervention" IS NOT NULL THEN "education_intervention"
+        ELSE NULL
+    END AS "intervention"
+
 
 FROM {{ ref('staging_mapping') }}

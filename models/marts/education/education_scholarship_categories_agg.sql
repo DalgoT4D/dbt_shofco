@@ -3,7 +3,8 @@
 ) }}
 
 SELECT
-    _airbyte_raw_id AS id,  -- Include the primary key or unique identifier for each row if needed
+    _airbyte_raw_id AS id, -- Include the primary key or unique identifier for each row if needed
+    "Cohort",
     COALESCE(
         NULLIF(
             CONCAT_WS(', ',

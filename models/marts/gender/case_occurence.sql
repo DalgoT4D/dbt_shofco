@@ -83,6 +83,7 @@ with
             case
                 when (date_of_case_closure is null) then 'no' else 'yes'
             end as case_is_closed,
+            is_the_case_proceeding_to_court,
             case
                 when
                     (

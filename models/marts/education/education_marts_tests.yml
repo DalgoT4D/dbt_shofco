@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: education_scholarship_categories_agg
+    description: "Aggregates scholarship categories for educational purposes."
+    columns:
+      - name: id
+        tests:
+          - not_null
+      - name: categories
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Teen Mom', 'Orphan', 'Special Needs', 'GBV Survivor', 'None']

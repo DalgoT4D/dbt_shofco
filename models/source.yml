@@ -57,6 +57,8 @@ sources:
         description: "Initial Mental Health Assessment"
       - name: IIVC_Life_Skills_Training
         description: "IIVC Life Skills Training"
+      - name: IIVC_Mapping
+        description: "IIVC Mapping info on Schools"
         
   - name: wash_staging
     schema: wash_staging

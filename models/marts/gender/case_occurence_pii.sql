@@ -16,6 +16,7 @@ with
         select
             case_id,
             assigned_to,
+            case_summary_notes,
             {{ validate_date("date_of_reporting") }} as date_of_case_reporting,
             cast(
                 to_char(date_of_reporting::date, 'YYYYMMDD') as integer
@@ -49,6 +50,8 @@ with
             END AS case_duration_in_days,
             gender_site_code_of_reporting,
             where_was_the_client_referred_to as case_referred_to_location,
+            case_number,
+            case_name,
             assault_type,
             case
                 when assault_type ilike '%juvenile%' then 'Juvenile Case'

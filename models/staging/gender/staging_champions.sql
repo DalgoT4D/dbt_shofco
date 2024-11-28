@@ -13,7 +13,7 @@ SELECT
     "Site",
     "Trained",
     "Identified",
-    CAST("Date_identified" AS DATE) AS "Date_identified",
-    CAST("Date_trained" AS DATE) AS "Date_trained",
+    TO_DATE("Date_identified", 'DD/MM/YYYY') AS "Date_identified",
+    TO_DATE("Date_trained", 'DD/MM/YYYY') AS "Date_trained",
     "Active"
 FROM {{ source('staging_gender', 'Champions_') }}

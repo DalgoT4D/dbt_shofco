@@ -16,6 +16,7 @@ with
         select
             case_id,
             assigned_to,
+            previous_case_number,
             case_summary_notes,
             {{ validate_date("date_of_reporting") }} as date_of_case_reporting,
             cast(

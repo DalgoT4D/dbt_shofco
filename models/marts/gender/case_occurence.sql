@@ -16,6 +16,7 @@ with
         select
             case_id,
             assigned_to,
+            previous_case_number,
             {{ validate_date("date_of_reporting") }} as date_of_case_reporting,
             cast(
                 to_char(date_of_reporting::date, 'YYYYMMDD') as integer

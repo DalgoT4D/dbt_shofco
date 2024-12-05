@@ -93,6 +93,13 @@ sources:
         description: "IIVC Life Skills Training"
       - name: IIVC_Mapping
         description: "IIVC Mapping info on Schools"
+
+  - name: staging_orgwide
+    schema: staging_orgwide
+    tables:
+      - name: County_Footprint
+        identifier: County_Footprint
+        description: "County Footprint of program impact"
         
   - name: wash_staging
     schema: wash_staging
@@ -103,4 +110,7 @@ sources:
       - name: Water_Produced_at_Boreholes
         identifier: Water_Produced_at_Boreholes
         description: "Volume of water produced by boreholes"
+      - name: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
+        identifier: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
+        description: "Indicators to monitor school health and hygiene"
       

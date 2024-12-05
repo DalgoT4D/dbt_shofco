@@ -14,6 +14,11 @@ SELECT
     json_data->'form'->>'name_of_school' AS school_name,
     json_data->'form'->>'which_level_do_you_teach_please_tick_one_of_the_following' AS teaching_level,
     
+    CASE 
+        WHEN json_data->>'received_on' IS NOT NULL THEN 
+            EXTRACT(YEAR FROM TO_TIMESTAMP(LEFT(json_data->>'received_on', 19), 'YYYY-MM-DD"T"HH24:MI:SS'))
+        ELSE NULL
+    END AS "year",
     -- Section A - General Satisfaction
     json_data->'form'->'section_a'->>'section_a_general_satisfaction_with_the_shofco_school' AS general_satisfaction,
     json_data->'form'->'section_a'->>'how_satisfied_are_you_with_the_education_received_by_your_child_at_the_scho' AS education_satisfaction,

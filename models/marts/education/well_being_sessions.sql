@@ -4,9 +4,9 @@
 
 SELECT  
     TO_DATE("Date", 'DD/MM/YYYY') AS "Date",           
-    "Grade",          
+    "Grade" as "grade",          
     "Topic",               
-    "School",             
+    LOWER("School") as "school_type",             
     "Stream",              
     CAST("Number_of_stdents_trained" AS INTEGER) AS "Number_of_stdents_trained", -- Cast to INTEGER
     "Session_Type"    

@@ -5,37 +5,37 @@ models:
     description: "Extract relevant fields from JSON data in Water Facility Table"
     columns:
       - name: id
-        tests:
+        data_tests:
           - not_null
       - name: case_id
-        tests:
+        data_tests:
           - not_null
       - name: case_name
-        tests:
+        data_tests:
           - not_null
       - name: ward
-        tests:
+        data_tests:
           - not_null
       - name: county
-        tests:
+        data_tests:
           - not_null
       - name: latitude
-        tests:
+        data_tests:
           - not_null
       - name: longitude
-        tests:
+        data_tests:
           - not_null
       - name: subcounty
-        tests:
+        data_tests:
           - not_null
       - name: facility_name
-        tests:
+        data_tests:
           - not_null
       - name: facility_type
-        tests:
+        data_tests:
           - not_null
       - name: status_of_facility
-        tests:
+        data_tests:
           - accepted_values:
               values: ['active', 'inactive']
 
@@ -43,28 +43,28 @@ models:
     description: "Transform JSON data of water produced at boreholes"
     columns:
       - name: id
-        tests:
+        data_tests:
           - not_null
       - name: case_id
-        tests:
+        data_tests:
           - not_null
       - name: amount_produced
-        tests:
+        data_tests:
           - not_null
       - name: date_of_data_entry
-        tests:
+        data_tests:
           - not_null
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: date
       - name: date_of_submission
-        tests:
+        data_tests:
           - not_null
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: date
       - name: week_of_submission
-        tests:
+        data_tests:
           - not_null
       - name: subcase_date_of_data_entry
-        tests:
+        data_tests:
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: date

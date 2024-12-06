@@ -23,6 +23,9 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_modules"
 
+data_tests:
+  +store_failures: true
+  +schema: test_failures  # Will write tables to my_database.my_schema_test_failures
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models

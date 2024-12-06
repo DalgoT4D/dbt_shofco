@@ -5,10 +5,10 @@ models:
     description: "Aggregates scholarship categories for educational purposes."
     columns:
       - name: id
-        tests:
+        data_tests:
           - not_null
       - name: categories
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ['Teen Mom', 'Orphan', 'Special Needs', 'GBV Survivor', 'None']

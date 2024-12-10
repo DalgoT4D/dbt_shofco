@@ -3,7 +3,7 @@
 ) }}
 
 WITH source_data AS (
-    SELECT
+    SELECT DISTINCT
         id,
         indexed_on,
         data::jsonb AS json_data

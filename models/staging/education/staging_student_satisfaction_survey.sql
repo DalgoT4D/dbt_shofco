@@ -5,12 +5,12 @@
 WITH source_data AS (
     SELECT
         id,
-        data::jsonb AS json_data  -- Cast the data column to JSONB
+        data AS json_data  -- Cast the data column to JSONB
     FROM {{ source('staging_education', 'Student_Satisfaction_and_Well_Being_Survey') }}
 )
 SELECT
     -- Student Information
-    json_data->'form'->'student_information'->>'student_name' AS student_name,
+    json_data->'form'->'stxudent_information'->>'student_name' AS student_name,
     json_data->'form'->'student_information'->>'grade' AS grade,
     json_data->'form'->'student_information'->>'term' AS term,
     json_data->'form'->'student_information'->>'school' AS school,

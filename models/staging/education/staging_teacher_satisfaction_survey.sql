@@ -5,7 +5,7 @@
 WITH source_data AS (
     SELECT
         id,
-        data::jsonb AS json_data  -- Cast the data column to JSONB
+        data AS json_data 
     FROM {{ source('staging_education', 'Teachers_Satisfaction_Survey') }}
 )
 

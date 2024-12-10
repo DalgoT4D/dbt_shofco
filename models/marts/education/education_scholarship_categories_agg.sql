@@ -3,7 +3,13 @@
 ) }}
 
 SELECT
-    *,
+    "Term" as "term",
+    "Year" as "year",
+    "Cohort" as "cohort",
+    "Home_County" as "county",
+    "Home_Sub_County" as "subcounty",
+    "Form__current_" as "form",
+    "Boarding_OR_Day",
     COALESCE(
         NULLIF(
             CONCAT_WS(', ',

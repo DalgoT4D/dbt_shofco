@@ -13,6 +13,40 @@ sources:
       - name: Public_School_Partnerships
         identifier: Public_School_Partnerships
         description: "Public School Partnerships"
+      - name: KSG_Summary
+        identifier: KSG_Summary
+        description: "KSG School Attendance Kindergarten-Grade8"
+      - name: MSG_Summary
+        identifier: MSG_Summary
+        description: "MSG School Attendance Kindergarten-Grade8"
+      - name: MSG_Parents_Summary
+        identifier: MSG_Parents_Summary
+        description: "MSG Parent Meeting Attendance"
+      - name: KSG_Parents_Summary
+        identifier: KSG_Parents_Summary
+        description: "KSG Parent Meeting Attendance"
+      - name: MSG_Follow_Up_Social_Worker
+        identifier: MSG_Follow_Up_Social_Worker
+        description: "Social Worker Follow Ups on Reasons for Absence"
+      - name: KSG_Follow_Up_Social_Worker
+        identifier: KSG_Follow_Up_Social_Worker
+        description: "Social Worker Follow Ups on Reasons for Absence"
+      - name: Individual_Sessions
+        identifier: Individual_Sessions
+        description: "Individual well being sessions"
+      - name: Group_Sessions
+        identifier: Group_Sessisons
+        description: "Group well being sessions"
+      - name: Parent_Satisfaction_Survey
+        identifier: Parent_Satisfaction_Survey
+        description: "Parent Satisfaction in Shofco Education Programs"
+      - name: Teachers_Satisfaction_Survey
+        identifier: Teachers_Satisfaction_Survey
+        description: "Student Satisfaction in Shofco Education Programs"
+      - name: Student_Satisfaction_and_Well_Being_Survey
+        identifier: Student_Satisfaction_and_Well_Being_Survey
+        description: "Student Satisfaction in Shofco Education Programs"
+
   
   - name: staging_youth
     schema: staging_youth
@@ -59,6 +93,13 @@ sources:
         description: "IIVC Life Skills Training"
       - name: IIVC_Mapping
         description: "IIVC Mapping info on Schools"
+
+  - name: staging_orgwide
+    schema: staging_orgwide
+    tables:
+      - name: County_Footprint
+        identifier: County_Footprint
+        description: "County Footprint of program impact"
         
   - name: wash_staging
     schema: wash_staging
@@ -69,4 +110,7 @@ sources:
       - name: Water_Produced_at_Boreholes
         identifier: Water_Produced_at_Boreholes
         description: "Volume of water produced by boreholes"
+      - name: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
+        identifier: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
+        description: "Indicators to monitor school health and hygiene"
       

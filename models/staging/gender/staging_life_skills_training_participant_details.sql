@@ -4,7 +4,6 @@
 
 WITH roc_club_participants AS (
     SELECT
-        id,
         data::jsonb->'form'->>'target_group' AS target_group,
         (data::jsonb->'form'->'school_information'->>'term') AS term,  -- Extract term directly from JSON
         CASE 
@@ -35,7 +34,6 @@ WITH roc_club_participants AS (
 ),
 community_safe_space_participants AS (
     SELECT
-        id,
         data::jsonb->'form'->>'target_group' AS target_group,
         'Unknown' AS term,  -- Set term as 'Unknown' for community safe space
         'Unknown' AS year,  -- Set year as 'Unknown' for community safe space
@@ -52,8 +50,7 @@ community_safe_space_participants AS (
 )
 
 -- Combine the participants from both roc_club and community_safe_space
-SELECT
-    id,
+SELECT DISTINCT
     target_group,
     term,
     year,  -- Year extracted from JSON or 'Unknown'
@@ -67,8 +64,7 @@ FROM roc_club_participants
 
 UNION ALL
 
-SELECT
-    id,
+SELECT DISTINCT
     target_group,
     term,
     year,  -- Year set to 'Unknown'

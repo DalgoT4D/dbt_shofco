@@ -1,5 +1,5 @@
 {{ config(
-  materialized='table'
+  materialized='table', tags='gender_life_skills_training'
 ) }}
 
 WITH source_data AS (

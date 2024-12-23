@@ -9,7 +9,7 @@
 
         {% elif 'staging' in node.fqn and node.fqn.index('staging') + 1 < node.fqn | length %}
             {% set prefix = node.fqn[node.fqn.index('staging') + 1] %}
-            {{ target.schema }}_intermediate_{{ prefix | trim }}
+            intermediate_{{ prefix | trim }}
 
         {% elif 'marts' in node.fqn and node.fqn.index('marts') + 1 < node.fqn | length %}
             {% set prefix = node.fqn[node.fqn.index('marts') + 1] %}

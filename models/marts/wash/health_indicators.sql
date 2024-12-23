@@ -1,5 +1,6 @@
 {{ config(
-    materialized='table'
+    materialized='table',
+    tags='wash_health_indicators'
 ) }}
 
 SELECT

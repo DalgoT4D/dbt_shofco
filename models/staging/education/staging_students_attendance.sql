@@ -1,5 +1,6 @@
 {{ config(
-  materialized='table'
+  materialized='table',
+  tags="education_attendance"
 ) }}
 
 SELECT

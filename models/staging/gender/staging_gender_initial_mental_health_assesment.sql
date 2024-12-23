@@ -1,5 +1,6 @@
 {{ config(
-  materialized='table'
+  materialized='table',
+  tags="gender_mental_health_assesment"
 ) }}
 
 WITH initial_mental_health_assessment_staging AS (

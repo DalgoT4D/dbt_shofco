@@ -1,5 +1,5 @@
 {{ config(
-  materialized='table'
+  materialized='table', tags='gender_survivors'
 ) }}
 
 with

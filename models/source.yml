@@ -73,12 +73,6 @@ sources:
       - name: raw_case 
         identifier: zzz_case 
         description: "All cases"
-      - name: case_occurence 
-        identifier: Case_Occurrence_Form
-        description: "Case occurrence"
-      - name: case_referral
-        identifier: Case_Referral_Form
-        description: "Case referral"
       - name: dim_location_administrative_units
         description: "Administrative units lookup table"
       - name: dim_gender_sites
@@ -101,16 +95,14 @@ sources:
         identifier: County_Footprint
         description: "County Footprint of program impact"
         
-  - name: wash_staging
-    schema: wash_staging
+  - name: staging_wash
+    schema: staging_wash
     tables:
       - name: Add_Facility
         identifier: Add_Facility
         description: "WASH Facility Information"
-      - name: Water_Produced_at_Boreholes
-        identifier: Water_Produced_at_Boreholes
-        description: "Volume of water produced by boreholes"
       - name: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
         identifier: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
         description: "Indicators to monitor school health and hygiene"
+      
       

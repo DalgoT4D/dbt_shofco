@@ -1,5 +1,6 @@
 {{ config(
-    materialized='table'
+    materialized='table',
+    tags="education_attendance"
 ) }}
 
 WITH clean_data AS (

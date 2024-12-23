@@ -1,5 +1,6 @@
 {{ config(
-  materialized='table'
+  materialized='table',
+  tags="education_well_being_sessions"
 ) }}
 
 SELECT

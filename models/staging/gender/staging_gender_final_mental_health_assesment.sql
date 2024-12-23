@@ -1,13 +1,12 @@
 {{ config(
-  materialized='table'
+  materialized='table',
+  tags='gender_mental_health_assesment'
 ) }}
 
 WITH mental_health_assessment_data AS (
     SELECT
         id,
-        -- Correctly extract the case ID from 'case'
         data::jsonb->'form'->'case'->>'@case_id' AS case_id,  -- Extract the case ID
-        -- Correctly extract the user ID from 'case'
         data::jsonb->'form'->'case'->>'@user_id' AS user_id,  -- Extract the user ID
         data::jsonb->'form'->>'sessions_attended' AS sessions_attended,
         data::jsonb->'form'->>'concluding_comments' AS concluding_comments,
@@ -46,6 +45,7 @@ WITH mental_health_assessment_data AS (
         data::jsonb->>'received_on' AS final_form_filling_date  -- Use 'received_on' for the form-filling date
     FROM {{ source('staging_gender', 'Final_Mental_Health_Assessment_Form') }}
 )
+
 SELECT
     id,
     case_id,  -- Include case ID

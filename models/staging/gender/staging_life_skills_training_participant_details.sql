@@ -1,5 +1,5 @@
 {{ config(
-  materialized='table'
+  materialized='table', tags='gender_life_skills_training'
 ) }}
 
 WITH roc_club_participants AS (
@@ -8,8 +8,8 @@ WITH roc_club_participants AS (
         (data::jsonb->'form'->'school_information'->>'term') AS term,  -- Extract term directly from JSON
         CASE 
             WHEN data::jsonb->'form'->'school_information'->>'year' = 'choice5' THEN '2024' 
-            ELSE 'Unknown Year'
-        END AS year,  -- Map 'choice5' to 2024
+            ELSE data::jsonb->'form'->'school_information'->>'year'
+        END AS year,
         data::jsonb->>'received_on' AS form_filling_date,  -- Use 'received_on' for the form-filling date
         data::jsonb->'form'->'meta'->>'instanceID' AS session_id,  -- Extract the session ID
         jsonb_array_elements(data->'form'->'membership_details') AS participant_data,

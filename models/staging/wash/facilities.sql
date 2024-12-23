@@ -1,5 +1,6 @@
 {{ config(
-  materialized='table'
+  materialized='table',
+  tags='wash_facilities'
 ) }}
 
 -- Extract relevant fields from JSON data in Water Facility Table
@@ -18,4 +19,4 @@ SELECT
     data::json->'form'->'case'->'update'->>'facility_type' AS "facility_type",
     data::json->'form'->'case'->'update'->>'date_of_submission' AS "date_of_submission",
     data::json->'form'->'case'->'update'->>'status_of_facility' AS "status_of_facility"
-FROM {{ source('wash_staging', 'Add_Facility') }}
+FROM {{ source('staging_wash', 'Add_Facility') }}

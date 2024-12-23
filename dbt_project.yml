@@ -13,7 +13,7 @@ profile: 'default'
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
 analysis-paths: ["analysis"]
-test-paths: ["tests"]
+test-paths: ["data_tests"]
 seed-paths: ["data"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
@@ -35,10 +35,35 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-
-  elementary:
-    +schema: "elementary"
-
-seeds:
   shofco_dbt:
-    +schema: "staging"
+    staging:
+      tags:
+        - "intermediate"
+      education:
+        tags:
+          - "education-staging"
+      gender:
+        tags:
+          - "gender-staging"
+      org_wide:
+        tags:
+          - "orgwide-staging"
+      wash:
+        tags:
+          - "wash-staging"
+
+    marts:
+      +tags:
+        - "prod"
+      education:
+        +tags:
+          - "education-prod"
+      gender:
+        +tags:
+          - "gender-prod"
+      org_wide:
+        +tags:
+          - "orgwide-prod"
+      wash:
+        +tags:
+          - "wash-prod"

@@ -1,6 +1,6 @@
 {{
     config(
-        materialized="table", unique_key="case_id", tags="commcare_extraction"
+        materialized="table", unique_key="case_id", tags=["commcare_extraction","gender_counselling"]
     )
 }}
 

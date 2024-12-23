@@ -1,5 +1,6 @@
 {{ config(
-    materialized='table'
+    materialized='table',
+    tags="wash_health_indicators"
 ) }}
 
 WITH base_data AS (
@@ -53,7 +54,7 @@ WITH base_data AS (
             CASE WHEN "data"->'form'->'monitoring_indicator_21'->>'observe_whether_the_soaps_are_strategically_placed_at_the_hand_washing_stat' = 'yes' THEN 1 ELSE 0 END +
             CASE WHEN "data"->'form'->'monitoring_indicator_22'->>'observe_if_the_school_has_water_for_hand_washing_check_the_presence_of_wate' = 'yes' THEN 1 ELSE 0 END
         ) AS "hygiene_score"
-    FROM {{ source('wash_staging', 'SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS') }}
+    FROM {{ source('staging_wash', 'SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS') }}
 ),
 aggregated_data AS (
     SELECT

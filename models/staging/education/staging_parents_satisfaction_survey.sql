@@ -1,5 +1,6 @@
 {{ config(
-  materialized='table'
+  materialized='table',
+  tags="education_satisfaction_surveys"
 ) }}
 
 WITH source_data AS (

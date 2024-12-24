@@ -71,10 +71,10 @@ with
 
 select
     a.*,
-    coalesce(b.county_name, a.county_code) as county_name,
-    coalesce(b.constituency_name, a.constituency_code) as constituency_name,
-    coalesce(b.ward_name, a.ward_code) as ward_name,
-    c.site_name as gender_site_name_of_registration
+    coalesce(b.county_name, a.county_code) as county,
+    coalesce(b.constituency_name, a.constituency_code) as constituency,
+    coalesce(b.ward_name, a.ward_code) as ward,
+    c.site_name as "site"
 from survivors_data a
 left join
     {{ source("staging_gender", "dim_location_administrative_units") }} b

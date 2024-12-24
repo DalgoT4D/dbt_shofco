@@ -3,7 +3,6 @@
     tags="wash_health_indicators"
 ) }}
 
-WITH base_data AS (
     SELECT
         -- Basic metadata
         "data"->>'id' AS "id",
@@ -19,9 +18,6 @@ WITH base_data AS (
             ELSE NULL
         END AS "term",
         "data"->'form'->>'school_name' AS "school_name",
-        "data"->'form'->'school_population'->>'number_of_boys' AS "number_of_boys",
-        "data"->'form'->'school_population'->>'number_of_girls' AS "number_of_girls",
-        "data"->'form'->'school_population'->>'total_enrollment' AS "total_enrollment",
         "data"->'form'->'school_population'->>'number_of_health_club_members_boys' AS "health_club_boys",
         "data"->'form'->'school_population'->>'number_of_health_club_members_girls' AS "health_club_girls",
 
@@ -31,8 +27,9 @@ WITH base_data AS (
             THEN 1 ELSE 0
         END AS "health_club_active",
 
-        -- Hygiene score (indicators 3-22)
         (
+            CASE WHEN "data"->'form'->'monitoring_indicator_1'->>'weekly_health_club_meetings_conducted_check_the_club_register_and_minutes_o' = 'yes' THEN 1 ELSE 0 END +
+            CASE WHEN "data"->'form'->'monitoring_indicator_2'->>'an_active_and_representative_health_club_established_check_the_record_of_th' = 'yes' THEN 1 ELSE 0 END +
             CASE WHEN "data"->'form'->'monitoring_indicator_3'->>'the_health_club_members_have_been_taken_through_water_sanitation_and_hygien' = 'yes' THEN 1 ELSE 0 END +
             CASE WHEN "data"->'form'->'monitoring_indicator_4'->>'observe_the_cleanliness_of_pupilsstudents_check_the_school_uniformsphysical' = 'yes' THEN 1 ELSE 0 END +
             CASE WHEN "data"->'form'->'monitoring_indicator_5'->>'observe_if_the_school_has_a_water_storage_reservoir_check_the_capacity_and_' = 'yes' THEN 1 ELSE 0 END +
@@ -55,16 +52,3 @@ WITH base_data AS (
             CASE WHEN "data"->'form'->'monitoring_indicator_22'->>'observe_if_the_school_has_water_for_hand_washing_check_the_presence_of_wate' = 'yes' THEN 1 ELSE 0 END
         ) AS "hygiene_score"
     FROM {{ source('staging_wash', 'SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS') }}
-),
-aggregated_data AS (
-    SELECT
-        "term",
-        COUNT(DISTINCT "school_name") AS "schools_with_health_clubs",
-        SUM(CAST("health_club_boys" AS INTEGER) + CAST("health_club_girls" AS INTEGER)) AS "student_health_club_participants",
-        AVG("hygiene_score") AS "avg_hygiene_score",
-        SUM(CASE WHEN "hygiene_score" > 0 THEN 1 ELSE 0 END) * 100.0 / COUNT(DISTINCT "school_name") AS "hygiene_score_improvement"
-    FROM base_data
-    GROUP BY "term"
-)
-SELECT *
-FROM aggregated_data

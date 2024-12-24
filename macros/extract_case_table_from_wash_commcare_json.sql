@@ -22,7 +22,7 @@ The macro is designed to work with incremental models in dbt, including an addit
 {% enddocs %}
 
 
-{% macro extract_case_table_from_commcare_json(commcare_case_type, case_type_properties_dict, has_parent=false) %}
+{% macro extract_case_table_from_wash_commcare_json(commcare_case_type, case_type_properties_dict, has_parent=false) %}
     
     WITH commcare_data as (
     SELECT 
@@ -32,7 +32,7 @@ The macro is designed to work with incremental models in dbt, including an addit
         {% endfor %}
         -- default properties added by commcare
         {{commcare_default_case_properies(has_parent)}}
-    FROM  {{ source('source_commcare','raw_case') }}
+    FROM  {{ source('staging_wash','raw_case') }}
     WHERE data -> 'properties' ->> 'case_type' = '{{commcare_case_type}}'
     {% if is_incremental() %}
     -- this filter will only be applied on an incremental run

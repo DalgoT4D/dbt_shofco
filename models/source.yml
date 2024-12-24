@@ -104,5 +104,30 @@ sources:
       - name: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
         identifier: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
         description: "Indicators to monitor school health and hygiene"
+      - name: Laini_Saba
+        identifier: Laini_Saba
+        description: "Laini Saba Water Production Information"
+      - name: Lindi
+        identifier: Lindi
+        description: "Lindi Water Production Information"
+      - name: Makina
+        identifier: Makina
+        description: "Makina Water Production Information"
+      - name: Subra
+        identifier: Subra
+        description: "Subra Water Production Information"
+      - name: HQ
+        identifier: HQ
+        description: "HQ Water Production Information"
+      - name: User_Meters
+        identifier: User_Meters
+        description: "Information on User Meters"
+      - name: Meter_Consumption
+        identifier: Meter_Consumption
+        description: "Water Consumption Information"
+      - name: raw_case
+        identifier: zzz_case
+        description: "Wash Facilities Case Data"
+
       
       

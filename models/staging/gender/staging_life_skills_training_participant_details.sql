@@ -31,7 +31,9 @@ WITH roc_club_participants AS (
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
     WHERE data::jsonb->'form'->>'target_group' = 'roc_club'
     AND jsonb_typeof(data->'form'->'membership_details') = 'array'  -- Ensure it's an array
+    AND (data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false')
 ),
+
 community_safe_space_participants AS (
     SELECT
         data::jsonb->'form'->>'target_group' AS target_group,
@@ -47,6 +49,7 @@ community_safe_space_participants AS (
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
     WHERE data::jsonb->'form'->>'target_group' = 'community_safe_space'
     AND jsonb_typeof(data->'form'->'community_safe_space_participants_details') = 'array'  -- Ensure it's an array
+    AND (data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false')
 )
 
 -- Combine the participants from both roc_club and community_safe_space

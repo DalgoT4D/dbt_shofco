@@ -3,7 +3,14 @@
 ) }}
 
 SELECT
-    *,
+    "National_ID",
+    "Active",
+    "County",
+    "Gender",
+    "Trained",
+    "Identified",
+    "Date_identified",
+    "Date_trained",
     CASE
         -- Both are Yes
         WHEN "Trained" = 'Yes' AND "Identified" = 'Yes' THEN 'Trained and Identified'

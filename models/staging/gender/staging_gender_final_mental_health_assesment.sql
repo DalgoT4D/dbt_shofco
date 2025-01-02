@@ -44,9 +44,10 @@ WITH mental_health_assessment_data AS (
         data::jsonb->'meta'->>'instanceID' AS session_id,  -- Extract the session ID
         data::jsonb->>'received_on' AS final_form_filling_date  -- Use 'received_on' for the form-filling date
     FROM {{ source('staging_gender', 'Final_Mental_Health_Assessment_Form') }}
+    WHERE data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false'
 )
 
-SELECT
+SELECT DISTINCT
     id,
     case_id,  -- Include case ID
     user_id,  -- Include user ID

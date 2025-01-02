@@ -8,6 +8,7 @@ WITH source_data AS (
         id,
         data AS json_data
     FROM {{ source('staging_education', 'Parent_Satisfaction_Survey') }}
+    WHERE data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false'
 )
 SELECT
     -- Basic Details

@@ -8,8 +8,9 @@ WITH source_data AS (
         indexed_on,
         data::jsonb AS json_data
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
+    WHERE data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false'
 )
-SELECT
+SELECT DISTINCT
     id,
     indexed_on,
     json_data->'form'->>'@name' AS form_name,  

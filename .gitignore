@@ -10,7 +10,5 @@ venv/
 profiles.yml
 .user.yml
 package-lock.yml
-models/marts/gender/gender_marts_test.yml
-models/staging/education/education_staging_test.yml
-models/staging/gender/gender_staging_test.yml
+models/wash_unit_tests.yml
 

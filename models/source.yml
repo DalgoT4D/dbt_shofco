@@ -7,45 +7,72 @@ sources:
       - name: Scholarships
         identifier: Scholarships
         description: "Scholarships given"
+
       - name: Nudges
         identifier: Nudges
         description: "Nudges given"
+  
+          
       - name: Public_School_Partnerships
         identifier: Public_School_Partnerships
         description: "Public School Partnerships"
+        
+
       - name: KSG_Summary
         identifier: KSG_Summary
         description: "KSG School Attendance Kindergarten-Grade8"
+        
+          
       - name: MSG_Summary
         identifier: MSG_Summary
         description: "MSG School Attendance Kindergarten-Grade8"
+        
+          
       - name: MSG_Parents_Summary
         identifier: MSG_Parents_Summary
         description: "MSG Parent Meeting Attendance"
+        
+          
       - name: KSG_Parents_Summary
         identifier: KSG_Parents_Summary
         description: "KSG Parent Meeting Attendance"
+        
+          
       - name: MSG_Follow_Up_Social_Worker
         identifier: MSG_Follow_Up_Social_Worker
         description: "Social Worker Follow Ups on Reasons for Absence"
+        
+          
       - name: KSG_Follow_Up_Social_Worker
         identifier: KSG_Follow_Up_Social_Worker
         description: "Social Worker Follow Ups on Reasons for Absence"
+        
+          
       - name: Individual_Sessions
         identifier: Individual_Sessions
         description: "Individual well being sessions"
+        
+          
       - name: Group_Sessions
         identifier: Group_Sessisons
         description: "Group well being sessions"
+        
+          
       - name: Parent_Satisfaction_Survey
         identifier: Parent_Satisfaction_Survey
         description: "Parent Satisfaction in Shofco Education Programs"
+        
+          
       - name: Teachers_Satisfaction_Survey
         identifier: Teachers_Satisfaction_Survey
         description: "Student Satisfaction in Shofco Education Programs"
+        
+          
       - name: Student_Satisfaction_and_Well_Being_Survey
         identifier: Student_Satisfaction_and_Well_Being_Survey
         description: "Student Satisfaction in Shofco Education Programs"
+        
+          
 
   
   - name: staging_youth
@@ -61,32 +88,53 @@ sources:
           - name: indexed_on
             description: "Timestamp of when the case was indexed"
   
+  
   - name: staging_gender
     schema: staging_gender
     tables:
       - name: Champions_
         identifier: Champions_
         description: "Data on Gender Champions"
+        
+          
       - name: GBV_Community_Leaders
         identifier: GBV_Community_Leaders
         description: ""
+        
+          
       - name: raw_case 
         identifier: zzz_case 
         description: "All cases"
+        
+          
       - name: dim_location_administrative_units
         description: "Administrative units lookup table"
+        
+          
       - name: dim_gender_sites
         description: "Sites used by the gender program"
+        
+          
       - name: Gender_Clients_Feedback_Survey
         description: "Gender Clients Feedback Survey"
+        
+          
       - name: Final_Mental_Health_Assessment_Form
         description: "Final Mental Health Assessment Form"
+        
+          
       - name: Initial_Mental_Health_Asssessment
         description: "Initial Mental Health Assessment"
+        
+          
       - name: IIVC_Life_Skills_Training
         description: "IIVC Life Skills Training"
+        
+          
       - name: IIVC_Mapping
         description: "IIVC Mapping info on Schools"
+        
+          
 
   - name: staging_orgwide
     schema: staging_orgwide
@@ -95,39 +143,61 @@ sources:
         identifier: County_Footprint
         description: "County Footprint of program impact"
         
+          
+        
   - name: staging_wash
     schema: staging_wash
     tables:
       - name: Add_Facility
         identifier: Add_Facility
         description: "WASH Facility Information"
+        
+          
       - name: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
         identifier: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
         description: "Indicators to monitor school health and hygiene"
+        
+          
       - name: Laini_Saba
         identifier: Laini_Saba
         description: "Laini Saba Water Production Information"
+        
+          
       - name: Lindi
         identifier: Lindi
         description: "Lindi Water Production Information"
+        
+          
       - name: Makina
         identifier: Makina
         description: "Makina Water Production Information"
+        
+          
       - name: Subra
         identifier: Subra
         description: "Subra Water Production Information"
+        
+          
       - name: HQ
         identifier: HQ
         description: "HQ Water Production Information"
+        
+          
       - name: User_Meters
         identifier: User_Meters
         description: "Information on User Meters"
+        
+          
       - name: Meter_Consumption
         identifier: Meter_Consumption
         description: "Water Consumption Information"
+        
+          
       - name: raw_case
         identifier: zzz_case
         description: "Wash Facilities Case Data"
+        
+          
 
       
       

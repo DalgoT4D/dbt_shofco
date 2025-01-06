@@ -1,5 +1,6 @@
 {{ config(
-    materialized='incremental'
+    materialized='incremental',
+  tags='wash_mobiwater'
 ) }}
 
 WITH source_data AS (

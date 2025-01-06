@@ -24,3 +24,4 @@ REGEXP_REPLACE("longitude", '[^0-9.-]', '', 'g') AS "longitude",
 "closed",
 "created_at"
 FROM {{ ref('staging_facilities') }}
+WHERE "facility_name" != 'test'

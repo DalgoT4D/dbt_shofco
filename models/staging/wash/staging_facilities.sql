@@ -31,9 +31,13 @@ with case_cte as ({{
     )
 }})
 
+
 {{ dbt_utils.deduplicate(
-    relation='case_cte',
-    partition_by='case_id',
-    order_by='indexed_on desc',
-   )
-}}
+    relation="(
+        select *
+        from case_cte
+        where facility_name != 'test' and closed = 'false'
+    )",
+    partition_by="case_id",
+    order_by="indexed_on desc"
+) }}

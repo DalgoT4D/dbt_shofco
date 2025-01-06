@@ -1,0 +1,148 @@
+version: 2
+
+models:
+  - name: health_indicators_schools_improved
+    description: "Aggregated school hygiene data and improvements"
+    columns:
+      - name: total_no_schools
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: bigint
+      - name: schools_improved
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: bigint
+      - name: share_of_schools_improved
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: numeric
+
+  - name: health_indicators
+    description: "Health and hygiene indicators for schools"
+    columns:
+      - name: id
+        data_tests:
+          - not_null
+      - name: form_date
+        data_tests:
+          - not_null
+      - name: term
+        data_tests:
+          - not_null
+      - name: school_name
+        data_tests:
+          - not_null
+      - name: health_club_boys
+        data_tests:
+          - not_null
+      - name: health_club_girls
+        data_tests:
+          - not_null
+      - name: health_club_active
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+      - name: hygiene_score
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+
+  - name: user_meters_mobiwater
+    description: "Distinct flow devices for water usage tracking"
+    columns:
+      - name: flow_device_id
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+      - name: flow_device_name
+        data_tests:
+          - not_null
+
+  - name: wash_facilities
+    description: "Details of wash facilities including location and status"
+    columns:
+      - name: ward
+        data_tests:
+          - not_null
+      - name: county
+        data_tests:
+          - not_null
+      - name: latitude
+        data_tests:
+          - not_null
+      - name: longitude
+        data_tests:
+          - not_null
+      - name: subcounty
+        data_tests:
+          - not_null
+      - name: date_facility_opened
+        data_tests:
+          - not_null
+      - name: facility_name
+        data_tests:
+          - not_null
+      - name: facility_type
+        data_tests:
+          - not_null
+      - name: case_name
+        data_tests:
+          - not_null
+      - name: case_type
+        data_tests:
+          - not_null
+      - name: date_opened
+        data_tests:
+          - not_null
+      - name: case_id
+        data_tests:
+          - not_null
+      - name: closed
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ["false"]
+
+  - name: water_consumption_mobiwater
+    description: "Water consumption details for each flow device"
+    columns:
+      - name: date
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+      - name: flow_device_id
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: numeric
+      - name: flow_device_name
+        data_tests:
+          - not_null
+      - name: value
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: numeric
+
+  - name: water_production
+    description: "Daily water production and consumption"
+    columns:
+      - name: date
+        data_tests:
+          - not_null
+      - name: bh_production
+        data_tests:
+          - not_null
+      - name: treated_consumption
+        data_tests:
+          - not_null
+      - name: tank
+        data_tests:
+          - not_null

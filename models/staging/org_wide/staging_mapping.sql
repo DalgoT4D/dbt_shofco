@@ -27,6 +27,7 @@ WITH combined_case_data AS (
         data::jsonb->>'received_on' AS "received_on",
         data::jsonb->>'type' AS "data_type"
     FROM {{ source('staging_gender', 'IIVC_Mapping') }}
+    WHERE data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false'
 )
 
 SELECT

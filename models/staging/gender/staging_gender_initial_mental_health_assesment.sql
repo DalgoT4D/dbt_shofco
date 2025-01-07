@@ -28,8 +28,8 @@ WITH initial_mental_health_assessment_staging AS (
 SELECT DISTINCT
     id,
     initial_form_filling_date,
-    case_id,  -- Include case ID
-    user_id,  -- Include user ID
+    case_id,  
+    user_id, 
     -- Include all relevant mental health scores as separate columns
     behavioral_issues,
     drug_abuse,

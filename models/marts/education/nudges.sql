@@ -4,20 +4,22 @@
 ) }}
 
 SELECT
-    "Term" AS "term",
-    CONCAT('Grade ', "CURRENT_GRADE") AS "grade",
-    "Year" AS "year",
-    LOWER("COUNTY") AS "county",
-    LOWER("SUBCOUNTY") AS "subcounty",
-    LOWER("GENDER") AS "gender",
-    "NUDGE_TYPE_RECEIVED" AS "nudge_type",
+    "term",
+    CONCAT('Grade ', "grade") AS "grade",
+    "cohort"
+    "year",
+    "county",
+    "subcounty",
+    "gender",
+    "nudge_type",
     COUNT(*) AS "nudge_count"
 FROM {{ ref('staging_nudges') }}
 GROUP BY
-    "Term",
-    CONCAT('Grade ', "CURRENT_GRADE"),
-    "Year",
-    LOWER("COUNTY"),
-    LOWER("SUBCOUNTY"),
-    LOWER("GENDER"),
-    "NUDGE_TYPE_RECEIVED"
+    "term",
+    CONCAT('Grade ', "grade"),
+    "year",
+    "county",
+    "subcounty",
+    "gender",
+    "nudge_type",
+    "cohort"

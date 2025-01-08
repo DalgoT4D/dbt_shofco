@@ -185,12 +185,12 @@ sources:
           
       - name: User_Meters
         identifier: User_Meters
-        description: "Information on User Meters"
+        description: "Information on User Meters from Mobiwater"
         
           
-      - name: Meter_Consumption
-        identifier: Meter_Consumption
-        description: "Water Consumption Information"
+      - name: meter_consumption
+        identifier: meter_consumption
+        description: "Water Consumption Information from Mobiwater"
         
           
       - name: raw_case

@@ -11,8 +11,8 @@ with
             assigned_to,
             date_of_case_reporting,
             date_of_case_closure,
-            case_county_name,
-            gender_site_name_of_reporting
+            county,
+            "site"
         from {{ ref("case_occurence_pii") }}
     ),
 
@@ -33,7 +33,7 @@ with
     ),
 
     cases_expanded as (
-        select c.parent_case_id, c.case_name, c.assigned_to,c.date_of_case_reporting, c.date_of_case_closure, c.case_county_name,c.gender_site_name_of_reporting,dr.month
+        select c.parent_case_id, c.case_name, c.assigned_to,c.date_of_case_reporting, c.date_of_case_closure, c.county, c.site, dr.month
         from case_occurrences_data c
         cross join date_range dr
         where
@@ -47,8 +47,8 @@ select
     parent_case_id,
     case_name,
     assigned_to,
-    case_county_name,
-    gender_site_name_of_reporting,
+    county,
+    "site",
     case
         when
             c.date_of_case_reporting <= (month + interval '1 month' - interval '1 day')

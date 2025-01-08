@@ -22,7 +22,11 @@ SELECT DISTINCT
     s."date",
     s."flow_device_id",
     u."flow_device_name",
-    s."value"
+    s."value",
+    CASE
+        WHEN s."date" IS NOT NULL THEN EXTRACT (YEAR FROM s."date")
+        ELSE NULL
+    END AS "year"
 FROM staging_data s
 LEFT JOIN user_meters u
 ON s."flow_device_id" = u."flow_device_id"

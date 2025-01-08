@@ -8,5 +8,9 @@ select
     "status",
     "bh_production",
     "treated_consumption",
-    "tank"
+    "tank",
+    CASE
+        WHEN "date" IS NOT NULL THEN EXTRACT(YEAR FROM "date")
+        ELSE NULL
+    END AS "year"
 FROM {{ ref('staging_water_production') }}

@@ -4,7 +4,7 @@
 ) }}
 
 SELECT
-    "County",
+    "County" as "county",
     "iso_3166_2_code",
     "latitude",
     "longitude",

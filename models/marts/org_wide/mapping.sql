@@ -4,7 +4,17 @@
 ) }}
 
 SELECT
-    *,
+    "id",
+    "case_id",
+    "case_type",
+    "facility",
+    "school_name",
+    "type_of_school",
+    "ward",
+    "county",
+    "constituency",
+    "office_gender_desk_location",
+    "received_on",
     
     -- Extract GPS components from gps_location field
     split_part("gps_location", ' ', 1)::float AS "latitude",
@@ -22,7 +32,7 @@ SELECT
         WHEN "gender_program" = 'yes' THEN 'Gender'
         WHEN "shofco_education_program" = 'yes' THEN 'Education'
         ELSE NULL
-    END AS "Active Programs",
+    END AS "active_programs",
     
     -- Concatenate intervention into a single column
     CASE

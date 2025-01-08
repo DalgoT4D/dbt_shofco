@@ -149,12 +149,12 @@ select distinct
     end as age_group,
     coalesce(
         locations.county_name, cases.incident_report_county_code
-    ) as case_county_name,
+    ) as county,
     coalesce(
         locations.constituency_name, cases.incident_report_constituency_code
     ) as case_constituency_name,
     coalesce(locations.ward_name, cases.incident_report_ward_code) as case_ward_name,
-    gender_sites.site_name as gender_site_name_of_reporting,
+    gender_sites.site_name as "site",
     case when case_referred_to_location IS NULL THEN 'Yes' else 'No' end as is_case_referred
 from case_occurrences_data cases
 left join

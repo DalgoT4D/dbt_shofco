@@ -22,6 +22,10 @@ REGEXP_REPLACE("longitude", '[^0-9.-]', '', 'g') AS "longitude",
 "case_id",
 "indexed_on",
 "closed",
-"created_at"
+"created_at",
+CASE
+        WHEN "date_of_submission" IS NOT NULL THEN EXTRACT(YEAR FROM "date_of_submission")
+        ELSE NULL
+END AS "year"
 FROM {{ ref('staging_facilities') }}
 WHERE "facility_name" != 'test'

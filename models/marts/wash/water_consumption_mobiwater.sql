@@ -5,7 +5,7 @@
 
 WITH staging_data AS (
     SELECT
-        CAST(_airbyte_extracted_at AS DATE) AS "date", 
+        CAST("date" AS DATE), 
         CAST("flow_device_id" AS NUMERIC) AS "flow_device_id", 
         CAST("value" AS NUMERIC) AS "value" 
     FROM {{ ref('staging_meter_readings_mobiwater') }}

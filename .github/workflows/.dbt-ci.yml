@@ -24,18 +24,25 @@ jobs:
         with:
           python-version: '3.8'
 
-      # Step 1: Set up SSH key manually
-      - name: Add SSH private key
+      # Step 1: Create known_hosts and add the host key
+      - name: Create known_hosts file
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/production_ddp
-          chmod 600 ~/.ssh/production_ddp
+          touch ~/.ssh/known_hosts
 
-      # Step 2: Establish SSH tunnel
+      - name: Add remote host key to known_hosts
+        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      # Step 2: Set up SSH and authenticate
+      - name: Add SSH private key
+        run: |
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
+
+      # Step 3: Establish SSH tunnel
       - name: Establish SSH tunnel
         run: |
           ssh -fN \
-            -i ~/.ssh/production_ddp \
             -L 5432:${{ secrets.POSTGRES_HOST }}:5432 \
             ${{ secrets.DB_USER }}@${{ secrets.SSH_HOST }}
 

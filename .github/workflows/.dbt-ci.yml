@@ -24,17 +24,19 @@ jobs:
         with:
           python-version: '3.8'
 
-      # Step 1: Set up SSH
-      - name: Set up SSH key
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      # Step 1: Set up SSH key manually
+      - name: Add SSH private key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/production_ddp
+          chmod 600 ~/.ssh/production_ddp
 
       # Step 2: Establish SSH tunnel
       - name: Establish SSH tunnel
         run: |
           ssh -fN \
-            -L 5432:${{ secrets.DB_HOST }}:5432 \
+            -i ~/.ssh/production_ddp \
+            -L 5432:${{ secrets.POSTGRES_HOST }}:5432 \
             ${{ secrets.DB_USER }}@${{ secrets.SSH_HOST }}
 
       - name: Install requirements
@@ -50,7 +52,7 @@ jobs:
           POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
           POSTGRES_HOST: 127.0.0.1 # Use localhost since we are tunneling via SSH
-      
+
       - name: Benchmarking models
         run: "sqlfluff lint models --bench"
   

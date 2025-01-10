@@ -49,8 +49,8 @@ WITH mental_health_assessment_data AS (
 
 SELECT DISTINCT
     id,
-    case_id,  -- Include case ID
-    user_id,  -- Include user ID
+    case_id, 
+    user_id, 
     sessions_attended,
     concluding_comments,
     final_assessment_by,

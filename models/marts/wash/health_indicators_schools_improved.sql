@@ -10,7 +10,8 @@ WITH hygiene_data AS (
         "school_name",
         "term",
         "year",
-        "hygiene_score"
+        "hygiene_score",
+        "date"
     FROM {{ ref('health_indicators') }}
 ),
 
@@ -24,7 +25,7 @@ schools_with_improvements AS (
     ON a."school_name" = b."school_name"
        AND a."term" = b."term"
        AND a."year" = b."year"
-       AND a."form_date" < b."form_date"
+       AND a."date" < b."date"
        AND a."hygiene_score" < b."hygiene_score"
 ),
 

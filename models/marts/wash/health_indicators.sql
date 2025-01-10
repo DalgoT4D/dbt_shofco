@@ -13,7 +13,7 @@ SELECT
     "health_club_active",
     "hygiene_score",
     CASE
-        WHEN "form_date" IS NOT NULL THEN EXTRACT(YEAR FROM "form_date")
+        WHEN "form_date" IS NOT NULL THEN EXTRACT(YEAR FROM CAST("form_date" AS DATE))
         ELSE NULL
     END AS "year"
 FROM {{ ref('staging_health_indicators') }}

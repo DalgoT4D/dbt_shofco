@@ -1,4 +1,4 @@
-dbt_shofco:
+shofco_dbt:
   outputs:
     dev:
       dbname: "{{ env_var('POSTGRES_DBNAME') }}"

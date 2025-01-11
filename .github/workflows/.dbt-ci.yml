@@ -53,23 +53,56 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt  
 
-      # Step 7: Install dbt dependencies
+      # Step 7: Create profiles.yml
+      - name: Create profiles.yml
+        run: |
+          mkdir -p ~/.dbt
+          echo "Creating profiles.yml..."
+          cat <<EOF > ~/.dbt/profiles.yml
+          default:
+            outputs:
+              dev:
+                dbname: "{{ env_var('POSTGRES_DBNAME') }}"
+                host: "{{ env_var('POSTGRES_HOST') }}"
+                password: "{{ env_var('POSTGRES_PASSWORD') }}"
+                port: 5432
+                schema: dev
+                threads: 8
+                type: postgres
+                user: "{{ env_var('POSTGRES_USER') }}"
+            target: dev
+          EOF
+          echo "profiles.yml created successfully."
+          ls -al ~/.dbt
+
+      # Step 8: Install dbt dependencies
       - name: Install dbt dependencies
         run: dbt deps
 
-      # Step 8: Run dbt build
+      # Step 9: Run dbt build
       - name: dbt build
-        run: dbt build --full-refresh --profiles-dir ./
+        run: dbt build --full-refresh
         env:
           POSTGRES_DBNAME: ${{ secrets.POSTGRES_DBNAME }}
           POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
           POSTGRES_HOST: 127.0.0.1 # Use localhost since the SSH tunnel forwards the port
+          DBT_PROFILES_DIR: ~/.dbt
 
-      # Step 9: Benchmark models using sqlfluff
+      # Step 10: Benchmark models using sqlfluff
       - name: Benchmarking models
         run: sqlfluff lint models --bench
+        env:
+          POSTGRES_DBNAME: ${{ secrets.POSTGRES_DBNAME }}
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          POSTGRES_HOST: 127.0.0.1
 
-      # Step 10: Lint models using sqlfluff
+      # Step 11: Lint models using sqlfluff
       - name: Lint models
         run: sqlfluff lint models -f human
+        env:
+          POSTGRES_DBNAME: ${{ secrets.POSTGRES_DBNAME }}
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          POSTGRES_HOST: 127.0.0.1

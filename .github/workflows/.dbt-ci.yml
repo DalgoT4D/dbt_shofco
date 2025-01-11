@@ -56,9 +56,9 @@ jobs:
       # Step 7: Create profiles.yml
       - name: Create profiles.yml
         run: |
-          mkdir -p ~/.dbt
+          mkdir -p /home/runner/.dbt
           echo "Creating profiles.yml..."
-          cat <<EOF > ~/.dbt/profiles.yml
+          cat <<EOF > /home/runner/.dbt/profiles.yml
           default:
             outputs:
               dev:
@@ -73,7 +73,7 @@ jobs:
             target: dev
           EOF
           echo "profiles.yml created successfully."
-          ls -al ~/.dbt
+          ls -al /home/runner/.dbt
 
       # Step 8: Install dbt dependencies
       - name: Install dbt dependencies

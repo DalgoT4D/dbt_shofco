@@ -11,24 +11,23 @@ WITH clean_data AS (
         "absence_causes",
         "_airbyte_extracted_at",
         "school_type",
-        -- Directly convert "Date_" to a proper date
-        TO_DATE("date", 'DD/MM/YYYY') AS "date",
+        TO_DATE("date", 'DD/MM/YYYY') AS "absence_date",
         TO_DATE("estimated_reporting_date", 'DD/MM/YYYY') AS "reporting_date"
     FROM {{ ref('staging_followup_attendance') }}
 )
 
 SELECT
-    "date" AS "absence_date",
-    EXTRACT(YEAR FROM "date") AS "year",
+    "absence_date",
+    EXTRACT(YEAR FROM "absence_date") AS "year",
 
     -- Calculate term based on the valid date
     CASE 
-        WHEN "date" BETWEEN DATE_TRUNC('year', "date")
-                          AND DATE_TRUNC('year', "date") + INTERVAL '3 months - 1 day' THEN 'Term 1'
-        WHEN "date" BETWEEN DATE_TRUNC('year', "date") + INTERVAL '3 months'
-                          AND DATE_TRUNC('year', "date") + INTERVAL '7 months - 1 day' THEN 'Term 2'
-        WHEN "date" BETWEEN DATE_TRUNC('year', "date") + INTERVAL '7 months'
-                          AND DATE_TRUNC('year', "date") + INTERVAL '12 months - 1 day' THEN 'Term 3'
+        WHEN "absence_date" BETWEEN DATE_TRUNC('year', "absence_date")
+                          AND DATE_TRUNC('year', "absence_date") + INTERVAL '3 months - 1 day' THEN 'Term 1'
+        WHEN "absence_date" BETWEEN DATE_TRUNC('year', "absence_date") + INTERVAL '3 months'
+                          AND DATE_TRUNC('year', "absence_date") + INTERVAL '7 months - 1 day' THEN 'Term 2'
+        WHEN "absence_date" BETWEEN DATE_TRUNC('year', "absence_date") + INTERVAL '7 months'
+                          AND DATE_TRUNC('year', "absence_date") + INTERVAL '12 months - 1 day' THEN 'Term 3'
         ELSE NULL
     END AS "term",
 
@@ -43,18 +42,17 @@ SELECT
     "absence_causes",
     "reporting_date",
     LOWER("school_type") AS "school_type",
-
     COUNT(*) AS "number_of_absences"
 FROM clean_data
 GROUP BY
-    "date",
+    "absence_date",
     CASE 
-        WHEN "date" BETWEEN DATE_TRUNC('year', "date")
-                          AND DATE_TRUNC('year', "date") + INTERVAL '3 months - 1 day' THEN 'Term 1'
-        WHEN "date" BETWEEN DATE_TRUNC('year', "date") + INTERVAL '3 months'
-                          AND DATE_TRUNC('year', "date") + INTERVAL '7 months - 1 day' THEN 'Term 2'
-        WHEN "date" BETWEEN DATE_TRUNC('year', "date") + INTERVAL '7 months'
-                          AND DATE_TRUNC('year', "date") + INTERVAL '12 months - 1 day' THEN 'Term 3'
+        WHEN "absence_date" BETWEEN DATE_TRUNC('year', "absence_date")
+                          AND DATE_TRUNC('year', "absence_date") + INTERVAL '3 months - 1 day' THEN 'Term 1'
+        WHEN "absence_date" BETWEEN DATE_TRUNC('year', "absence_date") + INTERVAL '3 months'
+                          AND DATE_TRUNC('year', "absence_date") + INTERVAL '7 months - 1 day' THEN 'Term 2'
+        WHEN "absence_date" BETWEEN DATE_TRUNC('year', "absence_date") + INTERVAL '7 months'
+                          AND DATE_TRUNC('year', "absence_date") + INTERVAL '12 months - 1 day' THEN 'Term 3'
         ELSE NULL
     END,
     CASE 

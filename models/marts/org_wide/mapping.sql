@@ -15,7 +15,6 @@ SELECT
     constituency,
     office_gender_desk_location,
     CAST(received_on AS DATE) AS received_on,
-    
     -- Extract GPS components from gps_location field
     CAST(SPLIT_PART(gps_location, ' ', 1) AS FLOAT) AS latitude,
     CAST(SPLIT_PART(gps_location, ' ', 2) AS FLOAT) AS longitude,

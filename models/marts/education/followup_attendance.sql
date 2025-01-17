@@ -3,6 +3,7 @@
     tags="education_attendance"
 ) }}
 
+
 WITH clean_data AS (
     SELECT
         grade,

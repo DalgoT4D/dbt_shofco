@@ -12,3 +12,4 @@ SELECT
     CAST("Number_of_stdents_trained" AS INTEGER) AS number_of_students_trained, 
     "Session_Type" AS session_type   
 FROM {{ ref("staging_well_being_sessions") }}
+

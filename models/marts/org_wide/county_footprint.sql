@@ -19,3 +19,4 @@ SELECT
     CASE WHEN "Health" = 'Y' THEN 1 ELSE 0 END AS health,
     CASE WHEN "Libraries" = 'Y' THEN 1 ELSE 0 END AS libraries
 FROM {{ ref("staging_county_footprint") }}
+

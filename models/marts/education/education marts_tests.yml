@@ -1,0 +1,267 @@
+version: 2
+
+models:
+  - name: parent_satisfaction
+    description: "Aggregates parent satisfaction data for analysis."
+    columns:
+      - name: term
+        tests:
+          - not_null
+      - name: grade
+        tests:
+          - not_null
+      - name: school_type
+        tests:
+          - accepted_values:
+              values: ["ksg", "msg"]
+      - name: education_satisfaction
+        tests:
+          - accepted_values:
+              values: ["very_satisfied_5", "satisfied_4", "neutral_3", "dissatisfied_2", "very_dissatisfied_1"]
+      - name: year
+        tests:
+          - not_null
+
+  - name: student_satisfaction
+    description: "Analyzes student satisfaction with schools."
+    columns:
+      - name: term
+        tests:
+          - not_null
+      - name: grade
+        tests:
+          - not_null
+      - name: school_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["ksg", "msg"]
+      - name: school_satisfaction
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["very_satisfied", "neutral", "very_dissatisfied", "satisfied", "dissatisfied"]
+      - name: year
+        tests:
+          - not_null
+
+  - name: teacher_satisfaction
+    description: "Summarizes teacher satisfaction survey data."
+    columns:
+      - name: teaching_level
+        tests:
+          - not_null
+      - name: education_satisfaction
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["very_satisfied", "neutral", "very_dissatisfied", "satisfied", "dissatisfied"]
+      - name: school_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["ksg", "msg"]
+      - name: year
+        tests:
+          - not_null
+
+  - name: well_being_sessions
+    description: "Aggregates data on well-being sessions."
+    columns:
+      - name: "date"
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+      - name: grade
+        tests:
+          - not_null
+      - name: school_type
+        tests:
+          - accepted_values:
+              values: ["ksg", "msg"]
+      - name: "number_of_students_trained"
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+      - name: "session_type"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["Group", "Individual"]
+
+  - name: followup_attendance
+    description: "Tracks follow-ups for student attendance to address absenteeism."
+    columns:
+      - name: absence_date
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+      - name: grade
+        tests:
+          - not_null
+      - name: year
+        tests:
+          - not_null
+      - name: term
+        tests:
+          - not_null
+      - name: reporting_date
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+      - name: school_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["ksg", "msg"]
+      - name: number_of_absences
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: bigint
+
+  - name: parents_attendance
+    description: "Captures parent attendance data for school meetings and engagement levels."
+    columns:
+      - name: year
+        tests:
+          - not_null
+      - name: grade
+        tests:
+          - not_null
+      - name: date
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+      - name: "meeting_type"
+        tests:
+          - not_null
+      - name: "number_present"
+        tests:
+          - not_null
+      - name: "attendance_percentage"
+        tests:
+          - not_null
+      - name: school_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["ksg", "msg"]
+
+  - name: students_attendance
+    description: "Tracks student attendance statistics."
+    columns:
+      - name: term
+        tests:
+          - not_null
+      - name: year
+        tests:
+          - not_null
+      - name: grade
+        tests:
+          - not_null
+      - name: "avg_days_attended"
+        tests:
+          - not_null
+      - name: "total_school_days"
+        tests:
+          - not_null
+      - name: "number_of_students"
+        tests:
+          - not_null
+      - name: "attendance_percentage"
+        tests:
+          - not_null
+      - name: "total_days_absent"
+        tests:
+          - not_null
+      - name: "total_days_present"
+        tests:
+          - not_null
+      - name: school_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["ksg", "msg"]
+
+  - name: education_scholarship_categories_agg
+    description: "Aggregates scholarship data to create categorized insights based on student demographics."
+    columns:
+      - name: year
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["2021", "2022", "2023", "2024", "2025"]
+      - name: cohort
+        tests:
+          - not_null
+      - name: categories
+        tests:
+          - not_null
+      - name: county
+        tests:
+          - not_null
+      - name: subcounty
+        tests:
+          - not_null
+      - name: term
+        tests:
+          - not_null
+      - name: boarding_or_day
+        tests:
+          - accepted_values:
+              values: ["Boarding", "Day"]
+
+  - name: nudges
+    description: "Analyzes distribution of education nudges based on demographics."
+    columns:
+      - name: term
+        tests:
+          - not_null
+      - name: year
+        tests:
+          - not_null
+      - name: county
+        tests:
+          - not_null
+      - name: grade
+        tests:
+          - not_null
+      - name: gender
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["male", "female"]
+      - name: nudge_type
+        tests:
+          - not_null
+      - name: nudge_count
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: bigint
+
+  - name: public_partnerships
+    description: "Summarizes public school partnership data, including KPCE scores and resource allocations."
+    columns:
+      - name: year
+        tests:
+          - not_null
+      - name: county
+        tests:
+          - not_null
+      - name: subcounty
+        tests:
+          - not_null
+      - name: mean_kpce_score
+        tests:
+          - not_null
+      - name: students_enrolled
+        tests:
+          - not_null
+      - name: high_touch_low_touch
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["High", "Low"]

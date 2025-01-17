@@ -10,3 +10,4 @@ SELECT
     LOWER(school_name) AS school_type,
     year
 FROM {{ ref("staging_teacher_satisfaction_survey") }}
+

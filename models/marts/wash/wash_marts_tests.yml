@@ -26,7 +26,7 @@ models:
       - name: id
         data_tests:
           - not_null
-      - name: form_date
+      - name: date
         data_tests:
           - not_null
       - name: term

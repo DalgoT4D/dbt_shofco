@@ -15,3 +15,4 @@ SELECT
     "All_Students___Total_Days_Present" AS total_days_present,
     LOWER("School_Type") AS school_type
 FROM {{ ref("staging_students_attendance") }}
+

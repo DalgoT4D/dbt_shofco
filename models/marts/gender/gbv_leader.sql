@@ -3,14 +3,14 @@
 ) }}
 
 SELECT
-    "National_ID" as "national_id",
-    "Active" as "active",
-    "County" as "county",
-    "Gender" as "gender",
-    "Trained" as "trained",
-    "Identified" as "identified",
-    "Date_identified" as "date_identified",
-    "Date_trained" as "date_trained",
+    "National_ID" AS national_id,
+    "Active" AS active,
+    "County" AS county,
+    "Gender" AS gender,
+    "Trained" AS trained,
+    "Identified" AS identified,
+    "Date_identified" AS date_identified,
+    "Date_trained" AS date_trained,
     CASE
         -- Both are Yes
         WHEN "Trained" = 'Yes' AND "Identified" = 'Yes' THEN 'Trained and Identified'
@@ -26,11 +26,11 @@ SELECT
     CASE
         WHEN "Date_trained" IS NOT NULL THEN 'Quarter ' || EXTRACT(QUARTER FROM "Date_trained")
         ELSE 'Unknown'
-    END AS "quarter_trained",
+    END AS quarter_trained,
     
     CASE
         WHEN "Date_identified" IS NOT NULL THEN 'Quarter ' || EXTRACT(QUARTER FROM "Date_identified")
         ELSE 'Unknown'
-    END AS "quarter_identified"
+    END AS quarter_identified
 
 FROM {{ ref('staging_gbv_leaders') }}

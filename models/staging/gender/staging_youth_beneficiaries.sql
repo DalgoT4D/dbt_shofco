@@ -20,8 +20,9 @@ WITH initial_cases AS (
         indexed_on,
         NULL AS parent_case_id  -- Placeholder for parent_case_id, specific to subsequent cases
     FROM {{ source('staging_youth', 'zzz_case') }}
-    WHERE data::json->'indices'->>'parent' IS NULL
-    AND (data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false')
+    WHERE
+        data::json->'indices'->>'parent' IS NULL
+        AND (data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false')
 ),
 
 subsequent_cases AS (

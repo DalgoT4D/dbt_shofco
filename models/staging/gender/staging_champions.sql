@@ -4,21 +4,21 @@
 ) }}
 
 with champions_cte as (
-  SELECT
-      INITCAP(TRIM("Champions_Name")) AS "Champions_Name",
-      INITCAP(TRIM("Community_Role")) AS "Community_Role",
-      INITCAP(TRIM("County")) AS "County",
-      INITCAP(TRIM("Gender")) AS "Gender", 
-      "National_ID",
-      "Mobile",
-      INITCAP(TRIM("Sub_County_1")) AS "Sub_County",
-      "Site",
-      "Trained",
-      "Identified",
-      TO_DATE("Date_identified", 'DD/MM/YYYY') AS "Date_identified",
-      TO_DATE("Date_trained", 'DD/MM/YYYY') AS "Date_trained",
-      "Active"
-  FROM {{ source('staging_gender', 'Champions_') }}
+    select
+        INITCAP(TRIM("Champions_Name")) as "Champions_Name",
+        INITCAP(TRIM("Community_Role")) as "Community_Role",
+        INITCAP(TRIM("County")) as "County",
+        INITCAP(TRIM("Gender")) as "Gender", 
+        "National_ID",
+        "Mobile",
+        INITCAP(TRIM("Sub_County_1")) as "Sub_County",
+        "Site",
+        "Trained",
+        "Identified",
+        TO_DATE("Date_identified", 'DD/MM/YYYY') as "Date_identified",
+        TO_DATE("Date_trained", 'DD/MM/YYYY') as "Date_trained",
+        "Active"
+    from {{ source('staging_gender', 'Champions_') }}
 )
 
 
@@ -27,4 +27,3 @@ with champions_cte as (
       partition_by='champions_cte."National_ID"',
       order_by='champions_cte."Date_identified"',
 ) }}
-

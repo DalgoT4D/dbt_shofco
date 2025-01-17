@@ -10,6 +10,7 @@ WITH source_data AS (
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
     WHERE data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false'
 )
+
 SELECT DISTINCT
     id,
     indexed_on,

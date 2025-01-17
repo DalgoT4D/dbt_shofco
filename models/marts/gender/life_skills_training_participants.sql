@@ -2,6 +2,5 @@
   materialized='table'
 ) }}
 
-SELECT
-    *
+SELECT *
 FROM {{ ref("staging_life_skills_training_participant_details") }}

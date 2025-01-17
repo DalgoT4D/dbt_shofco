@@ -4,11 +4,11 @@
 ) }}
 
 SELECT  
-    TO_DATE("Date", 'DD/MM/YYYY') AS "Date",           
+    TO_DATE("Date", 'DD/MM/YYYY') AS date,           
     "Grade" AS grade,          
-    "Topic",               
+    "Topic" AS topic,               
     LOWER("School") AS school_type,             
-    "Stream",              
-    CAST("Number_of_stdents_trained" AS INTEGER) AS "Number_of_stdents_trained", 
-    "Session_Type"    
+    "Stream" AS stream,              
+    CAST("Number_of_stdents_trained" AS INTEGER) AS number_of_students_trained, 
+    "Session_Type" AS session_type   
 FROM {{ ref("staging_well_being_sessions") }}

@@ -14,13 +14,13 @@ SELECT
     county,
     constituency,
     office_gender_desk_location,
-    received_on,
+    CAST(received_on AS DATE) AS received_on,
     
     -- Extract GPS components from gps_location field
-    split_part(gps_location, ' ', 1)::float AS latitude,
-    split_part(gps_location, ' ', 2)::float AS longitude,
-    split_part(gps_location, ' ', 3)::float AS altitude,
-    split_part(gps_location, ' ', 4)::float AS accuracy,
+    CAST(SPLIT_PART(gps_location, ' ', 1) AS FLOAT) AS latitude,
+    CAST(SPLIT_PART(gps_location, ' ', 2) AS FLOAT) AS longitude,
+    CAST(SPLIT_PART(gps_location, ' ', 3) AS FLOAT) AS altitude,
+    CAST(SPLIT_PART(gps_location, ' ', 4) AS FLOAT) AS accuracy,
 
     -- Create "Active Programs" column based on program columns
     CASE

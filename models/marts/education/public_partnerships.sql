@@ -5,7 +5,7 @@
 
 SELECT
     year,
-    school_name,
+    LOWER(school_name) AS school_name,
     county,
     mean_kpce_score,
     subcounty,

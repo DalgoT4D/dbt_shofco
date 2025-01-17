@@ -19,7 +19,7 @@ WITH clean_data AS (
 
 SELECT
     absence_date,
-    EXTRACT(YEAR FROM date) AS year,
+    EXTRACT(YEAR FROM absence_date) AS year,
 
     -- Calculate term based on the valid date
     CASE 
@@ -48,7 +48,7 @@ SELECT
     COUNT(*) AS number_of_absences
 FROM clean_data
 GROUP BY
-    date,
+    absence_date,
     CASE 
         WHEN
             absence_date BETWEEN DATE_TRUNC('year', absence_date)

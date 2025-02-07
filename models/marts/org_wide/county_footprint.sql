@@ -1,13 +1,13 @@
 {{ config(
   materialized='table',
-  tags='org_mapping'
+  tags=['org_mapping', "org_wide"]
 ) }}
 
 SELECT
-    "County" as "county",
-    "iso_3166_2_code",
-    "latitude",
-    "longitude",
+    "County" AS county,
+    iso_3166_2_code,
+    latitude,
+    longitude,
     -- Transform each program column to numeric
     CASE WHEN "SUN" = 'Y' THEN 1 ELSE 0 END AS sun,
     CASE WHEN "Youth_Voice" = 'Y' THEN 1 ELSE 0 END AS youth_voice,

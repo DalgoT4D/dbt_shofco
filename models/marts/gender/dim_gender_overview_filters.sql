@@ -1,25 +1,30 @@
 {{ config(
-    materialized='table' 
+    materialized='table',
+    tags=['gender_dim_tables', "gender"]
 ) }}
 
 WITH unique_combinations AS (
     SELECT DISTINCT
         county,
-        "site",
+        site,
         assigned_to,
         case_is_closed
-    FROM {{ ref('case_occurence') }} 
-    WHERE 
-        county IS NOT NULL AND
-        "site" IS NOT NULL AND
-        assigned_to IS NOT NULL AND
-        case_is_closed IS NOT NULL
+    FROM {{ ref('case_occurence') }}
+    WHERE
+        county IS NOT NULL
+        AND site IS NOT NULL
+        AND assigned_to IS NOT NULL
+        AND case_is_closed IS NOT NULL
 )
 
 SELECT
-    ROW_NUMBER() OVER (ORDER BY county, "site", assigned_to, case_is_closed) AS id,
     county,
-    "site",
+    site,
     assigned_to,
-    case_is_closed
+    case_is_closed,
+    ROW_NUMBER()
+        OVER (
+            ORDER BY county, site, assigned_to, case_is_closed
+        )
+    AS id
 FROM unique_combinations

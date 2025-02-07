@@ -1,6 +1,6 @@
 {{ config(
     materialized='table',
-    tags='wash_mobiwater'
+    tags=['wash_mobiwater', "wash"]
 ) }}
 
 SELECT DISTINCT

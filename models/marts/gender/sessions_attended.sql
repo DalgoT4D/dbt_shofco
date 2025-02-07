@@ -1,5 +1,6 @@
 {{ config(
-  materialized='table'
+  materialized='table',
+  tags=['gender_mental_health_assesment', "gender"]
 ) }}
 
 SELECT

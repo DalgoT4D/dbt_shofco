@@ -1,5 +1,6 @@
 {{ config(
-  materialized='table'
+  materialized='table',
+  tags=['gender_life_skills_training', "gender"]
 ) }}
 
 SELECT *

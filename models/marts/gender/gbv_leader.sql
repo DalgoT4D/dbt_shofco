@@ -1,5 +1,6 @@
 {{ config(
-  materialized='table'
+  materialized='table',
+  tags=["gender_gbv_leaders_and_champions","gender"]
 ) }}
 
 SELECT
@@ -13,23 +14,29 @@ SELECT
     "Date_trained" AS date_trained,
     CASE
         -- Both are Yes
-        WHEN "Trained" = 'Yes' AND "Identified" = 'Yes' THEN 'Trained and Identified'
-        
+        WHEN
+            "Trained" = 'Yes' AND "Identified" = 'Yes'
+            THEN 'Trained and Identified'
+
         -- Only one is Yes
         WHEN "Trained" = 'Yes' THEN 'Trained'
         WHEN "Identified" = 'Yes' THEN 'Identified'
-        
+
         -- Default: none are Yes
         ELSE 'None'
     END AS status,
-    
+
     CASE
-        WHEN "Date_trained" IS NOT NULL THEN 'Quarter ' || EXTRACT(QUARTER FROM "Date_trained")
+        WHEN
+            "Date_trained" IS NOT NULL
+            THEN 'Quarter ' || EXTRACT(QUARTER FROM "Date_trained")
         ELSE 'Unknown'
-    END AS quarter_trained,
+    END AS "quarter_trained",
     
     CASE
-        WHEN "Date_identified" IS NOT NULL THEN 'Quarter ' || EXTRACT(QUARTER FROM "Date_identified")
+        WHEN
+            "Date_identified" IS NOT NULL
+            THEN 'Quarter ' || EXTRACT(QUARTER FROM "Date_identified")
         ELSE 'Unknown'
     END AS quarter_identified
 

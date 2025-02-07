@@ -1,5 +1,6 @@
 {{ config(
-  materialized='table'
+  materialized='table',
+  tags=["commcare_extraction","gender_counselling", "gender"]
 ) }}
 
 with

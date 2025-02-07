@@ -1,6 +1,6 @@
 {{ config(
   materialized='table',
-  tags="education_expansion"
+  tags=["education_expansion", "education"]
 ) }}
 
 SELECT

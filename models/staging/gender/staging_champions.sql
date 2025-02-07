@@ -1,6 +1,6 @@
 {{ config(
   materialized='table',
-  tags="gender_gbv_leaders_and_champions"
+  tags=["gender_gbv_leaders_and_champions","gender"]
 ) }}
 
 with champions_cte as (

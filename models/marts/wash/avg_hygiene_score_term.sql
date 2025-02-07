@@ -1,6 +1,6 @@
 {{ config(
     materialized='table',
-    tags='wash_health_indicators'
+    tags=['wash_health_indicators', "wash"]
 ) }}
 
 WITH latest_scores AS (

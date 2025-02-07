@@ -3,7 +3,7 @@
         materialized="table",
         unique_key="case_id",
         alias="staging_facilities",
-        tags= ["commcare_extraction", "wash_facilities"]
+        tags= ["commcare_extraction", "wash_facilities", "wash"]
     )
 }}
 

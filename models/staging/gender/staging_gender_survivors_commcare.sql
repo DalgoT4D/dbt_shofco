@@ -3,7 +3,7 @@
         materialized="table",
         unique_key="case_id",
         alias="staging_gender_survivors_commcare",
-        tags= ["commcare_extraction", "gender_survivors"]
+        tags= ["commcare_extraction", "gender_survivors", "gender"]
     )
 }}
 

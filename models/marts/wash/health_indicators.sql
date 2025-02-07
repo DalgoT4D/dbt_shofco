@@ -1,6 +1,6 @@
 {{ config(
     materialized='table',
-    tags='wash_health_indicators'
+    tags=['wash_health_indicators',"wash"]
 ) }}
 
 SELECT
@@ -13,7 +13,8 @@ SELECT
     health_club_active,
     hygiene_score,
     CASE
-        WHEN form_date IS NOT NULL THEN EXTRACT(YEAR FROM CAST(form_date AS DATE))
-    END AS year
+        WHEN "form_date" IS NOT NULL THEN EXTRACT(YEAR FROM CAST("form_date" AS DATE))
+        ELSE NULL
+    END AS "year"
 FROM {{ ref('staging_health_indicators') }}
-WHERE health_club_active=1
+WHERE "health_club_active"=1

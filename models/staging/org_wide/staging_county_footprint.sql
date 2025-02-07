@@ -1,6 +1,6 @@
 {{ config(
   materialized='table',
-  tags="org_mapping"
+  tags=["org_mapping", "org_wide"]
 ) }}
 
 SELECT

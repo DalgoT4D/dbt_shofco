@@ -1,4 +1,4 @@
-prod:
+default:
   outputs:
     prod:
       dbname: dalgo_warehouse

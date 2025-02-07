@@ -6,7 +6,7 @@
 SELECT
     "term",
     CONCAT('Grade ', "grade") AS "grade",
-    "cohort"
+    "cohort",
     "year",
     "county",
     "subcounty",

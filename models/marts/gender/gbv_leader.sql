@@ -31,8 +31,8 @@ SELECT
             "Date_trained" IS NOT NULL
             THEN 'Quarter ' || EXTRACT(QUARTER FROM "Date_trained")
         ELSE 'Unknown'
-    END AS quarter_trained,
-
+    END AS "quarter_trained",
+    
     CASE
         WHEN
             "Date_identified" IS NOT NULL

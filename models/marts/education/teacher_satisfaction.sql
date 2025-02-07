@@ -4,8 +4,8 @@
 ) }}
 
 SELECT
-    teaching_level,
-    education_satisfaction,
-    year,
-    LOWER(school_name) AS school_type
+    "teaching_level", 
+    "education_satisfaction",
+    LOWER("school_name") AS "school_type",
+    "year"
 FROM {{ ref("staging_teacher_satisfaction_survey") }}

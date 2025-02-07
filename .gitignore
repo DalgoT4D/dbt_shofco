@@ -7,7 +7,6 @@ logs/
 # legacy -- renamed to dbt_packages in v1
 dbt_modules/
 venv/
-profiles.yml
 .user.yml
 package-lock.yml
 models/wash_unit_tests.yml

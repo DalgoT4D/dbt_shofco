@@ -9,5 +9,4 @@ SELECT
     date_of_final_assessment,
     session_id
 FROM {{ ref('staging_gender_final_mental_health_assesment') }}
--- Filter to ensure there are valid session counts
-WHERE sessions_attended IS NOT NULL
+WHERE sessions_attended IS NOT NULL  -- Filter to ensure there are valid session counts

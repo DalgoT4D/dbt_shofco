@@ -12,7 +12,6 @@ WITH source_data AS (
         data::jsonb ->> 'archived' IS NULL
         OR data::jsonb ->> 'archived' = 'false'
 )
-
 SELECT
     -- Basic Details
     json_data -> 'form' ->> 'student_name' AS student_name,

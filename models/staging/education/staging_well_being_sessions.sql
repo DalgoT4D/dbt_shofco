@@ -4,11 +4,7 @@
 ) }}
 
 SELECT
-    "Date",
-    "Grade",
-    "Topic",
-    "School",
-    "Stream",
+    "Date", "Grade", "Topic", "School", "Stream", 
     '1' AS "Number_of_stdents_trained",
     'Individual' AS "Session_Type"
 FROM {{ source('staging_education', 'Individual_Sessions') }}

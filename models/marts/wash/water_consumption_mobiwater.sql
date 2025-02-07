@@ -5,16 +5,16 @@
 
 WITH staging_data AS (
     SELECT
-        CAST(date AS DATE),
-        CAST(flow_device_id AS NUMERIC) AS flow_device_id,
-        CAST(value AS NUMERIC) AS value
+        CAST("date" AS DATE), 
+        CAST("flow_device_id" AS NUMERIC) AS "flow_device_id", 
+        CAST("value" AS NUMERIC) AS "value" 
     FROM {{ ref('staging_meter_readings_mobiwater') }}
 ),
 
 user_meters AS (
     SELECT
-        flow_device_name,
-        CAST(flow_device_id AS NUMERIC) AS flow_device_id
+        CAST("flow_device_id" AS NUMERIC) AS "flow_device_id",
+        "flow_device_name" AS "flow_device_name"
     FROM {{ ref('user_meters_mobiwater') }}
 )
 

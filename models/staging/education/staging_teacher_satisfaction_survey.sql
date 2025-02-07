@@ -15,21 +15,14 @@ WITH source_data AS (
 
 SELECT
     -- Basic Information
-    json_data -> 'form' ->> 'name_of_school' AS school_name,
-    json_data
-    -> 'form'
-    ->> 'which_level_do_you_teach_please_tick_one_of_the_following' AS teaching_level,
-
-    CASE
-        WHEN json_data ->> 'received_on' IS NOT NULL
-            THEN
-                EXTRACT(
-                    YEAR FROM TO_TIMESTAMP(
-                        LEFT(json_data ->> 'received_on', 19),
-                        'YYYY-MM-DD"T"HH24:MI:SS'
-                    )
-                )
-    END AS year,
+    json_data->'form'->>'name_of_school' AS school_name,
+    json_data->'form'->>'which_level_do_you_teach_please_tick_one_of_the_following' AS teaching_level,
+    
+    CASE 
+        WHEN json_data->>'received_on' IS NOT NULL THEN 
+            EXTRACT(YEAR FROM TO_TIMESTAMP(LEFT(json_data->>'received_on', 19), 'YYYY-MM-DD"T"HH24:MI:SS'))
+        ELSE NULL
+    END AS "year",
     -- Section A - General Satisfaction
     json_data
     -> 'form'

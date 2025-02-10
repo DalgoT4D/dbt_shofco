@@ -23,7 +23,7 @@ case_occurrences_data as (
         case_summary_notes,
         {{ validate_date("date_of_reporting") }} as date_of_case_reporting,
         cast(
-            to_char(cast(date_of_reporting as date), 'YYYYMMDD') as integer
+            to_char({{ validate_date("date_of_reporting") }}, 'YYYYMMDD') as integer
         ) as case_reporting_datekey,
 
         case
@@ -34,8 +34,8 @@ case_occurrences_data as (
 
         case
             when case_intake_date is NULL
-                then cast(to_char(cast(date_of_reporting as date), 'YYYYMMDD') as integer)
-            else cast(to_char(cast(case_intake_date as date), 'YYYYMMDD') as integer)
+                then cast(to_char({{ validate_date("date_of_reporting") }}, 'YYYYMMDD') as integer)
+            else cast(to_char({{ validate_date("date_of_reporting") }}, 'YYYYMMDD') as integer)
         end as case_intake_datekey,
         {{ validate_date("date_of_case_closure") }} as date_of_case_closure,
         {{ validate_date("case_assignment_date") }} as date_of_case_assignment,
@@ -47,10 +47,10 @@ case_occurrences_data as (
                     case 
                         when {{ validate_date("date_of_case_closure") }} is not NULL
                             then 
-                                (cast({{ validate_date("date_of_case_closure") }} as date) - cast({{ validate_date("case_intake_date") }} as date))
+                                ({{ validate_date("date_of_case_closure") }} - {{ validate_date("case_intake_date") }})
                         -- For ongoing cases, calculate duration from intake to today
                         else 
-                            (current_date - cast({{ validate_date("case_intake_date") }} as date))
+                            (current_date - {{ validate_date("case_intake_date") }})
                     end
         end as case_duration_in_days,
         gender_site_code_of_reporting,

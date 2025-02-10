@@ -3,7 +3,6 @@
 target/
 dbt_packages/
 logs/
-/profiles.yml
 
 # legacy -- renamed to dbt_packages in v1
 dbt_modules/
@@ -11,4 +10,6 @@ venv/
 .user.yml
 package-lock.yml
 models/wash_unit_tests.yml
+profiles.yml
+
 

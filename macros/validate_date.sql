@@ -1,6 +1,7 @@
 {% macro validate_date(field_name) %}
 -- We have data coming from several google sheets and from commcare. below macro makes sure every data column, no matter
--- which table it is in or which source it is coming from is in the same appropriate format
+-- which table it is in or which source it is coming from is in the same appropriate format. 
+-- Sometimes in google sheets, in one row someone enters 2024/10/12 and elsewhere someone enters 10-5-2024 it will standardize it
 case
     -- Ensure NULL and empty strings are converted to NULL safely before anything else
     when {{ field_name }} is null or COALESCE({{ field_name }}::text, '') = '' then null::date

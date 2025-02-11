@@ -10,15 +10,14 @@ WITH clean_data AS (
         "stream",
         "name_of_student",
         "absence_causes",
-        "_airbyte_extracted_at",
         "school_type",
-        TO_DATE("date", 'DD/MM/YYYY') AS "absence_date",
-        TO_DATE("estimated_reporting_date", 'DD/MM/YYYY') AS "reporting_date"
+        {{ validate_date("date") }} AS "absence_date",
+        {{ validate_date("estimated_reporting_date") }} AS "reporting_date"
     FROM {{ ref('staging_followup_attendance') }}
 )
 
 SELECT
-    "absence_date",
+    {{ validate_date("absence_date") }} AS absence_date,
     EXTRACT(YEAR FROM "absence_date") AS "year",
 
     -- Calculate term based on the valid date
@@ -41,7 +40,7 @@ SELECT
     -- Retain other columns and transformations
     "stream",
     "absence_causes",
-    "reporting_date",
+    {{ validate_date("reporting_date") }} AS "reporting_date",
     LOWER("school_type") AS "school_type",
     COUNT(*) AS "number_of_absences"
 FROM clean_data
@@ -62,5 +61,5 @@ GROUP BY
     END,
     "stream",
     "absence_causes",
-    "reporting_date",
+    {{ validate_date("reporting_date" ) }},
     LOWER("school_type")

@@ -14,7 +14,7 @@ SELECT
     "county",
     "constituency",
     "office_gender_desk_location",
-    CAST("received_on" as DATE) as "received_on",
+    "received_on",
     
     -- Extract GPS components from gps_location field
     split_part("gps_location", ' ', 1)::float AS "latitude",

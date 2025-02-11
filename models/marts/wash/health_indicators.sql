@@ -5,7 +5,7 @@
 
 SELECT
     id,
-    form_date AS date,
+    {{ validate_date("form_date") }} AS date,
     term,
     school_name,
     health_club_boys,
@@ -13,7 +13,7 @@ SELECT
     health_club_active,
     hygiene_score,
     CASE
-        WHEN "form_date" IS NOT NULL THEN EXTRACT(YEAR FROM CAST("form_date" AS DATE))
+        WHEN "form_date" IS NOT NULL THEN EXTRACT(YEAR FROM {{ validate_date("form_date") }})
         ELSE NULL
     END AS "year"
 FROM {{ ref('staging_health_indicators') }}

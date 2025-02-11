@@ -52,6 +52,5 @@ SELECT
     interviewer_name,
     gps_location,
     office_gender_desk_location,
-    received_on,
-    data_type
+    {{ validate_date("received_on") }} AS received_on
 FROM combined_case_data

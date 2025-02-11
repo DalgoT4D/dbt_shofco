@@ -10,7 +10,7 @@ select
     "treated_consumption",
     "tank",
     CASE
-        WHEN "date" IS NOT NULL THEN EXTRACT(YEAR FROM TO_DATE("date", 'DD/MM/YYYY'))
+        WHEN "date" IS NOT NULL THEN EXTRACT(YEAR FROM {{ validate_date("date") }})
         ELSE NULL
     END AS "year"
 FROM {{ ref('staging_water_production') }}

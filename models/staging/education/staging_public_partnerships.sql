@@ -20,5 +20,5 @@ SELECT
   "Revised_Toilet_Student_Ratio" as "revised_toilet_student_ratio",
   "Baseline_Toilet_Student_Ratio" as "baseline_toilet_student_ratio",
   "Teacher_Training_Satisfaction" as "teacher_training_satisfaction",
-  "_airbyte_extracted_at"
+  {{ validate_date("_airbyte_extracted_at") }} AS _airbyte_extracted_at
 FROM {{ source('staging_education', 'Public_School_Partnerships') }}

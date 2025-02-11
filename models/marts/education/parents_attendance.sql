@@ -7,7 +7,7 @@ SELECT
     "Term" as "term", 
     "Year" as "year",
     "Grade" as "grade",
-    TO_DATE("Meeting_Date", 'DD/MM/YYYY') AS "date",
+    {{ validate_date("Meeting_Date") }} AS "date",
     "Meeting_Type" as "meeting_type", 
     "Number_Present" as "number_present",
     "Number_of_Parents" as "number_of_parents",

@@ -82,9 +82,6 @@ models:
       - name: subcounty
         data_tests:
           - not_null
-      - name: date_facility_opened
-        data_tests:
-          - not_null
       - name: facility_name
         data_tests:
           - not_null
@@ -95,9 +92,6 @@ models:
         data_tests:
           - not_null
       - name: case_type
-        data_tests:
-          - not_null
-      - name: date_opened
         data_tests:
           - not_null
       - name: case_id

@@ -13,8 +13,8 @@ with gbv_cte as (
         "Identified",
         INITCAP(TRIM("Sub_county")) as "Sub_county",
         INITCAP(TRIM("Community_Role")) as "Community_Role",
-        TO_DATE("Date_identified", 'DD/MM/YYYY') as "Date_identified",
-        TO_DATE("Date_of_training", 'DD/MM/YYYY') as "Date_trained",
+        {{ validate_date("Date_identified") }} as "Date_identified",
+        {{ validate_date("Date_of_training") }} as "Date_trained",
         INITCAP(TRIM("GBV_Leader_Name")) as "GBV_Leader_Name"
     from {{ source('staging_gender', 'GBV_Community_Leaders') }}
 )

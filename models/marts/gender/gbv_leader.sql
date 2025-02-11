@@ -10,8 +10,8 @@ SELECT
     "Gender" AS gender,
     "Trained" AS trained,
     "Identified" AS identified,
-    "Date_identified" AS date_identified,
-    "Date_trained" AS date_trained,
+    {{ validate_date("Date_identified") }} AS date_identified,
+    {{ validate_date ("Date_trained") }} AS date_trained,
     CASE
         -- Both are Yes
         WHEN

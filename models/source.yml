@@ -7,70 +7,210 @@ sources:
       - name: Scholarships
         identifier: Scholarships
         description: "Scholarships given"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
 
       - name: Nudges
         identifier: Nudges
         description: "Nudges given"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
   
           
       - name: Public_School_Partnerships
         identifier: Public_School_Partnerships
         description: "Public School Partnerships"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
 
       - name: KSG_Summary
         identifier: KSG_Summary
         description: "KSG School Attendance Kindergarten-Grade8"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: MSG_Summary
         identifier: MSG_Summary
         description: "MSG School Attendance Kindergarten-Grade8"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: MSG_Parents_Summary
         identifier: MSG_Parents_Summary
         description: "MSG Parent Meeting Attendance"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: KSG_Parents_Summary
         identifier: KSG_Parents_Summary
         description: "KSG Parent Meeting Attendance"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: MSG_Follow_Up_Social_Worker
         identifier: MSG_Follow_Up_Social_Worker
         description: "Social Worker Follow Ups on Reasons for Absence"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: KSG_Follow_Up_Social_Worker
         identifier: KSG_Follow_Up_Social_Worker
         description: "Social Worker Follow Ups on Reasons for Absence"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: Individual_Sessions
         identifier: Individual_Sessions
         description: "Individual well being sessions"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: Group_Sessions
         identifier: Group_Sessisons
         description: "Group well being sessions"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: Parent_Satisfaction_Survey
         identifier: Parent_Satisfaction_Survey
         description: "Parent Satisfaction in Shofco Education Programs"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: Teachers_Satisfaction_Survey
         identifier: Teachers_Satisfaction_Survey
         description: "Student Satisfaction in Shofco Education Programs"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: Student_Satisfaction_and_Well_Being_Survey
         identifier: Student_Satisfaction_and_Well_Being_Survey
         description: "Student Satisfaction in Shofco Education Programs"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
 
@@ -87,7 +227,16 @@ sources:
             description: "JSON data containing case properties"
           - name: indexed_on
             description: "Timestamp of when the case was indexed"
-  
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
   
   - name: staging_gender
     schema: staging_gender
@@ -95,17 +244,46 @@ sources:
       - name: Champions_
         identifier: Champions_
         description: "Data on Gender Champions"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: GBV_Community_Leaders
         identifier: GBV_Community_Leaders
-        description: ""
+        description: "Google sheet with details of GBV Community Leaders"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: raw_case 
         identifier: zzz_case 
         description: "All cases"
-        
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
           
       - name: dim_location_administrative_units
         description: "Administrative units lookup table"
@@ -117,22 +295,72 @@ sources:
           
       - name: Gender_Clients_Feedback_Survey
         description: "Gender Clients Feedback Survey"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: Final_Mental_Health_Assessment_Form
         description: "Final Mental Health Assessment Form"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: Initial_Mental_Health_Asssessment
         description: "Initial Mental Health Assessment"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: IIVC_Life_Skills_Training
         description: "IIVC Life Skills Training"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: IIVC_Mapping
         description: "IIVC Mapping info on Schools"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
 
@@ -142,6 +370,16 @@ sources:
       - name: County_Footprint
         identifier: County_Footprint
         description: "County Footprint of program impact"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
         
@@ -151,51 +389,152 @@ sources:
       - name: Add_Facility
         identifier: Add_Facility
         description: "WASH Facility Information"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
         identifier: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
         description: "Indicators to monitor school health and hygiene"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: Laini_Saba
         identifier: Laini_Saba
         description: "Laini Saba Water Production Information"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: Lindi
         identifier: Lindi
         description: "Lindi Water Production Information"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: Makina
         identifier: Makina
         description: "Makina Water Production Information"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: Subra
         identifier: Subra
         description: "Subra Water Production Information"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: HQ
         identifier: HQ
         description: "HQ Water Production Information"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: User_Meters
         identifier: User_Meters
         description: "Information on User Meters from Mobiwater"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: meter_consumption
         identifier: meter_consumption
         description: "Water Consumption Information from Mobiwater"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
         
           
       - name: raw_case
         identifier: zzz_case
         description: "Wash Facilities Case Data"
+        data_tests:
+          - elementary.volume_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: warn
+
         
           
 

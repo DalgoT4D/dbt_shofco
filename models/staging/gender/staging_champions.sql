@@ -15,12 +15,11 @@ with champions_cte as (
         "Site",
         "Trained",
         "Identified",
-        TO_DATE("Date_identified", 'DD/MM/YYYY') as "Date_identified",
-        TO_DATE("Date_trained", 'DD/MM/YYYY') as "Date_trained",
+        {{ validate_date("Date_identified") }} AS "Date_identified",
+        {{ validate_date("Date_trained") }} as "Date_trained",
         "Active"
     from {{ source('staging_gender', 'Champions_') }}
 )
-
 
 {{ dbt_utils.deduplicate(
       relation='champions_cte',

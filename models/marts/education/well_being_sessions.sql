@@ -4,7 +4,7 @@
 ) }}
 
 SELECT  
-    TO_DATE("Date", 'DD/MM/YYYY') AS "date",           
+    {{ validate_date("Date") }} AS "date",           
     "Grade" as "grade",          
     "Topic" as "topic",               
     LOWER("School") as "school_type",             

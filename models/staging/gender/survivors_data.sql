@@ -34,15 +34,15 @@ survivors_data as (
             -- Check if the text can be safely converted to a date and is
             -- within a valid range
             when
-                to_date(date_of_birth, 'YYYY-MM-DD') >= '1900-01-01'::date
-                and to_date(date_of_birth, 'YYYY-MM-DD') <= current_date
+                {{ validate_date("date_of_birth") }} >= '1900-01-01'::date
+                and {{ validate_date("date_of_birth") }} <= current_date
                 then
                     extract(
                         year
                         from
                         age(
                             current_date,
-                            to_date(date_of_birth, 'YYYY-MM-DD')
+                            {{ validate_date("date_of_birth") }}
                         )
                     )::int
         end as age,

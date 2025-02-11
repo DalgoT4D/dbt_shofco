@@ -81,7 +81,7 @@ SELECT
     initial_avg_score,
     final_avg_score,
     improved,
-    initial_form_filling_date,
-    final_form_filling_date
+    {{ validate_date("initial_form_filling_date") }} AS initial_form_filling_date,
+    {{ validate_date("final_form_filling_date") }} AS final_form_filling_date
 FROM improved_scores
 ORDER BY case_id

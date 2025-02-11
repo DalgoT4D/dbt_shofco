@@ -38,4 +38,3 @@ CASE
 END
 
 {% endmacro %}
-

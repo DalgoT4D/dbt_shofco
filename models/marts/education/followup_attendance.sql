@@ -17,7 +17,7 @@ WITH clean_data AS (
 )
 
 SELECT
-    {{ validate_date("absence_date") }} AS absence_date,
+    absence_date,
     EXTRACT(YEAR FROM "absence_date") AS "year",
 
     -- Calculate term based on the valid date
@@ -40,7 +40,7 @@ SELECT
     -- Retain other columns and transformations
     "stream",
     "absence_causes",
-    {{ validate_date("reporting_date") }} AS "reporting_date",
+    "reporting_date",
     LOWER("school_type") AS "school_type",
     COUNT(*) AS "number_of_absences"
 FROM clean_data
@@ -61,5 +61,5 @@ GROUP BY
     END,
     "stream",
     "absence_causes",
-    {{ validate_date("reporting_date" ) }},
+    "reporting_date",
     LOWER("school_type")

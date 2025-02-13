@@ -23,6 +23,7 @@ SELECT
             EXTRACT(YEAR FROM TO_TIMESTAMP(LEFT(json_data->>'received_on', 19), 'YYYY-MM-DD"T"HH24:MI:SS'))
         ELSE NULL
     END AS "year",
+    
     -- Section A - General Satisfaction
     json_data
     -> 'form'
@@ -126,6 +127,9 @@ SELECT
     -- Additional Details
     json_data
     -> 'form'
-    ->> 'background_and_purpose_in_order_to_continuously_improve_on_our_education_se' AS survey_background
+    ->> 'background_and_purpose_in_order_to_continuously_improve_on_our_education_se' AS survey_background,
+
+    -- Submission Details
+    json_data ->> 'received_on' AS submission_time
 
 FROM source_data

@@ -4,7 +4,7 @@
 ) }}
 
 SELECT
-    "Date_" AS date,
+    "Date_" AS date_of_absence,
     "Grade" AS grade,
     "Stream" AS stream,
     "Name_of_Student" AS name_of_student,
@@ -15,7 +15,7 @@ SELECT
 FROM {{ source('staging_education', 'KSG_Follow_Up_Social_Worker') }}
 UNION ALL
 SELECT
-    "Date_" AS date,
+    "Date_" AS date_of_absence,
     "Grade" AS grade,
     "Stream" AS stream,
     "Name_of_Student" AS name_of_student,

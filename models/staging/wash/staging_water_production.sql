@@ -6,7 +6,7 @@
 WITH lindi_cte as
 (
   SELECT
-    {{ validate_date ("DATE") }} as "date",
+    "DATE" as "date_extracted",
     "Status" as "status",
     "BH_Abstraction" as "bh_production",
     "TREATED_Production" as "treated_consumption",
@@ -19,7 +19,7 @@ WITH lindi_cte as
 laini_saba_cte as
 (
   SELECT
-    {{ validate_date ("DATE") }} as "date",
+    "DATE" as "date_extracted",
     "Status" as "status",
     "BH_Abstraction" as "bh_production",
     "TREATED_Production" as "treated_consumption",
@@ -32,7 +32,7 @@ laini_saba_cte as
 hq_cte as
 (
   SELECT
-    {{ validate_date ("DATE") }} as "date",
+    "DATE" as "date_extracted",
     "Status" as "status",
     "BH_Abstraction" as "bh_production",
     "TREATED_PRODUCTION" as "treated_consumption",
@@ -45,7 +45,7 @@ hq_cte as
 makina_cte as
 (
   SELECT
-    {{ validate_date ("DATE") }} as "date",
+    "DATE" as "date_extracted",
     "Status" as "status",
     "BH_Abstraction" as "bh_production",
     "TREATEDProduction" as "treated_consumption",
@@ -58,7 +58,7 @@ makina_cte as
 subra_cte as
 (
   SELECT
-    {{ validate_date ("DATE") }} as "date",
+    "DATE" as "date_extracted",
     "Status" as "status",
     CAST((CAST("B2_Abstraction" AS NUMERIC) + CAST("BH1_Abstraction" AS NUMERIC)) AS VARCHAR) as "bh_production",
     "TREATED_Production" as "treated_consumption",

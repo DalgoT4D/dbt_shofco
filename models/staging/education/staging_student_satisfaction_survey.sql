@@ -16,10 +16,7 @@ WITH source_data AS (
 
 SELECT
     -- Student Information
-    json_data
-    -> 'form'
-    -> 'stxudent_information'
-    ->> 'student_name' AS student_name,
+    LOWER(json_data -> 'form' -> 'student_information' ->> 'student_name') AS student_name,
     json_data -> 'form' -> 'student_information' ->> 'grade' AS grade,
     json_data -> 'form' -> 'student_information' ->> 'term' AS term,
     json_data -> 'form' -> 'student_information' ->> 'school' AS school,
@@ -200,6 +197,9 @@ SELECT
     json_data
     -> 'form'
     -> 'section_m'
-    ->> 'ive_been_feeling_relaxed' AS feeling_relaxed
+    ->> 'ive_been_feeling_relaxed' AS feeling_relaxed,
+
+    -- Submission Details
+    json_data ->> 'received_on' AS submission_time
 
 FROM source_data

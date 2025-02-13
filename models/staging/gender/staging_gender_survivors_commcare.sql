@@ -32,24 +32,6 @@ with survivors_cte as ({{
     )
 }})
 
--- with cleaned_survivors_cte as (
---     SELECT 
---         "case_id",
---         "assigned_to",
---         "county",
---         "constituency",
---         "date_of_birth",
---         NULLIF("date_of_registration", '')::date,
---         "gender",
---         "gender_site_code_of_registration",
---         "police_ob_number_for_registration",
---         "registered_by",
---         "village",
---         "ward",
---         "what_is_the_age_provided",
---         "what_is_the_year_of_birth_of_survivor"
--- )
-
 {{ dbt_utils.deduplicate(
     relation='survivors_cte',
     partition_by='case_id',

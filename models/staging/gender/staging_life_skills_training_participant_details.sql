@@ -45,18 +45,13 @@ WITH roc_club_participants AS (
 
 community_safe_space_participants AS (
     SELECT
-        'Unknown' AS term,
-        'Unknown' AS year,  -- Set term as 'Unknown' for community safe space
-        -- Set year as 'Unknown' for community safe space
-        NULL::timestamp AS term_start_date,
-        -- Use 'received_on' for the form-filling date
+        'Unknown' AS term,-- Set term as 'Unknown' for community safe space
+        'Unknown' AS year,  -- Set year as 'Unknown' for community safe space
+        NULL::timestamp AS term_start_date,-- Use NULL for timestamp fields to maintain consistency with ROC Club
         NULL::timestamp AS term_end_date,
-        -- Extract the session ID
         data::jsonb -> 'form' ->> 'target_group' AS target_group,
-        data::jsonb ->> 'received_on' AS form_filling_date,
-
-        -- Use NULL for timestamp fields to maintain consistency with ROC Club
-        data::jsonb -> 'form' -> 'meta' ->> 'instanceID' AS session_id,
+        data::jsonb ->> 'received_on' AS form_filling_date,-- Use 'received_on' for the form-filling date
+        data::jsonb -> 'form' -> 'meta' ->> 'instanceID' AS session_id,-- Extract the session ID
         jsonb_array_elements(
             data -> 'form' -> 'community_safe_space_participants_details'
         ) AS participant_data

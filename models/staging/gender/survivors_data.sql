@@ -34,20 +34,20 @@ survivors_data as (
             -- Check if the text can be safely converted to a date and is
             -- within a valid range
             when
-                {{ validate_date("date_of_birth") }} >= '1900-01-01'::date
-                and {{ validate_date("date_of_birth") }} <= current_date
+                to_date(date_of_birth, 'YYYY-MM-DD') >= '1900-01-01'::date
+                and to_date(date_of_birth, 'YYYY-MM-DD') <= current_date
                 then
                     extract(
                         year
                         from
                         age(
                             current_date,
-                            {{ validate_date("date_of_birth") }}
+                            to_date(date_of_birth, 'YYYY-MM-DD')
                         )
                     )::int
         end as age,
 
-        {{ validate_date("date_of_registration") }} as date_of_registration,
+        date_of_registration,
         gender,
         gender_site_code_of_registration,
         county as county_code,
@@ -55,10 +55,10 @@ survivors_data as (
         village as village_name,
         ward as ward_code,
         case_type,
-        {{ validate_date("date_opened") }} as date_opened,
+        date_opened,
         indexed_on,
         closed,
-        {{ validate_date("created_at") }} as created_at
+        created_at
     from {{ ref("staging_gender_survivors_commcare") }}
 )
 

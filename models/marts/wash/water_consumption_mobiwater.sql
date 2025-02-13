@@ -5,7 +5,7 @@
 
 WITH staging_data AS (
     SELECT
-        CAST("date" AS DATE), 
+        {{ validate_date("date") }} as date, 
         CAST("flow_device_id" AS NUMERIC) AS "flow_device_id", 
         CAST("value" AS NUMERIC) AS "value" 
     FROM {{ ref('staging_meter_readings_mobiwater') }}

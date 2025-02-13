@@ -28,5 +28,5 @@ SELECT
   "Scholarship_Enrollment_Status_T3_2025" as "scholarship_enrollment_status_t3_2025",
   "Student_Name__As_Captured_on_Application_" as "school_name_on_application",
   "Referred_to_gender_for_psychosocial_counselling_" as "referred_to_psychosocial_counselling",
-  {{ validate_date("_airbyte_extracted_at") }} AS _airbyte_extracted_at
+  "_airbyte_extracted_at" AS _airbyte_extracted_at
 FROM {{ source('staging_education', 'Scholarships') }}

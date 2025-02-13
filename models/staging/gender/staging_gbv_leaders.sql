@@ -4,24 +4,24 @@
 ) }}
 with gbv_cte as (
     select
-        "National_ID",
-        "Active",
-        INITCAP(TRIM("County")) as "County",
-        INITCAP(TRIM("Gender")) as "Gender",
-        "Mobile",
-        "Trained",
-        "Identified",
-        INITCAP(TRIM("Sub_county")) as "Sub_county",
-        INITCAP(TRIM("Community_Role")) as "Community_Role",
-        {{ validate_date("Date_identified") }} as "Date_identified",
-        {{ validate_date("Date_of_training") }} as "Date_trained",
-        INITCAP(TRIM("GBV_Leader_Name")) as "GBV_Leader_Name"
+        "National_ID" as national_id,
+        "Active" as active,
+        INITCAP(TRIM("County")) as county,
+        INITCAP(TRIM("Gender")) as gender,
+        "Mobile" as mobile,
+        "Trained" as trained,
+        "Identified" as identified,
+        INITCAP(TRIM("Sub_county")) as sub_county,
+        INITCAP(TRIM("Community_Role")) as community_role,
+        "Date_identified" as date_identified,
+        "Date_of_training" as date_trained,
+        INITCAP(TRIM("GBV_Leader_Name")) as gbv_leader_name
     from {{ source('staging_gender', 'GBV_Community_Leaders') }}
 )
 
 
 {{ dbt_utils.deduplicate(
       relation='gbv_cte',
-      partition_by='gbv_cte."National_ID"',
-      order_by='gbv_cte."Date_identified"',
+      partition_by='gbv_cte."national_id"',
+      order_by='gbv_cte."date_identified"',
 ) }}

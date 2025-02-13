@@ -4,33 +4,33 @@
 ) }}
 
 SELECT
-    "Term",
-    "Year",
-    "Grade",
-    "Cohort",
-    "Meeting_Date",
-    "Meeting_Type",
-    "Number_Present",
-    "Number_of_Parents",
-    "Attendance_Percentage_",
-    "Share_of_Parents_Engaged",
-    "Attendance_Data_Collected",
-    {{ validate_date("_airbyte_extracted_at") }} AS _airbyte_extracted_at,
-    'KSG' AS school_type
+    "Term" as term,
+    "Year" as year,
+    "Grade" as grade,
+    "Cohort" as cohort,
+    "Meeting_Date" as meeting_date,
+    "Meeting_Type" as meeting_type,
+    "Number_Present" as number_present,
+    "Number_of_Parents" as number_of_parents,
+    "Attendance_Percentage_" as attendance_percentage,
+    "Share_of_Parents_Engaged" as share_of_parents_engaged,
+    "Attendance_Data_Collected" as attendance_data_collected,
+    "_airbyte_extracted_at" AS _airbyte_extracted_at,
+    'ksg' AS school_type
 FROM {{ source('staging_education', 'KSG_Parents_Summary') }}
 UNION ALL
 SELECT
-    "Term",
-    "Year",
-    "Grade",
-    "Cohort",
-    "Meeting_Date",
-    "Meeting_Type",
-    "Number_Present",
-    "Number_of_Parents",
-    "Attendance_Percentage_",
-    "Share_of_Parents_Engaged",
-    "Attendance_Data_Collected",
-    {{ validate_date("_airbyte_extracted_at") }} AS _airbyte_extracted_at,
-    'MSG' AS school_type
+    "Term" as term,
+    "Year" as year,
+    "Grade" as grade,
+    "Cohort" as cohort,
+    "Meeting_Date" as meeting_date,
+    "Meeting_Type" as meeting_type,
+    "Number_Present" as number_present,
+    "Number_of_Parents" as number_of_parents,
+    "Attendance_Percentage_" as attendance_percentage,
+    "Share_of_Parents_Engaged" as share_of_parents_engaged,
+    "Attendance_Data_Collected" as attendance_data_collected,
+    "_airbyte_extracted_at" AS _airbyte_extracted_at,
+    'msg' AS school_type
 FROM {{ source('staging_education', 'MSG_Parents_Summary') }}

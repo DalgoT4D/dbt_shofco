@@ -6,5 +6,5 @@
 SELECT DISTINCT
     value,
     flow_device_id,
-    {{ validate_date ("date") }} AS date
+    "date"
 FROM {{ source('staging_wash', 'meter_consumption') }}

@@ -10,8 +10,9 @@ WITH clean_data AS (
         "stream",
         "name_of_student",
         "absence_causes",
+        "_airbyte_extracted_at",
         "school_type",
-        {{ validate_date("date") }} AS "absence_date",
+        {{ validate_date("date_of_absence") }} AS "absence_date",
         {{ validate_date("estimated_reporting_date") }} AS "reporting_date"
     FROM {{ ref('staging_followup_attendance') }}
 )

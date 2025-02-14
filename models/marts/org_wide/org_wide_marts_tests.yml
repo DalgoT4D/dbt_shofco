@@ -5,74 +5,74 @@ models:
     description: "Tracks the program's impact across counties with consolidated data."
     columns:
       - name: county
-        tests:
+        data_tests:
           - not_null
       - name: iso_3166_2_code
-        tests:
+        data_tests:
           - not_null
           - unique
       - name: latitude
-        tests:
+        data_tests:
           - not_null
       - name: longitude
-        tests:
+        data_tests:
           - not_null
       - name: sl
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: [1, 0]
       - name: sun
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: [1, 0]
           - dbt_expectations.expect_column_values_to_be_of_type:
              column_type: integer
       - name: wash
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: [1, 0]
           - dbt_expectations.expect_column_values_to_be_of_type:
              column_type: integer
       - name: sacco
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: [1, 0]
           - dbt_expectations.expect_column_values_to_be_of_type:
              column_type: integer
       - name: gender
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: [1, 0]
           - dbt_expectations.expect_column_values_to_be_of_type:
              column_type: integer
       - name: health
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: [1, 0]
           - dbt_expectations.expect_column_values_to_be_of_type:
              column_type: integer
       - name: education
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: [1, 0]
           - dbt_expectations.expect_column_values_to_be_of_type:
              column_type: integer
       - name: libraries
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: [1, 0]
           - dbt_expectations.expect_column_values_to_be_of_type:
              column_type: integer
       - name: youth_voice
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: [1, 0]
@@ -81,36 +81,36 @@ models:
     description: "Standardizes and prepares mapping data for program-wide reporting and analysis."
     columns:
       - name: id
-        tests:
+        data_tests:
           - not_null
       - name: case_id
-        tests:
+        data_tests:
           - not_null
       - name: case_type
-        tests:
+        data_tests:
           - not_null
       - name: county
-        tests:
+        data_tests:
           - not_null
       - name: ward
-        tests:
+        data_tests:
           - not_null
       - name: constituency
-        tests:
+        data_tests:
           - not_null
       - name: latitude
-        tests:
+        data_tests:
           - not_null
       - name: longitude
-        tests:
+        data_tests:
           - not_null
       - name: altitude
-        tests:
+        data_tests:
           - not_null
       - name: accuracy
-        tests:
+        data_tests:
           - not_null
       - name: received_on
-        tests:
+        data_tests:
           - dbt_expectations.expect_column_values_to_be_of_type:
              column_type: date

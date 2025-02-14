@@ -5,64 +5,118 @@ models:
     description: "Champions data for gender program"
     columns:
 
+      - name: national_id
+        data_tests:
+          - not_null
+          - unique
+      
+      - name: mobile
+        data_tests:
+          - unique
+      
+      - name: county
+        data_tests:
+          - not_null
+      
+      - name: champions_name
+        data_tests:
+          - not_null
+
       - name: date_trained
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_trained
     
       - name: date_identified
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: date_identified
 
   - name: staging_gbv_leaders
     description: "Google sheet with details of GBV Community Leaders"
     columns:
+
+      - name: national_id
+        data_tests:
+          - not_null
+          - unique
+      
+      - name: mobile
+        data_tests:
+          - unique
+      
+      - name: county
+        data_tests:
+          - not_null
+      
+      - name: gbv_leader_name
+        data_tests:
+          - not_null
+
       - name: date_trained
         description: "Date of training of GBV Leader"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_trained
 
       - name: date_identified
         description: "Date of identification of GBV Leader"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: date_identified
   
   - name: survivors_data
     description: "Data on Gender Survivors from commcare"
     columns:
+
+      - name: case_id
+        description: "Creation date of entry"
+        data_tests:
+          - unique
+
       - name: created_at
         description: "Creation date of entry"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: created_at
 
       - name: date_of_registration
         description: "Date of registration of survivor"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: date_of_registration
       
       - name: date_opened
         description: "Date survivor case was opened"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: date_opened
   
   - name: staging_youth_beneficiaries
     description: "Data on Youth Beneficiaries from commcare"
     columns:
+
+      - name: case_id
+        description: "Date of registration of survivor"
+        data_tests:
+          - unique
+
       - name: date_of_registration
         description: "Date of registration of survivor"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: date_of_registration
       
       - name: date_opened
         description: "Date survivor case was opened"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: date_opened
   
@@ -71,7 +125,8 @@ models:
     columns:
       - name: indexed_on
         description: "Entry indexing date"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: indexed_on
   
@@ -80,19 +135,20 @@ models:
     columns:
       - name: form_filling_date
         description: "date form was filled"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: form_filling_date
       
       - name: term_start_date
         description: "Term Start date"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: term_start_date
       
       - name: term_end_date
         description: "Term end date"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: term_end_date
   
@@ -101,7 +157,8 @@ models:
     columns:
       - name: initial_form_filling_date
         description: "filling date of initial form"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: initial_form_filling_date
   
@@ -110,13 +167,15 @@ models:
     columns:
       - name: final_form_filling_date
         description: "filling date of the final form"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: final_form_filling_date
 
       - name: date_of_final_assessment
         description: "filling date of the final form"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: date_of_final_assessment
   
@@ -125,49 +184,52 @@ models:
     columns:
       - name: date_and_time_of_person_receiving_discharged_survivor_signature
         description: "date and time of discharge signature"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_and_time_of_person_receiving_discharged_survivor_signature
 
       - name: last_amended_at
         description: "When was entry last updated"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: last_amended_at
       
       - name: date_of_safehouse_onboarding
         description: "date_of_safehouse_onboarding"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: date_of_safehouse_onboarding
       
       - name: date_of_discharge
         description: "date of discharge"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_discharge
       
       - name: onboarding_case_worker_date_of_approval
         description: "date case worked decided to onboard"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: onboarding_case_worker_date_of_approval
       
       - name: gender_director_date_of_determination_of_onboarding
         description: "date gender director decided to onboard"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: gender_director_date_of_determination_of_onboarding
       
       - name: gender_director_date_of_determination_of_discharge
         description: "date gender director decided on discharge"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: gender_director_date_of_determination_of_discharge
       
       - name: discharge_case_worker_date_of_approval
         description: "date of approval for discharge"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: discharge_case_worker_date_of_approval
 
@@ -177,7 +239,8 @@ models:
     columns:
       - name: date_of_registration
         description: "date of registration for counselling"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: date_of_registration
   
@@ -186,117 +249,118 @@ models:
     columns:
       - name: date_of_birth_of_next_of_kin
         description: "date next of kin was born"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_birth_of_next_of_kin
       - name: date_of_birth_of_well_wisher
         description: "date well wisher was born"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_birth_of_well_wisher
       - name: date_of_case_closure
         description: "date case was closed"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_case_closure
       - name: date_of_consent_being_captured
         description: "date consent was captured"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_consent_being_captured
       - name: date_of_updating_case_occurrence_information
         description: "date of updating case occurrence information"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_updating_case_occurrence_information
       - name: date_of_police_report_followup
         description: "date of police report followup"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_police_report_followup
       - name: date_of_police_followup_update
         description: "date of police followup update"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_police_followup_update
       - name: date_of_other_followup_amended_at
         description: "date other followup was amended at"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_other_followup_amended_at
       - name: date_of_other_followup_update
         description: "date of other followup update"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_other_followup_update
       - name: date_of_police_followup_last_amended_at
         description: "date of amendment of police followup"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_police_followup_last_amended_at
       - name: date_of_medical_followup_update
         description: "date of medical followup update"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_medical_followup_update
       - name: date_of_medical_report_followup
         description: "date of medical report followup"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_medical_report_followup
       - name: date_of_medical_followup_amendment
         description: "date of medical followup amendment"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_medical_followup_amendment
       - name: date_of_court_followup_update
         description: "update date of court followup"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_court_followup_update
       - name: date_of_court_followup_amended_at
         description: "when was date of court followup changed"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_court_followup_amended_at
       - name: date_of_discharge
         description: "date of discharge"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_discharge
       - name: date_of_court_followup
         description: "date of court followup"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_court_followup
       - name: date_of_onboarding
         description: "date of onboarding"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_onboarding
       - name: date_of_reporting
         description: "date of reporting"
-        tests:
+        data_tests:
+          - not_null
           - valid_date_range:
               column_name: date_of_reporting
       - name: date_of_counselling_registration
         description: "date beneficiary registered for counselling"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_of_counselling_registration
       - name: date_referral_information_captured
         description: "date referral information was captured"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_referral_information_captured
       - name: date_referral_information_last_amended
         description: "date referral information was last amended"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_referral_information_last_amended
       - name: date_consent_was_given
         description: "date consent was given"
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date_consent_was_given
     

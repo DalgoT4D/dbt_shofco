@@ -13,7 +13,7 @@ WITH source_data AS (
         OR data::jsonb ->> 'archived' = 'false'
 )
 
-SELECT
+SELECT DISTINCT
     -- Basic Information
     json_data->'form'->>'name_of_school' AS school_name,
     json_data->'form'->>'which_level_do_you_teach_please_tick_one_of_the_following' AS teaching_level,

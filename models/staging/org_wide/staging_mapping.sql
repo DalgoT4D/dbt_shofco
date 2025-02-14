@@ -32,7 +32,7 @@ WITH combined_case_data AS (
         OR data::jsonb ->> 'archived' = 'false'
 )
 
-SELECT
+SELECT DISTINCT
     id,
     case_id,
     case_type,

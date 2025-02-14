@@ -5,58 +5,58 @@ models:
     description: "Tracks the program's impact across counties with consolidated data."
     columns:
       - name: county
-        tests:
+        data_tests:
           - not_null
       - name: iso_3166_2_code
-        tests:
+        data_tests:
           - not_null
           - unique
       - name: latitude
-        tests:
+        data_tests:
           - not_null
       - name: longitude
-        tests:
+        data_tests:
           - not_null
       - name: sl
-        tests:
+        data_tests:
           - accepted_values:
               values: ["Y", "N"]
       - name: sun
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["Y", "N"]
       - name: wash
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["Y", "N"]
       - name: sacco
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["Y", "N"]
       - name: gender
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["Y", "N"]
       - name: health
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["Y", "N"]
       - name: education
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["Y", "N"]
       - name: libraries
-        tests:
+        data_tests:
           - accepted_values:
               values: ["Y", "N"]
       - name: youth_voice
-        tests:
+        data_tests:
           - accepted_values:
               values: ["Y", "N"]
 
@@ -64,57 +64,57 @@ models:
     description: "Standardizes and prepares mapping data for program-wide reporting and analysis."
     columns:
       - name: id
-        tests:
+        data_tests:
           - not_null
       - name: case_id
-        tests:
+        data_tests:
           - not_null
       - name: case_type
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["school_case_data"]
       - name: comments
-        tests:
+        data_tests:
           - not_null
       - name: county
-        tests:
+        data_tests:
           - not_null
       - name: ward
-        tests:
+        data_tests:
           - not_null
       - name: constituency
-        tests:
+        data_tests:
           - not_null
       - name: gps_location
-        tests:
+        data_tests:
           - not_null
       - name: type_of_school
-        tests:
+        data_tests:
           - accepted_values:
               values: ["public", "private", "apbet"]
       - name: education_intervention
-        tests:
+        data_tests:
           - accepted_values:
               values: ["high", "low_touch"]
       - name: facility
-        tests:
+        data_tests:
           - accepted_values:
               values: ["school", "community_safe_space", "gender_officedesk"]
       - name: gender_program
-        tests:
+        data_tests:
           - accepted_values:
               values: ["yes", "no"]
       - name: wash_program
-        tests:
+        data_tests:
           - accepted_values:
               values: ["yes", "no"]
       - name: shofco_education_program
-        tests:
+        data_tests:
           - accepted_values:
               values: ["yes", "no"]
       - name: received_on
-        tests:
+        data_tests:
           - dbt_expectations.expect_column_values_to_be_of_type:
              column_type: date
           - valid_date_range:

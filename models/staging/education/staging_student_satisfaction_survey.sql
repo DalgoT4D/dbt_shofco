@@ -14,7 +14,7 @@ WITH source_data AS (
         OR data::jsonb ->> 'archived' = 'false'
 )
 
-SELECT
+SELECT DISTINCT
     -- Student Information
     LOWER(json_data -> 'form' -> 'student_information' ->> 'student_name') AS student_name,
     json_data -> 'form' -> 'student_information' ->> 'grade' AS grade,

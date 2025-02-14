@@ -5,27 +5,27 @@ models:
     description: "Well being sessions of both group and individual type"
     columns:
       - name: date
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: date
   
   - name: staging_followup_attendance
     description: "Well being sessions of both group and individual type"
     columns:
-      - name: date
-        tests:
+      - name: date_of_absence
+        data_tests:
           - valid_date_range:
-              column_name: date
+              column_name: date_of_absence
       - name: estimated_reporting_date
-        tests:
+        data_tests:
           - valid_date_range:
-              column_name: date
+              column_name: estimated_reporting_date
 
   - name: staging_parents_attendance
     description: "Parent attendance for parent-teacher meetings"
     columns:
       - name: meeting_date
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: meeting_date
   
@@ -33,7 +33,7 @@ models:
     description: "Parent satisfaction survey results"
     columns:
       - name: submission_time
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: submission_time
   
@@ -41,7 +41,7 @@ models:
     description: "Teacher satisfaction survey results"
     columns:
       - name: submission_time
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: submission_time
 
@@ -49,7 +49,7 @@ models:
     description: "Student satisfaction survey results"
     columns:
       - name: submission_time
-        tests:
+        data_tests:
           - valid_date_range:
               column_name: submission_time
     

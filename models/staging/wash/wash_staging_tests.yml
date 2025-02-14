@@ -105,11 +105,11 @@ models:
   - name: staging_water_production
     description: "Staging data for daily water production and consumption"
     columns:
-      - name: date
+      - name: date_extracted
         data_tests:
           - not_null
           - valid_date_range:
-              column_name: date
+              column_name: date_extracted
       - name: bh_production
         data_tests:
           - not_null

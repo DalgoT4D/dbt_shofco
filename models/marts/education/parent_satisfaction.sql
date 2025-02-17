@@ -15,5 +15,6 @@ SELECT
 
     LOWER("school") AS "school_type",
     "education_satisfaction",
-    "class_year_of_child" AS "year"
+    "class_year_of_child" AS "year",
+    {{ validate_date("submission_time") }} as "submission_time"
 FROM {{ ref("staging_parents_satisfaction_survey") }}

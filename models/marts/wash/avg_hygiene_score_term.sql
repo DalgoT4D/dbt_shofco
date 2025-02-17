@@ -8,7 +8,7 @@ WITH latest_scores AS (
         school_name,
         term,
         year,
-        MAX(CAST(date AS DATE)) AS latest_date
+        MAX( {{ validate_date("date") }} ) AS latest_date
     FROM {{ ref('health_indicators') }}
     GROUP BY school_name, term, year
 ),

@@ -50,6 +50,40 @@ subsequent_data AS (
     WHERE s.training_type IS NOT NULL
 )
 
-SELECT * FROM initial_data
+SELECT 
+        case_id,
+        ward,
+        county,
+        constituency,
+        {{validate_date("date_of_registration") }} as date_of_registration,
+        beneficiary_gender,
+        name_of_the_beneficiary,
+        beneficiary_phone_number,
+        registered_by,
+        beneficiary_categories,
+        case_name,
+        {{validate_date("date_opened") }} as date_opened,
+        training_type,
+        {{validate_date("indexed_on") }} as indexed_on,
+        parent_case_id,
+        category
+FROM initial_data
 UNION ALL
-SELECT * FROM subsequent_data
+SELECT 
+        case_id,
+        ward,
+        county,
+        constituency,
+        {{validate_date("date_of_registration") }} as date_of_registration,
+        beneficiary_gender,
+        name_of_the_beneficiary,
+        beneficiary_phone_number,
+        registered_by,
+        beneficiary_categories,
+        case_name,
+        {{validate_date("date_opened") }} as date_opened,
+        training_type,
+        {{validate_date("indexed_on") }} as indexed_on,
+        parent_case_id,
+        category
+FROM subsequent_data

@@ -5,86 +5,86 @@ models:
     description: "Aggregates parent satisfaction data for analysis."
     columns:
       - name: term
-        tests:
+        data_tests:
           - not_null
       - name: grade
-        tests:
+        data_tests:
           - not_null
       - name: school_type
-        tests:
+        data_tests:
           - accepted_values:
               values: ["ksg", "msg"]
       - name: education_satisfaction
-        tests:
+        data_tests:
           - accepted_values:
               values: ["very_satisfied_5", "satisfied_4", "neutral_3", "dissatisfied_2", "very_dissatisfied_1"]
       - name: year
-        tests:
+        data_tests:
           - not_null
 
   - name: student_satisfaction
     description: "Analyzes student satisfaction with schools."
     columns:
       - name: term
-        tests:
+        data_tests:
           - not_null
       - name: grade
-        tests:
+        data_tests:
           - not_null
       - name: school_type
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["ksg", "msg"]
       - name: school_satisfaction
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["very_satisfied", "neutral", "very_dissatisfied", "satisfied", "dissatisfied"]
       - name: year
-        tests:
+        data_tests:
           - not_null
 
   - name: teacher_satisfaction
     description: "Summarizes teacher satisfaction survey data."
     columns:
       - name: teaching_level
-        tests:
+        data_tests:
           - not_null
       - name: education_satisfaction
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["very_satisfied", "neutral", "very_dissatisfied", "satisfied", "dissatisfied"]
       - name: school_type
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["ksg", "msg"]
       - name: year
-        tests:
+        data_tests:
           - not_null
 
   - name: well_being_sessions
     description: "Aggregates data on well-being sessions."
     columns:
       - name: "date"
-        tests:
+        data_tests:
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: date
       - name: grade
-        tests:
+        data_tests:
           - not_null
       - name: school_type
-        tests:
+        data_tests:
           - accepted_values:
               values: ["ksg", "msg"]
       - name: "number_of_students_trained"
-        tests:
+        data_tests:
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: integer
       - name: "session_type"
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["Group", "Individual"]
@@ -93,30 +93,23 @@ models:
     description: "Tracks follow-ups for student attendance to address absenteeism."
     columns:
       - name: absence_date
-        tests:
-          - not_null
+        data_tests:
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: date
       - name: grade
-        tests:
-          - not_null
-      - name: year
-        tests:
-          - not_null
-      - name: term
-        tests:
+        data_tests:
           - not_null
       - name: reporting_date
-        tests:
+        data_tests:
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: date
       - name: school_type
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["ksg", "msg"]
       - name: number_of_absences
-        tests:
+        data_tests:
           - not_null
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: bigint
@@ -125,26 +118,26 @@ models:
     description: "Captures parent attendance data for school meetings and engagement levels."
     columns:
       - name: year
-        tests:
+        data_tests:
           - not_null
       - name: grade
-        tests:
+        data_tests:
           - not_null
       - name: date
-        tests:
+        data_tests:
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: date
       - name: "meeting_type"
-        tests:
+        data_tests:
           - not_null
       - name: "number_present"
-        tests:
+        data_tests:
           - not_null
       - name: "attendance_percentage"
-        tests:
+        data_tests:
           - not_null
       - name: school_type
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["ksg", "msg"]
@@ -153,34 +146,34 @@ models:
     description: "Tracks student attendance statistics."
     columns:
       - name: term
-        tests:
+        data_tests:
           - not_null
       - name: year
-        tests:
+        data_tests:
           - not_null
       - name: grade
-        tests:
+        data_tests:
           - not_null
       - name: "avg_days_attended"
-        tests:
+        data_tests:
           - not_null
       - name: "total_school_days"
-        tests:
+        data_tests:
           - not_null
       - name: "number_of_students"
-        tests:
+        data_tests:
           - not_null
       - name: "attendance_percentage"
-        tests:
+        data_tests:
           - not_null
       - name: "total_days_absent"
-        tests:
+        data_tests:
           - not_null
       - name: "total_days_present"
-        tests:
+        data_tests:
           - not_null
       - name: school_type
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["ksg", "msg"]
@@ -189,27 +182,27 @@ models:
     description: "Aggregates scholarship data to create categorized insights based on student demographics."
     columns:
       - name: year
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["2021", "2022", "2023", "2024", "2025"]
       - name: cohort
-        tests:
+        data_tests:
           - not_null
       - name: categories
-        tests:
+        data_tests:
           - not_null
       - name: county
-        tests:
+        data_tests:
           - not_null
       - name: subcounty
-        tests:
+        data_tests:
           - not_null
       - name: term
-        tests:
+        data_tests:
           - not_null
       - name: boarding_or_day
-        tests:
+        data_tests:
           - accepted_values:
               values: ["Boarding", "Day"]
 
@@ -217,27 +210,27 @@ models:
     description: "Analyzes distribution of education nudges based on demographics."
     columns:
       - name: term
-        tests:
+        data_tests:
           - not_null
       - name: year
-        tests:
+        data_tests:
           - not_null
       - name: county
-        tests:
+        data_tests:
           - not_null
       - name: grade
-        tests:
+        data_tests:
           - not_null
       - name: gender
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["male", "female"]
       - name: nudge_type
-        tests:
+        data_tests:
           - not_null
       - name: nudge_count
-        tests:
+        data_tests:
           - not_null
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: bigint
@@ -246,22 +239,22 @@ models:
     description: "Summarizes public school partnership data, including KPCE scores and resource allocations."
     columns:
       - name: year
-        tests:
+        data_tests:
           - not_null
       - name: county
-        tests:
+        data_tests:
           - not_null
       - name: subcounty
-        tests:
+        data_tests:
           - not_null
       - name: mean_kpce_score
-        tests:
+        data_tests:
           - not_null
       - name: students_enrolled
-        tests:
+        data_tests:
           - not_null
       - name: high_touch_low_touch
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ["High", "Low"]

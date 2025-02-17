@@ -70,8 +70,17 @@ subsequent_cases AS (
         data::json -> 'indices' -> 'parent' ->> 'case_id' AS parent_case_id
     FROM {{ source('staging_youth', 'zzz_case') }}
     WHERE data::json -> 'indices' ->> 'parent' IS NOT NULL
-)
+),
 
+final_cte as (
 SELECT * FROM initial_cases
 UNION ALL
 SELECT * FROM subsequent_cases
+)
+
+{{ dbt_utils.deduplicate(
+    relation='final_cte',
+    partition_by='case_id',
+    order_by='indexed_on desc',
+   )
+}}

@@ -4,20 +4,18 @@
 ) }}
 
 SELECT
-    "SL",
-    "SUN",
-    "WASH",
-    "SACCO",
-    "County",
-    "Gender",
-    "Health",
+    COALESCE("SL", 'N') AS sl,
+    COALESCE("SUN", 'N') AS sun,
+    COALESCE("WASH", 'N') AS wash,
+    COALESCE("SACCO", 'N') AS sacco,
+    COALESCE("County", 'N') AS county,
+    COALESCE("Gender", 'N') AS gender,
+    COALESCE("Health", 'N') AS health,
     latitude,
-    "Education",
-    "Libraries",
+    COALESCE("Education", 'N') AS education,
+    COALESCE("Libraries", 'N') AS libraries,
     longitude,
-    "Youth_Voice",
+    COALESCE("Youth_Voice", 'N') AS youth_voice,
     iso_3166_2_code,
-    _airbyte_raw_id,
-    _airbyte_extracted_at,
-    _airbyte_meta
+    "_airbyte_extracted_at" AS _airbyte_extracted_at
 FROM {{ source('staging_orgwide', 'County_Footprint') }}

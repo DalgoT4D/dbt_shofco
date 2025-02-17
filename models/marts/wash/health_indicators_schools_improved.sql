@@ -11,7 +11,7 @@ WITH hygiene_data AS (
         term,
         year,
         hygiene_score,
-        date
+        {{ validate_date("date") }} as date
     FROM {{ ref('health_indicators') }}
 ),
 

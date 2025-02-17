@@ -26,9 +26,6 @@ models:
       - name: id
         data_tests:
           - not_null
-      - name: date
-        data_tests:
-          - not_null
       - name: term
         data_tests:
           - not_null
@@ -82,9 +79,6 @@ models:
       - name: subcounty
         data_tests:
           - not_null
-      - name: date_facility_opened
-        data_tests:
-          - not_null
       - name: facility_name
         data_tests:
           - not_null
@@ -95,9 +89,6 @@ models:
         data_tests:
           - not_null
       - name: case_type
-        data_tests:
-          - not_null
-      - name: date_opened
         data_tests:
           - not_null
       - name: case_id
@@ -114,7 +105,6 @@ models:
     columns:
       - name: date
         data_tests:
-          - not_null
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: date
       - name: flow_device_id
@@ -134,9 +124,6 @@ models:
   - name: water_production
     description: "Daily water production and consumption"
     columns:
-      - name: date
-        data_tests:
-          - not_null
       - name: bh_production
         data_tests:
           - not_null

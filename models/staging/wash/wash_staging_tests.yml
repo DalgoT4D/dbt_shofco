@@ -26,12 +26,18 @@ models:
       - name: date_facility_opened
         data_tests:
           - not_null
+          - valid_date_range:
+              column_name: date_facility_opened
       - name: facility_name
         data_tests:
           - not_null
       - name: facility_type
         data_tests:
           - not_null
+      - name: date_of_submission
+        data_tests:
+          - valid_date_range:
+                column_name: date_of_submission
 
   - name: staging_health_indicators
     description: "Staging data for school health indicators"
@@ -43,6 +49,8 @@ models:
       - name: form_date
         data_tests:
           - not_null
+          - valid_date_range:
+              column_name: form_date
       - name: term
         data_tests:
           - not_null
@@ -77,6 +85,10 @@ models:
       - name: value
         data_tests:
           - not_null
+      - name: date
+        data_tests:
+          - valid_date_range:
+              column_name: date
 
   - name: staging_user_meters_mobiwater
     description: "Staging data for mobiwater user meters with incremental deduplication"
@@ -93,9 +105,11 @@ models:
   - name: staging_water_production
     description: "Staging data for daily water production and consumption"
     columns:
-      - name: date
+      - name: date_extracted
         data_tests:
           - not_null
+          - valid_date_range:
+              column_name: date_extracted
       - name: bh_production
         data_tests:
           - not_null

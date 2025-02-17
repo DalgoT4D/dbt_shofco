@@ -7,55 +7,99 @@ sources:
       - name: Scholarships
         identifier: Scholarships
         description: "Scholarships given"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
 
       - name: Nudges
         identifier: Nudges
         description: "Nudges given"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
   
           
       - name: Public_School_Partnerships
         identifier: Public_School_Partnerships
         description: "Public School Partnerships"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
 
       - name: KSG_Summary
         identifier: KSG_Summary
         description: "KSG School Attendance Kindergarten-Grade8"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: MSG_Summary
         identifier: MSG_Summary
         description: "MSG School Attendance Kindergarten-Grade8"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: MSG_Parents_Summary
         identifier: MSG_Parents_Summary
         description: "MSG Parent Meeting Attendance"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: KSG_Parents_Summary
         identifier: KSG_Parents_Summary
         description: "KSG Parent Meeting Attendance"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: MSG_Follow_Up_Social_Worker
         identifier: MSG_Follow_Up_Social_Worker
         description: "Social Worker Follow Ups on Reasons for Absence"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: KSG_Follow_Up_Social_Worker
         identifier: KSG_Follow_Up_Social_Worker
         description: "Social Worker Follow Ups on Reasons for Absence"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: Individual_Sessions
         identifier: Individual_Sessions
         description: "Individual well being sessions"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: Group_Sessions
         identifier: Group_Sessisons
         description: "Group well being sessions"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: Parent_Satisfaction_Survey
@@ -72,9 +116,7 @@ sources:
         identifier: Student_Satisfaction_and_Well_Being_Survey
         description: "Student Satisfaction in Shofco Education Programs"
         
-          
 
-  
   - name: staging_youth
     schema: staging_youth
     tables:
@@ -88,31 +130,58 @@ sources:
           - name: indexed_on
             description: "Timestamp of when the case was indexed"
   
-  
   - name: staging_gender
     schema: staging_gender
     tables:
       - name: Champions_
         identifier: Champions_
         description: "Data on Gender Champions"
-        
-          
+        columns:
+          - name: Date_trained
+            description: "Date of training"
+
+          - name: Date_identified
+            description: "Date of identification"
+            
+        data_tests: 
+          - elementary.schema_changes: 
+                  config:
+                    severity: error
+
       - name: GBV_Community_Leaders
         identifier: GBV_Community_Leaders
-        description: ""
+        description: "Google sheet with details of GBV Community Leaders"
+        columns:
+          - name: "Date_of_training"
+            description: "Date of training of GBV Leader"
+
+          - name: "Date_identified"
+            description: "Date of identification of GBV Leader"
+
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: raw_case 
         identifier: zzz_case 
         description: "All cases"
-        
           
       - name: dim_location_administrative_units
         description: "Administrative units lookup table"
+        data_tests:
+          - elementary.schema_changes: 
+                config:
+                  severity: error
         
           
       - name: dim_gender_sites
         description: "Sites used by the gender program"
+        data_tests:
+          - elementary.schema_changes: 
+                config:
+                  severity: error
         
           
       - name: Gender_Clients_Feedback_Survey
@@ -142,6 +211,10 @@ sources:
       - name: County_Footprint
         identifier: County_Footprint
         description: "County Footprint of program impact"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
         
@@ -161,41 +234,91 @@ sources:
       - name: Laini_Saba
         identifier: Laini_Saba
         description: "Laini Saba Water Production Information"
+        data_tests:
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: Lindi
         identifier: Lindi
         description: "Lindi Water Production Information"
+        data_tests:
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: Makina
         identifier: Makina
         description: "Makina Water Production Information"
+        data_tests:
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: Subra
         identifier: Subra
         description: "Subra Water Production Information"
+        data_tests:
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: HQ
         identifier: HQ
         description: "HQ Water Production Information"
+        data_tests:
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: User_Meters
         identifier: User_Meters
         description: "Information on User Meters from Mobiwater"
+        data_tests:
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: meter_consumption
         identifier: meter_consumption
         description: "Water Consumption Information from Mobiwater"
+        data_tests:
+          - elementary.freshness_anomalies:
+              timestamp_column: _airbyte_extracted_at
+              anomaly_sensitivity: 3
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: raw_case
         identifier: zzz_case
         description: "Wash Facilities Case Data"
+
         
           
 

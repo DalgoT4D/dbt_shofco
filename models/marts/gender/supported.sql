@@ -10,8 +10,8 @@ case_occurrences_data as (
         case_name,
         case_id,
         assigned_to,
-        date_of_case_reporting,
-        date_of_case_closure,
+        {{ validate_date("date_of_case_reporting") }} AS date_of_case_reporting,
+        {{ validate_date("date_of_case_closure") }} AS date_of_case_closure,
         county,
         site
     from {{ ref("case_occurence_pii") }}

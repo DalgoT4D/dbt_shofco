@@ -41,9 +41,7 @@ models:
 
   elementary:
     +schema: "elementary"
-
-seeds:
-
+    
   shofco_dbt:
     staging:
       tags:

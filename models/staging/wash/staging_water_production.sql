@@ -48,11 +48,11 @@ makina_cte as
     "DATE" as "date_extracted",
     "Status" as "status",
     "BH_Abstraction" as "bh_production",
-    "TREATEDProduction" as "treated_consumption",
+    "TREATED_Production" as "treated_consumption",
     'Makina' as "tank"
   FROM {{ source('staging_wash', 'Makina') }}
   WHERE CAST("BH_Abstraction" AS NUMERIC) >= 0 
-  AND "BH_METER" IS NOT NULL AND CAST("TREATEDProduction" AS NUMERIC) >= 0
+  AND "BH_METER" IS NOT NULL AND CAST("TREATED_Production" AS NUMERIC) >= 0
 ),
 
 subra_cte as

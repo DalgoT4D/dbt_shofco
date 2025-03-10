@@ -39,18 +39,20 @@ final_assessments AS (
         (
             -- Calculate the average of all final mental health scores
             (
-                COALESCE(CAST(behavioral_issues_after_therapy AS NUMERIC), 0) +
-                COALESCE(CAST(drug_abuse_after_therapy AS NUMERIC), 0) +
-                COALESCE(CAST(psychiatric_symptoms_after_therapy AS NUMERIC), 0) +
-                COALESCE(CAST(social_emotional_issues_after_therapy AS NUMERIC), 0) +
-                COALESCE(CAST(trauma_symptoms_after_therapy AS NUMERIC), 0)
-            ) / 
-            NULLIF(
-                (CASE WHEN behavioral_issues_after_therapy IS NOT NULL THEN 1 ELSE 0 END +
-                 CASE WHEN drug_abuse_after_therapy IS NOT NULL THEN 1 ELSE 0 END +
-                 CASE WHEN psychiatric_symptoms_after_therapy IS NOT NULL THEN 1 ELSE 0 END +
-                 CASE WHEN social_emotional_issues_after_therapy IS NOT NULL THEN 1 ELSE 0 END +
-                 CASE WHEN trauma_symptoms_after_therapy IS NOT NULL THEN 1 ELSE 0 END),
+                COALESCE(CAST(behavioral_issues_after_therapy AS NUMERIC), 0)
+                + COALESCE(CAST(drug_abuse_after_therapy AS NUMERIC), 0)
+                + COALESCE(CAST(psychiatric_symptoms_after_therapy AS NUMERIC), 0)
+                + COALESCE(CAST(social_emotional_issues_after_therapy AS NUMERIC), 0)
+                + COALESCE(CAST(trauma_symptoms_after_therapy AS NUMERIC), 0)
+            )
+            / NULLIF(
+                (
+                    CASE WHEN behavioral_issues_after_therapy IS NOT NULL THEN 1 ELSE 0 END
+                    + CASE WHEN drug_abuse_after_therapy IS NOT NULL THEN 1 ELSE 0 END
+                    + CASE WHEN psychiatric_symptoms_after_therapy IS NOT NULL THEN 1 ELSE 0 END
+                    + CASE WHEN social_emotional_issues_after_therapy IS NOT NULL THEN 1 ELSE 0 END
+                    + CASE WHEN trauma_symptoms_after_therapy IS NOT NULL THEN 1 ELSE 0 END
+                ),
                 0
             )
         ) AS final_avg_score

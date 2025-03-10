@@ -5,7 +5,7 @@
 
 SELECT
     id,
-    {{ validate_date("indexed_on") }} as indexed_on,
+    {{ validate_date("indexed_on") }} AS indexed_on,
     form_name,
     comments,
     target_group,

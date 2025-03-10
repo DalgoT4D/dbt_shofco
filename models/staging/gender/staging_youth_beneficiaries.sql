@@ -33,8 +33,9 @@ WITH initial_cases AS (
         -- Placeholder for parent_case_id, specific to subsequent cases
         NULL AS parent_case_id
     FROM {{ source('staging_youth', 'zzz_case') }}
-    WHERE data::json->'indices'->>'parent' IS NULL
-    AND (data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false')
+    WHERE
+        data::json->'indices'->>'parent' IS NULL
+        AND (data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false')
 ),
 
 subsequent_cases AS (
@@ -72,10 +73,10 @@ subsequent_cases AS (
     WHERE data::json -> 'indices' ->> 'parent' IS NOT NULL
 ),
 
-final_cte as (
-SELECT * FROM initial_cases
-UNION ALL
-SELECT * FROM subsequent_cases
+final_cte AS (
+    SELECT * FROM initial_cases
+    UNION ALL
+    SELECT * FROM subsequent_cases
 )
 
 {{ dbt_utils.deduplicate(

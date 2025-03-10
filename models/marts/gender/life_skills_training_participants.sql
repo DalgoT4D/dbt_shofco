@@ -7,9 +7,9 @@ SELECT
     target_group,
     term,
     year,  
-    {{ validate_date("term_start_date") }} as term_start_date, 
-    {{ validate_date("term_end_date") }} as term_end_date,   
-    {{ validate_date("form_filling_date") }} as form_filling_date, 
+    {{ validate_date("term_start_date") }} AS term_start_date, 
+    {{ validate_date("term_end_date") }} AS term_end_date,   
+    {{ validate_date("form_filling_date") }} AS form_filling_date, 
     session_id,  
     participant_name,
     gender 

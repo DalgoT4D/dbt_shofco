@@ -17,5 +17,5 @@ SELECT
     longitude,
     COALESCE("Youth_Voice", 'N') AS youth_voice,
     iso_3166_2_code,
-    "_airbyte_extracted_at" AS _airbyte_extracted_at
+    _airbyte_extracted_at
 FROM {{ source('staging_orgwide', 'County_Footprint') }}

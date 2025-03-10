@@ -62,7 +62,7 @@ survivors_data as (
     from {{ ref("staging_gender_survivors_commcare") }}
 )
 
-SELECT DISTINCT
+select distinct
     a.*,
     coalesce(b.county_name, a.county_code) as county,
     coalesce(b.constituency_name, a.constituency_code) as constituency,

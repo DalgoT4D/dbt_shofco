@@ -13,8 +13,7 @@ SELECT
     health_club_active,
     hygiene_score,
     CASE
-        WHEN "form_date" IS NOT NULL THEN EXTRACT(YEAR FROM {{ validate_date("form_date") }})
-        ELSE NULL
-    END AS "year"
+        WHEN form_date IS NOT NULL THEN EXTRACT(YEAR FROM {{ validate_date("form_date") }})
+    END AS year
 FROM {{ ref('staging_health_indicators') }}
-WHERE "health_club_active"=1
+WHERE health_club_active=1

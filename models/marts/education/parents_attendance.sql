@@ -8,11 +8,11 @@ SELECT
     year,
     grade,
     cohort,
-    {{ validate_date("meeting_date") }} AS "date",
+    {{ validate_date("meeting_date") }} AS date,
     meeting_type, 
     number_present,
     number_of_parents,
     share_of_parents_engaged,
     attendance_percentage,
-    LOWER("school_type") as "school_type"
+    LOWER(school_type) AS school_type
 FROM {{ ref("staging_parents_attendance") }}

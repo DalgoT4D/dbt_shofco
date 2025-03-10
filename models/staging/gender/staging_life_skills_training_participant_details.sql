@@ -25,22 +25,23 @@ WITH roc_club_participants AS (
 
         -- Assign start and end dates for each term as timestamp
         CASE
-            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_1' THEN TO_TIMESTAMP('2024-08-31', 'YYYY-MM-DD') 
-            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_2' THEN TO_TIMESTAMP('2024-01-01', 'YYYY-MM-DD')
-            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term3' THEN TO_TIMESTAMP('2024-04-21', 'YYYY-MM-DD')
+            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_1' THEN to_timestamp('2024-08-31', 'YYYY-MM-DD') 
+            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_2' THEN to_timestamp('2024-01-01', 'YYYY-MM-DD')
+            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term3' THEN to_timestamp('2024-04-21', 'YYYY-MM-DD')
             ELSE NULL::timestamp
         END AS term_start_date,
 
         CASE
-            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_1' THEN TO_TIMESTAMP('2024-12-31', 'YYYY-MM-DD') 
-            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_2' THEN TO_TIMESTAMP('2024-04-20', 'YYYY-MM-DD')
-            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term3' THEN TO_TIMESTAMP('2024-08-31', 'YYYY-MM-DD')
+            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_1' THEN to_timestamp('2024-12-31', 'YYYY-MM-DD') 
+            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_2' THEN to_timestamp('2024-04-20', 'YYYY-MM-DD')
+            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term3' THEN to_timestamp('2024-08-31', 'YYYY-MM-DD')
             ELSE NULL::timestamp
         END AS term_end_date
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
-    WHERE data::jsonb->'form'->>'target_group' = 'roc_club'
-    AND jsonb_typeof(data->'form'->'membership_details') = 'array'  -- Ensure it's an array
-    AND (data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false')
+    WHERE
+        data::jsonb->'form'->>'target_group' = 'roc_club'
+        AND jsonb_typeof(data->'form'->'membership_details') = 'array'  -- Ensure it's an array
+        AND (data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false')
 ),
 
 community_safe_space_participants AS (
@@ -56,9 +57,10 @@ community_safe_space_participants AS (
             data -> 'form' -> 'community_safe_space_participants_details'
         ) AS participant_data
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
-    WHERE data::jsonb->'form'->>'target_group' = 'community_safe_space'
-    AND jsonb_typeof(data->'form'->'community_safe_space_participants_details') = 'array'  -- Ensure it's an array
-    AND (data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false')
+    WHERE
+        data::jsonb->'form'->>'target_group' = 'community_safe_space'
+        AND jsonb_typeof(data->'form'->'community_safe_space_participants_details') = 'array'  -- Ensure it's an array
+        AND (data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false')
 )
 
 -- Combine the participants from both roc_club and community_safe_space

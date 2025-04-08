@@ -66,10 +66,13 @@ models:
         description: Current status of the facility
       - name: case_name
         data_type: text
+        description: Name of the wash facility case.
       - name: case_type
         data_type: text
+        description: Type of case associated with the wash facility record.
       - name: date_opened
         data_type: text
+        description: The date when the wash facility was opened.
       - name: case_id
         data_tests:
           - not_null
@@ -81,5 +84,7 @@ models:
         description: Timestamp indicating when the data was indexed.
       - name: closed
         data_type: text
+        description: Indicates whether the wash facility is closed.
       - name: created_at
         data_type: timestamp with time zone
+        description: Timestamp indicating when the record was created.

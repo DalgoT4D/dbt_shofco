@@ -43,17 +43,24 @@ models:
         description: Year of birth of the survivor.
       - name: case_name
         data_type: text
+        description: Name of the case as recorded in the CommCare system.
       - name: case_type
         data_type: text
+        description: Type of case recorded in the CommCare system.
       - name: date_opened
         data_type: text
+        description: Date on which the case was opened in the system.
       - name: case_id
         data_type: text
+        description: Unique identifier for each case.
       - name: indexed_on
         data_type: timestamp with time zone
         description: Timestamp indicating when the case was indexed.
       - name: closed
         data_type: text
+        description: Indicates whether the case is closed.
       - name: created_at
         data_type: timestamp with time zone
+        description: >-
+          Timestamp indicating when the record was created in the system, with time zone information.
     description: Model for extracting and staging gender survivors data from CommCare.

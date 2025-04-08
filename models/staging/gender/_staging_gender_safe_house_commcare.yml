@@ -71,6 +71,8 @@ models:
         description: Indicates if the client is on any medication
       - name: is_the_client_using_any_any_addictive_substance_whether_control
         data_type: text
+        description: >-
+          Indicates if the client is using any addictive substances, whether controlled or not.
       - name: justification_for_extended_stay_in_safehouse
         data_type: text
         description: Justification for extended stay in the safe house
@@ -92,6 +94,9 @@ models:
         description: Other referrals for safe house onboarding
       - name: presenting_sgbv_issues
         data_type: text
+        description: >-
+          Indicates whether the survivor is presenting issues related to sexual and gender-based violence
+          (SGBV).
       - name: reasons_for_consideration_of_admission
         data_type: text
         description: Reasons for considering admission to the safe house
@@ -135,14 +140,20 @@ models:
         description: Reason for denial of onboarding by gender director
       - name: case_name
         data_type: text
+        description: Name of the case associated with the safe house survivor data.
       - name: case_type
         data_type: text
+        description: Type of case associated with the safe house survivor.
       - name: parent_case_id
         data_type: text
+        description: >-
+          Identifier for the parent case associated with the safe house survivor case in CommCare.
       - name: parent_case_type
         data_type: text
+        description: Type of the parent case associated with the safe house survivor data.
       - name: date_opened
         data_type: text
+        description: The date when the safe house case was opened.
       - name: case_id
         data_type: text
         description: Unique identifier for each case
@@ -151,5 +162,8 @@ models:
         description: Timestamp indicating when the case was indexed.
       - name: closed
         data_type: text
+        description: Indicates whether the case is closed.
       - name: created_at
         data_type: timestamp with time zone
+        description: >-
+          Timestamp indicating when the record was created in the safe house survivor data from CommCare.

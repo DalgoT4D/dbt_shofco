@@ -214,6 +214,9 @@ models:
         description: Indicates if all witnesses have recorded their statements
       - name: if_some_witnesses_have_not_recorded_their_statements_what_actio
         data_type: text
+        description: >-
+          Placeholder description for if_some_witnesses_have_not_recorded_their_statements_what_actio
+          column.
       - name: is_the_case_proceeding_to_court
         data_type: text
         description: Indicates if the case is proceeding to court
@@ -285,20 +288,30 @@ models:
         description: Location where the client was referred to
       - name: case_name
         data_type: text
+        description: Name of the case associated with youth beneficiaries from commcare.
       - name: case_type
         data_type: text
+        description: >-
+          Indicates the type of case associated with each youth beneficiary from commcare data.
       - name: parent_case_id
         data_type: text
+        description: Identifier for the parent case associated with a youth beneficiary in CommCare.
       - name: parent_case_type
         data_type: text
+        description: Type of the parent case associated with each youth beneficiary.
       - name: date_opened
         data_type: text
+        description: Date when the case was opened.
       - name: case_id
         data_type: text
+        description: Unique identifier for each case.
       - name: indexed_on
         data_type: timestamp with time zone
         description: Timestamp indicating when the case was indexed.
       - name: closed
         data_type: text
+        description: Indicates whether the case is closed (true/false).
       - name: created_at
         data_type: timestamp with time zone
+        description: >-
+          Timestamp indicating when the record was created in the system, with time zone information.

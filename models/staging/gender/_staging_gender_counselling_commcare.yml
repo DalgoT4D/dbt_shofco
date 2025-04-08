@@ -67,10 +67,13 @@ models:
         description: Reason for requiring follow-up sessions
       - name: case_name
         data_type: text
+        description: The name of the case associated with the youth beneficiary.
       - name: case_type
         data_type: text
+        description: Type or category of the case related to youth beneficiaries data from CommCare.
       - name: date_opened
         data_type: text
+        description: Date when the case was opened.
       - name: case_id
         data_type: text
         description: Unique identifier for each case
@@ -79,5 +82,7 @@ models:
         description: Timestamp indicating when the case was indexed.
       - name: closed
         data_type: text
+        description: Indicates whether the case is closed.
       - name: created_at
         data_type: timestamp with time zone
+        description: Timestamp indicating when the record was created.

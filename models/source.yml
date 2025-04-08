@@ -1,3 +1,4 @@
+
 version: 2
 
 sources:
@@ -37,11 +38,27 @@ sources:
           - elementary.schema_changes: 
               config:
                 severity: error
+      
+      - name: KSG_Class_Summary_2025
+        identifier: KSG_Class_Summary_2025
+        description: "KSG School Attendance Pre-K -Grade9"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         
           
       - name: MSG_Summary
         identifier: MSG_Summary
         description: "MSG School Attendance Kindergarten-Grade8"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
+      
+      - name: MSG_Class_Summary_2025
+        identifier: MSG_Class_Summary_2025
+        description: "MSG School Attendance Pre-K -Grade9"
         data_tests:
           - elementary.schema_changes: 
               config:
@@ -55,11 +72,26 @@ sources:
           - elementary.schema_changes: 
               config:
                 severity: error
-        
+      
+      - name: MSG_Parents_Summary_2025
+        identifier: MSG_Parents_Summary_2025
+        description: "MSG Parent Meeting Attendance Data for 2025"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
           
       - name: KSG_Parents_Summary
         identifier: KSG_Parents_Summary
         description: "KSG Parent Meeting Attendance"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
+      
+      - name: KSG_Parents_Summary_2025
+        identifier: KSG_Parents_Summary_2025
+        description: KSG Parent Meeting Attendance Data for 2025"
         data_tests:
           - elementary.schema_changes: 
               config:
@@ -73,9 +105,24 @@ sources:
           - elementary.schema_changes: 
               config:
                 severity: error
-        
+      
+      - name: MSG_Follow_Up_Social_Worker_2025
+        identifier: MSG_Follow_Up_Social_Worker
+        description: "Social Worker Follow Ups on Reasons for Absence"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
           
       - name: KSG_Follow_Up_Social_Worker
+        identifier: KSG_Follow_Up_Social_Worker
+        description: "Social Worker Follow Ups on Reasons for Absence"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
+      
+      - name: KSG_Follow_Up_Social_Worker_2025
         identifier: KSG_Follow_Up_Social_Worker
         description: "Social Worker Follow Ups on Reasons for Absence"
         data_tests:
@@ -324,3 +371,6 @@ sources:
 
       
       
+
+
+

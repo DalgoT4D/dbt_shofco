@@ -1,0 +1,138 @@
+version: 2
+models:
+  - name: case_occurence
+    columns:
+      - name: case_id
+        description: Creation date of entry
+        data_type: text
+      - name: assigned_to
+        data_type: text
+        description: Person or entity the case is assigned to.
+      - name: previous_case_number
+        data_type: text
+        description: Number of the previous case
+      - name: date_of_case_reporting
+        data_type: date
+        description: Date when the case was reported
+      - name: case_reporting_datekey
+        data_type: integer
+        description: Date key for case reporting
+      - name: date_of_case_intake
+        data_type: date
+        description: Date when the case was taken in
+      - name: case_intake_datekey
+        data_type: integer
+        description: Date key for case intake
+      - name: date_of_case_closure
+        description: date case was closed
+        data_type: date
+      - name: date_of_case_assignment
+        data_type: date
+        description: Date when the case was assigned
+      - name: case_duration_in_days
+        data_type: integer
+        description: Duration of the case in days
+      - name: gender_site_code_of_reporting
+        data_type: text
+        description: Site code for gender reporting
+      - name: case_referred_to_location
+        data_type: text
+        description: Location where the case was referred to
+      - name: assault_type
+        data_type: text
+        description: Type of assault
+      - name: cleaned_assault_type
+        data_type: text
+        description: Categorized type of assault
+      - name: referred_to_safe_house
+        data_type: text
+        description: Indicates if the client was referred to a safe house
+      - name: referred_to_other_shofco_programs
+        data_type: text
+        description: Indicates if the client was referred to other SHOFCO programs
+      - name: referred_to_dco
+        data_type: text
+        description: Indicates if the client was referred to district children officers
+      - name: referred_to_counseling_and_support
+        data_type: text
+        description: Indicates if the client was referred to counseling and support
+      - name: referred_to_police
+        data_type: text
+        description: Indicates if the client was referred to the police
+      - name: referred_for_medical_intervention
+        data_type: text
+        description: Indicates if the client was referred for medical intervention
+      - name: incident_report_village_name
+        data_type: text
+        description: Name of the village where the incident was reported
+      - name: incident_report_ward_code
+        data_type: text
+        description: Code of the ward where the incident was reported
+      - name: incident_report_constituency_code
+        data_type: text
+        description: Code of the constituency where the incident was reported
+      - name: incident_report_county_code
+        data_type: text
+        description: Code of the county where the incident was reported
+      - name: case_is_closed
+        data_type: text
+        description: Indicates if the case is closed
+      - name: is_the_case_proceeding_to_court
+        data_type: text
+        description: Indicates if the case is proceeding to court
+      - name: case_still_in_court
+        data_type: text
+        description: Indicates if the case is still in court
+      - name: date_of_court_followup
+        description: date of court followup
+        data_type: date
+      - name: stage_of_case_in_court
+        data_type: text
+        description: Current stage of the court case
+      - name: case_reported_to_police
+        data_type: text
+        description: Indicates if the case was reported to the police
+      - name: medium_of_reporting
+        data_type: text
+        description: Medium used for reporting
+      - name: parent_case_id
+        data_type: text
+        description: Identifier for the parent case
+      - name: parent_case_type
+        data_type: text
+      - name: closed
+        data_type: text
+        description: Indicates whether the case of the gender survivor has been closed.
+      - name: date_of_safe_house_onboarding
+        data_type: date
+        description: Date when the survivor was onboarded to the safe house
+      - name: date_of_safe_house_discharge
+        data_type: date
+        description: Date when the survivor was discharged from the safe house
+      - name: days_since_intake
+        data_type: integer
+      - name: survivor_gender
+        data_type: text
+        description: Gender of the survivor
+      - name: survivor_age
+        data_type: integer
+        description: Age of the survivor
+      - name: age_group
+        data_type: text
+        description: Age group of the survivor
+      - name: county
+        data_type: text
+        description: County where the case is registered.
+      - name: case_constituency_name
+        data_type: text
+        description: Constituency name associated with the case
+      - name: case_ward_name
+        data_type: text
+        description: Ward name associated with the case
+      - name: site
+        data_type: text
+        description: Name of the site where the gender survivor case was registered.
+      - name: is_case_referred
+        data_type: text
+        description: Indicates if the case was referred
+    description: Data on case occurrences and associated safe house and survivor details.

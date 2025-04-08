@@ -1,0 +1,63 @@
+version: 2
+models:
+  - name: staging_gender_final_mental_health_assesment
+    description: Final mental health assessment form
+    columns:
+      - name: id
+        data_type: character varying
+        description: Unique identifier for each record in the Final Mental Health Assessment Form.
+      - name: case_id
+        data_type: text
+        description: Extracted case ID from JSON data
+      - name: user_id
+        data_type: text
+        description: Extracted user ID from JSON data
+      - name: sessions_attended
+        data_type: text
+        description: Number of sessions attended by the client
+      - name: concluding_comments
+        data_type: text
+        description: Final comments from the assessment
+      - name: final_assessment_by
+        data_type: text
+        description: Name of the person who conducted the final assessment
+      - name: date_of_final_assessment
+        description: filling date of the final form
+        data_tests:
+          - not_null
+          - valid_date_range:
+              column_name: date_of_final_assessment
+
+        data_type: text
+      - name: behavioral_issues_after_therapy
+        data_type: text
+        description: Score for behavioral issues after therapy
+      - name: drug_abuse_after_therapy
+        data_type: text
+        description: Score for drug abuse issues after therapy
+      - name: psychiatric_symptoms_after_therapy
+        data_type: text
+        description: Score for psychiatric symptoms after therapy
+      - name: social_emotional_issues_after_therapy
+        data_type: text
+        description: Score for social and emotional issues after therapy
+      - name: trauma_symptoms_after_therapy
+        data_type: text
+        description: Score for trauma symptoms after therapy
+      - name: client_satisfaction_score_comments
+        data_type: text
+        description: Comments on client's satisfaction score
+      - name: client_satisfaction_level
+        data_type: text
+        description: Client's level of satisfaction with counseling services
+      - name: session_id
+        data_type: text
+        description: Extracted session ID from JSON metadata
+      - name: final_form_filling_date
+        description: filling date of the final form
+        data_tests:
+          - not_null
+          - valid_date_range:
+              column_name: final_form_filling_date
+
+        data_type: text

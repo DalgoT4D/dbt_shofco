@@ -1,0 +1,36 @@
+version: 2
+models:
+  - name: parent_satisfaction
+    description: Aggregates parent satisfaction data for analysis.
+    columns:
+      - name: term
+        data_tests:
+          - not_null
+        data_type: text
+        description: Term during which the survey was conducted
+      - name: grade
+        data_tests:
+          - not_null
+        data_type: text
+        description: Grade of the student
+      - name: school_type
+        data_tests:
+          - accepted_values:
+              values: [ksg, msg]
+        data_type: text
+        description: Type of school attended by the student.
+      - name: education_satisfaction
+        data_tests:
+          - accepted_values:
+              values: [very_satisfied_5, satisfied_4, neutral_3, dissatisfied_2, very_dissatisfied_1]
+        data_type: text
+        description: Satisfaction with the education received by the child
+      - name: year
+        data_tests:
+          - not_null
+
+        data_type: text
+        description: Year in which the parent satisfaction survey data was collected.
+      - name: submission_time
+        data_type: date
+        description: Time when the survey was submitted

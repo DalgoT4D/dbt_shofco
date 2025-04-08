@@ -1,0 +1,45 @@
+version: 2
+models:
+  - name: staging_life_skills_training_participant_details
+    description: Data on Youth Beneficiaries from commcare
+    columns:
+      - name: target_group
+        data_type: text
+        description: Category of participants targeted by the life skills training program.
+      - name: term
+        data_type: text
+        description: The academic term or period during which the life skills training was conducted.
+      - name: year
+        data_type: text
+        description: The year in which the life skills training event took place.
+      - name: term_start_date
+        description: Term Start date
+        data_tests:
+          - valid_date_range:
+              column_name: term_start_date
+
+        data_type: timestamp with time zone
+      - name: term_end_date
+        description: Term end date
+        data_tests:
+          - valid_date_range:
+              column_name: term_end_date
+
+        data_type: timestamp with time zone
+      - name: form_filling_date
+        description: date form was filled
+        data_tests:
+          - not_null
+          - valid_date_range:
+              column_name: form_filling_date
+
+        data_type: text
+      - name: session_id
+        data_type: text
+        description: Unique identifier for each training session attended by a participant.
+      - name: participant_name
+        data_type: text
+        description: Full name of the participant in the life skills training program.
+      - name: gender
+        data_type: text
+        description: The gender of the youth beneficiary participating in the life skills training.

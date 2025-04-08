@@ -43,6 +43,7 @@ models:
     +schema: "elementary"
     
   shofco_dbt:
+    +dbt-osmosis: "_{model}.yml"
     staging:
       tags:
         - "intermediate"

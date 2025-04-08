@@ -1,0 +1,50 @@
+version: 2
+models:
+  - name: public_partnerships
+    description: >-
+      Summarizes public school partnership data, including KPCE scores and resource allocations.
+    columns:
+      - name: year
+        data_tests:
+          - not_null
+        data_type: character varying
+        description: The year of the record
+      - name: school_name
+        data_type: text
+        description: Name of the school
+      - name: county
+        data_tests:
+          - not_null
+        data_type: character varying
+        description: County where the school is located
+      - name: mean_kpce_score
+        data_tests:
+          - not_null
+        data_type: character varying
+        description: Average KPCE score for the school
+      - name: subcounty
+        data_tests:
+          - not_null
+        data_type: character varying
+        description: Subcounty where the school is located
+      - name: teachers_trained
+        data_type: character varying
+        description: Number of teachers trained
+      - name: students_enrolled
+        data_tests:
+          - not_null
+        data_type: character varying
+        description: Number of students enrolled
+      - name: computers_provided
+        data_type: character varying
+        description: Number of computers provided to the school
+      - name: toilet_stances_built
+        data_type: character varying
+        description: Number of toilet stances built
+      - name: high_touch_low_touch
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [High, Low]
+        data_type: character varying
+        description: Level of touch interaction

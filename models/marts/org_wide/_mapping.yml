@@ -1,0 +1,79 @@
+version: 2
+models:
+  - name: mapping
+    description: Standardizes and prepares mapping data for program-wide reporting and analysis.
+    columns:
+      - name: id
+        data_tests:
+          - not_null
+        data_type: character varying
+        description: Unique identifier for each record in the IIVC Mapping table.
+      - name: case_id
+        data_tests:
+          - not_null
+        data_type: jsonb
+        description: Identifier for the case extracted from JSON data.
+      - name: case_type
+        data_tests:
+          - not_null
+        data_type: text
+        description: Type of case extracted from JSON data.
+      - name: facility
+        data_type: text
+        description: Facility information extracted from JSON data.
+      - name: school_name
+        data_type: text
+        description: Name of the school extracted from JSON data.
+      - name: type_of_school
+        data_type: text
+        description: Type of school extracted from JSON data.
+      - name: ward
+        data_tests:
+          - not_null
+        data_type: text
+        description: Ward location of the school.
+      - name: county
+        data_tests:
+          - not_null
+        data_type: text
+        description: County location of the school.
+      - name: constituency
+        data_tests:
+          - not_null
+        data_type: text
+        description: Constituency location of the school.
+      - name: office_gender_desk_location
+        data_type: text
+        description: Location of the office gender desk.
+      - name: received_on
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+        data_type: date
+        description: Date when the data was received, validated as a date.
+      - name: latitude
+        data_tests:
+          - not_null
+        data_type: double precision
+        description: Geographical latitude coordinate for mapping data.
+      - name: longitude
+        data_tests:
+          - not_null
+        data_type: double precision
+        description: Geographical longitude coordinate of the mapped location.
+      - name: altitude
+        data_tests:
+          - not_null
+        data_type: double precision
+        description: Altitude measurement of the facility's location.
+      - name: accuracy
+        data_tests:
+          - not_null
+        data_type: double precision
+        description: Accuracy score representing the precision of the mapping data.
+      - name: active_programs
+        data_type: text
+        description: List of programs currently active for a given case or school.
+      - name: intervention
+        data_type: text
+        description: Details of intervention related to the program.

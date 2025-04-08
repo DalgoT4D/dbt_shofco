@@ -1,0 +1,56 @@
+version: 2
+models:
+  - name: staging_public_partnerships
+    columns:
+      - name: year
+        data_type: character varying
+        description: The year of the record
+      - name: school_name
+        data_type: character varying
+        description: Name of the school
+      - name: county
+        data_type: character varying
+        description: County where the school is located
+      - name: mean_kpce_score
+        data_type: character varying
+        description: Average KPCE score for the school
+      - name: subcounty
+        data_type: character varying
+        description: Subcounty where the school is located
+      - name: teachers_trained
+        data_type: character varying
+        description: Number of teachers trained
+      - name: students_enrolled
+        data_type: character varying
+        description: Number of students enrolled
+      - name: computers_provided
+        data_type: character varying
+        description: Number of computers provided to the school
+      - name: t1_average_attendance
+        data_type: character varying
+        description: Average attendance for term 1
+      - name: t2_average_attendance
+        data_type: character varying
+        description: Average attendance for term 2
+      - name: t3_average_attendance
+        data_type: character varying
+        description: Average attendance for term 3
+      - name: toilet_stances_built
+        data_type: character varying
+        description: Number of toilet stances built
+      - name: high_touch_low_touch
+        data_type: character varying
+        description: Level of touch interaction
+      - name: revised_toilet_student_ratio
+        data_type: character varying
+        description: Revised ratio of toilets to students
+      - name: baseline_toilet_student_ratio
+        data_type: character varying
+        description: Initial ratio of toilets to students
+      - name: teacher_training_satisfaction
+        data_type: character varying
+        description: Satisfaction level of teacher training
+      - name: _airbyte_extracted_at
+        data_type: timestamp with time zone
+        description: Timestamp when data was extracted by Airbyte
+    description: A table detailing public school partnerships with various metrics and KPIs.

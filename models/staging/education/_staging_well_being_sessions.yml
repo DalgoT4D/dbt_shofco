@@ -1,0 +1,30 @@
+version: 2
+models:
+  - name: staging_well_being_sessions
+    description: Well being sessions of both group and individual type
+    columns:
+      - name: date
+        data_tests:
+          - valid_date_range:
+              column_name: date
+
+        data_type: character varying
+        description: Date of the session
+      - name: grade
+        data_type: character varying
+        description: Student's grade level during the session
+      - name: topic
+        data_type: character varying
+        description: Subject or focus of the session
+      - name: school
+        data_type: character varying
+        description: School where the session was conducted
+      - name: stream
+        data_type: character varying
+        description: Educational stream or track of the student
+      - name: number_of_students_trained
+        data_type: character varying
+        description: Number of students trained during the well-being session.
+      - name: session_type
+        data_type: text
+        description: Type of well-being session, indicating whether it is a group or individual session.

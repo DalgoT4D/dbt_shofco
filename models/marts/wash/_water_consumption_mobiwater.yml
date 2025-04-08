@@ -1,0 +1,34 @@
+version: 2
+models:
+  - name: water_consumption_mobiwater
+    description: Water consumption details for each flow device
+    columns:
+      - name: date
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+        data_type: date
+        description: Date of the recorded water consumption data.
+      - name: flow_device_id
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: numeric
+        data_type: numeric
+        description: Identifier for the flow device
+      - name: flow_device_name
+        data_tests:
+          - not_null
+        data_type: character varying
+        description: Name of the flow device
+      - name: value
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: numeric
+
+        data_type: numeric
+        description: The recorded water consumption value in varying character format.
+      - name: year
+        data_type: numeric
+        description: Year of the recorded water consumption data.

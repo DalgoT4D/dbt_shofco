@@ -1,0 +1,80 @@
+version: 2
+models:
+  - name: staging_scholarships
+    columns:
+      - name: term
+        data_type: character varying
+        description: Academic term of the scholarship
+      - name: year
+        data_type: character varying
+        description: Year of the scholarship
+      - name: cohort
+        data_type: character varying
+        description: Cohort of students receiving the scholarship
+      - name: orphan
+        data_type: character varying
+        description: Indicates if the student is an orphan
+      - name: teen_mom
+        data_type: character varying
+        description: Indicates if the student is a teen mom
+      - name: county
+        data_type: character varying
+        description: County where the student resides
+      - name: gbv_survivor
+        data_type: character varying
+        description: Indicates if the student is a GBV survivor
+      - name: current_status
+        data_type: character varying
+        description: Current status of the student
+      - name: form
+        data_type: character varying
+        description: Current form or grade of the student
+      - name: special_needs
+        data_type: character varying
+        description: Indicates if the student has special needs
+      - name: boarding_or_day
+        data_type: character varying
+        description: Indicates if the student is a boarding or day scholar
+      - name: subcounty
+        data_type: character varying
+        description: Sub-county where the student resides
+      - name: school_location
+        data_type: character varying
+        description: Location of the school
+      - name: public_or_private
+        data_type: character varying
+        description: Indicates if the school is public or private
+      - name: form_when_awarded
+        data_type: character varying
+        description: Form or grade when the scholarship was awarded
+      - name: school_name
+        data_type: character varying
+        description: Official name of the school
+      - name: became_pregnant_during_program
+        data_type: character varying
+        description: Indicates if the student became pregnant during the program
+      - name: experienced_gbv_during_program
+        data_type: character varying
+        description: Indicates if the student experienced GBV during the program
+      - name: scholarship_enrollment_status_t1_2025
+        data_type: character varying
+        description: Enrollment status for Term 1, 2025
+      - name: scholarship_enrollment_status_t2_2025
+        data_type: character varying
+        description: Enrollment status for Term 2, 2025
+      - name: scholarship_enrollment_status_t3_2024
+        data_type: character varying
+        description: Enrollment status for Term 3, 2024
+      - name: scholarship_enrollment_status_t3_2025
+        data_type: character varying
+        description: Enrollment status for Term 3, 2025
+      - name: school_name_on_application
+        data_type: character varying
+        description: Student name as captured on application
+      - name: referred_to_psychosocial_counselling
+        data_type: character varying
+        description: Referred to gender for psychosocial counselling
+      - name: _airbyte_extracted_at
+        data_type: timestamp with time zone
+        description: Timestamp when data was extracted by Airbyte
+    description: Scholarships data for students, including demographics and enrollment status.

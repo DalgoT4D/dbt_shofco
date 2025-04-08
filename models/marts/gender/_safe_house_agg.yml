@@ -1,0 +1,16 @@
+version: 2
+models:
+  - name: safe_house_agg
+    columns:
+      - name: month
+        data_type: timestamp with time zone
+        description: >-
+          Month in which the aggregated counts of unique individuals were onboarded to the safe house.
+      - name: people_onboarded
+        data_type: bigint
+        description: >-
+          Represents the monthly count of unique individuals onboarded to the safe house, derived from
+          onboarding dates in the safe house survivor data.
+    description: >-
+      Aggregates monthly counts of unique individuals onboarded to the safe house, based on onboarding
+      dates, derived from safe house survivor data.

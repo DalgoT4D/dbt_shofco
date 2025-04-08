@@ -1,0 +1,155 @@
+version: 2
+models:
+  - name: staging_gender_safe_house_commcare
+    description: Safe house survivor data from commcare
+    columns:
+      - name: any_known_existing_medical_conditions
+        data_type: text
+        description: Any known existing medical conditions of the client
+      - name: any_medical_condition_requiring_special_dietray_provision
+        data_type: text
+        description: Medical conditions requiring special dietary provision
+      - name: assigned_to
+        data_type: text
+        description: Person assigned to the case
+      - name: client_addictive_substances
+        data_type: text
+        description: Addictive substances used by the client
+      - name: client_dietary_provisions
+        data_type: text
+        description: Dietary provisions for the client
+      - name: client_medical_conditions
+        data_type: text
+        description: Medical conditions of the client
+      - name: client_medications
+        data_type: text
+        description: Medications the client is on
+      - name: date_and_time_of_person_receiving_discharged_survivor_signature
+        description: date and time of discharge signature
+        data_tests:
+          - valid_date_range:
+              column_name: date_and_time_of_person_receiving_discharged_survivor_signature
+
+        data_type: text
+      - name: date_of_discharge
+        description: date of discharge
+        data_tests:
+          - valid_date_range:
+              column_name: date_of_discharge
+
+        data_type: text
+      - name: date_of_safehouse_onboarding
+        description: date_of_safehouse_onboarding
+        data_tests:
+          - not_null
+          - valid_date_range:
+              column_name: date_of_safehouse_onboarding
+
+        data_type: text
+      - name: designation_of_person_receiving_discharged_survivor
+        data_type: text
+        description: Designation of person receiving discharged survivor
+      - name: discharge_approval_by_gender_director
+        data_type: text
+        description: Approval for discharge by gender director
+      - name: discharge_case_worker_date_of_approval
+        description: date of approval for discharge
+        data_tests:
+          - valid_date_range:
+              column_name: discharge_case_worker_date_of_approval
+
+
+        data_type: text
+      - name: duration_of_extended_stay_in_safe_house_in_hours
+        data_type: text
+        description: Duration of extended stay in the safe house in hours
+      - name: expected_next_set_of_actions
+        data_type: text
+        description: Expected next set of actions for the case
+      - name: is_the_client_on_any_medication
+        data_type: text
+        description: Indicates if the client is on any medication
+      - name: is_the_client_using_any_any_addictive_substance_whether_control
+        data_type: text
+      - name: justification_for_extended_stay_in_safehouse
+        data_type: text
+        description: Justification for extended stay in the safe house
+      - name: key_actions_taken_while_the_client_was_in_the_safe_house
+        data_type: text
+        description: Key actions taken while the client was in the safe house
+      - name: last_amended_at
+        description: When was entry last updated
+        data_tests:
+          - valid_date_range:
+              column_name: last_amended_at
+
+        data_type: text
+      - name: mobile_number_of_person_receiving_discharged_survivor
+        data_type: text
+        description: Mobile number of person receiving discharged survivor
+      - name: other_safehouse_onboarding_referrral
+        data_type: text
+        description: Other referrals for safe house onboarding
+      - name: presenting_sgbv_issues
+        data_type: text
+      - name: reasons_for_consideration_of_admission
+        data_type: text
+        description: Reasons for considering admission to the safe house
+      - name: safehouse_onboarding_referral
+        data_type: text
+        description: Referral for safe house onboarding
+      - name: gender_director_date_of_determination_of_discharge
+        description: date gender director decided on discharge
+        data_tests:
+          - valid_date_range:
+              column_name: gender_director_date_of_determination_of_discharge
+
+        data_type: text
+      - name: gender_director_date_of_determination_of_onboarding
+        description: date gender director decided to onboard
+        data_tests:
+          - not_null
+          - valid_date_range:
+              column_name: gender_director_date_of_determination_of_onboarding
+
+        data_type: text
+      - name: medical_conditions_requiring_special_dietray_provision
+        data_type: text
+        description: Medical conditions requiring special dietary provision
+      - name: onboarding_approval_by_gender_director
+        data_type: text
+        description: Approval for onboarding by gender director
+      - name: onboarding_case_worker_date_of_approval
+        description: date case worked decided to onboard
+        data_tests:
+          - not_null
+          - valid_date_range:
+              column_name: onboarding_case_worker_date_of_approval
+
+        data_type: text
+      - name: reason_for_denial_of_discharge_by_gender_director
+        data_type: text
+        description: Reason for denial of discharge by gender director
+      - name: reason_for_denial_of_onboarding_by_gender_director
+        data_type: text
+        description: Reason for denial of onboarding by gender director
+      - name: case_name
+        data_type: text
+      - name: case_type
+        data_type: text
+      - name: parent_case_id
+        data_type: text
+      - name: parent_case_type
+        data_type: text
+      - name: date_opened
+        data_type: text
+      - name: case_id
+        data_type: text
+        description: Unique identifier for each case
+      - name: indexed_on
+        data_type: timestamp with time zone
+        description: Timestamp indicating when the case was indexed.
+      - name: closed
+        data_type: text
+      - name: created_at
+        data_type: timestamp with time zone

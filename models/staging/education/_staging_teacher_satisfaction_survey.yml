@@ -1,0 +1,87 @@
+version: 2
+models:
+  - name: staging_teacher_satisfaction_survey
+    description: Teacher satisfaction survey results
+    columns:
+      - name: school_name
+        data_type: text
+        description: Name of the school
+      - name: teaching_level
+        data_type: text
+        description: Level of teaching as indicated in the survey
+      - name: year
+        data_type: numeric
+        description: Year the survey was received
+      - name: general_satisfaction
+        data_type: text
+        description: General satisfaction with the SHOFCO school
+      - name: education_satisfaction
+        data_type: text
+        description: Satisfaction with the education received by the child
+      - name: parent_teacher_relationship
+        data_type: text
+        description: Satisfaction with parent-teacher relationships
+      - name: relationship_satisfaction
+        data_type: text
+        description: Satisfaction with how parents and teachers relate
+      - name: student_teacher_ratio
+        data_type: text
+        description: Satisfaction with student-teacher ratio
+      - name: student_teacher_ratio_satisfaction
+        data_type: text
+        description: Satisfaction with the number of students per teacher
+      - name: student_teacher_ratio_comments
+        data_type: text
+        description: Comments on student-teacher ratio
+      - name: hygiene_satisfaction
+        data_type: text
+        description: Satisfaction with school hygiene and sanitation
+      - name: sanitation_satisfaction
+        data_type: text
+        description: Satisfaction with sanitation services
+      - name: sanitation_comments
+        data_type: text
+        description: Comments on sanitation services
+      - name: feeding_program_satisfaction
+        data_type: text
+        description: Satisfaction with the school feeding program
+      - name: feeding_satisfaction
+        data_type: text
+        description: Satisfaction with the feeding program provided by the school
+      - name: feeding_program_comments
+        data_type: text
+        description: Comments on the school feeding program
+      - name: extracurricular_satisfaction
+        data_type: text
+        description: Satisfaction with extracurricular activities
+      - name: extracurricular_satisfaction_detail
+        data_type: text
+        description: Detailed satisfaction with extracurricular activities
+      - name: extracurricular_comments
+        data_type: text
+        description: Comments on extracurricular activities
+      - name: teacher_engagement
+        data_type: text
+        description: Engagement of teachers beyond normal class teaching
+      - name: teacher_engagement_satisfaction
+        data_type: text
+        description: Satisfaction with teacher engagement in non-teaching activities
+      - name: teacher_engagement_comments
+        data_type: text
+        description: Comments on teacher engagement
+      - name: improvement_suggestions
+        data_type: text
+        description: Suggestions for improvement at the school
+      - name: proposed_changes
+        data_type: text
+        description: Proposed changes at the school
+      - name: survey_background
+        data_type: text
+        description: Background and purpose of the survey
+      - name: submission_time
+        data_tests:
+          - valid_date_range:
+              column_name: submission_time
+
+        data_type: text
+        description: Timestamp when the survey was submitted

@@ -1,0 +1,67 @@
+version: 2
+models:
+  - name: staging_champions
+    description: Champions data for gender program
+    columns:
+
+      - name: champions_name
+        data_tests:
+          - not_null
+
+        data_type: text
+        description: Name of the champion.
+      - name: community_role
+        data_type: text
+        description: Role of the champion in the community.
+      - name: county
+        data_tests:
+          - not_null
+
+        data_type: text
+        description: County where the champion is located
+      - name: gender
+        data_type: text
+        description: Gender of the champion
+      - name: national_id
+        data_tests:
+          - not_null
+          - unique
+
+        data_type: character varying
+        description: National ID of the champion.
+      - name: mobile
+        data_tests:
+          - unique
+
+        data_type: character varying
+        description: Mobile number of the champion
+      - name: sub_county
+        data_type: text
+        description: Sub-county where the champion operates.
+      - name: site
+        data_type: character varying
+        description: Site location of the champion
+      - name: trained
+        data_type: character varying
+        description: Indicates if the champion has been trained
+      - name: identified
+        data_type: character varying
+        description: Indicates if the champion has been identified
+      - name: date_identified
+        data_tests:
+          - not_null
+          - valid_date_range:
+              column_name: date_identified
+
+        data_type: character varying
+        description: Date when the champion was identified.
+      - name: date_trained
+        data_tests:
+          - valid_date_range:
+              column_name: date_trained
+
+        data_type: character varying
+        description: Date when the champion received training.
+      - name: active
+        data_type: character varying
+        description: Status indicating if the champion is active

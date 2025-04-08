@@ -6,321 +6,1446 @@ sources:
     tables:
       - name: Scholarships
         identifier: Scholarships
-        description: "Scholarships given"
+        description: Scholarships given
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
 
+        columns:
+          - name: Term
+            data_type: character varying
+            description: Academic term of the scholarship
+          - name: Year
+            data_type: character varying
+            description: Year of the scholarship
+          - name: Cohort
+            data_type: character varying
+            description: Cohort of students receiving the scholarship
+          - name: Orphan_
+            data_type: character varying
+            description: Indicates if the student is an orphan
+          - name: Teen_Mom_
+            data_type: character varying
+            description: Indicates if the student is a teen mom
+          - name: Home_County
+            data_type: character varying
+            description: County where the student resides
+          - name: GBV_survivor_
+            data_type: character varying
+            description: Indicates if the student is a GBV survivor
+          - name: Current_Status
+            data_type: character varying
+            description: Current status of the student
+          - name: Form__current_
+            data_type: character varying
+            description: Current form or grade of the student
+          - name: Special_needs_
+            data_type: character varying
+            description: Indicates if the student has special needs
+          - name: Boarding_OR_Day
+            data_type: character varying
+            description: Indicates if the student is a boarding or day scholar
+          - name: Home_Sub_County
+            data_type: character varying
+            description: Sub-county where the student resides
+          - name: School_Location
+            data_type: character varying
+            description: Location of the school
+          - name: Public_OR_Private
+            data_type: character varying
+            description: Indicates if the school is public or private
+          - name: Form__when_awarded_
+            data_type: character varying
+            description: Form or grade when the scholarship was awarded
+          - name: Official_School_Name
+            data_type: character varying
+            description: Official name of the school
+          - name: Became_pregnant_during_program
+            data_type: character varying
+            description: Indicates if the student became pregnant during the program
+          - name: Experienced_GBV_during_program
+            data_type: character varying
+            description: Indicates if the student experienced GBV during the program
+          - name: Scholarship_Enrollment_Status_T1_2025
+            data_type: character varying
+            description: Enrollment status for Term 1, 2025
+          - name: Scholarship_Enrollment_Status_T2_2025
+            data_type: character varying
+            description: Enrollment status for Term 2, 2025
+          - name: Scholarship_Enrollment_Status_T3_2024
+            data_type: character varying
+            description: Enrollment status for Term 3, 2024
+          - name: Scholarship_Enrollment_Status_T3_2025
+            data_type: character varying
+            description: Enrollment status for Term 3, 2025
+          - name: Student_Name__As_Captured_on_Application_
+            data_type: character varying
+            description: Student name as captured on the application
+          - name: Referred_to_gender_for_psychosocial_counselling_
+            data_type: character varying
+            description: Indicates if the student was referred for psychosocial counselling
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Raw ID from Airbyte
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when data was extracted by Airbyte
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata from Airbyte
       - name: Nudges
         identifier: Nudges
-        description: "Nudges given"
+        description: Nudges given
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-  
-          
+
+
+        columns:
+          - name: Term
+            data_type: character varying
+            description: Academic term for the nudge
+          - name: Year
+            data_type: character varying
+            description: Year the nudge was given
+          - name: COUNTY
+            data_type: character varying
+            description: County where the nudge was applied
+          - name: Cohort
+            data_type: character varying
+            description: Group of students receiving the nudge
+          - name: GENDER
+            data_type: character varying
+            description: Gender of the pupil
+          - name: SUBCOUNTY
+            data_type: character varying
+            description: Subcounty where the nudge was applied
+          - name: CURRENT_GRADE
+            data_type: character varying
+            description: Current grade of the pupil
+          - name: NAME_OF_PUPIL
+            data_type: character varying
+            description: Name of the pupil receiving the nudge
+          - name: PRIMARY_SCHOOL
+            data_type: character varying
+            description: Primary school of the pupil
+          - name: NUDGE_TYPE_RECEIVED
+            data_type: character varying
+            description: Type of nudge received
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Airbyte raw ID for the record
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when the data was extracted
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata related to the Airbyte extraction
       - name: Public_School_Partnerships
         identifier: Public_School_Partnerships
-        description: "Public School Partnerships"
+        description: Public School Partnerships
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
 
+
+        columns:
+          - name: Year
+            data_type: character varying
+            description: The year of the record
+          - name: School_Name
+            data_type: character varying
+            description: Name of the school
+          - name: School_County
+            data_type: character varying
+            description: County where the school is located
+          - name: Mean_KPCE_Score
+            data_type: character varying
+            description: Average KPCE score for the school
+          - name: School_Subcounty
+            data_type: character varying
+            description: Subcounty where the school is located
+          - name: __Teachers_trained
+            data_type: character varying
+            description: Number of teachers trained
+          - name: __Students_enrolled
+            data_type: character varying
+            description: Number of students enrolled
+          - name: __Computers_provided
+            data_type: character varying
+            description: Number of computers provided to the school
+          - name: T1_Average_Attendance
+            data_type: character varying
+            description: Average attendance for term 1
+          - name: T2_Average_Attendance
+            data_type: character varying
+            description: Average attendance for term 2
+          - name: T3_Average_Attendance
+            data_type: character varying
+            description: Average attendance for term 3
+          - name: __Toilet_stances_built
+            data_type: character varying
+            description: Number of toilet stances built
+          - name: High_Touch___Low_Touch
+            data_type: character varying
+            description: Level of touch interaction
+          - name: Revised_Toilet_Student_Ratio
+            data_type: character varying
+            description: Revised ratio of toilets to students
+          - name: Baseline_Toilet_Student_Ratio
+            data_type: character varying
+            description: Initial ratio of toilets to students
+          - name: Teacher_Training_Satisfaction
+            data_type: character varying
+            description: Satisfaction level of teacher training
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Raw ID from Airbyte
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when data was extracted by Airbyte
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata from Airbyte
       - name: KSG_Summary
         identifier: KSG_Summary
-        description: "KSG School Attendance Kindergarten-Grade8"
+        description: KSG School Attendance Kindergarten-Grade8
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: Term
+            data_type: character varying
+            description: The academic term for the attendance record
+          - name: Year
+            data_type: character varying
+            description: The academic year for the attendance record
+          - name: Grade
+            data_type: character varying
+            description: The grade level of the students
+          - name: Cohort_
+            data_type: character varying
+            description: The cohort identifier for the students
+          - name: School_Type
+            data_type: character varying
+            description: The type of school attended
+          - name: Avg_Days_Attended
+            data_type: character varying
+            description: Average number of days attended by students
+          - name: Total_School_Days
+            data_type: character varying
+            description: Total number of school days in the term
+          - name: Number_of_Students
+            data_type: character varying
+            description: Total number of students in the cohort
+          - name: Attendance_Percentage
+            data_type: character varying
+            description: Percentage of attendance for the cohort
+          - name: All_Students___Total_Days_Absent
+            data_type: character varying
+            description: Total days absent for all students
+          - name: All_Students___Total_Days_Present
+            data_type: character varying
+            description: Total days present for all students
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Airbyte raw identifier for the record
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when the record was extracted by Airbyte
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata information from Airbyte
       - name: MSG_Summary
         identifier: MSG_Summary
-        description: "MSG School Attendance Kindergarten-Grade8"
+        description: MSG School Attendance Kindergarten-Grade8
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: Term
+            data_type: character varying
+            description: The academic term for the attendance record
+          - name: Year
+            data_type: character varying
+            description: The academic year for the attendance record
+          - name: Grade
+            data_type: character varying
+            description: The grade level of the students
+          - name: Cohort
+            data_type: character varying
+            description: The cohort group of the students
+          - name: School_Type
+            data_type: character varying
+            description: The type of school attended
+          - name: Avg_Days_Attended
+            data_type: character varying
+            description: Average number of days attended by students
+          - name: Total_School_Days
+            data_type: character varying
+            description: Total number of school days in the term
+          - name: Number_of_Students
+            data_type: character varying
+            description: Total number of students in the record
+          - name: Attendance_Percentage
+            data_type: character varying
+            description: Percentage of attendance for the students
+          - name: All_Students___Total_Days_Absent
+            data_type: character varying
+            description: Total days absent for all students
+          - name: All_Students___Total_Days_Present
+            data_type: character varying
+            description: Total days present for all students
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Raw ID from Airbyte extraction
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when data was extracted by Airbyte
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata from Airbyte extraction
       - name: MSG_Parents_Summary
         identifier: MSG_Parents_Summary
-        description: "MSG Parent Meeting Attendance"
+        description: MSG Parent Meeting Attendance
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: Term
+            data_type: character varying
+            description: Academic term of the meeting
+          - name: Year
+            data_type: character varying
+            description: Year in which the meeting took place
+          - name: Grade
+            data_type: character varying
+            description: Grade level of the cohort
+          - name: Cohort
+            data_type: character varying
+            description: Group of students attending the meeting
+          - name: Meeting_Date
+            data_type: character varying
+            description: Date when the meeting was held
+          - name: Meeting_Type
+            data_type: character varying
+            description: Type or purpose of the meeting
+          - name: Number_Present
+            data_type: character varying
+            description: Number of attendees present at the meeting
+          - name: Number_of_Parents
+            data_type: character varying
+            description: Number of parents expected to attend
+          - name: Attendance_Percentage_
+            data_type: character varying
+            description: Percentage of expected attendees who were present
+          - name: Share_of_Parents_Engaged
+            data_type: character varying
+            description: Proportion of parents actively engaged in the meeting
+          - name: Attendance_Data_Collected
+            data_type: character varying
+            description: Indicates if attendance data was collected
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Raw ID from Airbyte integration
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when data was extracted by Airbyte
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata from Airbyte extraction
       - name: KSG_Parents_Summary
         identifier: KSG_Parents_Summary
-        description: "KSG Parent Meeting Attendance"
+        description: KSG Parent Meeting Attendance
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: Term
+            data_type: character varying
+            description: The school term during which the meeting took place
+          - name: Year
+            data_type: character varying
+            description: The year the meeting was held
+          - name: Grade
+            data_type: character varying
+            description: The grade level of the students involved
+          - name: Cohort
+            data_type: character varying
+            description: The cohort of students or parents attending the meeting
+          - name: Meeting_Date
+            data_type: character varying
+            description: The date on which the meeting occurred
+          - name: Meeting_Type
+            data_type: character varying
+            description: The type of meeting held
+          - name: Number_Present
+            data_type: character varying
+            description: The number of people present at the meeting
+          - name: Number_of_Parents
+            data_type: character varying
+            description: The number of parents who attended the meeting
+          - name: Attendance_Percentage_
+            data_type: character varying
+            description: The percentage of attendance at the meeting
+          - name: Share_of_Parents_Engaged
+            data_type: character varying
+            description: The proportion of parents actively engaged in the meeting
+          - name: Attendance_Data_Collected
+            data_type: character varying
+            description: Indicates whether attendance data was collected
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Raw ID from Airbyte extraction
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when data was extracted by Airbyte
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata from Airbyte extraction
       - name: MSG_Follow_Up_Social_Worker
         identifier: MSG_Follow_Up_Social_Worker
-        description: "Social Worker Follow Ups on Reasons for Absence"
+        description: Social Worker Follow Ups on Reasons for Absence
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: Date_
+            data_type: character varying
+            description: Date of the social worker follow-up regarding reasons for absence.
+          - name: Grade
+            data_type: character varying
+            description: Indicates the grade level of the student in the educational system.
+          - name: Stream
+            data_type: character varying
+            description: >-
+              Represents the educational stream or track of a student in the context of social worker
+              follow-ups.
+          - name: Name_of_Student
+            data_type: character varying
+            description: The full name of the student involved in the social worker follow-up.
+          - name: Reason_for_absenteeIsm
+            data_type: character varying
+            description: Reason for student's absenteeism as noted by the social worker during follow-ups.
+          - name: Estimated_reporting_date
+            data_type: character varying
+            description: The estimated date when the reporting is expected to occur.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for the raw Airbyte record.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: The timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata column containing Airbyte-specific information.
       - name: KSG_Follow_Up_Social_Worker
         identifier: KSG_Follow_Up_Social_Worker
-        description: "Social Worker Follow Ups on Reasons for Absence"
+        description: Social Worker Follow Ups on Reasons for Absence
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: Date_
+            data_type: character varying
+            description: Date when the social worker follow-up occurred.
+          - name: Grade
+            data_type: character varying
+            description: The academic grade level of the student being followed up by the social worker.
+          - name: Stream
+            data_type: character varying
+            description: Indicates the educational stream or track a student is enrolled in.
+          - name: Name_of_Student
+            data_type: character varying
+            description: The full name of the student being followed up on by the social worker.
+          - name: Reason_for_absenteesm
+            data_type: character varying
+            description: >-
+              Indicates the reason provided for a student's absence as recorded by social workers.
+          - name: Estimated_reporting_date
+            data_type: character varying
+            description: Estimated date when the follow-up report is expected.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for the raw Airbyte data entry.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata column containing Airbyte-specific information in JSONB format.
       - name: Individual_Sessions
         identifier: Individual_Sessions
-        description: "Individual well being sessions"
+        description: Individual well being sessions
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: Date
+            data_type: character varying
+            description: Date of the session
+          - name: Term
+            data_type: character varying
+            description: School term during which the session occurred
+          - name: Year
+            data_type: character varying
+            description: Year in which the session took place
+          - name: Grade
+            data_type: character varying
+            description: Student's grade level during the session
+          - name: Topic
+            data_type: character varying
+            description: Subject or focus of the session
+          - name: Cohort
+            data_type: character varying
+            description: Group or batch of students attending the session
+          - name: School
+            data_type: character varying
+            description: School where the session was conducted
+          - name: Stream
+            data_type: character varying
+            description: Educational stream or track of the student
+          - name: Next_Steps
+            data_type: character varying
+            description: Follow-up actions or recommendations from the session
+          - name: Case_History
+            data_type: character varying
+            description: Background information relevant to the session
+          - name: Student_Name
+            data_type: character varying
+            description: Name of the student attending the session
+          - name: Case_Management
+            data_type: character varying
+            description: Details of case management for the student
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Raw ID from Airbyte ingestion
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when data was extracted by Airbyte
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata from Airbyte ingestion
       - name: Group_Sessions
         identifier: Group_Sessisons
-        description: "Group well being sessions"
+        description: Group well being sessions
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: Date
+            data_type: character varying
+            description: Date of the session
+          - name: Term
+            data_type: character varying
+            description: Academic term of the session
+          - name: Year
+            data_type: character varying
+            description: Academic year of the session
+          - name: Grade
+            data_type: character varying
+            description: Grade level of participants
+          - name: Topic
+            data_type: character varying
+            description: Main topic of the session
+          - name: Cohort
+            data_type: character varying
+            description: Cohort of students attending
+          - name: School
+            data_type: character varying
+            description: School where the session is held
+          - name: Stream
+            data_type: character varying
+            description: Stream or class division of the participants
+          - name: Sub_Topic
+            data_type: character varying
+            description: Sub-topic covered in the session
+          - name: Number_of_stdents_trained
+            data_type: character varying
+            description: Number of students trained in the session
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Airbyte raw identifier for the record
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when the data was extracted by Airbyte
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata information from Airbyte
       - name: Parent_Satisfaction_Survey
         identifier: Parent_Satisfaction_Survey
-        description: "Parent Satisfaction in Shofco Education Programs"
-        
-          
+        description: Parent Satisfaction in Shofco Education Programs
+        columns:
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each parent satisfaction survey record.
+          - name: data
+            data_type: jsonb
+            description: >-
+              Holds JSON-formatted data related to parent satisfaction surveys in Shofco education programs.
+          - name: indexed_on
+            data_type: timestamp with time zone
+            description: The timestamp indicating when the record was indexed.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for each record in the raw Airbyte data extraction.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: The timestamp when the record was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata column containing Airbyte-specific information in JSONB format.
       - name: Teachers_Satisfaction_Survey
         identifier: Teachers_Satisfaction_Survey
-        description: "Student Satisfaction in Shofco Education Programs"
-        
-          
+        description: Student Satisfaction in Shofco Education Programs
+        columns:
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each survey response entry.
+          - name: data
+            data_type: jsonb
+            description: Contains JSON formatted data related to the Teachers Satisfaction Survey.
+          - name: indexed_on
+            data_type: timestamp with time zone
+            description: The timestamp indicating when the survey data was indexed.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Identifier for the raw data record in Airbyte.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted from the source system.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata related to Airbyte ingestion process.
       - name: Student_Satisfaction_and_Well_Being_Survey
         identifier: Student_Satisfaction_and_Well_Being_Survey
-        description: "Student Satisfaction in Shofco Education Programs"
-        
+        description: Student Satisfaction in Shofco Education Programs
 
+
+        columns:
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each survey response record.
+          - name: data
+            data_type: jsonb
+            description: Contains JSON data related to student satisfaction and well-being survey responses.
+          - name: indexed_on
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the survey entry was indexed.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Placeholder for raw Airbyte ID information.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: The timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata column storing Airbyte-specific synchronization details in JSONB format.
   - name: staging_youth
     schema: staging_youth
     tables:
       - name: zzz_case
-        description: "Youth mental health beneficiaries case data"
+        description: Youth mental health beneficiaries case data
         columns:
-          - name: case_id
-            description: "Unique identifier for each case"
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each youth mental health case record.
           - name: data
-            description: "JSON data containing case properties"
+            description: JSON data containing case properties
+            data_type: jsonb
           - name: indexed_on
-            description: "Timestamp of when the case was indexed"
-  
+            description: Timestamp of when the case was indexed
+            data_type: timestamp with time zone
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Identifier for raw data record from Airbyte extraction.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata information related to the Airbyte data integration process.
   - name: staging_gender
     schema: staging_gender
     tables:
       - name: Champions_
         identifier: Champions_
-        description: "Data on Gender Champions"
+        description: Data on Gender Champions
         columns:
+          - name: Site
+            data_type: character varying
+            description: Site location of the champion
+          - name: Active
+            data_type: character varying
+            description: Status indicating if the champion is active
+          - name: County
+            data_type: character varying
+            description: County where the champion is located
+          - name: Gender
+            data_type: character varying
+            description: Gender of the champion
+          - name: Mobile
+            data_type: character varying
+            description: Mobile number of the champion
+          - name: Trained
+            data_type: character varying
+            description: Indicates if the champion has been trained
+          - name: Identified
+            data_type: character varying
+            description: Indicates if the champion has been identified
+          - name: Sub_County
+            data_type: character varying
+            description: Sub-county where the champion operates
+          - name: Sub_County_1
+            data_type: character varying
+            description: Alternative sub-county information
+          - name: National_ID
+            data_type: character varying
+            description: National ID of the champion
           - name: Date_trained
-            description: "Date of training"
-
+            description: Date of training
+            data_type: character varying
+          - name: Champions_Name
+            data_type: character varying
+            description: Name of the champion
+          - name: Community_Role
+            data_type: character varying
+            description: Role of the champion in the community
           - name: Date_identified
-            description: "Date of identification"
-            
-        data_tests: 
-          - elementary.schema_changes: 
-                  config:
-                    severity: error
+            description: Date of identification
+            data_type: character varying
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Airbyte raw ID for the record
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when the data was extracted by Airbyte
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata related to Airbyte extraction
+        data_tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
 
       - name: GBV_Community_Leaders
         identifier: GBV_Community_Leaders
-        description: "Google sheet with details of GBV Community Leaders"
+        description: Google sheet with details of GBV Community Leaders
         columns:
-          - name: "Date_of_training"
-            description: "Date of training of GBV Leader"
-
-          - name: "Date_identified"
-            description: "Date of identification of GBV Leader"
-
+          - name: Active
+            data_type: character varying
+            description: Indicates if the leader is currently active
+          - name: County
+            data_type: character varying
+            description: County where the leader operates
+          - name: Gender
+            data_type: character varying
+            description: Gender of the community leader
+          - name: Mobile
+            data_type: character varying
+            description: Mobile phone number of the leader
+          - name: Trained
+            data_type: character varying
+            description: Indicates if the leader has received training
+          - name: _dropdown
+            data_type: character varying
+            description: Dropdown selection associated with the leader
+          - name: Identified
+            data_type: character varying
+            description: Indicates if the leader has been identified
+          - name: Sub_county
+            data_type: character varying
+            description: Sub-county where the leader operates
+          - name: National_ID
+            data_type: character varying
+            description: National identification number of the leader
+          - name: Community_Role
+            data_type: character varying
+            description: Role of the leader within the community
+          - name: Date_identified
+            description: Date of identification of GBV Leader
+            data_type: character varying
+          - name: GBV_Leader_Name
+            data_type: character varying
+            description: Name of the GBV community leader
+          - name: Date_of_training
+            description: Date of training of GBV Leader
+            data_type: character varying
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Airbyte raw identifier
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when the data was extracted by Airbyte
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata associated with the Airbyte extraction
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
-      - name: raw_case 
-        identifier: zzz_case 
-        description: "All cases"
-          
-      - name: dim_location_administrative_units
-        description: "Administrative units lookup table"
-        data_tests:
-          - elementary.schema_changes: 
-                config:
-                  severity: error
-        
-          
-      - name: dim_gender_sites
-        description: "Sites used by the gender program"
-        data_tests:
-          - elementary.schema_changes: 
-                config:
-                  severity: error
-        
-          
-      - name: Gender_Clients_Feedback_Survey
-        description: "Gender Clients Feedback Survey"
-        
-          
-      - name: Final_Mental_Health_Assessment_Form
-        description: "Final Mental Health Assessment Form"
-        
-          
-      - name: Initial_Mental_Health_Asssessment
-        description: "Initial Mental Health Assessment"
-        
-          
-      - name: IIVC_Life_Skills_Training
-        description: "IIVC Life Skills Training"
-        
-          
-      - name: IIVC_Mapping
-        description: "IIVC Mapping info on Schools"
-        
-          
 
+
+      - name: raw_case
+        identifier: zzz_case
+        description: All cases
+        columns:
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each case.
+          - name: data
+            data_type: jsonb
+            description: Contains JSON data related to each case.
+          - name: indexed_on
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the case was indexed.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Placeholder description for _airbyte_raw_id column.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata column used for storing Airbyte-specific information in JSONB format.
+      - name: dim_location_administrative_units
+        description: Administrative units lookup table
+        data_tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
+
+        columns:
+          - name: location_id
+            data_type: integer
+            description: Identifier for the location
+          - name: source_primary_key
+            data_type: text
+            description: Primary key from the source system
+          - name: county_id
+            data_type: text
+            description: Identifier for the county
+          - name: county_code
+            data_type: text
+            description: Code representing the county
+          - name: county_name
+            data_type: text
+            description: Name of the county
+          - name: constituency_id
+            data_type: text
+            description: Identifier for the constituency
+          - name: constituency_name
+            data_type: text
+            description: Name of the constituency
+          - name: ward_id
+            data_type: text
+            description: Identifier for the ward
+          - name: ward_name
+            data_type: text
+            description: Name of the ward
+          - name: deleted
+            data_type: text
+            description: Flag indicating if the record is deleted
+          - name: location_name_key
+            data_type: text
+            description: Key for the location name
+      - name: dim_gender_sites
+        description: Sites used by the gender program
+        data_tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
+
+        columns:
+          - name: location_id
+            data_type: integer
+            description: Unique identifier for each site location used by the gender program.
+          - name: source_primary_key
+            data_type: text
+            description: Unique identifier for the source record in the gender program sites data.
+          - name: site_code
+            data_type: text
+            description: Unique identifier for each site used by the gender program.
+          - name: site_name
+            data_type: text
+            description: Name of the site used by the gender program.
+      - name: Gender_Clients_Feedback_Survey
+        description: Gender Clients Feedback Survey
+        columns:
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each record in the Gender Clients Feedback Survey.
+          - name: data
+            data_type: jsonb
+            description: Contains JSON-formatted feedback data from the Gender Clients Feedback Survey.
+          - name: indexed_on
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the feedback survey data was indexed.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for raw data records imported by Airbyte.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: The timestamp indicating when the data was extracted from the source by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata related to the data ingestion process.
+      - name: Final_Mental_Health_Assessment_Form
+        description: Final Mental Health Assessment Form
+        columns:
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each record in the Final Mental Health Assessment Form.
+          - name: data
+            data_type: jsonb
+            description: Stores JSON formatted data related to the final mental health assessment.
+          - name: indexed_on
+            data_type: timestamp with time zone
+            description: The timestamp when the record was indexed.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for raw data extraction from Airbyte.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata information related to Airbyte's data integration process.
+      - name: Initial_Mental_Health_Asssessment
+        description: Initial Mental Health Assessment
+        columns:
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each record in the Initial Mental Health Assessment table.
+          - name: data
+            data_type: jsonb
+            description: Contains JSON data related to the initial mental health assessment.
+          - name: indexed_on
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the assessment record was indexed.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for the raw Airbyte data record.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata and additional attributes related to the Airbyte sync process.
+      - name: IIVC_Life_Skills_Training
+        description: IIVC Life Skills Training
+        columns:
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each record in the IIVC Life Skills Training table.
+          - name: data
+            data_type: jsonb
+            description: Placeholder description for JSONB data stored in the "data" column.
+          - name: indexed_on
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the record was indexed.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Placeholder for _airbyte_raw_id column description.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata about the Airbyte sync process.
+      - name: IIVC_Mapping
+        description: IIVC Mapping info on Schools
+
+
+
+        columns:
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each record in the IIVC Mapping table.
+          - name: data
+            data_type: jsonb
+            description: Contains JSON data related to IIVC mapping information for schools.
+          - name: indexed_on
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the record was indexed.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for raw data records from Airbyte.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata column containing Airbyte-specific JSON information.
   - name: staging_orgwide
     schema: staging_orgwide
     tables:
       - name: County_Footprint
         identifier: County_Footprint
-        description: "County Footprint of program impact"
+        description: County Footprint of program impact
         data_tests:
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
-        
+
+
+
+        columns:
+          - name: SL
+            data_type: character varying
+            description: Data related to SL
+          - name: SUN
+            data_type: character varying
+            description: Data related to SUN
+          - name: WASH
+            data_type: character varying
+            description: Data related to WASH
+          - name: SACCO
+            data_type: character varying
+            description: Data related to SACCO
+          - name: County
+            data_type: character varying
+            description: Name of the county
+          - name: Gender
+            data_type: character varying
+            description: Gender information
+          - name: Health
+            data_type: character varying
+            description: Health-related data
+          - name: latitude
+            data_type: character varying
+            description: Geographical latitude
+          - name: Education
+            data_type: character varying
+            description: Education-related data
+          - name: Libraries
+            data_type: character varying
+            description: Information about libraries
+          - name: longitude
+            data_type: character varying
+            description: Geographical longitude
+          - name: Youth_Voice
+            data_type: character varying
+            description: Data related to youth voice
+          - name: iso_3166_2_code
+            data_type: character varying
+            description: ISO 3166-2 code for the region
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Raw ID from Airbyte
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when data was extracted
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata from Airbyte
   - name: staging_wash
     schema: staging_wash
     tables:
       - name: Add_Facility
         identifier: Add_Facility
-        description: "WASH Facility Information"
-        
-          
+        description: WASH Facility Information
+        columns:
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each WASH facility record.
+          - name: data
+            data_type: jsonb
+            description: Stores JSON data related to the WASH facility information.
+          - name: indexed_on
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the facility information was indexed.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for the raw data entry from Airbyte.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata related to the Airbyte integration process for the WASH facility data.
       - name: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
         identifier: SCHOOL_HEALTH_CLUB_MONITORING_INDICATORS
-        description: "Indicators to monitor school health and hygiene"
-        
-          
+        description: Indicators to monitor school health and hygiene
+        columns:
+          - name: id
+            data_type: character varying
+            description: >-
+              Unique identifier for each record in the school health club monitoring indicators table.
+          - name: data
+            data_type: jsonb
+            description: Stores JSON data related to school health club monitoring indicators.
+          - name: indexed_on
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the record was indexed.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for the raw data record from Airbyte.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata about the data record in JSONB format.
       - name: Laini_Saba
         identifier: Laini_Saba
-        description: "Laini Saba Water Production Information"
+        description: Laini Saba Water Production Information
         data_tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: DATE
+            data_type: character varying
+            description: Date of the recorded water production information.
+          - name: Status
+            data_type: character varying
+            description: Indicates the current status of water production activities at Laini Saba.
+          - name: BH_METER
+            data_type: character varying
+            description: Details about the BH_METER measurement for Laini Saba water production.
+          - name: BH_Abstraction
+            data_type: character varying
+            description: Borehole abstraction data for Laini Saba water production.
+          - name: TREATED_Production
+            data_type: character varying
+            description: Placeholder for TREATED_Production column description.
+          - name: TREATED_WATER_METER
+            data_type: character varying
+            description: Meter reading for treated water at Laini Saba facility.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Identifier for the raw record from Airbyte integration.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata column containing Airbyte-specific information in JSONB format.
       - name: Lindi
         identifier: Lindi
-        description: "Lindi Water Production Information"
+        description: Lindi Water Production Information
         data_tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: DATE
+            data_type: character varying
+            description: Date of water production record.
+          - name: Status
+            data_type: character varying
+            description: Indicates the current state or condition of the water production process at Lindi.
+          - name: BH_METER
+            data_type: character varying
+            description: Placeholder for BH_METER column description.
+          - name: BH_Abstraction
+            data_type: character varying
+            description: Placeholder description for BH_Abstraction column.
+          - name: TREATED_Production
+            data_type: character varying
+            description: Water production status indicating whether the production has been treated.
+          - name: TREATED_WATER_METER
+            data_type: character varying
+            description: Volume reading from the treated water meter in the Lindi Water Production system.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for raw data records from the Airbyte integration.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: The timestamp indicating when the data was extracted from the source system.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata column storing Airbyte-specific information in JSONB format.
       - name: Makina
         identifier: Makina
-        description: "Makina Water Production Information"
+        description: Makina Water Production Information
         data_tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: DATE
+            data_type: character varying
+            description: Date of water production record entry.
+          - name: Status
+            data_type: character varying
+            description: Indicates the current operational status of the water production unit.
+          - name: BH_METER
+            data_type: character varying
+            description: >-
+              A placeholder for the BH_METER column in the Makina Water Production Information table.
+          - name: BH_Abstraction
+            data_type: character varying
+            description: Placeholder for BH_Abstraction column description.
+          - name: TREATED_Production
+            data_type: character varying
+            description: Indicates the status of water production treatment in the Makina dataset.
+          - name: TREATED_WATER_METER
+            data_type: character varying
+            description: Volume measurement recorded by the treated water meter at the Makina site.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: >-
+              Unique identifier for raw data records in the Makina Water Production Information table.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata related to the Airbyte ingestion process, stored in JSONB format.
       - name: Subra
         identifier: Subra
-        description: "Subra Water Production Information"
+        description: Subra Water Production Information
         data_tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: DATE
+            data_type: character varying
+            description: The date of the water production record
+          - name: Status
+            data_type: character varying
+            description: Current status of the water production
+          - name: BH_1_METER
+            data_type: character varying
+            description: Meter reading for borehole 1
+          - name: BH_2_METER
+            data_type: character varying
+            description: Meter reading for borehole 2
+          - name: B2_Abstraction
+            data_type: character varying
+            description: Amount of water abstracted from borehole 2
+          - name: BH1_Abstraction
+            data_type: character varying
+            description: Amount of water abstracted from borehole 1
+          - name: TREATED_Production
+            data_type: character varying
+            description: Amount of treated water produced
+          - name: TREATED_WATER_METER
+            data_type: character varying
+            description: Meter reading for treated water
+          - name: TOTAL_BH_Abstraction
+            data_type: character varying
+            description: Total water abstraction from all boreholes
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Raw ID from Airbyte extraction
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when data was extracted by Airbyte
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata from Airbyte extraction
       - name: HQ
         identifier: HQ
-        description: "HQ Water Production Information"
+        description: HQ Water Production Information
         data_tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: DATE
+            data_type: character varying
+            description: The date of water production record entry.
+          - name: Status
+            data_type: character varying
+            description: Indicates the current operational status of HQ water production.
+          - name: BH_METER
+            data_type: character varying
+            description: Placeholder description for BH_METER.
+          - name: BH_Abstraction
+            data_type: character varying
+            description: Placeholder description for BH_Abstraction column.
+          - name: TREATED_PRODUCTION
+            data_type: character varying
+            description: Details the volume of water production that has undergone treatment processes.
+          - name: TREATED_WATER_METER
+            data_type: character varying
+            description: Volume of water measured by the treated water meter.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for the raw data record from Airbyte.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata related to the Airbyte extraction process.
       - name: User_Meters
         identifier: User_Meters
-        description: "Information on User Meters from Mobiwater"
+        description: Information on User Meters from Mobiwater
         data_tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: deviceId
+            data_type: numeric
+            description: Identifier for the device
+          - name: deviceType
+            data_type: character varying
+            description: Type of the device
+          - name: flowDeviceId
+            data_type: numeric
+            description: Identifier for the flow device
+          - name: organization
+            data_type: jsonb
+            description: Organization associated with the device
+          - name: hardwareState
+            data_type: character varying
+            description: Current state of the hardware
+          - name: flowDeviceName
+            data_type: character varying
+            description: Name of the flow device
+          - name: flowDeviceSize
+            data_type: numeric
+            description: Size of the flow device
+          - name: dailyConsumption
+            data_type: numeric
+            description: Daily consumption recorded by the device
+          - name: flowDeviceLocation
+            data_type: character varying
+            description: Location of the flow device
+          - name: flowDevicePulseRate
+            data_type: numeric
+            description: Pulse rate of the flow device
+          - name: consumptionThreshold
+            data_type: numeric
+            description: Threshold for consumption alerts
+          - name: lastReceivedFlowData
+            data_type: jsonb
+            description: Timestamp of the last received flow data
+          - name: flowDeviceDescription
+            data_type: character varying
+            description: Description of the flow device
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Airbyte raw ID for the record
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp when the data was extracted by Airbyte
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata from Airbyte
       - name: meter_consumption
         identifier: meter_consumption
-        description: "Water Consumption Information from Mobiwater"
+        description: Water Consumption Information from Mobiwater
         data_tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
-          - elementary.schema_changes: 
+          - elementary.schema_changes:
               config:
                 severity: error
-        
-          
+
+
+        columns:
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each meter consumption record.
+          - name: date
+            data_type: character varying
+            description: Date of the recorded water consumption data.
+          - name: value
+            data_type: character varying
+            description: The recorded water consumption value in varying character format.
+          - name: flow_device_id
+            data_type: character varying
+            description: Unique identifier for the flow device associated with water consumption data.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for raw data ingestion from Airbyte.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata column storing information about the Airbyte sync process in JSON format.
       - name: raw_case
         identifier: zzz_case
-        description: "Wash Facilities Case Data"
+        description: Wash Facilities Case Data
 
-        
-          
 
-      
-      
+
+
+
+        columns:
+          - name: id
+            data_type: character varying
+            description: Unique identifier for each wash facility case record.
+          - name: data
+            data_type: jsonb
+            description: Contains case-related information stored in JSONB format.
+          - name: indexed_on
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was indexed.
+          - name: _airbyte_raw_id
+            data_type: character varying
+            description: Unique identifier for the raw data entry in the source system.
+          - name: _airbyte_extracted_at
+            data_type: timestamp with time zone
+            description: Timestamp indicating when the data was extracted by Airbyte.
+          - name: _airbyte_meta
+            data_type: jsonb
+            description: Metadata information for the Airbyte integration process in JSONB format.

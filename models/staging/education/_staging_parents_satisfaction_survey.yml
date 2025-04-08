@@ -1,0 +1,93 @@
+version: 2
+models:
+  - name: staging_parents_satisfaction_survey
+    description: Parent satisfaction survey results
+    columns:
+      - name: student_name
+        data_type: text
+        description: Name of the student
+      - name: grade
+        data_type: text
+        description: Grade of the student
+      - name: term
+        data_type: text
+        description: Term during which the survey was conducted
+      - name: school
+        data_type: text
+        description: Name of the school
+      - name: child_age
+        data_type: text
+        description: Age of the child
+      - name: class_year_of_child
+        data_type: text
+        description: Class year of the child
+      - name: parent_name
+        data_type: text
+        description: Name of the parent or guardian
+      - name: general_satisfaction
+        data_type: text
+        description: General satisfaction with the SHOFCO school
+      - name: education_satisfaction
+        data_type: text
+        description: Satisfaction with the education received by the child
+      - name: teacher_parent_relationship
+        data_type: text
+        description: Satisfaction with parents and teachers relationships
+      - name: relationship_satisfaction
+        data_type: text
+        description: Satisfaction with how parents and teachers relate
+      - name: student_teacher_ratio
+        data_type: text
+        description: Satisfaction with the student-teacher ratio
+      - name: student_teacher_ratio_satisfaction
+        data_type: text
+        description: Satisfaction with the number of students per teacher
+      - name: hygiene_satisfaction
+        data_type: text
+        description: Satisfaction with school hygiene and sanitation
+      - name: sanitation_satisfaction
+        data_type: text
+        description: Satisfaction with sanitation services at the school
+      - name: feeding_program_satisfaction
+        data_type: text
+        description: Satisfaction with the school feeding program
+      - name: feeding_satisfaction
+        data_type: text
+        description: Satisfaction with the feeding program provided
+      - name: extracurricular_satisfaction
+        data_type: text
+        description: Satisfaction with extracurricular activities
+      - name: extracurricular_satisfaction_detail
+        data_type: text
+        description: Detailed satisfaction with extracurricular activities
+      - name: parental_engagement_satisfaction
+        data_type: text
+        description: Satisfaction with parental engagement requested by the school
+      - name: parental_engagement_satisfaction_detail
+        data_type: text
+        description: Detailed satisfaction with parental engagement
+      - name: improvement_suggestions
+        data_type: text
+        description: Suggestions for improvement at the school
+      - name: proposed_changes
+        data_type: text
+        description: Proposed changes at the school
+      - name: observed_changes
+        data_type: text
+        description: Changes observed in the child since joining the school
+      - name: changes_in_child
+        data_type: text
+        description: Specific changes seen in the child
+      - name: family_benefit
+        data_type: text
+        description: Family benefits from other SHOFCO programs
+      - name: survey_background
+        data_type: text
+        description: Background and purpose of the survey
+      - name: submission_time
+        data_tests:
+          - valid_date_range:
+              column_name: submission_time
+
+        data_type: text
+        description: Time when the survey was submitted

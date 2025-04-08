@@ -1,0 +1,70 @@
+version: 2
+models:
+  - name: staging_life_skills_training_session_details
+    description: Data on Youth Beneficiaries from commcare
+    columns:
+      - name: id
+        data_type: character varying
+        description: Unique identifier for each record in the IIVC Life Skills Training table.
+      - name: indexed_on
+        description: Entry indexing date
+        data_tests:
+          - not_null
+          - valid_date_range:
+              column_name: indexed_on
+
+        data_type: timestamp with time zone
+      - name: form_name
+        data_type: text
+        description: Name of the form.
+      - name: comments
+        data_type: text
+        description: Comments from the form.
+      - name: target_group
+        data_type: text
+        description: Target group specified in the form.
+      - name: user_id
+        data_type: text
+        description: User ID from the form metadata.
+      - name: username
+        data_type: text
+        description: Username from the form metadata.
+      - name: village_name
+        data_type: text
+        description: Name of the village from community information.
+      - name: community_safe_space_name
+        data_type: text
+        description: Name of the community safe space.
+      - name: num_girls_in_safe_space
+        data_type: text
+        description: Number of girls in the community safe space.
+      - name: county
+        data_type: text
+        description: County from geographical location information.
+      - name: ward
+        data_type: text
+        description: Ward from geographical location information.
+      - name: constituency
+        data_type: text
+        description: Constituency from geographical location information.
+      - name: school_term
+        data_type: text
+        description: School term from school information.
+      - name: school_year
+        data_type: text
+        description: School year from school information.
+      - name: school_name
+        data_type: text
+        description: Name of the school from school information.
+      - name: type_of_school
+        data_type: text
+        description: Type of school from school information.
+      - name: num_club_members
+        data_type: text
+        description: Number of club memberships from school information.
+      - name: life_skills_form_status
+        data_type: jsonb
+        description: Status of the life skills form.
+      - name: patron_mobile_number
+        data_type: jsonb
+        description: Club patron's mobile number.

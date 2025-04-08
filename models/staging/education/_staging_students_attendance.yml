@@ -1,0 +1,39 @@
+version: 2
+models:
+  - name: staging_students_attendance
+    columns:
+      - name: term
+        data_type: character varying
+        description: The academic term for the attendance record
+      - name: year
+        data_type: character varying
+        description: The academic year for the attendance record
+      - name: grade
+        data_type: character varying
+        description: The grade level of the students
+      - name: avg_days_attended
+        data_type: character varying
+        description: Average number of days attended by students.
+      - name: total_school_days
+        data_type: character varying
+        description: Total number of school days in the term.
+      - name: number_of_students
+        data_type: character varying
+        description: Total number of students included in the attendance record.
+      - name: attendance_percentage
+        data_type: character varying
+        description: Percentage of attendance for the students.
+      - name: total_days_absent
+        data_type: character varying
+        description: >-
+          Total days absent for all students within the specified term, year, grade, and school type.
+      - name: total_days_present
+        data_type: character varying
+        description: Total days present for all students during a specified term and school.
+      - name: school_type
+        data_type: text
+        description: The type of school attended, categorized as MSG or KSG.
+    description: >-
+      This table consolidates student attendance data from MSG and KSG schools, providing metrics such
+      as average days attended, total school days, number of students, attendance percentage, total days
+      absent, and total days present, categorized by term, year, grade, and school type.

@@ -1,0 +1,59 @@
+version: 2
+models:
+  - name: youth_beneficiaries_disagg
+    columns:
+      - name: case_id
+        description: Date of registration of survivor
+        data_type: text
+      - name: ward
+        data_type: text
+        description: Ward where the beneficiary is located
+      - name: county
+        data_type: text
+        description: County where the beneficiary is located
+      - name: constituency
+        data_type: text
+        description: Constituency where the beneficiary is located
+      - name: date_of_registration
+        description: Date of registration of survivor
+        data_type: date
+      - name: beneficiary_gender
+        data_type: text
+        description: Gender of the beneficiary
+      - name: name_of_the_beneficiary
+        data_type: text
+        description: Name of the beneficiary
+      - name: beneficiary_phone_number
+        data_type: text
+        description: Phone number of the beneficiary
+      - name: registered_by
+        data_type: text
+        description: Person who registered the beneficiary
+      - name: beneficiary_categories
+        data_type: text
+        description: Categories the beneficiary belongs to
+      - name: case_name
+        data_type: text
+        description: Name of the case
+      - name: date_opened
+        description: Date survivor case was opened
+        data_type: date
+      - name: training_type
+        data_type: text
+        description: Type of mental health training session for subsequent cases
+      - name: indexed_on
+        description: Timestamp of when the case was indexed
+        data_type: date
+      - name: parent_case_id
+        data_type: text
+        description: Parent case ID for subsequent cases
+      - name: category
+        data_type: text
+        description: >-
+          Category the youth beneficiary belongs to, distinguishing them based on various attributes.
+    description: >-
+      This table aggregates and differentiates youth beneficiaries based on gender and other attributes.
+      It combines initial and subsequent case data, including details such as location, registration dates,
+      gender, contact information, registration personnel, beneficiary categories, and case information.
+      It also handles specific training types and provides a hierarchical structure through parent case
+      IDs and indexed timestamps.

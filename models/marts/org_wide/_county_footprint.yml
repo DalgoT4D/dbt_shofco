@@ -1,116 +1,104 @@
 version: 2
-
 models:
   - name: county_footprint
-    description: "Tracks the program's impact across counties with consolidated data."
+    description: Tracks the program's impact across counties with consolidated data.
     columns:
       - name: county
         data_tests:
           - not_null
+        data_type: character varying
+        description: Name of the county
       - name: iso_3166_2_code
         data_tests:
           - not_null
           - unique
+        data_type: character varying
+        description: ISO 3166-2 code for the region
       - name: latitude
         data_tests:
           - not_null
+        data_type: character varying
+        description: Geographical latitude
       - name: longitude
         data_tests:
           - not_null
-      - name: sl
-        data_tests:
-          - not_null
-          - accepted_values:
-              values: [1, 0]
+        data_type: character varying
+        description: Geographical longitude
       - name: sun
         data_tests:
           - not_null
           - accepted_values:
               values: [1, 0]
           - dbt_expectations.expect_column_values_to_be_of_type:
-             column_type: integer
-      - name: wash
-        data_tests:
-          - not_null
-          - accepted_values:
-              values: [1, 0]
-          - dbt_expectations.expect_column_values_to_be_of_type:
-             column_type: integer
-      - name: sacco
-        data_tests:
-          - not_null
-          - accepted_values:
-              values: [1, 0]
-          - dbt_expectations.expect_column_values_to_be_of_type:
-             column_type: integer
-      - name: gender
-        data_tests:
-          - not_null
-          - accepted_values:
-              values: [1, 0]
-          - dbt_expectations.expect_column_values_to_be_of_type:
-             column_type: integer
-      - name: health
-        data_tests:
-          - not_null
-          - accepted_values:
-              values: [1, 0]
-          - dbt_expectations.expect_column_values_to_be_of_type:
-             column_type: integer
-      - name: education
-        data_tests:
-          - not_null
-          - accepted_values:
-              values: [1, 0]
-          - dbt_expectations.expect_column_values_to_be_of_type:
-             column_type: integer
-      - name: libraries
-        data_tests:
-          - not_null
-          - accepted_values:
-              values: [1, 0]
-          - dbt_expectations.expect_column_values_to_be_of_type:
-             column_type: integer
+              column_type: integer
+        data_type: integer
+        description: Data related to SUN
       - name: youth_voice
         data_tests:
           - not_null
           - accepted_values:
               values: [1, 0]
 
-  - name: mapping
-    description: "Standardizes and prepares mapping data for program-wide reporting and analysis."
-    columns:
-      - name: id
+        data_type: integer
+        description: Data related to youth voice.
+      - name: sacco
         data_tests:
           - not_null
-      - name: case_id
-        data_tests:
-          - not_null
-      - name: case_type
-        data_tests:
-          - not_null
-      - name: county
-        data_tests:
-          - not_null
-      - name: ward
-        data_tests:
-          - not_null
-      - name: constituency
-        data_tests:
-          - not_null
-      - name: latitude
-        data_tests:
-          - not_null
-      - name: longitude
-        data_tests:
-          - not_null
-      - name: altitude
-        data_tests:
-          - not_null
-      - name: accuracy
-        data_tests:
-          - not_null
-      - name: received_on
-        data_tests:
+          - accepted_values:
+              values: [1, 0]
           - dbt_expectations.expect_column_values_to_be_of_type:
-             column_type: date
+              column_type: integer
+        data_type: integer
+        description: Data related to SACCO
+      - name: sl
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [1, 0]
+        data_type: integer
+        description: Data related to SL
+      - name: education
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [1, 0]
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+        data_type: integer
+        description: Education-related data
+      - name: gender
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [1, 0]
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+        data_type: integer
+        description: Gender information
+      - name: wash
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [1, 0]
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+        data_type: integer
+        description: Data related to WASH
+      - name: health
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [1, 0]
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+        data_type: integer
+        description: Health-related data
+      - name: libraries
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [1, 0]
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+        data_type: integer
+        description: Information about libraries

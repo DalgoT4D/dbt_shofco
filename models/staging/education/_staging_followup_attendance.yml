@@ -1,0 +1,43 @@
+version: 2
+models:
+  - name: staging_followup_attendance
+    description: Well being sessions of both group and individual type
+    columns:
+      - name: date_of_absence
+        data_tests:
+          - valid_date_range:
+              column_name: date_of_absence
+        data_type: character varying
+        description: Date when the absence occurred.
+      - name: grade
+        data_type: character varying
+        description: Indicates the grade level of the student in the educational system.
+      - name: stream
+        data_type: character varying
+        description: >-
+          Represents the educational stream or track of a student in the context of social worker follow-ups.
+      - name: name_of_student
+        data_type: character varying
+        description: The full name of the student participating in the well-being sessions.
+      - name: absence_causes
+        data_type: character varying
+        description: >-
+          Indicates the causes for a student's absence as recorded during social worker follow-ups.
+      - name: estimated_reporting_date
+        data_tests:
+          - valid_date_range:
+              column_name: estimated_reporting_date
+
+        data_type: character varying
+        description: The estimated date when the follow-up report is expected to be submitted.
+      - name: _airbyte_extracted_at
+        data_type: timestamp with time zone
+        description: The timestamp indicating when the data was extracted by Airbyte.
+      - name: school_type
+        data_type: text
+        description: >-
+          Type of school where the session was held, indicating whether it is a primary, secondary, or
+          other educational institution.
+      - name: year
+        data_type: text
+        description: The calendar year in which the well-being session took place.

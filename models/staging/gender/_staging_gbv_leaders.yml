@@ -1,0 +1,64 @@
+version: 2
+models:
+  - name: staging_gbv_leaders
+    description: Google sheet with details of GBV Community Leaders
+    columns:
+
+      - name: national_id
+        data_tests:
+          - not_null
+          - unique
+
+        data_type: character varying
+        description: National identification number of the leader.
+      - name: active
+        data_type: character varying
+        description: Indicates if the leader is currently active
+      - name: county
+        data_tests:
+          - not_null
+
+        data_type: text
+        description: County where the leader operates
+      - name: gender
+        data_type: text
+        description: Gender of the community leader
+      - name: mobile
+        data_tests:
+          - unique
+
+        data_type: character varying
+        description: Mobile phone number of the leader
+      - name: trained
+        data_type: character varying
+        description: Indicates if the leader has received training
+      - name: identified
+        data_type: character varying
+        description: Indicates if the leader has been identified
+      - name: sub_county
+        data_type: text
+        description: Sub-county where the leader operates.
+      - name: community_role
+        data_type: text
+        description: Role of the leader within the community.
+      - name: date_identified
+        description: Date of identification of GBV Leader
+        data_tests:
+          - not_null
+          - valid_date_range:
+              column_name: date_identified
+
+        data_type: character varying
+      - name: date_trained
+        description: Date of training of GBV Leader
+        data_tests:
+          - valid_date_range:
+              column_name: date_trained
+
+        data_type: character varying
+      - name: gbv_leader_name
+        data_tests:
+          - not_null
+
+        data_type: text
+        description: Name of the GBV community leader.

@@ -1,0 +1,90 @@
+version: 2
+models:
+  - name: wash_facilities
+    description: Details of wash facilities including location and status
+    columns:
+      - name: ward
+        data_tests:
+          - not_null
+        data_type: text
+        description: Ward where the facility is located
+      - name: county
+        data_tests:
+          - not_null
+        data_type: text
+        description: County where the facility is located
+      - name: village
+        data_type: text
+        description: Village where the facility is located
+      - name: latitude
+        data_tests:
+          - not_null
+        data_type: text
+        description: Latitude coordinate of the facility
+      - name: longitude
+        data_tests:
+          - not_null
+        data_type: text
+        description: Longitude coordinate of the facility
+      - name: subcounty
+        data_tests:
+          - not_null
+        data_type: text
+        description: Subcounty where the facility is located
+      - name: date_facility_opened
+        data_type: date
+        description: Date when the facility was opened
+      - name: facility_id
+        data_type: text
+        description: Identifier for the facility
+      - name: facility_name
+        data_tests:
+          - not_null
+        data_type: text
+        description: Name of the facility
+      - name: facility_type
+        data_tests:
+          - not_null
+        data_type: text
+        description: Type of the facility
+      - name: date_of_submission
+        data_type: date
+        description: Date when the facility data was submitted
+      - name: status_of_facility
+        data_type: text
+        description: Current status of the facility
+      - name: case_name
+        data_tests:
+          - not_null
+        data_type: text
+        description: Name of the wash facility case.
+      - name: case_type
+        data_tests:
+          - not_null
+        data_type: text
+        description: Type of case related to the wash facility.
+      - name: date_opened
+        data_type: date
+        description: Date when the wash facility was opened.
+      - name: case_id
+        data_tests:
+          - not_null
+        data_type: text
+        description: Unique identifier for each wash facility case record
+      - name: indexed_on
+        data_type: date
+        description: Timestamp indicating when the data was indexed.
+      - name: closed
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['false']
+
+        data_type: text
+        description: Indicates whether the facility is currently closed.
+      - name: created_at
+        data_type: date
+        description: The date when the wash facility record was created.
+      - name: year
+        data_type: numeric
+        description: Year relevant to the wash facility data.

@@ -1,0 +1,45 @@
+version: 2
+models:
+  - name: staging_gender_initial_mental_health_assesment
+    description: Initial mental health assessment form
+    columns:
+      - name: id
+        data_type: character varying
+        description: Unique identifier for each record in the Initial Mental Health Assessment table.
+      - name: initial_form_filling_date
+        description: filling date of initial form
+        tests:
+          - not_null
+          - valid_date_range:
+              column_name: initial_form_filling_date
+
+        data_type: text
+      - name: case_id
+        data_type: text
+        description: Unique identifier for each record in the Initial Mental Health Assessment table.
+      - name: user_id
+        data_type: text
+        description: Unique identifier for each user in the initial mental health assessment form.
+      - name: behavioral_issues
+        data_type: text
+        description: >-
+          Indicates the presence of behavioral issues identified during the initial mental health assessment.
+      - name: drug_abuse
+        data_type: text
+        description: >-
+          Indicates whether there is a presence of drug abuse as assessed during the initial mental health
+          evaluation.
+      - name: psychiatric_symptoms
+        data_type: text
+        description: >-
+          Details of psychiatric symptoms observed during the initial mental health assessment.
+      - name: social_emotional_issues
+        data_type: text
+        description: >-
+          Assessment of social and emotional issues identified during the initial mental health evaluation.
+      - name: trauma_symptoms
+        data_type: text
+        description: Details of trauma symptoms reported during the initial mental health assessment.
+      - name: session_id
+        data_type: text
+        description: Unique identifier for each session in the initial mental health assessment form.

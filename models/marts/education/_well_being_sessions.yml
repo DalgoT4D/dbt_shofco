@@ -1,0 +1,42 @@
+version: 2
+models:
+  - name: well_being_sessions
+    description: Aggregates data on well-being sessions.
+    columns:
+      - name: date
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+        data_type: date
+        description: Date of the session
+      - name: grade
+        tests:
+          - not_null
+        data_type: character varying
+        description: Student's grade level during the session
+      - name: topic
+        data_type: character varying
+        description: Subject or focus of the session
+      - name: school_type
+        tests:
+          - accepted_values:
+              values: [ksg, msg]
+        data_type: text
+        description: Type of school where the well-being session took place.
+      - name: stream
+        data_type: character varying
+        description: Educational stream or track of the student
+      - name: number_of_students_trained
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
+        data_type: integer
+        description: Number of students trained during the well-being session.
+      - name: session_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: [Group, Individual]
+
+        data_type: text
+        description: Type of well-being session, indicating whether it is a group or individual session.

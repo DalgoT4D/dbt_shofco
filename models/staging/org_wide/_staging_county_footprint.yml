@@ -1,0 +1,90 @@
+version: 2
+models:
+  - name: staging_county_footprint
+    description: Tracks the program's impact across counties with consolidated data.
+    columns:
+      - name: sl
+        tests:
+          - accepted_values:
+              values: [Y, N]
+        data_type: character varying
+        description: Data related to SL
+      - name: sun
+        tests:
+          - not_null
+          - accepted_values:
+              values: [Y, N]
+        data_type: character varying
+        description: Data related to SUN
+      - name: wash
+        tests:
+          - not_null
+          - accepted_values:
+              values: [Y, N]
+        data_type: character varying
+        description: Data related to WASH
+      - name: sacco
+        tests:
+          - not_null
+          - accepted_values:
+              values: [Y, N]
+        data_type: character varying
+        description: Data related to SACCO
+      - name: county
+        tests:
+          - not_null
+        data_type: character varying
+        description: Name of the county
+      - name: gender
+        tests:
+          - not_null
+          - accepted_values:
+              values: [Y, N]
+        data_type: character varying
+        description: Gender information
+      - name: health
+        tests:
+          - not_null
+          - accepted_values:
+              values: [Y, N]
+        data_type: character varying
+        description: Health-related data
+      - name: latitude
+        tests:
+          - not_null
+        data_type: character varying
+        description: Geographical latitude
+      - name: education
+        tests:
+          - not_null
+          - accepted_values:
+              values: [Y, N]
+        data_type: character varying
+        description: Education-related data
+      - name: libraries
+        tests:
+          - accepted_values:
+              values: [Y, N]
+        data_type: character varying
+        description: Information about libraries
+      - name: longitude
+        tests:
+          - not_null
+        data_type: character varying
+        description: Geographical longitude
+      - name: youth_voice
+        tests:
+          - accepted_values:
+              values: [Y, N]
+
+        data_type: character varying
+        description: Data related to youth voice.
+      - name: iso_3166_2_code
+        tests:
+          - not_null
+          - unique
+        data_type: character varying
+        description: ISO 3166-2 code for the region
+      - name: _airbyte_extracted_at
+        data_type: timestamp with time zone
+        description: Timestamp when data was extracted

@@ -1,0 +1,49 @@
+version: 2
+models:
+  - name: staging_parents_attendance
+    description: Parent attendance for parent-teacher meetings
+    columns:
+      - name: term
+        data_type: character varying
+        description: Academic term of the meeting
+      - name: year
+        data_type: character varying
+        description: Year in which the meeting took place
+      - name: grade
+        data_type: character varying
+        description: Grade level of the cohort
+      - name: cohort
+        data_type: character varying
+        description: Group of students attending the meeting
+      - name: meeting_date
+        tests:
+          - valid_date_range:
+              column_name: meeting_date
+
+        data_type: character varying
+        description: The date on which the parent-teacher meeting occurred.
+      - name: meeting_type
+        data_type: character varying
+        description: The type or purpose of the parent-teacher meeting.
+      - name: number_present
+        data_type: character varying
+        description: The number of people present at the parent-teacher meeting.
+      - name: number_of_parents
+        data_type: character varying
+        description: The number of parents who attended the parent-teacher meeting.
+      - name: attendance_percentage
+        data_type: character varying
+        description: >-
+          The percentage of expected parent attendees who were present at parent-teacher meetings.
+      - name: share_of_parents_engaged
+        data_type: character varying
+        description: The proportion of parents actively engaged in the parent-teacher meeting.
+      - name: attendance_data_collected
+        data_type: character varying
+        description: Indicates whether attendance data was collected for the parent-teacher meeting.
+      - name: _airbyte_extracted_at
+        data_type: timestamp with time zone
+        description: Timestamp when data was extracted by Airbyte
+      - name: school_type
+        data_type: text
+        description: The type of school associated with the parent-teacher meeting.

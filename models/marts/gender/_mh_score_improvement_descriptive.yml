@@ -1,0 +1,34 @@
+version: 2
+models:
+  - name: mh_score_improvement_descriptive
+    columns:
+      - name: case_id
+        data_type: text
+        description: Unique identifier for each record in the Initial Mental Health Assessment table.
+      - name: initial_avg_score
+        data_type: numeric
+        description: >-
+          The initial average mental health score calculated from the initial assessment, reflecting the
+          baseline condition before any intervention.
+      - name: final_avg_score
+        data_type: numeric
+        description: >-
+          The average score obtained from the final mental health assessment, reflecting the overall evaluation
+          of behavioral, psychiatric, social-emotional, and trauma issues after therapy.
+      - name: improved
+        data_type: text
+        description: >-
+          Indicates whether there has been an improvement in mental health scores between initial and
+          final assessments.
+      - name: initial_form_filling_date
+        description: filling date of initial form
+        data_type: date
+      - name: final_form_filling_date
+        description: filling date of the final form
+        data_type: date
+    description: >-
+      This table provides a comparison of mental health scores, capturing the initial and final average
+      scores for each case, and indicates whether there has been an improvement. The data is derived from
+      initial and final mental health assessments, focusing on behavioral issues, drug abuse, psychiatric
+      symptoms, social-emotional issues, and trauma symptoms. The table includes the calculated average
+      scores and an improvement indicator based on score comparison.

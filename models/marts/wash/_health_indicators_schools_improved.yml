@@ -1,0 +1,35 @@
+version: 2
+models:
+  - name: health_indicators_schools_improved
+    description: Aggregated school hygiene data and improvements
+    columns:
+      - name: term
+        data_type: text
+        description: >-
+          Term used for classifying or categorizing health indicators in the school health data.
+      - name: year
+        data_type: numeric
+        description: The year when the health indicators were recorded.
+      - name: total_no_schools
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: bigint
+        data_type: bigint
+        description: >-
+          Total number of schools included in the aggregated school hygiene and improvement data.
+      - name: schools_improved
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: bigint
+        data_type: bigint
+        description: Number of schools that have reported improvements in health and hygiene indicators.
+      - name: share_of_schools_improved
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: numeric
+
+        data_type: numeric
+        description: Proportion of schools that have shown improvement in hygiene conditions.

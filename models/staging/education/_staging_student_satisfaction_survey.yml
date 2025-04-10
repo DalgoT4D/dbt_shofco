@@ -1,0 +1,137 @@
+version: 2
+models:
+  - name: staging_student_satisfaction_survey
+    description: Student satisfaction survey results
+    columns:
+      - name: student_name
+        data_type: text
+        description: Name of the student in lowercase
+      - name: grade
+        data_type: text
+        description: Grade of the student
+      - name: term
+        data_type: text
+        description: Term during which the survey was taken
+      - name: school
+        data_type: text
+        description: School of the student
+      - name: class_year
+        data_type: text
+        description: Class year of the student
+      - name: general_satisfaction
+        data_type: text
+        description: General satisfaction with the school
+      - name: school_satisfaction
+        data_type: text
+        description: Satisfaction level with the school in general
+      - name: general_satisfaction_comments
+        data_type: text
+        description: Comments or suggestions on general satisfaction
+      - name: teaching_method_satisfaction
+        data_type: text
+        description: Satisfaction with teaching methods and teacher support
+      - name: teacher_teaching_satisfaction
+        data_type: text
+        description: Satisfaction with how teachers teach in class
+      - name: teacher_support_satisfaction
+        data_type: text
+        description: Satisfaction with teacher support for students
+      - name: teacher_teaching_comments
+        data_type: text
+        description: Comments or suggestions on teaching methods
+      - name: teacher_support_comments
+        data_type: text
+        description: Comments or suggestions on teacher support
+      - name: student_teacher_relationship
+        data_type: text
+        description: Student-teacher relationship satisfaction
+      - name: student_teacher_relationship_satisfaction
+        data_type: text
+        description: Satisfaction with student-teacher relationships
+      - name: student_teacher_relationship_comments
+        data_type: text
+        description: Comments or suggestions on student-teacher relationships
+      - name: library_access
+        data_type: text
+        description: Access to library and reading materials
+      - name: library_satisfaction
+        data_type: text
+        description: Satisfaction with library services
+      - name: library_comments
+        data_type: text
+        description: Comments or suggestions on library services
+      - name: steam_lab_access
+        data_type: text
+        description: Access to STEM laboratory and devices
+      - name: steam_lab_satisfaction
+        data_type: text
+        description: Satisfaction with STEM laboratory and devices
+      - name: steam_lab_comments
+        data_type: text
+        description: Comments or suggestions on STEM laboratory
+      - name: hygiene_satisfaction
+        data_type: text
+        description: Satisfaction with school hygiene
+      - name: sanitation_satisfaction
+        data_type: text
+        description: Satisfaction with sanitation services
+      - name: hygiene_comments
+        data_type: text
+        description: Comments or suggestions on hygiene and sanitation
+      - name: feeding_program_satisfaction
+        data_type: text
+        description: Satisfaction with the school feeding program
+      - name: feeding_satisfaction
+        data_type: text
+        description: Satisfaction with the provided feeding program
+      - name: feeding_program_comments
+        data_type: text
+        description: Comments or suggestions on the feeding program
+      - name: extracurricular_satisfaction
+        data_type: text
+        description: Satisfaction with extracurricular activities
+      - name: extracurricular_satisfaction_detail
+        data_type: text
+        description: Detailed satisfaction with extracurricular activities
+      - name: extracurricular_comments
+        data_type: text
+        description: Comments or suggestions on extracurricular activities
+      - name: mental_health_support
+        data_type: text
+        description: Mental health support provided by the school
+      - name: mental_health_satisfaction
+        data_type: text
+        description: Satisfaction with mental health support
+      - name: mental_health_comments
+        data_type: text
+        description: Comments or suggestions on mental health support
+      - name: likes_about_school
+        data_type: text
+        description: Things students like most about their school
+      - name: improvement_areas
+        data_type: text
+        description: Areas identified for improvement at the school
+      - name: proposed_changes
+        data_type: text
+        description: Proposed changes students would like at the school
+      - name: parent_engagement
+        data_type: text
+        description: Level of parent or guardian engagement
+      - name: feeling_calm
+        data_type: text
+        description: Frequency of feeling calm
+      - name: good_mood
+        data_type: text
+        description: Frequency of being in a good mood
+      - name: share_sweets
+        data_type: text
+        description: Frequency of sharing sweets
+      - name: feeling_relaxed
+        data_type: text
+        description: Frequency of feeling relaxed
+      - name: submission_time
+        tests:
+          - valid_date_range:
+              column_name: submission_time
+        data_type: text
+        description: Time when the survey was submitted

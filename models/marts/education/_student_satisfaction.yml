@@ -4,31 +4,31 @@ models:
     description: Analyzes student satisfaction with schools.
     columns:
       - name: term
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Term during which the survey was taken
       - name: grade
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Grade of the student
       - name: school_type
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [ksg, msg]
         data_type: text
         description: Type of school attended by the student.
       - name: school_satisfaction
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [very_satisfied, neutral, very_dissatisfied, satisfied, dissatisfied]
         data_type: text
         description: Satisfaction level with the school in general
       - name: year
-        data_tests:
+        tests:
           - not_null
 
         data_type: text

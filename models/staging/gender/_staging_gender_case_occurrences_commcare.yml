@@ -59,141 +59,141 @@ models:
         description: Date when consent was amended
       - name: date_consent_was_given
         description: date consent was given
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_consent_was_given
 
         data_type: text
       - name: date_of_birth_of_next_of_kin
         description: date next of kin was born
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_birth_of_next_of_kin
         data_type: text
       - name: date_of_birth_of_well_wisher
         description: date well wisher was born
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_birth_of_well_wisher
         data_type: text
       - name: date_of_case_closure
         description: date case was closed
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_case_closure
         data_type: text
       - name: date_of_consent_being_captured
         description: date consent was captured
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_consent_being_captured
         data_type: text
       - name: date_of_counselling_registration
         description: date beneficiary registered for counselling
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_counselling_registration
         data_type: text
       - name: date_of_court_followup
         description: date of court followup
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_court_followup
         data_type: text
       - name: date_of_court_followup_amended_at
         description: when was date of court followup changed
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_court_followup_amended_at
         data_type: text
       - name: date_of_court_followup_update
         description: update date of court followup
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_court_followup_update
         data_type: text
       - name: date_of_medical_followup_amendment
         description: date of medical followup amendment
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_medical_followup_amendment
         data_type: text
       - name: date_of_medical_followup_update
         description: date of medical followup update
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_medical_followup_update
         data_type: text
       - name: date_of_medical_report_followup
         description: date of medical report followup
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_medical_report_followup
         data_type: text
       - name: date_of_onboarding
         description: date of onboarding
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_onboarding
         data_type: text
       - name: date_of_discharge
         description: date of discharge
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_discharge
         data_type: text
       - name: date_of_other_followup_amended_at
         description: date other followup was amended at
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_other_followup_amended_at
         data_type: text
       - name: date_of_other_followup_update
         description: date of other followup update
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_other_followup_update
         data_type: text
       - name: date_of_police_followup_last_amended_at
         description: date of amendment of police followup
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_police_followup_last_amended_at
         data_type: text
       - name: date_of_police_followup_update
         description: date of police followup update
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_police_followup_update
         data_type: text
       - name: date_of_police_report_followup
         description: date of police report followup
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_police_report_followup
         data_type: text
       - name: date_of_reporting
         description: date of reporting
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: date_of_reporting
         data_type: text
       - name: date_of_updating_case_occurrence_information
         description: date of updating case occurrence information
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_updating_case_occurrence_information
         data_type: text
       - name: date_referral_information_captured
         description: date referral information was captured
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_referral_information_captured
         data_type: text
       - name: date_referral_information_last_amended
         description: date referral information was last amended
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_referral_information_last_amended
         data_type: text

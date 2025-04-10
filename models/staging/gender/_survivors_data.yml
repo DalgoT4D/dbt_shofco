@@ -9,7 +9,7 @@ models:
         description: Person or entity the case is assigned to.
       - name: case_id
         description: Creation date of entry
-        data_tests:
+        tests:
           - unique
 
         data_type: text
@@ -18,7 +18,7 @@ models:
         description: Age of the gender survivor at the time of case registration.
       - name: date_of_registration
         description: Date of registration of survivor
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: date_of_registration
@@ -47,7 +47,7 @@ models:
         description: Type of case related to the gender survivor.
       - name: date_opened
         description: Date survivor case was opened
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: date_opened
@@ -61,7 +61,7 @@ models:
         description: Indicates whether the case of the gender survivor has been closed.
       - name: created_at
         description: Creation date of entry
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: created_at

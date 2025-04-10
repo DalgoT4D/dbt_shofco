@@ -16,7 +16,7 @@ models:
         data_type: character varying
         description: Group of students attending the meeting
       - name: meeting_date
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: meeting_date
 

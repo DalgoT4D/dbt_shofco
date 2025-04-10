@@ -7,12 +7,12 @@ models:
         data_type: character varying
         description: Academic term of the meeting
       - name: year
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Year in which the meeting took place
       - name: grade
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Grade level of the cohort
@@ -20,18 +20,18 @@ models:
         data_type: character varying
         description: Group of students attending the meeting
       - name: date
-        data_tests:
+        tests:
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: date
         data_type: date
         description: The date on which the parent-teacher meeting occurred.
       - name: meeting_type
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: The type or purpose of the parent-teacher meeting.
       - name: number_present
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: The number of people present at the parent-teacher meeting.
@@ -42,13 +42,13 @@ models:
         data_type: character varying
         description: The proportion of parents actively engaged in the parent-teacher meeting.
       - name: attendance_percentage
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: >-
           The percentage of expected parent attendees who were present at parent-teacher meetings.
       - name: school_type
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [ksg, msg]

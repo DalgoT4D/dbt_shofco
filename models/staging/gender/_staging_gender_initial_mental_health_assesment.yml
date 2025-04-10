@@ -8,7 +8,7 @@ models:
         description: Unique identifier for each record in the Initial Mental Health Assessment table.
       - name: initial_form_filling_date
         description: filling date of initial form
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: initial_form_filling_date

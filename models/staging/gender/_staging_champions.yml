@@ -5,7 +5,7 @@ models:
     columns:
 
       - name: champions_name
-        data_tests:
+        tests:
           - not_null
 
         data_type: text
@@ -14,7 +14,7 @@ models:
         data_type: text
         description: Role of the champion in the community.
       - name: county
-        data_tests:
+        tests:
           - not_null
 
         data_type: text
@@ -23,14 +23,14 @@ models:
         data_type: text
         description: Gender of the champion
       - name: national_id
-        data_tests:
+        tests:
           - not_null
           - unique
 
         data_type: character varying
         description: National ID of the champion.
       - name: mobile
-        data_tests:
+        tests:
           - unique
 
         data_type: character varying
@@ -48,7 +48,7 @@ models:
         data_type: character varying
         description: Indicates if the champion has been identified
       - name: date_identified
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: date_identified
@@ -56,7 +56,7 @@ models:
         data_type: character varying
         description: Date when the champion was identified.
       - name: date_trained
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_trained
 

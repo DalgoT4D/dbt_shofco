@@ -23,7 +23,7 @@ models:
         description: Name of the person who conducted the final assessment
       - name: date_of_final_assessment
         description: filling date of the final form
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: date_of_final_assessment
@@ -55,7 +55,7 @@ models:
         description: Extracted session ID from JSON metadata
       - name: final_form_filling_date
         description: filling date of the final form
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: final_form_filling_date

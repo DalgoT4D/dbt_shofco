@@ -4,28 +4,28 @@ models:
     description: Tracks the program's impact across counties with consolidated data.
     columns:
       - name: county
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Name of the county
       - name: iso_3166_2_code
-        data_tests:
+        tests:
           - not_null
           - unique
         data_type: character varying
         description: ISO 3166-2 code for the region
       - name: latitude
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Geographical latitude
       - name: longitude
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Geographical longitude
       - name: sun
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [1, 0]
@@ -34,7 +34,7 @@ models:
         data_type: integer
         description: Data related to SUN
       - name: youth_voice
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [1, 0]
@@ -42,7 +42,7 @@ models:
         data_type: integer
         description: Data related to youth voice.
       - name: sacco
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [1, 0]
@@ -51,14 +51,14 @@ models:
         data_type: integer
         description: Data related to SACCO
       - name: sl
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [1, 0]
         data_type: integer
         description: Data related to SL
       - name: education
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [1, 0]
@@ -67,7 +67,7 @@ models:
         data_type: integer
         description: Education-related data
       - name: gender
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [1, 0]
@@ -76,7 +76,7 @@ models:
         data_type: integer
         description: Gender information
       - name: wash
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [1, 0]
@@ -85,7 +85,7 @@ models:
         data_type: integer
         description: Data related to WASH
       - name: health
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [1, 0]
@@ -94,7 +94,7 @@ models:
         data_type: integer
         description: Health-related data
       - name: libraries
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [1, 0]

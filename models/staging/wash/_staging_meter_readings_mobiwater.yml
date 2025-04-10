@@ -4,17 +4,17 @@ models:
     description: Incremental water meter readings for mobiwater
     columns:
       - name: value
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: The recorded water consumption value in varying character format.
       - name: flow_device_id
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Unique identifier for the flow device associated with water consumption data.
       - name: date
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date
 

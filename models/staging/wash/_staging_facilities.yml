@@ -4,12 +4,12 @@ models:
     description: Staging data for wash facilities with deduplication by case_id
     columns:
       - name: ward
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Ward where the facility is located
       - name: county
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: County where the facility is located
@@ -17,7 +17,7 @@ models:
         data_type: text
         description: Village where the facility is located
       - name: latitude
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Latitude coordinate of the facility
@@ -25,17 +25,17 @@ models:
         data_type: text
         description: Identifier for the owner of the facility
       - name: longitude
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Longitude coordinate of the facility
       - name: subcounty
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Subcounty where the facility is located
       - name: date_facility_opened
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: date_facility_opened
@@ -45,17 +45,17 @@ models:
         data_type: text
         description: Identifier for the facility
       - name: facility_name
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Name of the facility
       - name: facility_type
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Type of the facility
       - name: date_of_submission
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_of_submission
 
@@ -74,7 +74,7 @@ models:
         data_type: text
         description: The date when the wash facility was opened.
       - name: case_id
-        data_tests:
+        tests:
           - not_null
           - unique
         data_type: text

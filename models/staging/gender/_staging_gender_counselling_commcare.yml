@@ -17,7 +17,7 @@ models:
         description: Age of the client
       - name: date_of_registration
         description: date of registration for counselling
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: date_of_registration

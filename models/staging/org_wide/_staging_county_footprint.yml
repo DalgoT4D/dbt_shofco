@@ -4,83 +4,83 @@ models:
     description: Tracks the program's impact across counties with consolidated data.
     columns:
       - name: sl
-        data_tests:
+        tests:
           - accepted_values:
               values: [Y, N]
         data_type: character varying
         description: Data related to SL
       - name: sun
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [Y, N]
         data_type: character varying
         description: Data related to SUN
       - name: wash
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [Y, N]
         data_type: character varying
         description: Data related to WASH
       - name: sacco
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [Y, N]
         data_type: character varying
         description: Data related to SACCO
       - name: county
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Name of the county
       - name: gender
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [Y, N]
         data_type: character varying
         description: Gender information
       - name: health
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [Y, N]
         data_type: character varying
         description: Health-related data
       - name: latitude
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Geographical latitude
       - name: education
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [Y, N]
         data_type: character varying
         description: Education-related data
       - name: libraries
-        data_tests:
+        tests:
           - accepted_values:
               values: [Y, N]
         data_type: character varying
         description: Information about libraries
       - name: longitude
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Geographical longitude
       - name: youth_voice
-        data_tests:
+        tests:
           - accepted_values:
               values: [Y, N]
 
         data_type: character varying
         description: Data related to youth voice.
       - name: iso_3166_2_code
-        data_tests:
+        tests:
           - not_null
           - unique
         data_type: character varying

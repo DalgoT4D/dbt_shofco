@@ -4,12 +4,12 @@ models:
     description: Analyzes distribution of education nudges based on demographics.
     columns:
       - name: term
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Academic term for the nudge
       - name: grade
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Current grade of the pupil receiving the nudge.
@@ -17,12 +17,12 @@ models:
         data_type: character varying
         description: Group of students receiving the nudge
       - name: year
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Year the nudge was given
       - name: county
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: County where the nudge was applied
@@ -30,19 +30,19 @@ models:
         data_type: text
         description: Subcounty where the nudge was applied
       - name: gender
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [male, female]
         data_type: text
         description: Gender of the pupil
       - name: nudge_type
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Type of nudge received by the pupil.
       - name: nudge_count
-        data_tests:
+        tests:
           - not_null
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: bigint

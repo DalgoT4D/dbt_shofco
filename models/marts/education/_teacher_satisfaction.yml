@@ -4,26 +4,26 @@ models:
     description: Summarizes teacher satisfaction survey data.
     columns:
       - name: teaching_level
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Level of teaching as indicated in the survey
       - name: education_satisfaction
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [very_satisfied, neutral, very_dissatisfied, satisfied, dissatisfied]
         data_type: text
         description: Satisfaction with the education received by the child
       - name: school_type
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [ksg, msg]
         data_type: text
         description: Type of school represented in the teacher satisfaction survey.
       - name: year
-        data_tests:
+        tests:
           - not_null
 
         data_type: numeric

@@ -4,7 +4,7 @@ models:
     description: Well being sessions of both group and individual type
     columns:
       - name: date
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date
 

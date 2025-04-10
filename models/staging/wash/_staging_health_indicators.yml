@@ -4,42 +4,42 @@ models:
     description: Staging data for school health indicators
     columns:
       - name: id
-        data_tests:
+        tests:
           - not_null
           - unique
         data_type: text
         description: >-
           Unique identifier for each record in the school health club monitoring indicators table.
       - name: form_date
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: form_date
         data_type: text
         description: Date when the health indicator form was recorded.
       - name: term
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: >-
           Term used for classifying or categorizing health indicators in the school health data.
       - name: school_name
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Name of the school related to the health indicators being monitored.
       - name: health_club_boys
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Number of boys participating in the school health club.
       - name: health_club_girls
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Number of girls participating in the school health club.
       - name: health_club_active
-        data_tests:
+        tests:
           - not_null
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: integer
@@ -50,7 +50,7 @@ models:
           Indicates whether a student is actively participating in a health club, with 1 for active and
           0 for inactive.
       - name: hygiene_score
-        data_tests:
+        tests:
           - not_null
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: integer

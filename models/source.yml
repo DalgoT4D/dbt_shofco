@@ -7,7 +7,7 @@ sources:
       - name: Scholarships
         identifier: Scholarships
         description: Scholarships given
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -97,7 +97,7 @@ sources:
       - name: Nudges
         identifier: Nudges
         description: Nudges given
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -146,7 +146,7 @@ sources:
       - name: Public_School_Partnerships
         identifier: Public_School_Partnerships
         description: Public School Partnerships
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -213,7 +213,7 @@ sources:
       - name: KSG_Summary
         identifier: KSG_Summary
         description: KSG School Attendance Kindergarten-Grade8
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -265,7 +265,7 @@ sources:
       - name: MSG_Summary
         identifier: MSG_Summary
         description: MSG School Attendance Kindergarten-Grade8
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -317,7 +317,7 @@ sources:
       - name: MSG_Parents_Summary
         identifier: MSG_Parents_Summary
         description: MSG Parent Meeting Attendance
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -369,7 +369,7 @@ sources:
       - name: KSG_Parents_Summary
         identifier: KSG_Parents_Summary
         description: KSG Parent Meeting Attendance
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -421,7 +421,7 @@ sources:
       - name: MSG_Follow_Up_Social_Worker
         identifier: MSG_Follow_Up_Social_Worker
         description: Social Worker Follow Ups on Reasons for Absence
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -460,7 +460,7 @@ sources:
       - name: KSG_Follow_Up_Social_Worker
         identifier: KSG_Follow_Up_Social_Worker
         description: Social Worker Follow Ups on Reasons for Absence
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -498,7 +498,7 @@ sources:
       - name: Individual_Sessions
         identifier: Individual_Sessions
         description: Individual well being sessions
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -553,7 +553,7 @@ sources:
       - name: Group_Sessions
         identifier: Group_Sessisons
         description: Group well being sessions
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -750,7 +750,7 @@ sources:
           - name: _airbyte_meta
             data_type: jsonb
             description: Metadata related to Airbyte extraction
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -807,7 +807,7 @@ sources:
           - name: _airbyte_meta
             data_type: jsonb
             description: Metadata associated with the Airbyte extraction
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -837,7 +837,7 @@ sources:
             description: Metadata column used for storing Airbyte-specific information in JSONB format.
       - name: dim_location_administrative_units
         description: Administrative units lookup table
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -879,7 +879,7 @@ sources:
             description: Key for the location name
       - name: dim_gender_sites
         description: Sites used by the gender program
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -1012,7 +1012,7 @@ sources:
       - name: County_Footprint
         identifier: County_Footprint
         description: County Footprint of program impact
-        data_tests:
+        tests:
           - elementary.schema_changes:
               config:
                 severity: error
@@ -1119,7 +1119,7 @@ sources:
       - name: Laini_Saba
         identifier: Laini_Saba
         description: Laini Saba Water Production Information
-        data_tests:
+        tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
@@ -1159,7 +1159,7 @@ sources:
       - name: Lindi
         identifier: Lindi
         description: Lindi Water Production Information
-        data_tests:
+        tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
@@ -1199,7 +1199,7 @@ sources:
       - name: Makina
         identifier: Makina
         description: Makina Water Production Information
-        data_tests:
+        tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
@@ -1241,7 +1241,7 @@ sources:
       - name: Subra
         identifier: Subra
         description: Subra Water Production Information
-        data_tests:
+        tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
@@ -1290,7 +1290,7 @@ sources:
       - name: HQ
         identifier: HQ
         description: HQ Water Production Information
-        data_tests:
+        tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
@@ -1330,7 +1330,7 @@ sources:
       - name: User_Meters
         identifier: User_Meters
         description: Information on User Meters from Mobiwater
-        data_tests:
+        tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3
@@ -1391,7 +1391,7 @@ sources:
       - name: meter_consumption
         identifier: meter_consumption
         description: Water Consumption Information from Mobiwater
-        data_tests:
+        tests:
           - elementary.freshness_anomalies:
               timestamp_column: _airbyte_extracted_at
               anomaly_sensitivity: 3

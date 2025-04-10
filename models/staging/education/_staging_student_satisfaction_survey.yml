@@ -130,7 +130,7 @@ models:
         data_type: text
         description: Frequency of feeling relaxed
       - name: submission_time
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: submission_time
         data_type: text

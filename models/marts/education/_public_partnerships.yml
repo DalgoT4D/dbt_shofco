@@ -5,7 +5,7 @@ models:
       Summarizes public school partnership data, including KPCE scores and resource allocations.
     columns:
       - name: year
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: The year of the record
@@ -13,17 +13,17 @@ models:
         data_type: text
         description: Name of the school
       - name: county
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: County where the school is located
       - name: mean_kpce_score
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Average KPCE score for the school
       - name: subcounty
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Subcounty where the school is located
@@ -31,7 +31,7 @@ models:
         data_type: character varying
         description: Number of teachers trained
       - name: students_enrolled
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Number of students enrolled
@@ -42,7 +42,7 @@ models:
         data_type: character varying
         description: Number of toilet stances built
       - name: high_touch_low_touch
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: [High, Low]

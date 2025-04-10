@@ -10,17 +10,17 @@ models:
         data_type: character varying
         description: Current status of the water production
       - name: bh_production
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Details about borehole production measurement.
       - name: treated_consumption
-        data_tests:
+        tests:
           - not_null
         data_type: character varying
         description: Volume of treated water consumed.
       - name: tank
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Placeholder for tank column description.

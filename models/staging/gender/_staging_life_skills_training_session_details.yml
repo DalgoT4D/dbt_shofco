@@ -8,7 +8,7 @@ models:
         description: Unique identifier for each record in the IIVC Life Skills Training table.
       - name: indexed_on
         description: Entry indexing date
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: indexed_on

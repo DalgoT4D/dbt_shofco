@@ -5,7 +5,7 @@ models:
     columns:
 
       - name: national_id
-        data_tests:
+        tests:
           - not_null
           - unique
 
@@ -15,7 +15,7 @@ models:
         data_type: character varying
         description: Indicates if the leader is currently active
       - name: county
-        data_tests:
+        tests:
           - not_null
 
         data_type: text
@@ -24,7 +24,7 @@ models:
         data_type: text
         description: Gender of the community leader
       - name: mobile
-        data_tests:
+        tests:
           - unique
 
         data_type: character varying
@@ -43,7 +43,7 @@ models:
         description: Role of the leader within the community.
       - name: date_identified
         description: Date of identification of GBV Leader
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: date_identified
@@ -51,13 +51,13 @@ models:
         data_type: character varying
       - name: date_trained
         description: Date of training of GBV Leader
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: date_trained
 
         data_type: character varying
       - name: gbv_leader_name
-        data_tests:
+        tests:
           - not_null
 
         data_type: text

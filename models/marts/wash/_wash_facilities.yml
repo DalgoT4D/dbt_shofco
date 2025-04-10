@@ -4,12 +4,12 @@ models:
     description: Details of wash facilities including location and status
     columns:
       - name: ward
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Ward where the facility is located
       - name: county
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: County where the facility is located
@@ -17,17 +17,17 @@ models:
         data_type: text
         description: Village where the facility is located
       - name: latitude
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Latitude coordinate of the facility
       - name: longitude
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Longitude coordinate of the facility
       - name: subcounty
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Subcounty where the facility is located
@@ -38,12 +38,12 @@ models:
         data_type: text
         description: Identifier for the facility
       - name: facility_name
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Name of the facility
       - name: facility_type
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Type of the facility
@@ -54,12 +54,12 @@ models:
         data_type: text
         description: Current status of the facility
       - name: case_name
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Name of the wash facility case.
       - name: case_type
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Type of case related to the wash facility.
@@ -67,7 +67,7 @@ models:
         data_type: date
         description: Date when the wash facility was opened.
       - name: case_id
-        data_tests:
+        tests:
           - not_null
         data_type: text
         description: Unique identifier for each wash facility case record
@@ -75,7 +75,7 @@ models:
         data_type: date
         description: Timestamp indicating when the data was indexed.
       - name: closed
-        data_tests:
+        tests:
           - not_null
           - accepted_values:
               values: ['false']

@@ -14,21 +14,21 @@ models:
         description: The year in which the life skills training event took place.
       - name: term_start_date
         description: Term Start date
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: term_start_date
 
         data_type: timestamp with time zone
       - name: term_end_date
         description: Term end date
-        data_tests:
+        tests:
           - valid_date_range:
               column_name: term_end_date
 
         data_type: timestamp with time zone
       - name: form_filling_date
         description: date form was filled
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: form_filling_date

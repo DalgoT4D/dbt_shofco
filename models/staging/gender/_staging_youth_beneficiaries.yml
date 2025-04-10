@@ -6,7 +6,7 @@ models:
 
       - name: case_id
         description: Date of registration of survivor
-        data_tests:
+        tests:
           - unique
 
         data_type: text
@@ -21,7 +21,7 @@ models:
         description: Constituency where the beneficiary is located
       - name: date_of_registration
         description: Date of registration of survivor
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: date_of_registration
@@ -47,7 +47,7 @@ models:
         description: Name of the case
       - name: date_opened
         description: Date survivor case was opened
-        data_tests:
+        tests:
           - not_null
           - valid_date_range:
               column_name: date_opened

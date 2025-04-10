@@ -13,13 +13,14 @@ WITH clean_data AS (
         _airbyte_extracted_at,
         school_type,
         {{ validate_date("date_of_absence") }} AS absence_date,
-        {{ validate_date("estimated_reporting_date") }} AS reporting_date
+        {{ validate_date("estimated_reporting_date") }} AS reporting_date,
+        year
     FROM {{ ref('staging_followup_attendance') }}
 )
 
 SELECT
     absence_date,
-    EXTRACT(YEAR FROM absence_date) AS year,
+    year,
 
     -- Calculate term based on the valid date
     CASE 
@@ -49,6 +50,7 @@ SELECT
 FROM clean_data
 GROUP BY
     absence_date,
+    year,
     CASE 
         WHEN
             absence_date BETWEEN DATE_TRUNC('year', absence_date)

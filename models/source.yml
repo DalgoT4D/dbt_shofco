@@ -1,3 +1,4 @@
+
 version: 2
 
 sources:
@@ -11,7 +12,6 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
         columns:
           - name: Term
             data_type: character varying
@@ -101,8 +101,6 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
-
         columns:
           - name: Term
             data_type: character varying
@@ -150,8 +148,6 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
-
         columns:
           - name: Year
             data_type: character varying
@@ -217,8 +213,13 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
-
+      - name: KSG_Class_Summary_2025
+        identifier: KSG_Class_Summary_2025
+        description: "KSG School Attendance Pre-K -Grade9"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         columns:
           - name: Term
             data_type: character varying
@@ -269,8 +270,13 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
-
+      - name: MSG_Class_Summary_2025
+        identifier: MSG_Class_Summary_2025
+        description: "MSG School Attendance Pre-K -Grade9"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         columns:
           - name: Term
             data_type: character varying
@@ -321,8 +327,13 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
-
+      - name: MSG_Parents_Summary_2025
+        identifier: MSG_Parents_Summary_2025
+        description: "MSG Parent Meeting Attendance Data for 2025"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         columns:
           - name: Term
             data_type: character varying
@@ -373,7 +384,13 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
+      - name: KSG_Parents_Summary_2025
+        identifier: KSG_Parents_Summary_2025
+        description: KSG Parent Meeting Attendance Data for 2025"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
 
         columns:
           - name: Term
@@ -425,8 +442,13 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
-
+      - name: MSG_Follow_Up_Social_Worker_2025
+        identifier: MSG_Follow_Up_Social_Worker
+        description: "Social Worker Follow Ups on Reasons for Absence"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         columns:
           - name: Date_
             data_type: character varying
@@ -464,8 +486,13 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
-
+      - name: KSG_Follow_Up_Social_Worker_2025
+        identifier: KSG_Follow_Up_Social_Worker
+        description: "Social Worker Follow Ups on Reasons for Absence"
+        data_tests:
+          - elementary.schema_changes: 
+              config:
+                severity: error
         columns:
           - name: Date_
             data_type: character varying
@@ -502,8 +529,6 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
-
         columns:
           - name: Date
             data_type: character varying
@@ -557,8 +582,6 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
-
         columns:
           - name: Date
             data_type: character varying
@@ -647,8 +670,6 @@ sources:
       - name: Student_Satisfaction_and_Well_Being_Survey
         identifier: Student_Satisfaction_and_Well_Being_Survey
         description: Student Satisfaction in Shofco Education Programs
-
-
         columns:
           - name: id
             data_type: character varying
@@ -884,7 +905,6 @@ sources:
               config:
                 severity: error
 
-
         columns:
           - name: location_id
             data_type: integer
@@ -985,8 +1005,6 @@ sources:
       - name: IIVC_Mapping
         description: IIVC Mapping info on Schools
 
-
-
         columns:
           - name: id
             data_type: character varying
@@ -1016,9 +1034,6 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
-
-
         columns:
           - name: SL
             data_type: character varying
@@ -1126,8 +1141,6 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
-
         columns:
           - name: DATE
             data_type: character varying
@@ -1248,7 +1261,6 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
 
         columns:
           - name: DATE
@@ -1425,11 +1437,6 @@ sources:
       - name: raw_case
         identifier: zzz_case
         description: Wash Facilities Case Data
-
-
-
-
-
         columns:
           - name: id
             data_type: character varying

@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: sessions_attended
+    columns:
+      - name: case_id
+        data_type: text
+        description: Extracted case ID from JSON data
+      - name: sessions_attended
+        data_type: text
+        description: Number of sessions attended by the client
+      - name: date_of_final_assessment
+        description: filling date of the final form
+        data_type: date
+      - name: session_id
+        data_type: text
+        description: Extracted session ID from JSON metadata
+    description: >-
+      This table records the number of sessions attended by clients in their final mental health assessment,
+      including details such as case ID, session ID, and the date of the final assessment, filtered to
+      include only entries with valid session counts.

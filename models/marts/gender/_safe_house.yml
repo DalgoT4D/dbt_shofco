@@ -1,0 +1,19 @@
+version: 2
+models:
+  - name: safe_house
+    columns:
+      - name: assigned_to
+        data_type: text
+        description: Person assigned to the case
+      - name: month
+        data_type: timestamp with time zone
+        description: >-
+          The month and year tracking the aggregation of safe house data, reflecting the timeframe of
+          utilization and assignments.
+      - name: people_in_safe_house
+        data_type: bigint
+        description: Number of people present in the safe house.
+    description: >-
+      The "safe_house" table aggregates data on individuals assigned to safe houses, tracking the number
+      of people in safe houses each month. It includes case assignments and onboarding/discharge dates,
+      allowing for analysis of safe house utilization over time.

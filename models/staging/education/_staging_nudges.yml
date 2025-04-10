@@ -1,0 +1,39 @@
+version: 2
+models:
+  - name: staging_nudges
+    columns:
+      - name: term
+        data_type: character varying
+        description: Academic term for the nudge
+      - name: year
+        data_type: character varying
+        description: Year the nudge was given
+      - name: cohort
+        data_type: character varying
+        description: Group of students receiving the nudge
+      - name: grade
+        data_type: character varying
+        description: Current grade of the pupil receiving the nudge.
+      - name: name
+        data_type: character varying
+        description: Name of the pupil receiving the nudge.
+      - name: primary_school
+        data_type: character varying
+        description: Primary school of the pupil
+      - name: nudge_type
+        data_type: character varying
+        description: Type of nudge received by the pupil.
+      - name: county
+        data_type: text
+        description: County where the nudge was applied
+      - name: gender
+        data_type: text
+        description: Gender of the pupil
+      - name: subcounty
+        data_type: text
+        description: Subcounty where the nudge was applied
+    description: >-
+      The "staging_nudges" table contains information about educational nudges given to pupils, including
+      details such as the academic term, year, cohort, current grade, pupil's name, primary school, type
+      of nudge received, and geographical information like county, gender, and subcounty where the nudge
+      was applied.

@@ -1,0 +1,66 @@
+version: 2
+models:
+  - name: staging_gender_survivors_commcare
+    columns:
+      - name: assigned_to
+        data_type: text
+        description: Person or entity the case is assigned to.
+      - name: county
+        data_type: text
+        description: County where the case is registered.
+      - name: constituency
+        data_type: text
+        description: Constituency related to the case.
+      - name: date_of_birth
+        data_type: text
+        description: Date of birth of the survivor.
+      - name: date_of_registration
+        data_type: text
+        description: Date when the case was registered.
+      - name: gender
+        data_type: text
+        description: Gender of the survivor.
+      - name: gender_site_code_of_registration
+        data_type: text
+        description: Site code where the gender was registered.
+      - name: police_ob_number_for_registration
+        data_type: text
+        description: Police OB number associated with the registration.
+      - name: registered_by
+        data_type: text
+        description: Person who registered the case.
+      - name: village
+        data_type: text
+        description: Village related to the case.
+      - name: ward
+        data_type: text
+        description: Ward where the case is located.
+      - name: what_is_the_age_provided
+        data_type: text
+        description: Age of the survivor as provided.
+      - name: what_is_the_year_of_birth_of_survivor
+        data_type: text
+        description: Year of birth of the survivor.
+      - name: case_name
+        data_type: text
+        description: Name of the case as recorded in the CommCare system.
+      - name: case_type
+        data_type: text
+        description: Type of case recorded in the CommCare system.
+      - name: date_opened
+        data_type: text
+        description: Date on which the case was opened in the system.
+      - name: case_id
+        data_type: text
+        description: Unique identifier for each case.
+      - name: indexed_on
+        data_type: timestamp with time zone
+        description: Timestamp indicating when the case was indexed.
+      - name: closed
+        data_type: text
+        description: Indicates whether the case is closed.
+      - name: created_at
+        data_type: timestamp with time zone
+        description: >-
+          Timestamp indicating when the record was created in the system, with time zone information.
+    description: Model for extracting and staging gender survivors data from CommCare.

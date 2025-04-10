@@ -1,0 +1,57 @@
+version: 2
+models:
+  - name: parents_attendance
+    description: Captures parent attendance data for school meetings and engagement levels.
+    columns:
+      - name: term
+        data_type: character varying
+        description: Academic term of the meeting
+      - name: year
+        tests:
+          - not_null
+        data_type: character varying
+        description: Year in which the meeting took place
+      - name: grade
+        tests:
+          - not_null
+        data_type: character varying
+        description: Grade level of the cohort
+      - name: cohort
+        data_type: character varying
+        description: Group of students attending the meeting
+      - name: date
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+        data_type: date
+        description: The date on which the parent-teacher meeting occurred.
+      - name: meeting_type
+        tests:
+          - not_null
+        data_type: character varying
+        description: The type or purpose of the parent-teacher meeting.
+      - name: number_present
+        tests:
+          - not_null
+        data_type: character varying
+        description: The number of people present at the parent-teacher meeting.
+      - name: number_of_parents
+        data_type: character varying
+        description: The number of parents who attended the parent-teacher meeting.
+      - name: share_of_parents_engaged
+        data_type: character varying
+        description: The proportion of parents actively engaged in the parent-teacher meeting.
+      - name: attendance_percentage
+        tests:
+          - not_null
+        data_type: character varying
+        description: >-
+          The percentage of expected parent attendees who were present at parent-teacher meetings.
+      - name: school_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ksg, msg]
+
+        data_type: text
+        description: The type of school associated with the parent-teacher meeting.

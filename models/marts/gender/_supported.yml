@@ -1,0 +1,29 @@
+version: 2
+models:
+  - name: supported
+    columns:
+      - name: month
+        data_type: timestamp with time zone
+        description: The month during which the gender-related case was open or being reported.
+      - name: parent_case_id
+        data_type: text
+        description: Identifier for the parent case associated with the current case entry.
+      - name: case_name
+        data_type: text
+        description: Name of the gender-related case.
+      - name: assigned_to
+        data_type: text
+        description: Person or entity the case is assigned to.
+      - name: county
+        data_type: text
+        description: County where the case is registered.
+      - name: site
+        data_type: text
+        description: Name of the site where the gender survivor case was registered.
+      - name: is_case_open
+        data_type: integer
+        description: Indicates whether the case was open during the specified month.
+    description: >-
+      This table provides a monthly view of gender-related case occurrences, indicating whether each case
+      was open during a given month. It includes details such as the case name, assignment, county, and
+      site, along with a status indicator for each month within the case's reporting and closure period.

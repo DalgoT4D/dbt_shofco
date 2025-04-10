@@ -1,0 +1,35 @@
+version: 2
+models:
+  - name: life_skills_training_participants
+    columns:
+      - name: target_group
+        data_type: text
+        description: Category of participants targeted by the life skills training program.
+      - name: term
+        data_type: text
+        description: The academic term or period during which the life skills training was conducted.
+      - name: year
+        data_type: text
+        description: The year in which the life skills training event took place.
+      - name: term_start_date
+        description: Term Start date
+        data_type: date
+      - name: term_end_date
+        description: Term end date
+        data_type: date
+      - name: form_filling_date
+        description: date form was filled
+        data_type: date
+      - name: session_id
+        data_type: text
+        description: Unique identifier for each training session attended by a participant.
+      - name: participant_name
+        data_type: text
+        description: Full name of the participant in the life skills training program.
+      - name: gender
+        data_type: text
+        description: The gender of the youth beneficiary participating in the life skills training.
+    description: >-
+      This table contains information on participants in the life skills training program, including details
+      such as participant demographics, training session identifiers, and key dates related to the training
+      events.

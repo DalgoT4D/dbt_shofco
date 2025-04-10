@@ -1,0 +1,106 @@
+version: 2
+models:
+  - name: staging_mapping
+    description: Standardizes and prepares mapping data for program-wide reporting and analysis.
+    columns:
+      - name: id
+        tests:
+          - not_null
+        data_type: character varying
+        description: Unique identifier for each record in the IIVC Mapping table.
+      - name: case_id
+        tests:
+          - not_null
+        data_type: jsonb
+        description: Identifier for the case extracted from JSON data.
+      - name: case_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: [school_case_data]
+        data_type: text
+        description: Type of case extracted from JSON data.
+      - name: comments
+        tests:
+          - not_null
+        data_type: text
+        description: Comments extracted from JSON data.
+      - name: facility
+        tests:
+          - accepted_values:
+              values: [school, community_safe_space, gender_officedesk]
+        data_type: text
+        description: Facility information extracted from JSON data.
+      - name: gender_intervention
+        data_type: text
+        description: Details of gender intervention in the school.
+      - name: wash_intervention
+        data_type: text
+        description: Details of WASH interventions in the school.
+      - name: education_intervention
+        tests:
+          - accepted_values:
+              values: [high, low_touch]
+        data_type: text
+        description: Details of education intervention in the school.
+      - name: school_name
+        data_type: text
+        description: Name of the school extracted from JSON data.
+      - name: wash_program
+        tests:
+          - accepted_values:
+              values: [yes, no]
+        data_type: text
+        description: Information about the WASH program in the school.
+      - name: gender_program
+        tests:
+          - accepted_values:
+              values: [yes, no]
+        data_type: text
+        description: Information about the gender program in the school.
+      - name: type_of_school
+        tests:
+          - accepted_values:
+              values: [public, private, apbet]
+        data_type: text
+        description: Type of school extracted from JSON data.
+      - name: shofco_education_program
+        tests:
+          - accepted_values:
+              values: [yes, no]
+        data_type: text
+        description: Indicates if the school has a SHOFCO education program.
+      - name: ward
+        tests:
+          - not_null
+        data_type: text
+        description: Ward location of the school.
+      - name: county
+        tests:
+          - not_null
+        data_type: text
+        description: County location of the school.
+      - name: constituency
+        tests:
+          - not_null
+        data_type: text
+        description: Constituency location of the school.
+      - name: interviewer_name
+        data_type: text
+        description: Name of the interviewer who collected the data.
+      - name: gps_location
+        tests:
+          - not_null
+        data_type: text
+        description: GPS location of the facility.
+      - name: office_gender_desk_location
+        data_type: text
+        description: Location of the office gender desk.
+      - name: received_on
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+          - valid_date_range:
+              column_name: received_on
+        data_type: date
+        description: Date when the data was received, validated as a date.

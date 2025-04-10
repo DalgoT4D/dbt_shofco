@@ -1,0 +1,44 @@
+version: 2
+models:
+  - name: gbv_leader
+    columns:
+      - name: national_id
+        data_type: character varying
+        description: National identification number of the leader.
+      - name: active
+        data_type: character varying
+        description: Indicates if the leader is currently active
+      - name: county
+        data_type: text
+        description: County where the leader operates
+      - name: gender
+        data_type: text
+        description: Gender of the community leader
+      - name: trained
+        data_type: character varying
+        description: Indicates if the leader has received training
+      - name: identified
+        data_type: character varying
+        description: Indicates if the leader has been identified
+      - name: date_identified
+        description: Date of identification of GBV Leader
+        data_type: date
+      - name: date_trained
+        description: Date of training of GBV Leader
+        data_type: date
+      - name: status
+        data_type: text
+        description: >-
+          Indicates the current status of the GBV community leader, such as active, trained, or identified.
+      - name: quarter_trained
+        data_type: text
+        description: Indicates the quarter during which the GBV leader received training.
+      - name: quarter_identified
+        data_type: text
+        description: The quarter during which the GBV leader was identified.
+    description: >-
+      The "gbv_leader" table provides information about gender-based violence community leaders, including
+      their identification and training status. It includes details such as national ID, active status,
+      county, gender, and dates of identification and training. The table also evaluates the leaders'
+      status based on their training and identification and identifies the quarters during which they
+      were trained or identified. This data helps in tracking and managing GBV community leaders effectively.

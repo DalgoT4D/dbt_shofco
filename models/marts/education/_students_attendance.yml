@@ -1,0 +1,59 @@
+version: 2
+models:
+  - name: students_attendance
+    description: Tracks student attendance statistics.
+    columns:
+      - name: term
+        tests:
+          - not_null
+        data_type: character varying
+        description: The academic term for the attendance record
+      - name: grade
+        tests:
+          - not_null
+        data_type: character varying
+        description: The grade level of the students
+      - name: year
+        tests:
+          - not_null
+        data_type: character varying
+        description: The academic year for the attendance record
+      - name: avg_days_attended
+        tests:
+          - not_null
+        data_type: character varying
+        description: Average number of days attended by students.
+      - name: total_school_days
+        tests:
+          - not_null
+        data_type: character varying
+        description: Total number of school days in the term.
+      - name: number_of_students
+        tests:
+          - not_null
+        data_type: character varying
+        description: Total number of students included in the attendance record.
+      - name: attendance_percentage
+        tests:
+          - not_null
+        data_type: character varying
+        description: Percentage of attendance for the students.
+      - name: total_days_absent
+        tests:
+          - not_null
+        data_type: character varying
+        description: >-
+          Total days absent for all students within the specified term, year, grade, and school type.
+      - name: total_days_present
+        tests:
+          - not_null
+        data_type: character varying
+        description: Total days present for all students during a specified term and school.
+      - name: school_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ksg, msg]
+
+        data_type: text
+        description: The type of school attended, categorized as MSG or KSG.

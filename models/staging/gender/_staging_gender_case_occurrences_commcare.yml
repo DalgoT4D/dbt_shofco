@@ -1,0 +1,317 @@
+version: 2
+models:
+  - name: staging_gender_case_occurrences_commcare
+    description: Data on Youth Beneficiaries from commcare
+    columns:
+      - name: acknowledgement_of_informed_consent
+        data_type: text
+        description: Acknowledgement of informed consent
+      - name: assault_type
+        data_type: text
+        description: Type of assault
+      - name: assigned_to
+        data_type: text
+        description: Person or entity the case is assigned to
+      - name: at_what_stage_is_the_court_case_currently_at
+        data_type: text
+        description: Current stage of the court case
+      - name: case_assignment_date
+        data_type: text
+        description: Date when the case was assigned
+      - name: case_closure_other_reason
+        data_type: text
+        description: Other reason for case closure
+      - name: case_closure_reason
+        data_type: text
+        description: Reason for case closure
+      - name: case_intake_date
+        data_type: text
+        description: Date when the case was taken in
+      - name: case_number
+        data_type: text
+        description: Number assigned to the case
+      - name: case_summary_notes
+        data_type: text
+        description: Summary notes of the case
+      - name: case_reassignment_date
+        data_type: text
+        description: Date when the case was reassigned
+      - name: case_reported_to_police
+        data_type: text
+        description: Indicates if the case was reported to the police
+      - name: case_worker_date_of_onboarding
+        data_type: text
+        description: Onboarding date of the case worker
+      - name: consent_for_information_release
+        data_type: text
+        description: Consent for releasing information
+      - name: constituency_of_incident_report
+        data_type: text
+        description: Constituency where the incident was reported
+      - name: county_of_incident_report
+        data_type: text
+        description: County where the incident was reported
+      - name: court_followup_comments
+        data_type: text
+        description: Comments related to court follow-up
+      - name: date_consent_was_amended
+        data_type: text
+        description: Date when consent was amended
+      - name: date_consent_was_given
+        description: date consent was given
+        tests:
+          - valid_date_range:
+              column_name: date_consent_was_given
+
+        data_type: text
+      - name: date_of_birth_of_next_of_kin
+        description: date next of kin was born
+        tests:
+          - valid_date_range:
+              column_name: date_of_birth_of_next_of_kin
+        data_type: text
+      - name: date_of_birth_of_well_wisher
+        description: date well wisher was born
+        tests:
+          - valid_date_range:
+              column_name: date_of_birth_of_well_wisher
+        data_type: text
+      - name: date_of_case_closure
+        description: date case was closed
+        tests:
+          - valid_date_range:
+              column_name: date_of_case_closure
+        data_type: text
+      - name: date_of_consent_being_captured
+        description: date consent was captured
+        tests:
+          - valid_date_range:
+              column_name: date_of_consent_being_captured
+        data_type: text
+      - name: date_of_counselling_registration
+        description: date beneficiary registered for counselling
+        tests:
+          - valid_date_range:
+              column_name: date_of_counselling_registration
+        data_type: text
+      - name: date_of_court_followup
+        description: date of court followup
+        tests:
+          - valid_date_range:
+              column_name: date_of_court_followup
+        data_type: text
+      - name: date_of_court_followup_amended_at
+        description: when was date of court followup changed
+        tests:
+          - valid_date_range:
+              column_name: date_of_court_followup_amended_at
+        data_type: text
+      - name: date_of_court_followup_update
+        description: update date of court followup
+        tests:
+          - valid_date_range:
+              column_name: date_of_court_followup_update
+        data_type: text
+      - name: date_of_medical_followup_amendment
+        description: date of medical followup amendment
+        tests:
+          - valid_date_range:
+              column_name: date_of_medical_followup_amendment
+        data_type: text
+      - name: date_of_medical_followup_update
+        description: date of medical followup update
+        tests:
+          - valid_date_range:
+              column_name: date_of_medical_followup_update
+        data_type: text
+      - name: date_of_medical_report_followup
+        description: date of medical report followup
+        tests:
+          - valid_date_range:
+              column_name: date_of_medical_report_followup
+        data_type: text
+      - name: date_of_onboarding
+        description: date of onboarding
+        tests:
+          - valid_date_range:
+              column_name: date_of_onboarding
+        data_type: text
+      - name: date_of_discharge
+        description: date of discharge
+        tests:
+          - valid_date_range:
+              column_name: date_of_discharge
+        data_type: text
+      - name: date_of_other_followup_amended_at
+        description: date other followup was amended at
+        tests:
+          - valid_date_range:
+              column_name: date_of_other_followup_amended_at
+        data_type: text
+      - name: date_of_other_followup_update
+        description: date of other followup update
+        tests:
+          - valid_date_range:
+              column_name: date_of_other_followup_update
+        data_type: text
+      - name: date_of_police_followup_last_amended_at
+        description: date of amendment of police followup
+        tests:
+          - valid_date_range:
+              column_name: date_of_police_followup_last_amended_at
+        data_type: text
+      - name: date_of_police_followup_update
+        description: date of police followup update
+        tests:
+          - valid_date_range:
+              column_name: date_of_police_followup_update
+        data_type: text
+      - name: date_of_police_report_followup
+        description: date of police report followup
+        tests:
+          - valid_date_range:
+              column_name: date_of_police_report_followup
+        data_type: text
+      - name: date_of_reporting
+        description: date of reporting
+        tests:
+          - not_null
+          - valid_date_range:
+              column_name: date_of_reporting
+        data_type: text
+      - name: date_of_updating_case_occurrence_information
+        description: date of updating case occurrence information
+        tests:
+          - valid_date_range:
+              column_name: date_of_updating_case_occurrence_information
+        data_type: text
+      - name: date_referral_information_captured
+        description: date referral information was captured
+        tests:
+          - valid_date_range:
+              column_name: date_referral_information_captured
+        data_type: text
+      - name: date_referral_information_last_amended
+        description: date referral information was last amended
+        tests:
+          - valid_date_range:
+              column_name: date_referral_information_last_amended
+        data_type: text
+      - name: gender_of_next_of_kin
+        data_type: text
+        description: Gender of the next of kin
+      - name: gender_of_well_wisher
+        data_type: text
+        description: Gender of the well-wisher
+      - name: gender_site_code_of_reporting
+        data_type: text
+        description: Site code for gender reporting
+      - name: has_the_client_undergone_other_procedures
+        data_type: text
+        description: Indicates if the client has undergone other procedures
+      - name: have_all_witnesses_reocrded_their_statements
+        data_type: text
+        description: Indicates if all witnesses have recorded their statements
+      - name: if_some_witnesses_have_not_recorded_their_statements_what_actio
+        data_type: text
+        description: >-
+          Placeholder description for if_some_witnesses_have_not_recorded_their_statements_what_actio
+          column.
+      - name: is_the_case_proceeding_to_court
+        data_type: text
+        description: Indicates if the case is proceeding to court
+      - name: is_the_case_still_pending_at_the_police_station
+        data_type: text
+        description: Indicates if the case is still pending at the police station
+      - name: medical_report_filed
+        data_type: text
+        description: Indicates if a medical report was filed
+      - name: medium_of_reporting
+        data_type: text
+        description: Medium used for reporting
+      - name: other_assault_type
+        data_type: text
+        description: Other type of assault
+      - name: other_reason
+        data_type: text
+        description: Other reason for an action or decision
+      - name: other_recipient_for_information
+        data_type: text
+        description: Other recipient for information release
+      - name: other_referral_location
+        data_type: text
+        description: Other location for referral
+      - name: police_followup_comments
+        data_type: text
+        description: Comments related to police follow-up
+      - name: police_station_where_the_case_was_reported
+        data_type: text
+        description: Police station where the case was reported
+      - name: previous_case_number
+        data_type: text
+        description: Number of the previous case
+      - name: reason_for_case_pending_at_station
+        data_type: text
+        description: Reason for the case pending at the station
+      - name: recipients_of_information_release
+        data_type: text
+        description: Recipients of the information release
+      - name: referral_reason
+        data_type: text
+        description: Reason for referral
+      - name: reporter_type
+        data_type: text
+        description: Type of reporter
+      - name: sexual_assault_type
+        data_type: text
+        description: Type of sexual assault
+      - name: village_of_incident_report
+        data_type: text
+        description: Village where the incident was reported
+      - name: ward_of_incident_report
+        data_type: text
+        description: Ward where the incident was reported
+      - name: was_there_a_witness_to_the_incident
+        data_type: text
+        description: Indicates if there was a witness to the incident
+      - name: what_is_the_age_provided
+        data_type: text
+        description: Age provided for the individual
+      - name: what_is_the_year_of_birth_of_survivor
+        data_type: text
+        description: Year of birth of the survivor
+      - name: what_other_procedures_has_the_client_undergone
+        data_type: text
+        description: Other procedures the client has undergone
+      - name: where_was_the_client_referred_to
+        data_type: text
+        description: Location where the client was referred to
+      - name: case_name
+        data_type: text
+        description: Name of the case associated with youth beneficiaries from commcare.
+      - name: case_type
+        data_type: text
+        description: >-
+          Indicates the type of case associated with each youth beneficiary from commcare data.
+      - name: parent_case_id
+        data_type: text
+        description: Identifier for the parent case associated with a youth beneficiary in CommCare.
+      - name: parent_case_type
+        data_type: text
+        description: Type of the parent case associated with each youth beneficiary.
+      - name: date_opened
+        data_type: text
+        description: Date when the case was opened.
+      - name: case_id
+        data_type: text
+        description: Unique identifier for each case.
+      - name: indexed_on
+        data_type: timestamp with time zone
+        description: Timestamp indicating when the case was indexed.
+      - name: closed
+        data_type: text
+        description: Indicates whether the case is closed (true/false).
+      - name: created_at
+        data_type: timestamp with time zone
+        description: >-
+          Timestamp indicating when the record was created in the system, with time zone information.

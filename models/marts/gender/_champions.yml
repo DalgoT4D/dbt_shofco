@@ -1,0 +1,47 @@
+version: 2
+models:
+  - name: champions
+    columns:
+      - name: county
+        data_type: text
+        description: County where the champion is located
+      - name: gender
+        data_type: text
+        description: Gender of the champion
+      - name: national_id
+        data_type: character varying
+        description: National ID of the champion.
+      - name: site
+        data_type: character varying
+        description: Site location of the champion
+      - name: trained
+        data_type: character varying
+        description: Indicates if the champion has been trained
+      - name: identified
+        data_type: character varying
+        description: Indicates if the champion has been identified
+      - name: date_identified
+        data_type: date
+        description: Date when the champion was identified.
+      - name: date_trained
+        data_type: date
+        description: Date when the champion received training.
+      - name: active
+        data_type: character varying
+        description: Status indicating if the champion is active
+      - name: status
+        data_type: text
+        description: >-
+          Status indicating the current standing or condition of the champion within the gender program.
+      - name: quarter_trained
+        data_type: text
+        description: The quarter in which the champion received training.
+      - name: quarter_identified
+        data_type: text
+        description: The quarter when the champion was identified.
+    description: >-
+      This table contains information on gender program champions, including their county, gender, national
+      ID, site location, and statuses related to training and identification. It also tracks the dates
+      these champions were trained and identified, and computes their current status and training/identification
+      quarters. The data assists in understanding the distribution and status of champions within the
+      program.

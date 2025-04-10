@@ -1,0 +1,81 @@
+version: 2
+models:
+  - name: survivors_data
+    description: Data on Gender Survivors from commcare
+    columns:
+
+      - name: assigned_to
+        data_type: text
+        description: Person or entity the case is assigned to.
+      - name: case_id
+        description: Creation date of entry
+        tests:
+          - unique
+
+        data_type: text
+      - name: age
+        data_type: integer
+        description: Age of the gender survivor at the time of case registration.
+      - name: date_of_registration
+        description: Date of registration of survivor
+        tests:
+          - not_null
+          - valid_date_range:
+              column_name: date_of_registration
+
+        data_type: text
+      - name: gender
+        data_type: text
+        description: Gender of the survivor.
+      - name: gender_site_code_of_registration
+        data_type: text
+        description: Site code where the gender was registered.
+      - name: county_code
+        data_type: text
+        description: Code representing the county
+      - name: constituency_code
+        data_type: text
+        description: Code representing the constituency related to the case.
+      - name: village_name
+        data_type: text
+        description: Name of the village related to the case from gender survivors data.
+      - name: ward_code
+        data_type: text
+        description: Unique code representing the ward associated with the survivor's case.
+      - name: case_type
+        data_type: text
+        description: Type of case related to the gender survivor.
+      - name: date_opened
+        description: Date survivor case was opened
+        tests:
+          - not_null
+          - valid_date_range:
+              column_name: date_opened
+
+        data_type: text
+      - name: indexed_on
+        data_type: timestamp with time zone
+        description: Timestamp indicating when the case was indexed.
+      - name: closed
+        data_type: text
+        description: Indicates whether the case of the gender survivor has been closed.
+      - name: created_at
+        description: Creation date of entry
+        tests:
+          - not_null
+          - valid_date_range:
+              column_name: created_at
+
+        data_type: timestamp with time zone
+      - name: county
+        data_type: text
+        description: County where the case is registered.
+      - name: constituency
+        data_type: text
+        description: Constituency related to the case.
+      - name: ward
+        data_type: text
+        description: Ward where the case is located.
+      - name: site
+        data_type: text
+        description: Name of the site where the gender survivor case was registered.

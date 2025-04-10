@@ -1,0 +1,29 @@
+version: 2
+models:
+  - name: water_production
+    description: Daily water production and consumption
+    columns:
+      - name: date
+        data_type: date
+        description: The date of the water production record
+      - name: status
+        data_type: character varying
+        description: Current status of the water production
+      - name: bh_production
+        tests:
+          - not_null
+        data_type: character varying
+        description: Details about borehole production measurement.
+      - name: treated_consumption
+        tests:
+          - not_null
+        data_type: character varying
+        description: Volume of treated water consumed.
+      - name: tank
+        tests:
+          - not_null
+        data_type: text
+        description: Placeholder for tank column description.
+      - name: year
+        data_type: numeric
+        description: The year when the water production data was recorded or reported.

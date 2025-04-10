@@ -1,0 +1,88 @@
+version: 2
+models:
+  - name: staging_gender_counselling_commcare
+    description: Data on Youth Beneficiaries from commcare
+    columns:
+      - name: assigned_to
+        data_type: text
+        description: Person or entity assigned to the case
+      - name: county
+        data_type: text
+        description: County where the client is located
+      - name: constituency
+        data_type: text
+        description: Constituency where the client is located
+      - name: client_age
+        data_type: text
+        description: Age of the client
+      - name: date_of_registration
+        description: date of registration for counselling
+        tests:
+          - not_null
+          - valid_date_range:
+              column_name: date_of_registration
+
+        data_type: text
+      - name: client_gender
+        data_type: text
+        description: Gender of the client
+      - name: gender_site_code
+        data_type: text
+        description: Code for the gender site
+      - name: client_marital_status
+        data_type: text
+        description: Marital status of the client
+      - name: client_education_level
+        data_type: text
+        description: Education level of the client
+      - name: client_referenced_from
+        data_type: text
+        description: Source from which the client was referenced
+      - name: client_presenting_issues
+        data_type: text
+        description: Issues presented by the client
+      - name: client_requires_followup_sessions
+        data_type: text
+        description: Indicates if the client requires follow-up sessions
+      - name: client_mental_health_score_behavioral_issues
+        data_type: text
+        description: Mental health score related to behavioral issues
+      - name: is_client_being_referred_for_further_assistance
+        data_type: text
+        description: Indicates if the client is referred for further assistance
+      - name: client_mental_health_score_trauma_symptoms
+        data_type: text
+        description: Mental health score related to trauma symptoms
+      - name: client_mental_health_score_social_emotional_issues
+        data_type: text
+        description: Mental health score related to social and emotional issues
+      - name: client_mental_health_score_psychiatric_symptoms
+        data_type: text
+        description: Mental health score related to psychiatric symptoms
+      - name: client_mental_health_score_drug_abuse
+        data_type: text
+        description: Mental health score related to drug abuse
+      - name: reason_for_client_requiring_followup_sessions
+        data_type: text
+        description: Reason for requiring follow-up sessions
+      - name: case_name
+        data_type: text
+        description: The name of the case associated with the youth beneficiary.
+      - name: case_type
+        data_type: text
+        description: Type or category of the case related to youth beneficiaries data from CommCare.
+      - name: date_opened
+        data_type: text
+        description: Date when the case was opened.
+      - name: case_id
+        data_type: text
+        description: Unique identifier for each case
+      - name: indexed_on
+        data_type: timestamp with time zone
+        description: Timestamp indicating when the case was indexed.
+      - name: closed
+        data_type: text
+        description: Indicates whether the case is closed.
+      - name: created_at
+        data_type: timestamp with time zone
+        description: Timestamp indicating when the record was created.

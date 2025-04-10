@@ -1,0 +1,56 @@
+version: 2
+models:
+  - name: followup_attendance
+    description: Tracks follow-ups for student attendance to address absenteeism.
+    columns:
+      - name: absence_date
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+        data_type: date
+        description: Date when the absence occurred.
+      - name: year
+        data_type: numeric
+        description: The calendar year in which the well-being session took place.
+      - name: term
+        data_type: text
+        description: >-
+          Indicates the academic term during which the follow-up attendance record was created.
+      - name: grade
+        tests:
+          - not_null
+        data_type: text
+        description: Indicates the grade level of the student in the educational system.
+      - name: stream
+        data_type: character varying
+        description: >-
+          Represents the educational stream or track of a student in the context of social worker follow-ups.
+      - name: absence_causes
+        data_type: character varying
+        description: >-
+          Indicates the causes for a student's absence as recorded during social worker follow-ups.
+      - name: reporting_date
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+        data_type: date
+        description: Date when the follow-up attendance is reported.
+      - name: school_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: [ksg, msg]
+        data_type: text
+        description: >-
+          Type of school where the session was held, indicating whether it is a primary, secondary, or
+          other educational institution.
+      - name: number_of_absences
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: bigint
+
+        data_type: bigint
+        description: >-
+          Indicates the total number of absences recorded for a student during follow-up sessions to address
+          absenteeism.

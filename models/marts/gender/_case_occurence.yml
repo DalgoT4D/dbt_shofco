@@ -11,6 +11,9 @@ models:
       - name: previous_case_number
         data_type: text
         description: Number of the previous case
+      - name: date_modified
+        description: Timestamp indicating when the case occurrence record was last modified.
+        data_type: timestamp with time zone
       - name: date_of_case_reporting
         data_type: date
         description: Date when the case was reported

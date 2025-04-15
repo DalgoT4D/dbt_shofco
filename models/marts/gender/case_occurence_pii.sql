@@ -21,6 +21,7 @@ case_occurrences_data as (
         assigned_to,
         previous_case_number,
         case_summary_notes,
+        date_modified::timestamptz as date_modified,
         {{ validate_date("date_of_reporting") }} as date_of_case_reporting,
         cast(
             to_char({{ validate_date("date_of_reporting") }}, 'YYYYMMDD') as integer

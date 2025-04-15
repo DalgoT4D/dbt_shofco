@@ -18,6 +18,7 @@ Extracts default CommCare case properties to be added to all applicable tables. 
 - `indexed_on`: The timestamp when the case was indexed, in UTC.
 - `closed`: Whether the case is closed.
 - `created_at`: The timestamp when the record was created in the dbt model.
+- 'date_modified': The date when the was was modified
 {% enddocs %}
 
 
@@ -33,5 +34,6 @@ Extracts default CommCare case properties to be added to all applicable tables. 
 	data ->> 'case_id' as case_id,
 	((data ->> 'indexed_on')::timestamp without time zone at time zone 'Etc/UTC') as indexed_on,
 	data ->> 'closed' as closed,
+    data ->> 'date_modified' as date_modified,
     NOW() as created_at
 {% endmacro %}

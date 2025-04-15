@@ -70,4 +70,3 @@ SELECT
     'msg' AS school_type
 FROM {{ source('staging_education', 'MSG_Parents_Summary_2025') }}
 WHERE "Attendance_Percentage_" <> '#DIV/0!'
-

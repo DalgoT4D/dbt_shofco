@@ -38,3 +38,6 @@ models:
         description: >-
           Type of school where the session was held, indicating whether it is a primary, secondary, or
           other educational institution.
+      - name: year
+        description: The year in which the well-being session, either group or individual, took place.
+        data_type: text

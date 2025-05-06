@@ -1,0 +1,40 @@
+{{ config(
+  materialized='table',
+  tags=["swep_production_details", "sl"]
+) }}
+
+SELECT
+    first_name,
+    middle_name,
+    last_name,
+    date_of_birth,
+    age,
+    gender,
+    phone_number,
+    alternative_phone_number,
+    nationality,
+    national_id_number,
+    county,
+    sub_county,
+    ward,
+    village,
+    is_refugee,
+    refugee_type,
+    asylum_pass_number,
+    nationality_if_other,
+    non_citizen_nationality,
+    non_citizen_id_number,
+    registration_document,
+    external_id,
+    referral,
+    who_referred_the_participant,
+    is_plwd,
+    is_mother,
+    baby_below_four_years,
+    date_of_registration,
+    level_of_education,
+    county_shofco_site,
+    subcounty_shofco_site,
+    ward_shofco_site,
+    owner_id
+FROM {{ ref('staging_swep_production_details') }}

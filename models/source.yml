@@ -2,10 +2,12 @@
 version: 2
 
 sources:
-  - name: partner_engagement
+  - name: staging_sl
     schema: staging_sl
     tables:
-      - name: Partner_Engagement_form
+      - name: raw_case
+        identifier: zzz_case
+        description: All SL cases
   - name: staging_education
     schema: staging_education
     tables:
@@ -693,6 +695,9 @@ sources:
           - name: _airbyte_meta
             data_type: jsonb
             description: Metadata column storing Airbyte-specific synchronization details in JSONB format.
+      - name: raw_case
+        identifier: zzz_case
+        description: All education cases
   - name: staging_youth
     schema: staging_youth
     tables:

@@ -62,7 +62,14 @@ enriched_data AS (
             WHEN gender ILIKE 'female' THEN 'Female'
             WHEN gender ILIKE 'male' THEN 'Male'
             ELSE 'Other/Unspecified'
-        END AS gender_category
+        END AS gender_category,
+
+        -- Refugee Classification
+        CASE
+            WHEN is_refugee ILIKE '%refugee%' THEN 'Refugee'
+            WHEN is_refugee ILIKE '%host%' THEN 'Host Community'
+            ELSE 'Unspecified'
+        END AS refugee_classification
     FROM source
 )
 

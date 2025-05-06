@@ -1,4 +1,4 @@
-{% macro extract_case_table_from_sl_mobilization_commcare_json(commcare_case_type, case_type_properties_dict, has_parent=false) %}
+{% macro extract_case_table_from_sl_commcare_json(commcare_case_type, case_type_properties_dict, has_parent=false) %}
 
     WITH commcare_data as (
     SELECT 

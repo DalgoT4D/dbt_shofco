@@ -39,4 +39,4 @@
     "vocational_courses_of_interest": "vocational_courses_of_interest"
 } %}
 
-{{ extract_case_table_from_sl_mobilization_commcare_json('sl_mobilization_case_data', properties_dict) }}
+{{ extract_case_table_from_sl_commcare_json('sl_mobilization_case_data', properties_dict) }}

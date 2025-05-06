@@ -1,11 +1,12 @@
 {{
     config(
         materialized='table',
-        schema=generate_schema_name('intermediate_sl', none),  
+        schema='intermediate_sl',  
         alias='sl_mobilization_analytics',
         tags=['sl', 'mobilization', 'analytics']
     )
 }}
+
 
 WITH source AS (
     SELECT * FROM {{ ref('staging_sl_mobilization') }}

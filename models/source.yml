@@ -2,6 +2,10 @@
 version: 2
 
 sources:
+  - name: partner_engagement
+    schema: staging_sl
+    tables:
+      - name: Partner_Engagement_form
   - name: staging_education
     schema: staging_education
     tables:

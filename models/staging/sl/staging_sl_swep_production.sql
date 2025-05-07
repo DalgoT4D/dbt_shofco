@@ -2,7 +2,6 @@
     config(
         materialized='incremental',
         unique_key='case_id',
-        schema='staging_sl',
         alias='sl_swep_production',
         tags=['commcare_extraction', 'sl_cases', 'sustainable_livelihoods', 'swep']
     )

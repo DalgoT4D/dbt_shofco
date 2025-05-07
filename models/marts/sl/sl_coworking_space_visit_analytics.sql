@@ -1,7 +1,6 @@
 {{ 
     config(
         materialized='table',
-        schema='intermediate_sl',
         alias='sl_coworking_space_visit_analytics',
         tags=['sl', 'coworking_space', 'analytics']
     ) 

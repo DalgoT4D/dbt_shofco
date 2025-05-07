@@ -1,7 +1,6 @@
 {{ 
     config(
         materialized='table',
-        schema='intermediate_sl',
         alias='sl_post_training_analytics',
         tags=['sl', 'post_training', 'analytics']
     ) 

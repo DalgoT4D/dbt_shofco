@@ -1,7 +1,6 @@
 {{
     config(
-        materialized='table',
-        schema='intermediate_sl',  
+        materialized='table',  
         alias='sl_mobilization_analytics',
         tags=['sl', 'mobilization', 'analytics']
     )

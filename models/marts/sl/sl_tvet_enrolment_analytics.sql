@@ -1,7 +1,6 @@
 {{
     config(
         materialized='table',
-        schema='intermediate_sl',
         alias='sl_tvet_enrolment_analytics',
         tags=['sl', 'tvet', 'analytics']
     )

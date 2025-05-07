@@ -1,7 +1,6 @@
 {{
     config(
         materialized='table',
-        schema='intermediate_sl',
         alias='sl_swep_production_analytics',
         tags=['sl', 'swep', 'analytics']
     )

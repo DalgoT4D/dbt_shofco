@@ -2,7 +2,6 @@
     config(
         materialized='incremental',
         unique_key='case_id',
-        schema='staging_sl',
         alias='sl_coworking_space_registration',
         tags=['commcare_extraction', 'sl_cases', 'sustainable_livelihoods', 'coworking_space_registration']
     ) 

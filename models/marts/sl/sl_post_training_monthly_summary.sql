@@ -1,6 +1,5 @@
 {{ config(
     materialized='table',
-    schema='dev_sl',
     alias='sl_post_training_monthly_summary',
     tags=['sl', 'post_training', 'summary', 'monthly']
 ) }}

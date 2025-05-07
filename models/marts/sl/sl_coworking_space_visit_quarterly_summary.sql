@@ -1,7 +1,6 @@
 {{ 
     config(
         materialized='table',
-        schema='marts_sl',
         alias='sl_coworking_space_visit_quarterly_summary',
         tags=['sl', 'coworking_space', 'quarterly_summary']
     ) 

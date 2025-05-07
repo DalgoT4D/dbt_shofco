@@ -1,7 +1,6 @@
 {{
     config(
         materialized='table',
-        schema='intermediate_sl',
         alias='sl_mentorship_analytics',
         tags=['sl', 'mentorship', 'analytics']
     )

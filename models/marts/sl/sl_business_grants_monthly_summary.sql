@@ -1,6 +1,5 @@
 {{ config(
     materialized='table',
-    schema='intermediate_sl',
     alias='sl_business_grants_monthly_summary',
     tags=['sl', 'grants', 'monthly_summary']
 ) }}

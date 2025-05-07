@@ -1,11 +1,11 @@
 {{ 
     config(
         materialized='table',
-        schema='sl',
         alias='sl_coworking_space_visit_monthly_summary',
         tags=['sl', 'coworking_space', 'monthly_summary']
     ) 
 }}
+
 
 WITH source AS (
     SELECT * FROM {{ ref('sl_coworking_space_visit_analytics') }}

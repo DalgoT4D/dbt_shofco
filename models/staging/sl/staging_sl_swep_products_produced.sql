@@ -1,7 +1,6 @@
 {{ config(
     materialized='incremental',
     unique_key='case_id',
-    schema='staging_sl',
     alias='sl_swep_products_produced',
     tags=['commcare_extraction', 'sl_cases', 'sustainable_livelihoods', 'swep', 'production']
 ) }}

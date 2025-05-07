@@ -11,5 +11,6 @@ venv/
 package-lock.yml
 models/wash_unit_tests.yml
 profiles.yml
+*.ini
 
 

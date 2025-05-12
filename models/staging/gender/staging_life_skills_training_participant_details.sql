@@ -22,7 +22,10 @@ WITH roc_club_participants AS (
         jsonb_array_elements(
             data -> 'form' -> 'membership_details'
         ) AS participant_data,
-
+        (data::jsonb -> 'form' -> 'geographical_location' ->> 'ward') AS ward,
+        (data::jsonb -> 'form' -> 'geographical_location' ->> 'county') AS county_code,
+        (data::jsonb -> 'form' -> 'geographical_location' ->> 'constituency') AS constituency,
+        (data::jsonb -> 'form' -> 'meta' ->> 'username') AS assigned_to,
         -- Assign start and end dates for each term as timestamp
         CASE
             WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_1' THEN to_timestamp('2024-08-31', 'YYYY-MM-DD') 
@@ -55,7 +58,11 @@ community_safe_space_participants AS (
         data::jsonb -> 'form' -> 'meta' ->> 'instanceID' AS session_id,-- Extract the session ID
         jsonb_array_elements(
             data -> 'form' -> 'community_safe_space_participants_details'
-        ) AS participant_data
+        ) AS participant_data,
+        (data::jsonb -> 'form' -> 'geographical_location' ->> 'ward') AS ward,
+        (data::jsonb -> 'form' -> 'geographical_location' ->> 'county') AS county_code,
+        (data::jsonb -> 'form' -> 'geographical_location' ->> 'constituency') AS constituency,
+        (data::jsonb -> 'form' -> 'meta' ->> 'username') AS assigned_to
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
     WHERE
         data::jsonb->'form'->>'target_group' = 'community_safe_space'
@@ -75,7 +82,11 @@ SELECT DISTINCT
     -- For ROC Club
     participant_data
     ->> 'member_full_names_first_middle_surname' AS participant_name,
-    participant_data ->> 'member_gender' AS gender  -- For ROC Club
+    participant_data ->> 'member_gender' AS gender,  -- For ROC Club
+    ward,
+    county_code,
+    constituency,
+    assigned_to
 FROM roc_club_participants
 
 UNION ALL
@@ -90,5 +101,9 @@ SELECT DISTINCT
     session_id,  -- Include the session ID
     -- For Community Safe Space
     participant_data ->> 'full_name_first_middle_surname' AS participant_name,
-    participant_data ->> 'gender' AS gender  -- For Community Safe Space
+    participant_data ->> 'gender' AS gender,  -- For Community Safe Space
+    ward,
+    county_code,
+    constituency,
+    assigned_to
 FROM community_safe_space_participants

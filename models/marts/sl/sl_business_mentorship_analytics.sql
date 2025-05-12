@@ -70,4 +70,23 @@ categorized_challenges AS (
     FROM categorized_visits
 )
 
-SELECT * FROM categorized_challenges
+SELECT
+    case_id,
+    case_name,
+    case_type,
+    date_opened,
+    mentor_name,
+    CAST(date_of_visit AS DATE) AS date_of_visit,
+    funding_program,
+    type_of_business,
+    mentorship_visit_number,
+    solutions_identified,
+    agreed_timelines,
+    main_challenges,
+    year_of_visit,
+    month_of_visit,
+    quarter_of_visit,
+    visit_number_standardized,
+    funding_program_category,
+    challenge_category
+FROM categorized_challenges

@@ -6,7 +6,6 @@
     )
 }}
 
-
 WITH source AS (
     SELECT * FROM {{ ref('staging_sl_mobilization') }}
 ),
@@ -27,7 +26,8 @@ enriched_data AS (
         is_plwd,
         is_refugee,
         level_of_education,
-        date_of_registration,
+        -- ✅ Cast date_of_registration as DATE
+        date_of_registration::date AS date_of_registration,
         registered_by,
         county,
         county_shofco_site,

@@ -6,7 +6,6 @@
 with champions_cte as (
     select
         INITCAP(TRIM("Champions_Name")) as champions_name,
-        INITCAP(TRIM("Community_Role")) as community_role,
         INITCAP(TRIM("County")) as county,
         INITCAP(TRIM("Gender")) as gender, 
         "National_ID" as national_id,

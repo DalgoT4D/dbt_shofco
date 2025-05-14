@@ -2,6 +2,18 @@
 version: 2
 
 sources:
+
+
+  - name: staging_sl
+    schema: staging_sl
+    tables:
+      - name: Service_Completion_Follow_up
+        description: Raw service completion follow-up form submissions
+
+
+
+
+
   - name: staging_sl
     schema: staging_sl
     tables:

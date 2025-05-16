@@ -3,7 +3,7 @@
   tags=['gender_life_skills_training', "gender"]
 ) }}
 
-SELECT 
+SELECT DISTINCT
     participants.target_group,
     participants.term,
     participants.year,  

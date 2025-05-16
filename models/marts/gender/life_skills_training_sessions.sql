@@ -3,7 +3,7 @@
   tags=['gender_life_skills_training', "gender"]
 ) }}
 
-SELECT
+SELECT DISTINCT
     session_deets.id,
     {{ validate_date("indexed_on") }} AS indexed_on,
     session_deets.form_name,

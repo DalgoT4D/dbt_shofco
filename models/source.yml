@@ -2,6 +2,16 @@
 version: 2
 
 sources:
+  - name: staging_sl
+    schema: staging_sl
+    tables:
+      - name: raw_case
+        identifier: zzz_case
+        description: All SL cases
+      - name: service_enroll
+        identifier: Service_Enrollment_Form
+        description: Service Enrollment Form
+
   - name: staging_education
     schema: staging_education
     tables:

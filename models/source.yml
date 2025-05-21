@@ -5,8 +5,6 @@ sources:
 
 
 
-
-
   - name: staging_sl
     schema: staging_sl
     tables:
@@ -24,7 +22,12 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
+      - name: NITA_Status
+        description: Nita status
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
 
 
 

@@ -3,26 +3,31 @@
   tags=['gender_life_skills_training', "gender"]
 ) }}
 
-SELECT
-    id,
+SELECT DISTINCT
+    session_deets.id,
     {{ validate_date("indexed_on") }} AS indexed_on,
-    form_name,
-    comments,
-    target_group,
-    user_id,
-    username,
-    village_name,
-    community_safe_space_name,
-    num_girls_in_safe_space,
-    county,
-    ward,
-    constituency,
-    school_term,
-    school_year,
-    school_name,
-    type_of_school,
-    num_club_members,
-    life_skills_form_status,
-    patron_mobile_number
+    session_deets.form_name,
+    session_deets.comments,
+    session_deets.target_group,
+    session_deets.user_id,
+    session_deets.village_name,
+    session_deets.community_safe_space_name,
+    session_deets.num_girls_in_safe_space,
+    session_deets.school_term,
+    session_deets.school_year,
+    session_deets.school_name,
+    session_deets.type_of_school,
+    session_deets.num_club_members,
+    session_deets.life_skills_form_status,
+    session_deets.patron_mobile_number,
+    session_deets.ward as case_ward_name,
+    session_deets.constituency as case_constituency_name,
+    session_deets.county_code,
+    session_deets.assigned_to,
+    locations.county_name as county
 
-FROM {{ ref("staging_life_skills_training_session_details") }}
+FROM {{ ref("staging_life_skills_training_session_details") }} as session_deets
+left join
+    {{ source("staging_gender", "dim_location_administrative_units") }} as locations
+    on
+        session_deets.county_code = locations.county_code

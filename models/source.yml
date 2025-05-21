@@ -2,15 +2,32 @@
 version: 2
 
 sources:
+
   - name: staging_sl
     schema: staging_sl
     tables:
-      - name: raw_case
-        identifier: zzz_case
-        description: All SL cases
       - name: service_enroll
         identifier: Service_Enrollment_Form
-        description: Service Enrollment Form
+        description: Raw Service Enrollment Form submissions
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+        
+      - name: zzz_case
+        identifier: zzz_case
+        description: Raw Sustainable Livelihoods program case data from CommCare
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+  
+      - name: Service_Completion_Follow_up
+        description: Raw service completion follow-up form submissions
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
 
   - name: staging_education
     schema: staging_education
@@ -699,6 +716,10 @@ sources:
           - name: _airbyte_meta
             data_type: jsonb
             description: Metadata column storing Airbyte-specific synchronization details in JSONB format.
+
+
+
+
   - name: staging_youth
     schema: staging_youth
     tables:
@@ -723,6 +744,10 @@ sources:
           - name: _airbyte_meta
             data_type: jsonb
             description: Metadata information related to the Airbyte data integration process.
+
+
+
+
   - name: staging_gender
     schema: staging_gender
     tables:
@@ -1034,6 +1059,11 @@ sources:
           - name: _airbyte_meta
             data_type: jsonb
             description: Metadata column containing Airbyte-specific JSON information.
+
+
+
+
+
   - name: staging_orgwide
     schema: staging_orgwide
     tables:
@@ -1093,6 +1123,11 @@ sources:
           - name: _airbyte_meta
             data_type: jsonb
             description: Metadata from Airbyte
+
+
+
+
+
   - name: staging_wash
     schema: staging_wash
     tables:

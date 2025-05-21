@@ -21,7 +21,7 @@ SELECT DISTINCT
     json_data -> 'form' ->> 'comments' AS comments,
     json_data -> 'form' ->> 'target_group' AS target_group,
     json_data -> 'form' -> 'meta' ->> 'userID' AS user_id,
-    json_data -> 'form' -> 'meta' ->> 'username' AS username,
+    json_data -> 'form' -> 'meta' ->> 'username' AS assigned_to,
 
     -- Community Information
     json_data
@@ -38,7 +38,7 @@ SELECT DISTINCT
     ->> 'number_of_girls_in_the_community_safe_space' AS num_girls_in_safe_space,
 
     -- Geographical Information
-    json_data -> 'form' -> 'geographical_location' ->> 'county' AS county,
+    json_data -> 'form' -> 'geographical_location' ->> 'county' AS county_code,
     json_data -> 'form' -> 'geographical_location' ->> 'ward' AS ward,
     json_data
     -> 'form'

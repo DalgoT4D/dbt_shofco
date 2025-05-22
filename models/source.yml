@@ -2,11 +2,6 @@
 version: 2
 
 sources:
-
-
-
-
-
   - name: staging_sl
     schema: staging_sl
     tables:
@@ -24,6 +19,21 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
+      - name: service_enroll
+        identifier: Service_Enrollment_Form
+        description: Service enrollment form
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error                
+      - name: co_working
+        identifier: Co_working_space__First_Visit_
+        description: Co-working space first visit
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+      
 
 
 

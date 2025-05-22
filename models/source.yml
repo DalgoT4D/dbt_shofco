@@ -25,6 +25,13 @@ sources:
               config:
                 severity: error
 
+      - name: Participant_Details_Update
+        description: Raw participant details update form submissions
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
 
 
 

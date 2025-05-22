@@ -18,7 +18,15 @@ WITH raw_data AS (
         -- Participant demographic and metadata (now correctly from 'case' -> 'update')
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_fullname' AS participant_name,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_unique_id' AS unique_id,
-        NULLIF(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age', '')::int AS age,
+
+        -- ✅ Safe casting for age (handles floats & text)
+        CASE
+            WHEN NULLIF(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age', '') IS NOT NULL
+                 AND (data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age') ~ '^[0-9]*\.?[0-9]+$'
+            THEN FLOOR((data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age')::FLOAT)::INT
+            ELSE NULL
+        END AS age,
+
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_sex' AS sex,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_county' AS county,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_subcounty' AS subcounty,

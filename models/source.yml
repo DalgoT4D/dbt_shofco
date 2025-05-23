@@ -42,6 +42,9 @@ sources:
             - elementary.schema_changes:
                 config:
                   severity: error
+                  
+      - name: Participant_Details_Update
+        description: Raw participant details update form submissions
 
       - name: NITA_Status
         description: Nita status
@@ -49,7 +52,7 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-                
+
   - name: staging_education
     schema: staging_education
     tables:

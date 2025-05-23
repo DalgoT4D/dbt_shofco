@@ -14,13 +14,27 @@ with source as (
 
 ),
 
+with_age as (
+
+    select 
+        *,
+        case 
+            when nullif(pp_age, '') is not null 
+                 and pp_age ~ '^[0-9]*\.?[0-9]+$'
+            then floor(pp_age::float)::integer
+            else null 
+        end as age
+    from source
+
+),
+
 renamed as (
 
     select 
         case_id,
         pp_fullname,
         pp_sex,
-        nullif(pp_age, '')::integer as age,
+        age,
         contact_phone_number,
 
         -- Safe casting of date_of_birth
@@ -79,10 +93,10 @@ renamed as (
 
         -- Derived fields
         case 
-            when nullif(pp_age, '')::integer < 18 then 'Under 18'
-            when nullif(pp_age, '')::integer between 18 and 24 then '18-24'
-            when nullif(pp_age, '')::integer between 25 and 35 then '25-35'
-            when nullif(pp_age, '')::integer > 35 then '35+'
+            when age < 18 then 'Under 18'
+            when age between 18 and 24 then '18-24'
+            when age between 25 and 35 then '25-35'
+            when age > 35 then '35+'
             else 'Unknown'
         end as age_group,
 
@@ -98,7 +112,7 @@ renamed as (
             else 'Unknown'
         end as computer_literacy_status
 
-    from source
+    from with_age
 )
 
 select * from renamed

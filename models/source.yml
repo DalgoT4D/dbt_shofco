@@ -28,6 +28,14 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
+                
+      - name: Dignity_Kit_Issuance
+        description: This is a dignity kit Dignity_Kit_Issuance
+        tests: 
+            - elementary.schema_changes:
+                config:
+                  severity: error
+
       - name: NITA_Status
         description: Nita status
         tests:

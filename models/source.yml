@@ -5,6 +5,14 @@ sources:
   - name: staging_sl
     schema: staging_sl
     tables:
+      - name: service_enroll
+        identifier: Service_Enrollment_Form
+        description: Raw Service Enrollment Form submissions
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+        
       - name: zzz_case
         identifier: zzz_case
         description: Raw Sustainable Livelihoods program case data from CommCare
@@ -18,14 +26,7 @@ sources:
         tests:
           - elementary.schema_changes:
               config:
-                severity: error
-      - name: service_enroll
-        identifier: Service_Enrollment_Form
-        description: Service enrollment form
-        tests:
-          - elementary.schema_changes:
-              config:
-                severity: error                
+                severity: error          
       - name: co_working
         identifier: Co_working_space__First_Visit_
         description: Co-working space first visit
@@ -34,11 +35,6 @@ sources:
               config:
                 severity: error
       
-
-
-
-
-
 
   - name: staging_education
     schema: staging_education

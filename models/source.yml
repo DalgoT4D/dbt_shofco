@@ -3,13 +3,17 @@ version: 2
 
 sources:
 
-
-
-
-
   - name: staging_sl
     schema: staging_sl
     tables:
+      - name: service_enroll
+        identifier: Service_Enrollment_Form
+        description: Raw Service Enrollment Form submissions
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+        
       - name: zzz_case
         identifier: zzz_case
         description: Raw Sustainable Livelihoods program case data from CommCare
@@ -31,11 +35,6 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
-
-
-
-
 
   - name: staging_education
     schema: staging_education

@@ -28,6 +28,12 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
+      - name: NITA_Status
+        description: Nita status
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
 
   - name: staging_education
     schema: staging_education

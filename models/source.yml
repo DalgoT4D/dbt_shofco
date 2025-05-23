@@ -2,7 +2,6 @@
 version: 2
 
 sources:
-
   - name: staging_sl
     schema: staging_sl
     tables:
@@ -27,6 +26,14 @@ sources:
         tests:
           - elementary.schema_changes:
               config:
+                severity: error   
+                
+      - name: co_working
+        identifier: Co_working_space__First_Visit_
+        description: Co-working space first visit
+        tests:
+          - elementary.schema_changes:
+              config:
                 severity: error
                 
       - name: Dignity_Kit_Issuance
@@ -42,7 +49,7 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
+                
   - name: staging_education
     schema: staging_education
     tables:

@@ -2,7 +2,6 @@
 version: 2
 
 sources:
-
   - name: staging_sl
     schema: staging_sl
     tables:
@@ -27,10 +26,28 @@ sources:
         tests:
           - elementary.schema_changes:
               config:
+                severity: error   
+                
+      - name: co_working
+        identifier: Co_working_space__First_Visit_
+        description: Co-working space first visit
+        tests:
+          - elementary.schema_changes:
+              config:
                 severity: error
-
+                
+      - name: Dignity_Kit_Issuance
+        description: This is a dignity kit Dignity_Kit_Issuance
+        tests: 
+            - elementary.schema_changes:
+                config:
+                  severity: error
+                  
       - name: Participant_Details_Update
         description: Raw participant details update form submissions
+
+      - name: NITA_Status
+        description: Nita status
         tests:
           - elementary.schema_changes:
               config:

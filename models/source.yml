@@ -28,6 +28,7 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
+                
       - name: Dignity_Kit_Issuance
         description: This is a dignity kit Dignity_Kit_Issuance
         tests: 
@@ -35,6 +36,12 @@ sources:
                 config:
                   severity: error
 
+      - name: NITA_Status
+        description: Nita status
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
 
   - name: staging_education
     schema: staging_education

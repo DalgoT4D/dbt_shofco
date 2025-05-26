@@ -1,6 +1,6 @@
 {{ config(
     materialized='table',
-    tags=['sustainable_livelihoods', 'participant_update']
+    tags=['sl', 'participant_update']
 ) }}
 
 WITH raw_data AS (

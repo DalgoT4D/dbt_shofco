@@ -2,8 +2,7 @@
     config(
         materialized='incremental',
         unique_key='case_id',
-        alias='sl_new',
-        tags=['commcare_extraction', 'sl_cases', 'sustainable_livelihoods', 'sl_new']
+        tags=['commcare_extraction', 'sl_cases', 'sl', 'sl_new']
     ) 
 }}
 

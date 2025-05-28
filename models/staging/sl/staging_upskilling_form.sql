@@ -11,8 +11,8 @@ WITH extracted_data AS (
         data::jsonb -> 'form' -> 'case' ->> '@user_id' AS user_id,
         -- Enumerator details  
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'enumerator' AS fullname,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'enumerators_first' AS enumerator_first_name,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'enumerator_last-name' AS enumerator_last_name,
+        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'enumerators_first' AS first_name,
+        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'enumerator_last-name' AS last_name,
         -- Training details  
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'training_program_uf' AS training_program,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'swep_center_uf' AS swep_center,

@@ -1,6 +1,6 @@
 {{ config(
   materialized='table',
-  tags=['dignity_kit_insuance', 'sl', 'beneficiary_tracking']
+  tags=['dignity_kit_issuance', 'sl']
 ) }}
 
 WITH dignity_kit_data AS (

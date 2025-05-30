@@ -2,7 +2,7 @@
     config(
         materialized="table", 
         unique_key="case_id", 
-        tags=["commcare_extraction","service_enrollment","sl"]
+        tags=["service_enrollment","sl"]
     )
 }}
 

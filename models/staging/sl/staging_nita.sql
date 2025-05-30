@@ -1,6 +1,6 @@
 {{ config(
   materialized='table',
-  tags=['nita_exams_followup', 'sl', 'nita']
+  tags=['sl', 'nita']
 ) }}
 
 WITH nita_data AS (

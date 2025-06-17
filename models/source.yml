@@ -49,13 +49,22 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
+
+      - name: upskilling_completion
+        identifier: Upskilling_completion
+        description: Upskilling completion
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
       - name: Upskilling_Form
         description: This is an upskilling form
         tests:
           - elementary.schema_changes:
               config:
                 severity: error
-
+                
   - name: staging_education
     schema: staging_education
     tables:

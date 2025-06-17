@@ -35,7 +35,20 @@ WITH placement_data AS (
         data::jsonb -> 'form' -> 'business_transitions' ->> 'participant_program_pl' AS participant_program,
         data::jsonb -> 'form' ->> 'certifications_achieved_pl' AS certifications_achieved,
         data::jsonb -> 'form' ->> 'skills_gained_pl' AS skills_gained,
-        data::jsonb -> 'form' -> 'business_transitions' ->> 'income_on_average_pl' AS average_income,
+
+        -- Raw average income value
+        data::jsonb -> 'form' -> 'business_transitions' ->> 'income_on_average_pl' AS income_raw,
+
+        -- Additional fields for analytics
+        data::jsonb -> 'form' -> 'business_transitions' ->> 'new_role_through_shofco_support_pl' AS new_role_source_pl,
+        data::jsonb -> 'form' -> 'business_transitions' ->> 'documents_pl' AS documents_held_pl,
+        data::jsonb -> 'form' -> 'business_transitions' ->> 'organization_sector_pl' AS sector_pl,
+        data::jsonb -> 'form' -> 'business_transitions' ->> 'nature_of_emplyment_pl' AS employment_type_pl,
+        data::jsonb -> 'form' -> 'business_transitions' ->> 'date_started_business_pl' AS business_start_date_pl,
+        data::jsonb -> 'form' -> 'business_transitions' ->> 'average_employees_pl' AS avg_employees_pl,
+        data::jsonb -> 'form' -> 'business_transitions' ->> 'average_female_employees_pl' AS avg_female_employees_pl,
+
+        -- County and region of placement
         data::jsonb -> 'form' -> 'business_transitions' ->> 'county_of_job_transition_pl' AS county_of_transition,
         data::jsonb -> 'form' -> 'business_transitions' ->> 'region_of_business_transition_pl' AS region_of_transition,
 
@@ -64,8 +77,20 @@ SELECT DISTINCT
     participant_program,
     certifications_achieved,
     skills_gained,
-    average_income,
     county_of_transition,
     region_of_transition,
-    date_received
+    date_received,
+    new_role_source_pl,
+    documents_held_pl,
+    sector_pl,
+    employment_type_pl,
+
+    -- Final cleaned average income in KES
+    CASE
+        WHEN income_raw ILIKE 'below_kshs_5000' THEN '<5000'
+        WHEN income_raw ~* '^kshs?_' THEN REGEXP_REPLACE(income_raw, '^kshs?_?', '', 'i')
+        WHEN income_raw ILIKE 'EMPTY' THEN NULL
+        ELSE income_raw
+    END AS average_income_in_kes
+
 FROM placement_data

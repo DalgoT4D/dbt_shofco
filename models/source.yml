@@ -5,7 +5,13 @@ sources:
   - name: staging_sl
     schema: staging_sl
     tables:
-
+      - name: Psychosocial_Support_Register
+        description: Psychosocial Support Register
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+                
       - name: SWEP_Production_Details
         identifier: SWEP_Production_Details
         description: SWEP Program Production of Goods and Handicrafts

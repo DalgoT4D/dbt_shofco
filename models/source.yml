@@ -21,6 +21,14 @@ sources:
               config:
                 severity: error
 
+      - name: Business_Grants_Issuance_Form
+        identifier: Business_Grants_Issuance_Form
+        description: Business_Grants_Issuance_Form_Data
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
       - name: zzz_case
         identifier: zzz_case
         description: Raw Sustainable Livelihoods program case data from CommCare

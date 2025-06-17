@@ -7,7 +7,7 @@ SELECT
     NULLIF(form_id, '') AS form_id,
     NULLIF(case_id, '') AS case_id,
     NULLIF(enumerator_username, '') AS enumerator_username,
-    NULLIF(submission_date::timestamp, '') AS submission_date,
+    submission_date::timestamp AS submission_date,
 
     -- Training feedback
     NULLIF(training_activity, '') AS training_activity,
@@ -19,7 +19,7 @@ SELECT
     -- Participant info
     NULLIF(participant_name, '') AS participant_name,
     NULLIF(unique_id, '') AS unique_id,
-    NULLIF(age, '') AS age,
+    age,
     NULLIF(sex, '') AS sex,
     NULLIF(county, '') AS county,
     NULLIF(subcounty, '') AS subcounty,
@@ -32,3 +32,4 @@ SELECT
     NULLIF(total_courses_dropped, '') AS total_courses_dropped
 
 FROM {{ ref("staging_sl_service_completion_follow_up") }}
+WHERE participant_name IS NOT NULL

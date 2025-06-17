@@ -6,6 +6,7 @@
 WITH raw_data AS (
     SELECT
         data::jsonb AS form_data,
+        data::jsonb -> 'form' -> 'case' ->> '@case_id' AS case_id,
         data::jsonb -> 'form' -> 'meta' ->> 'instanceID' AS form_id,
         data::jsonb -> 'form' -> 'meta' ->> 'username' AS enumerator_username,
         data::jsonb ->> 'received_on' AS submission_date,
@@ -16,23 +17,23 @@ WITH raw_data AS (
         data::jsonb -> 'form' -> 'if_completed_service' ->> 'confidence_to_find_employment_tc' AS confident_to_find_employment,
 
         -- Participant demographic and metadata (now correctly from 'case' -> 'update')
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_fullname' AS participant_name,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_unique_id' AS unique_id,
+        data::jsonb -> 'form' -> 'meta_data' ->> 'pp_fullname' AS participant_name,
+        data::jsonb -> 'form' -> 'meta_data' ->> 'pp_unique_id' AS unique_id,
         CASE
-            WHEN data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age' ~ '^\d+(\.\d+)?$' 
-                THEN FLOOR((data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age')::numeric)::int
+            WHEN data::jsonb -> 'form' -> 'meta_data' ->> 'pp_age' ~ '^\d+(\.\d+)?$' 
+                THEN FLOOR((data::jsonb -> 'form' -> 'meta_data' ->> 'pp_age')::numeric)::int
             ELSE NULL
         END AS age,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_sex' AS sex,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_county' AS county,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_subcounty' AS subcounty,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_ahofco_ward' AS ward,
+        data::jsonb -> 'form' -> 'meta_data' ->> 'pp_sex' AS sex,
+        data::jsonb -> 'form' -> 'meta_data' ->> 'pp_shofco_county' AS county,
+        data::jsonb -> 'form' -> 'meta_data' ->> 'pp_shofco_subcounty' AS subcounty,
+        data::jsonb -> 'form' -> 'meta_data' ->> 'pp_ahofco_ward' AS ward,
 
         -- Course data
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'completed_courses' AS completed_courses,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'dropped_courses' AS dropped_courses,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'total_completed' AS total_courses_completed,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'total_dropped' AS total_courses_dropped
+        data::jsonb -> 'form' -> 'meta_data' ->> 'completed_courses' AS completed_courses,
+        data::jsonb -> 'form' -> 'meta_data' ->> 'dropped_courses' AS dropped_courses,
+        data::jsonb -> 'form' -> 'meta_data' ->> 'total_completed' AS total_courses_completed,
+        data::jsonb -> 'form' -> 'meta_data' ->> 'total_dropped' AS total_courses_dropped
 
     FROM {{ source('staging_sl', 'Service_Completion_Follow_up') }}
     WHERE (data::jsonb ->> 'archived') IS NULL OR (data::jsonb ->> 'archived') = 'false'
@@ -40,6 +41,7 @@ WITH raw_data AS (
 
 SELECT
     form_id,
+    case_id,
     enumerator_username,
     submission_date::timestamp AS submission_date,
     training_activity,

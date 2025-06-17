@@ -6,6 +6,13 @@ sources:
     schema: staging_sl
     tables:
 
+      - name: Register
+        description: Register
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
       - name: Psychosocial_Support_Register
         description: Psychosocial Support Register
         tests:

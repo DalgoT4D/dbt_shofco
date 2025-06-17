@@ -57,6 +57,13 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
+
+      - name: Upskilling_Form
+        description: This is an upskilling form
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
                 
   - name: staging_education
     schema: staging_education

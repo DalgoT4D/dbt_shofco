@@ -5,8 +5,7 @@ sources:
   - name: staging_sl
     schema: staging_sl
     tables:
-
-      - name: Register
+     - name: Register
         description: Register
         tests:
           - elementary.schema_changes:
@@ -19,7 +18,14 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-
+                
+      - name: SWEP_Production_Details
+        identifier: SWEP_Production_Details
+        description: SWEP Program Production of Goods and Handicrafts
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
 
       - name: service_enroll
         identifier: Service_Enrollment_Form
@@ -29,9 +35,25 @@ sources:
               config:
                 severity: error
 
+      - name: Business_Grants_Assessment___Tracking_Form
+        identifier: Business_Grants_Assessment___Tracking_Form
+        description: Raw Business_Grants_Assessment___Tracking_Form
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
       - name: Placement_Followup
         identifier: Placement_Followup
         description: Placem,ent module for those who underwent SL services
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
+      - name: Business_Grants_Issuance_Form
+        identifier: Business_Grants_Issuance_Form
+        description: Business_Grants_Issuance_Form_Data
         tests:
           - elementary.schema_changes:
               config:

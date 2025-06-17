@@ -15,7 +15,7 @@ with source_data as (
 base as (
     select
         id as form_id,
-        ((data::jsonb) -> 'form' -> 'case' -> '@case_id') as case_id,
+        ((data::jsonb) -> 'form' -> 'case' ->> '@case_id') as case_id,
         NULLIF((data::jsonb) -> 'form' -> 'case' -> 'update' ->> 'date_of_production_sp', '') as date_of_production_sp,
         NULLIF((data::jsonb) -> 'form' -> 'case' -> 'update' ->> 'unique_items_produced_sp', '') as unique_items_produced_sp,
         jsonb_path_query(data::jsonb, '$.form.product_made_sp[*]') as product_item
@@ -33,14 +33,7 @@ exploded as (
         product_item::jsonb -> 'details_of_products_made_sp' ->> 'product_made_sp' as product_name,
         product_item::jsonb -> 'details_of_products_made_sp' ->> 'revenue_sp' as revenue_sp,
         product_item::jsonb -> 'details_of_products_made_sp' ->> 'pieces_produced_sp' as pieces_produced_sp,
-        product_item::jsonb -> 'details_of_products_made_sp' ->> 'amount_per_piece_sp' as amount_per_piece_sp,
-        
-        -- Calculate total revenue (fallback: amount_per_piece * pieces_produced)
-        coalesce(
-            (product_item::jsonb -> 'details_of_products_made_sp' ->> 'revenue_sp')::numeric,
-            ((product_item::jsonb -> 'details_of_products_made_sp' ->> 'amount_per_piece_sp')::numeric * 
-             (product_item::jsonb -> 'details_of_products_made_sp' ->> 'pieces_produced_sp')::numeric)
-        ) as calculated_total_revenue
+        product_item::jsonb -> 'details_of_products_made_sp' ->> 'amount_per_piece_sp' as amount_per_piece_sp
     from base
 )
 

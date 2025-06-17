@@ -5,6 +5,17 @@ sources:
   - name: staging_sl
     schema: staging_sl
     tables:
+      - name: Placement_Followup
+        identifier: Placement_Followup
+        description: Raw Placement_Followup
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
+  - name: staging_sl
+    schema: staging_sl
+    tables:
       - name: Co_working_space__Returning_User_
         identifier: Co_working_space__Returning_User_
         description: Raw Co_working_space__Returning_User_Form submissions

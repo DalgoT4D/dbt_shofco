@@ -12,7 +12,15 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-        
+
+      - name: Placement_Followup
+        identifier: Placement_Followup
+        description: Placem,ent module for those who underwent SL services
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
       - name: zzz_case
         identifier: zzz_case
         description: Raw Sustainable Livelihoods program case data from CommCare

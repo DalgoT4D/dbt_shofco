@@ -13,6 +13,14 @@ sources:
               config:
                 severity: error
 
+      - name: Business_Grants_Assessment___Tracking_Form
+        identifier: Business_Grants_Assessment___Tracking_Form
+        description: Raw Business_Grants_Assessment___Tracking_Form
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
       - name: Placement_Followup
         identifier: Placement_Followup
         description: Placem,ent module for those who underwent SL services

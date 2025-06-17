@@ -5,6 +5,15 @@ sources:
   - name: staging_sl
     schema: staging_sl
     tables:
+
+      - name: SWEP_Production_Details
+        identifier: SWEP_Production_Details
+        description: SWEP Program Production of Goods and Handicrafts
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
       - name: service_enroll
         identifier: Service_Enrollment_Form
         description: Raw Service Enrollment Form submissions

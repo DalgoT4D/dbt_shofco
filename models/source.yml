@@ -12,7 +12,14 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
-      
+
+      - name: SWEP_Exhibition_and_Sales
+        description: SWEP Exhibition and Sales
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+
       - name: Register
         description: Register
         tests:

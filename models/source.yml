@@ -111,6 +111,14 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
+
+      - name: swep_exhibition
+        identifier: SWEP_Exhibition_and_Sales
+        description: Raw swep exhibition and sales data
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
                 
   - name: staging_education
     schema: staging_education

@@ -27,6 +27,11 @@ WITH register_data AS (
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'ward_dir' AS ward,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'subcounty_shofco_site_dir' AS subcounty,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'county_dir' AS county,
+        COALESCE(
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'is_pwd',
+            data::jsonb -> 'form' -> 'consent_agreement' -> 'participants_details_dir' ->> 'is_pwd'
+        ) AS is_pwd,
+
         data::jsonb -> 'metadata' ->> 'username' AS username
     FROM {{ source('staging_sl', 'Register') }}
     WHERE data::jsonb ->> 'archived' = 'false' OR data::jsonb ->> 'archived' IS NULL
@@ -55,5 +60,6 @@ SELECT DISTINCT
     ward,
     subcounty,
     county,
+    is_pwd,
     username
 FROM register_data

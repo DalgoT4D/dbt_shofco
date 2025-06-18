@@ -10,6 +10,7 @@ gender_counselling_data as (
         county,
         constituency,
         client_age,
+        client_name,
         {{ validate_date("date_of_registration") }} as date_of_registration,
         client_gender,
         gender_site_code,
@@ -36,3 +37,4 @@ gender_counselling_data as (
 
 select *
 from gender_counselling_data
+WHERE client_name <> 'test disappearance' AND client_name <> 't'

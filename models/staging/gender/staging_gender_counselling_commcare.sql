@@ -13,6 +13,7 @@
     "county": "county",
     "constituency": "constituency",
     "client_age": "client_age",
+    "client_name": "client_name",
     "date_of_registration": "date_of_registration",
     "client_gender": "client_gender",
     "gender_site_code": "gender_site_code",

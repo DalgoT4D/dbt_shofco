@@ -1,0 +1,157 @@
+{
+    "id": "cba0fb1a-ae97-4e80-9cad-877459f1ce8e",
+    "form": {
+        "case": {
+            "@xmlns": "http://commcarehq.org/case/transaction/v2",
+            "create": {
+                "owner_id": "a4b28602f1f84f1e8616297496fd0176",
+                "case_name": "Agricultural show",
+                "case_type": "sl_new"
+            },
+            "update": {
+                "enumerator": "Mary Odero",
+                "intern_name": "",
+                "sales_made_se": "yes",
+                "enumerators_first": "Mary",
+                "unique_items_sold": "4",
+                "ward_shofco_site_se": "siaya_township",
+                "enumerator_last-name": "Odero",
+                "county_shofco_site_se": "siaya",
+                "date_of_exhibition_se": "2025-01-12",
+                "subcounty_shofco_site_se": "alego_usonga",
+                "location_of_exhibition_se": "Kmtc",
+                "exhibition_event_attended_se": "Agricultural show"
+            },
+            "@case_id": "07c82cf7-77ef-488a-bee9-7e5a0fa06fa4",
+            "@user_id": "20c21c966f564fd192147d2d99e6abb5",
+            "@date_modified": "2025-02-12T06:46:57.219000Z"
+        },
+        "meta": {
+            "drift": "0",
+            "@xmlns": "http://openrosa.org/jr/xforms",
+            "userID": "20c21c966f564fd192147d2d99e6abb5",
+            "timeEnd": "2025-02-12T06:46:57.219000Z",
+            "deviceID": "commcare_5b87b1c8-3ec4-492b-9d1e-468dfbbc4533",
+            "username": "sdero",
+            "geo_point": null,
+            "timeStart": "2025-02-12T06:29:46.051000Z",
+            "appVersion": "CommCare Android, version \"2.55.0\"(467579). App v4514. CommCare Version 2.55.0. Build 467579, built on: 2025-01-15",
+            "instanceID": "cba0fb1a-ae97-4e80-9cad-877459f1ce8e",
+            "commcare_version": "2.55.0",
+            "app_build_version": 4514
+        },
+        "#type": "data",
+        "@name": "SWEP Exhibition and Sales",
+        "@xmlns": "http://openrosa.org/formdesigner/572B57F3-D6C8-4940-B36C-235BEDAD9ADD",
+        "@version": "4333",
+        "@uiVersion": "1",
+        "enumerator": "Mary Odero",
+        "intern_name": "",
+        "sale_details": [
+            {
+                "details_of_sold_products": {
+                    "revenue_se": "10000",
+                    "mpesa_code_se": "TBB4NCZHBQ",
+                    "mpesa_name_se": "Mary Test",
+                    "total_cost_se": "OK",
+                    "date_of_sale_se": "2025-01-12",
+                    "product_sold_se": "mats",
+                    "quantity_sold_se": "10",
+                    "fill_instructions": "OK",
+                    "cost_of_product_se": "1000"
+                }
+            },
+            {
+                "details_of_sold_products": {
+                    "revenue_se": "15000",
+                    "mpesa_code_se": "TTBCYBQRS",
+                    "mpesa_name_se": "mary test",
+                    "total_cost_se": "OK",
+                    "date_of_sale_se": "2025-01-12",
+                    "product_sold_se": "keyholders",
+                    "quantity_sold_se": "50",
+                    "fill_instructions": "OK",
+                    "cost_of_product_se": "300"
+                }
+            },
+            {
+                "details_of_sold_products": {
+                    "revenue_se": "30000",
+                    "mpesa_code_se": "TTBCTOPRSC",
+                    "mpesa_name_se": "mary test",
+                    "total_cost_se": "OK",
+                    "date_of_sale_se": "2024-12-11",
+                    "product_sold_se": "Ankara",
+                    "quantity_sold_se": "30",
+                    "fill_instructions": "OK",
+                    "cost_of_product_se": "1000"
+                }
+            },
+            {
+                "details_of_sold_products": {
+                    "revenue_se": "10000",
+                    "mpesa_code_se": "TTGYRSTCR",
+                    "mpesa_name_se": "mary test",
+                    "total_cost_se": "OK",
+                    "date_of_sale_se": "2020-09-09",
+                    "product_sold_se": "slay bags",
+                    "quantity_sold_se": "10",
+                    "fill_instructions": "OK",
+                    "cost_of_product_se": "1000"
+                }
+            }
+        ],
+        "sales_made_se": "yes",
+        "facilitator_csf": "OK",
+        "enumerators_first": "Mary",
+        "unique_items_sold": "4",
+        "enumerator_last-name": "Odero",
+        "date_of_exhibition_se": "2025-01-12",
+        "shofco_site_details_se": {
+            "ward_shofco_site_se": "siaya_township",
+            "county_shofco_site_se": "siaya",
+            "subcounty_shofco_site_se": "alego_usonga"
+        },
+        "location_of_exhibition_se": "Kmtc",
+        "exhibition_event_attended_se": "Agricultural show",
+        "this_form_captures_details_of_all_exhibitions_swep_attends": "OK"
+    },
+    "type": "data",
+    "app_id": "453912d11a568405e6da6586960d8344",
+    "domain": "shofco-data-system",
+    "problem": null,
+    "version": "4333",
+    "archived": false,
+    "build_id": "81f7329469514e84a3172fd1e59298bb",
+    "metadata": {
+        "drift": "0",
+        "userID": "20c21c966f564fd192147d2d99e6abb5",
+        "timeEnd": "2025-02-12T06:46:57.219000Z",
+        "deviceID": "commcare_5b87b1c8-3ec4-492b-9d1e-468dfbbc4533",
+        "location": null,
+        "username": "sdero",
+        "geo_point": null,
+        "timeStart": "2025-02-12T06:29:46.051000Z",
+        "appVersion": "CommCare Android, version \"2.55.0\"(467579). App v4514. CommCare Version 2.55.0. Build 467579, built on: 2025-01-15",
+        "instanceID": "cba0fb1a-ae97-4e80-9cad-877459f1ce8e",
+        "commcare_version": "2.55.0",
+        "app_build_version": 4514
+    },
+    "edited_on": null,
+    "submit_ip": "154.159.237.183",
+    "uiversion": "1",
+    "indexed_on": "2025-02-12T06:47:07.226789Z",
+    "attachments": {
+        "form.xml": {
+            "url": "https://www.commcarehq.org/a/shofco-data-system/api/form_attachment/v1/cba0fb1a-ae97-4e80-9cad-877459f1ce8e/form.xml",
+            "length": 4411,
+            "content_type": "text/xml"
+        }
+    },
+    "received_on": "2025-02-12T06:46:59.532560Z",
+    "resource_uri": "",
+    "edited_by_user_id": null,
+    "server_modified_on": "2025-02-12T06:46:59.621874Z",
+    "is_phone_submission": true,
+    "initial_processing_complete": true
+}

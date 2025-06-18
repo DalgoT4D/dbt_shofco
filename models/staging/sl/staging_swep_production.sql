@@ -1,40 +1,84 @@
-{{
-    config(
-        materialized='table',
-        tags=['swep', 'swep_production', 'sl']
-    )
-}}
+{{ config(
+  materialized = 'table',
+  tags = ['swep', 'swep_production', 'sl']
+) }}
 
-with source_data as (
-    select
+WITH source_data AS (
+    SELECT
         id,
         data
-    from {{ source('staging_sl', 'SWEP_Production_Details') }}
+    FROM {{ source('staging_sl', 'SWEP_Production_Details') }}
+    WHERE data::jsonb -> 'form' ->> '@name' = 'SWEP Exhibition and Sales'
 ),
 
-base as (
-    select
-        id as form_id,
-        ((data::jsonb) -> 'form' -> 'case' ->> '@case_id') as case_id,
-        NULLIF((data::jsonb) -> 'form' -> 'case' -> 'update' ->> 'date_of_production_sp', '') as date_of_production_sp,
-        NULLIF((data::jsonb) -> 'form' -> 'case' -> 'update' ->> 'unique_items_produced_sp', '') as unique_items_produced_sp,
-        jsonb_path_query(data::jsonb, '$.form.product_made_sp[*]') as product_item
-    from source_data
+base AS (
+    SELECT
+        id AS form_id,
+        data::jsonb -> 'form' -> 'case' ->> '@case_id' AS case_id,
+        data::jsonb -> 'form' -> 'case' -> 'create' ->> 'owner_id' AS owner_id,
+        data::jsonb -> 'form' -> 'case' ->> '@user_id' AS user_id,
+        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'recording_ses' AS recording_ses,
+
+        -- Sales metadata
+        data::jsonb -> 'form' -> 'sales_questions' ->> 'date_of_sale_ses' AS date_of_sale,
+        data::jsonb -> 'form' -> 'sales_questions' ->> 'unique_items_sold' AS unique_items_sold,
+
+        -- Exhibition metadata
+        COALESCE(
+            data::jsonb -> 'form' -> 'exhibition_questions' ->> 'date_of_exhibition_se',
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'date_of_exhibition_se'
+        ) AS date_of_exhibition,
+
+        COALESCE(
+            data::jsonb -> 'form' -> 'exhibition_questions' ->> 'location_of_exhibition_se',
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'location_of_exhibition_se'
+        ) AS location_of_exhibition,
+
+        COALESCE(
+            data::jsonb -> 'form' -> 'exhibition_questions' ->> 'exhibition_event_attended_se',
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'exhibition_event_attended_se'
+        ) AS exhibition_event_attended,
+
+        COALESCE(
+            data::jsonb -> 'form' -> 'exhibition_questions' ->> 'exhibition_attendees_se',
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'exhibition_attendees_se'
+        ) AS exhibition_attendees,
+
+        COALESCE(
+            data::jsonb -> 'form' -> 'exhibition_questions' ->> 'sales_made_se',
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'sales_made_se'
+        ) AS sales_made,
+
+        -- Explode each sold item
+        jsonb_path_query(data::jsonb, '$.form.sales_questions.sale_details[*]') AS product_item
+    FROM source_data
 ),
 
-exploded as (
-    select
+exploded AS (
+    SELECT
         form_id,
         case_id,
-        date_of_production_sp,
-        unique_items_produced_sp,
-        product_item::jsonb -> 'details_of_products_made_sp' ->> 'total_cost_sp' as total_cost_sp,
-        product_item::jsonb -> 'details_of_products_made_sp' ->> 'fill_instructions_sp' as fill_instructions_sp,
-        product_item::jsonb -> 'details_of_products_made_sp' ->> 'product_made_sp' as product_name,
-        product_item::jsonb -> 'details_of_products_made_sp' ->> 'revenue_sp' as revenue_sp,
-        product_item::jsonb -> 'details_of_products_made_sp' ->> 'pieces_produced_sp' as pieces_produced_sp,
-        product_item::jsonb -> 'details_of_products_made_sp' ->> 'amount_per_piece_sp' as amount_per_piece_sp
-    from base
+        owner_id,
+        user_id,
+        recording_ses,
+        date_of_sale,
+        unique_items_sold,
+        date_of_exhibition,
+        location_of_exhibition,
+        exhibition_event_attended,
+        exhibition_attendees,
+        sales_made,
+
+        product_item::jsonb -> 'details_of_sold_products' ->> 'product_sold_se' AS product_name,
+        product_item::jsonb -> 'details_of_sold_products' ->> 'units_sold_se' AS units_sold,
+        product_item::jsonb -> 'details_of_sold_products' ->> 'revenue_se' AS revenue_sp,
+        product_item::jsonb -> 'details_of_sold_products' ->> 'cost_of_product_se' AS cost_of_product_sp,
+        product_item::jsonb -> 'details_of_sold_products' ->> 'total_cost_se' AS total_cost_sp,
+        product_item::jsonb -> 'details_of_sold_products' ->> 'fill_instructions' AS fill_instructions_sp,
+        product_item::jsonb -> 'details_of_sold_products' ->> 'mpesa_code_se' AS mpesa_code_sp,
+        product_item::jsonb -> 'details_of_sold_products' ->> 'mpesa_name_se' AS mpesa_name_sp
+    FROM base
 )
 
-select * from exploded
+SELECT *
+FROM exploded

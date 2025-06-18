@@ -1,0 +1,41 @@
+{{ config(
+  materialized='table',
+  tags=["service_enrollment", "sl"]
+) }}
+
+SELECT
+    pp_fullname AS full_name,
+    pp_sex AS gender,
+    CASE WHEN pp_age ~ '^\d+(\.\d+)?$' THEN pp_age::NUMERIC END AS age,
+    pp_unique_id AS unique_id,
+    course_enrolled_sr AS enrolled_course,
+    ongoing_course AS ongoing_course,
+    region AS region,
+    pp_shofco_county AS county,
+    pp_shofco_subcounty AS subcounty,
+    pp_ahofco_ward AS ward,
+    participants_program_sr AS program,
+    user_location_id AS location_id,
+    count_casedb AS visits_count,
+    {{ validate_date("date_first_visit_bm") }} AS first_visit_date,
+    type_of_business_bm AS business_type,
+    mentee_business_records_bm AS has_business_records,
+    if_mentee_have_dead_stock_bm AS has_dead_stock,
+    cash_to_buy_new_stock_bm AS has_cash_to_restock,
+    business_costs_before_setting_prices_bm AS cost_awareness,
+    mentees_price_compared_to_competitors_bm AS price_competitive,
+    stock_bm AS stock_info,
+    employees_bm AS employee_info,
+    visit_bm AS visit_notes,
+    county_bm AS mentor_county,
+    bus_location_bm AS business_location,
+    name_of_mentor_bm AS mentor_name,
+    contact_of_mentor_bm AS mentor_contact,
+    challenges_mentee_is_facing_bm AS mentee_challenges,
+    solutions_agreed_to_be_implemented_bm AS agreed_solutions,
+    agreed_timeline_to_implement_solutions_bm AS implementation_timeline,
+    enumerators_first AS enumerator_firstname,
+    enumerator_lastname AS enumerator_lastname,
+    enumerator AS enumerator,
+    case_id
+FROM {{ ref("staging_service_enrollment") }}

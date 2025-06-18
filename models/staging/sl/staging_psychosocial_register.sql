@@ -16,7 +16,7 @@ WITH psycho_data AS (
         data::jsonb -> 'form' ->> 'enumerator' AS enumerator_full_name,
         data::jsonb -> 'form' ->> 'enumerators_first' AS enumerator_first,
         data::jsonb -> 'form' ->> 'enumerator_last-name' AS enumerator_last,
-        (data::jsonb ->> 'people_attending_psr')::int AS people_attending,
+        data::jsonb -> 'form' ->> 'people_attending_psr' AS people_attending,
         data::jsonb -> 'form' ->> 'psychosocial_facilitator_psr' AS facilitator_name,
         data::jsonb -> 'form' ->> 'profession_of_facilitator_psr' AS facilitator_profession,
         data::jsonb -> 'form' -> 'shofco_site_details' ->> 'meeting_ward_psr' AS ward,

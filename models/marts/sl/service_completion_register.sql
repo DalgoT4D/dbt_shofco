@@ -32,7 +32,12 @@ WITH register AS (
         NULLIF(enumerator_full_name, '') AS enumerator_full_name,
         NULLIF(county, '') AS county,
         NULLIF(subcounty, '') AS subcounty,
-        NULLIF(ward, '') AS ward
+        NULLIF(ward, '') AS ward,
+        CASE 
+            WHEN LOWER(NULLIF(is_pwd, '')) = 'yes' THEN 'Yes'
+            WHEN LOWER(NULLIF(is_pwd, '')) = 'no' THEN 'No'
+            ELSE 'Unknown'
+        END AS is_pwd
     FROM {{ ref('staging_register') }}
 ),
 
@@ -72,6 +77,7 @@ SELECT
     r.county,
     r.subcounty,
     r.ward,
+    r.is_pwd,
     sc.completed_training,
     sc.submission_date,
     sc.completed_courses,
@@ -98,7 +104,6 @@ SELECT
     END AS refugee_status,
 
     -- Placeholder for PWD status
-    NULL AS is_pwd,
 
     -- Age group buckets
     CASE

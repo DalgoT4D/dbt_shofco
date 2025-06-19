@@ -105,7 +105,8 @@ SELECT DISTINCT
     has_employees_pl,
     number_of_employees_pl,
     female_employees_pl,
-    
+    avg_employees_pl,
+    avg_female_employees_pl,
 
     -- Final cleaned average income in KES
     CASE

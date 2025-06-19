@@ -38,7 +38,8 @@ SELECT
     has_employees_pl,
     number_of_employees_pl,
     female_employees_pl,
-    
+    avg_employees_pl,
+    avg_female_employees_pl,
 
     -- 🧮 Business age calculation (in years, from year_business_started)
     CASE 

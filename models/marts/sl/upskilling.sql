@@ -1,7 +1,7 @@
 {{
   config(
     materialized='table',
-    tags=['upskilling', 'sl']
+    tags=['upskilling', 'sl', 'daycare', 'dignity_kit']
   )
 }}
 

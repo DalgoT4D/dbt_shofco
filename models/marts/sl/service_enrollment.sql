@@ -1,6 +1,6 @@
 {{ config(
   materialized='table',
-  tags=["service_enrollment", "sl"]
+  tags=["service_enrollment", "sl", 'daycare', 'dignity_kit']
 ) }}
 
 SELECT
@@ -73,7 +73,14 @@ SELECT
   digital_literacy_course,
   {{ validate_date('digital_literacy_start_date') }} AS digital_literacy_start_date,
   {{ validate_date('digital_literacy_completion_date') }} AS digital_literacy_completion_date,
-  digital_literacy_training_time,
+  digital_literacy_center,
+  digital_literacy_other_training,
+  time_of_training,
+  computer_packages_start_date,
+  computer_packages_completion_date,
+  advanced_it_dl,
+  advanced_it_start_date,
+  advanced_it_completion_date,
 
   /* entrepreneurship */
   {{ validate_date('entrepreneurship_start_date') }} AS entrepreneurship_start_date,

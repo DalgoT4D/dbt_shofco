@@ -2,24 +2,29 @@
     config(
         materialized="table", 
         unique_key="case_id", 
-        tags=["upskilling_completion","sl"]
+        tags=["upskilling", "upskilling_completion", "sl"]
     )
 }}
 
-with source_data as (
-    select
+WITH source_data AS (
+    SELECT
         id,
         data
-    from {{ source('staging_sl', 'upskilling_completion') }}
+    FROM {{ source('staging_sl', 'upskilling_completion') }}
 )
 
-select
-    id as case_id,
-    NULLIF((data::jsonb) -> 'form' -> 'case' -> 'update' ->> 'enumerator', '') as enumerator,
-    NULLIF((data::jsonb) -> 'form' -> 'case' -> 'update' ->> 'enumerators_first', '') as enumerators_first,
-    NULLIF((data::jsonb) -> 'form' -> 'case' -> 'update' ->> 'enumerator_last-name', '') as "enumerator_last-name",
-    NULLIF((data::jsonb) -> 'form' -> 'case' -> 'update' ->> 'completed_upskilling_uf', '') as completed_upskilling_uf,
-    NULLIF((data::jsonb) -> 'form' -> 'case' -> 'update' ->> 'how_helpful_was_upskilling_uc', '') as how_helpful_was_upskilling_uc
-from source_data
+SELECT
+    -- Case identifiers
+    data::jsonb -> 'form' -> 'case' ->> '@case_id' AS case_id,
+    data::jsonb -> 'form' -> 'case' ->> '@user_id' AS user_id,
 
+    -- Enumerator details (correct source is `meta_data`)
+    NULLIF(data::jsonb -> 'form' -> 'meta_data' ->> 'enumerator', '') AS enumerator,
+    NULLIF(data::jsonb -> 'form' -> 'meta_data' ->> 'enumerators_first', '') AS enumerator_first_name,
+    NULLIF(data::jsonb -> 'form' -> 'meta_data' ->> 'enumerator_last-name', '') AS enumerator_last_name,
 
+    -- Completion status (top-level under form)
+    NULLIF(data::jsonb -> 'form' ->> 'completed_upskilling_uf', '') AS completed_upskilling,
+    NULLIF(data::jsonb -> 'form' ->> 'how_helpful_was_upskilling_uc', '') AS how_helpful_was_upskilling
+
+FROM source_data

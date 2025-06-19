@@ -1,7 +1,7 @@
 {{
   config(
     materialized='table',
-    tags=['upskilling', 'sl', 'beneficiary_tracking']
+    tags=['upskilling', 'sl']
   )
 }}
 
@@ -26,7 +26,10 @@ WITH registration AS (
     willing_to_be_upskilled,
     upskilling_component,
     recommendation_status,
-    date_received
+    date_received,
+    experienced_days_where_you_had_nothing,
+    miss_school_due_to_lack_hygiene_products,
+    challenges_accessing_personal_hygiene_items
   FROM {{ ref('staging_upskilling_form') }}
 ),
 
@@ -34,10 +37,10 @@ completion AS (
   SELECT
     case_id AS completion_case_id,
     enumerator AS completion_enumerator,
-    enumerators_first AS completion_enumerators_first,
-    "enumerator_last-name" AS completion_enumerator_last_name,
-    completed_upskilling_uf,
-    how_helpful_was_upskilling_uc
+    enumerator_first_name AS completion_enumerator_first_name,
+    enumerator_last_name AS completion_enumerator_last_name,
+    completed_upskilling,
+    how_helpful_was_upskilling
   FROM {{ ref('staging_upskilling_completion') }}
 )
 
@@ -62,13 +65,17 @@ SELECT
   r.upskilling_component,
   r.recommendation_status,
   r.date_received,
+  r.experienced_days_where_you_had_nothing,
+  r.miss_school_due_to_lack_hygiene_products,
+  r.challenges_accessing_personal_hygiene_items,
+
 
   c.completion_enumerator,
-  c.completion_enumerators_first,
+  c.completion_enumerator_first_name,
   c.completion_enumerator_last_name,
-  c.completed_upskilling_uf,
-  c.how_helpful_was_upskilling_uc
+  c.completed_upskilling,
+  c.how_helpful_was_upskilling
 
 FROM registration r
-LEFT JOIN completion c
+JOIN completion c
   ON r.case_id = c.completion_case_id

@@ -82,6 +82,14 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
+      
+      - name: co_working_returning
+        identifier: Co_working_space__Returning_User_
+        description: Co-working space returning users
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
                 
       - name: Dignity_Kit_Issuance
         description: This is a dignity kit Dignity_Kit_Issuance

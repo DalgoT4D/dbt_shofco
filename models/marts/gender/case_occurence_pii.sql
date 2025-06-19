@@ -139,16 +139,16 @@ select distinct
     survivors.gender as survivor_gender,
     survivors.age as survivor_age,
     case
-        when survivors.age < 15
-            then '<15 years'
-        when survivors.age >= 15 and survivors.age <= 24
-            then '15 - 24 years'
-        when survivors.age >= 25 and survivors.age <= 54
-            then '25 - 54 years'
-        when survivors.age >= 55 and survivors.age <= 64
-            then '55 - 64 years'
-        when survivors.age >= 65
-            then '65 years and above'
+        when survivors.age < 13
+            then '<13 years'
+        when survivors.age >= 13 and survivors.age <= 17
+            then '13 - 17 years'
+        when survivors.age >= 18 and survivors.age <= 35
+            then '18 - 35 years'
+        when survivors.age >= 36 and survivors.age <= 50
+            then '36 - 50 years'
+        when survivors.age > 50
+            then 'Above 50 years'
         else 'Unknown'
     end as age_group,
     coalesce(

@@ -87,7 +87,14 @@ staged as (
     d->'form'->'enrollment_sr'->'digital_literacy_follow_up_sr'->> 'start_date_dl'            as digital_literacy_start_date,
     d->'form'->'enrollment_sr'->'digital_literacy_follow_up_sr'->> 'completion_date_dl'       as digital_literacy_completion_date,
     d->'form'->'enrollment_sr'->'digital_literacy_follow_up_sr'->> 'digital_literacy_dl'      as digital_literacy_course,
-    d->'form'->'enrollment_sr'->'digital_literacy_follow_up_sr'->> 'time_of_training_dl'      as digital_literacy_training_time,
+    d->'form'->'enrollment_sr'->'digital_literacy_follow_up_sr'->> 'specify_other_dl'            as digital_literacy_other_training,
+    d->'form'->'enrollment_sr'->'digital_literacy_follow_up_sr'->> 'advanced_it_dl'       as advanced_it_dl,
+    d->'form'->'enrollment_sr'->'digital_literacy_follow_up_sr'->> 'advanced_it_start_date_dl'      as advanced_it_start_date,
+    d->'form'->'enrollment_sr'->'digital_literacy_follow_up_sr'->> 'digital_literacy-center-dl'      as digital_literacy_center,
+    d->'form'->'enrollment_sr'->'digital_literacy_follow_up_sr'->> 'advanced_it_completion_date_dl'      as advanced_it_completion_date,
+    d->'form'->'enrollment_sr'->'digital_literacy_follow_up_sr'->> 'time_of_training_dl'      as time_of_training,
+    d->'form'->'enrollment_sr'->'digital_literacy_follow_up_sr'->> 'computer_packages_start_date_dl'      as computer_packages_start_date,
+    d->'form'->'enrollment_sr'->'digital_literacy_follow_up_sr'->> 'computer-packages_completion_date_dl'      as computer_packages_completion_date,
 
     /* --- entrepreneurship_follow_up_questions */
     d->'form'->'enrollment_sr'->'entrepreneurship_follow_up_questions'->> 'start_date_ent'             as entrepreneurship_start_date,

@@ -6,6 +6,7 @@
 WITH placement_data AS (
     SELECT
         id,
+
         -- Case metadata
         data::jsonb -> 'form' -> 'case' ->> '@case_id' AS case_id,
         data::jsonb -> 'form' -> 'case' ->> '@user_id' AS user_id,
@@ -15,10 +16,9 @@ WITH placement_data AS (
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_fullname' AS fullname,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_unique_id' AS participant_id,
 
-        -- Age with validation and casting
         CASE
             WHEN NULLIF(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age', '') IS NOT NULL
-                 AND (data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age') ~ '^[0-9]*\.?[0-9]+$'
+                AND (data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age') ~ '^[0-9]*\.?[0-9]+$'
             THEN FLOOR((data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age')::FLOAT)::INT
             ELSE NULL
         END AS age,
@@ -28,7 +28,7 @@ WITH placement_data AS (
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_subcounty' AS subcounty,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_ahofco_ward' AS ward,
 
-        -- Placement & program fields
+        -- Placement & program
         data::jsonb -> 'form' ->> 'training_activity_pl' AS training_activity,
         data::jsonb -> 'form' -> 'business_transitions' ->> 'placement_opportunity_pl' AS placement_opportunity,
         data::jsonb -> 'form' -> 'business_transitions' ->> 'type_of_business_pl' AS type_of_business,
@@ -36,23 +36,39 @@ WITH placement_data AS (
         data::jsonb -> 'form' ->> 'certifications_achieved_pl' AS certifications_achieved,
         data::jsonb -> 'form' ->> 'skills_gained_pl' AS skills_gained,
 
-        -- Raw average income value
+        -- Raw average income
         data::jsonb -> 'form' -> 'business_transitions' ->> 'income_on_average_pl' AS income_raw,
 
-        -- Additional fields for analytics
+        -- Additional fields
         data::jsonb -> 'form' -> 'business_transitions' ->> 'new_role_through_shofco_support_pl' AS new_role_source_pl,
         data::jsonb -> 'form' -> 'business_transitions' ->> 'documents_pl' AS documents_held_pl,
         data::jsonb -> 'form' -> 'business_transitions' ->> 'organization_sector_pl' AS sector_pl,
         data::jsonb -> 'form' -> 'business_transitions' ->> 'nature_of_emplyment_pl' AS employment_type_pl,
+
+        -- 🆕 Business info
         data::jsonb -> 'form' -> 'business_transitions' ->> 'date_started_business_pl' AS business_start_date_pl,
+        data::jsonb -> 'form' -> 'business_transitions' ->> 'year_business_started_pl' AS year_business_started_pl,
+
+        -- 🆕 Employee fields
+        data::jsonb -> 'form' -> 'business_transitions' ->> 'employees_pl' AS has_employees_pl,
+        CASE 
+            WHEN NULLIF(data::jsonb -> 'form' -> 'business_transitions' ->> 'number_of_employees_pl', '') ~ '^[0-9]+$'
+            THEN (data::jsonb -> 'form' -> 'business_transitions' ->> 'number_of_employees_pl')::INT
+            ELSE NULL
+        END AS number_of_employees_pl,
+        CASE 
+            WHEN NULLIF(data::jsonb -> 'form' -> 'business_transitions' ->> 'female_employees_pl', '') ~ '^[0-9]+$'
+            THEN (data::jsonb -> 'form' -> 'business_transitions' ->> 'female_employees_pl')::INT
+            ELSE NULL
+        END AS female_employees_pl,
+
         data::jsonb -> 'form' -> 'business_transitions' ->> 'average_employees_pl' AS avg_employees_pl,
         data::jsonb -> 'form' -> 'business_transitions' ->> 'average_female_employees_pl' AS avg_female_employees_pl,
 
-        -- County and region of placement
         data::jsonb -> 'form' -> 'business_transitions' ->> 'county_of_job_transition_pl' AS county_of_transition,
         data::jsonb -> 'form' -> 'business_transitions' ->> 'region_of_business_transition_pl' AS region_of_transition,
 
-        -- Submission details
+        -- Submission
         data::jsonb ->> 'received_on' AS date_received
 
     FROM {{ source('staging_sl', 'Placement_Followup') }}
@@ -84,6 +100,13 @@ SELECT DISTINCT
     documents_held_pl,
     sector_pl,
     employment_type_pl,
+    business_start_date_pl,
+    year_business_started_pl,
+    has_employees_pl,
+    number_of_employees_pl,
+    female_employees_pl,
+    avg_employees_pl,
+    avg_female_employees_pl,
 
     -- Final cleaned average income in KES
     CASE

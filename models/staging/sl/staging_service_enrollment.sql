@@ -24,6 +24,7 @@ staged as (
     d->'form'->'enrollment_sr'->'meta_data'->> 'ongoing_course'         as ongoing_course,
     d->'form'->'enrollment_sr'->> 'course_enrolled_sr'                  as course_enrolled_sr,
     d->'form'->'enrollment_sr'->'meta_data'->> 'pp_shofco_county'       as pp_shofco_county,
+    d -> 'form' -> 'case' -> 'update' ->> 'county_bm'                   as county,
     d->'form'->'enrollment_sr'->'meta_data'->> 'pp_shofco_subcounty'    as pp_shofco_subcounty,
     d->'form'->'enrollment_sr'->'meta_data'->> 'pp_ahofco_ward'         as pp_ahofco_ward,
     d->'form'->'enrollment_sr'->'meta_data'->> 'user_location_id'       as user_location_id,

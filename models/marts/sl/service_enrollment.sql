@@ -11,7 +11,7 @@ SELECT
   pp_unique_id AS unique_id,
   course_enrolled_sr AS enrolled_course,
   ongoing_course AS ongoing_course,
-  pp_shofco_county AS county,
+  COALESCE(NULLIF(pp_shofco_county, ''),bm_county, county) AS county,
   pp_shofco_subcounty AS subcounty,
   pp_ahofco_ward AS ward,
   participants_program_sr AS program,

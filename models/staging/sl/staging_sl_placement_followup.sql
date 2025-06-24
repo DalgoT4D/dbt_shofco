@@ -45,11 +45,11 @@ WITH placement_data AS (
         data::jsonb -> 'form' -> 'business_transitions' ->> 'organization_sector_pl' AS sector_pl,
         data::jsonb -> 'form' -> 'business_transitions' ->> 'nature_of_emplyment_pl' AS employment_type_pl,
 
-        -- 🆕 Business info
+        -- Business info
         data::jsonb -> 'form' -> 'business_transitions' ->> 'date_started_business_pl' AS business_start_date_pl,
         data::jsonb -> 'form' -> 'business_transitions' ->> 'year_business_started_pl' AS year_business_started_pl,
 
-        -- 🆕 Employee fields
+        -- Employee fields
         data::jsonb -> 'form' -> 'business_transitions' ->> 'employees_pl' AS has_employees_pl,
         CASE 
             WHEN NULLIF(data::jsonb -> 'form' -> 'business_transitions' ->> 'number_of_employees_pl', '') ~ '^[0-9]+$'

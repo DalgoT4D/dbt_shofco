@@ -26,7 +26,10 @@ SELECT
   enumerator_full_name AS enumerator,
 
   /* daycare */
-  daycare_children_under_4,
+  CASE 
+      WHEN daycare_children_under_4 = '0' THEN 'no'
+      ELSE 'yes'
+  END AS daycare_children_under_4,
   daycare_number_of_children,
   daycare_do_you_have_children,
   daycare_children_with_disabilities,

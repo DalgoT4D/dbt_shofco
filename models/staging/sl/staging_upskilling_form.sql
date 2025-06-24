@@ -16,10 +16,10 @@ WITH extracted_data AS (
         data::jsonb -> 'form' -> 'meta_data' ->> 'enumerators_first' AS first_name,
         data::jsonb -> 'form' -> 'meta_data' ->> 'enumerator_last-name' AS last_name,
 
-        -- Training details (from root or form.tailoring)
-        data::jsonb -> 'form' ->> 'training_program_uf' AS training_program,
+        -- Training details
+        data::jsonb -> 'form' -> 'tailoring' ->> 'training_program_uf' AS training_program,
         data::jsonb -> 'form' -> 'tailoring' ->> 'year_trained_on_uf' AS year_trained,
-        data::jsonb -> 'form' ->> 'swep_center_uf' AS swep_center,
+        data::jsonb -> 'form' -> 'tailoring' ->> 'swep_center_uf' AS swep_center,
 
         -- Support details
         data::jsonb -> 'form' ->> 'additional_support_uf' AS additional_support,
@@ -31,10 +31,10 @@ WITH extracted_data AS (
         data::jsonb -> 'form' -> 'dignity_kit_support' ->> 'enumerator_last-name' AS challenges_accessing_personal_hygiene_items,
 
         -- Child-related details
-        data::jsonb -> 'form' ->> 'do_you_have_children_uf' AS has_children,
-        data::jsonb -> 'form' ->> 'children_under_4_uf' AS children_under_4,
-        data::jsonb -> 'form' ->> 'children_in_need_daycare_uf' AS children_in_daycare,
-        data::jsonb -> 'form' ->> 'children_withdisabilities_uf' AS children_with_disabilities,
+        data::jsonb -> 'form' -> 'daycare_support' ->> 'do_you_have_children_uf' AS has_children,
+        data::jsonb -> 'form' -> 'daycare_support'->> 'children_under_4_uf' AS children_under_4,
+        data::jsonb -> 'form' -> 'daycare_support'->> 'children_in_need_daycare_uf' AS children_in_daycare,
+        data::jsonb -> 'form' -> 'daycare_support'->> 'children_withdisabilities_uf' AS children_with_disabilities,
 
         -- Upskilling interest
         data::jsonb -> 'form' ->> 'willing_to_relocate_uf' AS willing_to_relocate,
@@ -46,7 +46,8 @@ WITH extracted_data AS (
         data::jsonb ->> 'received_on' AS date_received
 
     FROM {{ source('staging_sl', 'Upskilling_Form') }}
-    WHERE COALESCE(data::jsonb ->> 'archived', 'false') = 'false'
+    WHERE
+        data::jsonb ->> 'archived' = 'false' OR data::jsonb ->> 'archived' IS NULL
 )
 
 SELECT DISTINCT

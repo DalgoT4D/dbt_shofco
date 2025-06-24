@@ -8,6 +8,8 @@ with source_data as (
         id,
         data::jsonb as json_data
     from {{ source('staging_sl', 'swep_exhibition') }}
+    WHERE
+        data::jsonb ->> 'archived' = 'false' OR data::jsonb ->> 'archived' IS NULL
 ),
 
 -- Base form info

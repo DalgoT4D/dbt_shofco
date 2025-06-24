@@ -11,6 +11,8 @@ with source_data as (
         id,
         data
     from {{ source('staging_sl', 'co_working_returning') }}
+    WHERE
+        data::jsonb ->> 'archived' = 'false' OR data::jsonb ->> 'archived' IS NULL
 )
 
 select

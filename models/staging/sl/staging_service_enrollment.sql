@@ -9,6 +9,8 @@ with src as (
     id as case_id,
     data::jsonb as d
   from {{ source('staging_sl', 'service_enroll') }}
+  WHERE
+        data::jsonb ->> 'archived' = 'false' OR data::jsonb ->> 'archived' IS NULL
 ),
 
 staged as (

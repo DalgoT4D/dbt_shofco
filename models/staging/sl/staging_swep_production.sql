@@ -10,6 +10,8 @@ with source_data as (
         id,
         data
     from {{ source('staging_sl', 'SWEP_Production_Details') }}
+    WHERE
+        data::jsonb ->> 'archived' = 'false' OR data::jsonb ->> 'archived' IS NULL
 ),
 
 base as (

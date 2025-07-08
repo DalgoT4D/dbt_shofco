@@ -6,7 +6,7 @@
 with
 gender_counselling_data as (
     select distinct
-        assigned_to,
+        registered_by,
         county,
         constituency,
         client_age,
@@ -37,4 +37,4 @@ gender_counselling_data as (
 
 select *
 from gender_counselling_data
-WHERE client_name <> 'test disappearance' AND client_name <> 't'
+WHERE client_name <> 'test disappearance' AND client_name <> 't' AND LOWER(client_name) NOT LIKE '%test%'

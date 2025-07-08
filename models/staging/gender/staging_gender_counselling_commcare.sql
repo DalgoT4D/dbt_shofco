@@ -9,7 +9,7 @@
 
 {% set commcare_case_type = "gender_counselling_case_data" %}
 {% set case_type_properties_dict = {
-    "assigned_to": "assigned_to",
+    "registered_by": "registered_by",
     "county": "county",
     "constituency": "constituency",
     "client_age": "client_age",

@@ -170,9 +170,9 @@ left join
 left join
     {{ source("staging_gender", "dim_location_administrative_units") }} as locations
     on
-        cases.incident_report_county_code = locations.county_code
-        and cases.incident_report_constituency_code = locations.constituency_id
-        and cases.incident_report_ward_code = locations.ward_id
+        LOWER(cases.incident_report_county_code) = LOWER(locations.county_code)
+        and LOWER(cases.incident_report_constituency_code) = LOWER(locations.constituency_id)
+        and LOWER(REPLACE(cases.incident_report_ward_code, '-', '_')) = LOWER(locations.ward_id)
 left join
     {{ source("staging_gender", "dim_gender_sites") }} as gender_sites
     on cases.gender_site_code_of_reporting = gender_sites.site_code

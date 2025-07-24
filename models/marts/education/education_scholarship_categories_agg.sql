@@ -3,14 +3,31 @@
   tags=["education_expansion", "education"]
 ) }}
 
+WITH cleaned_staging_scholarships as (
 SELECT
     year,
     cohort,
-    county,
-    subcounty,
+    initcap(trim(' ' from county)) as county,
+    translate(initcap(trim(' ' from subcounty)),'_,-', ' ') as subcounty,
     form,
     term,
-    boarding_or_day,
+    initcap(trim(' ' from boarding_or_day)) as boarding_or_day,
+    teen_mom,
+    orphan,
+    special_needs,
+    gbv_survivor
+FROM {{ ref('staging_scholarships') }} 
+
+)
+
+SELECT
+    year,
+    cohort,
+    COALESCE(NULLIF(county, ''), 'Unknown') AS county,
+    COALESCE(NULLIF(subcounty, ''), 'Unknown') AS subcounty,
+    form,
+    term,
+    COALESCE(NULLIF(boarding_or_day, ''), 'Unknown') AS boarding_or_day,
     COALESCE(
         NULLIF(
             CONCAT_WS(
@@ -24,4 +41,4 @@ SELECT
         ),
         'None'
     ) AS categories
-FROM {{ ref('staging_scholarships') }}
+FROM cleaned_staging_scholarships

@@ -147,14 +147,14 @@ select distinct
             then 'Above 50 years'
         else 'Unknown'
     end as age_group,
-    coalesce(
+    initcap(coalesce(
         locations.county_name, cases.incident_report_county_code
-    ) as county,
-    coalesce(
+    )) as county,
+    initcap(coalesce(
         locations.constituency_name, cases.incident_report_constituency_code
-    ) as case_constituency_name,
-    coalesce(locations.ward_name, cases.incident_report_ward_code) as case_ward_name,
-    gender_sites.site_name as site,
+    )) as case_constituency_name,
+    initcap(coalesce(locations.ward_name, cases.incident_report_ward_code)) as case_ward_name,
+    initcap(gender_sites.site_name) as site,
     case when case_referred_to_location is NULL then 'Yes' else 'No' end as is_case_referred
 from case_occurrences_data as cases
 left join

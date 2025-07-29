@@ -23,9 +23,24 @@ staged as (
     d->'form'->'enrollment_sr'->'meta_data'->> 'pp_unique_id'           as pp_unique_id,
     d->'form'->'enrollment_sr'->'meta_data'->> 'ongoing_course'         as ongoing_course,
     d->'form'->'enrollment_sr'->> 'course_enrolled_sr'                  as course_enrolled_sr,
-    d->'form'->'enrollment_sr'->'meta_data'->> 'pp_shofco_county'       as pp_shofco_county,
-    d->'form'->'enrollment_sr'->'meta_data'->> 'pp_shofco_subcounty'    as pp_shofco_subcounty,
-    d->'form'->'enrollment_sr'->'meta_data'->> 'pp_ahofco_ward'         as pp_ahofco_ward,
+    -- d->'form'->'enrollment_sr'->'meta_data'->> 'pp_shofco_county'       as pp_shofco_county,
+coalesce(
+  nullif(trim(d->'form'->'enrollment_sr'->'meta_data'->> 'pp_shofco_county'), ''),
+  nullif(trim(d->'form'->'enrollment_sr'->'business_mentorship_follow_up_question'->'mentors_details'->> 'county_bm'), ''),
+  nullif(trim(d->'form'->'case'->'update'->> 'county_bm'), '')
+) as  pp_shofco_county,
+
+coalesce(
+  nullif(trim(d->'form'->'enrollment_sr'->'meta_data'->> 'pp_shofco_subcounty'), ''),
+  nullif(trim(d->'form'->'case'->'update'->> 'pp_shofco_subcounty'), '')
+) as pp_shofco_subcounty,
+
+coalesce(
+  nullif(trim(d->'form'->'enrollment_sr'->'meta_data'->> 'pp_ahofco_ward'), ''),
+  nullif(trim(d->'form'->'case'->'update'->> 'pp_ahofco_ward'), '')
+) as pp_shofco_ward,
+
+
     d->'form'->'enrollment_sr'->'meta_data'->> 'user_location_id'       as user_location_id,
     d->'form'->'enrollment_sr'->'meta_data'->> 'enumerators_first'      as enumerators_first,
     d->'form'->'enrollment_sr'->'meta_data'->> 'enumerator_last-name'   as enumerator_last_name,

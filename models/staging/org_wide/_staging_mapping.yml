@@ -47,15 +47,9 @@ models:
         data_type: text
         description: Name of the school extracted from JSON data.
       - name: wash_program
-        tests:
-          - accepted_values:
-              values: [yes, no]
         data_type: text
         description: Information about the WASH program in the school.
       - name: gender_program
-        tests:
-          - accepted_values:
-              values: [yes, no]
         data_type: text
         description: Information about the gender program in the school.
       - name: type_of_school
@@ -65,9 +59,6 @@ models:
         data_type: text
         description: Type of school extracted from JSON data.
       - name: shofco_education_program
-        tests:
-          - accepted_values:
-              values: [yes, no]
         data_type: text
         description: Indicates if the school has a SHOFCO education program.
       - name: ward

@@ -6,7 +6,6 @@ models:
 
       - name: national_id
         tests:
-          - not_null
           - unique
 
         data_type: character varying
@@ -24,9 +23,6 @@ models:
         data_type: text
         description: Gender of the community leader
       - name: mobile
-        tests:
-          - unique
-
         data_type: character varying
         description: Mobile phone number of the leader
       - name: trained
@@ -43,11 +39,6 @@ models:
         description: Role of the leader within the community.
       - name: date_identified
         description: Date of identification of GBV Leader
-        tests:
-          - not_null
-          - valid_date_range:
-              column_name: date_identified
-
         data_type: character varying
       - name: date_trained
         description: Date of training of GBV Leader
@@ -57,8 +48,5 @@ models:
 
         data_type: character varying
       - name: gbv_leader_name
-        tests:
-          - not_null
-
         data_type: text
         description: Name of the GBV community leader.

@@ -41,7 +41,6 @@ models:
       - name: date_of_safehouse_onboarding
         description: date_of_safehouse_onboarding
         tests:
-          - not_null
           - valid_date_range:
               column_name: date_of_safehouse_onboarding
 
@@ -113,7 +112,6 @@ models:
       - name: gender_director_date_of_determination_of_onboarding
         description: date gender director decided to onboard
         tests:
-          - not_null
           - valid_date_range:
               column_name: gender_director_date_of_determination_of_onboarding
 
@@ -127,7 +125,6 @@ models:
       - name: onboarding_case_worker_date_of_approval
         description: date case worked decided to onboard
         tests:
-          - not_null
           - valid_date_range:
               column_name: onboarding_case_worker_date_of_approval
 

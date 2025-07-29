@@ -8,6 +8,7 @@ WITH unique_combinations AS (
         county,
         site,
         assigned_to,
+        reported_by,
         case_is_closed
     FROM {{ ref('case_occurence_pii') }} 
     WHERE 
@@ -24,5 +25,6 @@ SELECT
     county,
     site,
     assigned_to,
+    reported_by,
     case_is_closed
 FROM unique_combinations

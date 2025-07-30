@@ -15,29 +15,77 @@ WITH issuance_data AS (
         -- Personal details
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_fullname' AS full_name,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_unique_id' AS unique_id,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age' AS age,
+
+        CASE 
+            WHEN (data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age') ~ '^[0-9]+$' 
+            THEN (data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age')::int 
+            ELSE NULL 
+        END AS age,
+
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_sex' AS gender,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_ahofco_ward' AS ward,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_subcounty' AS subcounty,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_county' AS county,
+
+        -- Locations
+        NULLIF(COALESCE(
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_ahofco_ward',
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'ward'
+        ), '') AS ward,
+
+        NULLIF(COALESCE(
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_subcounty',
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'sub_county'
+        ), '') AS subcounty,
+
+        NULLIF(COALESCE(
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_county',
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'county'
+        ), '') AS county,
 
         -- Grant details
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'grant_amount_bg' AS grant_amount,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'amount_requested_bg' AS amount_requested,
+        CASE 
+            WHEN (data::jsonb -> 'form' -> 'case' -> 'update' ->> 'grant_amount_bg') ~ '^[0-9]+(\.[0-9]+)?$' 
+            THEN (data::jsonb -> 'form' -> 'case' -> 'update' ->> 'grant_amount_bg')::numeric 
+            ELSE NULL 
+        END AS grant_amount,
+
+        CASE 
+            WHEN (data::jsonb -> 'form' -> 'case' -> 'update' ->> 'amount_requested_bg') ~ '^[0-9]+(\.[0-9]+)?$' 
+            THEN (data::jsonb -> 'form' -> 'case' -> 'update' ->> 'amount_requested_bg')::numeric 
+            ELSE NULL 
+        END AS amount_requested,
+
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'grant_source_bg' AS grant_source,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'date_grant_allocated_bg' AS date_grant_allocated,
+
+        CASE 
+            WHEN (data::jsonb -> 'form' -> 'case' -> 'update' ->> 'date_grant_allocated_bg') ~ '^\d{4}-\d{2}-\d{2}$' 
+            THEN (data::jsonb -> 'form' -> 'case' -> 'update' ->> 'date_grant_allocated_bg')::date 
+            ELSE NULL 
+        END AS date_grant_allocated,
 
         -- MPESA details
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'mpesa_number_bg' AS mpesa_number,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'mpesa_first_name_bg' AS mpesa_first_name,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'mpesa_second_name_bg' AS mpesa_second_name,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'beneficiary_MPESA_full-name_bg' AS mpesa_full_name,
+
+        NULLIF(COALESCE(
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'beneficiary_MPESA_full-name_bg',
+            TRIM(
+                COALESCE(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'mpesa_first_name_bg', '') || ' ' ||
+                COALESCE(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'mpesa_second_name_bg', '')
+            )
+        ), '') AS mpesa_full_name,
 
         -- Grant received indicator
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'any_business_grant_bg' AS any_business_grant,
+        LOWER(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'any_business_grant_bg') AS any_business_grant,
 
         -- Enumerator info
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'enumerator' AS enumerator_full,
+        NULLIF(COALESCE(
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'enumerator',
+            TRIM(
+                COALESCE(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'enumerators_first', '') || ' ' ||
+                COALESCE(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'enumerator_last-name', '')
+            )
+        ), '') AS enumerator_full,
+
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'enumerators_first' AS enumerator_first,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'enumerator_last-name' AS enumerator_last,
 

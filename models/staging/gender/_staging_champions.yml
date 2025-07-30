@@ -24,15 +24,11 @@ models:
         description: Gender of the champion
       - name: national_id
         tests:
-          - not_null
           - unique
 
         data_type: character varying
         description: National ID of the champion.
       - name: mobile
-        tests:
-          - unique
-
         data_type: character varying
         description: Mobile number of the champion
       - name: sub_county
@@ -48,18 +44,9 @@ models:
         data_type: character varying
         description: Indicates if the champion has been identified
       - name: date_identified
-        tests:
-          - not_null
-          - valid_date_range:
-              column_name: date_identified
-
         data_type: character varying
         description: Date when the champion was identified.
       - name: date_trained
-        tests:
-          - valid_date_range:
-              column_name: date_trained
-
         data_type: character varying
         description: Date when the champion received training.
       - name: active

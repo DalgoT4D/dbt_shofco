@@ -10,6 +10,7 @@ case_occurrences_data as (
         case_name,
         case_id,
         assigned_to,
+        reported_by,
         {{ validate_date("date_of_case_reporting") }} as date_of_case_reporting,
         {{ validate_date("date_of_case_closure") }} as date_of_case_closure,
         county,
@@ -38,6 +39,7 @@ cases_expanded as (
         c.parent_case_id,
         c.case_name,
         c.assigned_to,
+        c.reported_by,
         c.date_of_case_reporting,
         c.date_of_case_closure,
         c.county,
@@ -56,6 +58,7 @@ select
     c.parent_case_id,
     c.case_name,
     c.assigned_to,
+    c.reported_by,
     c.county,
     c.site,
     case

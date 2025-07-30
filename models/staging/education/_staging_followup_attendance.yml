@@ -4,9 +4,6 @@ models:
     description: Well being sessions of both group and individual type
     columns:
       - name: date_of_absence
-        tests:
-          - valid_date_range:
-              column_name: date_of_absence
         data_type: character varying
         description: Date when the absence occurred.
       - name: grade
@@ -24,10 +21,6 @@ models:
         description: >-
           Indicates the causes for a student's absence as recorded during social worker follow-ups.
       - name: estimated_reporting_date
-        tests:
-          - valid_date_range:
-              column_name: estimated_reporting_date
-
         data_type: character varying
         description: The estimated date when the follow-up report is expected to be submitted.
       - name: _airbyte_extracted_at

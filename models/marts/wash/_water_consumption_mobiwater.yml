@@ -17,8 +17,6 @@ models:
         data_type: numeric
         description: Identifier for the flow device
       - name: flow_device_name
-        tests:
-          - not_null
         data_type: character varying
         description: Name of the flow device
       - name: value

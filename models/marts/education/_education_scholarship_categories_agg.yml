@@ -7,8 +7,6 @@ models:
       - name: year
         tests:
           - not_null
-          - accepted_values:
-              values: ['2021', '2022', '2023', '2024', '2025']
         data_type: character varying
         description: Year of the scholarship
       - name: cohort
@@ -30,15 +28,9 @@ models:
         data_type: character varying
         description: Current form or grade of the student
       - name: term
-        tests:
-          - not_null
         data_type: character varying
         description: Academic term of the scholarship
       - name: boarding_or_day
-        tests:
-          - accepted_values:
-              values: [Boarding, Day]
-
         data_type: character varying
         description: Indicates if the student is a boarding or day scholar
       - name: categories

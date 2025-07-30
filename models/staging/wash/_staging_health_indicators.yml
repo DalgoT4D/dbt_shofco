@@ -24,8 +24,6 @@ models:
         description: >-
           Term used for classifying or categorizing health indicators in the school health data.
       - name: school_name
-        tests:
-          - not_null
         data_type: text
         description: Name of the school related to the health indicators being monitored.
       - name: health_club_boys

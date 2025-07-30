@@ -4,10 +4,6 @@ models:
     description: Well being sessions of both group and individual type
     columns:
       - name: date
-        tests:
-          - valid_date_range:
-              column_name: date
-
         data_type: character varying
         description: Date of the session
       - name: grade

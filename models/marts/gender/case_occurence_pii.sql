@@ -124,6 +124,7 @@ case_occurrences_data as (
         {{ validate_date("date_of_court_followup") }} as date_of_court_followup,
         at_what_stage_is_the_court_case_currently_at as stage_of_case_in_court,
         case_reported_to_police,
+        reported_by,
         medium_of_reporting,
         parent_case_id,
         parent_case_type,

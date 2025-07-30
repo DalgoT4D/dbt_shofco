@@ -13,7 +13,7 @@ SELECT
   ongoing_course AS ongoing_course,
   pp_shofco_county AS county,
   pp_shofco_subcounty AS subcounty,
-  pp_ahofco_ward AS ward,
+  pp_shofco_ward AS ward,
   participants_program_sr AS program,
   is_existing_participant,
   previous_service_completed,

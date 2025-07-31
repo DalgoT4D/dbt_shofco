@@ -17,9 +17,21 @@ WITH issuance_data AS (
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_unique_id' AS unique_id,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_age' AS age,
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_sex' AS gender,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_ahofco_ward' AS ward,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_subcounty' AS subcounty,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_county' AS county,
+        -- Use NULLIF to treat empty strings as NULL before COALESCE
+COALESCE(
+    NULLIF(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_ahofco_ward', ''),
+    NULLIF(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'ward', '')
+) AS ward,
+
+COALESCE(
+    NULLIF(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_subcounty', ''),
+    NULLIF(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'sub_county', '')
+) AS subcounty,
+
+COALESCE(
+    NULLIF(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_county', ''),
+    NULLIF(data::jsonb -> 'form' -> 'case' -> 'update' ->> 'county', '')
+) AS county,
 
         -- Grant details
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'grant_amount_bg' AS grant_amount,

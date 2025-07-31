@@ -10,7 +10,10 @@ SELECT
     
     full_name,
     unique_id,
-    CASE WHEN age ~ '^[0-9]+$' THEN age::INT ELSE NULL END AS age,
+    CASE 
+      WHEN age::text ~ '^[0-9]+$' THEN age::INT 
+      ELSE NULL 
+    END AS age,
     gender,
     ward,
     subcounty,

@@ -24,9 +24,28 @@ WITH placement_data AS (
         END AS age,
 
         data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_sex' AS sex,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_county' AS county,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_subcounty' AS subcounty,
-        data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_ahofco_ward' AS ward,
+
+        NULLIF(
+        COALESCE(
+            data::jsonb -> 'form' -> 'meta_data' ->> 'pp_shofco_county',
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_county'
+        ), ''
+        ) AS county,
+
+        NULLIF(
+        COALESCE(
+            data::jsonb -> 'form' -> 'meta_data' ->> 'pp_shofco_subcounty',
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_shofco_subcounty'
+        ), ''
+        ) AS subcounty,
+
+        NULLIF(
+        COALESCE(
+            data::jsonb -> 'form' -> 'meta_data' ->> 'pp_ahofco_ward',
+            data::jsonb -> 'form' -> 'case' -> 'update' ->> 'pp_ahofco_ward'
+        ), ''
+        ) AS ward,
+
 
         -- Placement & program
         data::jsonb -> 'form' ->> 'training_activity_pl' AS training_activity,
@@ -65,8 +84,20 @@ WITH placement_data AS (
         data::jsonb -> 'form' -> 'business_transitions' ->> 'average_employees_pl' AS avg_employees_pl,
         data::jsonb -> 'form' -> 'business_transitions' ->> 'average_female_employees_pl' AS avg_female_employees_pl,
 
-        data::jsonb -> 'form' -> 'business_transitions' ->> 'county_of_job_transition_pl' AS county_of_transition,
-        data::jsonb -> 'form' -> 'business_transitions' ->> 'region_of_business_transition_pl' AS region_of_transition,
+        NULLIF(
+            COALESCE(
+                data::jsonb->'form'->'business_transitions'->>'county_of_job_transition_pl',
+                data::jsonb->'form'->'case'->'update'->>'county_of_job_transition_pl'
+            ), ''
+        ) AS county_of_transition,
+
+        NULLIF(
+            COALESCE(
+                data::jsonb->'form'->'business_transitions'->>'region_of_business_transition_pl',
+                data::jsonb->'form'->'case'->'update'->>'region_of_business_transition_pl'
+            ), ''
+        ) AS region_of_transition,
+
 
         -- Submission
         data::jsonb ->> 'received_on' AS date_received

@@ -48,7 +48,7 @@ survivors_data as (
         end as age,
 
         date_of_registration,
-        gender,
+        coalesce(gender, survivor_gender) AS gender,
         gender_site_code_of_registration,
         county as county_code,
         constituency as constituency_code,

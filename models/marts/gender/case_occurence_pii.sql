@@ -115,7 +115,7 @@ case_occurrences_data as (
         case
             when
                 (
-                    is_the_case_proceeding_to_court is not NULL
+                    is_the_case_proceeding_to_court = 'yes'
                     and date_of_case_closure is NULL
                 )
                 then 'yes'
@@ -152,9 +152,12 @@ select distinct
             then 'Above 50 years'
         else 'Unknown'
     end as age_group,
-    coalesce(
-        locations.county_name, cases.incident_report_county_code
-    ) as county,
+    initcap(
+        replace(
+            coalesce(locations.county_name, cases.incident_report_county_code),
+            '_', ' '
+        )
+    ) as county,    
     coalesce(
         locations.constituency_name, cases.incident_report_constituency_code
     ) as case_constituency_name,
@@ -173,7 +176,7 @@ left join
     on
         LOWER(cases.incident_report_county_code) = LOWER(locations.county_code)
         and LOWER(cases.incident_report_constituency_code) = LOWER(locations.constituency_id)
-        and LOWER(REPLACE(cases.incident_report_ward_code, '-', '_')) = LOWER(locations.ward_id)
+        and LOWER(REPLACE(REPLACE(cases.incident_report_ward_code, '-', '_'), '''', '')) = LOWER(REPLACE(locations.ward_id, '''', ''))
 left join
     {{ source("staging_gender", "dim_gender_sites") }} as gender_sites
     on cases.gender_site_code_of_reporting = gender_sites.site_code

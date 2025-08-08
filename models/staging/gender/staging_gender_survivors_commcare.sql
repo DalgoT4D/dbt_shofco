@@ -16,6 +16,7 @@
     "date_of_birth": "date_of_birth",
     "date_of_registration": "date_of_registration",
     "gender": "gender",
+    "survivor_gender": "survivor_gender",
     "gender_site_code_of_registration": "gender_site_code_of_registration",
     "police_ob_number_for_registration": "police_ob_number_for_registration",
     "registered_by": "registered_by",

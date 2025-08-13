@@ -52,6 +52,7 @@
     "date_referral_information_last_amended": "date_referral_information_last_amended",
     "gender_of_next_of_kin": "gender_of_next_of_kin",
     "gender_of_well_wisher": "gender_of_well_wisher",
+    "survivor_gender":"survivor_gender",
     "gender_site_code_of_reporting": "gender_site_code_of_reporting",
     "has_the_client_undergone_other_procedures": "has_the_client_undergone_other_procedures",
     "have_all_witnesses_reocrded_their_statements": "have_all_witnesses_reocrded_their_statements",

@@ -128,27 +128,112 @@ case_occurrences_data as (
         medium_of_reporting,
         parent_case_id,
         parent_case_type,
-        closed
+        closed,
+        survivor_gender,
+        what_is_the_age_provided
     from {{ ref("staging_gender_case_occurrences_commcare") }}
 )
 
 select distinct
-    cases.*,
+    cases.case_id,
+    cases.assigned_to,
+    cases.previous_case_number,
+    cases.case_summary_notes,
+    cases.date_modified,
+    cases.date_of_case_reporting,
+    cases.case_reporting_datekey,
+    cases.date_of_case_intake,
+    cases.case_intake_datekey,
+    cases.date_of_case_closure,
+    cases.date_of_case_assignment,
+    cases.case_duration_in_days,
+    cases.gender_site_code_of_reporting,
+    cases.case_referred_to_location,
+    cases.case_number,
+    cases.case_name,
+    cases.assault_type,
+    cases.cleaned_assault_type,
+    cases.referred_to_safe_house,
+    cases.referred_to_other_shofco_programs,
+    cases.referred_to_dco,
+    cases.referred_to_counseling_and_support,
+    cases.referred_to_police,
+    cases.referred_for_medical_intervention,
+    cases.incident_report_village_name,
+    cases.incident_report_ward_code,
+    cases.incident_report_constituency_code,
+    cases.incident_report_county_code,
+    cases.case_is_closed,
+    cases.is_the_case_proceeding_to_court,
+    cases.case_still_in_court,
+    cases.date_of_court_followup,
+    cases.stage_of_case_in_court,
+    cases.case_reported_to_police,
+    cases.reported_by,
+    cases.medium_of_reporting,
+    cases.parent_case_id,
+    cases.parent_case_type,
+    cases.closed,
     safe_house_data.date_of_safe_house_onboarding,
     safe_house_data.date_of_safe_house_discharge,
     current_date - cases.date_of_case_intake as days_since_intake,
-    survivors.gender as survivor_gender,
-    survivors.age as survivor_age,
+    coalesce(survivors.gender, cases.survivor_gender) as survivor_gender,
+    coalesce(survivors.age, 
+        case 
+            when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
+            then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
+            else null 
+        end) as survivor_age,
     case
-        when survivors.age < 13
+        when coalesce(survivors.age, 
+            case 
+                when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
+                then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
+                else null 
+            end) < 13
             then '<13 years'
-        when survivors.age >= 13 and survivors.age <= 17
+        when coalesce(survivors.age, 
+            case 
+                when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
+                then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
+                else null 
+            end) >= 13 and coalesce(survivors.age, 
+            case 
+                when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
+                then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
+                else null 
+            end) <= 17
             then '13 - 17 years'
-        when survivors.age >= 18 and survivors.age <= 35
+        when coalesce(survivors.age, 
+            case 
+                when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
+                then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
+                else null 
+            end) >= 18 and coalesce(survivors.age, 
+            case 
+                when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
+                then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
+                else null 
+            end) <= 35
             then '18 - 35 years'
-        when survivors.age >= 36 and survivors.age <= 50
+        when coalesce(survivors.age, 
+            case 
+                when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
+                then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
+                else null 
+            end) >= 36 and coalesce(survivors.age, 
+            case 
+                when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
+                then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
+                else null 
+            end) <= 50
             then '36 - 50 years'
-        when survivors.age > 50
+        when coalesce(survivors.age, 
+            case 
+                when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
+                then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
+                else null 
+            end) > 50
             then 'Above 50 years'
         else 'Unknown'
     end as age_group,

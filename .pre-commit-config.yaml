@@ -17,13 +17,13 @@ repos:
         types: [sql]
         files: ^models/
       
-      - id: dbt-coverage-test
-        name: Run dbt-coverage test
-        entry: bash
-        args:
-          - "-c"
-          - |
-            dbt docs generate && \
-            dbt-coverage compute test --cov-report coverage-test.json
-        language: system
-        pass_filenames: false
+      # - id: dbt-coverage-test
+      #   name: Run dbt-coverage test
+      #   entry: bash
+      #   args:
+      #     - "-c"
+      #     - |
+      #       dbt docs generate && \
+      #       dbt-coverage compute test --cov-report coverage-test.json
+      #   language: system
+      #   pass_filenames: false

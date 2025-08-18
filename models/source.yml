@@ -46,7 +46,7 @@ sources:
 
       - name: Placement_Followup
         identifier: Placement_Followup
-        description: Placem,ent module for those who underwent SL services
+        description: Placement module for those who underwent SL services
         tests:
           - elementary.schema_changes:
               config:

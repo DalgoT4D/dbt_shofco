@@ -38,6 +38,7 @@ SELECT
             date_identified IS NOT NULL
             THEN 'Quarter ' || EXTRACT(QUARTER FROM {{ validate_date("date_identified") }} )
         ELSE 'Unknown'
-    END AS quarter_identified
+    END AS quarter_identified,
+    "Yes" as yes
 
 FROM {{ ref('staging_gbv_leaders') }}

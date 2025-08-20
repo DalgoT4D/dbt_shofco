@@ -24,10 +24,14 @@ SELECT DISTINCT
     session_deets.constituency as case_constituency_name,
     session_deets.county_code,
     session_deets.assigned_to,
-    locations.county_name as county
+    CASE 
+        WHEN LENGTH(session_deets.county_code) <= 3 THEN locations.county_name
+        ELSE INITCAP(session_deets.county_code)
+    END as county
 
 FROM {{ ref("staging_life_skills_training_session_details") }} as session_deets
 left join
     {{ source("staging_gender", "dim_location_administrative_units") }} as locations
     on
         session_deets.county_code = locations.county_code
+        AND LENGTH(session_deets.county_code) <= 3

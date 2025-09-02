@@ -25,16 +25,34 @@ WITH extracted_data AS (
         data::jsonb -> 'form' ->> 'additional_support_uf' AS additional_support,
         data::jsonb -> 'form' ->> 'educational_certificates_uf' AS educational_certificates,
 
-        -- Dignity Kit details
+        -- Dignity Kit support details
+        data::jsonb -> 'form' -> 'dignity_kit_support' ->> 'head_gender_uf' AS head_gender,
+        data::jsonb -> 'form' -> 'dignity_kit_support' ->> 'receiving_aid_uf' AS receiving_aid,
+        data::jsonb -> 'form' -> 'dignity_kit_support' ->> 'household_head_uf' AS household_head,
+        data::jsonb -> 'form' -> 'dignity_kit_support' ->> 'dignity_kit_support' AS dignity_kit_support,
+        data::jsonb -> 'form' -> 'dignity_kit_support' ->> 'hh_engaged_in_work_uf' AS hh_engaged_in_work,
+        data::jsonb -> 'form' -> 'dignity_kit_support' ->> 'forego_basic_essentials_uf' AS forego_basic_essentials,
+        data::jsonb -> 'form' -> 'dignity_kit_support' ->> 'number_of_meals_reduced_uf' AS number_of_meals_reduced,
         data::jsonb -> 'form' -> 'dignity_kit_support' ->> 'experienced_days_where_you_had_nothing_uf' AS experienced_days_where_you_had_nothing,
         data::jsonb -> 'form' -> 'dignity_kit_support' ->> 'miss_school_due_to_lack_hygiene_products' AS miss_school_due_to_lack_hygiene_products,
         data::jsonb -> 'form' -> 'dignity_kit_support' ->> 'enumerator_last-name' AS challenges_accessing_personal_hygiene_items,
 
-        -- Child-related details
-        data::jsonb -> 'form' -> 'daycare_support' ->> 'do_you_have_children_uf' AS has_children,
-        data::jsonb -> 'form' -> 'daycare_support'->> 'children_under_4_uf' AS children_under_4,
-        data::jsonb -> 'form' -> 'daycare_support'->> 'children_in_need_daycare_uf' AS children_in_daycare,
-        data::jsonb -> 'form' -> 'daycare_support'->> 'children_withdisabilities_uf' AS children_with_disabilities,
+        -- Daycare support details
+        COALESCE(
+            data::jsonb -> 'form' -> 'daycare_support' ->> 'do_you_have_children_uf',
+            data::jsonb -> 'form' -> 'daycare_support' ->> 'do_you_have_children'
+        ) AS has_children,
+        COALESCE(
+            data::jsonb -> 'form' -> 'daycare_support' ->> 'children_under_4',
+            data::jsonb -> 'form' -> 'daycare_support' ->> 'children_under_4_uf'
+        ) AS children_under_4,
+        data::jsonb -> 'form' -> 'daycare_support' ->> 'number_of_children-uf' AS number_of_children,
+        data::jsonb -> 'form' -> 'daycare_support' ->> 'daycare_support_details' AS daycare_support_details,
+        data::jsonb -> 'form' -> 'daycare_support' ->> 'children_in_need_daycare_uf' AS children_in_daycare,
+        COALESCE(
+            data::jsonb -> 'form' -> 'daycare_support' ->> 'children_withdisabilities_uf',
+            data::jsonb -> 'form' -> 'daycare_support' ->> 'children_withdisabilities'
+        ) AS children_with_disabilities,
 
         -- Upskilling interest
         data::jsonb -> 'form' ->> 'willing_to_relocate_uf' AS willing_to_relocate,
@@ -62,16 +80,31 @@ SELECT DISTINCT
     year_trained,
     additional_support,
     educational_certificates,
+    
+    -- Dignity Kit support fields
+    head_gender,
+    receiving_aid,
+    household_head,
+    dignity_kit_support,
+    hh_engaged_in_work,
+    forego_basic_essentials,
+    number_of_meals_reduced,
+    experienced_days_where_you_had_nothing,
+    miss_school_due_to_lack_hygiene_products,
+    challenges_accessing_personal_hygiene_items,
+    
+    -- Daycare support fields
     has_children,
     children_under_4,
+    number_of_children,
+    daycare_support_details,
     children_in_daycare,
     children_with_disabilities,
+    
+    -- Other fields
     willing_to_relocate,
     willing_to_be_upskilled,
     upskilling_component,
     recommendation_status,
-    date_received,
-    experienced_days_where_you_had_nothing,
-    miss_school_due_to_lack_hygiene_products,
-    challenges_accessing_personal_hygiene_items
+    date_received
 FROM extracted_data

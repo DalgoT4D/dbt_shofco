@@ -1,41 +1,39 @@
 {{
   config(
     materialized='table',
-    tags=['swep', 'swep_exhibition_sales', 'sl']
+    tags=['swep', 'swep_exhibition_sales', 'sl', "sl_marts"]
   )
 }}
 
 SELECT
-  form_id,
+  id AS form_id,
   recording_ses,
-  username,
+  user_id AS username,
   enumerator,
 
   -- sales-level fields
-  NULLIF(revenue_se, '')::NUMERIC AS revenue,
-  NULLIF(mpesa_code_se, '') AS mpesa_code,
-  NULLIF(mpesa_name_se, '') AS mpesa_name,
-  NULLIF(cost_of_product_se, '')::NUMERIC AS cost_of_product,
-  NULLIF(units_sold_se, '')::INTEGER AS units_sold,
-  NULLIF(product_sold_se, '') AS product_sold,
-  fill_instructions,
+  NULLIF(revenue_sp, '')::NUMERIC AS revenue,
+  NULL::NUMERIC AS cost_of_product,
+  NULL::INTEGER AS units_sold,
+  product_made_sp AS product_sold,
+  NULL AS fill_instructions,
 
   -- item-level sales breakdown
-  NULLIF(item_revenue_se, '')::NUMERIC AS item_revenue,
-  NULLIF(item_mpesa_code_se, '') AS item_mpesa_code,
-  NULLIF(item_mpesa_name_se, '') AS item_mpesa_name,
-  NULLIF(item_total_cost_se, '') AS item_total_cost,
-  NULLIF(item_units_sold_se, '')::INTEGER AS item_units_sold,
-  NULLIF(item_product_sold_se, '') AS item_product_sold,
-  item_fill_instructions,
-  NULLIF(item_cost_of_product_se, '')::NUMERIC AS item_cost_of_product,
+  NULLIF(revenue_sp, '')::NUMERIC AS item_revenue,
+  NULL AS item_mpesa_code,
+  MPESA_full_name_sp AS item_mpesa_name,
+  NULL AS item_total_cost,
+  pieces_produced_sp::INTEGER AS item_units_sold,
+  product_made_sp AS item_product_sold,
+  NULL AS item_fill_instructions,
+  NULL::NUMERIC AS item_cost_of_product,
 
   -- exhibition-only fields
-  NULLIF(sales_made_se, '') AS sales_made,
-  {{ validate_date('date_of_exhibition_se') }} AS date_of_exhibition,
-  NULLIF(exhibition_attendees_se, '') AS exhibition_attendees,
-  NULLIF(location_of_exhibition_se, '') AS exhibition_location,
-  NULLIF(exhibition_event_attended_se, '') AS exhibition_event_attended
+  NULL AS sales_made,
+  date_of_production_sp AS date_of_exhibition,
+  NULL AS exhibition_attendees,
+  NULL AS exhibition_location,
+  NULL AS exhibition_event_attended
 
-FROM {{ ref('staging_swep_exhibition_sales') }}
+FROM {{ ref('staging_sl_case_table') }}
 WHERE recording_ses IN ('sales', 'exhibition')

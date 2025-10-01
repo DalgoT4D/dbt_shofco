@@ -18,8 +18,8 @@ SELECT DISTINCT
     participants.county_code,
     participants.assigned_to,
     CASE 
-        WHEN LENGTH(participants.county_code) > 3 THEN INITCAP(participants.county_code)
-        ELSE locations.county_name
+        WHEN LENGTH(participants.county_code) > 3 THEN REPLACE(INITCAP(participants.county_code), '_', ' ')
+        ELSE REPLACE(locations.county_name, '_', ' ')
     END as county
 FROM {{ ref("staging_life_skills_training_participant_details") }} as participants
 left join

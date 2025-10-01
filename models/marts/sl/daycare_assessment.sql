@@ -1,62 +1,44 @@
 {{ config(
     materialized='table',
     unique_key='case_id',
-    tags=['sl', 'daycare']
+    tags=['sl', 'daycare', "sl_marts"]
 ) }}
 
-with combined as (
+SELECT
+    case_id,
+    
+    -- Number of children
+    CASE 
+        WHEN number_of_children ~ '^[0-9]+$' THEN number_of_children::INT 
+        ELSE NULL 
+    END AS number_of_children,
+    
+    -- Children under 4
+    CASE 
+        WHEN LOWER(TRIM(children_under_4)) IN ('yes', 'true', '1') THEN 'yes'
+        WHEN LOWER(TRIM(children_under_4)) IN ('no', 'false', '0') THEN 'no'
+        WHEN children_under_4 ~ '^[0-9]+$' AND children_under_4::INT > 0 THEN 'yes'
+        WHEN children_under_4 ~ '^[0-9]+$' AND children_under_4::INT = 0 THEN 'no'
+        ELSE NULL
+    END AS children_under_4,
+    
+    -- Children with disabilities
+    CASE 
+        WHEN LOWER(TRIM(children_with_disabilities)) IN ('yes', 'true', '1') THEN 'yes'
+        WHEN LOWER(TRIM(children_with_disabilities)) IN ('no', 'false', '0') THEN 'no'
+        ELSE NULL
+    END AS children_with_disabilities,
+    
+    -- Daycare support details
+    NULLIF(TRIM(children_in_need_of_daycare_support), '') AS daycare_support_details,
+    
+    -- Children in daycare status (using any children inneed of daycare field)
+    NULLIF(TRIM(any_children_inneed_of_daycare_dc), '') AS children_in_daycare_status
 
-    select
-        case_id,
-        nullif(number_of_children, '')::int as number_of_children,
-        lower(nullif(children_under_4, '')) as children_under_4,
-        lower(nullif(children_with_disabilities, '')) as children_with_disabilities,
-        nullif(daycare_support_details, '') as daycare_support_details,
-        nullif(children_in_daycare, '') as children_in_daycare_status
-    from {{ ref('upskilling') }}
-    where has_children = 'yes'
-
-    union all
-
-    select
-        case_id,
-        nullif(daycare_number_of_children, '')::int as number_of_children,
-        lower(nullif(daycare_children_under_4, '')) as children_under_4,
-        lower(nullif(daycare_children_with_disabilities, '')) as children_with_disabilities,
-        nullif(daycare_details, '') as daycare_support_details,
-        null as children_in_daycare_status  -- not available in enrollment
-    from {{ ref('service_enrollment') }}
-    where daycare_do_you_have_children = 'yes'
-),
-
-final as (
-    select
-        case_id,
-
-        -- Numeric: pick highest number reported
-        max(number_of_children) as number_of_children,
-
-        -- Yes/No fields: treat as boolean flags
-        case
-            when bool_or(children_under_4 = 'yes') then 'yes'
-            when bool_or(children_under_4 = 'no') then 'no'
-            else null
-        end as children_under_4,
-
-        case
-            when bool_or(children_with_disabilities = 'yes') then 'yes'
-            when bool_or(children_with_disabilities = 'no') then 'no'
-            else null
-        end as children_with_disabilities,
-
-        -- Support details: combine non-null values
-        string_agg(distinct daycare_support_details, '; ') as daycare_support_details,
-        
-        -- Daycare status: keep non-null value
-        max(children_in_daycare_status) as children_in_daycare_status
-
-    from combined
-    group by case_id
-)
-
-select * from final
+FROM {{ ref('staging_sl_case_table') }}
+WHERE 
+    do_you_have_children = 'yes' 
+    OR number_of_children IS NOT NULL 
+    OR children_under_4 IS NOT NULL 
+    OR children_with_disabilities IS NOT NULL 
+    OR children_in_need_of_daycare_support IS NOT NULL

@@ -1,83 +1,79 @@
 {{ config(
     materialized='table',
     unique_key='case_id',
-    tags=['sl', 'dignity_kit']
+    tags=['sl', 'dignity_kit', "sl_marts"]
 ) }}
 
-with combined as (
+SELECT
+    case_id,
+    
+    -- Experienced days where you had nothing
+    CASE 
+        WHEN LOWER(TRIM(experienced_days_where_you_had_nothing_sr)) IN ('yes', 'true', '1') 
+             OR LOWER(TRIM(experienced_days_where_you_had_nothing_uf)) IN ('yes', 'true', '1') THEN 'yes'
+        WHEN LOWER(TRIM(experienced_days_where_you_had_nothing_sr)) IN ('no', 'false', '0') 
+             OR LOWER(TRIM(experienced_days_where_you_had_nothing_uf)) IN ('no', 'false', '0') THEN 'no'
+        ELSE NULL
+    END AS experienced_days_where_you_had_nothing,
+    
+    -- Miss school due to lack of hygiene products
+    CASE 
+        WHEN LOWER(TRIM(miss_school_due_to_lack_hygiene_products_sr)) IN ('yes', 'true', '1') 
+             OR LOWER(TRIM(miss_school_due_to_lack_hygiene_products_uf)) IN ('yes', 'true', '1') THEN 'yes'
+        WHEN LOWER(TRIM(miss_school_due_to_lack_hygiene_products_sr)) IN ('no', 'false', '0') 
+             OR LOWER(TRIM(miss_school_due_to_lack_hygiene_products_uf)) IN ('no', 'false', '0') THEN 'no'
+        ELSE NULL
+    END AS miss_school_due_to_lack_hygiene_products,
+    
+    -- Challenges accessing personal hygiene items (already coalesced in staging)
+    CASE 
+        WHEN LOWER(TRIM(challenges_accessing_personal_hygiene_items)) IN ('yes', 'true', '1') THEN 'yes'
+        WHEN LOWER(TRIM(challenges_accessing_personal_hygiene_items)) IN ('no', 'false', '0') THEN 'no'
+        ELSE NULL
+    END AS challenges_accessing_personal_hygiene_items,
+    
+    -- Dignity kit support
+    NULLIF(TRIM(dignity_kit_support), '') AS dignity_kit_support,
+    
+    -- Head gender
+    COALESCE(
+        NULLIF(TRIM(head_gender_sr), ''),
+        NULLIF(TRIM(head_gender_uf), '')
+    ) AS head_gender,
+    
+    -- Receiving aid (already coalesced in staging)
+    CASE 
+        WHEN LOWER(TRIM(receiving_aid)) IN ('yes', 'true', '1') THEN 'yes'
+        WHEN LOWER(TRIM(receiving_aid)) IN ('no', 'false', '0') THEN 'no'
+        ELSE NULL
+    END AS receiving_aid,
+    
+    -- Household head (already coalesced in staging)
+    NULLIF(TRIM(household_head), '') AS household_head,
+    
+    -- HH engaged in work
+    COALESCE(
+        NULLIF(TRIM(hh_engaged_in_work_sr), ''),
+        NULLIF(TRIM(hh_engaged_in_work_uf), '')
+    ) AS hh_engaged_in_work,
+    
+    -- Forego basic essentials
+    COALESCE(
+        NULLIF(TRIM(forego_basic_essentials_sr), ''),
+        NULLIF(TRIM(forego_basic_essentials_uf), '')
+    ) AS forego_basic_essentials,
+    
+    -- Number of meals reduced
+    COALESCE(
+        NULLIF(TRIM(number_of_meals_reduced_sr), ''),
+        NULLIF(TRIM(number_of_meals_reduced_uf), '')
+    ) AS number_of_meals_reduced
 
-    select
-        case_id,
-        lower(nullif(experienced_days_where_you_had_nothing, '')) as experienced_days,
-        lower(nullif(miss_school_due_to_lack_hygiene_products, '')) as missed_school,
-        lower(nullif(challenges_accessing_personal_hygiene_items, '')) as hygiene_challenges,
-        nullif(dignity_kit_support, '') as dignity_kit_support,
-        lower(nullif(head_gender, '')) as head_gender,
-        lower(nullif(receiving_aid, '')) as receiving_aid,
-        nullif(household_head, '') as household_head,
-        nullif(hh_engaged_in_work, '') as hh_engaged_in_work,
-        nullif(forego_basic_essentials, '') as forego_basic_essentials,
-        nullif(number_of_meals_reduced, '') as number_of_meals_reduced
-    from {{ ref('upskilling') }}
-
-    union all
-
-    select
-        case_id,
-        lower(nullif(dignity_experienced_days_nothing, '')) as experienced_days,
-        lower(nullif(dignity_miss_school, '')) as missed_school,
-        lower(nullif(dignity_challenges_hygiene, '')) as hygiene_challenges,
-        nullif(dignity_kit_support, '') as dignity_kit_support,
-        null as head_gender,  -- not available in enrollment
-        null as receiving_aid,  -- not available in enrollment
-        null as household_head,  -- not available in enrollment
-        null as hh_engaged_in_work,  -- not available in enrollment
-        null as forego_basic_essentials,  -- not available in enrollment
-        null as number_of_meals_reduced  -- not available in enrollment
-    from {{ ref('service_enrollment') }}
-
-),
-
-grouped as (
-    select
-        case_id,
-
-        -- "yes" if ANY form says yes
-        case
-            when bool_or(experienced_days = 'yes') then 'yes'
-            when bool_or(experienced_days = 'no') then 'no'
-            else null
-        end as experienced_days_where_you_had_nothing,
-
-        case
-            when bool_or(missed_school = 'yes') then 'yes'
-            when bool_or(missed_school = 'no') then 'no'
-            else null
-        end as miss_school_due_to_lack_hygiene_products,
-
-        case
-            when bool_or(hygiene_challenges = 'yes') then 'yes'
-            when bool_or(hygiene_challenges = 'no') then 'no'
-            else null
-        end as challenges_accessing_personal_hygiene_items,
-
-        -- Support details: combine non-null values
-        string_agg(distinct dignity_kit_support, '; ') as dignity_kit_support,
-
-        -- Categorical fields: take first non-null value or use boolean logic for yes/no
-        max(head_gender) as head_gender,
-        case
-            when bool_or(receiving_aid = 'yes') then 'yes'
-            when bool_or(receiving_aid = 'no') then 'no'
-            else null
-        end as receiving_aid,
-        max(household_head) as household_head,
-        max(hh_engaged_in_work) as hh_engaged_in_work,
-        max(forego_basic_essentials) as forego_basic_essentials,
-        max(number_of_meals_reduced) as number_of_meals_reduced
-
-    from combined
-    group by case_id
-)
-
-select * from grouped
+FROM {{ ref('staging_sl_case_table') }}
+WHERE 
+    dignity_kit_support IS NOT NULL
+    OR experienced_days_where_you_had_nothing_sr IS NOT NULL
+    OR experienced_days_where_you_had_nothing_uf IS NOT NULL
+    OR miss_school_due_to_lack_hygiene_products_sr IS NOT NULL
+    OR miss_school_due_to_lack_hygiene_products_uf IS NOT NULL
+    OR challenges_accessing_personal_hygiene_items IS NOT NULL

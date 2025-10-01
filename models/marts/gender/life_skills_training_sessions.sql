@@ -25,8 +25,8 @@ SELECT DISTINCT
     session_deets.county_code,
     session_deets.assigned_to,
     CASE 
-        WHEN LENGTH(session_deets.county_code) <= 3 THEN locations.county_name
-        ELSE INITCAP(session_deets.county_code)
+        WHEN LENGTH(session_deets.county_code) <= 3 THEN REPLACE(locations.county_name, '_', ' ')
+        ELSE REPLACE(INITCAP(session_deets.county_code), '_', ' ')
     END as county
 
 FROM {{ ref("staging_life_skills_training_session_details") }} as session_deets

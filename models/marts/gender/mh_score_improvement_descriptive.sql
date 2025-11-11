@@ -100,5 +100,5 @@ SELECT
 FROM improved_scores
 left join
     {{ source("staging_gender", "dim_gender_sites") }} as gender_sites
-    on gender_site_code_of = gender_sites.site_code
+    on gender_site_code = gender_sites.site_code
 ORDER BY case_id

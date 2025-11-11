@@ -29,7 +29,10 @@ SELECT
     f.session_id,
     i.county,
     i.village,
-    i.gender_site_code
+    i.gender_site_code,
+    initcap(gender_sites.site_name) as site
 FROM final_assessment_data AS f
 LEFT JOIN initial_assessment_data AS i
     ON f.case_id = i.case_id
+LEFT JOIN {{ source("staging_gender", "dim_gender_sites") }} as gender_sites
+    on i.gender_site_code = gender_sites.site_code

@@ -8,6 +8,9 @@ WITH initial_assessments AS (
     SELECT
         case_id,
         initial_form_filling_date,
+        county,
+        village,
+        gender_site_code,
         (
             -- Calculate the average of all initial mental health scores
             (
@@ -67,6 +70,9 @@ improved_scores AS (
         f.final_avg_score,
         i.initial_form_filling_date,
         f.final_form_filling_date,
+        i.county,
+        i.village,
+        i.gender_site_code,
 
         CASE
             WHEN f.final_avg_score < i.initial_avg_score THEN 'Y'
@@ -83,6 +89,9 @@ SELECT
     initial_avg_score,
     final_avg_score,
     improved,
+    county,
+    village,
+    gender_site_code,
     {{ validate_date("initial_form_filling_date") }} AS initial_form_filling_date,
     {{ validate_date("final_form_filling_date") }} AS final_form_filling_date
 FROM improved_scores

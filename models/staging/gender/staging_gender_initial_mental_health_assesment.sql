@@ -33,6 +33,11 @@ WITH initial_mental_health_assessment_staging AS (
         -> 'client_mental_health_scores'
         ->> 'client_mental_health_score_trauma_symptoms' AS trauma_symptoms,
 
+        -- Extract geographical location details
+        data::jsonb -> 'form' -> 'geographical_location_of_counselling' ->> 'county' AS county,
+        data::jsonb -> 'form' -> 'geographical_location_of_counselling' ->> 'village' AS village,
+        data::jsonb -> 'form' -> 'geographical_location_of_counselling' ->> 'gender_site_code' AS gender_site_code,
+
         -- Extract metadata like session ID and form filling date
         data::jsonb -> 'form' -> 'meta' ->> 'instanceID' AS session_id,
         data::jsonb ->> 'received_on' AS initial_form_filling_date
@@ -53,5 +58,8 @@ SELECT DISTINCT
     psychiatric_symptoms,
     social_emotional_issues,
     trauma_symptoms,
+    county,
+    village,
+    gender_site_code,
     session_id
 FROM initial_mental_health_assessment_staging

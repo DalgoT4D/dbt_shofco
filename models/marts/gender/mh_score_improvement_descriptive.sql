@@ -98,7 +98,7 @@ SELECT
     {{ validate_date("initial_form_filling_date") }} AS initial_form_filling_date,
     {{ validate_date("final_form_filling_date") }} AS final_form_filling_date
 FROM improved_scores
-ORDER BY case_id
 left join
     {{ source("staging_gender", "dim_gender_sites") }} as gender_sites
     on gender_site_code_of = gender_sites.site_code
+ORDER BY case_id

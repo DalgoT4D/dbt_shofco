@@ -27,7 +27,9 @@ SELECT
     f.sessions_attended,
     {{ validate_date("f.date_of_final_assessment") }} AS date_of_final_assessment,
     f.session_id,
-    i.county,
+    initcap(
+        replace(i.county, '_', ' ')
+        ) as county,
     i.village,
     i.gender_site_code,
     initcap(gender_sites.site_name) as site

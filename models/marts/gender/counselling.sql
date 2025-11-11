@@ -7,7 +7,9 @@ with
 gender_counselling_data as (
     select distinct
         registered_by,
-        county,
+        initcap(
+            replace(county, '_', ' ')
+            ) as county,
         constituency,
         client_age,
         client_name,

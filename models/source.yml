@@ -2,10 +2,20 @@
 version: 2
 
 sources:
+
+  - name: staging_sl_test_missing
+    schema: staging_sl_test_missing
+    tables:
+      - name: zzz_case
+        identifier: zzz_case
+        description: Raw Sustainable Livelihoods program case data from CommCare
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
   - name: staging_sl
     schema: staging_sl
     tables:
-
       - name: Psychosocial_Support_Register
         description: Psychosocial Support Register
         tests:
@@ -60,13 +70,13 @@ sources:
               config:
                 severity: error
 
-      - name: zzz_case
-        identifier: zzz_case
-        description: Raw Sustainable Livelihoods program case data from CommCare
-        tests:
-          - elementary.schema_changes:
-              config:
-                severity: error
+      # - name: zzz_case
+      #   identifier: zzz_case
+      #   description: Raw Sustainable Livelihoods program case data from CommCare
+      #   tests:
+      #     - elementary.schema_changes:
+      #         config:
+      #           severity: error
   
       - name: Service_Completion_Follow_up
         description: Raw service completion follow-up form submissions

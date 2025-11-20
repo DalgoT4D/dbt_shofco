@@ -33,8 +33,12 @@ gender_counselling_data as (
         client_mental_health_score_drug_abuse,
         reason_for_client_requiring_followup_sessions,
         is_client_being_referred_for_further_assistance,
-        case_id
+        case_id,
+        initcap(gender_sites.site_name) as site
     from {{ ref("staging_gender_counselling_commcare") }}
+    left join
+    {{ source("staging_gender", "dim_gender_sites") }} as gender_sites
+    on gender_site_code = gender_sites.site_code
 )
 
 select *

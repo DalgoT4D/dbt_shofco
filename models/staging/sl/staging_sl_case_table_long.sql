@@ -3,7 +3,7 @@
         materialized='incremental',
         unique_key='case_id',
         alias='sl_case_table',
-        tags=['commcare_extraction', 'sl', 'sl_case_table'],
+        tags=['staging', 'sl_staging', 'commcare_extraction', 'sl', 'sl_case_table'],
         enabled=False
     ) 
 }}
@@ -253,6 +253,10 @@ SELECT
     data -> 'properties' ->> 'does_business_have_employees' as does_business_have_employees,
     data -> 'properties' ->> 'do_you_have_any_disability_apbl' as do_you_have_any_disability_apbl,
     COALESCE(data -> 'properties' ->> 'do_you_have_children_sr', data -> 'properties' ->> 'do_you_have_children_uf') as do_you_have_children,
+    COALESCE(
+            data -> 'properties' ->> 'do_you_have_children_sr',
+            data -> 'properties' ->> 'do_you_have_children_uf'
+        ) as do_you_have_children,
     data -> 'properties' ->> 'do_you_have_employees_apbl' as do_you_have_employees_apbl,
     data -> 'properties' ->> 'do_you_recommend_beneficiary_to_proceed_uf' as do_you_recommend_beneficiary_to_proceed_uf,
     data -> 'properties' ->> 'do_you_recommended_institute_ttia' as do_you_recommended_institute_ttia,

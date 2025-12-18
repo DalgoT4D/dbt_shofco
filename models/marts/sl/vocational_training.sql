@@ -1,4 +1,4 @@
-{{ config(materialized='table', tags=['sl_new_models']) }}
+{{ config(materialized='table', tags=['sl', 'sl_marts']) }}
 
 select 
     case_id,
@@ -14,6 +14,7 @@ select
     primary_phone_number,
     phone_last_8_digits,
     is_pwd,
+    is_young_mother,
     name_of_institution_tvet,
     course_enrolled_tvet,
     start_date_tvet,
@@ -22,3 +23,4 @@ from {{ ref('staging_sl_case_table') }}
 where (name_of_institution_tvet is not null and trim(name_of_institution_tvet) != '')
    or (course_enrolled_tvet is not null and trim(course_enrolled_tvet) != '')
    or start_date_tvet is not null
+

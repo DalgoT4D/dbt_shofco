@@ -1,4 +1,4 @@
-{{ config(materialized='table', tags=['sl_new_models']) }}
+{{ config(materialized='table', tags=['sl', 'sl_marts']) }}
 
 select 
     case_id,
@@ -14,6 +14,7 @@ select
     primary_phone_number,
     phone_last_8_digits,
     is_pwd,
+    is_young_mother,
     date_of_visit_csf,
     date_of_visit_csr,
     how_many_csf,
@@ -36,3 +37,4 @@ where date_of_visit_csf is not null
    or (what_visitor_is_using_csf is not null and trim(what_visitor_is_using_csf) != '')
    or (what_visitor_is_using_csr is not null and trim(what_visitor_is_using_csr) != '')
    or (purpose_for_using_csf is not null and trim(purpose_for_using_csf) != '')
+

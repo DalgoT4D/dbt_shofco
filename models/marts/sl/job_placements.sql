@@ -1,4 +1,4 @@
-{{ config(materialized='table', tags=['sl_new_models']) }}
+{{ config(materialized='table', tags=['sl', 'sl_marts']) }}
 
 select 
     case_id,
@@ -14,8 +14,10 @@ select
     primary_phone_number,
     phone_last_8_digits,
     is_pwd,
+    is_young_mother,
     income_on_average_pl,
     placement_opportunity_pl
 from {{ ref('staging_sl_case_table') }}
 where (income_on_average_pl is not null and trim(income_on_average_pl) != '')
    or (placement_opportunity_pl is not null and trim(placement_opportunity_pl) != '')
+

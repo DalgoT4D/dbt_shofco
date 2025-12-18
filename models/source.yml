@@ -1596,3 +1596,14 @@ sources:
           - name: _airbyte_meta
             data_type: jsonb
             description: Metadata information for the Airbyte integration process in JSONB format.
+
+  - name: staging_ciff
+    schema: staging_ciff
+    tables:
+      - name: Ciff
+        identifier: Ciff
+        description: CIFF table data
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error

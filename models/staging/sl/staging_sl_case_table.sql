@@ -2,7 +2,7 @@
     config(
         materialized='table',
         unique_key='case_id',
-        tags=['commcare_extraction', 'sl', 'sl_new_models']
+        tags=['staging', 'sl_staging', 'commcare_extraction', 'sl']
     ) 
 }}
 
@@ -33,6 +33,10 @@ with raw_cases as (
             data -> 'properties' ->> 'gender_csf',
             data -> 'properties' ->> 'gender_hh_dka'
         ) as gender,
+        COALESCE(
+            data -> 'properties' ->> 'do_you_have_children_sr',
+            data -> 'properties' ->> 'do_you_have_children_uf'
+        ) as do_you_have_children,
         coalesce(
             data -> 'properties' ->> 'nationality_csf',
             data -> 'properties' ->> 'nationality_dir'
@@ -151,6 +155,7 @@ select
         pp_unique_id,
         pp_fullname,
         gender,
+        do_you_have_children,
         nationality,
         kenyan_national_id_number_dir,
         county,
@@ -162,6 +167,12 @@ select
         primary_phone_number,
         right(primary_phone_number, 8) as phone_last_8_digits,
         is_pwd,
+        case
+            when lower(trim(gender)) = 'female' and lower(trim(do_you_have_children)) = 'yes' then 'yes'
+            when gender is null or trim(gender) = '' or do_you_have_children is null or trim(do_you_have_children) = '' then 'don''t know'
+            when lower(trim(do_you_have_children)) = 'no' then 'no'
+            else 'no'
+        end as is_young_mother,
         apprenticeship_provider_apr,
         {{ validate_date('placement_date_apr_raw') }} as placement_date_apr,
         grant_amount_bg,
@@ -212,7 +223,21 @@ select
         lower(trim(pp_unique_id)) as norm_pp_unique_id,
         regexp_replace(lower(coalesce(pp_fullname, '')), '\s+', ' ', 'g') as norm_pp_fullname,
         lower(trim(kenyan_national_id_number_dir)) as norm_kenyan_id,
-        lower(trim(county)) as norm_county
+        case
+            when county is null or trim(county) = '' then null
+            else
+                case
+                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'kiii' then 'kilifi'
+                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'buia' then 'busia'
+                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'homabay' then 'homa bay'
+                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'kiumu' then 'kisumu'
+                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'mombaa' then 'mombasa'
+                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'uaingihu' then 'uain gihu'
+                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'trannzoia' then 'tran nzoia'
+                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'taitataveta' then 'taita taveta'
+                    else lower(trim(county))
+                end
+        end as norm_county
     from raw_cases
 ),
 deduplicated_cases as (
@@ -237,6 +262,11 @@ deduplicated_cases as (
                 THEN 'yes'
             ELSE max(nullif(trim(is_pwd), ''))
         END as is_pwd,
+        CASE
+            WHEN max(CASE WHEN lower(nullif(trim(is_young_mother), '')) = 'yes' THEN 1 ELSE 0 END) = 1 THEN 'yes'
+            WHEN max(CASE WHEN lower(nullif(trim(is_young_mother), '')) = 'don''t know' THEN 1 ELSE 0 END) = 1 THEN 'don''t know'
+            ELSE max(nullif(trim(is_young_mother), ''))
+        END as is_young_mother,
         max(nullif(trim(apprenticeship_provider_apr), '')) as apprenticeship_provider_apr,
         max(placement_date_apr) as placement_date_apr,
         max(nullif(trim(grant_amount_bg), '')) as grant_amount_bg,
@@ -307,7 +337,18 @@ select
     kenyan_national_id_number_dir,
     case
         when county is null or trim(county) = '' then null
-        else initcap(regexp_replace(county, '[\\s_/-]+', '', 'g'))
+        else
+            case
+                when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'kiii' then 'Kilifi'
+                when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'buia' then 'Busia'
+                when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'homabay' then 'Homa Bay'
+                when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'kiumu' then 'Kisumu'
+                when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'mombaa' then 'Mombasa'
+                when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'uaingihu' then 'Uain Gihu'
+                when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'trannzoia' then 'Tran Nzoia'
+                when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'taitataveta' then 'Taita Taveta'
+                else initcap(regexp_replace(county, '[\\s_/-]+', '', 'g'))
+            end
     end as county,
     case
         when subcounty is null or trim(subcounty) = '' then null
@@ -323,6 +364,13 @@ select
     primary_phone_number,
     phone_last_8_digits,
     case when is_pwd is null or trim(is_pwd) = '' then null else initcap(is_pwd) end as is_pwd,
+    case
+        when is_young_mother is null or trim(is_young_mother) = '' then null
+        when lower(trim(is_young_mother)) = 'yes' then 'yes'
+        when lower(trim(is_young_mother)) = 'no' then 'no'
+        when lower(trim(is_young_mother)) = 'don''t know' then 'don''t know'
+        else lower(trim(is_young_mother))
+    end as is_young_mother,
     apprenticeship_provider_apr,
     placement_date_apr,
     grant_amount_bg,

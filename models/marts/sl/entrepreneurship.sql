@@ -1,4 +1,4 @@
-{{ config(materialized='table', tags=['sl_new_models']) }}
+{{ config(materialized='table', tags=['sl', 'sl_marts']) }}
 
 select 
     case_id,
@@ -14,8 +14,10 @@ select
     primary_phone_number,
     phone_last_8_digits,
     is_pwd,
+    is_young_mother,
     start_date_ent,
     completion_date_ent
 from {{ ref('staging_sl_case_table') }}
 where start_date_ent is not null
    or completion_date_ent is not null
+

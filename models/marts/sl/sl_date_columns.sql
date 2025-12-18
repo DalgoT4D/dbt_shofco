@@ -1,4 +1,4 @@
-{{ config(materialized='table', tags=['sl_new_models', 'date_analysis']) }}
+{{ config(materialized='table', tags=['sl_marts', 'date_analysis', 'sl']) }}
 
 select
     case_id,

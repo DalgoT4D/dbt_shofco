@@ -1,4 +1,4 @@
-{{ config(materialized='table', tags=['sl_new_models']) }}
+{{ config(materialized='table', tags=['sl', 'sl_marts']) }}
 
 select 
     case_id,
@@ -14,6 +14,7 @@ select
     primary_phone_number,
     phone_last_8_digits,
     is_pwd,
+    is_young_mother,
     swep_iga_center_iga,
     start_date_iga,
     completion_date_iga,
@@ -23,3 +24,4 @@ where (swep_iga_center_iga is not null and trim(swep_iga_center_iga) != '')
    or start_date_iga is not null
    or completion_date_iga is not null
    or (training_type_iga is not null and trim(training_type_iga) != '')
+

@@ -1,4 +1,4 @@
-{{ config(materialized='table', tags=['sl_new_models']) }}
+{{ config(materialized='table', tags=['sl', 'sl_marts']) }}
 
 select 
     case_id,
@@ -14,8 +14,10 @@ select
     primary_phone_number,
     phone_last_8_digits,
     is_pwd,
-    start_date_int,
-    completion_date_int
+    is_young_mother,
+    apprenticeship_provider_apr,
+    placement_date_apr
 from {{ ref('staging_sl_case_table') }}
-where start_date_int is not null
-   or completion_date_int is not null
+where apprenticeship_provider_apr is not null
+  and trim(apprenticeship_provider_apr) != ''
+

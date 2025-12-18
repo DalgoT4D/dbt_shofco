@@ -1,4 +1,4 @@
-{{ config(materialized='table', tags=['sl_new_models']) }}
+{{ config(materialized='table', tags=['sl', 'sl_marts']) }}
 
 select 
     case_id,
@@ -14,6 +14,7 @@ select
     primary_phone_number,
     phone_last_8_digits,
     is_pwd,
+    is_young_mother,
     digital_literacy_dl,
     coalesce(start_date_dl, advanced_it_start_date_dl) as digital_literacy_start_date,
     coalesce(completion_date_dl, advanced_it_completion_date_dl) as digital_literacy_end_date,
@@ -21,3 +22,4 @@ select
 from {{ ref('staging_sl_case_table') }}
 where digital_literacy_dl is not null
   and trim(digital_literacy_dl) != ''
+

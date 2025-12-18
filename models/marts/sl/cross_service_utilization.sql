@@ -1,4 +1,4 @@
-{{ config(materialized='table', tags=['sl_new_models', 'cross_service']) }}
+{{ config(materialized='table', tags=['sl', 'sl_marts', 'cross_service']) }}
 
 select
     case_id,
@@ -8,6 +8,7 @@ select
     county,
     date_of_registration,
     is_pwd,
+    is_young_mother,
     
     -- service participation flags
     (digital_literacy_dl is not null or start_date_dl is not null 
@@ -67,3 +68,4 @@ select
 
 from {{ ref('staging_sl_case_table') }}
 order by case_id
+

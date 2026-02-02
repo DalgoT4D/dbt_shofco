@@ -80,7 +80,9 @@
     "what_is_the_year_of_birth_of_survivor": "what_is_the_year_of_birth_of_survivor",
     "what_other_procedures_has_the_client_undergone": "what_other_procedures_has_the_client_undergone",
     "where_was_the_client_referred_to": "where_was_the_client_referred_to",
-    "reported_by": "reported_by"
+    "reported_by": "reported_by",
+    "was_the_perpetrator_convicted": "was_the_perpetrator_convicted",
+    "conviction_comments": "conviction_comments"
 } -%}
 
 

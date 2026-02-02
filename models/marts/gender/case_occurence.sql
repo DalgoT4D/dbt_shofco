@@ -126,7 +126,9 @@ case_occurrences_data as (
         parent_case_type,
         closed,
         survivor_gender,
-        what_is_the_age_provided
+        what_is_the_age_provided,
+        was_the_perpetrator_convicted,
+        conviction_comments
     from {{ ref("staging_gender_case_occurrences_commcare") }}
 )
 
@@ -167,6 +169,8 @@ select distinct
     cases.parent_case_id,
     cases.parent_case_type,
     cases.closed,
+    cases.was_the_perpetrator_convicted,
+    cases.conviction_comments,
     safe_house_data.date_of_safe_house_onboarding,
     safe_house_data.date_of_safe_house_discharge,
     current_date - cases.date_of_case_intake as days_since_intake,

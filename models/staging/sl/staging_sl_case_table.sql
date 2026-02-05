@@ -145,7 +145,7 @@ with raw_cases as (
             data -> 'properties' ->> 'nita_exams',
             data -> 'properties' ->> 'nita_exams_tc'
         ) as nita_exams
-    from {{ source('staging_sl_test_missing', 'zzz_case') }}
+    from {{ source('staging_sl', 'zzz_case') }}
     where data -> 'properties' ->> 'case_type' = 'sl_new'
 ),
 prepared_cases as (

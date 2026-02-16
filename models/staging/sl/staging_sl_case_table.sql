@@ -87,6 +87,7 @@ with raw_cases as (
             data -> 'properties' ->> 'is_plwd',
             data -> 'properties' ->> 'is_plwd_csf',
             data -> 'properties' ->> 'is_pwd',
+            data -> 'properties' ->> 'is_pwd_csf',
             data -> 'properties' ->> 'is_pwd_tvbl'
         ) as is_pwd,
         data -> 'properties' ->> 'apprenticeship_provider_apr' as apprenticeship_provider_apr,
@@ -101,6 +102,8 @@ with raw_cases as (
         data -> 'properties' ->> 'final_exams_tc' as final_exams_tc,
         data -> 'properties' ->> 'start_date_ent' as start_date_ent_raw,
         data -> 'properties' ->> 'completion_date_ent' as completion_date_ent_raw,
+        data -> 'properties' ->> 'interest_in_sales_work_ent' as interest_in_sales_work_ent,
+        data -> 'properties' ->> 'support_to_help_succeed_as_entrepreneur_sr' as support_to_help_succeed_as_entrepreneur_sr,
         data -> 'properties' ->> 'start_date_int' as start_date_int_raw,
         data -> 'properties' ->> 'completion_date_int' as completion_date_int_raw,
         data -> 'properties' ->> 'income_on_average_pl' as income_on_average_pl,
@@ -109,6 +112,10 @@ with raw_cases as (
         data -> 'properties' ->> 'date_of_second_visit_bm' as date_of_second_visit_bm_raw,
         data -> 'properties' ->> 'date_of_visit_csf' as date_of_visit_csf_raw,
         data -> 'properties' ->> 'date_of_visit_csr' as date_of_visit_csr_raw,
+        data -> 'properties' ->> 'date_of_birth_csf' as date_of_birth_csf,
+        data -> 'properties' ->> 'age_in_years_csf' as age_in_years_csf,
+        data -> 'properties' ->> 'first_name_csf' as first_name_csf,
+        data -> 'properties' ->> 'second_name_csf' as second_name_csf,
         data -> 'properties' ->> 'how_many_csf' as how_many_csf,
         data -> 'properties' ->> 'time_in_csf' as time_in_csf,
         data -> 'properties' ->> 'time_in_csr' as time_in_csr,
@@ -139,8 +146,15 @@ with raw_cases as (
             data -> 'properties' ->> 'training_session_sr'
         ) as training_session_st,
         data -> 'properties' ->> 'name_of_institution_tvet' as name_of_institution_tvet,
-        data -> 'properties' ->> 'course_enrolled_tvet' as course_enrolled_tvet,
+        coalesce(
+        data -> 'properties' ->> 'course_enrolled_tvet',
+        data -> 'properties' ->> 'other_course_tvet'
+        ) as course_enrolled_tvet,
         data -> 'properties' ->> 'start_date_tvet' as start_date_tvet_raw,
+        coalesce(
+        data -> 'properties' ->> 'completion_date_tvet',
+        data -> 'properties' ->> 'completion_tvet'
+        ) as completion_date_tvet,
         coalesce(
             data -> 'properties' ->> 'nita_exams',
             data -> 'properties' ->> 'nita_exams_tc'

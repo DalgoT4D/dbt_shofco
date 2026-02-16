@@ -45,9 +45,15 @@ SELECT DISTINCT
     -> 'geographical_location'
     ->> 'constituency' AS constituency,
 
-    -- School Information
-    json_data -> 'form' -> 'school_information' ->> 'term' AS school_term,
-    json_data -> 'form' -> 'school_information' ->> 'year' AS school_year,
+    -- School Information - handle both old and new formats
+    COALESCE(
+        json_data -> 'form' ->> 'term',
+        json_data -> 'form' -> 'school_information' ->> 'term'
+    ) AS school_term,
+    COALESCE(
+        json_data -> 'form' ->> 'year',
+        json_data -> 'form' -> 'school_information' ->> 'year'
+    ) AS school_year,
     json_data
     -> 'form'
     -> 'school_information'
@@ -56,13 +62,13 @@ SELECT DISTINCT
     -> 'form'
     -> 'school_information'
     ->> 'type_of_school' AS type_of_school,
-    json_data
-    -> 'form'
-    -> 'school_information'
-    ->> 'number_of_club_membership' AS num_club_members,
+    COALESCE(
+        json_data -> 'form' ->> 'number_of_club_membership',
+        json_data -> 'form' -> 'school_information' ->> 'number_of_club_membership'
+    ) AS num_club_members,
 
     -- Other relevant details
-    json_data -> 'form' -> 'life_skills_form' AS life_skills_form_status,
-    json_data -> 'form' -> 'club_patron_mobile_number' AS patron_mobile_number
+    json_data -> 'form' ->> 'life_skills_form' AS life_skills_form_status,
+    json_data -> 'form' ->> 'club_patron_mobile_number' AS patron_mobile_number
 
 FROM source_data

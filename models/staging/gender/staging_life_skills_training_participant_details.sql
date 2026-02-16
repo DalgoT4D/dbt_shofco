@@ -6,14 +6,22 @@
 WITH roc_club_participants AS (
     SELECT
         data::jsonb -> 'form' ->> 'target_group' AS target_group,
-        -- Extract term directly from JSON
-        (data::jsonb -> 'form' -> 'school_information' ->> 'term') AS term,
+        -- Extract term from either location (new format first, then old format)
+        COALESCE(
+            data::jsonb -> 'form' ->> 'term',
+            data::jsonb -> 'form' -> 'school_information' ->> 'term'
+        ) AS term,
         CASE
             WHEN
-                data::jsonb -> 'form' -> 'school_information' ->> 'year'
-                = 'choice5'
+                COALESCE(
+                    data::jsonb -> 'form' ->> 'year',
+                    data::jsonb -> 'form' -> 'school_information' ->> 'year'
+                ) = 'choice5'
                 THEN '2024'
-            ELSE data::jsonb -> 'form' -> 'school_information' ->> 'year'
+            ELSE COALESCE(
+                data::jsonb -> 'form' ->> 'year',
+                data::jsonb -> 'form' -> 'school_information' ->> 'year'
+            )
         END AS year,
         -- Use 'received_on' for the form-filling date
         data::jsonb ->> 'received_on' AS form_filling_date,
@@ -28,16 +36,34 @@ WITH roc_club_participants AS (
         (data::jsonb -> 'form' -> 'meta' ->> 'username') AS assigned_to,
         -- Assign start and end dates for each term as timestamp
         CASE
-            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_1' THEN to_timestamp('2024-08-31', 'YYYY-MM-DD') 
-            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_2' THEN to_timestamp('2024-01-01', 'YYYY-MM-DD')
-            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term3' THEN to_timestamp('2024-04-21', 'YYYY-MM-DD')
+            WHEN COALESCE(
+                data::jsonb -> 'form' ->> 'term',
+                data::jsonb -> 'form' -> 'school_information' ->> 'term'
+            ) = 'term_1' THEN to_timestamp('2024-08-31', 'YYYY-MM-DD') 
+            WHEN COALESCE(
+                data::jsonb -> 'form' ->> 'term',
+                data::jsonb -> 'form' -> 'school_information' ->> 'term'
+            ) = 'term_2' THEN to_timestamp('2024-01-01', 'YYYY-MM-DD')
+            WHEN COALESCE(
+                data::jsonb -> 'form' ->> 'term',
+                data::jsonb -> 'form' -> 'school_information' ->> 'term'
+            ) = 'term3' THEN to_timestamp('2024-04-21', 'YYYY-MM-DD')
             ELSE NULL::timestamp
         END AS term_start_date,
 
         CASE
-            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_1' THEN to_timestamp('2024-12-31', 'YYYY-MM-DD') 
-            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term_2' THEN to_timestamp('2024-04-20', 'YYYY-MM-DD')
-            WHEN (data::jsonb->'form'->'school_information'->>'term') = 'term3' THEN to_timestamp('2024-08-31', 'YYYY-MM-DD')
+            WHEN COALESCE(
+                data::jsonb -> 'form' ->> 'term',
+                data::jsonb -> 'form' -> 'school_information' ->> 'term'
+            ) = 'term_1' THEN to_timestamp('2024-12-31', 'YYYY-MM-DD') 
+            WHEN COALESCE(
+                data::jsonb -> 'form' ->> 'term',
+                data::jsonb -> 'form' -> 'school_information' ->> 'term'
+            ) = 'term_2' THEN to_timestamp('2024-04-20', 'YYYY-MM-DD')
+            WHEN COALESCE(
+                data::jsonb -> 'form' ->> 'term',
+                data::jsonb -> 'form' -> 'school_information' ->> 'term'
+            ) = 'term3' THEN to_timestamp('2024-08-31', 'YYYY-MM-DD')
             ELSE NULL::timestamp
         END AS term_end_date
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
@@ -49,8 +75,22 @@ WITH roc_club_participants AS (
 
 community_safe_space_participants AS (
     SELECT
-        'Unknown' AS term,-- Set term as 'Unknown' for community safe space
-        'Unknown' AS year,  -- Set year as 'Unknown' for community safe space
+        COALESCE(
+            data::jsonb -> 'form' ->> 'term',
+            data::jsonb -> 'form' -> 'school_information' ->> 'term'
+        ) AS term,
+        CASE
+            WHEN
+                COALESCE(
+                    data::jsonb -> 'form' ->> 'year',
+                    data::jsonb -> 'form' -> 'school_information' ->> 'year'
+                ) = 'choice5'
+                THEN '2024'
+            ELSE COALESCE(
+                data::jsonb -> 'form' ->> 'year',
+                data::jsonb -> 'form' -> 'school_information' ->> 'year'
+            )
+        END AS year,
         NULL::timestamp AS term_start_date,-- Use NULL for timestamp fields to maintain consistency with ROC Club
         NULL::timestamp AS term_end_date,
         data::jsonb -> 'form' ->> 'target_group' AS target_group,
@@ -74,15 +114,17 @@ community_safe_space_participants AS (
 SELECT DISTINCT
     target_group,
     term,
-    year,  -- Year extracted from JSON or 'Unknown'
+    year,  -- Year extracted from JSON with choice5 -> 2024 conversion
     term_start_date,  -- Start date based on the term or NULL
     term_end_date,    -- End date based on the term or NULL
     form_filling_date,  -- The form's actual submission date
     session_id,  -- Include the session ID
-    -- For ROC Club
-    participant_data
-    ->> 'member_full_names_first_middle_surname' AS participant_name,
-    participant_data ->> 'member_gender' AS gender,  -- For ROC Club
+    -- For ROC Club - handle both old and new format field names
+    COALESCE(
+        participant_data ->> 'member_full_names',
+        participant_data ->> 'member_full_names_first_middle_surname'
+    ) AS participant_name,
+    participant_data ->> 'member_gender' AS gender,
     ward,
     county_code,
     constituency,
@@ -94,7 +136,7 @@ UNION ALL
 SELECT DISTINCT
     target_group,
     term,
-    year,  -- Year set to 'Unknown'
+    year,  -- Year extracted from JSON with choice5 -> 2024 conversion
     term_start_date,  -- NULL for community safe space
     term_end_date,    -- NULL for community safe space
     form_filling_date,  -- The form's actual submission date

@@ -27,7 +27,11 @@ select
     what_visitor_is_using_csf,
     what_visitor_is_using_csr,
     purpose_for_using_csf,
-    coworking_space_facility
+    coworking_space_facility,
+    date_of_birth_csf,
+    age_in_years_csf,
+    first_name_csf,
+    second_name_csf
 from {{ ref('staging_sl_case_table') }}
 where date_of_visit_csf is not null
    or date_of_visit_csr is not null
@@ -37,4 +41,13 @@ where date_of_visit_csf is not null
    or (what_visitor_is_using_csf is not null and trim(what_visitor_is_using_csf) != '')
    or (what_visitor_is_using_csr is not null and trim(what_visitor_is_using_csr) != '')
    or (purpose_for_using_csf is not null and trim(purpose_for_using_csf) != '')
+   or (date_of_birth_csf is not null and trim(date_of_birth_csf) != '')
+   or (age_in_years_csf is not null and trim(age_in_years_csf) != '')
+   or (first_name_csf is not null and trim(first_name_csf) != '')
+   or (second_name_csf is not null and trim(second_name_csf) != '')
+   or (how_many_csf is not null and trim(how_many_csf) != '')
+   or (time_in_csf is not null and trim(time_in_csf) != '')
+   or (time_in_csr is not null and trim(time_in_csr) != '')
+   or (time_out_csf is not null and trim(time_out_csf) != '')
+   or (time_out_csr is not null and trim(time_out_csr) != '')
 

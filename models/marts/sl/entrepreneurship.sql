@@ -16,8 +16,10 @@ select
     is_pwd,
     is_young_mother,
     start_date_ent,
-    completion_date_ent
+    completion_date_ent,
+    interest_in_sales_work_ent
 from {{ ref('staging_sl_case_table') }}
 where start_date_ent is not null
    or completion_date_ent is not null
+   or interest_in_sales_work_ent is not null
 

@@ -6,9 +6,15 @@ select
     pp_fullname,
     gender,
     county,
+    subcounty,
+    ward,
+    nationality,
+    is_pwd,
+    is_young_mother,
     
     -- Registration dates
     date_of_registration,
+    date_of_birth_csf,
     
     -- Apprenticeship dates
     placement_date_apr,
@@ -19,6 +25,9 @@ select
     -- Digital literacy dates (merged)
     coalesce(start_date_dl, advanced_it_start_date_dl) as digital_literacy_start_date,
     coalesce(completion_date_dl, advanced_it_completion_date_dl) as digital_literacy_end_date,
+    advanced_it_start_date_dl,
+    advanced_it_completion_date_dl,
+    completion_date_dl,
     
     -- Entrepreneurship dates
     start_date_ent,
@@ -49,8 +58,8 @@ select
     expected_end_date_of_training_st,
     
     -- TVET dates
-    start_date_tvet
+    start_date_tvet,
+    completion_date_tvet
 
 from {{ ref('staging_sl_case_table') }}
-where date_of_registration is not null
 order by case_id

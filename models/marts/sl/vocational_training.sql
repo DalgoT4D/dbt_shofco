@@ -16,11 +16,13 @@ select
     is_pwd,
     is_young_mother,
     name_of_institution_tvet,
+    name_of_facilitator,
     course_enrolled_tvet,
     start_date_tvet,
-    nita_exams
+    nita_exams,
+    how_helpful_course_tvet,
+    recommend_training_tvet
 from {{ ref('staging_sl_case_table') }}
 where (name_of_institution_tvet is not null and trim(name_of_institution_tvet) != '')
    or (course_enrolled_tvet is not null and trim(course_enrolled_tvet) != '')
    or start_date_tvet is not null
-

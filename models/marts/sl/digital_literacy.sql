@@ -18,8 +18,11 @@ select
     digital_literacy_dl,
     coalesce(start_date_dl, advanced_it_start_date_dl) as digital_literacy_start_date,
     coalesce(completion_date_dl, advanced_it_completion_date_dl) as digital_literacy_end_date,
-    final_exams_tc
+    final_exams_tc,
+    how_helpful_course_tc,
+    why_not_helpful_tc,
+    how_helpful_was_upskilling_uc,
+    why_not_helpful_uc
 from {{ ref('staging_sl_case_table') }}
 where digital_literacy_dl is not null
   and trim(digital_literacy_dl) != ''
-

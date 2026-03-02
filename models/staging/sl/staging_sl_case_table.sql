@@ -93,6 +93,7 @@ with raw_cases as (
             data -> 'properties' ->> 'is_pwd_tvbl'
         ) as is_pwd,
         data -> 'properties' ->> 'apprenticeship_provider_apr' as apprenticeship_provider_apr,
+        data -> 'properties' ->> 'skill_enrolled_apr' as skill_enrolled_apr,
         data -> 'properties' ->> 'placement_date_apr' as placement_date_apr_raw,
         data -> 'properties' ->> 'grant_amount_bg' as grant_amount_bg,
         data -> 'properties' ->> 'date_grant_allocated_bg' as date_grant_allocated_bg_raw,
@@ -205,6 +206,7 @@ select
             else 'no'
         end as is_young_mother,
         apprenticeship_provider_apr,
+        skill_enrolled_apr,
         {{ validate_date('placement_date_apr_raw') }} as placement_date_apr,
         grant_amount_bg,
         {{ validate_date('date_grant_allocated_bg_raw') }} as date_grant_allocated_bg,
@@ -316,6 +318,7 @@ deduplicated_cases as (
             ELSE max(nullif(trim(is_young_mother), ''))
         END as is_young_mother,
         max(nullif(trim(apprenticeship_provider_apr), '')) as apprenticeship_provider_apr,
+        max(nullif(trim(skill_enrolled_apr), '')) as skill_enrolled_apr,
         max(placement_date_apr) as placement_date_apr,
         max(nullif(trim(grant_amount_bg), '')) as grant_amount_bg,
         max(date_grant_allocated_bg) as date_grant_allocated_bg,
@@ -437,6 +440,7 @@ select
         else lower(trim(is_young_mother))
     end as is_young_mother,
     apprenticeship_provider_apr,
+    skill_enrolled_apr,
     placement_date_apr,
     grant_amount_bg,
     date_grant_allocated_bg,

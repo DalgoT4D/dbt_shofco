@@ -96,6 +96,8 @@ with raw_cases as (
         data -> 'properties' ->> 'skill_enrolled_apr' as skill_enrolled_apr,
         data -> 'properties' ->> 'placement_date_apr' as placement_date_apr_raw,
         data -> 'properties' ->> 'grant_amount_bg' as grant_amount_bg,
+        data -> 'properties' ->> 'type_of_business_you_operate_bga' as type_of_business_you_operate_bga,
+        data -> 'properties' ->> 'mark_the_location_of_the_business' as mark_the_location_of_the_business_raw,
         data -> 'properties' ->> 'date_grant_allocated_bg' as date_grant_allocated_bg_raw,
         data -> 'properties' ->> 'digital_literacy_dl' as digital_literacy_dl,
         data -> 'properties' ->> 'start_date_dl' as start_date_dl_raw,
@@ -206,10 +208,27 @@ select
             else 'no'
         end as is_young_mother,
         apprenticeship_provider_apr,
+        type_of_business_you_operate_bga,
         skill_enrolled_apr,
         {{ validate_date('placement_date_apr_raw') }} as placement_date_apr,
         grant_amount_bg,
         {{ validate_date('date_grant_allocated_bg_raw') }} as date_grant_allocated_bg,
+        mark_the_location_of_the_business_raw,
+
+        case 
+            when mark_the_location_of_the_business_raw is not null
+            then split_part(mark_the_location_of_the_business_raw, ' ', 1)::numeric
+        end as business_latitude,
+
+        case 
+            when mark_the_location_of_the_business_raw is not null
+            then split_part(mark_the_location_of_the_business_raw, ' ', 2)::numeric
+        end as business_longitude,
+
+        case 
+            when mark_the_location_of_the_business_raw is not null
+            then split_part(mark_the_location_of_the_business_raw, ' ', 3)::numeric
+        end as business_altitude,
         digital_literacy_dl,
         {{ validate_date('start_date_dl_raw') }} as start_date_dl,
         {{ validate_date('advanced_it_start_date_dl_raw') }} as advanced_it_start_date_dl,
@@ -322,6 +341,11 @@ deduplicated_cases as (
         max(placement_date_apr) as placement_date_apr,
         max(nullif(trim(grant_amount_bg), '')) as grant_amount_bg,
         max(date_grant_allocated_bg) as date_grant_allocated_bg,
+        max(nullif(trim(type_of_business_you_operate_bga), '')) as type_of_business_you_operate_bga,
+        max(mark_the_location_of_the_business_raw) as mark_the_location_of_the_business_raw,
+        max(business_latitude) as business_latitude,
+        max(business_longitude) as business_longitude,
+        max(business_altitude) as business_altitude,
         max(nullif(trim(digital_literacy_dl), '')) as digital_literacy_dl,
         max(start_date_dl) as start_date_dl,
         max(advanced_it_start_date_dl) as advanced_it_start_date_dl,
@@ -444,6 +468,11 @@ select
     placement_date_apr,
     grant_amount_bg,
     date_grant_allocated_bg,
+    type_of_business_you_operate_bga,
+    mark_the_location_of_the_business_raw,
+    business_latitude,
+    business_longitude,
+    business_altitude,
     digital_literacy_dl,
     start_date_dl,
     advanced_it_start_date_dl,

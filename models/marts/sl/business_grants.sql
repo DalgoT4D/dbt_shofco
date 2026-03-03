@@ -16,7 +16,11 @@ select
     is_pwd,
     is_young_mother,
     grant_amount_bg,
-    date_grant_allocated_bg
+    date_grant_allocated_bg,
+    type_of_business_you_operate_bga,
+    business_latitude,
+    business_longitude,
+    business_altitude
 from {{ ref('staging_sl_case_table') }}
 where grant_amount_bg is not null
   and trim(grant_amount_bg) != ''

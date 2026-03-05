@@ -213,22 +213,27 @@ select
         {{ validate_date('placement_date_apr_raw') }} as placement_date_apr,
         grant_amount_bg,
         {{ validate_date('date_grant_allocated_bg_raw') }} as date_grant_allocated_bg,
-        mark_the_location_of_the_business_raw,
+mark_the_location_of_the_business_raw,
 
         case 
             when mark_the_location_of_the_business_raw is not null
-            then split_part(mark_the_location_of_the_business_raw, ' ', 1)::numeric
+            then split_part(mark_the_location_of_the_business_raw, ' ', 1)::double precision
         end as business_latitude,
 
         case 
             when mark_the_location_of_the_business_raw is not null
-            then split_part(mark_the_location_of_the_business_raw, ' ', 2)::numeric
+            then split_part(mark_the_location_of_the_business_raw, ' ', 2)::double precision
         end as business_longitude,
 
         case 
             when mark_the_location_of_the_business_raw is not null
-            then split_part(mark_the_location_of_the_business_raw, ' ', 3)::numeric
+            then split_part(mark_the_location_of_the_business_raw, ' ', 3)::double precision
         end as business_altitude,
+
+        case 
+            when mark_the_location_of_the_business_raw is not null
+            then split_part(mark_the_location_of_the_business_raw, ' ', 4)::double precision
+        end as business_accuracy,
         digital_literacy_dl,
         {{ validate_date('start_date_dl_raw') }} as start_date_dl,
         {{ validate_date('advanced_it_start_date_dl_raw') }} as advanced_it_start_date_dl,
@@ -346,6 +351,7 @@ deduplicated_cases as (
         max(business_latitude) as business_latitude,
         max(business_longitude) as business_longitude,
         max(business_altitude) as business_altitude,
+        max(business_accuracy) as business_accuracy,
         max(nullif(trim(digital_literacy_dl), '')) as digital_literacy_dl,
         max(start_date_dl) as start_date_dl,
         max(advanced_it_start_date_dl) as advanced_it_start_date_dl,
@@ -473,6 +479,7 @@ select
     business_latitude,
     business_longitude,
     business_altitude,
+    business_accuracy,
     digital_literacy_dl,
     start_date_dl,
     advanced_it_start_date_dl,

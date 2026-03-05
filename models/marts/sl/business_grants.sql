@@ -20,7 +20,8 @@ select
     type_of_business_you_operate_bga,
     business_latitude,
     business_longitude,
-    business_altitude
+    business_altitude,
+    business_accuracy
 from {{ ref('staging_sl_case_table') }}
 where grant_amount_bg is not null
   and trim(grant_amount_bg) != ''

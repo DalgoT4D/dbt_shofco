@@ -17,6 +17,8 @@ select
     is_young_mother,
     apprenticeship_provider_apr,
     skill_enrolled_apr,
+    skill_name,
+    sector_name,
     placement_date_apr
 from {{ ref('staging_sl_case_table') }}
 where apprenticeship_provider_apr is not null

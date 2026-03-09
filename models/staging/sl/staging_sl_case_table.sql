@@ -312,6 +312,7 @@ mark_the_location_of_the_business_raw,
         end as norm_county
     from raw_cases
 ),
+
 deduplicated_cases as (
     select
         min(nullif(trim(case_id), '')) as case_id,
@@ -421,6 +422,24 @@ deduplicated_cases as (
         norm_kenyan_id,
         phone_last_8_digits,
         norm_county
+),
+
+skill_sector_mapping as (
+    select distinct
+        skill_enrolled_apr,
+        case
+            when skill_enrolled_apr like '%agribusiness_sector' then 'agribusiness_sector'
+            when skill_enrolled_apr like '%media_sector' then 'media_sector'
+            when skill_enrolled_apr like '%ict' then 'ict'
+            when skill_enrolled_apr like '%hospitality_sector' then 'hospitality_sector'
+            when skill_enrolled_apr like '%beautyhairdressing_and_textile_sector' then 'beautyhairdressing_and_textile_sector'
+            when skill_enrolled_apr like '%automotive_engineering_sector' then 'automotive_engineering_sector'
+            when skill_enrolled_apr like '%building__construction_sector' then 'building__construction_sector'
+            when skill_enrolled_apr = 'other' then 'other'
+            else 'other'
+        end as sector_name,
+        trim(regexp_replace(skill_enrolled_apr, '(_agribusiness_sector|_media_sector|_ict|_hospitality_sector|_beautyhairdressing_and_textile_sector|_automotive_engineering_sector|_building__construction_sector)$', '', 'i')) as skill_name
+    from deduplicated_cases  
 )
 
 select
@@ -470,7 +489,7 @@ select
         else lower(trim(is_young_mother))
     end as is_young_mother,
     apprenticeship_provider_apr,
-    skill_enrolled_apr,
+    d.skill_enrolled_apr,
     placement_date_apr,
     grant_amount_bg,
     date_grant_allocated_bg,
@@ -537,5 +556,10 @@ select
     course_enrolled_tvet,
     start_date_tvet,
     completion_date_tvet,
-    nita_exams
-from deduplicated_cases
+    nita_exams,
+
+    m.skill_name,
+    m.sector_name
+from deduplicated_cases d
+left join skill_sector_mapping m
+    on d.skill_enrolled_apr = m.skill_enrolled_apr

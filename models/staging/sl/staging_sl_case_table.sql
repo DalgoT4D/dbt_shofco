@@ -312,6 +312,7 @@ mark_the_location_of_the_business_raw,
         end as norm_county
     from raw_cases
 ),
+
 deduplicated_cases as (
     select
         min(nullif(trim(case_id), '')) as case_id,
@@ -421,6 +422,58 @@ deduplicated_cases as (
         norm_kenyan_id,
         phone_last_8_digits,
         norm_county
+),
+
+skill_sector_mapping as (
+    select skill_enrolled_apr, skill_name, sector_name
+    from (values
+        -- Automotive Engineering
+        ('spray_painter_automotive_engineering_sector',                          'Spray Painter',                            'Automotive Engineering'),
+        ('panel_beater_automotive_engineering_sector',                          'Panel Beater',                             'Automotive Engineering'),
+        ('plant_mechanic_automotive_engineering_sector',                        'Plant Mechanic',                           'Automotive Engineering'),
+        ('electronic_mechanics_automotive_engineering_sector',                  'Electronic Mechanics',                     'Automotive Engineering'),
+        ('motor_vehicle_mechanic_automotive_engineering_sector',                'Motor Vehicle Mechanic',                   'Automotive Engineering'),
+        ('motor_vehicle_electrician_automotive_engineering_sector',             'Motor Vehicle Electrician',                'Automotive Engineering'),
+        ('upholstery_automotive_engineering_sector',                            'Upholstery',                               'Automotive Engineering'),
+        -- Building and Construction
+        ('molder_building__construction_sector',                                'Molder',                                   'Building and Construction'),
+        ('refrigeration_and_air_conditioning_building__construction_sector',    'Refrigeration and Air Conditioning',       'Building and Construction'),
+        ('painter_decorator_building__construction_sector',                     'Painter Decorator',                        'Building and Construction'),
+        ('cabinet_maker_building__construction_sector',                         'Cabinet Maker',                            'Building and Construction'),
+        ('carpentry_and_joinery_building__construction_sector',                 'Carpentry and Joinery',                    'Building and Construction'),
+        ('electrical_fitter_building__construction_sector',                     'Electrical Fitter',                        'Building and Construction'),
+        ('sign_writer_building__construction_sector',                           'Sign Writer',                              'Building and Construction'),
+        ('general_fitter_building__construction_sector',                        'General Fitter',                           'Building and Construction'),
+        ('pipe_fitter_building__construction_sector',                           'Pipe Fitter',                              'Building and Construction'),
+        ('masonry_building__construction_sector',                               'Masonry',                                  'Building and Construction'),
+        ('plumber_building__construction_sector',                               'Plumber',                                  'Building and Construction'),
+        ('arc_welder_building__construction_sector',                            'Arc Welder',                               'Building and Construction'),
+        ('gas_welder_building__construction_sector',                            'Gas Welder',                               'Building and Construction'),
+        ('woodcarver_and_wood_machinist_building__construction_sector',         'Woodcarver and Wood Machinist',             'Building and Construction'),
+        ('sheet_metal_building__construction_sector',                           'Sheet Metal',                              'Building and Construction'),
+        ('solar_photovoltaic_building__construction_sector',                    'Solar Photovoltaic',                       'Building and Construction'),
+        ('electrical_wireman_building__construction_sector',                    'Electrical Wireman',                       'Building and Construction'),
+        ('tiling_building__construction_sector',                                'Tiling',                                   'Building and Construction'),
+        -- Hospitality
+        ('food_and_beverage_hospitality_sector',                                'Food and Beverage',                        'Hospitality'),
+        ('baking_hospitality_sector',                                           'Baking',                                   'Hospitality'),
+        ('catering_hospitality_sector',                                         'Catering',                                 'Hospitality'),
+        ('housekeeping_and_laundry_hospitality_sector',                         'Housekeeping and Laundry',                 'Hospitality'),
+        -- Agribusiness
+        ('horticulture_farm_management_agribusiness_sector',                    'Horticulture Farm Management',             'Agribusiness'),
+        ('vegetable_production_and_aquaculture_agribusiness_sector',            'Vegetable Production and Aquaculture',     'Agribusiness'),
+        ('dairy_farm_management_agribusiness_sector',                           'Dairy Farm Management',                    'Agribusiness'),
+        -- Media
+        ('photography__videography_media_sector',                               'Photography and Videography',              'Media'),
+        -- Beauty Hairdressing and Textile
+        ('tailoring_and_dressmaking_beautyhairdressing_and_textile_sector',     'Tailoring and Dressmaking',                'Beauty Hairdressing and Textile'),
+        ('beauty_therapy_beautyhairdressing_and_textile_sector',                'Beauty Therapy',                           'Beauty Hairdressing and Textile'),
+        ('hair_dressing_beautyhairdressing_and_textile_sector',                 'Hair Dressing',                            'Beauty Hairdressing and Textile'),
+        -- ICT
+        ('information_communication_and_technology_ict',                        'Information Communication and Technology', 'ICT'),
+        -- Other
+        ('other',                                                               'Other',                                    'Other')
+    ) as t(skill_enrolled_apr, skill_name, sector_name)
 )
 
 select
@@ -470,7 +523,7 @@ select
         else lower(trim(is_young_mother))
     end as is_young_mother,
     apprenticeship_provider_apr,
-    skill_enrolled_apr,
+    d.skill_enrolled_apr,
     placement_date_apr,
     grant_amount_bg,
     date_grant_allocated_bg,
@@ -537,5 +590,10 @@ select
     course_enrolled_tvet,
     start_date_tvet,
     completion_date_tvet,
-    nita_exams
-from deduplicated_cases
+    nita_exams,
+
+    m.skill_name,
+    m.sector_name
+from deduplicated_cases d
+left join skill_sector_mapping m
+    on d.skill_enrolled_apr = m.skill_enrolled_apr

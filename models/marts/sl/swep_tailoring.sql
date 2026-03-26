@@ -5,8 +5,10 @@ select
     date_of_registration,
     pp_unique_id,
     pp_fullname,
+    'Tailoring' as service,
     gender,
     nationality,
+    refugee_type,
     kenyan_national_id_number_dir,
     county,
     subcounty,
@@ -14,6 +16,7 @@ select
     primary_phone_number,
     phone_last_8_digits,
     is_pwd,
+    type_of_disability_dir,
     is_young_mother,
     swep_tailoring_center_st,
     start_date_of_training_st,
@@ -25,4 +28,3 @@ where (swep_tailoring_center_st is not null and trim(swep_tailoring_center_st) !
    or start_date_of_training_st is not null
    or expected_end_date_of_training_st is not null
    or (training_session_st is not null and trim(training_session_st) != '')
-

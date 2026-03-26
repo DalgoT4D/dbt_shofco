@@ -94,6 +94,7 @@ select
     forego_basic_essentials,
     support_from_shofco,
     refugee_type,
+    null::text as type_of_disability_dir,
     activity,
     intervention,
     name_of_tvet,

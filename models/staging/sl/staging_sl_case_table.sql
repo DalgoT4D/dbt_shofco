@@ -34,7 +34,7 @@ with raw_cases as (
             data -> 'properties' ->> 'gender_bm',
             data -> 'properties' ->> 'gender_csf',
             data -> 'properties' ->> 'gender_hh_dka'
-        ) as gender,
+        ) as gender_raw,
         COALESCE(
             data -> 'properties' ->> 'do_you_have_children_sr',
             data -> 'properties' ->> 'do_you_have_children_uf'
@@ -43,6 +43,10 @@ with raw_cases as (
             data -> 'properties' ->> 'nationality_csf',
             data -> 'properties' ->> 'nationality_dir'
         ) as nationality,
+        coalesce(
+            data -> 'properties' ->> 'participants_refugee_type_dir',
+            data -> 'properties' ->> 'refugee_type_dir'
+        ) as refugee_type,
         data -> 'properties' ->> 'kenyan_national_id_number_dir' as kenyan_national_id_number_dir,
         coalesce(
             data -> 'properties' ->> 'county_dir',
@@ -92,6 +96,11 @@ with raw_cases as (
             data -> 'properties' ->> 'is_pwd_csf',
             data -> 'properties' ->> 'is_pwd_tvbl'
         ) as is_pwd,
+        coalesce(
+            data -> 'properties' ->> 'type_of_disability_dir',
+            data -> 'properties' ->> 'type_of_disability',
+            data -> 'properties' ->> 'type_of_disability_tvbl'
+        ) as type_of_disability_dir,
         data -> 'properties' ->> 'apprenticeship_provider_apr' as apprenticeship_provider_apr,
         data -> 'properties' ->> 'skill_enrolled_apr' as skill_enrolled_apr,
         data -> 'properties' ->> 'placement_date_apr' as placement_date_apr_raw,
@@ -188,9 +197,10 @@ select
         pp_fullname,
         profession_of_facilitator_psr,
         psychosocial_facilitator_psr,
-        gender,
+        {{ normalize_gender('gender_raw') }} as gender,
         do_you_have_children,
         nationality,
+        refugee_type,
         kenyan_national_id_number_dir,
         county,
         subcounty,
@@ -201,9 +211,10 @@ select
         primary_phone_number,
         right(primary_phone_number, 8) as phone_last_8_digits,
         is_pwd,
+        type_of_disability_dir,
         case
-            when lower(trim(gender)) = 'female' and lower(trim(do_you_have_children)) = 'yes' then 'yes'
-            when gender is null or trim(gender) = '' or do_you_have_children is null or trim(do_you_have_children) = '' then 'don''t know'
+            when lower(trim({{ normalize_gender('gender_raw') }})) = 'female' and lower(trim(do_you_have_children)) = 'yes' then 'yes'
+            when {{ normalize_gender('gender_raw') }} is null or trim({{ normalize_gender('gender_raw') }}) = '' or do_you_have_children is null or trim(do_you_have_children) = '' then 'don''t know'
             when lower(trim(do_you_have_children)) = 'no' then 'no'
             else 'no'
         end as is_young_mother,
@@ -324,6 +335,7 @@ deduplicated_cases as (
         max(nullif(trim(kenyan_national_id_number_dir), '')) as kenyan_national_id_number_dir,
         max(nullif(trim(gender), '')) as gender,
         max(nullif(trim(nationality), '')) as nationality,
+        max(nullif(trim(refugee_type), '')) as refugee_type,
         max(nullif(trim(county), '')) as county,
         max(nullif(trim(subcounty), '')) as subcounty,
         max(nullif(trim(ward), '')) as ward,
@@ -337,6 +349,7 @@ deduplicated_cases as (
                 THEN 'yes'
             ELSE max(nullif(trim(is_pwd), ''))
         END as is_pwd,
+        max(nullif(trim(type_of_disability_dir), '')) as type_of_disability_dir,
         CASE
             WHEN max(CASE WHEN lower(nullif(trim(is_young_mother), '')) = 'yes' THEN 1 ELSE 0 END) = 1 THEN 'yes'
             WHEN max(CASE WHEN lower(nullif(trim(is_young_mother), '')) = 'don''t know' THEN 1 ELSE 0 END) = 1 THEN 'don''t know'
@@ -485,6 +498,7 @@ select
     psychosocial_facilitator_psr,
     gender,
     nationality,
+    refugee_type,
     kenyan_national_id_number_dir,
     case
         when county is null or trim(county) = '' then null
@@ -515,6 +529,7 @@ select
     primary_phone_number,
     phone_last_8_digits,
     case when is_pwd is null or trim(is_pwd) = '' then null else initcap(is_pwd) end as is_pwd,
+    nullif(trim(type_of_disability_dir), '') as type_of_disability_dir,
     case
         when is_young_mother is null or trim(is_young_mother) = '' then null
         when lower(trim(is_young_mother)) = 'yes' then 'yes'

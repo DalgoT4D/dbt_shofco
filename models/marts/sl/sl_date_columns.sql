@@ -9,7 +9,9 @@ select
     subcounty,
     ward,
     nationality,
+    refugee_type,
     is_pwd,
+    type_of_disability_dir,
     is_young_mother,
     
     -- Registration dates

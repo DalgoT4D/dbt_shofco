@@ -5,8 +5,10 @@ select
     date_of_registration,
     pp_unique_id,
     pp_fullname,
+    'Coworking' as service,
     gender,
     nationality,
+    refugee_type,
     kenyan_national_id_number_dir,
     county,
     subcounty,
@@ -14,6 +16,7 @@ select
     primary_phone_number,
     phone_last_8_digits,
     is_pwd,
+    type_of_disability_dir,
     is_young_mother,
     date_of_visit_csf,
     date_of_visit_csr,
@@ -50,4 +53,3 @@ where date_of_visit_csf is not null
    or (time_in_csr is not null and trim(time_in_csr) != '')
    or (time_out_csf is not null and trim(time_out_csf) != '')
    or (time_out_csr is not null and trim(time_out_csr) != '')
-

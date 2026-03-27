@@ -107,6 +107,8 @@ with raw_cases as (
         data -> 'properties' ->> 'grant_amount_bg' as grant_amount_bg,
         data -> 'properties' ->> 'type_of_business_you_operate_bga' as type_of_business_you_operate_bga,
         data -> 'properties' ->> 'mark_the_location_of_the_business' as mark_the_location_of_the_business_raw,
+        data -> 'properties' ->> 'gps_of_business_location_apbl' as gps_of_business_location_apbl_raw,
+        data -> 'properties' ->> 'location_of_institution_ttia' as location_of_institution_ttia_raw,
         data -> 'properties' ->> 'date_grant_allocated_bg' as date_grant_allocated_bg_raw,
         data -> 'properties' ->> 'digital_literacy_dl' as digital_literacy_dl,
         data -> 'properties' ->> 'start_date_dl' as start_date_dl_raw,
@@ -245,6 +247,51 @@ mark_the_location_of_the_business_raw,
             when mark_the_location_of_the_business_raw is not null
             then split_part(mark_the_location_of_the_business_raw, ' ', 4)::double precision
         end as business_accuracy,
+
+        gps_of_business_location_apbl_raw,
+
+        case
+            when gps_of_business_location_apbl_raw is not null
+            then split_part(gps_of_business_location_apbl_raw, ' ', 1)::double precision
+        end as apprenticeship_latitude,
+
+        case
+            when gps_of_business_location_apbl_raw is not null
+            then split_part(gps_of_business_location_apbl_raw, ' ', 2)::double precision
+        end as apprenticeship_longitude,
+
+        case
+            when gps_of_business_location_apbl_raw is not null
+            then split_part(gps_of_business_location_apbl_raw, ' ', 3)::double precision
+        end as apprenticeship_altitude,
+
+        case
+            when gps_of_business_location_apbl_raw is not null
+            then split_part(gps_of_business_location_apbl_raw, ' ', 4)::double precision
+        end as apprenticeship_accuracy,
+
+        location_of_institution_ttia_raw,
+
+        case
+            when location_of_institution_ttia_raw is not null
+            then split_part(location_of_institution_ttia_raw, ' ', 1)::double precision
+        end as tvet_latitude,
+
+        case
+            when location_of_institution_ttia_raw is not null
+            then split_part(location_of_institution_ttia_raw, ' ', 2)::double precision
+        end as tvet_longitude,
+
+        case
+            when location_of_institution_ttia_raw is not null
+            then split_part(location_of_institution_ttia_raw, ' ', 3)::double precision
+        end as tvet_altitude,
+
+        case
+            when location_of_institution_ttia_raw is not null
+            then split_part(location_of_institution_ttia_raw, ' ', 4)::double precision
+        end as tvet_accuracy,
+
         digital_literacy_dl,
         {{ validate_date('start_date_dl_raw') }} as start_date_dl,
         {{ validate_date('advanced_it_start_date_dl_raw') }} as advanced_it_start_date_dl,
@@ -366,6 +413,16 @@ deduplicated_cases as (
         max(business_longitude) as business_longitude,
         max(business_altitude) as business_altitude,
         max(business_accuracy) as business_accuracy,
+        max(gps_of_business_location_apbl_raw) as gps_of_business_location_apbl_raw,
+        max(apprenticeship_latitude) as apprenticeship_latitude,
+        max(apprenticeship_longitude) as apprenticeship_longitude,
+        max(apprenticeship_altitude) as apprenticeship_altitude,
+        max(apprenticeship_accuracy) as apprenticeship_accuracy,
+        max(location_of_institution_ttia_raw) as location_of_institution_ttia_raw,
+        max(tvet_latitude) as tvet_latitude,
+        max(tvet_longitude) as tvet_longitude,
+        max(tvet_altitude) as tvet_altitude,
+        max(tvet_accuracy) as tvet_accuracy,
         max(nullif(trim(digital_literacy_dl), '')) as digital_literacy_dl,
         max(start_date_dl) as start_date_dl,
         max(advanced_it_start_date_dl) as advanced_it_start_date_dl,
@@ -548,6 +605,16 @@ select
     business_longitude,
     business_altitude,
     business_accuracy,
+    gps_of_business_location_apbl_raw,
+    apprenticeship_latitude,
+    apprenticeship_longitude,
+    apprenticeship_altitude,
+    apprenticeship_accuracy,
+    location_of_institution_ttia_raw,
+    tvet_latitude,
+    tvet_longitude,
+    tvet_altitude,
+    tvet_accuracy,
     digital_literacy_dl,
     start_date_dl,
     advanced_it_start_date_dl,

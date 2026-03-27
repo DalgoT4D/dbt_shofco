@@ -24,7 +24,12 @@ select
     start_date_tvet,
     nita_exams,
     how_helpful_course_tvet,
-    recommend_training_tvet
+    recommend_training_tvet,
+    location_of_institution_ttia_raw,
+    tvet_latitude,
+    tvet_longitude,
+    tvet_altitude,
+    tvet_accuracy
 from {{ ref('staging_sl_case_table') }}
 where (name_of_institution_tvet is not null and trim(name_of_institution_tvet) != '')
    or (course_enrolled_tvet is not null and trim(course_enrolled_tvet) != '')

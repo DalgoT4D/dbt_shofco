@@ -22,7 +22,12 @@ select
     skill_enrolled_apr,
     skill_name,
     sector_name,
-    placement_date_apr
+    placement_date_apr,
+    gps_of_business_location_apbl_raw,
+    apprenticeship_latitude,
+    apprenticeship_longitude,
+    apprenticeship_altitude,
+    apprenticeship_accuracy
 from {{ ref('staging_sl_case_table') }}
 where apprenticeship_provider_apr is not null
   and trim(apprenticeship_provider_apr) != ''

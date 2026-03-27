@@ -108,7 +108,7 @@ with raw_cases as (
         data -> 'properties' ->> 'type_of_business_you_operate_bga' as type_of_business_you_operate_bga,
         data -> 'properties' ->> 'mark_the_location_of_the_business' as mark_the_location_of_the_business_raw,
         data -> 'properties' ->> 'gps_of_business_location_apbl' as gps_of_business_location_apbl_raw,
-        data -> 'properties' ->> 'location_of_institution_ttia' as location_of_institution_ttia_raw,
+        data -> 'properties' ->> 'location_of_institute_ttia' as location_of_institution_ttia_raw,
         data -> 'properties' ->> 'date_grant_allocated_bg' as date_grant_allocated_bg_raw,
         data -> 'properties' ->> 'digital_literacy_dl' as digital_literacy_dl,
         data -> 'properties' ->> 'start_date_dl' as start_date_dl_raw,

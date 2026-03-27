@@ -226,7 +226,8 @@ select
         {{ validate_date('placement_date_apr_raw') }} as placement_date_apr,
         grant_amount_bg,
         {{ validate_date('date_grant_allocated_bg_raw') }} as date_grant_allocated_bg,
-mark_the_location_of_the_business_raw,
+
+        mark_the_location_of_the_business_raw,
 
         case 
             when mark_the_location_of_the_business_raw is not null
@@ -487,11 +488,11 @@ deduplicated_cases as (
         END as nita_exams
     from prepared_cases
     group by
-        norm_pp_unique_id,
-        norm_pp_fullname,
-        norm_kenyan_id,
-        phone_last_8_digits,
-        norm_county
+        coalesce(norm_pp_unique_id, case_id),
+        coalesce(norm_pp_fullname, case_id),
+        coalesce(norm_kenyan_id, case_id),
+        coalesce(phone_last_8_digits, case_id),
+        coalesce(norm_county, case_id)
 ),
 
 skill_sector_mapping as (

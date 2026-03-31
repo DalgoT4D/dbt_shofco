@@ -29,5 +29,5 @@ select
     apprenticeship_altitude,
     apprenticeship_accuracy
 from {{ ref('staging_sl_case_table') }}
-where apprenticeship_provider_apr is not null
-  and trim(apprenticeship_provider_apr) != ''
+where (apprenticeship_provider_apr is not null and trim(apprenticeship_provider_apr) != '')
+   or gps_of_business_location_apbl_raw is not null

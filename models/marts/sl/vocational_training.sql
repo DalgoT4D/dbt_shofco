@@ -34,3 +34,4 @@ from {{ ref('staging_sl_case_table') }}
 where (name_of_institution_tvet is not null and trim(name_of_institution_tvet) != '')
    or (course_enrolled_tvet is not null and trim(course_enrolled_tvet) != '')
    or start_date_tvet is not null
+   or location_of_institution_ttia_raw is not null

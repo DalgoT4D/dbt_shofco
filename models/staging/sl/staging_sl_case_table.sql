@@ -108,7 +108,7 @@ with raw_cases as (
         data -> 'properties' ->> 'type_of_business_you_operate_bga' as type_of_business_you_operate_bga,
         data -> 'properties' ->> 'mark_the_location_of_the_business' as mark_the_location_of_the_business_raw,
         data -> 'properties' ->> 'gps_of_business_location_apbl' as gps_of_business_location_apbl_raw,
-        data -> 'properties' ->> 'location_of_institution_ttia' as location_of_institution_ttia_raw,
+        data -> 'properties' ->> 'location_of_institute_ttia' as location_of_institution_ttia_raw,
         data -> 'properties' ->> 'date_grant_allocated_bg' as date_grant_allocated_bg_raw,
         data -> 'properties' ->> 'digital_literacy_dl' as digital_literacy_dl,
         data -> 'properties' ->> 'start_date_dl' as start_date_dl_raw,
@@ -226,7 +226,8 @@ select
         {{ validate_date('placement_date_apr_raw') }} as placement_date_apr,
         grant_amount_bg,
         {{ validate_date('date_grant_allocated_bg_raw') }} as date_grant_allocated_bg,
-mark_the_location_of_the_business_raw,
+
+        mark_the_location_of_the_business_raw,
 
         case 
             when mark_the_location_of_the_business_raw is not null
@@ -487,11 +488,11 @@ deduplicated_cases as (
         END as nita_exams
     from prepared_cases
     group by
-        norm_pp_unique_id,
-        norm_pp_fullname,
-        norm_kenyan_id,
-        phone_last_8_digits,
-        norm_county
+        coalesce(norm_pp_unique_id, case_id),
+        coalesce(norm_pp_fullname, case_id),
+        coalesce(norm_kenyan_id, case_id),
+        coalesce(phone_last_8_digits, case_id),
+        coalesce(norm_county, case_id)
 ),
 
 skill_sector_mapping as (

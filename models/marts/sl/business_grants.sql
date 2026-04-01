@@ -1,6 +1,6 @@
 {{ config(materialized='table', tags=['sl', 'sl_marts']) }}
 
-select 
+select
     case_id,
     date_of_registration,
     pp_unique_id,
@@ -20,11 +20,7 @@ select
     is_young_mother,
     grant_amount_bg,
     date_grant_allocated_bg,
-    type_of_business_you_operate_bga,
-    business_latitude,
-    business_longitude,
-    business_altitude,
-    business_accuracy
+    type_of_business_you_operate_bga
 from {{ ref('staging_sl_case_table') }}
 where grant_amount_bg is not null
   and trim(grant_amount_bg) != ''

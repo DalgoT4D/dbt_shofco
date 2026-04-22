@@ -169,7 +169,7 @@ with raw_cases as (
             data -> 'properties' ->> 'training_session_st',
             data -> 'properties' ->> 'training_session_sr'
         ) as training_session_st,
-        data -> 'properties' ->> 'name_of_institution_tvet' as name_of_institution_tvet,
+        data -> 'properties' ->> 'name_of_institution_tvet' as old_institution,
         data -> 'properties' ->> 'name_of_facilitator' as name_of_facilitator,
         coalesce(
         data -> 'properties' ->> 'course_enrolled_tvet',
@@ -345,7 +345,7 @@ select
         {{ validate_date('start_date_of_training_st_raw') }} as start_date_of_training_st,
         {{ validate_date('expected_end_date_of_training_st_raw') }} as expected_end_date_of_training_st,
         training_session_st,
-        name_of_institution_tvet,
+        old_institution,
         name_of_facilitator,
         course_enrolled_tvet,
         {{ validate_date('start_date_tvet_raw') }} as start_date_tvet,
@@ -476,7 +476,7 @@ deduplicated_cases as (
         max(start_date_of_training_st) as start_date_of_training_st,
         max(expected_end_date_of_training_st) as expected_end_date_of_training_st,
         max(nullif(trim(training_session_st), '')) as training_session_st,
-        max(nullif(trim(name_of_institution_tvet), '')) as name_of_institution_tvet,
+        max(nullif(trim(old_institution), '')) as old_institution,
         max(nullif(trim(name_of_facilitator), '')) as name_of_facilitator,
         max(nullif(trim(course_enrolled_tvet), '')) as course_enrolled_tvet,
         max(start_date_tvet) as start_date_tvet,
@@ -1148,7 +1148,7 @@ select
     start_date_of_training_st,
     expected_end_date_of_training_st,
     training_session_st,
-    coalesce(i.institution_name, name_of_institution_tvet) as name_of_institution_tvet,
+    coalesce(i.institution_name, d.old_institution) as name_of_institution_tvet,
     name_of_facilitator,
     course_enrolled_tvet,
     start_date_tvet,
@@ -1161,4 +1161,4 @@ from deduplicated_cases d
 left join skill_sector_mapping m
     on d.skill_enrolled_apr = m.skill_enrolled_apr
 left join institution_name_mapping i
-    on lower(trim(d.name_of_institution_tvet)) = lower(trim(i.old_institution))
+    on lower(trim(d.old_institution)) = lower(trim(i.old_institution))

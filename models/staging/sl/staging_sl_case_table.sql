@@ -1148,7 +1148,7 @@ select
     start_date_of_training_st,
     expected_end_date_of_training_st,
     training_session_st,
-    i.institution_name as name_of_institution_tvet,
+    coalesce(i.institution_name, d.old_institution) as name_of_institution_tvet,
     name_of_facilitator,
     course_enrolled_tvet,
     start_date_tvet,

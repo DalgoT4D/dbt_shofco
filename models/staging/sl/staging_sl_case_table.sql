@@ -546,7 +546,7 @@ skill_sector_mapping as (
         ('other',                                                               'Other',                                    'Other')
     ) as t(skill_enrolled_apr, skill_name, sector_name)
 ),
-
+-- Lookup CTE: maps raw CommCare name_of_institution_tvet values to standardized institution names
 institution_name_mapping as (
     select old_institution, institution_name
     from (values

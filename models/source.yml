@@ -2,7 +2,6 @@
 version: 2
 
 sources:
-
   - name: staging_sl
     schema: staging_sl
     tables:
@@ -13,6 +12,8 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
+      - name: tvet_institution_mapping
+        identifier: tvet_institution_mapping
       - name: Psychosocial_Support_Register
         description: Psychosocial Support Register
         tests:

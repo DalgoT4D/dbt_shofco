@@ -27,10 +27,8 @@ WITH initial_cases AS (
         ->> 'beneficiary_categories' AS beneficiary_categories,
         data::json -> 'properties' ->> 'case_name' AS case_name,
         data::json -> 'properties' ->> 'date_opened' AS date_opened,
-        -- Placeholder for training_type, specific to subsequent cases
         NULL AS training_type,
         indexed_on,
-        -- Placeholder for parent_case_id, specific to subsequent cases
         NULL AS parent_case_id
     FROM {{ source('staging_youth', 'zzz_case') }}
     WHERE
@@ -62,12 +60,10 @@ subsequent_cases AS (
         ->> 'beneficiary_categories' AS beneficiary_categories,
         data::json -> 'properties' ->> 'case_name' AS case_name,
         data::json -> 'properties' ->> 'date_opened' AS date_opened,
-        -- Training type from subsequent cases
         data::json
         -> 'properties'
         ->> 'mental_health_training_session_type' AS training_type,
         indexed_on,
-        -- Parent case ID for subsequent cases
         data::json -> 'indices' -> 'parent' ->> 'case_id' AS parent_case_id
     FROM {{ source('staging_youth', 'zzz_case') }}
     WHERE data::json -> 'indices' ->> 'parent' IS NOT NULL
@@ -77,10 +73,32 @@ final_cte AS (
     SELECT * FROM initial_cases
     UNION ALL
     SELECT * FROM subsequent_cases
+),
+
+with_county_name AS (
+    SELECT
+        f.case_id,
+        f.ward,
+        COALESCE(wl.county_name, f.county) AS county,
+        f.constituency,
+        f.date_of_registration,
+        f.beneficiary_gender,
+        f.name_of_the_beneficiary,
+        f.beneficiary_phone_number,
+        f.registered_by,
+        f.beneficiary_categories,
+        f.case_name,
+        f.date_opened,
+        f.training_type,
+        f.indexed_on,
+        f.parent_case_id
+    FROM final_cte f
+    LEFT JOIN {{ source('staging_gender', 'ward_lookup') }} wl
+        ON UPPER(f.county) = UPPER(wl.county_code)
 )
 
 {{ dbt_utils.deduplicate(
-    relation='final_cte',
+    relation='with_county_name',
     partition_by='case_id',
     order_by='indexed_on desc',
    )

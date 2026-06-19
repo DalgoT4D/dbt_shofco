@@ -6,7 +6,11 @@
 with champions_cte as (
     select
         INITCAP(TRIM("Champions_Name")) as champions_name,
-        INITCAP(TRIM("County")) as county,
+        CASE 
+            WHEN INITCAP(TRIM("County")) IN ('Transnzoia', 'Transznzoia') THEN 'Trans Nzoia'
+            WHEN INITCAP(TRIM("County")) = 'Homabay' THEN 'Homa Bay'
+            ELSE INITCAP(TRIM("County"))
+        END as county,
         INITCAP(TRIM("Gender")) as gender, 
         "National_ID" as national_id,
         "Mobile" as mobile,

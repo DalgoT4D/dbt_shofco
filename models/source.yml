@@ -961,7 +961,14 @@ sources:
               config:
                 severity: error
 
-
+      - name: ward_lookup
+        identifier: ward_lookup
+        description: Lookup table for ward, constituency and county administrative units
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
+                
       - name: raw_case
         identifier: zzz_case
         description: All cases

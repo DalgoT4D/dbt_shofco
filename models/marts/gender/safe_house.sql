@@ -7,7 +7,10 @@ with
 case_occurrences_data as (
     select
         case_id,
-        assigned_to,
+        CASE 
+            WHEN LOWER(assigned_to) = 'wilson.onyango' THEN 'wilson.obiero'
+            ELSE assigned_to
+        END as assigned_to,
         {{ validate_date("date_of_safehouse_onboarding") }}
         as date_of_safe_house_onboarding,
         {{ validate_date("date_of_discharge") }} as date_of_safe_house_discharge
@@ -16,8 +19,6 @@ case_occurrences_data as (
 ),
 
 case_dates as (
-    -- Extract the minimum and maximum dates from the cases table if start_date or
-    -- end_date is null
     select
         min(date_of_safe_house_onboarding) as earliest_open_date,
         max(
@@ -27,13 +28,10 @@ case_dates as (
 ),
 
 date_range as (
-    -- Generate the date range using either the provided start/end dates or the
-    -- full range in the dataset if null
     select
         date_trunc(
             'month',
             generate_series(
-
                 cd.earliest_open_date, cd.latest_close_date, interval '1 month'
             )
         ) as month
@@ -60,5 +58,5 @@ select
     month,
     count(distinct case_id) as people_in_safe_house
 from people_in_safe_houses_per_month
-group by assigned_to,month
+group by assigned_to, month
 order by assigned_to, month

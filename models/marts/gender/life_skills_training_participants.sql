@@ -16,7 +16,10 @@ SELECT DISTINCT
     participants.ward as case_ward_name,
     participants.constituency as case_constituency_name,
     participants.county_code,
-    participants.assigned_to,
+    CASE 
+        WHEN LOWER(participants.assigned_to) = 'wilson.onyango' THEN 'wilson.obiero'
+        ELSE participants.assigned_to
+    END as assigned_to,
     CASE 
         WHEN LENGTH(participants.county_code) > 3 THEN REPLACE(INITCAP(participants.county_code), '_', ' ')
         ELSE REPLACE(locations.county_name, '_', ' ')

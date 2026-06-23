@@ -17,7 +17,10 @@ safe_house_data as (
 case_occurrences_data as (
     select
         case_id,
-        assigned_to,
+        CASE 
+            WHEN LOWER(assigned_to) = 'wilson.onyango' THEN 'wilson.obiero'
+            ELSE assigned_to
+        END as assigned_to,
         previous_case_number,
         date_modified::timestamptz as date_modified,
         {{ validate_date("date_of_reporting") }} as date_of_case_reporting,
@@ -86,7 +89,6 @@ case_occurrences_data as (
             else 'no'
         end as referred_for_medical_intervention,
         village_of_incident_report as incident_report_village_name,
-        -- Normalize ward code: replace /, spaces, hyphens with underscore; remove apostrophes
         LOWER(
             REPLACE(
                 REPLACE(
@@ -96,7 +98,6 @@ case_occurrences_data as (
                 '-', '_'),
             '''', '')
         ) as incident_report_ward_code,
-        -- Normalize constituency code: fix double underscores, replace with single
         LOWER(
             REPLACE(
                 REPLACE(constituency_of_incident_report, '__', '_'),
@@ -131,7 +132,6 @@ case_occurrences_data as (
     from {{ ref("staging_gender_case_occurrences_commcare") }}
 ),
 
--- Deduplicate cases keeping one row per case_id to avoid double counting
 deduplicated_cases as (
     select distinct on (case_id) *
     from case_occurrences_data
@@ -220,19 +220,15 @@ select distinct
             end) > 50 then 'Above 50 years'
         else 'Unknown'
     end as age_group,
-    -- County: use lookup name, fallback to cleaned raw code
     INITCAP(REPLACE(
         COALESCE(locations.county_name, cases.incident_report_county_code),
     '_', ' ')) as county,
-    -- Constituency: use lookup name, fallback to cleaned raw code
     INITCAP(REPLACE(
         COALESCE(locations.constituency_name, cases.incident_report_constituency_code),
     '_', ' ')) as case_constituency_name,
-    -- Ward: use lookup name, fallback to cleaned raw code
     INITCAP(REPLACE(
         COALESCE(locations.ward_name, cases.incident_report_ward_code),
     '_', ' ')) as case_ward_name,
-    -- Site: use lookup name
     INITCAP(gender_sites.site_name) as site,
     case when cases.case_referred_to_location is NULL then 'Yes' else 'No' end as is_case_referred
 
@@ -246,7 +242,6 @@ left join
 left join
     {{ source("staging_gender", "dim_location_administrative_units") }} as locations
     on
-        -- Match on county + constituency + ward with normalized codes
         LOWER(cases.incident_report_county_code) = LOWER(locations.county_code)
         and LOWER(
                 REPLACE(REPLACE(cases.incident_report_constituency_code, '__', '_'), '-', '_')

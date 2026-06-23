@@ -6,7 +6,6 @@
 WITH roc_club_participants AS (
     SELECT
         data::jsonb -> 'form' ->> 'target_group' AS target_group,
-        -- Extract term from either location (new format first, then old format)
         COALESCE(
             data::jsonb -> 'form' ->> 'term',
             data::jsonb -> 'form' -> 'school_information' ->> 'term'
@@ -23,9 +22,7 @@ WITH roc_club_participants AS (
                 data::jsonb -> 'form' -> 'school_information' ->> 'year'
             )
         END AS year,
-        -- Use 'received_on' for the form-filling date
         data::jsonb ->> 'received_on' AS form_filling_date,
-        -- Extract the session ID
         data::jsonb -> 'form' -> 'meta' ->> 'instanceID' AS session_id,
         jsonb_array_elements(
             data -> 'form' -> 'membership_details'
@@ -34,7 +31,6 @@ WITH roc_club_participants AS (
         (data::jsonb -> 'form' -> 'geographical_location' ->> 'county') AS county_code,
         (data::jsonb -> 'form' -> 'geographical_location' ->> 'constituency') AS constituency,
         (data::jsonb -> 'form' -> 'meta' ->> 'username') AS assigned_to,
-        -- Assign start and end dates for each term as timestamp
         CASE
             WHEN COALESCE(
                 data::jsonb -> 'form' ->> 'term',
@@ -50,7 +46,6 @@ WITH roc_club_participants AS (
             ) = 'term3' THEN to_timestamp('2024-04-21', 'YYYY-MM-DD')
             ELSE NULL::timestamp
         END AS term_start_date,
-
         CASE
             WHEN COALESCE(
                 data::jsonb -> 'form' ->> 'term',
@@ -69,7 +64,7 @@ WITH roc_club_participants AS (
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
     WHERE
         data::jsonb->'form'->>'target_group' = 'roc_club'
-        AND jsonb_typeof(data->'form'->'membership_details') = 'array'  -- Ensure it's an array
+        AND jsonb_typeof(data->'form'->'membership_details') = 'array'
         AND (data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false')
 ),
 
@@ -91,11 +86,11 @@ community_safe_space_participants AS (
                 data::jsonb -> 'form' -> 'school_information' ->> 'year'
             )
         END AS year,
-        NULL::timestamp AS term_start_date,-- Use NULL for timestamp fields to maintain consistency with ROC Club
+        NULL::timestamp AS term_start_date,
         NULL::timestamp AS term_end_date,
         data::jsonb -> 'form' ->> 'target_group' AS target_group,
-        data::jsonb ->> 'received_on' AS form_filling_date,-- Use 'received_on' for the form-filling date
-        data::jsonb -> 'form' -> 'meta' ->> 'instanceID' AS session_id,-- Extract the session ID
+        data::jsonb ->> 'received_on' AS form_filling_date,
+        data::jsonb -> 'form' -> 'meta' ->> 'instanceID' AS session_id,
         jsonb_array_elements(
             data -> 'form' -> 'community_safe_space_participants_details'
         ) AS participant_data,
@@ -106,46 +101,69 @@ community_safe_space_participants AS (
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
     WHERE
         data::jsonb->'form'->>'target_group' = 'community_safe_space'
-        AND jsonb_typeof(data->'form'->'community_safe_space_participants_details') = 'array'  -- Ensure it's an array
+        AND jsonb_typeof(data->'form'->'community_safe_space_participants_details') = 'array'
         AND (data::jsonb->>'archived' IS NULL OR data::jsonb->>'archived' = 'false')
+),
+
+combined AS (
+    SELECT DISTINCT
+        target_group,
+        term,
+        year,
+        term_start_date,
+        term_end_date,
+        form_filling_date,
+        session_id,
+        COALESCE(
+            participant_data ->> 'member_full_names',
+            participant_data ->> 'member_full_names_first_middle_surname'
+        ) AS participant_name,
+        participant_data ->> 'member_gender' AS gender,
+        ward,
+        county_code,
+        constituency,
+        assigned_to
+    FROM roc_club_participants
+
+    UNION ALL
+
+    SELECT DISTINCT
+        target_group,
+        term,
+        year,
+        term_start_date,
+        term_end_date,
+        form_filling_date,
+        session_id,
+        participant_data ->> 'full_name_first_middle_surname' AS participant_name,
+        participant_data ->> 'gender' AS gender,
+        ward,
+        county_code,
+        constituency,
+        assigned_to
+    FROM community_safe_space_participants
 )
 
--- Combine the participants from both roc_club and community_safe_space
 SELECT DISTINCT
-    target_group,
-    term,
-    year,  -- Year extracted from JSON with choice5 -> 2024 conversion
-    term_start_date,  -- Start date based on the term or NULL
-    term_end_date,    -- End date based on the term or NULL
-    form_filling_date,  -- The form's actual submission date
-    session_id,  -- Include the session ID
-    -- For ROC Club - handle both old and new format field names
-    COALESCE(
-        participant_data ->> 'member_full_names',
-        participant_data ->> 'member_full_names_first_middle_surname'
-    ) AS participant_name,
-    participant_data ->> 'member_gender' AS gender,
-    ward,
-    county_code,
-    constituency,
-    assigned_to
-FROM roc_club_participants
-
-UNION ALL
-
-SELECT DISTINCT
-    target_group,
-    term,
-    year,  -- Year extracted from JSON with choice5 -> 2024 conversion
-    term_start_date,  -- NULL for community safe space
-    term_end_date,    -- NULL for community safe space
-    form_filling_date,  -- The form's actual submission date
-    session_id,  -- Include the session ID
-    -- For Community Safe Space
-    participant_data ->> 'full_name_first_middle_surname' AS participant_name,
-    participant_data ->> 'gender' AS gender,  -- For Community Safe Space
-    ward,
-    county_code,
-    constituency,
-    assigned_to
-FROM community_safe_space_participants
+    c.target_group,
+    c.term,
+    c.year,
+    c.term_start_date,
+    c.term_end_date,
+    c.form_filling_date,
+    c.session_id,
+    c.participant_name,
+    c.gender,
+    c.ward,
+    c.county_code,
+    c.constituency,
+    c.assigned_to,
+    -- Normalize county: handle short codes, underscores, hyphens, mixed case
+    CASE
+        WHEN LENGTH(TRIM(c.county_code)) <= 3
+            THEN wl.county_name
+        ELSE INITCAP(REPLACE(REPLACE(TRIM(c.county_code), '_', ' '), '-', ' '))
+    END as county
+FROM combined c
+LEFT JOIN {{ source('staging_gender', 'ward_lookup') }} wl
+    ON UPPER(TRIM(c.county_code)) = UPPER(wl.county_code)

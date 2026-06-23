@@ -5,7 +5,7 @@
 
 WITH initial_mental_health_assessment_staging AS (
     SELECT
-        id,  -- Extract the unique form ID
+        id,
 
         -- Extract the case ID and user ID from 'case'
         data::jsonb -> 'form' -> 'case' ->> '@case_id' AS case_id,
@@ -33,8 +33,8 @@ WITH initial_mental_health_assessment_staging AS (
         -> 'client_mental_health_scores'
         ->> 'client_mental_health_score_trauma_symptoms' AS trauma_symptoms,
 
-        -- Extract geographical location details
-        data::jsonb -> 'form' -> 'geographical_location_of_counselling' ->> 'county' AS county,
+        -- Extract raw county for normalization
+        data::jsonb -> 'form' -> 'geographical_location_of_counselling' ->> 'county' AS county_raw,
         data::jsonb -> 'form' -> 'geographical_location_of_counselling' ->> 'village' AS village,
         data::jsonb -> 'form' -> 'geographical_location_of_counselling' ->> 'gender_site_code' AS gender_site_code,
 
@@ -48,18 +48,24 @@ WITH initial_mental_health_assessment_staging AS (
 )
 
 SELECT DISTINCT
-    id,
-    initial_form_filling_date,
-    case_id,
-    user_id,
-    -- Include all relevant mental health scores as separate columns
-    behavioral_issues,
-    drug_abuse,
-    psychiatric_symptoms,
-    social_emotional_issues,
-    trauma_symptoms,
-    county,
-    village,
-    gender_site_code,
-    session_id
-FROM initial_mental_health_assessment_staging
+    s.id,
+    s.initial_form_filling_date,
+    s.case_id,
+    s.user_id,
+    s.behavioral_issues,
+    s.drug_abuse,
+    s.psychiatric_symptoms,
+    s.social_emotional_issues,
+    s.trauma_symptoms,
+    -- Normalize county: handle short codes, underscores, hyphens, mixed case
+    CASE
+        WHEN LENGTH(TRIM(s.county_raw)) <= 3
+            THEN wl.county_name
+        ELSE INITCAP(REPLACE(REPLACE(TRIM(s.county_raw), '_', ' '), '-', ' '))
+    END as county,
+    s.village,
+    s.gender_site_code,
+    s.session_id
+FROM initial_mental_health_assessment_staging s
+LEFT JOIN {{ source('staging_gender', 'ward_lookup') }} wl
+    ON UPPER(TRIM(s.county_raw)) = UPPER(wl.county_code)

@@ -1,6 +1,6 @@
 {{ config(materialized='table', tags=['sl', 'sl_marts']) }}
 
-select 
+select
     case_id,
     date_of_registration,
     pp_unique_id,
@@ -22,12 +22,7 @@ select
     skill_enrolled_apr,
     skill_name,
     sector_name,
-    placement_date_apr,
-    gps_of_business_location_apbl_raw,
-    apprenticeship_latitude,
-    apprenticeship_longitude,
-    apprenticeship_altitude,
-    apprenticeship_accuracy
+    placement_date_apr
 from {{ ref('staging_sl_case_table') }}
-where (apprenticeship_provider_apr is not null and trim(apprenticeship_provider_apr) != '')
-   or gps_of_business_location_apbl_raw is not null
+where apprenticeship_provider_apr is not null
+  and trim(apprenticeship_provider_apr) != ''

@@ -1,6 +1,6 @@
 {{ config(materialized='table', tags=['sl', 'sl_marts']) }}
 
-select 
+select
     case_id,
     date_of_registration,
     pp_unique_id,
@@ -22,16 +22,11 @@ select
     name_of_facilitator,
     course_enrolled_tvet,
     start_date_tvet,
+    completion_date_tvet,
     nita_exams,
     how_helpful_course_tvet,
-    recommend_training_tvet,
-    location_of_institution_ttia_raw,
-    tvet_latitude,
-    tvet_longitude,
-    tvet_altitude,
-    tvet_accuracy
+    recommend_training_tvet
 from {{ ref('staging_sl_case_table') }}
 where (name_of_institution_tvet is not null and trim(name_of_institution_tvet) != '')
    or (course_enrolled_tvet is not null and trim(course_enrolled_tvet) != '')
    or start_date_tvet is not null
-   or location_of_institution_ttia_raw is not null

@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: sl_mel_service_participation
+    description: One row per deduplicated beneficiary-service pair from the SL MEL youth-in-work evaluation dataset.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - person_key
+            - service
+    columns:
+      - name: person_key
+        tests:
+          - not_null
+
+  - name: sl_mel_income_outcomes
+    description: One row per deduplicated beneficiary with latest employment outcome and service pathway fields for youth-in-work analysis.
+    columns:
+      - name: person_key
+        tests:
+          - not_null
+          - unique
+      - name: jobs_before_shofco
+        description: Maximum valid reported number of employees before SHOFCO support across the beneficiary's deduplicated service rows, excluding values below 0 or above 100,000.
+      - name: jobs_after_shofco
+        description: Maximum valid reported number of people employed or engaged after SHOFCO support across the beneficiary's deduplicated service rows, excluding values below 0 or above 100,000.
+      - name: net_jobs_change_after_shofco
+        description: Raw jobs-after minus jobs-before change, preserving negative values for QA.
+      - name: jobs_created_because_of_shofco
+        description: Positive-only jobs-after minus jobs-before change for dashboard jobs-created counts.
+      - name: youth_creating_jobs_because_of_shofco_flag
+        description: One when the beneficiary has a positive jobs-created-because-of-SHOFCO value, otherwise zero.

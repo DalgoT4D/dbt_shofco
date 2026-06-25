@@ -18,6 +18,18 @@ with placements as (
         is_pwd,
         type_of_disability_dir,
         is_young_mother,
+        how_helpful_course_dl,
+        how_helpful_course_tvet,
+        how_helpful_course_ent,
+        how_helpful_course_int,
+        completed_training_dl,
+        recommend_training_dl,
+        recommend_training_tvet,
+        recommend_training_ent,
+        recommend_training_int,
+        tvet_completion_status,
+        completed_training_ent,
+        completed_training_int,
         income_on_average_pl,
         placement_opportunity_pl
     from {{ ref('staging_sl_case_table') }}
@@ -51,6 +63,27 @@ select
     placements.is_pwd,
     placements.type_of_disability_dir,
     placements.is_young_mother,
+    case
+        when participant_services.service = 'Digital Literacy' then placements.recommend_training_dl
+        when participant_services.service = 'Internship' then placements.recommend_training_int
+        when participant_services.service = 'TVET' then placements.recommend_training_tvet
+        when participant_services.service = 'Entrepreneurship' then placements.recommend_training_ent
+        else null
+    end as would_recommend,
+    case
+        when participant_services.service = 'Digital Literacy' then placements.completed_training_dl
+        when participant_services.service = 'Internship' then placements.completed_training_int
+        when participant_services.service = 'TVET' then placements.tvet_completion_status
+        when participant_services.service = 'Entrepreneurship' then placements.completed_training_ent
+        else null
+    end as completion_status,
+    case
+        when participant_services.service = 'Digital Literacy' then placements.how_helpful_course_dl
+        when participant_services.service = 'Internship' then placements.how_helpful_course_int
+        when participant_services.service = 'TVET' then placements.how_helpful_course_tvet
+        when participant_services.service = 'Entrepreneurship' then placements.how_helpful_course_ent
+        else null
+    end as service_rating,
     placements.income_on_average_pl,
     placements.placement_opportunity_pl
 from placements

@@ -62,15 +62,14 @@ case_occurrences_data as (
         gender_site_code_of_reporting,
         where_was_the_client_referred_to as case_referred_to_location,
         assault_type,
-        case
-            when assault_type ilike '%juvenile%' then 'Juvenile Case'
-            when assault_type ilike '%domestic%' then 'Domestic Violence'
-            when assault_type ilike '%sexual%' then 'Sexual Violence'
-            when assault_type ilike '%physical%' then 'Physical Violence'
-            when assault_type ilike '%negligence%' then 'Negligence'
-            when assault_type ilike '%legal%' or assault_type ilike '%counsel%' then 'Seeking Legal Counsel'
-            else 'Other'
-        end as cleaned_assault_type,
+        sexual_assault_type,
+        other_assault_type,
+        {{ gender_case_category("assault_type", "sexual_assault_type", "other_assault_type") }} as cleaned_assault_type,
+        {{ gender_case_sub_type("assault_type", "sexual_assault_type", "other_assault_type") }} as cleaned_assault_sub_type,
+
+        -- Split assault types into multiple rows
+        -- unnest(string_to_array(assault_type, ' ')) as assault_type,
+
         case
             when where_was_the_client_referred_to like '%safe_house%' then 'yes'
             else 'no'
@@ -160,7 +159,10 @@ select distinct
     cases.gender_site_code_of_reporting,
     cases.case_referred_to_location,
     cases.assault_type,
+    cases.sexual_assault_type,
+    cases.other_assault_type,
     cases.cleaned_assault_type,
+    cases.cleaned_assault_sub_type,
     cases.referred_to_safe_house,
     cases.referred_to_other_shofco_programs,
     cases.referred_to_dco,

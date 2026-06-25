@@ -44,9 +44,18 @@ models:
       - name: assault_type
         data_type: text
         description: Type of assault
+      - name: sexual_assault_type
+        data_type: text
+        description: Raw sexual violence sub-category captured on the case occurrence form.
+      - name: other_assault_type
+        data_type: text
+        description: Raw free-text sub-category captured on the case occurrence form.
       - name: cleaned_assault_type
         data_type: text
-        description: Categorized type of assault
+        description: Case category normalized to the gender dashboard taxonomy.
+      - name: cleaned_assault_sub_type
+        data_type: text
+        description: Best available case sub-category derived from the case occurrence form.
       - name: referred_to_safe_house
         data_type: text
         description: Indicates if the client was referred to a safe house

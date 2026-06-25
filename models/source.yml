@@ -127,6 +127,14 @@ sources:
           - elementary.schema_changes:
               config:
                 severity: error
+
+      - name: sl_mel_database
+        identifier: sl_mel_database
+        description: Raw Sustainable Livelihoods MEL database export
+        tests:
+          - elementary.schema_changes:
+              config:
+                severity: error
                 
   - name: staging_education
     schema: staging_education

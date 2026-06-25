@@ -6,12 +6,26 @@ with base as (
         pp_unique_id,
         pp_fullname,
         gender,
+        nationality,
         refugee_type,
         county,
+        subcounty,
         date_of_registration,
         is_pwd,
         type_of_disability_dir,
         is_young_mother,
+        how_helpful_course_dl,
+        how_helpful_course_tvet,
+        how_helpful_course_ent,
+        how_helpful_course_int,
+        completed_training_dl,
+        recommend_training_dl,
+        recommend_training_tvet,
+        recommend_training_ent,
+        recommend_training_int,
+        tvet_completion_status,
+        completed_training_ent,
+        completed_training_int,
 
         -- service participation flags
         (digital_literacy_dl is not null or start_date_dl is not null
@@ -106,6 +120,54 @@ service_grain as (
     where services.participated
 )
 
-select *
+select
+    case_id,
+    pp_unique_id,
+    pp_fullname,
+    gender,
+    nationality,
+    refugee_type,
+    county,
+    subcounty,
+    date_of_registration,
+    is_pwd,
+    type_of_disability_dir,
+    is_young_mother,
+    participated_digital_literacy,
+    participated_mentorship,
+    participated_apprenticeship,
+    participated_internship,
+    participated_handcraft,
+    participated_iga,
+    participated_tailoring,
+    participated_tvet,
+    participated_business_grants,
+    participated_entrepreneurship,
+    participated_coworking,
+    participated_job_placements,
+    total_services_count,
+    service_combo,
+    service,
+    case
+        when service = 'Digital Literacy' then recommend_training_dl
+        when service = 'Internship' then recommend_training_int
+        when service = 'TVET' then recommend_training_tvet
+        when service = 'Entrepreneurship' then recommend_training_ent
+        else null
+    end as would_recommend,
+    case
+        when service = 'Digital Literacy' then completed_training_dl
+        when service = 'Internship' then completed_training_int
+        when service = 'TVET' then tvet_completion_status
+        when service = 'Entrepreneurship' then completed_training_ent
+        else null
+    end as completion_status,
+    case
+        when service = 'Digital Literacy' then how_helpful_course_dl
+        when service = 'Internship' then how_helpful_course_int
+        when service = 'TVET' then how_helpful_course_tvet
+        when service = 'Entrepreneurship' then how_helpful_course_ent
+        else null
+    end as service_rating
 from service_grain
 order by case_id, service

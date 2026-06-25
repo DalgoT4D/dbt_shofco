@@ -23,7 +23,10 @@ SELECT DISTINCT
     session_deets.ward as case_ward_name,
     session_deets.constituency as case_constituency_name,
     session_deets.county_code,
-    session_deets.assigned_to,
+    CASE 
+        WHEN LOWER(session_deets.assigned_to) = 'wilson.onyango' THEN 'wilson.obiero'
+        ELSE session_deets.assigned_to
+    END as assigned_to,
     CASE 
         WHEN LENGTH(session_deets.county_code) <= 3 THEN REPLACE(locations.county_name, '_', ' ')
         ELSE REPLACE(INITCAP(session_deets.county_code), '_', ' ')

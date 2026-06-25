@@ -17,7 +17,10 @@ safe_house_data as (
 case_occurrences_data as (
     select
         case_id,
-        assigned_to,
+        CASE 
+            WHEN LOWER(assigned_to) = 'wilson.onyango' THEN 'wilson.obiero'
+            ELSE assigned_to
+        END as assigned_to,
         previous_case_number,
         date_modified::timestamptz as date_modified,
         {{ validate_date("date_of_reporting") }} as date_of_case_reporting,
@@ -39,15 +42,12 @@ case_occurrences_data as (
         {{ validate_date("date_of_case_closure") }} as date_of_case_closure,
         {{ validate_date("case_assignment_date") }} as date_of_case_assignment,
         case 
-            -- Only apply calculation if case_intake_date is not null
             when {{ validate_date("case_intake_date") }} is not NULL
                 then 
-                    -- For closed cases, calculate duration between intake and closure
                     case 
                         when {{ validate_date("date_of_case_closure") }} is not NULL
                             then 
-                                ({{ validate_date("date_of_case_closure") }} - {{ validate_date("case_intake_date") }} )
-                        -- For ongoing cases, calculate duration from intake to today
+                                ({{ validate_date("date_of_case_closure") }} - {{ validate_date("case_intake_date") }})
                         else 
                             (current_date - {{ validate_date("case_intake_date") }})
                     end
@@ -64,46 +64,46 @@ case_occurrences_data as (
             when assault_type ilike '%legal%' or assault_type ilike '%counsel%' then 'Seeking Legal Counsel'
             else 'Other'
         end as cleaned_assault_type,
-
-        -- Split assault types into multiple rows
-        -- unnest(string_to_array(assault_type, ' ')) as assault_type,
-
         case
-            when where_was_the_client_referred_to like '%safe_house%'
-                then 'yes'
+            when where_was_the_client_referred_to like '%safe_house%' then 'yes'
             else 'no'
         end as referred_to_safe_house,
         case
-            when where_was_the_client_referred_to like '%other_shofco_programs%'
-                then 'yes'
+            when where_was_the_client_referred_to like '%other_shofco_programs%' then 'yes'
             else 'no'
         end as referred_to_other_shofco_programs,
         case
-            when where_was_the_client_referred_to like '%district_children_officers%'
-                then 'yes'
+            when where_was_the_client_referred_to like '%district_children_officers%' then 'yes'
             else 'no'
         end as referred_to_dco,
         case
-            when
-                where_was_the_client_referred_to
-                like '%psychosocial_support_and_counseling%'
-                then 'yes'
+            when where_was_the_client_referred_to like '%psychosocial_support_and_counseling%' then 'yes'
             else 'no'
         end as referred_to_counseling_and_support,
         case
-            when where_was_the_client_referred_to like '%police%'
-                then 'yes'
+            when where_was_the_client_referred_to like '%police%' then 'yes'
             else 'no'
         end as referred_to_police,
         case
-            when where_was_the_client_referred_to like '%medical%'
-                then 'yes'
+            when where_was_the_client_referred_to like '%medical%' then 'yes'
             else 'no'
         end as referred_for_medical_intervention,
         village_of_incident_report as incident_report_village_name,
-        ward_of_incident_report as incident_report_ward_code,
-        constituency_of_incident_report as incident_report_constituency_code,
-        county_of_incident_report as incident_report_county_code,
+        LOWER(
+            REPLACE(
+                REPLACE(
+                    REPLACE(
+                        REPLACE(ward_of_incident_report, '/', '_'),
+                    ' ', '_'),
+                '-', '_'),
+            '''', '')
+        ) as incident_report_ward_code,
+        LOWER(
+            REPLACE(
+                REPLACE(constituency_of_incident_report, '__', '_'),
+            '-', '_')
+        ) as incident_report_constituency_code,
+        LOWER(county_of_incident_report) as incident_report_county_code,
         case
             when (date_of_case_closure is NULL) then 'no' else 'yes'
         end as case_is_closed,
@@ -130,6 +130,12 @@ case_occurrences_data as (
         was_the_perpetrator_convicted,
         conviction_comments
     from {{ ref("staging_gender_case_occurrences_commcare") }}
+),
+
+deduplicated_cases as (
+    select distinct on (case_id) *
+    from case_occurrences_data
+    order by case_id, date_of_case_reporting desc nulls last
 )
 
 select distinct
@@ -187,66 +193,46 @@ select distinct
                 when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
                 then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
                 else null 
-            end) < 13
-            then '<13 years'
+            end) < 13 then '<13 years'
         when coalesce(survivors.age, 
             case 
                 when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
                 then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
                 else null 
-            end) >= 13 and coalesce(survivors.age, 
-            case 
-                when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
-                then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
-                else null 
-            end) <= 17
-            then '13 - 17 years'
+            end) between 13 and 17 then '13 - 17 years'
         when coalesce(survivors.age, 
             case 
                 when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
                 then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
                 else null 
-            end) >= 18 and coalesce(survivors.age, 
-            case 
-                when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
-                then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
-                else null 
-            end) <= 35
-            then '18 - 35 years'
+            end) between 18 and 35 then '18 - 35 years'
         when coalesce(survivors.age, 
             case 
                 when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
                 then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
                 else null 
-            end) >= 36 and coalesce(survivors.age, 
-            case 
-                when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
-                then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
-                else null 
-            end) <= 50
-            then '36 - 50 years'
+            end) between 36 and 50 then '36 - 50 years'
         when coalesce(survivors.age, 
             case 
                 when nullif(cases.what_is_the_age_provided, '') ~ '^[0-9]+\.?[0-9]*$' 
                 then round(nullif(cases.what_is_the_age_provided, '')::numeric)::int
                 else null 
-            end) > 50
-            then 'Above 50 years'
+            end) > 50 then 'Above 50 years'
         else 'Unknown'
     end as age_group,
-    initcap(
-        replace(
-            coalesce(locations.county_name, cases.incident_report_county_code),
-            '_', ' '
-        )
-    ) as county,
-    initcap(coalesce(
-        locations.constituency_name, cases.incident_report_constituency_code
-    )) as case_constituency_name,
-    initcap(coalesce(locations.ward_name, cases.incident_report_ward_code)) as case_ward_name,
-    initcap(gender_sites.site_name) as site,
-    case when case_referred_to_location is NULL then 'Yes' else 'No' end as is_case_referred
-from case_occurrences_data as cases
+    INITCAP(REPLACE(
+        COALESCE(locations.county_name, cases.incident_report_county_code),
+    '_', ' ')) as county,
+    INITCAP(REPLACE(
+        COALESCE(locations.constituency_name, cases.incident_report_constituency_code),
+    '_', ' ')) as case_constituency_name,
+    INITCAP(REPLACE(
+        COALESCE(locations.ward_name, cases.incident_report_ward_code),
+    '_', ' ')) as case_ward_name,
+    INITCAP(gender_sites.site_name) as site,
+    case when cases.case_referred_to_location is NULL then 'Yes' else 'No' end as is_case_referred
+
+from deduplicated_cases as cases
 left join
     safe_house_data
     on cases.case_id = safe_house_data.parent_case_id
@@ -257,9 +243,13 @@ left join
     {{ source("staging_gender", "dim_location_administrative_units") }} as locations
     on
         LOWER(cases.incident_report_county_code) = LOWER(locations.county_code)
-        and LOWER(cases.incident_report_constituency_code) = LOWER(locations.constituency_id)
-        and LOWER(REPLACE(REPLACE(cases.incident_report_ward_code, '-', '_'), '''', '')) = LOWER(REPLACE(locations.ward_id, '''', ''))
-         
+        and LOWER(
+                REPLACE(REPLACE(cases.incident_report_constituency_code, '__', '_'), '-', '_')
+            ) = LOWER(locations.constituency_id)
+        and LOWER(
+                REPLACE(REPLACE(REPLACE(REPLACE(
+                    cases.incident_report_ward_code, '/', '_'), ' ', '_'), '-', '_'), '''', '')
+            ) = LOWER(REPLACE(locations.ward_id, '''', ''))
 left join
     {{ source("staging_gender", "dim_gender_sites") }} as gender_sites
     on cases.gender_site_code_of_reporting = gender_sites.site_code

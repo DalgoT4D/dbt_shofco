@@ -16,9 +16,16 @@ safe_house_data as (
 
 case_occurrences_data as (
     select
-        case_id,
-        CASE 
-            WHEN LOWER(assigned_to) = 'wilson.onyango' THEN 'wilson.obiero'
+        case_id,        CASE 
+            WHEN LOWER(assigned_to) = 'wilson.onyango'     THEN 'wilson.obiero'
+            WHEN LOWER(assigned_to) = 'zena.khassim'       THEN 'zena.kassim'
+            WHEN LOWER(assigned_to) = 'damaris.walengwa'   THEN 'damaris.walegwa'
+            WHEN LOWER(assigned_to) = 'elphas.mtekwa'      THEN 'elphus.mtekwa'
+            WHEN LOWER(assigned_to) = 'triza.njeri'        THEN 'trizah.njeri'
+            WHEN LOWER(assigned_to) = 'wmwita'             THEN 'w.mwita'
+            WHEN LOWER(assigned_to) = 'eanas.makokha'      THEN 'esnas.makokha'
+            WHEN LOWER(assigned_to) = 'amina.katata'       THEN 'amina.katana'
+            WHEN LOWER(assigned_to) = 'emmaculate.achieng' THEN 'emma.achieng'
             ELSE assigned_to
         END as assigned_to,
         previous_case_number,

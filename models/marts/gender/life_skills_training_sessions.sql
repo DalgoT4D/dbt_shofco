@@ -24,7 +24,15 @@ SELECT DISTINCT
     session_deets.constituency as case_constituency_name,
     session_deets.county_code,
     CASE 
-        WHEN LOWER(session_deets.assigned_to) = 'wilson.onyango' THEN 'wilson.obiero'
+        WHEN LOWER(session_deets.assigned_to) = 'wilson.onyango'     THEN 'wilson.obiero'
+        WHEN LOWER(session_deets.assigned_to) = 'zena.khassim'       THEN 'zena.kassim'
+        WHEN LOWER(session_deets.assigned_to) = 'damaris.walengwa'   THEN 'damaris.walegwa'
+        WHEN LOWER(session_deets.assigned_to) = 'elphas.mtekwa'      THEN 'elphus.mtekwa'
+        WHEN LOWER(session_deets.assigned_to) = 'triza.njeri'        THEN 'trizah.njeri'
+        WHEN LOWER(session_deets.assigned_to) = 'wmwita'             THEN 'w.mwita'
+        WHEN LOWER(session_deets.assigned_to) = 'eanas.makokha'      THEN 'esnas.makokha'
+        WHEN LOWER(session_deets.assigned_to) = 'amina.katata'       THEN 'amina.katana'
+        WHEN LOWER(session_deets.assigned_to) = 'emmaculate.achieng' THEN 'emma.achieng'
         ELSE session_deets.assigned_to
     END as assigned_to,
     CASE 

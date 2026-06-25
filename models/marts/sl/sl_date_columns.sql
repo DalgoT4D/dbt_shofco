@@ -13,6 +13,9 @@ select
     is_pwd,
     type_of_disability_dir,
     is_young_mother,
+    would_recommend,
+    completion_status,
+    service_rating,
     
     -- Registration dates
     date_of_registration,

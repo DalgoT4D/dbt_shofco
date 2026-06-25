@@ -17,7 +17,15 @@ SELECT DISTINCT
     participants.constituency as case_constituency_name,
     participants.county_code,
     CASE 
-        WHEN LOWER(participants.assigned_to) = 'wilson.onyango' THEN 'wilson.obiero'
+        WHEN LOWER(participants.assigned_to) = 'wilson.onyango'     THEN 'wilson.obiero'
+        WHEN LOWER(participants.assigned_to) = 'zena.khassim'       THEN 'zena.kassim'
+        WHEN LOWER(participants.assigned_to) = 'damaris.walengwa'   THEN 'damaris.walegwa'
+        WHEN LOWER(participants.assigned_to) = 'elphas.mtekwa'      THEN 'elphus.mtekwa'
+        WHEN LOWER(participants.assigned_to) = 'triza.njeri'        THEN 'trizah.njeri'
+        WHEN LOWER(participants.assigned_to) = 'wmwita'             THEN 'w.mwita'
+        WHEN LOWER(participants.assigned_to) = 'eanas.makokha'      THEN 'esnas.makokha'
+        WHEN LOWER(participants.assigned_to) = 'amina.katata'       THEN 'amina.katana'
+        WHEN LOWER(participants.assigned_to) = 'emmaculate.achieng' THEN 'emma.achieng'
         ELSE participants.assigned_to
     END as assigned_to,
     CASE 

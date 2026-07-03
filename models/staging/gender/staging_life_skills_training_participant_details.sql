@@ -24,9 +24,8 @@ WITH roc_club_participants AS (
         END AS year,
         data::jsonb ->> 'received_on' AS form_filling_date,
         data::jsonb -> 'form' -> 'meta' ->> 'instanceID' AS session_id,
-        jsonb_array_elements(
-            data -> 'form' -> 'membership_details'
-        ) AS participant_data,
+        participant.value AS participant_data,
+        participant.ordinality AS participant_ordinal,
         (data::jsonb -> 'form' -> 'geographical_location' ->> 'ward') AS ward,
         (data::jsonb -> 'form' -> 'geographical_location' ->> 'county') AS county_code,
         (data::jsonb -> 'form' -> 'geographical_location' ->> 'constituency') AS constituency,
@@ -62,6 +61,9 @@ WITH roc_club_participants AS (
             ELSE NULL::timestamp
         END AS term_end_date
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
+    CROSS JOIN LATERAL jsonb_array_elements(
+        data -> 'form' -> 'membership_details'
+    ) WITH ORDINALITY AS participant(value, ordinality)
     WHERE
         data::jsonb->'form'->>'target_group' = 'roc_club'
         AND jsonb_typeof(data->'form'->'membership_details') = 'array'
@@ -91,14 +93,16 @@ community_safe_space_participants AS (
         data::jsonb -> 'form' ->> 'target_group' AS target_group,
         data::jsonb ->> 'received_on' AS form_filling_date,
         data::jsonb -> 'form' -> 'meta' ->> 'instanceID' AS session_id,
-        jsonb_array_elements(
-            data -> 'form' -> 'community_safe_space_participants_details'
-        ) AS participant_data,
+        participant.value AS participant_data,
+        participant.ordinality AS participant_ordinal,
         (data::jsonb -> 'form' -> 'geographical_location' ->> 'ward') AS ward,
         (data::jsonb -> 'form' -> 'geographical_location' ->> 'county') AS county_code,
         (data::jsonb -> 'form' -> 'geographical_location' ->> 'constituency') AS constituency,
         (data::jsonb -> 'form' -> 'meta' ->> 'username') AS assigned_to
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
+    CROSS JOIN LATERAL jsonb_array_elements(
+        data -> 'form' -> 'community_safe_space_participants_details'
+    ) WITH ORDINALITY AS participant(value, ordinality)
     WHERE
         data::jsonb->'form'->>'target_group' = 'community_safe_space'
         AND jsonb_typeof(data->'form'->'community_safe_space_participants_details') = 'array'
@@ -106,7 +110,7 @@ community_safe_space_participants AS (
 ),
 
 combined AS (
-    SELECT DISTINCT
+    SELECT
         target_group,
         term,
         year,
@@ -114,6 +118,7 @@ combined AS (
         term_end_date,
         form_filling_date,
         session_id,
+        participant_ordinal,
         COALESCE(
             participant_data ->> 'member_full_names',
             participant_data ->> 'member_full_names_first_middle_surname'
@@ -127,7 +132,7 @@ combined AS (
 
     UNION ALL
 
-    SELECT DISTINCT
+    SELECT
         target_group,
         term,
         year,
@@ -135,7 +140,11 @@ combined AS (
         term_end_date,
         form_filling_date,
         session_id,
-        participant_data ->> 'full_name_first_middle_surname' AS participant_name,
+        participant_ordinal,
+        COALESCE(
+            participant_data ->> 'full_name_first_middle_surname',
+            participant_data ->> 'full_name'
+        ) AS participant_name,
         participant_data ->> 'gender' AS gender,
         ward,
         county_code,
@@ -144,7 +153,7 @@ combined AS (
     FROM community_safe_space_participants
 )
 
-SELECT DISTINCT
+SELECT
     c.target_group,
     c.term,
     c.year,
@@ -152,6 +161,7 @@ SELECT DISTINCT
     c.term_end_date,
     c.form_filling_date,
     c.session_id,
+    c.participant_ordinal,
     c.participant_name,
     c.gender,
     c.ward,

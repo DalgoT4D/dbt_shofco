@@ -3,7 +3,7 @@
   tags=['gender_life_skills_training', "gender"]
 ) }}
 
-SELECT DISTINCT
+SELECT
     participants.target_group,
     participants.term,
     participants.year,  
@@ -11,6 +11,7 @@ SELECT DISTINCT
     {{ validate_date("term_end_date") }} AS term_end_date,   
     {{ validate_date("form_filling_date") }} AS form_filling_date, 
     participants.session_id,  
+    participants.participant_ordinal,
     participants.participant_name,
     participants.gender,
     participants.ward as case_ward_name,

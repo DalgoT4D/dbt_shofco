@@ -29,12 +29,5 @@ SELECT
         WHEN LOWER(participants.assigned_to) = 'emmaculate.achieng' THEN 'emma.achieng'
         ELSE participants.assigned_to
     END as assigned_to,
-    CASE 
-        WHEN LENGTH(participants.county_code) > 3 THEN REPLACE(INITCAP(participants.county_code), '_', ' ')
-        ELSE REPLACE(locations.county_name, '_', ' ')
-    END as county
+    participants.county
 FROM {{ ref("staging_life_skills_training_participant_details") }} as participants
-left join
-    {{ source("staging_gender", "dim_location_administrative_units") }} as locations
-    on
-        participants.county_code = locations.county_code

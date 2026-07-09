@@ -851,11 +851,11 @@ select
     {{ normalize_sl_nationality_filter('nationality', 'refugee_type') }} as nationality,
     refugee_type,
     kenyan_national_id_number_dir,
-    {{ normalize_sl_county_filter('county') }} as county,
+    coalesce(cl.county_corrected, {{ normalize_sl_county_filter('county') }}) as county,
     {{ normalize_sl_subcounty_filter('subcounty') }} as subcounty,
     case
         when ward is null or trim(ward) = '' then null
-        else initcap(trim(regexp_replace(ward, '[\\s_/-]+', ' ', 'g')))
+        else coalesce(wc.ward_corrected, initcap(trim(regexp_replace(ward, '[\\s_/-]+', ' ', 'g'))))
     end as ward,
     coworking_county_csr,
     coworking_subcounty_csr,
@@ -1072,3 +1072,15 @@ left join skill_sector_mapping m
     on d.skill_enrolled_apr = m.skill_enrolled_apr
 left join institution_name_mapping i
     on lower(trim(d.raw_tvet_institution_name)) = lower(trim(i.old_institutions))
+left join {{ ref('ward_name_corrections_seed') }} wc
+    on wc.lookup_county = {{ normalize_sl_county_filter('county') }}
+   and wc.lookup_subcounty = {{ normalize_sl_subcounty_filter('subcounty') }}
+   and wc.ward_raw = initcap(trim(regexp_replace(ward, '[\\s_/-]+', ' ', 'g')))
+-- County-correction: subcounty + ward uniquely determine the real county in
+-- ward_lookup (zero collisions across all 1,451 pairs), so where a raw county
+-- value doesn't match the county its own subcounty/ward actually belong to
+-- (e.g. county='Kajiado' but subcounty/ward are really Nairobi's Kibra/Sarangombe),
+-- we trust the subcounty+ward pair and override county from the lookup instead.
+left join {{ ref('county_correction_lookup') }} cl
+    on cl.lookup_subcounty = {{ normalize_sl_subcounty_filter('subcounty') }}
+   and cl.lookup_ward = coalesce(wc.ward_corrected, initcap(trim(regexp_replace(ward, '[\\s_/-]+', ' ', 'g'))))

@@ -855,7 +855,7 @@ select
     {{ normalize_sl_subcounty_filter('subcounty') }} as subcounty,
     case
         when ward is null or trim(ward) = '' then null
-        else initcap(regexp_replace(ward, '[\\s_/-]+', '', 'g'))
+        else initcap(trim(regexp_replace(ward, '[\\s_/-]+', ' ', 'g')))
     end as ward,
     coworking_county_csr,
     coworking_subcounty_csr,

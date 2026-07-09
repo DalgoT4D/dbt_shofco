@@ -1,315 +1,324 @@
-lookup_county,lookup_subcounty,ward_raw,ward_corrected
-Nairobi,Kibra,Arangombe,Sarangombe
-Nairobi,Mathare,Ho Pital,Hospital
-Nairobi,Embakasi East,Lower Avannah,Lower Savannah
-Kisii,Bobasi,Boba I Boitangare,Bobasi Boitangare
-Nairobi,Embakasi North,Dandora Area Iv V,Dandora Area IV/V
-Kisumu,Kisumu Central,Railway,Railways
-Kilifi,Kilifi North,Okoni,Sokoni
-Uasin Gishu,Kapseret,Langa,Langas
-Siaya,Alego Usonga,Iaya Town Hip,Siaya Township
-Nairobi,Starehe,Nairobi Outh,Nairobi South
-Busia,Nambale,Nambale Town Hip,Nambale Township
-Machakos,Matungulu,Matungulu We T,Matungulu West
-Siaya,Bondo,We T Akwa,West Sakwa
-Nairobi,Roysambu,Roy Ambu,Roysambu
-Kakamega,Lurambi,Heywe,Sheywe
-Homa Bay,Mbita,Ka Gunga,Kasgunga
-Siaya,Gem,Ea T Gem,East Gem
-Nairobi,Kasarani,Ka Arani,Kasarani
-Nyeri,Tetu,Aguthi Gaaki,Aguthi/Gaaki
-Homa Bay,Suba,Kak Ingri We T,Kaksingri West
-Homa Bay,Kabondo Kasipul,Kabondo Ea T,Kabondo East
-Homa Bay,Ndhiwa,Kanyamwa Ko Ewe,Kanyamwa Kosewe
-Siaya,Alego Usonga,Outh Ea T Alego,South East Alego
-Migori,Kuria West,I Ibania,Isibania
-Nairobi,Kamukunji,Ea Tleigh Outh,Eastleigh South
-Migori,Suna East,Una Central,Suna Central
-Nairobi,Embakasi North,Dandora Area Iv,Dandora Area I
-Vihiga,Vihiga,Outh Maragoli,South Maragoli
-Nairobi,Langata,Nyayo Highri E,Nyayo Highrise
-Siaya,Rarieda,We T A Embo,West Asembo
-Machakos,Machakos Town,Machako Central,Machakos Central
-Migori,Awendo,Outh Akwa,South Sakwa
-Homa Bay,Kasipul,Outh Ka Ipul,South Kasipul
-Nairobi,Starehe,Ziwani Kariokor,Ziwani/Kariokor
-Siaya,Bondo,North Akwa,North Sakwa
-Bungoma,Kabuchai,Kabuchai Chwele,Kabuchai/Chwele
-Kilifi,Magarini,Gara Hi,Garashi
-Kisumu,Kisumu West,North We T Ki Umu,North West Kisumu
-Siaya,Bondo,Central Akwa,Central Sakwa
-Kisumu,Kisumu East,Kolwa Ea T,Kolwa East
-Siaya,Ugenya,Ea T Ugenya,East Ugenya
-Siaya,Ugunja,Igomere,Sigomere
-Kisumu,Kisumu West,We T Ki Umu,West Kisumu
-Siaya,Alego Usonga,U Onga,Usonga
-Homa Bay,Kasipul,Central Ka Ipul,Central Kasipul
-Siaya,Rarieda,Ea T A Embo,East Asembo
-Siaya,Ugenya,We T Ugenya,West Ugenya
-Siaya,Gem,We T Gem,West Gem
-Homa Bay,Rangwe,Ea T Gem,East Gem
-Kakamega,Mumias East,Ea T Wanga,East Wanga
-Nairobi,Roysambu,Kahawa We T,Kahawa West
-Migori,Suna West,Wa Weta Ii,Wasweta Ii
-Migori,Kuria West,Ma Aba,Masaba
-Vihiga,Luanda,Luanda Town Hip,Luanda Township
-Kilifi,Kilifi South,Cha Imba,Chasimba
-Kakamega,Shinyalu,I Ukha Central,Isukha Central
-Nyeri,Nyeri Town,Kamakwa Mukaro,Kamakwa/Mukaro
-Kisumu,Nyakach,Outh Ea T Nyakach,South East Nyakach
-Vihiga,Emuhaya,North Ea T Bunyore,North East Bunyore
-Nyeri,Nyeri Town,Gatitu Muruguru,Gatitu/Muruguru
-Siaya,Bondo,We T Yimbo,West Yimbo
-Vihiga,Hamisi,Hiru,Shiru
-Kisumu,Kisumu West,Central Ki Umu,Central Kisumu
-Nairobi,Kamukunji,Ea Tleigh North,Eastleigh North
-Kisumu,Muhoroni,Ma Ogo Nyang'Oma,Masogo/Nyang'oma
-Kilifi,Kilifi North,Mat Angoni,Matsangoni
-Kisumu,Nyando,Kabonyo Kanyagwal,Kabonyo/Kanyagwal
-Kakamega,Ikolomani,Idakho Ea T,Idakho East
-Siaya,Gem,Outh Gem,South Gem
-Kisumu,Seme,Central Eme,Central Seme
-Siaya,Bondo,Yimbo Ea T,Yimbo East
-Busia,Matayos,Matayo Outh,Matayos South
-Migori,Uriri,Outh Kanyamkago,South Kanyamkago
-Homa Bay,Homa Bay Town,Homa Bay Ea T,Homa Bay East
-Nairobi,Westlands,Parkland Highridge,Parklands/Highridge
-Muranga,Kiharu,Town Hip,Township
-Kilifi,Rabai,Kambe Ribe,Kambe/Ribe
-Migori,Awendo,Central Akwa,Central Sakwa
-Migori,Rongo,Ea T Kamagambo,East Kamagambo
-Meru,Buuri,Kiirua Naari,Kiirua/Naari
-Siaya,Alego Usonga,We T Alego,West Alego
-Kisumu,Nyakach,We T Nyakach,West Nyakach
-Homa Bay,Kasipul,Ea T Kamagak,East Kamagak
-Trans Nzoia,Kiminini,Ikhendu,Sikhendu
-Homa Bay,Suba,Gwa I Outh,Gwassi South
-Bungoma,Kanduyi,Bukembe We T,Bukembe West
-Mombasa,Likoni,Hika Adabu,Shika Adabu
-Mombasa,Mvita,Mji Wa Kale Makadara,Mji Wa Kale/Makadara
-Nairobi,Makadara,Maringo Hamza,Maringo/Hamza
-Siaya,Gem,Yala Town Hip,Yala Township
-Siaya,Bondo,Outh Akwa,South Sakwa
-Migori,Awendo,We T Akwa,West Sakwa
-Busia,Teso South,Chakol Outh,Chakol South
-Nairobi,Embakasi East,Embaka I,Embakasi
-Migori,Kuria West,Nyamo En E Komo Oko,Nyamosense/Komosoko
-Nairobi,Westlands,Kiti Uru,Kitisuru
-Nairobi,Kibra,Laini Aba,Laini Saba
-Kisumu,Kisumu Central,Haurimoyo Kaloleni,Shaurimoyo Kaloleni
-Kisumu,Seme,We T Eme,West Seme
-Homa Bay,Rangwe,We T Gem,West Gem
-Nairobi,Embakasi North,Dandora Area V,Dandora Area I
-Machakos,Machakos Town,Muvuti Kiima Kimwe,Muvuti/Kiima Kimwe
-Siaya,Rarieda,We T Uyoma,West Uyoma
-Nairobi,Kamukunji,Airba E,Airbase
-Kilifi,Ganze,Okoke,Sokoke
-Mombasa,Mvita,Himanzi Ganjoni,Shimanzi/Ganjoni
-Kisumu,Kisumu Central,Migo I,Migosi
-Nairobi,Kibra,Woodley Kenyatta Golf,Woodley/Kenyatta Golf
-Kilifi,Kilifi North,Daba O,Dabaso
-Meru,Buuri,Ruiri Rwarera,Ruiri/Rwarera
-Kisumu,Kisumu West,Outh We T Ki Umu,South West Kisumu
-Bungoma,Bumula,Outh Buku U,South Bukusu
-Homa Bay,Kabondo Kasipul,Kabondo We T,Kabondo West
-Siaya,Ugunja,Idindi,Sidindi
-Kilifi,Rabai,Rabai Ki Urutini,Rabai/Kisurutini
-Kakamega,Butere,Marama We T,Marama West
-Migori,Kuria West,Bukira Ea T,Bukira East
-Meru,South Imenti,Abogeta We T,Abogeta West
-Meru,North Imenti,Nyaki Ea T,Nyaki East
-Meru,Igembe South,Kiegoi Antubochiu,Kiegoi/Antubochiu
-Siaya,Rarieda,Outh Uyoma,South Uyoma
-Migori,Uriri,We T Kanyamkago,West Kanyamkago
-Nairobi,Embakasi Central,Kayole Outh,Kayole South
-Homa Bay,Kabondo Kasipul,Kokwanyo Kakelo,Kokwanyo/Kakelo
-Vihiga,Luanda,Luanda Outh,Luanda South
-Vihiga,Emuhaya,We T Bunyore,West Bunyore
-Migori,Awendo,North Akwa,North Sakwa
-Kisumu,Nyando,Awa I Onjiko,Awasi/Onjiko
-Meru,Buuri,Ki Ima,Kisima
-Kisii,Bobasi,Ameta Mokwerero,Sameta/Mokwerero
-Kakamega,Navakholo,Bunyala Ea T,Bunyala East
-Kisumu,Nyando,Ea T Kano Wawidhi,East Kano/Wawidhi
-Migori,Rongo,Outh Kamagambo,South Kamagambo
-Vihiga,Hamisi,Gi Ambai,Gisambai
-Siaya,Bondo,We T Sakwa,West Sakwa
-Homa Bay,Kasipul,We T Kamagak,West Kamagak
-Homa Bay,Kasipul,We T Ka Ipul,West Kasipul
-Meru,North Imenti,Nyaki We T,Nyaki West
-Nairobi,Embakasi East,Upper Avannah,Upper Savannah
-Bungoma,Kanduyi,Marakaru Tuuti,Marakaru/Tuuti
-Migori,Kuria West,Bukira Centrl Ikerege,Bukira Centrl/Ikerege
-Bungoma,Kanduyi,Town Hip,Township
-Migori,Uriri,Ea T Kanyamkago,East Kanyamkago
-Kisii,Kitutu Chache South,Bogu Ero,Bogusero
-Bomet,Sotik,Rongena Manaret,Rongena/Manaret
-Machakos,Matungulu,Matungulu Ea T,Matungulu East
-Nairobi,Ruaraka,Lucky Ummer,Lucky Summer
-Bungoma,Kanduyi,Mu Ikoma,Musikoma
-Trans Nzoia,Cherangany,Inyerere,Sinyerere
-Meru,South Imenti,Abogeta Ea T,Abogeta East
-Nairobi,Kibra,Sarang'Ombe,Sarangombe
-Homa Bay,Mbita,Mfangano I Land,Mfangano Island
-Kilifi,Kilifi South,Himo La Tewa,Shimo La Tewa
-Kisumu,Seme,North Eme,North Seme
-Meru,Central Imenti,Abothuguchi We T,Abothuguchi West
-Bomet,Chepalungu,Iongiroi,Siongiroi
-Homa Bay,Karachuonyo,We T Karachuonyo,West Karachuonyo
-Nairobi,Dagoretti North,Kilele Hwa,Kileleshwa
-Kakamega,Lurambi,But Ot O Ea T,Butsotso East
-Kisumu,Seme,Ea T Eme,East Seme
-Nyeri,Nyeri Town,Kiganjo Mathari,Kiganjo/Mathari
-Machakos,Kangundo,Kangundo We T,Kangundo West
-Meru,North Imenti,Ntima We T,Ntima West
-Nyeri,Mukurweini,Mukurwe Ini We T,Mukurwe Ini West
-Kakamega,Lurambi,Hirere,Shirere
-Kisumu,Nyakach,Outh We T Nyakach,South West Nyakach
-Nairobi,Embakasi West,Kariobangi Outh,Kariobangi South
-Vihiga,Sabatia,We T Abatia,West Sabatia
-Kakamega,Khwisero,Ki A Central,Kisa Central
-Meru,North Imenti,Ntima Ea T,Ntima East
-Bungoma,Bumula,Kha Oko,Khasoko
-Trans Nzoia,Kiminini,Nabi Wa,Nabiswa
-Kiambu,Ruiru,Bia Hara,Biashara
-Kilifi,Rabai,Mwawe A,Mwawesa
-Mombasa,Kisauni,Hanzu,Shanzu
-Kisii,Nyaribari Chache,Ki Ii Central,Kisii Central
-Homa Bay,Suba,Ruma Kak Ingri Ea T,Ruma Kaksingri East
-Busia,Teso South,Amukura We T,Amukura West
-Kisumu,Muhoroni,Muhoroni Koru,Muhoroni/Koru
-Migori,Nyatike,Kanya A,Kanyasa
-Kakamega,Khwisero,Ki A North,Kisa North
-Machakos,Mwala,Makutano Mwala,Makutano/ Mwala
-Homa Bay,Mbita,Ru Inga I Land,Rusinga Island
-Busia,Nambale,Bukhayo North Walt I,Bukhayo North/Waltsi
-Kisii,Bomachoge Chache,Bo Oti Engera,Bosoti/Sengera
-Kakamega,Ikolomani,Idakho Outh,Idakho South
-Migori,Suna West,Wa Imbete,Wasimbete
-Bomet,Bomet East,Longi A,Longisa
-Nakuru,Nakuru Town West,Haabab,Shaabab
-Vihiga,Sabatia,Bu Ali,Busali
-Bungoma,Bumula,Iboti,Siboti
-Meru,Igembe Central,Igembe Ea T,Igembe East
-Vihiga,Hamisi,Hamakhokho,Shamakhokho
-Machakos,Mwala,Ma Ii,Masii
-Kisumu,Kisumu West,Ki Umu North,Kisumu North
-Bungoma,Kanduyi,Ea T Angalo,East SangAlo
-Kakamega,Shinyalu,I Ukha Ea T,Isukha East
-Kisii,Bobasi,Boba I Central,Bobasi Central
-Kisumu,Muhoroni,Ma Ogo Nyangoma,Masogo/Nyang'oma
-Makueni,Mbooni,Kithungo Kitundu,Kithungo/Kitundu
-Nairobi,Dagoretti South,Uthiru Ruthimitu,Uthiru/Ruthimitu
-Bungoma,Kanduyi,Angalo We T,SangAlo West
-Trans Nzoia,Saboti,Aboti,Saboti
-Homa Bay,Homa Bay Town,Homa Bay We T,Homa Bay West
-Trans Nzoia,Cherangany,Itatunga,Sitatunga
-Homa Bay,Suba,Gwa I North,Gwassi North
-Trans Nzoia,Kiminini,Irende,Sirende
-Machakos,Kangundo,Kangundo Ea T,Kangundo East
-Nairobi,Langata,Nairobi We T,Nairobi West
-Bomet,Bomet Central,Che Oen,Chesoen
-Kakamega,Malava,Butali Chegulo,Butali/Chegulo
-Kiambu,Kiambu,Town Hip,Township
-Bomet,Bomet Central,Ingorwet,Singorwet
-Busia,Nambale,Bukhayo Ea T,Bukhayo East
-Machakos,Masinga,Muthe Ya,Muthesya
-Uasin Gishu,Kesses,Cheptiret Kipchamo,Cheptiret/Kipchamo
-Bungoma,Sirisia,Malaki I Outh Kuli Iru,Malakisi/South Kulisiru
-Busia,Matayos,Bu Ibwabo,Busibwabo
-Nairobi,Langata,Outh C,South C
-Kakamega,Khwisero,Ki A Ea T,Kisa East
-Kisii,Nyaribari Masaba,Ma Imba,Masimba
-Bungoma,Bumula,We T Buku U,West Bukusu
-Busia,Matayos,Bukhayo We T,Bukhayo West
-Kilifi,Malindi,Hella,Shella
-Migori,Nyatike,Macalder Kanyarwanda,Macalder/Kanyarwanda
-Nyeri,Kieni,Mwiyogo Endara Ha,Mwiyogo/Endarasha
-Uasin Gishu,Ainabkoi,Kap Oya,Kapsoya
-Kakamega,Butere,Marama Outh,Marama South
-Kakamega,Lurambi,But Ot O Outh,Butsotso South
-Kisii,Bobasi,Boba I Bogetaorio,Bobasi Bogetaorio
-Kisii,Bobasi,Ma Ige Ea T,Masige East
-Uasin Gishu,Kesses,Racecour E,Racecourse
-Kakamega,Lurambi,But Ot O Central,Butsotso Central
-Kakamega,Mumias East,Lubinu Lu Heya,Lubinu/Lusheya
-Kakamega,Mumias West,Mumia Central,Mumias Central
-Kakamega,Navakholo,Bunyala We T,Bunyala West
-Kisii,Bomachoge Chache,Boochi Tendere,Boochi/Tendere
-Taita Taveta,Voi,Agalla,Sagalla
-Taita Taveta,Wundanyi,Wumingu Ki Hu He,Wumingu/Kishushe
-Meru,South Imenti,Igoji Ea T,Igoji East
-Homa Bay,Ndhiwa,Kabuoch Outh Pala,Kabuoch South/Pala
-Kakamega,Butere,Marenyo Hianda,Marenyo Shianda
-Kakamega,Khwisero,Ki A We T,Kisa West
-Kakamega,Malava,Manda Hivanga,Manda Shivanga
-Makueni,Mbooni,Ki Au Kiteta,Kisau/Kiteta
-Nakuru,Nakuru Town East,Bia Hara,Biashara
-Busia,Budalangi,Bunyala We T,Bunyala West
-Kakamega,Shinyalu,I Ukha North,Isukha North
-Nakuru,Nakuru Town East,Nakuru Ea T,Nakuru East
-Uasin Gishu,Kapseret,Imat Kap Eret,Simat/Kapseret
-Uasin Gishu,Soy,Kuinet Kap U Wa,Kuinet/Kapsuswa
-Bungoma,Webuye West,Mi Ikhu,Misikhu
-Taita Taveta,Wundanyi,Wundanyi Mbale,Wundanyi/Mbale
-Uasin Gishu,Kesses,Tulwet Chuiyat,Tulwet/Chuiyat
-Bomet,Sotik,Kip Onoi,Kipsonoi
-Kakamega,Malava,We T Kabra,West Kabras
-Kakamega,Mumias West,Mumia North,Mumias North
-Machakos,Mavoko,Yokimau Mulolongo,Syokimau/Mulolongo
-Kakamega,Shinyalu,I Ukha We T,Isukha West
-Trans Nzoia,Saboti,Mati I,Matisi
-Uasin Gishu,Turbo,Kap Ao,Kapsaos
-Bungoma,Kanduyi,Bukembe Ea T,Bukembe East
-Kiambu,Ruiru,Kahawa Ukari,Kahawa Sukari
-Kwale,Kinango,Ka Emeni,Kasemeni
-Kakamega,Malava,Ea T Kabra,East Kabras
-Kiambu,Limuru,Limuru Ea T,Limuru East
-Makueni,Makueni,Muvau Kikuumini,Muvau/Kikuumini
-Muranga,Gatanga,Kakuzi Mitubiri,Kakuzi/Mitubiri
-Nairobi,Embakasi Central,Kayole  Outh,Kayole South
-Nairobi,Embakasi East,Lower  Avannah,Lower Savannah
-Nairobi,Embakasi South,Njenga,Kwa Njenga
-Trans Nzoia,Cherangany,Moto Iet,Motosiet
-Kakamega,Malava,Hirugu Mugai,Shirugu Mugai
-Kisii,Nyaribari Masaba,Nyama Ibi,Nyamasibi
-Trans Nzoia,Cherangany,Chep Iro Kiptoror,Chepsiro/Kiptoror
-Uasin Gishu,Soy,Oy,Soy
-Kajiado,Kajiado South,Mbirikani E Elenkei,Mbirikani/Eselenkei
-Nairobi,Kibra,Lain Saba,Laini Saba
-Bomet,Bomet Central,Ilibwet Town Hip,Silibwet Township
-Bomet,Konoin,Mogogo Iek,Mogogosiek
-Kakamega,Shinyalu,I Ukha Outh,Isukha South
-Machakos,Kathiani,Lower Kaewa Kaani,Lower Kaewa/Kaani
-Machakos,Masinga,Ma Inga Central,Masinga Central
-Makueni,Makueni,Nzaui Kilili Kalamba,Nzaui/Kilili/Kalamba
-Nairobi,Embakasi East,Embakasi Ward,Embakasi
-Nairobi,Embakasi East,Lower  Avanna,Lower Savannah
-Nairobi,Embakasi North,Dandora Iv,Dandora Area I
-Nairobi,Ruaraka,Babadogo,Baba Dogo
-Nakuru,Gilgil,Mbaruk Eburu,Mbaruk/Eburu
-Uasin Gishu,Ainabkoi,Ainabkoi Olare,Ainabkoi/Olare
-Vihiga,Sabatia,Lyaduywa Izava,Lyaduywa/Izava
-Machakos,Kathiani,Upper Kaewa Iveti,Upper Kaewa/Iveti
-Kiambu,Thika Town,Ho Pital,Hospital
-Kisii,South Mugirango,Borabu Chitago,Borabu / Chitago
-Nairobi,Ruaraka,Lucky  Ummer,Lucky Summer
-Taita Taveta,Voi,Ka Igau,Kasigau
-Uasin Gishu,Turbo,Tap Agoi,Tapsagoi
-Bungoma,Webuye East,Ndivi I,Ndivisi
-Busia,Butula,Marachi Ea T,Marachi East
-Taita Taveta,Mwatate,Wu I Ki Hamba,Wusi/Kishamba
-Bungoma,Kabuchai,We T Nalondo,West Nalondo
-Bungoma,Webuye West,Itikho,Sitikho
-Busia,Teso North,Angurai Outh,AngUrai South
-Busia,Teso North,Malaba Outh,Malaba South
-Busia,Teso South,Amukura Ea T,Amukura East
-Kericho,Bureti,Tebe Onik,Tebesonik
-Kisii,Bobasi,Ma Ige We T,Masige West
-Nakuru,Rongai,Menengai We T,Menengai West
-Busia,Butula,Marachi We T,Marachi West
-Kwale,Kinango,Chengoni Amburu,Chengoni/Samburu
-Kisumu,Kisumu East,Manyatta,Manyatta B
-Makueni,Kilome,Kiima Kiu Kalanzoni,Kiima Kiu/Kalanzoni
-Makueni,Mbooni,Waia Kako,Waia/Kako
-Migori,Kuria East,Gokeharaka Getambwega,Gokeharaka/Getambwega
+lookup_subcounty,ward_raw,ward_corrected
+Kibra,Arangombe,Sarangombe
+Mathare,Ho Pital,Hospital
+Embakasi East,Lower Avannah,Lower Savannah
+Bobasi,Boba I Boitangare,Bobasi Boitangare
+Embakasi North,Dandora Area Iv V,Dandora Area IV/V
+Kisumu Central,Railway,Railways
+Kilifi North,Okoni,Sokoni
+Kapseret,Langa,Langas
+Alego Usonga,Iaya Town Hip,Siaya Township
+Starehe,Nairobi Outh,Nairobi South
+Nambale,Nambale Town Hip,Nambale Township
+Matungulu,Matungulu We T,Matungulu West
+Bondo,We T Akwa,West Sakwa
+Roysambu,Roy Ambu,Roysambu
+Lurambi,Heywe,Sheywe
+Mbita,Ka Gunga,Kasgunga
+Gem,Ea T Gem,East Gem
+Kasarani,Ka Arani,Kasarani
+Tetu,Aguthi Gaaki,Aguthi/Gaaki
+Suba,Kak Ingri We T,Kaksingri West
+Kabondo Kasipul,Kabondo Ea T,Kabondo East
+Ndhiwa,Kanyamwa Ko Ewe,Kanyamwa Kosewe
+Alego Usonga,Outh Ea T Alego,South East Alego
+Kuria West,I Ibania,Isibania
+Kamukunji,Ea Tleigh Outh,Eastleigh South
+Suna East,Una Central,Suna Central
+Embakasi North,Dandora Area Iv,Dandora Area I
+Vihiga,Outh Maragoli,South Maragoli
+Langata,Nyayo Highri E,Nyayo Highrise
+Rarieda,We T A Embo,West Asembo
+Machakos Town,Machako Central,Machakos Central
+Awendo,Outh Akwa,South Sakwa
+Kasipul,Outh Ka Ipul,South Kasipul
+Starehe,Ziwani Kariokor,Ziwani/Kariokor
+Bondo,North Akwa,North Sakwa
+Kabuchai,Kabuchai Chwele,Kabuchai/Chwele
+Magarini,Gara Hi,Garashi
+Kisumu West,North We T Ki Umu,North West Kisumu
+Bondo,Central Akwa,Central Sakwa
+Kisumu East,Kolwa Ea T,Kolwa East
+Ugenya,Ea T Ugenya,East Ugenya
+Ugunja,Igomere,Sigomere
+Kisumu West,We T Ki Umu,West Kisumu
+Alego Usonga,U Onga,Usonga
+Kasipul,Central Ka Ipul,Central Kasipul
+Rarieda,Ea T A Embo,East Asembo
+Ugenya,We T Ugenya,West Ugenya
+Gem,We T Gem,West Gem
+Rangwe,Ea T Gem,East Gem
+Mumias East,Ea T Wanga,East Wanga
+Roysambu,Kahawa We T,Kahawa West
+Suna West,Wa Weta Ii,Wasweta Ii
+Kuria West,Ma Aba,Masaba
+Luanda,Luanda Town Hip,Luanda Township
+Kilifi South,Cha Imba,Chasimba
+Shinyalu,I Ukha Central,Isukha Central
+Nyeri Town,Kamakwa Mukaro,Kamakwa/Mukaro
+Nyakach,Outh Ea T Nyakach,South East Nyakach
+Emuhaya,North Ea T Bunyore,North East Bunyore
+Nyeri Town,Gatitu Muruguru,Gatitu/Muruguru
+Bondo,We T Yimbo,West Yimbo
+Hamisi,Hiru,Shiru
+Kisumu West,Central Ki Umu,Central Kisumu
+Kamukunji,Ea Tleigh North,Eastleigh North
+Muhoroni,Ma Ogo Nyang'Oma,Masogo/Nyang'oma
+Kilifi North,Mat Angoni,Matsangoni
+Nyando,Kabonyo Kanyagwal,Kabonyo/Kanyagwal
+Ikolomani,Idakho Ea T,Idakho East
+Gem,Outh Gem,South Gem
+Seme,Central Eme,Central Seme
+Bondo,Yimbo Ea T,Yimbo East
+Matayos,Matayo Outh,Matayos South
+Uriri,Outh Kanyamkago,South Kanyamkago
+Homa Bay Town,Homa Bay Ea T,Homa Bay East
+Westlands,Parkland Highridge,Parklands/Highridge
+Kiharu,Town Hip,Township
+Rabai,Kambe Ribe,Kambe/Ribe
+Awendo,Central Akwa,Central Sakwa
+Rongo,Ea T Kamagambo,East Kamagambo
+Buuri,Kiirua Naari,Kiirua/Naari
+Alego Usonga,We T Alego,West Alego
+Nyakach,We T Nyakach,West Nyakach
+Kasipul,Ea T Kamagak,East Kamagak
+Kiminini,Ikhendu,Sikhendu
+Suba,Gwa I Outh,Gwassi South
+Kanduyi,Bukembe We T,Bukembe West
+Likoni,Hika Adabu,Shika Adabu
+Mvita,Mji Wa Kale Makadara,Mji Wa Kale/Makadara
+Makadara,Maringo Hamza,Maringo/Hamza
+Gem,Yala Town Hip,Yala Township
+Bondo,Outh Akwa,South Sakwa
+Awendo,We T Akwa,West Sakwa
+Teso South,Chakol Outh,Chakol South
+Embakasi East,Embaka I,Embakasi
+Kuria West,Nyamo En E Komo Oko,Nyamosense/Komosoko
+Westlands,Kiti Uru,Kitisuru
+Kibra,Laini Aba,Laini Saba
+Kisumu Central,Haurimoyo Kaloleni,Shaurimoyo Kaloleni
+Seme,We T Eme,West Seme
+Rangwe,We T Gem,West Gem
+Embakasi North,Dandora Area V,Dandora Area I
+Machakos Town,Muvuti Kiima Kimwe,Muvuti/Kiima Kimwe
+Rarieda,We T Uyoma,West Uyoma
+Kamukunji,Airba E,Airbase
+Ganze,Okoke,Sokoke
+Mvita,Himanzi Ganjoni,Shimanzi/Ganjoni
+Kisumu Central,Migo I,Migosi
+Kibra,Woodley Kenyatta Golf,Woodley/Kenyatta Golf
+Kilifi North,Daba O,Dabaso
+Buuri,Ruiri Rwarera,Ruiri/Rwarera
+Kisumu West,Outh We T Ki Umu,South West Kisumu
+Bumula,Outh Buku U,South Bukusu
+Kabondo Kasipul,Kabondo We T,Kabondo West
+Ugunja,Idindi,Sidindi
+Rabai,Rabai Ki Urutini,Rabai/Kisurutini
+Butere,Marama We T,Marama West
+Kuria West,Bukira Ea T,Bukira East
+South Imenti,Abogeta We T,Abogeta West
+North Imenti,Nyaki Ea T,Nyaki East
+Igembe South,Kiegoi Antubochiu,Kiegoi/Antubochiu
+Rarieda,Outh Uyoma,South Uyoma
+Uriri,We T Kanyamkago,West Kanyamkago
+Embakasi Central,Kayole Outh,Kayole South
+Kabondo Kasipul,Kokwanyo Kakelo,Kokwanyo/Kakelo
+Luanda,Luanda Outh,Luanda South
+Emuhaya,We T Bunyore,West Bunyore
+Awendo,North Akwa,North Sakwa
+Nyando,Awa I Onjiko,Awasi/Onjiko
+Buuri,Ki Ima,Kisima
+Bobasi,Ameta Mokwerero,Sameta/Mokwerero
+Navakholo,Bunyala Ea T,Bunyala East
+Nyando,Ea T Kano Wawidhi,East Kano/Wawidhi
+Rongo,Outh Kamagambo,South Kamagambo
+Hamisi,Gi Ambai,Gisambai
+Bondo,We T Sakwa,West Sakwa
+Kasipul,We T Kamagak,West Kamagak
+Kasipul,We T Ka Ipul,West Kasipul
+North Imenti,Nyaki We T,Nyaki West
+Embakasi East,Upper Avannah,Upper Savannah
+Kanduyi,Marakaru Tuuti,Marakaru/Tuuti
+Kuria West,Bukira Centrl Ikerege,Bukira Centrl/Ikerege
+Kanduyi,Town Hip,Township
+Uriri,Ea T Kanyamkago,East Kanyamkago
+Kitutu Chache South,Bogu Ero,Bogusero
+Sotik,Rongena Manaret,Rongena/Manaret
+Matungulu,Matungulu Ea T,Matungulu East
+Ruaraka,Lucky Ummer,Lucky Summer
+Kanduyi,Mu Ikoma,Musikoma
+Cherangany,Inyerere,Sinyerere
+South Imenti,Abogeta Ea T,Abogeta East
+Kibra,Sarang'Ombe,Sarangombe
+Mbita,Mfangano I Land,Mfangano Island
+Kilifi South,Himo La Tewa,Shimo La Tewa
+Seme,North Eme,North Seme
+Central Imenti,Abothuguchi We T,Abothuguchi West
+Chepalungu,Iongiroi,Siongiroi
+Karachuonyo,We T Karachuonyo,West Karachuonyo
+Dagoretti North,Kilele Hwa,Kileleshwa
+Lurambi,But Ot O Ea T,Butsotso East
+Seme,Ea T Eme,East Seme
+Nyeri Town,Kiganjo Mathari,Kiganjo/Mathari
+Kangundo,Kangundo We T,Kangundo West
+North Imenti,Ntima We T,Ntima West
+Mukurweini,Mukurwe Ini We T,Mukurwe Ini West
+Lurambi,Hirere,Shirere
+Nyakach,Outh We T Nyakach,South West Nyakach
+Embakasi West,Kariobangi Outh,Kariobangi South
+Sabatia,We T Abatia,West Sabatia
+Khwisero,Ki A Central,Kisa Central
+North Imenti,Ntima Ea T,Ntima East
+Bumula,Kha Oko,Khasoko
+Kiminini,Nabi Wa,Nabiswa
+Ruiru,Bia Hara,Biashara
+Rabai,Mwawe A,Mwawesa
+Kisauni,Hanzu,Shanzu
+Nyaribari Chache,Ki Ii Central,Kisii Central
+Suba,Ruma Kak Ingri Ea T,Ruma Kaksingri East
+Teso South,Amukura We T,Amukura West
+Muhoroni,Muhoroni Koru,Muhoroni/Koru
+Nyatike,Kanya A,Kanyasa
+Khwisero,Ki A North,Kisa North
+Mwala,Makutano Mwala,Makutano/ Mwala
+Mbita,Ru Inga I Land,Rusinga Island
+Nambale,Bukhayo North Walt I,Bukhayo North/Waltsi
+Bomachoge Chache,Bo Oti Engera,Bosoti/Sengera
+Ikolomani,Idakho Outh,Idakho South
+Suna West,Wa Imbete,Wasimbete
+Bomet East,Longi A,Longisa
+Nakuru Town West,Haabab,Shaabab
+Sabatia,Bu Ali,Busali
+Bumula,Iboti,Siboti
+Igembe Central,Igembe Ea T,Igembe East
+Hamisi,Hamakhokho,Shamakhokho
+Mwala,Ma Ii,Masii
+Kisumu West,Ki Umu North,Kisumu North
+Kanduyi,Ea T Angalo,East SangAlo
+Shinyalu,I Ukha Ea T,Isukha East
+Bobasi,Boba I Central,Bobasi Central
+Muhoroni,Ma Ogo Nyangoma,Masogo/Nyang'oma
+Mbooni,Kithungo Kitundu,Kithungo/Kitundu
+Dagoretti South,Uthiru Ruthimitu,Uthiru/Ruthimitu
+Kanduyi,Angalo We T,SangAlo West
+Saboti,Aboti,Saboti
+Homa Bay Town,Homa Bay We T,Homa Bay West
+Cherangany,Itatunga,Sitatunga
+Suba,Gwa I North,Gwassi North
+Kiminini,Irende,Sirende
+Kangundo,Kangundo Ea T,Kangundo East
+Langata,Nairobi We T,Nairobi West
+Bomet Central,Che Oen,Chesoen
+Malava,Butali Chegulo,Butali/Chegulo
+Kiambu,Town Hip,Township
+Bomet Central,Ingorwet,Singorwet
+Nambale,Bukhayo Ea T,Bukhayo East
+Masinga,Muthe Ya,Muthesya
+Kesses,Cheptiret Kipchamo,Cheptiret/Kipchamo
+Sirisia,Malaki I Outh Kuli Iru,Malakisi/South Kulisiru
+Matayos,Bu Ibwabo,Busibwabo
+Langata,Outh C,South C
+Khwisero,Ki A Ea T,Kisa East
+Nyaribari Masaba,Ma Imba,Masimba
+Bumula,We T Buku U,West Bukusu
+Matayos,Bukhayo We T,Bukhayo West
+Malindi,Hella,Shella
+Nyatike,Macalder Kanyarwanda,Macalder/Kanyarwanda
+Kieni,Mwiyogo Endara Ha,Mwiyogo/Endarasha
+Ainabkoi,Kap Oya,Kapsoya
+Butere,Marama Outh,Marama South
+Lurambi,But Ot O Outh,Butsotso South
+Bobasi,Boba I Bogetaorio,Bobasi Bogetaorio
+Bobasi,Ma Ige Ea T,Masige East
+Kesses,Racecour E,Racecourse
+Lurambi,But Ot O Central,Butsotso Central
+Mumias East,Lubinu Lu Heya,Lubinu/Lusheya
+Mumias West,Mumia Central,Mumias Central
+Navakholo,Bunyala We T,Bunyala West
+Bomachoge Chache,Boochi Tendere,Boochi/Tendere
+Voi,Agalla,Sagalla
+Wundanyi,Wumingu Ki Hu He,Wumingu/Kishushe
+South Imenti,Igoji Ea T,Igoji East
+Ndhiwa,Kabuoch Outh Pala,Kabuoch South/Pala
+Butere,Marenyo Hianda,Marenyo Shianda
+Khwisero,Ki A We T,Kisa West
+Malava,Manda Hivanga,Manda Shivanga
+Mbooni,Ki Au Kiteta,Kisau/Kiteta
+Nakuru Town East,Bia Hara,Biashara
+Budalangi,Bunyala We T,Bunyala West
+Shinyalu,I Ukha North,Isukha North
+Nakuru Town East,Nakuru Ea T,Nakuru East
+Kapseret,Imat Kap Eret,Simat/Kapseret
+Soy,Kuinet Kap U Wa,Kuinet/Kapsuswa
+Webuye West,Mi Ikhu,Misikhu
+Wundanyi,Wundanyi Mbale,Wundanyi/Mbale
+Kesses,Tulwet Chuiyat,Tulwet/Chuiyat
+Sotik,Kip Onoi,Kipsonoi
+Malava,We T Kabra,West Kabras
+Mumias West,Mumia North,Mumias North
+Mavoko,Yokimau Mulolongo,Syokimau/Mulolongo
+Shinyalu,I Ukha We T,Isukha West
+Saboti,Mati I,Matisi
+Turbo,Kap Ao,Kapsaos
+Kanduyi,Bukembe Ea T,Bukembe East
+Ruiru,Kahawa Ukari,Kahawa Sukari
+Kinango,Ka Emeni,Kasemeni
+Malava,Ea T Kabra,East Kabras
+Limuru,Limuru Ea T,Limuru East
+Makueni,Muvau Kikuumini,Muvau/Kikuumini
+Gatanga,Kakuzi Mitubiri,Kakuzi/Mitubiri
+Embakasi Central,Kayole  Outh,Kayole South
+Embakasi East,Lower  Avannah,Lower Savannah
+Embakasi South,Njenga,Kwa Njenga
+Cherangany,Moto Iet,Motosiet
+Malava,Hirugu Mugai,Shirugu Mugai
+Nyaribari Masaba,Nyama Ibi,Nyamasibi
+Cherangany,Chep Iro Kiptoror,Chepsiro/Kiptoror
+Soy,Oy,Soy
+Kajiado South,Mbirikani E Elenkei,Mbirikani/Eselenkei
+Kibra,Lain Saba,Laini Saba
+Bomet Central,Ilibwet Town Hip,Silibwet Township
+Konoin,Mogogo Iek,Mogogosiek
+Shinyalu,I Ukha Outh,Isukha South
+Kathiani,Lower Kaewa Kaani,Lower Kaewa/Kaani
+Masinga,Ma Inga Central,Masinga Central
+Makueni,Nzaui Kilili Kalamba,Nzaui/Kilili/Kalamba
+Embakasi East,Embakasi Ward,Embakasi
+Embakasi East,Lower  Avanna,Lower Savannah
+Embakasi North,Dandora Iv,Dandora Area I
+Ruaraka,Babadogo,Baba Dogo
+Gilgil,Mbaruk Eburu,Mbaruk/Eburu
+Ainabkoi,Ainabkoi Olare,Ainabkoi/Olare
+Sabatia,Lyaduywa Izava,Lyaduywa/Izava
+Kathiani,Upper Kaewa Iveti,Upper Kaewa/Iveti
+Thika Town,Ho Pital,Hospital
+South Mugirango,Borabu Chitago,Borabu / Chitago
+Ruaraka,Lucky  Ummer,Lucky Summer
+Voi,Ka Igau,Kasigau
+Turbo,Tap Agoi,Tapsagoi
+Webuye East,Ndivi I,Ndivisi
+Butula,Marachi Ea T,Marachi East
+Mwatate,Wu I Ki Hamba,Wusi/Kishamba
+Kabuchai,We T Nalondo,West Nalondo
+Webuye West,Itikho,Sitikho
+Teso North,Angurai Outh,AngUrai South
+Teso North,Malaba Outh,Malaba South
+Teso South,Amukura Ea T,Amukura East
+Bureti,Tebe Onik,Tebesonik
+Bobasi,Ma Ige We T,Masige West
+Rongai,Menengai We T,Menengai West
+Butula,Marachi We T,Marachi West
+Kinango,Chengoni Amburu,Chengoni/Samburu
+Kisumu East,Manyatta,Manyatta B
+Kilome,Kiima Kiu Kalanzoni,Kiima Kiu/Kalanzoni
+Mbooni,Waia Kako,Waia/Kako
+Kuria East,Gokeharaka Getambwega,Gokeharaka/Getambwega
+Konoin,Embomo,Embomos
+Butere,marenyo_-_shianda,Marenyo Shianda
+Malava,manda-shivanga,Manda Shivanga
+Langata,mugumo-ini,Mugumo Ini
+Langata,south-c,South C
+Marakwet East,Ambirir,Sambirir
+Baringo North,Barwe A,Barwessa
+Kisumu East,Nyalenda B,Nyalenda A
+Embakasi North,Kariobangi South,Kariobangi North

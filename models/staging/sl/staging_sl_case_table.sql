@@ -851,11 +851,11 @@ select
     {{ normalize_sl_nationality_filter('nationality', 'refugee_type') }} as nationality,
     refugee_type,
     kenyan_national_id_number_dir,
-    coalesce(cl.county_corrected, {{ normalize_sl_county_filter('county') }}) as county,
-    {{ normalize_sl_subcounty_filter('subcounty') }} as subcounty,
+    coalesce(wl2.correct_county, cl.county_corrected, {{ normalize_sl_county_filter('county') }}) as county,
+    coalesce(wl2.correct_subcounty, cwd.correct_subcounty, {{ normalize_sl_subcounty_filter('subcounty') }}) as subcounty,
     case
         when ward is null or trim(ward) = '' then null
-        else coalesce(wc.ward_corrected, initcap(trim(regexp_replace(ward, '[\\s_/-]+', ' ', 'g'))))
+        else coalesce(wl2.correct_ward, wc.ward_corrected, initcap(trim(regexp_replace(ward, '[\\s_/-]+', ' ', 'g'))))
     end as ward,
     coworking_county_csr,
     coworking_subcounty_csr,
@@ -1072,9 +1072,15 @@ left join skill_sector_mapping m
     on d.skill_enrolled_apr = m.skill_enrolled_apr
 left join institution_name_mapping i
     on lower(trim(d.raw_tvet_institution_name)) = lower(trim(i.old_institutions))
+-- Matched on subcounty + ward_raw only (not county): every subcounty name in
+-- ward_lookup is globally unique (zero cross-county collisions across all 290),
+-- so subcounty alone is sufficient to apply this correction safely. Requiring
+-- county to also match here would break rows where county AND ward spelling
+-- are both wrong at once (the exact Kajiado/Kibra/Arangombe -> should-be-Nairobi
+-- case), since a wrong county would prevent the spelling fix from ever firing,
+-- which in turn would prevent the downstream county-correction join from firing.
 left join {{ ref('ward_name_corrections_seed') }} wc
-    on wc.lookup_county = {{ normalize_sl_county_filter('county') }}
-   and wc.lookup_subcounty = {{ normalize_sl_subcounty_filter('subcounty') }}
+    on wc.lookup_subcounty = {{ normalize_sl_subcounty_filter('subcounty') }}
    and wc.ward_raw = initcap(trim(regexp_replace(ward, '[\\s_/-]+', ' ', 'g')))
 -- County-correction: subcounty + ward uniquely determine the real county in
 -- ward_lookup (zero collisions across all 1,451 pairs), so where a raw county
@@ -1084,3 +1090,19 @@ left join {{ ref('ward_name_corrections_seed') }} wc
 left join {{ ref('county_correction_lookup') }} cl
     on cl.lookup_subcounty = {{ normalize_sl_subcounty_filter('subcounty') }}
    and cl.lookup_ward = coalesce(wc.ward_corrected, initcap(trim(regexp_replace(ward, '[\\s_/-]+', ' ', 'g'))))
+-- Ward-based relocation: for the subset of rows where SUBCOUNTY itself is wrong
+-- (not just county), neither the wc nor cl joins above can fire correctly, since
+-- both are keyed on subcounty matching. This join is keyed on ward text alone
+-- (both already-correct spellings and known corrupted forms), covering 130
+-- validated cases where the ward name alone unambiguously identifies the real
+-- subcounty and county, independent of whatever subcounty was recorded.
+left join {{ ref('ward_based_location_lookup') }} wl2
+    on wl2.ward_key = coalesce(wc.ward_corrected, initcap(trim(regexp_replace(ward, '[\\s_/-]+', ' ', 'g'))))
+-- Final tiebreaker: a handful of ward names (Huruma, Viwandani, Mkomani, Mwiki,
+-- Mugumo Ini) exist in more than one real place, so wl2 above can't resolve them
+-- on ward name alone. But the recorded county already happens to match exactly
+-- one of the valid options in every one of these cases, so we use county+ward
+-- together as the disambiguator, correcting subcounty only (county was already right).
+left join {{ ref('county_ward_disambiguation') }} cwd
+    on cwd.lookup_county = {{ normalize_sl_county_filter('county') }}
+   and cwd.ward_key = coalesce(wl2.correct_ward, wc.ward_corrected, initcap(trim(regexp_replace(ward, '[\\s_/-]+', ' ', 'g'))))

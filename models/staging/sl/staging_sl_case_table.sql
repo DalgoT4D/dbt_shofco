@@ -581,7 +581,15 @@ deduplicated_cases as (
         max(nullif(trim(nationality), '')) as nationality,
         max(nullif(trim(refugee_type), '')) as refugee_type,
         max(nullif(trim(county), '')) as county,
-        max(nullif(trim(subcounty), '')) as subcounty,
+        -- data-quality fix: source form has a dropped-letter typo ("Kiauni") for Mombasa's
+        -- Kisauni subcounty; correct it here before it hits normalize_sl_subcounty_filter
+        max(
+            case
+                when lower(regexp_replace(nullif(trim(subcounty), ''), '[\\s_/-]+', '', 'g')) = 'kiauni'
+                    then 'kisauni'
+                else nullif(trim(subcounty), '')
+            end
+        ) as subcounty,
         max(nullif(trim(ward), '')) as ward,
         max(nullif(trim(coworking_county_csr), '')) as coworking_county_csr,
         max(nullif(trim(coworking_subcounty_csr), '')) as coworking_subcounty_csr,

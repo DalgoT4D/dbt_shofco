@@ -23,6 +23,9 @@ models:
       - name: session_id
         data_type: text
         description: Unique identifier for each training session attended by a participant.
+      - name: participant_ordinal
+        data_type: bigint
+        description: Original position of the participant inside the source participant array for the session.
       - name: participant_name
         data_type: text
         description: Full name of the participant in the life skills training program.

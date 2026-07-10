@@ -3,19 +3,36 @@
   tags=['gender_life_skills_training', "gender"]
 ) }}
 
-WITH source_data AS (
-    SELECT DISTINCT
+WITH raw_source AS (
+    SELECT
         id,
         indexed_on,
-        data::jsonb AS json_data
+        data::jsonb AS json_data,
+        COALESCE(
+            NULLIF(data::jsonb -> 'form' -> 'meta' ->> 'instanceID', ''),
+            'missing_instance:' || id
+        ) AS dedupe_key,
+        COALESCE(
+            (data::jsonb ->> 'received_on')::timestamp,
+            indexed_on::timestamp
+        ) AS received_on
     FROM {{ source('staging_gender', 'IIVC_Life_Skills_Training') }}
     WHERE
         data::jsonb ->> 'archived' IS NULL
         OR data::jsonb ->> 'archived' = 'false'
 ),
 
+source_data AS (
+    SELECT DISTINCT ON (dedupe_key)
+        id,
+        indexed_on,
+        json_data
+    FROM raw_source
+    ORDER BY dedupe_key, received_on DESC, indexed_on DESC, id DESC
+),
+
 session_details AS (
-    SELECT DISTINCT
+    SELECT
         id,
         indexed_on,
         json_data -> 'form' ->> '@name' AS form_name,

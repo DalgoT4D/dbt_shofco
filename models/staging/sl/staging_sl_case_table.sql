@@ -541,27 +541,27 @@ select
             when county is null or trim(county) = '' then null
             else
                 case
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'kiii' then 'kilifi'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'buia' then 'busia'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'homabay' then 'homa bay'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'kiumu' then 'kisumu'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'mombaa' then 'mombasa'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'uaingihu' then 'uain gihu'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'trannzoia' then 'tran nzoia'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'taitataveta' then 'taita taveta'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'sya' then 'siaya'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'mck' then 'machakos'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'mrg' then 'migori'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'bgm' then 'bungoma'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'kkg' then 'kakamega'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'mkn' then 'makueni'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'bsa' then 'busia'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'tvt' then 'taita taveta'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'nbi' then 'nairobi'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'vhg' then 'vihiga'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'nyr' then 'nyeri'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'nkr' then 'nakuru'
-                    when lower(regexp_replace(county, '[\\s_/-]+', '', 'g')) = 'hby' then 'homa bay'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'kiii' then 'kilifi'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'buia' then 'busia'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'homabay' then 'homa bay'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'kiumu' then 'kisumu'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'mombaa' then 'mombasa'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'uaingihu' then 'uain gihu'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'trannzoia' then 'tran nzoia'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'taitataveta' then 'taita taveta'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'sya' then 'siaya'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'mck' then 'machakos'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'mrg' then 'migori'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'bgm' then 'bungoma'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'kkg' then 'kakamega'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'mkn' then 'makueni'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'bsa' then 'busia'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'tvt' then 'taita taveta'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'nbi' then 'nairobi'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'vhg' then 'vihiga'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'nyr' then 'nyeri'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'nkr' then 'nakuru'
+                    when lower(regexp_replace(county, '[\s_/-]+', '', 'g')) = 'hby' then 'homa bay'
                     else lower(trim(county))
                 end
         end as norm_county
@@ -847,7 +847,7 @@ select
     {{ normalize_sl_subcounty_filter('subcounty') }} as subcounty,
     case
         when ward is null or trim(ward) = '' then null
-        else initcap(regexp_replace(ward, '[\\s_/-]+', '', 'g'))
+        else initcap(trim(regexp_replace(ward, '[\s_/-]+', ' ', 'g')))
     end as ward,
     coworking_county_csr,
     coworking_subcounty_csr,

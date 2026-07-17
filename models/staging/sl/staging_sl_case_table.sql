@@ -828,8 +828,19 @@ skill_sector_mapping as (
 ),
 
 institution_name_mapping as (
-    select old_institutions, institution_name
+    -- Deduplicated on lower(trim(old_institutions)) to prevent join fan-out:
+    -- the source table intentionally stores multiple raw spelling variants
+    -- per canonical institution (needed for fuzzy matching against CommCare
+    -- data), but some variants are pure case/whitespace duplicates of each
+    -- other (e.g. "Ahero VTC" vs "Ahero vtc" vs "AHERO VTC"). Once normalized
+    -- in the join below, those duplicates matched multiple mapping rows per
+    -- case, multiplying case_id rows by 2x-4x downstream. Verified all
+    -- normalized-key groups agree on institution_name before deduping.
+    select distinct on (lower(trim(old_institutions)))
+        old_institutions,
+        institution_name
     from {{ source('staging_sl', 'tvet_institution_mapping') }}
+    order by lower(trim(old_institutions)), old_institutions
 )
 
 select
